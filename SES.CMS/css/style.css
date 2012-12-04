@@ -37,7 +37,7 @@ WRAPPER AREA
 {
 	width: 100%;
 	height: auto;
-	background: url(../image/background.jpg) repeat-x top;
+	background: url(../images/background.jpg) repeat-x top;
 	float: left;
 }
 
@@ -67,7 +67,7 @@ WRAPPER AREA
 	height: 129px;
 	border: solid 1px #ecd9b7;
 	border-top: none;
-	background: url(../image/header.jpg);
+	background: url(../images/header.jpg);
 	float: left;
 }
 .menu
@@ -228,7 +228,7 @@ WRAPPER AREA
 {
 	width: 21px;
 	height: 21px;
-	background: url(../image/lienhe-icon1.jpg);
+	background: url(../images/lienhe-icon1.jpg);
 	float: left;
 	margin: 10px 8px 0px 14px;
 }
@@ -236,7 +236,7 @@ WRAPPER AREA
 {
 	width: 29px;
 	height: 26px;
-	background: url(../image/phone-icon.jpg);
+	background: url(../images/phone-icon.jpg);
 	float: left;
 	margin: 10px 5px 0px 10px;
 }
@@ -272,7 +272,7 @@ WRAPPER AREA
 {
 	width: 455px;
 	height: 263px;
-	background: url(../image/bike.jpg);
+	background: url(../images/bike.jpg);
 	border: solid 2px #c98131;
 	float: left;
 	margin: 6px;
@@ -379,7 +379,7 @@ WRAPPER AREA
 .hoidap li
 {
 	margin-top: 5px;
-	background: url(../image/liststyle.jpg) no-repeat;
+	background: url(../images/liststyle.jpg) no-repeat;
 	padding-left: 13px;
 	background-position: 4px;
 }
@@ -401,7 +401,7 @@ WRAPPER AREA
 {
 	width: 217px;
 	height: 29px;
-	background: url(../image/label-back.jpg);
+	background: url(../images/label-back.jpg);
 	float: left;
 }
 .tintuc-cap p
@@ -473,7 +473,7 @@ WRAPPER AREA
 	width: 217px;
 	height: 28px;
 	float: left;
-	background: url(../image/label-back.jpg) no-repeat;
+	background: url(../images/label-back.jpg) no-repeat;
 }
 .Cap-TinTuc p
 {
@@ -614,7 +614,7 @@ WRAPPER AREA
 .right-noidung li
 {
 	margin-bottom: 15px;
-	background: url(../image/bigliststyle.jpg) no-repeat;
+	background: url(../images/bigliststyle.jpg) no-repeat;
 	padding-left: 13px;
 	background-position:center left;
 }
@@ -639,7 +639,7 @@ WRAPPER AREA
 	font-size: 14px;
 	font-weight: bold;
 	color: #000;
-	background: url(../image/patem.jpg) no-repeat;
+	background: url(../images/patem.jpg) no-repeat;
 	background-position: right;
 	float: left;
 	padding-bottom: 2px;
@@ -711,7 +711,7 @@ WRAPPER AREA
 	font-size: 14px;
 	font-weight: bold;
 	color: #000;
-	background: url(../image/patem2.jpg) no-repeat;
+	background: url(../images/patem2.jpg) no-repeat;
 	background-position: right;
 	margin: 6px 0px 6px 6px;
 	float: left;
@@ -740,7 +740,7 @@ WRAPPER AREA
 	width: 39px;
 	height: 40px;
 	margin: 10px 10px 10px 7px;
-	background: url(../image/p.jpg);
+	background: url(../images/p.jpg);
 	float: left;
 }
 .head-face
@@ -800,7 +800,7 @@ WRAPPER AREA
 	height: 222px;
 	float: right;
 	margin-top: 15px;
-	background: url(../image/quangcaophai1.jpg);
+	background: url(../images/quangcaophai1.jpg);
 }
 
 .quangcao-right2
@@ -809,7 +809,7 @@ WRAPPER AREA
 	height: 576px;
 	float: right;
 	margin-top: 15px;
-	background: url(../image/quangcaophai2.jpg);
+	background: url(../images/quangcaophai2.jpg);
 }
 .bottom
 {
@@ -832,7 +832,7 @@ WRAPPER AREA
 	font-size: 14px;
 	font-weight: bold;
 	color: #000;
-	background: url(../image/patem3.jpg) no-repeat;
+	background: url(../images/patem3.jpg) no-repeat;
 	background-position: right;
 	float: left;
 	padding-bottom: 2px;
@@ -853,7 +853,7 @@ WRAPPER AREA
 	width: 217px;
 	height: 28px;
 	float: left;
-	background: url(../image/label-back.jpg) no-repeat;
+	background: url(../images/label-back.jpg) no-repeat;
 }
 .Cap-bottom p
 {
