@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Otofun.master.cs" Inherits="SES.CMS.Otofun" %>
 
+<%@ Register src="/Module/ucMainMenu.ascx" tagname="ucMainMenu" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -14,7 +16,16 @@
         <div id="outer_wrapper">
             <div id="wrapper">
                 <div class="border">
+                    <div class="top">
+                        <div class="header">
+                            <a href="/Default.aspx" title="otofun.vn">
+                                <img alt="otofun.vn" class="header-img" src="/Media/banner-otofun.jpg" />
+                            </a>
+                        </div>
+                      <uc1:ucMainMenu ID="ucMainMenu1" runat="server" />
+                    </div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        
                     </asp:ContentPlaceHolder>
                 </div>
                 <div class="footer">

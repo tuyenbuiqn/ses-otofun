@@ -88,6 +88,10 @@ namespace SES.CMS.BL
         {
             return objcmsCategoryDAL.SelectOne(objCat);
         }
+        public DataTable SelectMenu(int BlockNumber)
+        {
+            return objcmsCategoryDAL.SelectMenu(BlockNumber);
+        }
 
         
     }

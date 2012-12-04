@@ -21,6 +21,7 @@ p
 	color: #9C6034;
 	font-size: 12px;
 }
+img{border:none;}
 /*
 ==============================================
 WRAPPER AREA
@@ -67,9 +68,14 @@ WRAPPER AREA
 	height: 129px;
 	border: solid 1px #ecd9b7;
 	border-top: none;
-	background: url(../images/header.jpg);
+	
 	float: left;
 }
+.header-img
+{
+	width:998px;
+	height:129px;
+	}
 .menu
 {
 	width: 1000px;
@@ -109,7 +115,7 @@ WRAPPER AREA
 {
 	float: left;
 	margin-top: 7px;
-	margin-right: 10px;
+	width: 695px;
 }
 .toplink a
 {
@@ -124,9 +130,9 @@ WRAPPER AREA
 }
 .search-box
 {
-	height: 34px;
-	width: 300px;
-	float: right;
+	width: 260px;
+	position: absolute;
+	right: 220px;
 }
 .rss-button
 {
@@ -140,6 +146,8 @@ WRAPPER AREA
 	margin: 6px;
 	width: 150px;
 	height: 20px;
+	outline:none;
+	color:#f1f1f1;
 }
 .search-button
 {
