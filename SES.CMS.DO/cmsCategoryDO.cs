@@ -45,6 +45,7 @@ namespace SES.CMS.DO
 		private Int32 _CategoryTypeID;
         private Int32 _ParentID;
         private Boolean _IsContent;
+        public Boolean IsMenu { get; set; }
        
 		#endregion
 
