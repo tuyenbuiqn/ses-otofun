@@ -1,0 +1,1237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D2EA16A-552B-4630-916A-7123A3E0A243}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SES.CMS</RootNamespace>
+    <AssemblyName>SES.CMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.50731.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CKEditor.NET, Version=3.6.1.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CMS.BL.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CMS.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="CollectionPager, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CollectionPager.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Data.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxEditors.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxGridView.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxTreeList.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MSCaptcha, Version=2.0.3733.36001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MSCaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="SES.CMS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SES.CMS.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminCP\css\960.css" />
+    <Content Include="AdminCP\css\facebox.css" />
+    <Content Include="AdminCP\css\styles.css" />
+    <Content Include="AdminCP\css\TableDesign.css" />
+    <Content Include="AdminCP\Default.aspx" />
+    <Content Include="AdminCP\fancybox\blank.gif" />
+    <Content Include="AdminCP\fancybox\fancybox-x.png" />
+    <Content Include="AdminCP\fancybox\fancybox-y.png" />
+    <Content Include="AdminCP\fancybox\fancybox.png" />
+    <Content Include="AdminCP\fancybox\fancy_close.png" />
+    <Content Include="AdminCP\fancybox\fancy_loading.png" />
+    <Content Include="AdminCP\fancybox\fancy_nav_left.png" />
+    <Content Include="AdminCP\fancybox\fancy_nav_right.png" />
+    <Content Include="AdminCP\fancybox\fancy_shadow_e.png" />
+    <Content Include="AdminCP\fancybox\fancy_shadow_n.png" />
+    <Content Include="AdminCP\fancybox\fancy_shadow_ne.png" />
+    <Content Include="AdminCP\fancybox\fancy_shadow_nw.png" />
+    <Content Include="AdminCP\fancybox\fancy_shadow_s.png" />
+    <Content Include="AdminCP\fancybox\fancy_shadow_se.png" />
+    <Content Include="AdminCP\fancybox\fancy_shadow_sw.png" />
+    <Content Include="AdminCP\fancybox\fancy_shadow_w.png" />
+    <Content Include="AdminCP\fancybox\fancy_title_left.png" />
+    <Content Include="AdminCP\fancybox\fancy_title_main.png" />
+    <Content Include="AdminCP\fancybox\fancy_title_over.png" />
+    <Content Include="AdminCP\fancybox\fancy_title_right.png" />
+    <Content Include="AdminCP\fancybox\jquery.easing-1.3.pack.js" />
+    <Content Include="AdminCP\fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="AdminCP\fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="AdminCP\fancybox\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="AdminCP\fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="AdminCP\images\access_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\access_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\access_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\access_16x16.gif" />
+    <Content Include="AdminCP\images\action_back.gif" />
+    <Content Include="AdminCP\images\action_forward.gif" />
+    <Content Include="AdminCP\images\action_go.gif" />
+    <Content Include="AdminCP\images\action_paste.gif" />
+    <Content Include="AdminCP\images\action_print.gif" />
+    <Content Include="AdminCP\images\action_refresh.gif" />
+    <Content Include="AdminCP\images\action_refresh_blue.gif" />
+    <Content Include="AdminCP\images\action_save.gif" />
+    <Content Include="AdminCP\images\action_stop.gif" />
+    <Content Include="AdminCP\images\add_16x16.gif" />
+    <Content Include="AdminCP\images\administrator1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\administrator1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\administrator1_16x16.gif" />
+    <Content Include="AdminCP\images\administrator2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\administrator2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\administrator2_16x16.gif" />
+    <Content Include="AdminCP\images\administrator3_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\administrator3_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\administrator3_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\administrator3_16x16.gif" />
+    <Content Include="AdminCP\images\anchor_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\anchor_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\anchor_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\anchor_16x16.gif" />
+    <Content Include="AdminCP\images\anonymous_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\anonymous_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\anonymous_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\anonymous_16x16.gif" />
+    <Content Include="AdminCP\images\application_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\application_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\application_16x16.gif" />
+    <Content Include="AdminCP\images\application_dreamweaver.gif" />
+    <Content Include="AdminCP\images\application_firefox.gif" />
+    <Content Include="AdminCP\images\application_flash.gif" />
+    <Content Include="AdminCP\images\arrow_down.gif" />
+    <Content Include="AdminCP\images\arrow_left.gif" />
+    <Content Include="AdminCP\images\arrow_right.gif" />
+    <Content Include="AdminCP\images\arrow_up.gif" />
+    <Content Include="AdminCP\images\attention1_16x16.gif" />
+    <Content Include="AdminCP\images\attention2_16x16.gif" />
+    <Content Include="AdminCP\images\attention3_16x16.gif" />
+    <Content Include="AdminCP\images\backup_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\backup_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\backup_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\backup_%28start%29_16x16.gif" />
+    <Content Include="AdminCP\images\backup_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\backup_16x16.gif" />
+    <Content Include="AdminCP\images\blockquote.gif" />
+    <Content Include="AdminCP\images\body-bg.png" />
+    <Content Include="AdminCP\images\bold_16x16.gif" />
+    <Content Include="AdminCP\images\box.gif" />
+    <Content Include="AdminCP\images\business_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\business_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\business_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\business_16x16.gif" />
+    <Content Include="AdminCP\images\button.jpg" />
+    <Content Include="AdminCP\images\b_ongrey2.gif" />
+    <Content Include="AdminCP\images\b_onwhite.gif" />
+    <Content Include="AdminCP\images\calculate_16x16.gif" />
+    <Content Include="AdminCP\images\calendar.gif" />
+    <Content Include="AdminCP\images\cancel-alert.ico" />
+    <Content Include="AdminCP\images\cancel-alert.png" />
+    <Content Include="AdminCP\images\cancel.png" />
+    <Content Include="AdminCP\images\check-in_16x16.gif" />
+    <Content Include="AdminCP\images\check-out_16x16.gif" />
+    <Content Include="AdminCP\images\color1_16x16.gif" />
+    <Content Include="AdminCP\images\color2_16x16.gif" />
+    <Content Include="AdminCP\images\color3_16x16.gif" />
+    <Content Include="AdminCP\images\comment.gif" />
+    <Content Include="AdminCP\images\comment1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment1_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment1_16x16.gif" />
+    <Content Include="AdminCP\images\comment2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment2_16x16.gif" />
+    <Content Include="AdminCP\images\comment3_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment3_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment3_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\comment3_16x16.gif" />
+    <Content Include="AdminCP\images\comment_blue.gif" />
+    <Content Include="AdminCP\images\comment_delete.gif" />
+    <Content Include="AdminCP\images\comment_new.gif" />
+    <Content Include="AdminCP\images\comment_yellow.gif" />
+    <Content Include="AdminCP\images\computer1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer1_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer1_%28start%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer1_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer1_16x16.gif" />
+    <Content Include="AdminCP\images\computer2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer2_%28start%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer2_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\computer2_16x16.gif" />
+    <Content Include="AdminCP\images\connect1_16x16.gif" />
+    <Content Include="AdminCP\images\connect2_16x16.gif" />
+    <Content Include="AdminCP\images\connect3_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\connect3_16x16.gif" />
+    <Content Include="AdminCP\images\contactus.gif" />
+    <Content Include="AdminCP\images\contact_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\contact_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\contact_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\contact_16x16.gif" />
+    <Content Include="AdminCP\images\content.css" />
+    <Content Include="AdminCP\images\copy.gif" />
+    <Content Include="AdminCP\images\copy_16x16.gif" />
+    <Content Include="AdminCP\images\cut.gif" />
+    <Content Include="AdminCP\images\cut_16x16.gif" />
+    <Content Include="AdminCP\images\database_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_%28start%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_16x16.gif" />
+    <Content Include="AdminCP\images\database_export_16x16.gif" />
+    <Content Include="AdminCP\images\database_field_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_field_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_field_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_field_16x16.gif" />
+    <Content Include="AdminCP\images\database_form_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_form_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_form_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_form_16x16.gif" />
+    <Content Include="AdminCP\images\database_import_16x16.gif" />
+    <Content Include="AdminCP\images\database_table_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_table_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_table_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\database_table_16x16.gif" />
+    <Content Include="AdminCP\images\data_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\data_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\data_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\data_%28play%29_16x16.gif" />
+    <Content Include="AdminCP\images\data_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\data_16x16.gif" />
+    <Content Include="AdminCP\images\date.gif" />
+    <Content Include="AdminCP\images\date_16x16.gif" />
+    <Content Include="AdminCP\images\date_delete.gif" />
+    <Content Include="AdminCP\images\date_new.gif" />
+    <Content Include="AdminCP\images\delete.png" />
+    <Content Include="AdminCP\images\deletebtn_16x16.gif" />
+    <Content Include="AdminCP\images\delete_16x16.gif" />
+    <Content Include="AdminCP\images\disconnect1_16x16.gif" />
+    <Content Include="AdminCP\images\disconnect2_16x16.gif" />
+    <Content Include="AdminCP\images\Down.png" />
+    <Content Include="AdminCP\images\down_16x16.gif" />
+    <Content Include="AdminCP\images\down_sort.gif" />
+    <Content Include="AdminCP\images\edit.png" />
+    <Content Include="AdminCP\images\editbtn_16x16.gif" />
+    <Content Include="AdminCP\images\edit_16x16.gif" />
+    <Content Include="AdminCP\images\edit_16x16s.gif" />
+    <Content Include="AdminCP\images\eject_16x16.gif" />
+    <Content Include="AdminCP\images\email_delete.png" />
+    <Content Include="AdminCP\images\email_edit.png" />
+    <Content Include="AdminCP\images\error_16x16.gif" />
+    <Content Include="AdminCP\images\fast_forward_16x16.gif" />
+    <Content Include="AdminCP\images\file_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\file_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\file_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\file_16x16.gif" />
+    <Content Include="AdminCP\images\file_acrobat.gif" />
+    <Content Include="AdminCP\images\file_font.gif" />
+    <Content Include="AdminCP\images\file_font_truetype.gif" />
+    <Content Include="AdminCP\images\file_manager_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\file_manager_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\file_manager_16x16.gif" />
+    <Content Include="AdminCP\images\filter_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\filter_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\filter_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\filter_16x16.gif" />
+    <Content Include="AdminCP\images\finances_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\finances_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\finances_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\finances_16x16.gif" />
+    <Content Include="AdminCP\images\first_16x16.gif" />
+    <Content Include="AdminCP\images\flag1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag1_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag1_16x16.gif" />
+    <Content Include="AdminCP\images\flag2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag2_16x16.gif" />
+    <Content Include="AdminCP\images\flag3_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag3_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag3_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag3_16x16.gif" />
+    <Content Include="AdminCP\images\flag4_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag4_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag4_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\flag4_16x16.gif" />
+    <Content Include="AdminCP\images\flag_blue.gif" />
+    <Content Include="AdminCP\images\flag_green.gif" />
+    <Content Include="AdminCP\images\flag_orange.gif" />
+    <Content Include="AdminCP\images\flag_red.gif" />
+    <Content Include="AdminCP\images\flag_white.gif" />
+    <Content Include="AdminCP\images\folder.gif" />
+    <Content Include="AdminCP\images\folder_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\folder_%28close%29_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\folder_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\folder_closed_16x16.gif" />
+    <Content Include="AdminCP\images\folder_delete.gif" />
+    <Content Include="AdminCP\images\folder_images.gif" />
+    <Content Include="AdminCP\images\folder_lock.gif" />
+    <Content Include="AdminCP\images\folder_new.gif" />
+    <Content Include="AdminCP\images\folder_open_16x16.gif" />
+    <Content Include="AdminCP\images\folder_page.gif" />
+    <Content Include="AdminCP\images\format1_16x16.gif" />
+    <Content Include="AdminCP\images\fromat2_16x16.gif" />
+    <Content Include="AdminCP\images\graph1_16x16.gif" />
+    <Content Include="AdminCP\images\graph2_16x16.gif" />
+    <Content Include="AdminCP\images\grid-bg.png" />
+    <Content Include="AdminCP\images\h2_trigger_a.gif" />
+    <Content Include="AdminCP\images\header.png" />
+    <Content Include="AdminCP\images\help_16x16.gif" />
+    <Content Include="AdminCP\images\home_16x16.gif" />
+    <Content Include="AdminCP\images\icondock\16x16\basket.png" />
+    <Content Include="AdminCP\images\icondock\16x16\bell.png" />
+    <Content Include="AdminCP\images\icondock\16x16\comment_add.png" />
+    <Content Include="AdminCP\images\icondock\16x16\date_add.png" />
+    <Content Include="AdminCP\images\icondock\16x16\newspaper_add.png" />
+    <Content Include="AdminCP\images\icondock\16x16\support.png" />
+    <Content Include="AdminCP\images\icondock\16x16\wishlist_add.png" />
+    <Content Include="AdminCP\images\icondock\accept.png" />
+    <Content Include="AdminCP\images\icondock\basket.png" />
+    <Content Include="AdminCP\images\icondock\bell.png" />
+    <Content Include="AdminCP\images\icondock\book_addresses.png" />
+    <Content Include="AdminCP\images\icondock\chart_bar.png" />
+    <Content Include="AdminCP\images\icondock\coins.png" />
+    <Content Include="AdminCP\images\icondock\comment.png" />
+    <Content Include="AdminCP\images\icondock\date.png" />
+    <Content Include="AdminCP\images\icondock\email.png" />
+    <Content Include="AdminCP\images\icondock\error.png" />
+    <Content Include="AdminCP\images\icondock\exclamation.png" />
+    <Content Include="AdminCP\images\icondock\information.png" />
+    <Content Include="AdminCP\images\icondock\lightbulb.png" />
+    <Content Include="AdminCP\images\icondock\user.png" />
+    <Content Include="AdminCP\images\icon_accept.gif" />
+    <Content Include="AdminCP\images\icon_airmail.gif" />
+    <Content Include="AdminCP\images\icon_alert.gif" />
+    <Content Include="AdminCP\images\icon_attachment.gif" />
+    <Content Include="AdminCP\images\icon_clock.gif" />
+    <Content Include="AdminCP\images\icon_component.gif" />
+    <Content Include="AdminCP\images\icon_download.gif" />
+    <Content Include="AdminCP\images\icon_email.gif" />
+    <Content Include="AdminCP\images\icon_extension.gif" />
+    <Content Include="AdminCP\images\icon_favourites.gif" />
+    <Content Include="AdminCP\images\icon_get_world.gif" />
+    <Content Include="AdminCP\images\icon_history.gif" />
+    <Content Include="AdminCP\images\icon_home.gif" />
+    <Content Include="AdminCP\images\icon_info.gif" />
+    <Content Include="AdminCP\images\icon_key.gif" />
+    <Content Include="AdminCP\images\icon_link.gif" />
+    <Content Include="AdminCP\images\icon_mail.gif" />
+    <Content Include="AdminCP\images\icon_monitor_mac.gif" />
+    <Content Include="AdminCP\images\icon_monitor_pc.gif" />
+    <Content Include="AdminCP\images\icon_network.gif" />
+    <Content Include="AdminCP\images\icon_package.gif" />
+    <Content Include="AdminCP\images\icon_package_get.gif" />
+    <Content Include="AdminCP\images\icon_package_open.gif" />
+    <Content Include="AdminCP\images\icon_padlock.gif" />
+    <Content Include="AdminCP\images\icon_security.gif" />
+    <Content Include="AdminCP\images\icon_settings.gif" />
+    <Content Include="AdminCP\images\icon_user.gif" />
+    <Content Include="AdminCP\images\icon_wand.gif" />
+    <Content Include="AdminCP\images\icon_world.gif" />
+    <Content Include="AdminCP\images\icon_world_dynamic.gif" />
+    <Content Include="AdminCP\images\image.gif" />
+    <Content Include="AdminCP\images\image_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\image_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\image_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\image_16x16.gif" />
+    <Content Include="AdminCP\images\image_new.gif" />
+    <Content Include="AdminCP\images\index_01.jpg" />
+    <Content Include="AdminCP\images\index_02.jpg" />
+    <Content Include="AdminCP\images\index_03.jpg" />
+    <Content Include="AdminCP\images\index_04.jpg" />
+    <Content Include="AdminCP\images\index_05.jpg" />
+    <Content Include="AdminCP\images\index_06.jpg" />
+    <Content Include="AdminCP\images\index_07.jpg" />
+    <Content Include="AdminCP\images\index_08.jpg" />
+    <Content Include="AdminCP\images\index_09.jpg" />
+    <Content Include="AdminCP\images\index_10.jpg" />
+    <Content Include="AdminCP\images\index_11.jpg" />
+    <Content Include="AdminCP\images\index_12.jpg" />
+    <Content Include="AdminCP\images\index_13.jpg" />
+    <Content Include="AdminCP\images\index_14.jpg" />
+    <Content Include="AdminCP\images\index_15.jpg" />
+    <Content Include="AdminCP\images\index_16.jpg" />
+    <Content Include="AdminCP\images\index_17.jpg" />
+    <Content Include="AdminCP\images\index_18.jpg" />
+    <Content Include="AdminCP\images\index_19.jpg" />
+    <Content Include="AdminCP\images\index_20.jpg" />
+    <Content Include="AdminCP\images\index_21.jpg" />
+    <Content Include="AdminCP\images\index_22.jpg" />
+    <Content Include="AdminCP\images\index_23.jpg" />
+    <Content Include="AdminCP\images\index_24.jpg" />
+    <Content Include="AdminCP\images\index_25.jpg" />
+    <Content Include="AdminCP\images\index_26.jpg" />
+    <Content Include="AdminCP\images\information_16x16.gif" />
+    <Content Include="AdminCP\images\interface_browser.gif" />
+    <Content Include="AdminCP\images\interface_dialog.gif" />
+    <Content Include="AdminCP\images\interface_installer.gif" />
+    <Content Include="AdminCP\images\italic_16x16.gif" />
+    <Content Include="AdminCP\images\jquery.wysiwyg.gif" />
+    <Content Include="AdminCP\images\label_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\label_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\label_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\label_16x16.gif" />
+    <Content Include="AdminCP\images\last_16x16.gif" />
+    <Content Include="AdminCP\images\law_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\law_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\law_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\law_16x16.gif" />
+    <Content Include="AdminCP\images\left_16x16.gif" />
+    <Content Include="AdminCP\images\level_down_16x16.gif" />
+    <Content Include="AdminCP\images\level_up_16x16.gif" />
+    <Content Include="AdminCP\images\link_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\link_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\link_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\link_16x16.gif" />
+    <Content Include="AdminCP\images\list_comments.gif" />
+    <Content Include="AdminCP\images\list_components.gif" />
+    <Content Include="AdminCP\images\list_errors.gif" />
+    <Content Include="AdminCP\images\list_extensions.gif" />
+    <Content Include="AdminCP\images\list_images.gif" />
+    <Content Include="AdminCP\images\list_keys.gif" />
+    <Content Include="AdminCP\images\list_links.gif" />
+    <Content Include="AdminCP\images\list_packages.gif" />
+    <Content Include="AdminCP\images\list_security.gif" />
+    <Content Include="AdminCP\images\list_settings.gif" />
+    <Content Include="AdminCP\images\list_users.gif" />
+    <Content Include="AdminCP\images\list_world.gif" />
+    <Content Include="AdminCP\images\lock_16x16.gif" />
+    <Content Include="AdminCP\images\loginbox.jpg" />
+    <Content Include="AdminCP\images\logo-ses.gif" />
+    <Content Include="AdminCP\images\logo.png" />
+    <Content Include="AdminCP\images\magnifier.png" />
+    <Content Include="AdminCP\images\mail1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\mail1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\mail1_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\mail1_16x16.gif" />
+    <Content Include="AdminCP\images\mail2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\mail2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\mail2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\mail2_16x16.gif" />
+    <Content Include="AdminCP\images\measurement1_16x16.gif" />
+    <Content Include="AdminCP\images\measurement2_16x16.gif" />
+    <Content Include="AdminCP\images\medal_bronze_1.png" />
+    <Content Include="AdminCP\images\medal_gold_3.png" />
+    <Content Include="AdminCP\images\medal_silver_1.png" />
+    <Content Include="AdminCP\images\minus.gif" />
+    <Content Include="AdminCP\images\move_16x16.gif" />
+    <Content Include="AdminCP\images\music_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\music_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\music_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\music_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\music_16x16.gif" />
+    <Content Include="AdminCP\images\navigation.css" />
+    <Content Include="AdminCP\images\note.gif" />
+    <Content Include="AdminCP\images\notepad_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\notepad_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\notepad_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\notepad_16x16.gif" />
+    <Content Include="AdminCP\images\note_delete.gif" />
+    <Content Include="AdminCP\images\note_new.gif" />
+    <Content Include="AdminCP\images\ok-alert.png" />
+    <Content Include="AdminCP\images\ok.ico" />
+    <Content Include="AdminCP\images\ok_16x16.gif" />
+    <Content Include="AdminCP\images\ordered_list_16x16.gif" />
+    <Content Include="AdminCP\images\page.gif" />
+    <Content Include="AdminCP\images\page_alert.gif" />
+    <Content Include="AdminCP\images\page_attachment.gif" />
+    <Content Include="AdminCP\images\page_bookmark.gif" />
+    <Content Include="AdminCP\images\page_boy.gif" />
+    <Content Include="AdminCP\images\page_code.gif" />
+    <Content Include="AdminCP\images\page_colors.gif" />
+    <Content Include="AdminCP\images\page_component.gif" />
+    <Content Include="AdminCP\images\page_cross.gif" />
+    <Content Include="AdminCP\images\page_delete.gif" />
+    <Content Include="AdminCP\images\page_deny.gif" />
+    <Content Include="AdminCP\images\page_down.gif" />
+    <Content Include="AdminCP\images\page_dynamic.gif" />
+    <Content Include="AdminCP\images\page_edit.gif" />
+    <Content Include="AdminCP\images\page_extension.gif" />
+    <Content Include="AdminCP\images\page_favourites.gif" />
+    <Content Include="AdminCP\images\page_find.gif" />
+    <Content Include="AdminCP\images\page_flash.gif" />
+    <Content Include="AdminCP\images\page_girl.gif" />
+    <Content Include="AdminCP\images\page_html.gif" />
+    <Content Include="AdminCP\images\page_java.gif" />
+    <Content Include="AdminCP\images\page_key.gif" />
+    <Content Include="AdminCP\images\page_left.gif" />
+    <Content Include="AdminCP\images\page_link.gif" />
+    <Content Include="AdminCP\images\page_lock.gif" />
+    <Content Include="AdminCP\images\page_new.gif" />
+    <Content Include="AdminCP\images\page_next.gif" />
+    <Content Include="AdminCP\images\page_package.gif" />
+    <Content Include="AdminCP\images\page_php.gif" />
+    <Content Include="AdminCP\images\page_prev.gif" />
+    <Content Include="AdminCP\images\page_refresh.gif" />
+    <Content Include="AdminCP\images\page_right.gif" />
+    <Content Include="AdminCP\images\page_script.gif" />
+    <Content Include="AdminCP\images\page_security.gif" />
+    <Content Include="AdminCP\images\page_settings.gif" />
+    <Content Include="AdminCP\images\page_sound.gif" />
+    <Content Include="AdminCP\images\page_tag_blue.gif" />
+    <Content Include="AdminCP\images\page_tag_red.gif" />
+    <Content Include="AdminCP\images\page_text.gif" />
+    <Content Include="AdminCP\images\page_text_delete.gif" />
+    <Content Include="AdminCP\images\page_tick.gif" />
+    <Content Include="AdminCP\images\page_tree.gif" />
+    <Content Include="AdminCP\images\page_up.gif" />
+    <Content Include="AdminCP\images\page_url.gif" />
+    <Content Include="AdminCP\images\page_user.gif" />
+    <Content Include="AdminCP\images\page_user_dark.gif" />
+    <Content Include="AdminCP\images\page_user_light.gif" />
+    <Content Include="AdminCP\images\page_video.gif" />
+    <Content Include="AdminCP\images\page_wizard.gif" />
+    <Content Include="AdminCP\images\paste_16x16.gif" />
+    <Content Include="AdminCP\images\pause.gif" />
+    <Content Include="AdminCP\images\pay_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\pay_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\pay_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\pay_16x16.gif" />
+    <Content Include="AdminCP\images\phenotype.css" />
+    <Content Include="AdminCP\images\phenotype_ani_logo.gif" />
+    <Content Include="AdminCP\images\phenotype_typo.gif" />
+    <Content Include="AdminCP\images\photo_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\photo_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\photo_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\photo_16x16.gif" />
+    <Content Include="AdminCP\images\play_16x16.gif" />
+    <Content Include="AdminCP\images\plus.gif" />
+    <Content Include="AdminCP\images\preview_16x16.gif" />
+    <Content Include="AdminCP\images\print_16x16.gif" />
+    <Content Include="AdminCP\images\pt_cover.gif" />
+    <Content Include="AdminCP\images\pt_cover.jpg" />
+    <Content Include="AdminCP\images\readme.txt" />
+    <Content Include="AdminCP\images\record_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\record_%28copy%29_16x16.gif" />
+    <Content Include="AdminCP\images\record_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\record_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\record_16x16.gif" />
+    <Content Include="AdminCP\images\redo1_16x16.gif" />
+    <Content Include="AdminCP\images\redo2_16x16.gif" />
+    <Content Include="AdminCP\images\refresh_16x16.gif" />
+    <Content Include="AdminCP\images\registration1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\registration1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\registration1_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\registration1_16x16.gif" />
+    <Content Include="AdminCP\images\registration2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\registration2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\registration2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\registration2_16x16.gif" />
+    <Content Include="AdminCP\images\relationships_16x16.gif" />
+    <Content Include="AdminCP\images\report1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\report1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\report1_16x16.gif" />
+    <Content Include="AdminCP\images\report2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\report2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\report2_16x16.gif" />
+    <Content Include="AdminCP\images\report3_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\report3_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\report3_16x16.gif" />
+    <Content Include="AdminCP\images\research_16x16.gif" />
+    <Content Include="AdminCP\images\restore_16x16.gif" />
+    <Content Include="AdminCP\images\reverse_16x16.gif" />
+    <Content Include="AdminCP\images\right_16x16.gif" />
+    <Content Include="AdminCP\images\save_16x16.gif" />
+    <Content Include="AdminCP\images\script_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\script_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\script_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\script_%28start%29_16x16.gif" />
+    <Content Include="AdminCP\images\script_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\script_16x16.gif" />
+    <Content Include="AdminCP\images\search_16x16.gif" />
+    <Content Include="AdminCP\images\search_again_16x16.gif" />
+    <Content Include="AdminCP\images\security_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\security_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\security_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\security_16x16.gif" />
+    <Content Include="AdminCP\images\select_all_16x16.gif" />
+    <Content Include="AdminCP\images\server1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\server1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\server1_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\server1_%28start%29_16x16.gif" />
+    <Content Include="AdminCP\images\server1_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\server1_16x16.gif" />
+    <Content Include="AdminCP\images\server2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\server2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\server2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\server2_%28start%29_16x16.gif" />
+    <Content Include="AdminCP\images\server2_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\server2_16x16.gif" />
+    <Content Include="AdminCP\images\servers_16x16.gif" />
+    <Content Include="AdminCP\images\seslogo.png" />
+    <Content Include="AdminCP\images\settings1_16x16.gif" />
+    <Content Include="AdminCP\images\settings2_16x16.gif" />
+    <Content Include="AdminCP\images\shield.png" />
+    <Content Include="AdminCP\images\shopping_cart_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\shopping_cart_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\shopping_cart_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\shopping_cart_16x16.gif" />
+    <Content Include="AdminCP\images\sitemap_16x16.gif" />
+    <Content Include="AdminCP\images\skip_backward_16x16.gif" />
+    <Content Include="AdminCP\images\skip_forward_16x16.gif" />
+    <Content Include="AdminCP\images\sort_by_date_16x16.gif" />
+    <Content Include="AdminCP\images\sort_by_name_16x16.gif" />
+    <Content Include="AdminCP\images\sort_by_quantity_16x16.gif" />
+    <Content Include="AdminCP\images\sound_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\sound_%28play%29_16x16.gif" />
+    <Content Include="AdminCP\images\sound_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\sound_16x16.gif" />
+    <Content Include="AdminCP\images\spacer.gif" />
+    <Content Include="AdminCP\images\status_offline.png" />
+    <Content Include="AdminCP\images\status_online.png" />
+    <Content Include="AdminCP\images\stop_16x16.gif" />
+    <Content Include="AdminCP\images\strike_16x16.gif" />
+    <Content Include="AdminCP\images\submenu-active.gif" />
+    <Content Include="AdminCP\images\submenu-sub.gif" />
+    <Content Include="AdminCP\images\support1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\support1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\support1_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\support1_16x16.gif" />
+    <Content Include="AdminCP\images\support2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\support2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\support2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\support2_16x16.gif" />
+    <Content Include="AdminCP\images\table.gif" />
+    <Content Include="AdminCP\images\tables.gif" />
+    <Content Include="AdminCP\images\table_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\table_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\table_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\table_16x16.gif" />
+    <Content Include="AdminCP\images\table_align_columns_16x16.gif" />
+    <Content Include="AdminCP\images\table_align_rows_16x16.gif" />
+    <Content Include="AdminCP\images\table_auto_format_16x16.gif" />
+    <Content Include="AdminCP\images\table_borders_16x16.gif" />
+    <Content Include="AdminCP\images\table_cell_alignment_16x16.gif" />
+    <Content Include="AdminCP\images\table_delete.gif" />
+    <Content Include="AdminCP\images\table_merge_cells_16x16.gif" />
+    <Content Include="AdminCP\images\table_split_cells_16x16.gif" />
+    <Content Include="AdminCP\images\text_align_center_16x16.gif" />
+    <Content Include="AdminCP\images\text_align_left_16x16.gif" />
+    <Content Include="AdminCP\images\text_align_right_16x16.gif" />
+    <Content Include="AdminCP\images\text_indent_16x16.gif" />
+    <Content Include="AdminCP\images\text_justify_16x16.gif" />
+    <Content Include="AdminCP\images\text_outdent_16x16.gif" />
+    <Content Include="AdminCP\images\thumb1.jpg" />
+    <Content Include="AdminCP\images\thumb1_big.jpg" />
+    <Content Include="AdminCP\images\thumb2.jpg" />
+    <Content Include="AdminCP\images\thumb2_big.jpg" />
+    <Content Include="AdminCP\images\thumb3.jpg" />
+    <Content Include="AdminCP\images\thumb3_big.jpg" />
+    <Content Include="AdminCP\images\thumb4.jpg" />
+    <Content Include="AdminCP\images\thumb4_big.jpg" />
+    <Content Include="AdminCP\images\thumb5.jpg" />
+    <Content Include="AdminCP\images\thumb5_big.jpg" />
+    <Content Include="AdminCP\images\thumb6.jpg" />
+    <Content Include="AdminCP\images\thumb6_big.jpg" />
+    <Content Include="AdminCP\images\thumb7.jpg" />
+    <Content Include="AdminCP\images\thumb7_big.jpg" />
+    <Content Include="AdminCP\images\thumb8.jpg" />
+    <Content Include="AdminCP\images\thumb8_big.jpg" />
+    <Content Include="AdminCP\images\tile_windows_horizontally_16x16.gif" />
+    <Content Include="AdminCP\images\tile_windows_vertically_16x16.gif" />
+    <Content Include="AdminCP\images\time_16x16.gif" />
+    <Content Include="AdminCP\images\tipsy.gif" />
+    <Content Include="AdminCP\images\trash_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\trash_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\trash_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\trash_16x16.gif" />
+    <Content Include="AdminCP\images\turn-off_16x16.gif" />
+    <Content Include="AdminCP\images\turn-on_16x16.gif" />
+    <Content Include="AdminCP\images\underline_16x16.gif" />
+    <Content Include="AdminCP\images\undo1_16x16.gif" />
+    <Content Include="AdminCP\images\undo2_16x16.gif" />
+    <Content Include="AdminCP\images\unlock_16x16.gif" />
+    <Content Include="AdminCP\images\unordered_list_16x16.gif" />
+    <Content Include="AdminCP\images\Up.png" />
+    <Content Include="AdminCP\images\up_16x16.gif" />
+    <Content Include="AdminCP\images\up_sort.gif" />
+    <Content Include="AdminCP\images\user1_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user1_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user1_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user1_16x16.gif" />
+    <Content Include="AdminCP\images\user2_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user2_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user2_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user2_16x16.gif" />
+    <Content Include="AdminCP\images\user3_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user3_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user3_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user3_16x16.gif" />
+    <Content Include="AdminCP\images\user4_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user4_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user4_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user4_16x16.gif" />
+    <Content Include="AdminCP\images\user5_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user5_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user5_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user5_16x16.gif" />
+    <Content Include="AdminCP\images\user6_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user6_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user6_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user6_16x16.gif" />
+    <Content Include="AdminCP\images\user7_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user7_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user7_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user7_16x16.gif" />
+    <Content Include="AdminCP\images\user8_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user8_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user8_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user8_16x16.gif" />
+    <Content Include="AdminCP\images\user9_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\user9_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\user9_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\user9_16x16.gif" />
+    <Content Include="AdminCP\images\video_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\video_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\video_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\video_%28play%29_16x16.gif" />
+    <Content Include="AdminCP\images\video_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\video_16x16.gif" />
+    <Content Include="AdminCP\images\view-detail.png" />
+    <Content Include="AdminCP\images\view_16x16.gif" />
+    <Content Include="AdminCP\images\wait_16x16.gif" />
+    <Content Include="AdminCP\images\web-server_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\web-server_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\web-server_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\web-server_%28start%29_16x16.gif" />
+    <Content Include="AdminCP\images\web-server_%28stop%29_16x16.gif" />
+    <Content Include="AdminCP\images\web-server_16x16.gif" />
+    <Content Include="AdminCP\images\web_%28add%29_16x16.gif" />
+    <Content Include="AdminCP\images\web_%28delete%29_16x16.gif" />
+    <Content Include="AdminCP\images\web_%28edit%29_16x16.gif" />
+    <Content Include="AdminCP\images\web_16x16.gif" />
+    <Content Include="AdminCP\images\white_border.gif" />
+    <Content Include="AdminCP\images\win_sh_bo_le.gif" />
+    <Content Include="AdminCP\images\win_sh_bo_mi.gif" />
+    <Content Include="AdminCP\images\win_sh_bo_ri.gif" />
+    <Content Include="AdminCP\images\win_sh_ri_mi.gif" />
+    <Content Include="AdminCP\images\win_sh_ri_to.gif" />
+    <Content Include="AdminCP\images\wizard_16x16.gif" />
+    <Content Include="AdminCP\images\zoom_16x16.gif" />
+    <Content Include="AdminCP\images\zoom_in_16x16.gif" />
+    <Content Include="AdminCP\images\zoom_out_16x16.gif" />
+    <Content Include="AdminCP\js\facebox.js" />
+    <Content Include="AdminCP\js\graphs.js" />
+    <Content Include="AdminCP\js\jquery.flot.pack.js" />
+    <Content Include="AdminCP\js\jquery.tipsy.js" />
+    <Content Include="AdminCP\js\jquery.validate.js" />
+    <Content Include="AdminCP\js\scripts.js" />
+    <Content Include="AdminCP\ListCategory.aspx" />
+    <Content Include="AdminCP\Login.aspx" />
+    <Content Include="AdminCP\MenuUC\ucMnuCategory.ascx" />
+    <Content Include="AdminCP\MenuUC\ucMnuConfig.ascx" />
+    <Content Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx" />
+    <Content Include="assets\loader.gif" />
+    <Content Include="assets\next.png" />
+    <Content Include="assets\pause.png" />
+    <Content Include="assets\play.png" />
+    <Content Include="assets\prev.png" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\CKEditor.NET.dll" />
+    <Content Include="bin\CMS.BL.dll" />
+    <Content Include="bin\CMS.BL.pdb" />
+    <Content Include="bin\CMS.DAL.dll" />
+    <Content Include="bin\CMS.DAL.pdb" />
+    <Content Include="bin\CollectionPager.dll" />
+    <Content Include="bin\DevExpress.Data.v9.2.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxEditors.v9.2.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxEditors.v9.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxGridView.v9.2.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxTreeList.v9.2.dll" />
+    <Content Include="bin\DevExpress.Web.v9.2.dll" />
+    <Content Include="bin\MSCaptcha.dll" />
+    <Content Include="bin\SES.CMS.dll" />
+    <Content Include="bin\SES.CMS.DO.dll" />
+    <Content Include="bin\SES.CMS.DO.pdb" />
+    <Content Include="bin\SES.CMS.pdb" />
+    <Content Include="bin\UrlRewritingNet.UrlRewriter.dll" />
+    <Content Include="ckeditor\adapters\jquery.js" />
+    <Content Include="ckeditor\ckeditor.js" />
+    <Content Include="ckeditor\ckeditor_basic.js" />
+    <Content Include="ckeditor\config.js" />
+    <Content Include="ckeditor\contents.css" />
+    <Content Include="ckeditor\images\spacer.gif" />
+    <Content Include="ckeditor\lang\af.js" />
+    <Content Include="ckeditor\lang\ar.js" />
+    <Content Include="ckeditor\lang\bg.js" />
+    <Content Include="ckeditor\lang\bn.js" />
+    <Content Include="ckeditor\lang\bs.js" />
+    <Content Include="ckeditor\lang\ca.js" />
+    <Content Include="ckeditor\lang\cs.js" />
+    <Content Include="ckeditor\lang\cy.js" />
+    <Content Include="ckeditor\lang\da.js" />
+    <Content Include="ckeditor\lang\de.js" />
+    <Content Include="ckeditor\lang\el.js" />
+    <Content Include="ckeditor\lang\en-au.js" />
+    <Content Include="ckeditor\lang\en-ca.js" />
+    <Content Include="ckeditor\lang\en-gb.js" />
+    <Content Include="ckeditor\lang\en.js" />
+    <Content Include="ckeditor\lang\eo.js" />
+    <Content Include="ckeditor\lang\es.js" />
+    <Content Include="ckeditor\lang\et.js" />
+    <Content Include="ckeditor\lang\eu.js" />
+    <Content Include="ckeditor\lang\fa.js" />
+    <Content Include="ckeditor\lang\fi.js" />
+    <Content Include="ckeditor\lang\fo.js" />
+    <Content Include="ckeditor\lang\fr-ca.js" />
+    <Content Include="ckeditor\lang\fr.js" />
+    <Content Include="ckeditor\lang\gl.js" />
+    <Content Include="ckeditor\lang\gu.js" />
+    <Content Include="ckeditor\lang\he.js" />
+    <Content Include="ckeditor\lang\hi.js" />
+    <Content Include="ckeditor\lang\hr.js" />
+    <Content Include="ckeditor\lang\hu.js" />
+    <Content Include="ckeditor\lang\is.js" />
+    <Content Include="ckeditor\lang\it.js" />
+    <Content Include="ckeditor\lang\ja.js" />
+    <Content Include="ckeditor\lang\ka.js" />
+    <Content Include="ckeditor\lang\km.js" />
+    <Content Include="ckeditor\lang\ko.js" />
+    <Content Include="ckeditor\lang\lt.js" />
+    <Content Include="ckeditor\lang\lv.js" />
+    <Content Include="ckeditor\lang\mn.js" />
+    <Content Include="ckeditor\lang\ms.js" />
+    <Content Include="ckeditor\lang\nb.js" />
+    <Content Include="ckeditor\lang\nl.js" />
+    <Content Include="ckeditor\lang\no.js" />
+    <Content Include="ckeditor\lang\pl.js" />
+    <Content Include="ckeditor\lang\pt-br.js" />
+    <Content Include="ckeditor\lang\pt.js" />
+    <Content Include="ckeditor\lang\ro.js" />
+    <Content Include="ckeditor\lang\ru.js" />
+    <Content Include="ckeditor\lang\sk.js" />
+    <Content Include="ckeditor\lang\sl.js" />
+    <Content Include="ckeditor\lang\sr-latn.js" />
+    <Content Include="ckeditor\lang\sr.js" />
+    <Content Include="ckeditor\lang\sv.js" />
+    <Content Include="ckeditor\lang\th.js" />
+    <Content Include="ckeditor\lang\tr.js" />
+    <Content Include="ckeditor\lang\uk.js" />
+    <Content Include="ckeditor\lang\vi.js" />
+    <Content Include="ckeditor\lang\zh-cn.js" />
+    <Content Include="ckeditor\lang\zh.js" />
+    <Content Include="ckeditor\lang\_languages.js" />
+    <Content Include="ckeditor\lang\_translationstatus.txt" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\adobeair\plugin.js" />
+    <Content Include="ckeditor\plugins\ajax\plugin.js" />
+    <Content Include="ckeditor\plugins\autogrow\plugin.js" />
+    <Content Include="ckeditor\plugins\bbcode\plugin.js" />
+    <Content Include="ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="ckeditor\plugins\devtools\lang\en.js" />
+    <Content Include="ckeditor\plugins\devtools\plugin.js" />
+    <Content Include="ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="ckeditor\plugins\docprops\dialogs\docprops.js" />
+    <Content Include="ckeditor\plugins\docprops\plugin.js" />
+    <Content Include="ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="ckeditor\plugins\placeholder\dialogs\placeholder.js" />
+    <Content Include="ckeditor\plugins\placeholder\lang\en.js" />
+    <Content Include="ckeditor\plugins\placeholder\lang\he.js" />
+    <Content Include="ckeditor\plugins\placeholder\placeholder.gif" />
+    <Content Include="ckeditor\plugins\placeholder\plugin.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="ckeditor\plugins\specialchar\lang\en.js" />
+    <Content Include="ckeditor\plugins\stylesheetparser\plugin.js" />
+    <Content Include="ckeditor\plugins\styles\styles\default.js" />
+    <Content Include="ckeditor\plugins\tableresize\plugin.js" />
+    <Content Include="ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="ckeditor\plugins\uicolor\lang\he.js" />
+    <Content Include="ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="ckeditor\plugins\xml\plugin.js" />
+    <Content Include="ckeditor\skins\kama\dialog.css" />
+    <Content Include="ckeditor\skins\kama\editor.css" />
+    <Content Include="ckeditor\skins\kama\icons.png" />
+    <Content Include="ckeditor\skins\kama\icons_rtl.png" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="ckeditor\skins\kama\skin.js" />
+    <Content Include="ckeditor\skins\kama\templates.css" />
+    <Content Include="ckeditor\skins\office2003\dialog.css" />
+    <Content Include="ckeditor\skins\office2003\editor.css" />
+    <Content Include="ckeditor\skins\office2003\icons.png" />
+    <Content Include="ckeditor\skins\office2003\icons_rtl.png" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\office2003\images\mini.gif" />
+    <Content Include="ckeditor\skins\office2003\images\noimage.png" />
+    <Content Include="ckeditor\skins\office2003\images\sprites.png" />
+    <Content Include="ckeditor\skins\office2003\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\office2003\skin.js" />
+    <Content Include="ckeditor\skins\office2003\templates.css" />
+    <Content Include="ckeditor\skins\v2\dialog.css" />
+    <Content Include="ckeditor\skins\v2\editor.css" />
+    <Content Include="ckeditor\skins\v2\icons.png" />
+    <Content Include="ckeditor\skins\v2\icons_rtl.png" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\v2\images\mini.gif" />
+    <Content Include="ckeditor\skins\v2\images\noimage.png" />
+    <Content Include="ckeditor\skins\v2\images\sprites.png" />
+    <Content Include="ckeditor\skins\v2\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\v2\images\toolbar_start.gif" />
+    <Content Include="ckeditor\skins\v2\skin.js" />
+    <Content Include="ckeditor\skins\v2\templates.css" />
+    <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="fancybox\blank.gif" />
+    <Content Include="fancybox\fancybox-x.png" />
+    <Content Include="fancybox\fancybox-y.png" />
+    <Content Include="fancybox\fancybox.png" />
+    <Content Include="fancybox\fancybox_buttons.png" />
+    <Content Include="fancybox\fancybox_loading.gif" />
+    <Content Include="fancybox\fancybox_overlay.png" />
+    <Content Include="fancybox\fancybox_sprite.png" />
+    <Content Include="fancybox\fancy_close.png" />
+    <Content Include="fancybox\fancy_loading.png" />
+    <Content Include="fancybox\fancy_nav_left.png" />
+    <Content Include="fancybox\fancy_nav_right.png" />
+    <Content Include="fancybox\fancy_shadow_e.png" />
+    <Content Include="fancybox\fancy_shadow_n.png" />
+    <Content Include="fancybox\fancy_shadow_ne.png" />
+    <Content Include="fancybox\fancy_shadow_nw.png" />
+    <Content Include="fancybox\fancy_shadow_s.png" />
+    <Content Include="fancybox\fancy_shadow_se.png" />
+    <Content Include="fancybox\fancy_shadow_sw.png" />
+    <Content Include="fancybox\fancy_shadow_w.png" />
+    <Content Include="fancybox\fancy_title_left.png" />
+    <Content Include="fancybox\fancy_title_main.png" />
+    <Content Include="fancybox\fancy_title_over.png" />
+    <Content Include="fancybox\fancy_title_right.png" />
+    <Content Include="fancybox\jquery.easing-1.3.pack.js" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="js\jquery-1.4.4.min.js" />
+    <Content Include="js\jquery-ui-1.8.2.custom.min.js" />
+    <Content Include="js\jquery.reveal.js" />
+    <Content Include="js\jquery.wt-rotator.min.js" />
+    <Content Include="js\jquery1.4.2.js" />
+    <Content Include="js\login.js" />
+    <Content Include="js\popup.js" />
+    <Content Include="js\preview.js" />
+    <Content Include="obj\Debug\SES.CMS.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SES.CMS.dll" />
+    <Content Include="obj\Debug\SES.CMS.pdb" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminCP\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\Functions.cs" />
+    <Compile Include="AdminCP\ListCategory.aspx.cs">
+      <DependentUpon>ListCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\ListCategory.aspx.designer.cs">
+      <DependentUpon>ListCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuCategory.ascx.cs">
+      <DependentUpon>ucMnuCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuCategory.ascx.designer.cs">
+      <DependentUpon>ucMnuCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuConfig.ascx.cs">
+      <DependentUpon>ucMnuConfig.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuConfig.ascx.designer.cs">
+      <DependentUpon>ucMnuConfig.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx.cs">
+      <DependentUpon>ucMnuQlNguoiDung.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx.designer.cs">
+      <DependentUpon>ucMnuQlNguoiDung.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClass\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseClass\LocalizationExpressionBuilder.cs" />
+    <Compile Include="BaseClass\NumberToStringVN.cs" />
+    <Compile Include="BaseClass\RandomPassword.cs" />
+    <Compile Include="BaseClass\Sendmail.cs" />
+    <Compile Include="BaseClass\ShoppingCart.cs" />
+    <Compile Include="BaseClass\Ultility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.BL\SES.CMS.BL.csproj">
+      <Project>{70740F13-317A-453E-A1DB-97B116FF0204}</Project>
+      <Name>SES.CMS.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.DAL\SES.CMS.DAL.csproj">
+      <Project>{DC4F2885-BF1D-4715-B227-4A95813CE7EA}</Project>
+      <Name>SES.CMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SES.CMS.DO\SES.CMS.DO.csproj">
+      <Project>{F6901282-99E9-4373-857A-022D9D991394}</Project>
+      <Name>SES.CMS.DO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AdminCP\images\icondock\Thumbs.db" />
+    <None Include="AdminCP\images\Thumbs.db" />
+    <None Include="bin\UrlRewritingNet.UrlRewriter.dll.refresh" />
+    <None Include="ckeditor\.htaccess" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdminCP\css\.svn\prop-base\" />
+    <Folder Include="AdminCP\css\.svn\props\" />
+    <Folder Include="AdminCP\css\.svn\text-base\" />
+    <Folder Include="AdminCP\css\.svn\tmp\prop-base\" />
+    <Folder Include="AdminCP\css\.svn\tmp\props\" />
+    <Folder Include="AdminCP\css\.svn\tmp\text-base\" />
+    <Folder Include="AdminCP\fancybox\.svn\prop-base\" />
+    <Folder Include="AdminCP\fancybox\.svn\props\" />
+    <Folder Include="AdminCP\fancybox\.svn\text-base\" />
+    <Folder Include="AdminCP\fancybox\.svn\tmp\prop-base\" />
+    <Folder Include="AdminCP\fancybox\.svn\tmp\props\" />
+    <Folder Include="AdminCP\fancybox\.svn\tmp\text-base\" />
+    <Folder Include="AdminCP\images\.svn\prop-base\" />
+    <Folder Include="AdminCP\images\.svn\props\" />
+    <Folder Include="AdminCP\images\.svn\text-base\" />
+    <Folder Include="AdminCP\images\.svn\tmp\prop-base\" />
+    <Folder Include="AdminCP\images\.svn\tmp\props\" />
+    <Folder Include="AdminCP\images\.svn\tmp\text-base\" />
+    <Folder Include="AdminCP\images\icondock\.svn\prop-base\" />
+    <Folder Include="AdminCP\images\icondock\.svn\props\" />
+    <Folder Include="AdminCP\images\icondock\.svn\text-base\" />
+    <Folder Include="AdminCP\images\icondock\.svn\tmp\prop-base\" />
+    <Folder Include="AdminCP\images\icondock\.svn\tmp\props\" />
+    <Folder Include="AdminCP\images\icondock\.svn\tmp\text-base\" />
+    <Folder Include="AdminCP\images\icondock\16x16\.svn\prop-base\" />
+    <Folder Include="AdminCP\images\icondock\16x16\.svn\props\" />
+    <Folder Include="AdminCP\images\icondock\16x16\.svn\text-base\" />
+    <Folder Include="AdminCP\images\icondock\16x16\.svn\tmp\prop-base\" />
+    <Folder Include="AdminCP\images\icondock\16x16\.svn\tmp\props\" />
+    <Folder Include="AdminCP\images\icondock\16x16\.svn\tmp\text-base\" />
+    <Folder Include="AdminCP\js\.svn\prop-base\" />
+    <Folder Include="AdminCP\js\.svn\props\" />
+    <Folder Include="AdminCP\js\.svn\text-base\" />
+    <Folder Include="AdminCP\js\.svn\tmp\prop-base\" />
+    <Folder Include="AdminCP\js\.svn\tmp\props\" />
+    <Folder Include="AdminCP\js\.svn\tmp\text-base\" />
+    <Folder Include="AdminCP\PageUC\" />
+    <Folder Include="css\" />
+    <Folder Include="images\" />
+    <Folder Include="Media\" />
+    <Folder Include="Module\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50474</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

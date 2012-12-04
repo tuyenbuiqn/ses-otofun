@@ -1,0 +1,63 @@
+.padding10 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.padding30 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 30px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.formarea {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.windowTabTypeOnly {
+	BORDER-RIGHT: #ffffff 3px solid; BORDER-TOP: #ffffff 3px solid; PADDING-LEFT: 10px; BORDER-LEFT: #ffffff 3px solid; BORDER-BOTTOM: #ffffff 3px solid; BACKGROUND-COLOR: #ffffff
+}
+.windowBlank {
+	BACKGROUND-COLOR: #ffffff
+}
+.tableHead {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #d1d6db
+}
+.tableBody {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.tableHline {
+	BACKGROUND: url(img/white_border.gif) repeat-x
+}
+.tableCellMedia {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #e9ecee
+}
+.tableCellImage {
+	BORDER-RIGHT: #a5aeb9 1px solid; BORDER-TOP: #a5aeb9 1px solid; BORDER-LEFT: #a5aeb9 1px solid; BORDER-BOTTOM: #a5aeb9 1px solid; BACKGROUND-COLOR: #d1d6db
+}
+.tableBausteineBackground {
+	BORDER-RIGHT: #e9ecee 1px solid; PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 4px; PADDING-TOP: 3px; BORDER-BOTTOM: #e9ecee 1px solid; BACKGROUND-COLOR: #d1d6db
+}
+A.bausteineLink:link {
+	PADDING-RIGHT: 3px; DISPLAY: block; PADDING-LEFT: 3px; PADDING-BOTTOM: 4px; COLOR: #000000; PADDING-TOP: 3px; BORDER-BOTTOM: #e9ecee 1px solid; BACKGROUND-COLOR: #d1d6db; TEXT-DECORATION: none
+}
+A.bausteineLink:visited {
+	PADDING-RIGHT: 3px; DISPLAY: block; PADDING-LEFT: 3px; PADDING-BOTTOM: 4px; COLOR: #000000; PADDING-TOP: 3px; BORDER-BOTTOM: #e9ecee 1px solid; BACKGROUND-COLOR: #d1d6db; TEXT-DECORATION: none
+}
+A.bausteineLink:hover {
+	COLOR: #ffffff; BACKGROUND-COLOR: #4e535a
+}
+.tableKalenderTage {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 5px; COLOR: #ffffff; PADDING-TOP: 5px; BACKGROUND-COLOR: #686f78; TEXT-ALIGN: center
+}
+.tableKalenderWerktag {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #d1d6db; TEXT-ALIGN: center
+}
+.tableKalenderWochenende {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #a5aeb9; TEXT-ALIGN: center
+}
+.tableKalenderLeer {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #e9ecee
+}
+.tableKalenderWhite {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #ffffff
+}
+A.tableKalenderAktiv {
+	PADDING-RIGHT: 5px; DISPLAY: block; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; COLOR: #ffffff; PADDING-TOP: 5px; BACKGROUND-COLOR: #0056c2; TEXT-ALIGN: center
+}
+A.tableKalenderAktiv:hover {
+	PADDING-RIGHT: 5px; DISPLAY: block; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; COLOR: #ffffff; PADDING-TOP: 5px; BACKGROUND-COLOR: #0056c2; TEXT-ALIGN: center
+}
