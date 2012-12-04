@@ -1,0 +1,7 @@
+D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\bin\Debug\CMS.DAL.dll
+D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\bin\Debug\CMS.DAL.pdb
+D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\obj\Debug\CMS.DAL.dll
+D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\obj\Debug\CMS.DAL.pdb
+D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\bin\Debug\SES.CMS.DO.dll
+D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\bin\Debug\SES.CMS.DO.pdb
