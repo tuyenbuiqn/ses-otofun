@@ -98,7 +98,7 @@ WRAPPER AREA
 }
 .home-button
 {
-	margin: 4px 0px 0px 5px;
+	margin: 2px 0px 0px 5px;
 	float: left;
 }
 .menu-line
@@ -284,7 +284,6 @@ WRAPPER AREA
 {
 	width: 455px;
 	height: 263px;
-	background: url(../images/bike.jpg);
 	border: solid 2px #c98131;
 	float: left;
 	margin: 6px;
@@ -1095,7 +1094,7 @@ WRAPPER AREA
 }
 .fon6
 {
-	font: 700 14px /20px "Times New Roman" , Times, serif;
+	font: 700 14px /20px "Arial" , Times, serif;
 	color: #9C6034;
 }
 .fon7
@@ -1107,7 +1106,7 @@ WRAPPER AREA
 {
 	color: #B23803;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 12px;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -1177,7 +1176,7 @@ p.pBreadrumb
 }
 .article-description
 {
-	font: 700 16px /18px "Times New Roman";
+	font: 700 16px /18px "Arial";
 color: #5F5F5F;
 margin-top: 10px !important;
 overflow:hidden;
@@ -1189,3 +1188,59 @@ width:100%;
 	margin-top:10px;
 	text-align:center;
 	}	
+.newarticle-box 	
+{
+    width:470px;
+    margin-top:20px;
+    float: left;
+background-color: #DFC698;
+   
+}
+.newarticle-box h2
+{
+height: 18px;
+color: #942201;
+
+  padding: 5px 0px 3px 5px;
+font-family: Arial;
+font-weight: bold;
+font-size: 18px;
+
+}
+.ul-new-article li
+{
+    margin-top: 5px;
+background: url(../images/liststyle.jpg) no-repeat;
+padding-left: 13px;
+background-position: 4px;
+    
+}
+.ul-new-article
+{
+    padding:0 0 5px 0;
+    
+}
+.ul-new-article li a
+{
+    font-family: arial;
+font-size: 11px;
+color: black;
+display: block;
+    
+}
+.line-article
+{
+	width: 463px;
+	height: 2px;
+background: #942201;
+border: solid 1px #C06C14;
+border-left: none;
+border-right: none;
+	margin: 0 auto;
+}
+.article-desciption
+{
+    font-size:15px;
+    margin:10px 0 10px 0;
+    
+}
