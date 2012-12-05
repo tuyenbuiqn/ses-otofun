@@ -1,0 +1,4 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucArticleAdv.ascx.cs" Inherits="SES.CMS.Module.ucArticleAdv" %>
+<div class="article-adv-under">
+<embed src="http://admicro2.vcmedia.vn/images/03dau-goi-thaiduong_420x90.swf" height="90" alt="" align="middle" width="420" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" flashvars="alink1=http%3A%2F%2Flogging.admicro.vn%2F_adc.html%3Fadm_domain%3Dhttp%253A%2F%2Fdantri.com.vn%2Fthe-gioi%2Ftim-thay-cac-thi-the-dau-tien-trong-vu-sap-ham-o-nhat-ban-669367.htm%26adm_campaign%3D1026841%26adm_aditem%3D167277%26adm_zoneid%3D230%26adm_channelid%3D-1%26adm_rehttp%3Dhttp%253A%2F%2Fwww.thaiduong.com.vn%2Fdau-goi%2F%26adm_random%3D0.11824097414501011&amp;atar1=_blank" allowscriptaccess="always" wmode="transparent" quality="high">
+</div>

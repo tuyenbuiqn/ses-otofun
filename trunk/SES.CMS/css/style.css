@@ -9,11 +9,11 @@ a
 	font-family: Arial;
 	color: #9C6034;
 }
-h1,h2,h3,h4,h5
+h1, h2, h3, h4, h5
 {
-	margin:0;
-	padding:0;
-	}
+	margin: 0;
+	padding: 0;
+}
 li
 {
 	list-style: none;
@@ -1058,8 +1058,9 @@ WRAPPER AREA
 .wid470
 {
 	width: 465px;
-	padding-left:5px;
+	padding-left: 5px;
 	min-width: 470px;
+	min-height: 500px;
 }
 .category-wrap
 {
@@ -1067,7 +1068,7 @@ WRAPPER AREA
 	width: 100%;
 	margin-top: 15px;
 	border-bottom: 1px solid #B23803;
-	padding-bottom:5px;
+	padding-bottom: 5px;
 	overflow: hidden;
 }
 .clearfix
@@ -1079,7 +1080,7 @@ WRAPPER AREA
 {
 	border: #ccc 1px solid;
 	width: 130px;
-	height:106px;
+	height: 106px;
 	padding: 2px;
 	float: left;
 	margin-right: 5px;
@@ -1094,8 +1095,8 @@ WRAPPER AREA
 }
 .fon6
 {
-font: 700 14px /20px "Times New Roman" , Times, serif;
-color: #9C6034;
+	font: 700 14px /20px "Times New Roman" , Times, serif;
+	color: #9C6034;
 }
 .fon7
 {
@@ -1110,29 +1111,81 @@ color: #9C6034;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
-	float:right;
-	}
+	float: right;
+}
 .active
 {
-    padding:3px 5px 3px 5px ;
-    background:#CC7F2E;
-    border-top-left-radius:4px;
-    border-top-right-radius:4px;
-    height:23px;
-    display:block;
-    color:#f1f1f1;
-}	
+	padding: 3px 5px 3px 5px;
+	background: #CC7F2E;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	height: 23px;
+	display: block;
+	color: #f1f1f1;
+}
 .leftAdv-box
 {
 	width: 300px;
-	float:left;
-	margin:20px 5px 20px 5px;
-	min-width:310px;
-	}
-.rightAdv-box	
+	float: left;
+	margin: 20px 5px 20px 5px;
+	min-width: 310px;
+}
+.rightAdv-box
 {
 	margin: 20px 5px 20px 0;
 	width: 100px;
-	float:left;
-	min-width:200px;
+	float: left;
+	min-width: 200px;
+}
+.breadcrumb-box
+{
+	width: 470px;
+	height: 18px;
+	margin-top: 20px;
+}
+.breadcrumb-article
+{
+	font: bold 11px / 15px Arial;
+	color: #06468D;
+	display: block;
+	float: left;
+	width: 250px;
+}
+.createdate-article
+{
+	font: 500 11px /18px Arial;
+	color: #999;
+	float: right;
+	margin-right: 10px;
+}
+p.pBreadrumb
+{
+	color: #004175;
+	font-family: tahoma, Helvetica, Geneva, Swiss, SunSans-Regular;
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 2px 5px 2px 2px;
+	text-decoration: underline;
+	margin: 0;
+	border-top: 1px solid #5C4928;
+}
+.article-title
+{
+	font: 700 20px /23px "Arial";
+	color: #004175;
+	margin-top: 10px;
+}
+.article-description
+{
+	font: 700 16px /18px "Times New Roman";
+color: #5F5F5F;
+margin-top: 10px !important;
+overflow:hidden;
+width:100%;
 	}
+.article-adv-under
+{
+	width:100%;
+	margin-top:10px;
+	text-align:center;
+	}	

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SES.CMS.BL;
-using SES.CMS.DAL;
+using SES.CMS.DO;
 using System.Data;
 namespace SES.CMS
 {
@@ -17,9 +17,30 @@ namespace SES.CMS
             {
                 int categoryID = int.Parse(Request.QueryString["CategoryID"]);
                 rptCategoryDataSoucre(categoryID);
+                rptBuildChildMenu(categoryID);
             }
         }
+        protected void rptBuildChildMenu(int categoryID)
+        {
+            MasterPage master = this.Master as MasterPage;
+            Control ucCateMenu = master.FindControl("ucCateMenu2") as Control;
+            Repeater rptCateMenu = ucCateMenu.FindControl("rptChildMenu") as Repeater;
 
+            cmsCategoryDO objCate = new cmsCategoryDO();
+            objCate.CategoryID = categoryID;
+            objCate = new cmsCategoryBL().Select(objCate);
+
+            if (objCate.ParentID == 0)
+            {
+                rptCateMenu.DataSource = new cmsCategoryBL().SelectByParent(categoryID);
+                rptCateMenu.DataBind();
+            }
+            else if (objCate.ParentID > 0)
+            {
+                rptCateMenu.DataSource = new cmsCategoryBL().SelectByParent(objCate.ParentID);
+                rptCateMenu.DataBind();
+            }
+        }
         protected void rptCategoryDataSoucre(int categoryID)
         {
             CollectionPager1.MaxPages = 10000;

@@ -8,7 +8,7 @@
             <asp:Repeater runat="server" ID="rptMainMenu" OnItemDataBound="rptMainMenu_ItemDataBound">
                 <ItemTemplate>
                     <li>
-                    <a href='/Cat/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
+                    <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a></li>
                 </ItemTemplate>
@@ -25,12 +25,3 @@
     <div class="menu-line">
     </div>
 </div>
-<ul class="mid-link">
-    <asp:Repeater runat="server" ID="rptChildMenu">
-        <ItemTemplate>
-           <li><a href='/Cat/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
-                        title='<%#Eval("Title") %>'>
-                        <%#Eval("Title") %></a></li>
-        </ItemTemplate>
-    </asp:Repeater>
-</ul>
