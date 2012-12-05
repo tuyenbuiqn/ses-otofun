@@ -8,7 +8,6 @@ a
 	text-decoration: none;
 	font-family: Arial;
 	color: #9C6034;
-	
 }
 
 li
@@ -21,7 +20,10 @@ p
 	color: #9C6034;
 	font-size: 12px;
 }
-img{border:none;}
+img
+{
+	border: none;
+}
 /*
 ==============================================
 WRAPPER AREA
@@ -68,14 +70,13 @@ WRAPPER AREA
 	height: 129px;
 	border: solid 1px #ecd9b7;
 	border-top: none;
-	
 	float: left;
 }
 .header-img
 {
-	width:998px;
-	height:129px;
-	}
+	width: 998px;
+	height: 129px;
+}
 .menu
 {
 	width: 1000px;
@@ -146,8 +147,8 @@ WRAPPER AREA
 	margin: 6px;
 	width: 150px;
 	height: 20px;
-	outline:none;
-	color:#f1f1f1;
+	outline: none;
+	color: #f1f1f1;
 }
 .search-button
 {
@@ -183,16 +184,15 @@ WRAPPER AREA
 	border-width: 1px;
 	border-radius: 5px;
 	border-color: #ecd9b7;
-		-webkit-transition: all 0.5s ease-out;
- -moz-transition: all 0.5s ease;
- -o-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
 }
 .mid-link a:hover
 {
 	background-color: #f5f5f5;
 	border-color: #cccccc;
 	color: Red;
-	
 }
 .body-out
 {
@@ -306,11 +306,10 @@ WRAPPER AREA
 	color: Black;
 	font-size: 12px;
 	font-weight: bold;
-
 }
 .AnhNho li a:hover
 {
-	color:#5c0000;
+	color: #5c0000;
 }
 .box-under-car
 {
@@ -423,7 +422,7 @@ WRAPPER AREA
 .tintuc-box
 {
 	width: 206px;
-	height: 370px;
+	height: 373px;
 	border: solid 2px #C67926;
 	background: #DFC698;
 	float: left;
@@ -449,6 +448,17 @@ WRAPPER AREA
 {
 	float: left;
 	margin-left: 5px;
+}
+.middle-adv
+{
+	width: 983px;
+	height: 61px;
+	float: left;
+}
+.middle-adv img
+{
+	width: 983px;
+	height: 61px;
 }
 .body-down
 {
@@ -490,6 +500,14 @@ WRAPPER AREA
 	color: White;
 	margin: 7px 10px;
 }
+.Cap-TinTuc p a
+{
+	text-transform:uppercase;
+	font-size: 13px;
+	font-weight: bold;
+	color: White;
+	margin: 7px 10px;
+}
 .noidung
 {
 	width: 675px;
@@ -515,11 +533,11 @@ WRAPPER AREA
 	-webkit-transition: all 0.5s ease-out;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
-	border:solid 1px #ecd9b7;
+	border: solid 1px #ecd9b7;
 }
 .left-noidung img:hover
 {
-	border:solid 1px black;
+	border: solid 1px black;
 }
 .Anh-noidung
 {
@@ -552,19 +570,18 @@ WRAPPER AREA
 	font-family: Tahoma;
 	font-weight: bold;
 	height: 5px;
-	padding:2px 4px;
-	border:solid 1px #ecd9b7;
-	border-radius:5px;
+	padding: 2px 4px;
+	border: solid 1px #ecd9b7;
+	border-radius: 5px;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 }
 .link2 a:hover
 {
-	color:#ecd9b7;
-	background:#955c34;
-	border:solid 1px #d8d7d6;
-	
+	color: #ecd9b7;
+	background: #955c34;
+	border: solid 1px #d8d7d6;
 }
 .link2 li:last-child
 {
@@ -592,7 +609,7 @@ WRAPPER AREA
 }
 .center-noidung a:hover
 {
-	color:#5f1d00;
+	color: #5f1d00;
 }
 
 .center-noidung p
@@ -624,7 +641,7 @@ WRAPPER AREA
 	margin-bottom: 15px;
 	background: url(../images/bigliststyle.jpg) no-repeat;
 	padding-left: 13px;
-	background-position:center left;
+	background-position: center left;
 }
 .right-noidung li a
 {
@@ -668,7 +685,7 @@ WRAPPER AREA
 }
 .docnhieu-noidung li p
 {
-	margin-top:6px;
+	margin-top: 6px;
 }
 .out-image
 {
@@ -680,7 +697,7 @@ WRAPPER AREA
 }
 .out-image p
 {
-	margin-top:6px;
+	margin-top: 6px;
 }
 .Anh-noidung-docnhieu
 {
@@ -929,11 +946,10 @@ WRAPPER AREA
 	-webkit-transition: all 0.5s ease-out;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
-	
 }
 .big-ul a:hover
 {
-	color:Black
+	color: Black;
 }
 .big-ul li
 {
@@ -1011,7 +1027,7 @@ WRAPPER AREA
 }
 .link3 a:hover
 {
-	text-decoration:underline;
+	text-decoration: underline;
 }
 .link3 li:last-child
 {
