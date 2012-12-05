@@ -6,14 +6,14 @@
             <div class="TinTuc-wrapper">
                 <div class="Cap-TinTuc">
                     <p>
-                        <a href='/Cat/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
+                        <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
                             title='<%#Eval("Title") %>'>
                             <%#Eval("Title") %></a></p>
                 </div>
                 <ul class="link2">
                     <asp:Repeater runat="server" ID="rptChildCate">
                         <ItemTemplate>
-                            <li><a href='/Cat/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
+                            <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
                                 title='<%#Eval("Title") %>'>
                                 <%#Eval("Title") %></a></li>
                         </ItemTemplate>

@@ -14,7 +14,7 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            rptMainMenuDataSource(); rptChildDataSource();
+            rptMainMenuDataSource(); //rptChildDataSource();
         }
 
         private void rptMainMenuDataSource()
@@ -22,7 +22,7 @@ namespace SES.CMS.Module
             rptMainMenu.DataSource = new cmsCategoryBL().SelectMenu(7);
             rptMainMenu.DataBind();
         }
-
+/*
         private void rptChildDataSource()
         {
             if (Request.Url.AbsolutePath.ToUpper().Equals("/DEFAULT.ASPX"))
@@ -47,7 +47,7 @@ namespace SES.CMS.Module
                     }
                 }
             }
-        }
+        }*/
         public string FriendlyUrl(string s)
         {
             return Ultility.Change_AVCate(s);
