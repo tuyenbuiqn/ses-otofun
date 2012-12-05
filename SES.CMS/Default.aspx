@@ -91,6 +91,30 @@
             <uc6:ucMainHomePageCategory runat="server" ID="uc6Main" />
             <uc7:ucMostRead runat="server" ID="uc7ucMostRead" />
         </div>
+          <div class="bottom">
+                        <div class="Cap-bottom">
+                            <p>
+                                THÔNG TIN DOANH NGHIỆP</p>
+                        </div>
+                        <ul>
+                            <li><a href="#">
+                                <img id="Img19" class="bottom-image" src="images/thongtindoanhnghiep.jpg" alt="" /></a>
+                                <a href="#" class="bottom-detail">Tin giật gân : tập đoàn công nghệ SES vừa triển khai
+                                    xong dự án website cho nhà trắng</a></li>
+                            <li><a href="#">
+                                <img id="Img20" class="bottom-image" src="images/thongtindoanhnghiep.jpg" alt="" /></a>
+                                <a href="#" class="bottom-detail">Tin giật gân : tập đoàn công nghệ SES vừa triển khai
+                                    xong dự án website cho nhà trắng</a></li>
+                            <li><a href="#">
+                                <img id="Img21" class="bottom-image" src="images/thongtindoanhnghiep.jpg" alt="" /></a>
+                                <a href="#" class="bottom-detail">Tin giật gân : tập đoàn công nghệ SES vừa triển khai
+                                    xong dự án website cho nhà trắng</a></li>
+                            <li><a href="#">
+                                <img id="Img22" class="bottom-image" src="images/thongtindoanhnghiep.jpg" alt="" /></a>
+                                <a href="#" class="bottom-detail">Tin giật gân : tập đoàn công nghệ SES vừa triển khai
+                                    xong dự án website cho nhà trắng</a></li>
+                        </ul>
+                    </div>
     </div>
     <%--  mid--%>
 </asp:Content>

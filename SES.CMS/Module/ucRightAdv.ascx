@@ -1,0 +1,5 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucRightAdv.ascx.cs" Inherits="SES.CMS.Module.ucRightAdv" %>
+<div class="rightAdv-box">
+    <img border="0" id="ads_zone228_banner182935" src="http://admicro2.vcmedia.vn/images/180x270dantri_chuan..gif" width="180" height="270">
+    <embed src="http://admicro2.vcmedia.vn/images/09duy-anh-160x600.swf" height="600" alt="" align="middle" width="160" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" flashvars="alink1=http%3A%2F%2Flogging.admicro.vn%2F_adc.html%3Fadm_domain%3Dhttp%253A%2F%2Fdantri.com.vn%2Fthe-gioi.htm%26adm_campaign%3D1020172%26adm_aditem%3D122474%26adm_zoneid%3D228%26adm_channelid%3D-1%26adm_rehttp%3Dhttp%253A%2F%2Fdonghoduyanh.com%2FNCT%2FChao-mung-thang-khuyen-mai-11%2F2012%2Fintval%252528%2F13%2F209.vtn%26adm_random%3D0.34496447443962097&amp;atar1=_blank" allowscriptaccess="always" wmode="transparent" quality="high">
+</div>
