@@ -22,6 +22,15 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucTopAdvertisment uc1TopAdv;
         
         /// <summary>
+        /// uc8HomeSlide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucHomeSlide uc8HomeSlide;
+        
+        /// <summary>
         /// uc3ThamKhaoGiaXa control.
         /// </summary>
         /// <remarks>

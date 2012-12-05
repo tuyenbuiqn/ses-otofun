@@ -10,15 +10,15 @@
 namespace SES.CMS.Module {
     
     
-    public partial class ucNewArticles {
+    public partial class ucHomeSlide {
         
         /// <summary>
-        /// rptNewArticle control.
+        /// rptSlide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptNewArticle;
+        protected global::System.Web.UI.WebControls.Repeater rptSlide;
     }
 }

@@ -8,6 +8,7 @@
 <%@ Register Src="/Module/ucMiddleAdv.ascx" TagName="ucMiddleAdv" TagPrefix="uc5" %>
 <%@ Register Src="/Module/ucMainHomePageCategory.ascx" TagName="ucMainHomePageCategory" TagPrefix="uc6" %>
 <%@ Register Src="/Module/ucMostRead.ascx" TagName="ucMostRead" TagPrefix="uc7" %>
+<%@ Register Src="/Module/ucHomeSlide.ascx" TagName="ucHomeSlide" TagPrefix="uc8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -18,6 +19,7 @@
                 <uc1:ucTopAdvertisment runat="server" ID="uc1TopAdv" />
                 <div class="image-box">
                     <div class="AnhTo">
+                        <uc8:ucHomeSlide runat="server" ID="uc8HomeSlide" />
                     </div>
                     <ul class="AnhNho">
                         <li><a href="#">

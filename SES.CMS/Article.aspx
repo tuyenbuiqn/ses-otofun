@@ -4,6 +4,7 @@
 <%@ Register Src="Module/ucLeftAdv.ascx" TagName="ucLeftAdv" TagPrefix="uc1" %>
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
 <%@ Register Src="Module/ucArticleAdv.ascx" TagName="ucArticleAdv" TagPrefix="uc3" %>
+<%@ Register src="Module/ucNewArticles.ascx" tagname="ucNewArticles" tagprefix="uc4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -29,6 +30,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <uc3:ucArticleAdv ID="ucArticleAdv1" runat="server" />
+                <uc4:ucNewArticles ID="ucNewArticles1" runat="server" />
             </div>
             <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
             <uc2:ucRightAdv ID="ucRightAdv1" runat="server" />
