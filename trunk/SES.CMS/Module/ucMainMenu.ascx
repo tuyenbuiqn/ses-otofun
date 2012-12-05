@@ -5,9 +5,10 @@
         <a href="/Default.aspx" title="otofun-homepage">
             <img id="home-button" class="home-button" src="/images/Home-button.jpg" alt="Otofun-homepage" /></a>
         <ul class="toplink">
-            <asp:Repeater runat="server" ID="rptMainMenu">
+            <asp:Repeater runat="server" ID="rptMainMenu" OnItemDataBound="rptMainMenu_ItemDataBound">
                 <ItemTemplate>
-                    <li><a href='/Cat/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
+                    <li>
+                    <a href='/Cat/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a></li>
                 </ItemTemplate>

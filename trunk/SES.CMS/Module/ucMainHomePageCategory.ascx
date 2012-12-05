@@ -33,7 +33,7 @@
                                 <p>
                                     Cập nhật:&nbsp;</p>
                                 <p>
-                                    00h&nbsp; 01-01-1111</p>
+                                    <%#Eval("CreateDate","{0:hh}h") %>&nbsp; <%#Eval("CreateDate","{0:dd-MM-yyyy}") %></p>
                                 <p>
                                     &nbsp;|&nbsp; bởi</p>
                                 <p>
