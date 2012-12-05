@@ -17,6 +17,8 @@ namespace SES.CMS
             {
                 int articleID = int.Parse(Request.QueryString["ArticleID"].ToString());
                 rptArticeDataSource(articleID);
+
+                Page.Title = new cmsArticleBL().SelectByPK(articleID).Rows[0]["Title"].ToString() + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1}).ConfigValue);
             }
         }
 

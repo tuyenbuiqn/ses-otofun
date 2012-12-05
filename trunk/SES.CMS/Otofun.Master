@@ -21,7 +21,10 @@
        function () {
            $(".cpslide").wtRotator({
               width:455,
-            height:263
+            height:263,
+            display_thumbs:false,
+            display_playbutton: false,           
+            display_numbers:false
            });
        });
     </script>

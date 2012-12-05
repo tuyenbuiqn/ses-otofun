@@ -25,7 +25,7 @@
                             <div class="left-noidung">
                                 <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                     title='<%#Eval("Title") %>'>
-                                    <img id="imgAnh-noidung" class="Anh-noidung" src='/images/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' /></a>
+                                    <img id="imgAnh-noidung" class="Anh-noidung" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' /></a>
                             </div>
                             <div class="center-noidung">
                                 <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'  title='<%#Eval("Title") %>'>

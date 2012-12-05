@@ -107,6 +107,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectByPK(articleID);
         }
+        public DataTable SelectDanhMucNoiBat(int type)
+        {
+            return objcmsArticleDAL.SelectDanhMucNoiBat(type);
+        }
     }
 
 }

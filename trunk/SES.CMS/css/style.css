@@ -291,14 +291,16 @@ WRAPPER AREA
 .AnhNho
 {
 	width: 465px;
-	height: auto;
 	float: left;
+	min-height: 159px;
+	height: 159px;
+	margin-left: 6px;
 }
 .AnhNho li
 {
 	float: left;
-	margin: 3px 8px 0px 6px;
-	width: 104px;
+	margin: 3px 7px 0px 0px;
+	width: 111px;
 }
 .AnhNho li:last-child
 {
@@ -1177,70 +1179,69 @@ p.pBreadrumb
 .article-description
 {
 	font: 700 16px /18px "Arial";
-color: #5F5F5F;
-margin-top: 10px !important;
-overflow:hidden;
-width:100%;
-	}
+	color: #5F5F5F;
+	margin-top: 10px !important;
+	overflow: hidden;
+	width: 100%;
+}
 .article-adv-under
 {
-	width:100%;
-	margin-top:10px;
-	text-align:center;
-	}	
-.newarticle-box 	
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+}
+.newarticle-box
 {
-    width:470px;
-    margin-top:20px;
-    float: left;
-background-color: #DFC698;
-   
+	width: 470px;
+	margin-top: 20px;
+	float: left;
+	background-color: #DFC698;
 }
 .newarticle-box h2
 {
-height: 18px;
-color: #942201;
-
-  padding: 5px 0px 3px 5px;
-font-family: Arial;
-font-weight: bold;
-font-size: 18px;
-
+	height: 18px;
+	color: #942201;
+	padding: 5px 0px 3px 5px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 18px;
 }
 .ul-new-article li
 {
-    margin-top: 5px;
-background: url(../images/liststyle.jpg) no-repeat;
-padding-left: 13px;
-background-position: 4px;
-    
+	margin-top: 5px;
+	background: url(../images/liststyle.jpg) no-repeat;
+	padding-left: 13px;
+	background-position: 4px;
 }
 .ul-new-article
 {
-    padding:0 0 5px 0;
-    
+	padding: 0 0 5px 0;
 }
 .ul-new-article li a
 {
-    font-family: arial;
-font-size: 11px;
-color: black;
-display: block;
-    
+	font-family: arial;
+	font-size: 11px;
+	color: black;
+	display: block;
 }
 .line-article
 {
 	width: 463px;
 	height: 2px;
-background: #942201;
-border: solid 1px #C06C14;
-border-left: none;
-border-right: none;
+	background: #942201;
+	border: solid 1px #C06C14;
+	border-left: none;
+	border-right: none;
 	margin: 0 auto;
 }
 .article-desciption
 {
-    font-size:15px;
-    margin:10px 0 10px 0;
+	font-size: 15px;
+	margin: 10px 0 10px 0;
+}
+.img-car
+{
+    width: 104px;
+    height:70px;
     
 }

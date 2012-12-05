@@ -361,6 +361,29 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+
+        public DataTable SelectDanhMucNoiBat(int type)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByCategoryType";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@Type", SqlDbType.Int);
+            Sqlparam.Value = type;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
         public DataTable SelectByPK(int articleID)
         {
             SqlCommand Sqlcomm = new SqlCommand();

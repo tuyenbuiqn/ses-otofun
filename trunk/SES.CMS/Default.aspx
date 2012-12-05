@@ -9,6 +9,8 @@
 <%@ Register Src="/Module/ucMainHomePageCategory.ascx" TagName="ucMainHomePageCategory" TagPrefix="uc6" %>
 <%@ Register Src="/Module/ucMostRead.ascx" TagName="ucMostRead" TagPrefix="uc7" %>
 <%@ Register Src="/Module/ucHomeSlide.ascx" TagName="ucHomeSlide" TagPrefix="uc8" %>
+<%@ Register Src="/Module/ucTuVanAndKyThuat.ascx" TagName="ucTuVanAndKyThuat" TagPrefix="uc9" %>
+<%@ Register Src="/Module/ucDanhMucNoiBat.ascx" TagName="ucDanhMucNoiBat" TagPrefix="uc10" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,35 +23,10 @@
                     <div class="AnhTo">
                         <uc8:ucHomeSlide runat="server" ID="uc8HomeSlide" />
                     </div>
-                    <ul class="AnhNho">
-                        <li><a href="#">
-                            <img id="Img1" class="img-car" src="images/car.jpg" alt="" /></a><a href="#">OF Test
-                                xe: Mercedes-Benz GL 2013 Xứng danh Anh Hùng </a></li>
-                        <li><a href="#">
-                            <img id="Img2" class="img-car" src="images/car.jpg" alt="" /></a><a href="#">OF Test
-                                xe: Mercedes-Benz GL 2013 Xứng danh Anh Hùng </a></li>
-                        <li><a href="#">
-                            <img id="Img3" class="img-car" src="images/car.jpg" alt="" /></a><a href="#">OF Test
-                                xe: Mercedes-Benz GL 2013 Xứng danh Anh Hùng </a></li>
-                        <li><a href="#">
-                            <img id="Img4" class="img-car" src="images/car.jpg" alt="" /></a><a href="#">OF Test
-                                xe: Mercedes-Benz GL 2013 Xứng danh Anh Hùng </a></li>
-                    </ul>
+                  <uc10:ucDanhMucNoiBat runat="server" ID="uc10ucDanhMucNoiBat" />
                     <%-- box-under-car--%>
                     <uc3:ucThamKhaoGiaXe runat="server" ID="uc3ThamKhaoGiaXa" />
-                    <div class="box-under-car">
-                        <div class="box-under-car-caption">
-                            HỎI ĐÁP & TƯ VẤN KỸ THUẬT</div>
-                        <div class="line2">
-                        </div>
-                        <ul class="hoidap">
-                            <li><a href="#">Bốc đầu ô tô như thế nào</a></li>
-                            <li><a href="#">Bốc đầu ô tô như thế nào</a></li>
-                            <li><a href="#">Bốc đầu ô tô như thế nào</a></li>
-                            <li><a href="#">Bốc đầu ô tô như thế nào</a></li>
-                            <li><a href="#">Bốc đầu ô tô như thế nào</a></li>
-                        </ul>
-                    </div>
+                   <uc9:ucTuVanAndKyThuat runat="server" ID="uc9TuVanAndKyThuat" />
                 </div>
                 <div class="TinTuc">
                     <p>
