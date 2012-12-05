@@ -8,7 +8,7 @@
         <div class="preloader">
         </div>
         <div class="c-panel">
-            <div class="buttons">
+            <div style="display:none;" class="buttons">
                 <div class="prev-btn">
                 </div>
                 <div class="play-btn">
@@ -20,7 +20,7 @@
                 <ul>
                     <asp:Repeater ID="rptSlide" runat="server">
                         <ItemTemplate>
-                            <li><a href='/Media/<%#Eval("SlideUrl") %>' title='<%#Eval("Title") %>' /><a href="<%#Eval("SlideUrl") %>">
+                            <li><a href='/Media/<%#Eval("SlideUrl") %>' title='<%#Eval("Title") %>' /><a href='<%#Eval("SlideImg") %>'>
                             </a>
                                 <div style="height: 40px; width: 555px;">
                                     <span class="cap-title"><a href="<%#Eval("SlideUrl") %>">

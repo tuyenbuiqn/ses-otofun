@@ -15,7 +15,7 @@
                     <ItemTemplate>
                         <div class="breadcrumb-box">
                             <a href="/the-gioi.htm" class="breadcrumb-article">Thế giới</a><img src="">
-                            <span class="createdate-article">Thứ Hai, 03/12/2012 - 07:42</span>
+                            <span class="createdate-article"><%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
                         </div>
                         <p class="pBreadrumb">
                         </p>

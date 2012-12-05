@@ -78,6 +78,21 @@ namespace SES.CMS.BL
         {
             return objcmsImagesDAL.SelectByAlbumID(p);
         }
+
+        public object SelectBySlideID(int p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object SelectByArticleID(int p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object SelectByCategoryID(int p)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

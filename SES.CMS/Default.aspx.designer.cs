@@ -31,6 +31,15 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucHomeSlide uc8HomeSlide;
         
         /// <summary>
+        /// uc10ucDanhMucNoiBat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucDanhMucNoiBat uc10ucDanhMucNoiBat;
+        
+        /// <summary>
         /// uc3ThamKhaoGiaXa control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace SES.CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SES.CMS.Module.ucThamKhaoGiaXe uc3ThamKhaoGiaXa;
+        
+        /// <summary>
+        /// uc9TuVanAndKyThuat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucTuVanAndKyThuat uc9TuVanAndKyThuat;
         
         /// <summary>
         /// ltrNgay control.
