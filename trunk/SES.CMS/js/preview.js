@@ -1,9 +1,9 @@
 $(document).ready(	
 	function() {
-		var $container = $(".cpslide");
+		var $container = $(".Content-Top");
 		$container.wtRotator({
-			width:956,
-			height:283,
+			width:575,
+			height:315,
 			button_width:15,
 			button_height:15,
 			button_margin:4,
@@ -16,11 +16,11 @@ $(document).ready(
 			horz_size:50,
 			cpanel_align:"BR",
 			display_thumbs:true,
-			display_dbuttons:true,
+			display_dbuttons:false,
 			display_playbutton:true,
 			display_tooltip:false,
 			display_numbers:false,
-			display_timer:true,
+			display_timer:false,
 			mouseover_pause:false,
 			cpanel_mouseover:false,
 			text_mouseover:false,

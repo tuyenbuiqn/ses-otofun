@@ -1,13 +1,31 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Otofun.master.cs" Inherits="SES.CMS.Otofun" %>
 
-<%@ Register src="/Module/ucMainMenu.ascx" tagname="ucMainMenu" tagprefix="uc1" %>
-<%@ Register src="/Module/ucCateMenu.ascx" tagname="ucCateMenu" tagprefix="uc2" %>
+<%@ Register Src="/Module/ucMainMenu.ascx" TagName="ucMainMenu" TagPrefix="uc1" %>
+<%@ Register Src="/Module/ucCateMenu.ascx" TagName="ucCateMenu" TagPrefix="uc2" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+ 
+
+    <script type="text/javascript" src="/js/jquery.wt-rotator.min.js"></script>
+
+    <script type="text/javascript" src="/js/preview.js"></script>
+         <link rel="stylesheet" type="text/css" href="/preview.css" />
+    <link rel="stylesheet" type="text/css" href="/wt-rotator.css" />
+   <script type="text/javascript">
+       $(document).ready(
+       function () {
+           $(".cpslide").wtRotator({
+              width:455,
+            height:263
+           });
+       });
+    </script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -23,11 +41,10 @@
                                 <img alt="otofun.vn" class="header-img" src="/Media/banner-otofun.jpg" />
                             </a>
                         </div>
-                      <uc1:ucMainMenu ID="ucMainMenu1" runat="server" />
-                      <uc2:ucCateMenu ID="ucCateMenu2" runat="server" />
+                        <uc1:ucMainMenu ID="ucMainMenu1" runat="server" />
+                        <uc2:ucCateMenu ID="ucCateMenu2" runat="server" />
                     </div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        
                     </asp:ContentPlaceHolder>
                 </div>
                 <div class="footer">

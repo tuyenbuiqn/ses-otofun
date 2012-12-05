@@ -103,6 +103,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectToMainHomepageCate(top, categoryID, type);
         }
+        public DataTable SelectByPK(int articleID)
+        {
+            return objcmsArticleDAL.SelectByPK(articleID);
+        }
     }
 
 }
