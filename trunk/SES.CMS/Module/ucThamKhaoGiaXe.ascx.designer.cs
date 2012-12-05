@@ -10,33 +10,33 @@
 namespace SES.CMS.Module {
     
     
-    public partial class ucMainMenu {
+    public partial class ucThamKhaoGiaXe {
         
         /// <summary>
-        /// rptMainMenu control.
+        /// ddlHangXe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptMainMenu;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHangXe;
         
         /// <summary>
-        /// TextBox1 control.
+        /// DropDownList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
         
         /// <summary>
-        /// rptChildMenu control.
+        /// DropDownList3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptChildMenu;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
     }
 }

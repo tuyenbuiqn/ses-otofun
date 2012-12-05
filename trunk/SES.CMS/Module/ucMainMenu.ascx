@@ -7,7 +7,7 @@
         <ul class="toplink">
             <asp:Repeater runat="server" ID="rptMainMenu">
                 <ItemTemplate>
-                    <li><a href='/Category/<%#Eval("CategoryID")%>/<%#FriendlyUrl(Eval("Title").ToString())%>'
+                    <li><a href='/Cat/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a></li>
                 </ItemTemplate>
@@ -25,11 +25,11 @@
     </div>
 </div>
 <ul class="mid-link">
-    <li><a href="#">Diễn Đàn</a></li>
-    <li><a href="#">Tin Tức</a></li>
-    <li><a href="#">Đánh Giá Xe</a></li>
-    <li><a href="#">Văn Hóa Xe</a></li>
-    <li><a href="#">Kỹ Thuật & Tư Vấn</a></li>
-    <li><a href="#">Xe Máy</a></li>
-    <li><a href="#">Xe Đua - Đua Xe</a></li>
+    <asp:Repeater runat="server" ID="rptChildMenu">
+        <ItemTemplate>
+           <li><a href='/Cat/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
+                        title='<%#Eval("Title") %>'>
+                        <%#Eval("Title") %></a></li>
+        </ItemTemplate>
+    </asp:Repeater>
 </ul>

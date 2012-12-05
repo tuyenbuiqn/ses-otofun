@@ -46,6 +46,8 @@ namespace SES.CMS.DO
 		private Boolean _IsHompage;
 		private Int32 _UserCreate;
 		private DateTime _CreateDate;
+        public bool IsMostRead { get; set; }
+        public bool IsHighLight { get; set; }
 
 		#endregion
 

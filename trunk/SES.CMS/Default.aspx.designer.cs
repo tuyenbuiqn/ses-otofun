@@ -13,30 +13,75 @@ namespace SES.CMS {
     public partial class Default {
         
         /// <summary>
-        /// DropDownList1 control.
+        /// uc1TopAdv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::SES.CMS.Module.ucTopAdvertisment uc1TopAdv;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// uc3ThamKhaoGiaXa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::SES.CMS.Module.ucThamKhaoGiaXe uc3ThamKhaoGiaXa;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// ltrNgay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.Literal ltrNgay;
+        
+        /// <summary>
+        /// uc2lastestnews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucLastestNews uc2lastestnews;
+        
+        /// <summary>
+        /// uc4TopRight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucTopRightAdv uc4TopRight;
+        
+        /// <summary>
+        /// uc5MiddleAdv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucMiddleAdv uc5MiddleAdv;
+        
+        /// <summary>
+        /// uc6Main control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucMainHomePageCategory uc6Main;
+        
+        /// <summary>
+        /// uc7ucMostRead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucMostRead uc7ucMostRead;
     }
 }

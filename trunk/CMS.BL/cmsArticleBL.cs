@@ -15,21 +15,21 @@ using SES.CMS.DO;
 /// </summary>
 namespace SES.CMS.BL
 {
-    public class cmsArticleBL 
+    public class cmsArticleBL
     {
-    	#region Private Variables
-		cmsArticleDAL objcmsArticleDAL;
-		#endregion
-		
+        #region Private Variables
+        cmsArticleDAL objcmsArticleDAL;
+        #endregion
+
         #region Public Constructors
         public cmsArticleBL()
         {
             //
             // TODO: Add constructor logic here
             //
-            objcmsArticleDAL=new cmsArticleDAL();
+            objcmsArticleDAL = new cmsArticleDAL();
         }
-        #endregion       
+        #endregion
 
         #region Public Methods
         public int Insert(cmsArticleDO objcmsArticleDO)
@@ -39,19 +39,19 @@ namespace SES.CMS.BL
 
         public int Update(cmsArticleDO objcmsArticleDO)
         {
-             return objcmsArticleDAL.Update(objcmsArticleDO);
+            return objcmsArticleDAL.Update(objcmsArticleDO);
 
         }
 
         public int Delete(cmsArticleDO objcmsArticleDO)
         {
-             return objcmsArticleDAL.Delete(objcmsArticleDO);
+            return objcmsArticleDAL.Delete(objcmsArticleDO);
 
         }
 
-         public int DeleteAll()
+        public int DeleteAll()
         {
-             return objcmsArticleDAL.DeleteAll();
+            return objcmsArticleDAL.DeleteAll();
         }
 
         public cmsArticleDO Select(cmsArticleDO objcmsArticleDO)
@@ -59,21 +59,21 @@ namespace SES.CMS.BL
             return objcmsArticleDAL.Select(objcmsArticleDO);
         }
 
-        public ArrayList SelectAll1( )
+        public ArrayList SelectAll1()
         {
-         return objcmsArticleDAL.SelectAll1();
+            return objcmsArticleDAL.SelectAll1();
         }
-        
-        public DataTable SelectAll( )
+
+        public DataTable SelectAll()
         {
-         return objcmsArticleDAL.SelectAll();
+            return objcmsArticleDAL.SelectAll();
         }
 
 
-     
-#endregion          
-    
-    
+
+        #endregion
+
+
         public DataTable SelectByCategoryID(int CategoryID)
         {
             return objcmsArticleDAL.SelectByCategoryID(CategoryID);
@@ -87,6 +87,18 @@ namespace SES.CMS.BL
         public DataTable SelectOne(cmsArticleDO objArt)
         {
             return objcmsArticleDAL.SelectOne(objArt);
+        }
+        public DataTable LastestNews()
+        {
+            return objcmsArticleDAL.LastestNews();
+        }
+        public DataTable MostRead()
+        {
+            return objcmsArticleDAL.MostRead();
+        }
+        public DataTable SelectToMainHomepageCate(int top, int categoryID, bool type)
+        {
+            return objcmsArticleDAL.SelectToMainHomepageCate(top, categoryID, type);
         }
     }
 
