@@ -57,6 +57,14 @@ namespace SES.CMS.AdminCP
                         hplDestination.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
                         break;
+                    case "ListEvent":
+                        hplDestination.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
+                        break;
+                    case "Event":
+                        hplDestination.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
+                        break;
 
                         //Config
                     case "ListConfig":

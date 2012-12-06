@@ -20,6 +20,7 @@ namespace SES.CMS.AdminCP.PageUC
         cmsArticleDO objArt = new cmsArticleDO();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
             Functions.DevCboDatabinder(cboCategory, new cmsCategoryBL().SelectAll(), cmsCategoryDO.TITLE_FIELD, cmsCategoryDO.CATEGORYID_FIELD);
             if (Request.QueryString["ArticleID"] != null)
             {
@@ -35,8 +36,14 @@ namespace SES.CMS.AdminCP.PageUC
             txtTitle.Text = objArt.Title;
             txtDescription.Text = objArt.Description;
             txtArticleDetail.Text = objArt.ArticleDetail;
+
             chkIsHomePage.Checked = objArt.IsHompage;
-            chkIsPublish.Checked = !objArt.IsPublish;
+            chkIsPublish.Checked = objArt.IsPublish;
+            chkIsHighLight.Checked = objArt.IsHighLight;
+            chkIsHotEvent.Checked = objArt.IsHotEvent;
+            chkIsMostRead.Checked = objArt.IsMostRead;
+            chkIsNew.Checked = objArt.IsNew;
+            
             txtOrderID.Text = objArt.OrderID.ToString();
             cboCategory.Value = objArt.CategoryID.ToString();
             hplImage.NavigateUrl = "~/Media/" + objArt.ImageUrl;
@@ -63,8 +70,14 @@ namespace SES.CMS.AdminCP.PageUC
             objArt.Title = txtTitle.Text;
             objArt.Description = txtDescription.Text;
             objArt.ArticleDetail = txtArticleDetail.Text;
+            
             objArt.IsHompage = chkIsHomePage.Checked;
-            objArt.IsPublish = !chkIsPublish.Checked;
+            objArt.IsPublish = chkIsPublish.Checked;
+            objArt.IsNew = chkIsNew.Checked;
+            objArt.IsMostRead = chkIsMostRead.Checked;
+            objArt.IsHotEvent = chkIsHotEvent.Checked;
+            objArt.IsHighLight = chkIsHighLight.Checked;
+
             objArt.OrderID = int.Parse(txtOrderID.Text);
             objArt.CategoryID = int.Parse(cboCategory.Value.ToString());
          

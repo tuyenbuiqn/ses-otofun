@@ -4,14 +4,12 @@
 <%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
-
 <script type="text/javascript">
     function SelectAndClosePopup(value) {
         cbCategory.SetValue(value);
         pcParent.Hide();
     }
 </script>
-
 <h2>
     Cập nhật Tin tức</h2>
 <table width="100%" class="tablet" style="border: 1px solid black;">
@@ -23,8 +21,6 @@
             <asp:TextBox ID="txtTitle" runat="server" Width="90%" ValidationGroup="submitGrp"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTitle"
                 ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
-            &nbsp;<asp:CheckBox ID="chkVote" Text="Cho Đánh giá" runat="server" Visible="false" />
-            &nbsp;<asp:CheckBox ID="chkComment" Text="Cho Bình luận" runat="server" Visible="false" />
         </td>
     </tr>
     <tr>
@@ -53,12 +49,9 @@
                     <ClientSideEvents Click="function(s, e) { pcParent.Show();}" />
                 </dxe:ASPxButton>
             </div>
-        </td>
-        <td style="display: none;">
-            Parent Article:
-        </td>
-        <td style="display: none;">
-            <asp:DropDownList Visible="false" ID="ddlArticle" runat="server">
+            &nbsp; &nbsp; &nbsp; Thuộc dòng sự kiện:
+            <asp:DropDownList runat="server" ID="ddlEvent" AppendDataBoundItems="true">
+                <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
             </asp:DropDownList>
         </td>
     </tr>
@@ -82,20 +75,39 @@
     </tr>
     <tr>
         <td class="style8">
-            Hiển thị:
+            Tùy chọn:
         </td>
         <td class="style4" colspan="3">
-            <div style="float: left; vertical-align: middle;">
-                &nbsp;
-                <asp:CheckBox ID="chkIsHomePage" runat="server" Visible="false" />
-                <asp:CheckBox ID="chkIsPublish" runat="server" />
-                Ẩn đi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Số
-                thứ tự:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <div style="float: left; vertical-align: middle;">
-                <asp:TextBox ID="txtOrderID" runat="server" Width="68px" ValidationGroup="submitGrp"></asp:TextBox>
-            </div>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtOrderID"
-                ErrorMessage="*** Cần nhập số thứ tự" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
+            <span class="spanCustome">
+                <asp:CheckBox ID="chkIsHomePage" runat="server" Text="Thuộc trang chủ" />
+            </span><span class="spanCustome">
+                <asp:CheckBox ID="chkIsPublish" runat="server" Text="Hiển thị" />
+            </span><span class="spanCustome">
+                <asp:CheckBox ID="chkIsMostRead" runat="server" Text="Bài viết đọc nhiều" />
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <span class="spanCustome">
+                <asp:CheckBox ID="chkIsHighLight" runat="server"  Text="Bài viết nổi bật" />
+            </span><span class="spanCustome">
+                <asp:CheckBox ID="chkIsHotEvent" runat="server" Text="Bài viết tiêu điểm" />
+            </span><span class="spanCustome">
+                <asp:CheckBox ID="chkIsNew" runat="server" Text="Bài viết mới"/>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Thứ tự
+        </td>
+        <td>
+            <asp:TextBox ID="txtOrderID" runat="server" Width="68px" ValidationGroup="submitGrp"></asp:TextBox><asp:RequiredFieldValidator
+                ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtOrderID" ErrorMessage="*** Cần nhập số thứ tự"
+                ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>

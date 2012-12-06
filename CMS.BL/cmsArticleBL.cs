@@ -111,6 +111,17 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectDanhMucNoiBat(type);
         }
+        public DataTable HotEvents(int categoryID){
+            return objcmsArticleDAL.HotEvents(categoryID);
+        }
+        public DataTable Events()
+        { return objcmsArticleDAL.Events(); }
+        public DataTable NewArticles()
+        { return objcmsArticleDAL.NewArticles(); }
+        public DataTable SelectAllEventArticle(int eventID)
+        {
+            return objcmsArticleDAL.SelectAllEventArticle(eventID);
+        }
     }
 
 }

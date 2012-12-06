@@ -14,17 +14,17 @@
                 <asp:Repeater runat="server" ID="rptCategory">
                     <ItemTemplate>
                         <div class="category-wrap">
-                            <a title='<%#Eval("Title") %>' href='/Art/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
+                            <a title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
                                 <img class="img130" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                             <div class="mr1">
                                 <h2>
-                                    <a title='<%#Eval("Title") %>' class="fon6"  href='/Art/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'
+                                    <a title='<%#Eval("Title") %>' class="fon6"  href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'
                                         alt='<%#Eval("Title") %>'>
                                         <%#Eval("Title") %></a>
                                 </h2>
                                 <div class="fon5 fl">
                                     <%#WordCut(Eval("Description").ToString()) %></div>
-                                <a class="readmore" title='<%#Eval("Title") %>' href='/Art/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>Xem tiếp</a>
+                                <a class="readmore" title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>Xem tiếp</a>
                             </div>
                         </div>
                     </ItemTemplate>

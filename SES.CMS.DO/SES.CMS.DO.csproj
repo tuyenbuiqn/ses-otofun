@@ -44,10 +44,12 @@
     <Compile Include="cmsArticleDO.cs" />
     <Compile Include="cmsCategoryDO.cs" />
     <Compile Include="cmsConfigDO.cs" />
+    <Compile Include="cmsEventDO.cs" />
     <Compile Include="cmsImagesDO.cs" />
     <Compile Include="cmsLibFileArticleDO.cs" />
     <Compile Include="cmsLibsFileDO.cs" />
     <Compile Include="cmsSlideDO.cs" />
+    <Compile Include="cmsVideoDO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysConfigDO.cs" />
     <Compile Include="sysUserDO.cs" />
