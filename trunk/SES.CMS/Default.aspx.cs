@@ -17,8 +17,17 @@ namespace SES.CMS
             ltrNgay.Text = vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
 
             Page.Title = new sysConfigBL().Select(new sysConfigDO { ConfigID = 1}).ConfigValue;
+            BuildEvent();
         }
+        protected void BuildEvent()
+        {
+            MasterPage master = this.Master as MasterPage;
+            Control ucEvent = master.FindControl("ucEvent3") as Control;
+            Repeater rptEvent = ucEvent.FindControl("rptEvent") as Repeater;
 
+            rptEvent.DataSource = new cmsEventBL().GetTopEvent(5);
+            rptEvent.DataBind();
+        }
         public string vietNameseDay(DayOfWeek dow)
         {
             string vietNameseDay = "";

@@ -46,10 +46,12 @@
     <Compile Include="cmsArticleDAL.cs" />
     <Compile Include="cmsCategoryDAL.cs" />
     <Compile Include="cmsConfigDAL.cs" />
+    <Compile Include="cmsEventDAL.cs" />
     <Compile Include="cmsImagesDAL.cs" />
     <Compile Include="cmsLibFileArticleDAL.cs" />
     <Compile Include="cmsLibsFileDAL.cs" />
     <Compile Include="cmsSlideDAL.cs" />
+    <Compile Include="cmsVideoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysConfigDAL.cs" />
     <Compile Include="sysUserDAL.cs" />

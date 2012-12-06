@@ -19,7 +19,17 @@ namespace SES.CMS
                 rptCategoryDataSoucre(categoryID);
                 rptBuildChildMenu(categoryID);
                 Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID}).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                BuildEvent(categoryID);
             }
+        }
+        protected void BuildEvent(int categoryID)
+        {
+            MasterPage master = this.Master as MasterPage;
+            Control ucEvent = master.FindControl("ucEvent3") as Control;
+            Repeater rptEvent = ucEvent.FindControl("rptEvent") as Repeater;
+
+            rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(categoryID, 5);
+            rptEvent.DataBind();
         }
         protected void rptBuildChildMenu(int categoryID)
         {

@@ -17,3 +17,4 @@ D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\obj\Debug\SES.CMS.pdb
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\bin\SES.CMS.dll
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\bin\CMS.BL.dll
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\bin\CMS.DAL.dll
+D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\obj\Debug\SES.CMS.dll.licenses

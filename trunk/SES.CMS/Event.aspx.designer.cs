@@ -10,60 +10,78 @@
 namespace SES.CMS {
     
     
-    public partial class Otofun {
+    public partial class Event {
         
         /// <summary>
-        /// head control.
+        /// divEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEvent;
         
         /// <summary>
-        /// form1 control.
+        /// rptEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Repeater rptEvent;
         
         /// <summary>
-        /// ucMainMenu1 control.
+        /// CollectionPager2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SES.CMS.Module.ucMainMenu ucMainMenu1;
+        protected global::SiteUtils.CollectionPager CollectionPager2;
         
         /// <summary>
-        /// ucCateMenu2 control.
+        /// divDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SES.CMS.Module.ucCateMenu ucCateMenu2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDetail;
         
         /// <summary>
-        /// ucEvent3 control.
+        /// rptCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SES.CMS.Module.ucEvent ucEvent3;
+        protected global::System.Web.UI.WebControls.Repeater rptCategory;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// CollectionPager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::SiteUtils.CollectionPager CollectionPager1;
+        
+        /// <summary>
+        /// ucLeftAdv1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucLeftAdv ucLeftAdv1;
+        
+        /// <summary>
+        /// ucRightAdv1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucRightAdv ucRightAdv1;
     }
 }

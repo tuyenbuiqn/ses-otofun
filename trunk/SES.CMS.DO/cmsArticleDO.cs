@@ -30,6 +30,12 @@ namespace SES.CMS.DO
 		public const string ISHOMPAGE_FIELD ="IsHompage";
 		public const string USERCREATE_FIELD ="UserCreate";
 		public const string CREATEDATE_FIELD ="CreateDate";
+		public const string ISMOSTREAD_FIELD ="IsMostRead";
+		public const string ISHIGHLIGHT_FIELD ="IsHighLight";
+		public const string ISHOTEVENT_FIELD ="IsHotEvent";
+		public const string ISEVENT_FIELD ="IsEvent";
+		public const string ISNEW_FIELD ="IsNew";
+		public const string EVENTID_FIELD ="EventID";
 
 		#endregion
 		
@@ -46,8 +52,12 @@ namespace SES.CMS.DO
 		private Boolean _IsHompage;
 		private Int32 _UserCreate;
 		private DateTime _CreateDate;
-        public bool IsMostRead { get; set; }
-        public bool IsHighLight { get; set; }
+		private Boolean _IsMostRead;
+		private Boolean _IsHighLight;
+		private Boolean _IsHotEvent;
+		private Boolean _IsEvent;
+		private Boolean _IsNew;
+		private Int32 _EventID;
 
 		#endregion
 
@@ -182,6 +192,72 @@ namespace SES.CMS.DO
 			set
 			{
 				_CreateDate = value;
+			}
+		}
+		public Boolean IsMostRead
+		{
+			get
+			{
+				return _IsMostRead;
+			}
+			set
+			{
+				_IsMostRead = value;
+			}
+		}
+		public Boolean IsHighLight
+		{
+			get
+			{
+				return _IsHighLight;
+			}
+			set
+			{
+				_IsHighLight = value;
+			}
+		}
+		public Boolean IsHotEvent
+		{
+			get
+			{
+				return _IsHotEvent;
+			}
+			set
+			{
+				_IsHotEvent = value;
+			}
+		}
+		public Boolean IsEvent
+		{
+			get
+			{
+				return _IsEvent;
+			}
+			set
+			{
+				_IsEvent = value;
+			}
+		}
+		public Boolean IsNew
+		{
+			get
+			{
+				return _IsNew;
+			}
+			set
+			{
+				_IsNew = value;
+			}
+		}
+		public Int32 EventID
+		{
+			get
+			{
+				return _EventID;
+			}
+			set
+			{
+				_EventID = value;
 			}
 		}
 

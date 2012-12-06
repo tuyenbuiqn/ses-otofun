@@ -20,6 +20,7 @@ namespace SES.CMS
                 rptArticeDataSource(articleID);
                 rptBuildChildMenu(articleID);
                 Page.Title = new cmsArticleBL().SelectByPK(articleID).Rows[0]["Title"].ToString() + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1}).ConfigValue);
+                BuildEvent(articleID);
             }
         }
 
@@ -27,6 +28,20 @@ namespace SES.CMS
         {
             rptArticleDetail.DataSource = new cmsArticleBL().SelectByPK(articleID);
             rptArticleDetail.DataBind();
+        }
+
+        protected void BuildEvent(int articleID)
+        {
+            MasterPage master = this.Master as MasterPage;
+            Control ucEvent = master.FindControl("ucEvent3") as Control;
+            Repeater rptEvent = ucEvent.FindControl("rptEvent") as Repeater;
+
+            cmsArticleDO objArt = new cmsArticleDO();
+            objArt.ArticleID = articleID;
+            objArt = new cmsArticleBL().Select(objArt);
+
+            rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(objArt.CategoryID, 5);
+            rptEvent.DataBind();
         }
         protected void rptBuildChildMenu(int articleID)
         {

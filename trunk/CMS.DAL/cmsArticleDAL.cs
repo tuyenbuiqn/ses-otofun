@@ -94,6 +94,22 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.IsHighLight;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@IsHotEvent", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsHotEvent;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsEvent", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsEvent;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsNew", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsNew;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@EventID", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.EventID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -166,9 +182,28 @@ namespace SES.CMS.DAL
             Sqlparam = new SqlParameter("@IsMostRead", SqlDbType.Bit);
             Sqlparam.Value = objcmsArticleDO.IsMostRead;
             Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@IsHighLight", SqlDbType.Bit);
             Sqlparam.Value = objcmsArticleDO.IsHighLight;
             Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsHotEvent", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsHotEvent;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsEvent", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsEvent;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsNew", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsNew;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@EventID", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.EventID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+
 
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
@@ -262,6 +297,15 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.IsMostRead = Convert.ToBoolean(dr["IsMostRead"]);
                 if (!Convert.IsDBNull(dr["IsHighLight"]))
                     objcmsArticleDO.IsHighLight = Convert.ToBoolean(dr["IsHighLight"]);
+                if (!Convert.IsDBNull(dr["IsHotEvent"]))
+                    objcmsArticleDO.IsHotEvent = Convert.ToBoolean(dr["IsHotEvent"]);
+                if (!Convert.IsDBNull(dr["IsEvent"]))
+                    objcmsArticleDO.IsEvent = Convert.ToBoolean(dr["IsEvent"]);
+                if (!Convert.IsDBNull(dr["IsNew"]))
+                    objcmsArticleDO.IsNew = Convert.ToBoolean(dr["IsNew"]);
+                if (!Convert.IsDBNull(dr["EventID"]))
+                    objcmsArticleDO.EventID = Convert.ToInt32(dr["EventID"]);
+                
 
             }
             return objcmsArticleDO;
@@ -311,6 +355,14 @@ namespace SES.CMS.DAL
                         objcmsArticleDO.IsMostRead = Convert.ToBoolean(dr["IsMostRead"]);
                     if (!Convert.IsDBNull(dr["IsHighLight"]))
                         objcmsArticleDO.IsHighLight = Convert.ToBoolean(dr["IsHighLight"]);
+                    if (!Convert.IsDBNull(dr["IsHotEvent"]))
+                        objcmsArticleDO.IsHotEvent = Convert.ToBoolean(dr["IsHotEvent"]);
+                    if (!Convert.IsDBNull(dr["IsEvent"]))
+                        objcmsArticleDO.IsEvent = Convert.ToBoolean(dr["IsEvent"]);
+                    if (!Convert.IsDBNull(dr["IsNew"]))
+                        objcmsArticleDO.IsNew = Convert.ToBoolean(dr["IsNew"]);
+                    if (!Convert.IsDBNull(dr["EventID"]))
+                        objcmsArticleDO.EventID = Convert.ToInt32(dr["EventID"]);
                     arrcmsArticleDO.Add(objcmsArticleDO);
                 }
             }
@@ -461,7 +513,80 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+        public DataTable HotEvents(int categoryID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByIsHotEvent";
 
+            SqlParameter Sqlparam;
+            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+            Sqlparam.Value = categoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+        public DataTable SelectAllEventArticle(int eventID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByEvent";
+
+            SqlParameter Sqlparam;
+            Sqlparam = new SqlParameter("@EventID", SqlDbType.Int);
+            Sqlparam.Value = eventID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+        public DataTable Events()
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByIsEvent";
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+        public DataTable NewArticles()
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByIsNew";
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
         public DataTable SelectByCatNum(int CategoryID, int Recordnumber)
         {
             SqlCommand Sqlcomm = new SqlCommand();

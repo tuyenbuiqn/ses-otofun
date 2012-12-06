@@ -3,3 +3,5 @@
 <li><a href="Default.aspx?Page=ArticleCategory">Thêm Danh mục</a></li>
 <li><a href="Default.aspx?Page=ListArticle">Danh sách Tin tức</a></li>
 <li><a href="Default.aspx?Page=Article">Thêm Tin tức</a></li>
+<li><a href="Default.aspx?Page=ListEvent">Dòng sự kiện</a></li>
+<li><a href="Default.aspx?Page=Event">Thêm Dòng sự kiện</a></li>

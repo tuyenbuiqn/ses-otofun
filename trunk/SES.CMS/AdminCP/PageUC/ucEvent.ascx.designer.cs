@@ -10,7 +10,7 @@
 namespace SES.CMS.AdminCP.PageUC {
     
     
-    public partial class ucArticle {
+    public partial class ucEvent {
         
         /// <summary>
         /// txtTitle control.
@@ -31,31 +31,13 @@ namespace SES.CMS.AdminCP.PageUC {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// fuImage control.
+        /// cboParent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuImage;
-        
-        /// <summary>
-        /// hplImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplImage;
-        
-        /// <summary>
-        /// cboCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cboCategory;
+        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cboParent;
         
         /// <summary>
         /// btnSelectParent control.
@@ -67,40 +49,13 @@ namespace SES.CMS.AdminCP.PageUC {
         protected global::DevExpress.Web.ASPxEditors.ASPxButton btnSelectParent;
         
         /// <summary>
-        /// ddlEvent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEvent;
-        
-        /// <summary>
         /// txtDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescription;
-        
-        /// <summary>
-        /// txtArticleDetail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CKEditor.NET.CKEditorControl txtArticleDetail;
-        
-        /// <summary>
-        /// chkIsHomePage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsHomePage;
+        protected global::CKEditor.NET.CKEditorControl txtDescription;
         
         /// <summary>
         /// chkIsPublish control.
@@ -110,42 +65,6 @@ namespace SES.CMS.AdminCP.PageUC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkIsPublish;
-        
-        /// <summary>
-        /// chkIsMostRead control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsMostRead;
-        
-        /// <summary>
-        /// chkIsHighLight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsHighLight;
-        
-        /// <summary>
-        /// chkIsHotEvent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsHotEvent;
-        
-        /// <summary>
-        /// chkIsNew control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsNew;
         
         /// <summary>
         /// txtOrderID control.
