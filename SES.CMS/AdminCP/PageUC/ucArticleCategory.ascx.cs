@@ -34,16 +34,14 @@ namespace SES.CMS.AdminCP.PageUC
             txtTitle.Text = objCat.Title;
             txtDescription.Text = objCat.Description;
             chkIsHomePage.Checked = objCat.IsHompage;
-            chkIsPublish.Checked = !objCat.IsPublish;
+            chkIsPublish.Checked = objCat.IsPublish;
             chkIsMenu.Checked = objCat.IsMenu;
 
-            if (objCat.CategoryTypeID == 0) rdoNWC.Checked = true;
-            else if (objCat.CategoryTypeID == 1) rdoNW.Checked = true;
-            else if (objCat.CategoryTypeID == 2) rdoBC.Checked = true;
-            else if (objCat.CategoryTypeID == 3) rdoB.Checked = true;
-            else if (objCat.CategoryTypeID == 4) rdoCT.Checked = true;
-
-
+            if (objCat.CategoryTypeID == 1) rdoNWC.Checked = true;
+            else if (objCat.CategoryTypeID == 2) rdoNW.Checked = true;
+            else if (objCat.CategoryTypeID == 3) rdoBC.Checked = true;
+            else if (objCat.CategoryTypeID == 4) rdoB.Checked = true;
+            else if (objCat.CategoryTypeID == 5) rdoCT.Checked = true;
 
             if (objCat.ParentID == 0) chkIsTop.Checked = true;
             else
@@ -52,7 +50,6 @@ namespace SES.CMS.AdminCP.PageUC
                 cboParent.Value = objCat.ParentID.ToString();
             }
             txtOrderID.Text = objCat.OrderID.ToString();
-          
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -76,13 +73,15 @@ namespace SES.CMS.AdminCP.PageUC
             objCat.Title = txtTitle.Text;
             objCat.Description = txtDescription.Text;
             objCat.IsHompage = chkIsHomePage.Checked;
-            objCat.IsPublish = !chkIsPublish.Checked;
+            objCat.IsPublish = chkIsPublish.Checked;
             objCat.IsMenu = chkIsMenu.Checked;
-            if (rdoNWC.Checked) objCat.CategoryTypeID = 0;
-            else if (rdoNW.Checked) objCat.CategoryTypeID = 1;
-            else if (rdoBC.Checked) objCat.CategoryTypeID = 2;
-            else if (rdoB.Checked) objCat.CategoryTypeID = 3;
-            else if (rdoCT.Checked) objCat.CategoryTypeID = 4;
+            objCat.CreateDate = DateTime.Now;
+            objCat.UserCreate = int.Parse(Session["UserID"].ToString());
+            if (rdoNWC.Checked) objCat.CategoryTypeID = 1;
+            else if (rdoNW.Checked) objCat.CategoryTypeID = 2;
+            else if (rdoBC.Checked) objCat.CategoryTypeID = 3;
+            else if (rdoB.Checked) objCat.CategoryTypeID = 4;
+            else if (rdoCT.Checked) objCat.CategoryTypeID = 5;
 
             objCat.OrderID = int.Parse(txtOrderID.Text);
             if (chkIsTop.Checked) objCat.ParentID = 0;

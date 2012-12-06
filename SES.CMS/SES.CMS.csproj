@@ -40,14 +40,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\CKEditor.NET.dll</HintPath>
     </Reference>
-    <Reference Include="CMS.BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\CMS.BL.dll</HintPath>
-    </Reference>
-    <Reference Include="CMS.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\CMS.DAL.dll</HintPath>
-    </Reference>
     <Reference Include="CollectionPager, Version=0.0.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\CollectionPager.dll</HintPath>
@@ -76,10 +68,6 @@
     <Reference Include="MSCaptcha, Version=2.0.3733.36001, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\MSCaptcha.dll</HintPath>
-    </Reference>
-    <Reference Include="SES.CMS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\SES.CMS.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Web.DynamicData" />
@@ -795,9 +783,28 @@
     <Content Include="AdminCP\js\scripts.js" />
     <Content Include="AdminCP\ListCategory.aspx" />
     <Content Include="AdminCP\Login.aspx" />
+    <Content Include="AdminCP\MenuUC\ucMnuArticles.ascx" />
     <Content Include="AdminCP\MenuUC\ucMnuCategory.ascx" />
     <Content Include="AdminCP\MenuUC\ucMnuConfig.ascx" />
+    <Content Include="AdminCP\MenuUC\ucMnuImages.ascx" />
     <Content Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx" />
+    <Content Include="AdminCP\MenuUC\ucMnuSlide.ascx" />
+    <Content Include="AdminCP\PageUC\ucAddMultiImg.ascx" />
+    <Content Include="AdminCP\PageUC\ucAlbum.ascx" />
+    <Content Include="AdminCP\PageUC\ucArticle.ascx" />
+    <Content Include="AdminCP\PageUC\ucArticleCategory.ascx" />
+    <Content Include="AdminCP\PageUC\ucConfig.ascx" />
+    <Content Include="AdminCP\PageUC\ucImage.ascx" />
+    <Content Include="AdminCP\PageUC\ucListAlbum.ascx" />
+    <Content Include="AdminCP\PageUC\ucListArticle.ascx" />
+    <Content Include="AdminCP\PageUC\ucListArticleCategory.ascx" />
+    <Content Include="AdminCP\PageUC\ucListConfig.ascx" />
+    <Content Include="AdminCP\PageUC\ucListImages.ascx" />
+    <Content Include="AdminCP\PageUC\ucListSlide.ascx" />
+    <Content Include="AdminCP\PageUC\ucListUser.ascx" />
+    <Content Include="AdminCP\PageUC\ucSlide.ascx" />
+    <Content Include="AdminCP\PageUC\ucUser.ascx" />
+    <Content Include="Article.aspx" />
     <Content Include="assets\loader.gif" />
     <Content Include="assets\next.png" />
     <Content Include="assets\pause.png" />
@@ -822,6 +829,7 @@
     <Content Include="bin\SES.CMS.DO.pdb" />
     <Content Include="bin\SES.CMS.pdb" />
     <Content Include="bin\UrlRewritingNet.UrlRewriter.dll" />
+    <Content Include="Category.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\ckeditor.js" />
     <Content Include="ckeditor\ckeditor_basic.js" />
@@ -1037,6 +1045,9 @@
     <Content Include="ckeditor\skins\v2\skin.js" />
     <Content Include="ckeditor\skins\v2\templates.css" />
     <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style2.css" />
+    <Content Include="Default.aspx" />
     <Content Include="fancybox\blank.gif" />
     <Content Include="fancybox\fancybox-x.png" />
     <Content Include="fancybox\fancybox-y.png" />
@@ -1066,6 +1077,35 @@
     <Content Include="fancybox\jquery.fancybox-1.3.4.js" />
     <Content Include="fancybox\jquery.fancybox-1.3.4.pack.js" />
     <Content Include="fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="images\Anh-Tin.jpg" />
+    <Content Include="images\background.jpg" />
+    <Content Include="images\bigliststyle.jpg" />
+    <Content Include="images\bike.jpg" />
+    <Content Include="images\car.jpg" />
+    <Content Include="images\comment-code.png" />
+    <Content Include="images\docnhieu-image.jpg" />
+    <Content Include="images\facebook-icon.png" />
+    <Content Include="images\facebook_like_button_big.jpg" />
+    <Content Include="images\header.jpg" />
+    <Content Include="images\Home-button.jpg" />
+    <Content Include="images\label-back.jpg" />
+    <Content Include="images\lienhe-icon1.jpg" />
+    <Content Include="images\line.jpg" />
+    <Content Include="images\liststyle.jpg" />
+    <Content Include="images\mid-quangcao.jpg" />
+    <Content Include="images\P.jpg" />
+    <Content Include="images\patem.jpg" />
+    <Content Include="images\patem2.jpg" />
+    <Content Include="images\patem3.jpg" />
+    <Content Include="images\phone-icon.jpg" />
+    <Content Include="images\quangcao-banner.jpg" />
+    <Content Include="images\quangcao.jpg" />
+    <Content Include="images\quangcaophai1.jpg" />
+    <Content Include="images\quangcaophai2.jpg" />
+    <Content Include="images\RSS-button.jpg" />
+    <Content Include="images\search-button.jpg" />
+    <Content Include="images\thongtindoanhnghiep.jpg" />
+    <Content Include="images\TimKiem-button.jpg" />
     <Content Include="js\jquery-1.4.4.min.js" />
     <Content Include="js\jquery-ui-1.8.2.custom.min.js" />
     <Content Include="js\jquery.reveal.js" />
@@ -1074,9 +1114,41 @@
     <Content Include="js\login.js" />
     <Content Include="js\popup.js" />
     <Content Include="js\preview.js" />
+    <Content Include="Media\Anh-Tin.jpg" />
+    <Content Include="Media\banner-otofun.jpg" />
+    <Content Include="Media\bike.jpg" />
+    <Content Include="Media\bugatti-veyron_s.jpg" />
+    <Content Include="Media\car.jpg" />
+    <Content Include="Media\Honda-Civic.jpg" />
+    <Content Include="Media\mid-quangcao.jpg" />
+    <Content Include="Media\quangcaophai1.jpg" />
+    <Content Include="Media\quangcaophai2.jpg" />
+    <Content Include="Media\Suzuki-Epicuro.jpg" />
+    <Content Include="Media\Untitled-tsub.jpg" />
+    <Content Include="Module\ucArticleAdv.ascx" />
+    <Content Include="Module\ucCateMenu.ascx" />
+    <Content Include="Module\ucDanhMucNoiBat.ascx" />
+    <Content Include="Module\ucFooter.ascx" />
+    <Content Include="Module\ucHomeSlide.ascx" />
+    <Content Include="Module\ucLastestNews.ascx" />
+    <Content Include="Module\ucLeftAdv.ascx" />
+    <Content Include="Module\ucMainHomePageCategory.ascx" />
+    <Content Include="Module\ucMainMenu.ascx" />
+    <Content Include="Module\ucMiddleAdv.ascx" />
+    <Content Include="Module\ucMostRead.ascx" />
+    <Content Include="Module\ucNewArticles.ascx" />
+    <Content Include="Module\ucRightAdv.ascx" />
+    <Content Include="Module\ucRightHomeAdv.ascx" />
+    <Content Include="Module\ucThamKhaoGiaXe.ascx" />
+    <Content Include="Module\ucTieuDiem.ascx" />
+    <Content Include="Module\ucTieuDiemCate.ascx" />
+    <Content Include="Module\ucTopAdvertisment.ascx" />
+    <Content Include="Module\ucTopRightAdv.ascx" />
+    <Content Include="Module\ucTuVanAndKyThuat.ascx" />
     <Content Include="obj\Debug\SES.CMS.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SES.CMS.dll" />
     <Content Include="obj\Debug\SES.CMS.pdb" />
+    <Content Include="preview.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1084,6 +1156,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="wt-rotator.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminCP\Default.aspx.cs">
@@ -1108,6 +1181,13 @@
     <Compile Include="AdminCP\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuArticles.ascx.cs">
+      <DependentUpon>ucMnuArticles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuArticles.ascx.designer.cs">
+      <DependentUpon>ucMnuArticles.ascx</DependentUpon>
+    </Compile>
     <Compile Include="AdminCP\MenuUC\ucMnuCategory.ascx.cs">
       <DependentUpon>ucMnuCategory.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1122,12 +1202,138 @@
     <Compile Include="AdminCP\MenuUC\ucMnuConfig.ascx.designer.cs">
       <DependentUpon>ucMnuConfig.ascx</DependentUpon>
     </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuImages.ascx.cs">
+      <DependentUpon>ucMnuImages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuImages.ascx.designer.cs">
+      <DependentUpon>ucMnuImages.ascx</DependentUpon>
+    </Compile>
     <Compile Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx.cs">
       <DependentUpon>ucMnuQlNguoiDung.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx.designer.cs">
       <DependentUpon>ucMnuQlNguoiDung.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuSlide.ascx.cs">
+      <DependentUpon>ucMnuSlide.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\MenuUC\ucMnuSlide.ascx.designer.cs">
+      <DependentUpon>ucMnuSlide.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucAddMultiImg.ascx.cs">
+      <DependentUpon>ucAddMultiImg.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucAddMultiImg.ascx.designer.cs">
+      <DependentUpon>ucAddMultiImg.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucAlbum.ascx.cs">
+      <DependentUpon>ucAlbum.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucAlbum.ascx.designer.cs">
+      <DependentUpon>ucAlbum.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucArticle.ascx.cs">
+      <DependentUpon>ucArticle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucArticle.ascx.designer.cs">
+      <DependentUpon>ucArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucArticleCategory.ascx.cs">
+      <DependentUpon>ucArticleCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucArticleCategory.ascx.designer.cs">
+      <DependentUpon>ucArticleCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucConfig.ascx.cs">
+      <DependentUpon>ucConfig.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucConfig.ascx.designer.cs">
+      <DependentUpon>ucConfig.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucImage.ascx.cs">
+      <DependentUpon>ucImage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucImage.ascx.designer.cs">
+      <DependentUpon>ucImage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListAlbum.ascx.cs">
+      <DependentUpon>ucListAlbum.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListAlbum.ascx.designer.cs">
+      <DependentUpon>ucListAlbum.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListArticle.ascx.cs">
+      <DependentUpon>ucListArticle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListArticle.ascx.designer.cs">
+      <DependentUpon>ucListArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListArticleCategory.ascx.cs">
+      <DependentUpon>ucListArticleCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListArticleCategory.ascx.designer.cs">
+      <DependentUpon>ucListArticleCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListConfig.ascx.cs">
+      <DependentUpon>ucListConfig.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListConfig.ascx.designer.cs">
+      <DependentUpon>ucListConfig.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListImages.ascx.cs">
+      <DependentUpon>ucListImages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListImages.ascx.designer.cs">
+      <DependentUpon>ucListImages.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListSlide.ascx.cs">
+      <DependentUpon>ucListSlide.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListSlide.ascx.designer.cs">
+      <DependentUpon>ucListSlide.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListUser.ascx.cs">
+      <DependentUpon>ucListUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListUser.ascx.designer.cs">
+      <DependentUpon>ucListUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucSlide.ascx.cs">
+      <DependentUpon>ucSlide.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucSlide.ascx.designer.cs">
+      <DependentUpon>ucSlide.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucUser.ascx.cs">
+      <DependentUpon>ucUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucUser.ascx.designer.cs">
+      <DependentUpon>ucUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Article.aspx.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Article.aspx.designer.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
     </Compile>
     <Compile Include="BaseClass\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -1138,6 +1344,167 @@
     <Compile Include="BaseClass\Sendmail.cs" />
     <Compile Include="BaseClass\ShoppingCart.cs" />
     <Compile Include="BaseClass\Ultility.cs" />
+    <Compile Include="Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucArticleAdv.ascx.cs">
+      <DependentUpon>ucArticleAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucArticleAdv.ascx.designer.cs">
+      <DependentUpon>ucArticleAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucCateMenu.ascx.cs">
+      <DependentUpon>ucCateMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucCateMenu.ascx.designer.cs">
+      <DependentUpon>ucCateMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucDanhMucNoiBat.ascx.cs">
+      <DependentUpon>ucDanhMucNoiBat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucDanhMucNoiBat.ascx.designer.cs">
+      <DependentUpon>ucDanhMucNoiBat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucFooter.ascx.cs">
+      <DependentUpon>ucFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucFooter.ascx.designer.cs">
+      <DependentUpon>ucFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucHomeSlide.ascx.cs">
+      <DependentUpon>ucHomeSlide.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucHomeSlide.ascx.designer.cs">
+      <DependentUpon>ucHomeSlide.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucLastestNews.ascx.cs">
+      <DependentUpon>ucLastestNews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucLastestNews.ascx.designer.cs">
+      <DependentUpon>ucLastestNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucLeftAdv.ascx.cs">
+      <DependentUpon>ucLeftAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucLeftAdv.ascx.designer.cs">
+      <DependentUpon>ucLeftAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucMainHomePageCategory.ascx.cs">
+      <DependentUpon>ucMainHomePageCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucMainHomePageCategory.ascx.designer.cs">
+      <DependentUpon>ucMainHomePageCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucMainMenu.ascx.cs">
+      <DependentUpon>ucMainMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucMainMenu.ascx.designer.cs">
+      <DependentUpon>ucMainMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucMiddleAdv.ascx.cs">
+      <DependentUpon>ucMiddleAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucMiddleAdv.ascx.designer.cs">
+      <DependentUpon>ucMiddleAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucMostRead.ascx.cs">
+      <DependentUpon>ucMostRead.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucMostRead.ascx.designer.cs">
+      <DependentUpon>ucMostRead.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucNewArticles.ascx.cs">
+      <DependentUpon>ucNewArticles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucNewArticles.ascx.designer.cs">
+      <DependentUpon>ucNewArticles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucRightAdv.ascx.cs">
+      <DependentUpon>ucRightAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucRightAdv.ascx.designer.cs">
+      <DependentUpon>ucRightAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucRightHomeAdv.ascx.cs">
+      <DependentUpon>ucRightHomeAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucRightHomeAdv.ascx.designer.cs">
+      <DependentUpon>ucRightHomeAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucThamKhaoGiaXe.ascx.cs">
+      <DependentUpon>ucThamKhaoGiaXe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucThamKhaoGiaXe.ascx.designer.cs">
+      <DependentUpon>ucThamKhaoGiaXe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucTieuDiem.ascx.cs">
+      <DependentUpon>ucTieuDiem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTieuDiem.ascx.designer.cs">
+      <DependentUpon>ucTieuDiem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucTieuDiemCate.ascx.cs">
+      <DependentUpon>ucTieuDiemCate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTieuDiemCate.ascx.designer.cs">
+      <DependentUpon>ucTieuDiemCate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucTopAdvertisment.ascx.cs">
+      <DependentUpon>ucTopAdvertisment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTopAdvertisment.ascx.designer.cs">
+      <DependentUpon>ucTopAdvertisment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucTopRightAdv.ascx.cs">
+      <DependentUpon>ucTopRightAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTopRightAdv.ascx.designer.cs">
+      <DependentUpon>ucTopRightAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucTuVanAndKyThuat.ascx.cs">
+      <DependentUpon>ucTuVanAndKyThuat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTuVanAndKyThuat.ascx.designer.cs">
+      <DependentUpon>ucTuVanAndKyThuat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Otofun.Master.cs">
+      <DependentUpon>Otofun.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otofun.Master.designer.cs">
+      <DependentUpon>Otofun.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1161,6 +1528,7 @@
     <None Include="ckeditor\.htaccess" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <Content Include="Otofun.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminCP\css\.svn\prop-base\" />
@@ -1199,11 +1567,6 @@
     <Folder Include="AdminCP\js\.svn\tmp\prop-base\" />
     <Folder Include="AdminCP\js\.svn\tmp\props\" />
     <Folder Include="AdminCP\js\.svn\tmp\text-base\" />
-    <Folder Include="AdminCP\PageUC\" />
-    <Folder Include="css\" />
-    <Folder Include="images\" />
-    <Folder Include="Media\" />
-    <Folder Include="Module\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -1214,7 +1577,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50474</DevelopmentServerPort>
+          <DevelopmentServerPort>49998</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

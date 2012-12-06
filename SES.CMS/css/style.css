@@ -830,7 +830,8 @@ WRAPPER AREA
 	height: 222px;
 	float: right;
 	margin-top: 15px;
-	background: url(../images/quangcaophai1.jpg);
+	
+	margin-right: 10px;
 }
 
 .quangcao-right2
@@ -839,7 +840,7 @@ WRAPPER AREA
 	height: 576px;
 	float: right;
 	margin-top: 15px;
-	background: url(../images/quangcaophai2.jpg);
+	
 }
 .bottom
 {
@@ -1128,10 +1129,22 @@ WRAPPER AREA
 {
 	width: 300px;
 	float: left;
-	margin: 20px 5px 20px 5px;
 	min-width: 310px;
 }
 .rightAdv-box
+{
+	width: 100px;
+	float: left;
+	min-width: 200px;
+}
+.leftContent-box
+{
+	width: 300px;
+	float: left;
+	margin: 20px 5px 20px 5px;
+	min-width: 310px;
+}
+.rightContent-box
 {
 	margin: 20px 5px 20px 0;
 	width: 100px;
@@ -1243,5 +1256,125 @@ p.pBreadrumb
 {
     width: 104px;
     height:70px;
+    
+}
+.comment-box
+{
+    width:470px;
+    margin:10px 0 10px 0;
+   
+    float:left;
+}
+.comment-row
+{
+    width:470px;
+    float:left;
+ 
+    line-height:20px;
+    
+}
+.comment-name{
+    
+    width:250px;
+    outline:1px solid #ccc;
+    
+}
+.comment-email{
+    width:182px;
+     outline:1px solid #ccc;
+}
+.comment-span{
+    
+    display:block;
+    width:232px;
+    float:left;
+}
+.comment-code{
+    
+    float:left;
+    width:90px;
+    margin-left:16px;
+}
+.comment-img-code{
+    width:21px;
+    float:left;
+    
+}
+.comment-presscode
+{
+   width:80px;
+   margin-left:9px;
+    float:left; 
+    
+}
+.comment-content
+{
+    
+    width:450px;
+    height:150px;
+}
+.comment-button{
+    
+    border: 0px;
+width: 87px;
+overflow: hidden;
+height: 18px;
+background:#C50B0E;
+border: 0px;
+cursor: pointer;
+color:#fff;
+}
+.hotevent-box
+{
+    width:310px;
+    float:left;
+    border:1px solid #C67926;
+    background:#DFC698;
+    padding:5px 0px;
+
+    
+    margin-bottom: 10px;
+}
+.hotevent
+{
+    width:151px;height:50px;
+    float:left;
+
+    padding:2px;
+    }
+.hotevent-img-box
+{
+    width:46px;
+    height:46px;
+    padding:1px;
+    
+    float:left;
+    margin-right:2px;
+
+    
+}
+.hotevent-img
+{
+    width:46px;
+    height:46px;
+    
+}
+.hotevent-title
+{
+    font-size:11px;
+    text-align:justify;
+    color:#000;
+    font-family:arial;
+   
+}
+.hotevent-h2-title
+{
+    height: 18px;
+color: #942201;
+padding: 0px 0px 3px 5px;
+font-family: Arial;
+font-weight: bold;
+font-size: 18px;
+border-bottom:2px solid #C06C14;
     
 }

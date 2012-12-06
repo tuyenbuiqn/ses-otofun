@@ -52,6 +52,20 @@ namespace SES.CMS.AdminCP
                 page.ClientScript.RegisterClientScriptBlock(typeof(Functions), "functions", script);
             }
         }
+        public static void RedirectPage(string url)
+        {
+            // Cleans the message to allow single quotation marks
+            string script = "<script type=\"text/javascript\">location='" + url + "';</script>";
+
+            // Gets the executing web page
+            Page page = HttpContext.Current.CurrentHandler as Page;
+
+            // Checks if the handler is a Page and that the script isn't allready on the Page
+            if (page != null && !page.ClientScript.IsClientScriptBlockRegistered("functions"))
+            {
+                page.ClientScript.RegisterClientScriptBlock(typeof(Functions), "functions", script);
+            }
+        }
         public static string EncryptMd5(string str)
         {
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
@@ -86,7 +100,7 @@ namespace SES.CMS.AdminCP
             ip_str_change = ip_str_change.Replace('"', '-');
             Regex v_reg_regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string v_str_FormD = ip_str_change.Normalize(NormalizationForm.FormD);
-            return v_reg_regex.Replace(v_str_FormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "-").Replace(".", "").Replace(":", "-").Replace("/","-");
+            return v_reg_regex.Replace(v_str_FormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "-").Replace(".", "").Replace(":", "-").Replace("%", "phan-tram").Replace("?", "-");
         }
         public static void GvDatabinder(GridView gv, object obDataSource)
         {

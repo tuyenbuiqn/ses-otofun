@@ -19,12 +19,15 @@ namespace SES.CMS.AdminCP.PageUC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            gvAt.DataSource = new cmsArticleBL().SelectAll();
-            gvAt.DataBind();
+            if (!IsPostBack)
+            {
+                gvAt.DataSource = new cmsArticleBL().SelectAll();
+                gvAt.DataBind();
+                Functions.ddlDatabinder(cboCategory, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new cmsCategoryBL().SelectAll());
+                cboCategory.Items.Insert(0, "Chọn tất cả -----------");
+            }
 
-
-            Functions.ddlDatabinder(cboCategory, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new cmsCategoryBL().SelectAll());
-            cboCategory.Items.Insert(0, "Chọn tất cả -----------");
+          
         }
 
         protected void gvArticle_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)

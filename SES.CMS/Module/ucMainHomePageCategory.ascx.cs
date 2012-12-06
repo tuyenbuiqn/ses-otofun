@@ -40,7 +40,7 @@ namespace SES.CMS.Module
 
                 DataTable dtMenuChild = cateBL.SelectByParent(int.Parse(drv["CategoryID"].ToString()));
                 DataTable dtTopHighLight = artBL.SelectToMainHomepageCate(1,int.Parse(drv["CategoryID"].ToString()),true);
-                DataTable dtTopOtherHighLight = artBL.SelectToMainHomepageCate(6, int.Parse(drv["CategoryID"].ToString()), true);
+                DataTable dtTopOtherHighLight = artBL.SelectToMainHomepageCate(5, int.Parse(drv["CategoryID"].ToString()), true);
 
                 int topArtID = 0;
                 if (dtTopHighLight.Rows.Count > 0)
