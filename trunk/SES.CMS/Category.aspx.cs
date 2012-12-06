@@ -18,6 +18,7 @@ namespace SES.CMS
                 int categoryID = int.Parse(Request.QueryString["CategoryID"]);
                 rptCategoryDataSoucre(categoryID);
                 rptBuildChildMenu(categoryID);
+                Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID}).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
             }
         }
         protected void rptBuildChildMenu(int categoryID)

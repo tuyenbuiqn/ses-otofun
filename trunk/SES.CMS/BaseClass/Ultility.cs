@@ -104,12 +104,22 @@ namespace SES.CMS
         }
         public static string Change_AV(string ip_str_change)
         {
-            if (string.IsNullOrEmpty(ip_str_change)) return "default.aspx";
+            if (string.IsNullOrEmpty(ip_str_change)) return "index.aspx";
             Regex v_reg_regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string v_str_FormD = ip_str_change.Normalize(NormalizationForm.FormD);
             string rt = v_reg_regex.Replace(v_str_FormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "-").Replace("/", "-");
-            rt = rt.Replace("\\", "-").Replace("'", "-").Replace(":", "-");
+            rt = rt.Replace("\\", "-").Replace("'", "-").Replace(":", "-").Replace("&", "-").Replace(".", "").Replace(":", "-").Replace("%", "phan-tram").Replace("?", "-").Replace("\"", "-");
             rt = rt + ".aspx";
+            return rt;
+
+        }
+        public static string Change_AVCate(string ip_str_change)
+        {
+            if (string.IsNullOrEmpty(ip_str_change)) return "index.aspx";
+            Regex v_reg_regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string v_str_FormD = ip_str_change.Normalize(NormalizationForm.FormD);
+            string rt = v_reg_regex.Replace(v_str_FormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "-").Replace("/", "-");
+            rt = rt.Replace("\\", "-").Replace("'", "-").Replace(":", "-").Replace("&", "-").Replace(".", "").Replace(":", "-").Replace("%", "phan-tram").Replace("?", "-").Replace("\"", "-");
             return rt;
 
         }

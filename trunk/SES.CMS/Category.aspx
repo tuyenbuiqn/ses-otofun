@@ -4,6 +4,7 @@
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <%@ Register src="Module/ucLeftAdv.ascx" tagname="ucLeftAdv" tagprefix="uc1" %>
 <%@ Register src="Module/ucRightAdv.ascx" tagname="ucRightAdv" tagprefix="uc2" %>
+<%@ Register Src="Module/ucTieuDiem.ascx" TagName="ucTieuDiem" TagPrefix="uc5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -42,8 +43,13 @@
                     </div>
                 </div>
             </div>
-            <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
-            <uc2:ucRightAdv ID="ucRightAdv1" runat="server" />
+           <div class="leftContent-box">
+                <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
+                <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
+            </div>
+            <div class="rightContent-box">
+                <uc2:ucRightAdv ID="ucRightAdv1" runat="server" />
+            </div>
         </div>
     </div>
 </asp:Content>

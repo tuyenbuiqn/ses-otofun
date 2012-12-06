@@ -5,7 +5,13 @@
 /* ------------------------------------------
 		GENERAL STYLING
 --------------------------------------------- */
-body								{ margin:0;padding:0; font-family: Arial, Helvetica, sans-serif; background-image:url(../images/body-bg.png); font-size: 13px; color: #000222; }
+body							{	margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-image: url(../images/body-bg.png);
+font-size: 13px;
+color: #000222
+}
 
 p								{ color: #858585; line-height: 1.5em;}
 h1,h2,h2,h4,h5 					{ font-family: Tahoma, Geneva, sans-serif; margin-top: 10px; font-weight: normal; margin-bottom: 20px; color: #666; }
@@ -41,12 +47,11 @@ blockquote 						{ margin:22px 40px; color:#575757; padding: 0px 50px; backgroun
 
 
 #tooltip			{	 font-size: 10px; font-weight: bold;}
-#header 				{
-	overflow: hidden;
-	padding-top: 10px;
-	background-image: url(../images/grid-bg.png);
-					}
-
+#header {
+overflow: hidden;
+padding-top: 10px;
+background-image: url(../images/grid-bg.png);
+}
 
 /* -------------------------------------------------------
 		LOGO - COULD JUST USE YORU OWN IMAGE FOR A LOGO
@@ -155,17 +160,16 @@ blockquote 						{ margin:22px 40px; color:#575757; padding: 0px 50px; backgroun
 }
 #navigation ul li { display: inline;}
 
-#navigation ul li .active 
-{
-	background-image:url(../images/body-bg.png);
-	border: none;
-	color: #000222;
-	
+#navigation ul li .active {
+	background-color: #F2F2F2;
+	color: #3F3F3F;
+	border: 1px solid #F2F2F2;
 }
 
 /* ---------------------------------------
 		SUBNAVIGATION
 ----------------------------------------- */
+
 
 #sub_nav {
 	overflow: hidden;
@@ -456,8 +460,8 @@ td a, td a:visited	{
 	color: #BE1E2D;
 }
 	
-/*This is for the zebra striping 
-.even { background-color: #F0F0F0;}*/
+/*This is for the zebra striping */
+.even { background-color: #F0F0F0;}
 
 
 /* ----------------------------
@@ -512,7 +516,6 @@ td a, td a:visited	{
 	padding-bottom: 5px;
 	padding-left: 8px;
 		}
-		
 		
 form input.submit.special	{ background-color: #000000; }
 form input.submit:hover 	{ text-decoration: underline; background-color: #333333;}
@@ -847,17 +850,10 @@ h3.active {background-position: left bottom;}
 		FOOTER
 ------------------------------ */
 
-#footer		{ text-align: center; font-size: 11px; margin-top: 12px; margin-bottom: 12px;
-       		  border-top:1px solid #648293;
-       		  }
+#footer		{ text-align: center; font-size: 11px; margin-top: 12px; margin-bottom: 12px;}
 #footer a 	{
 	color: #BE1E2D;
 }
-#footer	p
-{
-	color:#333;
-	font-weight:bold;
-	}
 
 /* ----------------------------
 		WYSIWYG EDITOR
@@ -934,39 +930,12 @@ div.wysiwyg ul.panel li a.removeFormat			{ background-position: -80px -64px; }
 div.wysiwyg ul.panel li a.empty					 { background-position: -64px -80px; }
 
 div.wysiwyg iframe { border: 0; clear: left; margin: 0; width: 918px !important; }
-
-.userInfo
-{
-	float:right;
-	border-bottom:1px dashed #333;
-	padding-bottom:5px;
-	color:#333;
-	font-weight:bold;
-	}
-	.userInfo a
-	{
-		color:#648293;
-		font-size:12px;
-		margin-left:10px;
-	 text-decoration:none;
-	}
-	.userInfo span
-	{
-		margin-right:10px;
-		color:#333;
-		}
-	.userInfo a:hover
-	{
-		border-bottom: solid 1px #CA4C3F;
-		
-		}
-		
-		
-.view-detail-button
-{
-	width:16px;
-	height:16px;
-	background:url(/admincp/images/view-detail.png) no-repeat;
-	position:absolute;
-	left:35px;
-	}	
+    .tablet
+    {
+        border-collapse: collapse;
+    }
+    .tablet td
+    {
+        border: 1px solid #CCC;
+        padding: 0 0.5em;
+    }

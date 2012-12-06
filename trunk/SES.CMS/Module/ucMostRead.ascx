@@ -9,10 +9,13 @@
                 <ItemTemplate>
                     <li>
                         <div class="out-image">
-                            <a href='/Art/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx' title='<%#Eval("Title") %>'>
+                            <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                title='<%#Eval("Title") %>'>
                                 <img class="Anh-noidung-docnhieu" src='/images/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' /></a></div>
                         <p>
-                           <a href='/Art/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx' title='<%#Eval("Title") %>' class="docnhieu-chitiet"><%#Eval("Title") %></a></p>
+                            <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                title='<%#Eval("Title") %>'>
+                                <%#Eval("Title") %></a></p>
                     </li>
                 </ItemTemplate>
             </asp:Repeater>

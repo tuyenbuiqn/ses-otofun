@@ -32,11 +32,11 @@
             Phân loại
         </td>
         <td>
-            <asp:RadioButton ID="rdoNWC" GroupName="type" Text="Trang danh mục tin tức" runat="server" />
-            <asp:RadioButton ID="rdoNW" runat="server" GroupName="type" Text="Trang tin tức" />
-            <asp:RadioButton ID="rdoBC" GroupName="type" Text="Danh mục nhãn hiệu" runat="server" />
-            <asp:RadioButton ID="rdoB" GroupName="type" Text="Trang Nhãn hiệu" runat="server" />
-            <asp:RadioButton ID="rdoCT" GroupName="type" Text="Trang Liên hệ" runat="server" />
+            <asp:RadioButton ID="rdoNWC" GroupName="type" Text="Hiển thị dưới slide trang chủ" runat="server" />
+            <asp:RadioButton ID="rdoNW" runat="server" GroupName="type" Text="Trang tin tức" Visible="false" />
+            <asp:RadioButton ID="rdoBC" GroupName="type" Text="Danh mục nhãn hiệu" runat="server" Visible="false" />
+            <asp:RadioButton ID="rdoB" GroupName="type" Text="Trang Nhãn hiệu" runat="server" Visible="false" />
+            <asp:RadioButton ID="rdoCT" GroupName="type" Text="Trang Liên hệ" runat="server" Visible="false" />
         </td>
     </tr>
     <tr>
@@ -58,7 +58,7 @@
                 <asp:CheckBox ID="chkIsTop" runat="server" />Danh mục cấp cao nhất</div>
         </td>
     </tr>
-    <tr>
+    <tr style="display:none;">
         <td class="style8">
             Hình ảnh:
         </td>
@@ -97,19 +97,18 @@
         </td>
         <td class="style4">
             <div style="float: left; vertical-align: middle;">
-                &nbsp;
-                <asp:CheckBox ID="chkIsHomePage" runat="server" Visible="false" />
-                <asp:CheckBox ID="chkIsMenu" runat="server" />
-                Thuộc menu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:CheckBox ID="chkIsPublish" runat="server" Visible="False" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Số
-                thứ tự:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <div style="float: left; vertical-align: middle;">
+                Thuộc trang chủ: <asp:CheckBox ID="chkIsHomePage" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;
+                Thuộc menu<asp:CheckBox ID="chkIsMenu" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;
+                Hiển thị<asp:CheckBox ID="chkIsPublish" runat="server"/>  &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>Số thứ tự</td>
+        <td>  <div style="float: left; vertical-align: middle;">
                 <asp:TextBox ID="txtOrderID" runat="server" Width="68px" ValidationGroup="submitGrp"></asp:TextBox>
             </div>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtOrderID"
-                ErrorMessage="*** Cần nhập số thứ tự" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
-        </td>
+                ErrorMessage="*** Cần nhập số thứ tự" ValidationGroup="submitGrp"></asp:RequiredFieldValidator></td>
     </tr>
     <tr>
         <td class="style8">
