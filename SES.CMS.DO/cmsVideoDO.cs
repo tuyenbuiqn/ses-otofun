@@ -31,6 +31,8 @@ namespace SES.CMS.DO
 		public const string CREATEDATE_FIELD ="CreateDate";
 		public const string ISHOMEPAGE_FIELD ="IsHomepage";
 		public const string ARTICLEID_FIELD ="ArticleID";
+        public const string ISACCEPTED_FIELD = "IsAccepted";
+        public const string USERXETDUYET_FIELD = "UserXetDuyet";
 
 		#endregion
 		
@@ -48,6 +50,8 @@ namespace SES.CMS.DO
 		private DateTime _CreateDate;
 		private Boolean _IsHomepage;
 		private Int32 _ArticleID;
+        private Boolean _IsAccepted;
+        private Int32 _UserXetDuyet;
 
 		#endregion
 
@@ -195,6 +199,29 @@ namespace SES.CMS.DO
 				_ArticleID = value;
 			}
 		}
+
+        public Boolean IsAccepted
+        {
+            get
+            {
+                return _IsAccepted;
+            }
+            set
+            {
+                _IsAccepted = value;
+            }
+        }
+        public Int32 UserXetDuyet
+        {
+            get
+            {
+                return _UserXetDuyet;
+            }
+            set
+            {
+                _UserXetDuyet = value;
+            }
+        }
 
         #endregion
 

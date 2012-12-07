@@ -94,6 +94,14 @@ namespace SES.CMS.DAL
                     Sqlparam.Direction = ParameterDirection.ReturnValue;
                     Sqlcomm.Parameters.Add(Sqlparam);
 
+                    Sqlparam = new SqlParameter("@IsAccepted", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsAccepted;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@UserXetDuyet", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.UserXetDuyet;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
 
                     int result = base.ExecuteNoneQuery(Sqlcomm);
 
@@ -163,6 +171,13 @@ namespace SES.CMS.DAL
                     Sqlparam.Value = objcmsVideoDO.ArticleID;
                     Sqlcomm.Parameters.Add(Sqlparam);
 
+                    Sqlparam = new SqlParameter("@IsAccepted", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsAccepted;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@UserXetDuyet", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.UserXetDuyet;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
 
                     Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
@@ -253,6 +268,10 @@ if(!Convert.IsDBNull(dr["CreateDate"]))
 objcmsVideoDO.CreateDate=Convert.ToDateTime(dr["CreateDate"]);
 if(!Convert.IsDBNull(dr["IsHomepage"]))
 objcmsVideoDO.IsHomepage=Convert.ToBoolean(dr["IsHomepage"]);
+if (!Convert.IsDBNull(dr["IsAccepted"]))
+    objcmsVideoDO.IsAccepted = Convert.ToBoolean(dr["IsAccepted"]);
+if (!Convert.IsDBNull(dr["UserXetDuyet"]))
+    objcmsVideoDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
 
             }
              return objcmsVideoDO;
@@ -298,6 +317,10 @@ if(!Convert.IsDBNull(dr["CreateDate"]))
 objcmsVideoDO.CreateDate=Convert.ToDateTime(dr["CreateDate"]);
 if(!Convert.IsDBNull(dr["IsHomepage"]))
 objcmsVideoDO.IsHomepage=Convert.ToBoolean(dr["IsHomepage"]);
+if (!Convert.IsDBNull(dr["IsAccepted"]))
+objcmsVideoDO.IsAccepted = Convert.ToBoolean(dr["IsAccepted"]);
+if (!Convert.IsDBNull(dr["UserXetDuyet"]))
+objcmsVideoDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
 arrcmsVideoDO.Add(objcmsVideoDO);
 }
             }
