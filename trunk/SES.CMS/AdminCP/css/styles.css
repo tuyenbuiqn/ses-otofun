@@ -948,3 +948,22 @@ div.wysiwyg iframe { border: 0; clear: left; margin: 0; width: 918px !important;
 	width:150px;
 	float:left;
 	}    
+.xd-filter
+{
+	width: 99%;
+	float:left;
+	border:1px dashed #ccc;
+	padding:2px 3px;
+	}
+.span-xd-category
+{
+	}
+.span-xd-radio
+{
+	}		
+	
+.span-xd-button
+{
+	float: left;
+	display:block;
+	}	

@@ -95,7 +95,6 @@
 	border-left: 1px solid #ccc;
 	border-top: 1px solid #ccc;
 	padding: 5px;
-	text-align: center;
 	position:relative;
 }
 .tstyle2 tr:hover
@@ -326,7 +325,6 @@
 
 .button-gg-green
 {
-	margin-top: 20px;
 	background-color: #4D90FE;
 		border: 1px solid #3079ED;
 	color: white !important;
