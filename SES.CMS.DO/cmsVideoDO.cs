@@ -30,6 +30,7 @@ namespace SES.CMS.DO
 		public const string ISPUBLISH_FIELD ="IsPublish";
 		public const string CREATEDATE_FIELD ="CreateDate";
 		public const string ISHOMEPAGE_FIELD ="IsHomepage";
+		public const string ARTICLEID_FIELD ="ArticleID";
 
 		#endregion
 		
@@ -46,6 +47,7 @@ namespace SES.CMS.DO
 		private Boolean _IsPublish;
 		private DateTime _CreateDate;
 		private Boolean _IsHomepage;
+		private Int32 _ArticleID;
 
 		#endregion
 
@@ -180,6 +182,17 @@ namespace SES.CMS.DO
 			set
 			{
 				_IsHomepage = value;
+			}
+		}
+		public Int32 ArticleID
+		{
+			get
+			{
+				return _ArticleID;
+			}
+			set
+			{
+				_ArticleID = value;
 			}
 		}
 

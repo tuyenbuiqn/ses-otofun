@@ -19,7 +19,15 @@ namespace SES.CMS
                 int articleID = int.Parse(Request.QueryString["ArticleID"].ToString());
                 rptArticeDataSource(articleID);
                 rptBuildChildMenu(articleID);
-                Page.Title = new cmsArticleBL().SelectByPK(articleID).Rows[0]["Title"].ToString() + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1}).ConfigValue);
+                DataTable dtArticle = new cmsArticleBL().SelectByPK(articleID);
+                if (dtArticle.Rows.Count > 0)
+                {
+                    Page.Title = dtArticle.Rows[0]["Title"].ToString() + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                }
+                else
+                {
+                    Page.Title = "Tin tức - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                }
                 BuildEvent(articleID);
             }
         }

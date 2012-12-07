@@ -110,6 +110,14 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.EventID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@IsAccepted", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsAccepted;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@UserXetDuyet", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.UserXetDuyet;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -203,7 +211,13 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.EventID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@IsAccepted", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsAccepted;
+            Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@UserXetDuyet", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.UserXetDuyet;
+            Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
@@ -305,6 +319,10 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.IsNew = Convert.ToBoolean(dr["IsNew"]);
                 if (!Convert.IsDBNull(dr["EventID"]))
                     objcmsArticleDO.EventID = Convert.ToInt32(dr["EventID"]);
+                if (!Convert.IsDBNull(dr["IsAccepted"]))
+                    objcmsArticleDO.IsAccepted = Convert.ToBoolean(dr["IsAccepted"]);
+                if (!Convert.IsDBNull(dr["UserXetDuyet"]))
+                    objcmsArticleDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
                 
 
             }
@@ -363,6 +381,10 @@ namespace SES.CMS.DAL
                         objcmsArticleDO.IsNew = Convert.ToBoolean(dr["IsNew"]);
                     if (!Convert.IsDBNull(dr["EventID"]))
                         objcmsArticleDO.EventID = Convert.ToInt32(dr["EventID"]);
+                    if (!Convert.IsDBNull(dr["IsAccepted"]))
+                        objcmsArticleDO.IsAccepted = Convert.ToBoolean(dr["IsAccepted"]);
+                    if (!Convert.IsDBNull(dr["UserXetDuyet"]))
+                        objcmsArticleDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
                     arrcmsArticleDO.Add(objcmsArticleDO);
                 }
             }
