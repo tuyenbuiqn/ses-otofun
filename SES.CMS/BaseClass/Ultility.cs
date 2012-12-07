@@ -135,7 +135,35 @@ namespace SES.CMS
 
         }
 
-
+        public static string vietNameseDay(DayOfWeek dow)
+        {
+            string vietNameseDay = "";
+            switch (dow)
+            {
+                case DayOfWeek.Sunday:
+                    vietNameseDay = "Chủ nhật";
+                    break;
+                case DayOfWeek.Monday:
+                    vietNameseDay = "Thứ hai";
+                    break;
+                case DayOfWeek.Tuesday:
+                    vietNameseDay = "Thứ ba";
+                    break;
+                case DayOfWeek.Wednesday:
+                    vietNameseDay = "Thứ tư";
+                    break;
+                case DayOfWeek.Thursday:
+                    vietNameseDay = "Thứ năm";
+                    break;
+                case DayOfWeek.Friday:
+                    vietNameseDay = "Thứ sáu";
+                    break;
+                case DayOfWeek.Saturday:
+                    vietNameseDay = "Thứ bảy";
+                    break;
+            }
+            return vietNameseDay;
+        }
         public static string TagDataBindding(string tag, string aclass)
         {
             string urltag = "/Tags/1/";
