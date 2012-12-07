@@ -13,6 +13,7 @@ namespace SES.CMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            loadTime();
             if (!string.IsNullOrEmpty(Request.QueryString["CategoryID"]))
             {
                 int categoryID = int.Parse(Request.QueryString["CategoryID"]);
@@ -20,6 +21,30 @@ namespace SES.CMS
                 rptBuildChildMenu(categoryID);
                 Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID}).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 BuildEvent(categoryID);
+            }
+        }
+
+        protected void loadTime()
+        {
+            DateTime dateTime = DateTime.Now;
+            ltrDatetime.Text =  Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
+        }
+        protected void loadBreadcrumb(int categoryID)
+        {
+            cmsCategoryDO objCate = new cmsCategoryDO();
+            objCate.CategoryID = categoryID;
+            string rootUrl = "";
+            if (objCate.ParentID == 0)
+            {
+                rootUrl = hplBreadcrumb.NavigateUrl = "/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID;
+                hplBreadcrumb.Text = objCate.Title;
+                hplBreadcrumb.ToolTip = objCate.Title;
+            }
+            else
+            {
+                hplBreadcrumb.NavigateUrl = "/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID;
+                hplBreadcrumb.Text = objCate.Title;
+                hplBreadcrumb.ToolTip = objCate.Title;
             }
         }
         protected void BuildEvent(int categoryID)
