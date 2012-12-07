@@ -44,7 +44,7 @@ WRAPPER AREA
 {
 	width: 100%;
 	height: auto;
-	background: url(../images/background.jpg) repeat-x top;
+	background: url(../images/background.jpg) repeat-x top #141517;
 	float: left;
 }
 
@@ -1067,11 +1067,12 @@ WRAPPER AREA
 .category-wrap
 {
 	display: block;
-	width: 100%;
-	margin-top: 15px;
-	border-bottom: 1px solid #B23803;
+	width: 665px;
+	margin: 15px 0 0 5px;
+	border-bottom: 1px dashed #B23803;
 	padding-bottom: 5px;
 	overflow: hidden;
+	float: left;
 }
 .clearfix
 {
@@ -1081,7 +1082,7 @@ WRAPPER AREA
 .img130
 {
 	border: #ccc 1px solid;
-	width: 130px;
+	width: 160px;
 	height: 106px;
 	padding: 2px;
 	float: left;
@@ -1115,6 +1116,10 @@ WRAPPER AREA
 	-o-transition: all 0.3s ease;
 	float: right;
 }
+.readmore:hover
+{
+	text-decoration: underline;
+}
 .active
 {
 	padding: 3px 5px 3px 5px;
@@ -1127,9 +1132,11 @@ WRAPPER AREA
 }
 .leftAdv-box
 {
-	width: 300px;
+	width: 296px;
 	float: left;
-	min-width: 310px;
+	margin-left: 10px;
+	border: 1px solid #C06C14;
+	padding: 1px;
 }
 .rightAdv-box
 {
@@ -1153,9 +1160,9 @@ WRAPPER AREA
 }
 .breadcrumb-box
 {
-	width: 470px;
+	width: 670px;
 	height: 18px;
-	margin-top: 20px;
+	float: left;
 }
 .breadcrumb-article
 {
@@ -1171,6 +1178,7 @@ WRAPPER AREA
 	color: #999;
 	float: right;
 	margin-right: 10px;
+	margin: 10px 10px 0 0;
 }
 p.pBreadrumb
 {
@@ -1185,9 +1193,11 @@ p.pBreadrumb
 }
 .article-title
 {
-	font: 700 20px /23px "Arial";
+	font: 700 16px /23px "Arial";
 	color: #004175;
 	margin-top: 10px;
+	float: left;
+	width: 500px;
 }
 .article-description
 {
@@ -1205,7 +1215,7 @@ p.pBreadrumb
 }
 .newarticle-box
 {
-	width: 470px;
+	width: 670px;
 	margin-top: 20px;
 	float: left;
 	background-color: #DFC698;
@@ -1239,7 +1249,7 @@ p.pBreadrumb
 }
 .line-article
 {
-	width: 463px;
+	width: 663px;
 	height: 2px;
 	background: #942201;
 	border: solid 1px #C06C14;
@@ -1250,7 +1260,8 @@ p.pBreadrumb
 .article-desciption
 {
 	font-size: 15px;
-	margin: 10px 0 10px 0;
+	margin: 20px 0 10px 0;
+	float: left;
 }
 .img-car
 {
@@ -1259,30 +1270,30 @@ p.pBreadrumb
 }
 .comment-box
 {
-	width: 470px;
+	width: 665px;
 	margin: 10px 0 10px 0;
 	float: left;
 }
 .comment-row
 {
-	width: 470px;
+	width: 665px;
 	float: left;
 	line-height: 20px;
 }
 .comment-name
 {
-	width: 250px;
+	width: 340px;
 	outline: 1px solid #ccc;
 }
 .comment-email
 {
-	width: 182px;
+	width: 282px;
 	outline: 1px solid #ccc;
 }
 .comment-span
 {
 	display: block;
-	width: 232px;
+	width: 322px;
 	float: left;
 }
 .comment-code
@@ -1298,13 +1309,13 @@ p.pBreadrumb
 }
 .comment-presscode
 {
-	width: 80px;
+	width: 180px;
 	margin-left: 9px;
 	float: left;
 }
 .comment-content
 {
-	width: 450px;
+	width: 640px;
 	height: 150px;
 }
 .comment-button
@@ -1320,16 +1331,16 @@ p.pBreadrumb
 }
 .hotevent-box
 {
-	width: 310px;
+	width: 298px;
 	float: left;
 	border: 1px solid #C67926;
 	background: #DFC698;
 	padding: 5px 0px;
-	margin-bottom: 10px;
+	margin: 10px 0 10px 10px;
 }
 .hotevent
 {
-	width: 151px;
+	width: 145px;
 	height: 50px;
 	float: left;
 	padding: 2px;
@@ -1433,19 +1444,78 @@ p.pBreadrumb
 }
 .Event-boxes
 {
-    width:470px;
-    float:left;
-
+	width: 470px;
+	float: left;
 }
 .event-boxes-rows
 {
-    width:460px;
-    padding:3px;
-    border-bottom:1px solid #C06C14;
+	width: 460px;
+	padding: 3px;
+	border-bottom: 1px solid #C06C14;
 }
 .event-boxes-rows a
 {
-    color:#333;
-    font-size:14px;
-    
+	color: #333;
+	font-size: 14px;
 }
+.category-box
+{
+	width: 677px;
+	float: left;
+	border: 1px solid #C06C14;
+	margin: 10px 0 0 3px;
+}
+.category-title-box
+{
+	width: 677px;
+	float: left;
+	height: 26px;
+	background: #DFC698;
+	border-bottom: 2px solid #C06C14;
+}
+.category-title
+{
+	float: left;
+	width: 300px;
+	padding: 2px 0 2px 5px;
+	color: #942201;
+	font-family: Arial;
+	font-size: 18px;
+}
+.category-title-time
+{
+	display: block;
+	float: right;
+	padding: 2px 5px 2px 0;
+	color: #942201;
+}
+.article-box
+{
+	width: 660px;
+	float: left;
+	margin: 0 5px 5px 10px;
+}
+.tag-box
+{
+	width: 665px;
+	float: left;
+	background: url('../images/tag.png') no-repeat;
+	height: 30px;
+	padding: 5px 0 5px 0;
+	margin-top:10px;
+}
+.tag-ul
+{
+	float:left;
+	width:500px;
+	margin:0 0 0 70px;
+	}
+.tag-ul li
+{
+	float:left;
+	padding:2px;
+	}
+.tag-ul li a
+{
+	color:#000;
+	}
