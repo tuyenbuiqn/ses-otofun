@@ -69,7 +69,10 @@ namespace SES.CMS.BL
          return objcmsVideoDAL.SelectAll();
         }
 
-
+        public DataTable SelectVideoHomepage()
+        {
+            return objcmsVideoDAL.SelectVideoHomepage();
+        }
      
 #endregion          
     

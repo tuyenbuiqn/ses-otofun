@@ -34,142 +34,150 @@ namespace SES.CMS.DAL
 	
 		
 		#region Public Methods
-        public int Insert(cmsVideoDO objcmsVideoDO)
-        {
-            
-            SqlCommand Sqlcomm = new SqlCommand();
-            Sqlcomm.CommandType =  CommandType.StoredProcedure;
-            Sqlcomm.CommandText =  "spcmsVideo_Insert";
-            SqlParameter Sqlparam;
+                public int Insert(cmsVideoDO objcmsVideoDO)
+                {
 
-            Sqlparam = new SqlParameter("@Title", SqlDbType.NVarChar);
-Sqlparam.Value = objcmsVideoDO.Title;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    SqlCommand Sqlcomm = new SqlCommand();
+                    Sqlcomm.CommandType = CommandType.StoredProcedure;
+                    Sqlcomm.CommandText = "spcmsVideo_Insert";
+                    SqlParameter Sqlparam;
 
-Sqlparam = new SqlParameter("@VideoUrl", SqlDbType.NVarChar);
-Sqlparam.Value = objcmsVideoDO.VideoUrl;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@Title", SqlDbType.NVarChar);
+                    Sqlparam.Value = objcmsVideoDO.Title;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@Description", SqlDbType.NVarChar);
-Sqlparam.Value = objcmsVideoDO.Description;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@VideoUrl", SqlDbType.NVarChar);
+                    Sqlparam.Value = objcmsVideoDO.VideoUrl;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@AlbumID", SqlDbType.Int);
-Sqlparam.Value = objcmsVideoDO.AlbumID;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@Description", SqlDbType.NVarChar);
+                    Sqlparam.Value = objcmsVideoDO.Description;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
-Sqlparam.Value = objcmsVideoDO.CategoryID;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@AlbumID", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.AlbumID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@IsMostView", SqlDbType.Bit);
-Sqlparam.Value = objcmsVideoDO.IsMostView;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.CategoryID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@IsNew", SqlDbType.Bit);
-Sqlparam.Value = objcmsVideoDO.IsNew;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@IsMostView", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsMostView;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@OrderID", SqlDbType.Int);
-Sqlparam.Value = objcmsVideoDO.OrderID;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@IsNew", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsNew;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@IsPublish", SqlDbType.Bit);
-Sqlparam.Value = objcmsVideoDO.IsPublish;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@OrderID", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.OrderID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@CreateDate", SqlDbType.DateTime);
-Sqlparam.Value = objcmsVideoDO.CreateDate;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@IsPublish", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsPublish;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@IsHomepage", SqlDbType.Bit);
-Sqlparam.Value = objcmsVideoDO.IsHomepage;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@CreateDate", SqlDbType.DateTime);
+                    Sqlparam.Value = objcmsVideoDO.CreateDate;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
-Sqlparam.Direction = ParameterDirection.ReturnValue;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@IsHomepage", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsHomepage;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-           
-            int result =base.ExecuteNoneQuery(Sqlcomm);
-            
-            if(!Convert.IsDBNull(Sqlcomm.Parameters["@ID"]))
-				result = Convert.ToInt32(Sqlcomm.Parameters["@ID"].Value);
+                    Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.ArticleID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
-            return result;
-        }
-
-        public int Update(cmsVideoDO objcmsVideoDO)
-        {
-            
-            SqlCommand Sqlcomm = new SqlCommand();
-            Sqlcomm.CommandType =  CommandType.StoredProcedure;
-            Sqlcomm.CommandText =  "spcmsVideo_UpdateByPK";
-            SqlParameter Sqlparam;
-
-            Sqlparam = new SqlParameter("@VideoID", SqlDbType.BigInt);
-Sqlparam.Value = objcmsVideoDO.VideoID;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@Title", SqlDbType.NVarChar);
-Sqlparam.Value = objcmsVideoDO.Title;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@VideoUrl", SqlDbType.NVarChar);
-Sqlparam.Value = objcmsVideoDO.VideoUrl;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@Description", SqlDbType.NVarChar);
-Sqlparam.Value = objcmsVideoDO.Description;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@AlbumID", SqlDbType.Int);
-Sqlparam.Value = objcmsVideoDO.AlbumID;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
-Sqlparam.Value = objcmsVideoDO.CategoryID;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@IsMostView", SqlDbType.Bit);
-Sqlparam.Value = objcmsVideoDO.IsMostView;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@IsNew", SqlDbType.Bit);
-Sqlparam.Value = objcmsVideoDO.IsNew;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@OrderID", SqlDbType.Int);
-Sqlparam.Value = objcmsVideoDO.OrderID;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@IsPublish", SqlDbType.Bit);
-Sqlparam.Value = objcmsVideoDO.IsPublish;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@CreateDate", SqlDbType.DateTime);
-Sqlparam.Value = objcmsVideoDO.CreateDate;
-Sqlcomm.Parameters.Add(Sqlparam);
-
-Sqlparam = new SqlParameter("@IsHomepage", SqlDbType.Bit);
-Sqlparam.Value = objcmsVideoDO.IsHomepage;
-Sqlcomm.Parameters.Add(Sqlparam);
+                    Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
+                    Sqlparam.Direction = ParameterDirection.ReturnValue;
+                    Sqlcomm.Parameters.Add(Sqlparam);
 
 
-            
-            Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
-            Sqlparam.Direction = ParameterDirection.ReturnValue;
-            Sqlcomm.Parameters.Add(Sqlparam);
-            
-            int result=base.ExecuteNoneQuery(Sqlcomm);
-            
-             if (!Convert.IsDBNull(Sqlcomm.Parameters["@ErrorCode"]))
-                result = Convert.ToInt32(Sqlcomm.Parameters["@ErrorCode"].Value);
-                
-            return result;
+                    int result = base.ExecuteNoneQuery(Sqlcomm);
 
-           
-        }
+                    if (!Convert.IsDBNull(Sqlcomm.Parameters["@ID"]))
+                        result = Convert.ToInt32(Sqlcomm.Parameters["@ID"].Value);
+
+                    return result;
+                }
+
+                public int Update(cmsVideoDO objcmsVideoDO)
+                {
+
+                    SqlCommand Sqlcomm = new SqlCommand();
+                    Sqlcomm.CommandType = CommandType.StoredProcedure;
+                    Sqlcomm.CommandText = "spcmsVideo_UpdateByPK";
+                    SqlParameter Sqlparam;
+
+                    Sqlparam = new SqlParameter("@VideoID", SqlDbType.BigInt);
+                    Sqlparam.Value = objcmsVideoDO.VideoID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@Title", SqlDbType.NVarChar);
+                    Sqlparam.Value = objcmsVideoDO.Title;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@VideoUrl", SqlDbType.NVarChar);
+                    Sqlparam.Value = objcmsVideoDO.VideoUrl;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@Description", SqlDbType.NVarChar);
+                    Sqlparam.Value = objcmsVideoDO.Description;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@AlbumID", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.AlbumID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.CategoryID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@IsMostView", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsMostView;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@IsNew", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsNew;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@OrderID", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.OrderID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@IsPublish", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsPublish;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@CreateDate", SqlDbType.DateTime);
+                    Sqlparam.Value = objcmsVideoDO.CreateDate;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@IsHomepage", SqlDbType.Bit);
+                    Sqlparam.Value = objcmsVideoDO.IsHomepage;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+                    Sqlparam.Value = objcmsVideoDO.ArticleID;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+
+
+                    Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
+                    Sqlparam.Direction = ParameterDirection.ReturnValue;
+                    Sqlcomm.Parameters.Add(Sqlparam);
+
+                    int result = base.ExecuteNoneQuery(Sqlcomm);
+
+                    if (!Convert.IsDBNull(Sqlcomm.Parameters["@ErrorCode"]))
+                        result = Convert.ToInt32(Sqlcomm.Parameters["@ErrorCode"].Value);
+
+                    return result;
+
+
+                }
 
         public int Delete(cmsVideoDO objcmsVideoDO)
         {
@@ -313,7 +321,23 @@ arrcmsVideoDO.Add(objcmsVideoDO);
             }
                return dt;
         }
+        public DataTable SelectVideoHomepage()
+        {
 
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsVideo_Homepage";
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
      
 		#endregion          
     

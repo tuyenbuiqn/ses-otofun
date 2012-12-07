@@ -36,6 +36,8 @@ namespace SES.CMS.DO
 		public const string ISEVENT_FIELD ="IsEvent";
 		public const string ISNEW_FIELD ="IsNew";
 		public const string EVENTID_FIELD ="EventID";
+		public const string ISACCEPTED_FIELD ="IsAccepted";
+		public const string USERXETDUYET_FIELD ="UserXetDuyet";
 
 		#endregion
 		
@@ -58,6 +60,8 @@ namespace SES.CMS.DO
 		private Boolean _IsEvent;
 		private Boolean _IsNew;
 		private Int32 _EventID;
+		private Boolean _IsAccepted;
+		private Int32 _UserXetDuyet;
 
 		#endregion
 
@@ -258,6 +262,28 @@ namespace SES.CMS.DO
 			set
 			{
 				_EventID = value;
+			}
+		}
+		public Boolean IsAccepted
+		{
+			get
+			{
+				return _IsAccepted;
+			}
+			set
+			{
+				_IsAccepted = value;
+			}
+		}
+		public Int32 UserXetDuyet
+		{
+			get
+			{
+				return _UserXetDuyet;
+			}
+			set
+			{
+				_UserXetDuyet = value;
 			}
 		}
 
