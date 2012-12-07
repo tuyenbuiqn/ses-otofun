@@ -122,6 +122,14 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectAllEventArticle(eventID);
         }
+        public void XetDuyetNhieuBaiViet(string articleIDList, bool isAccepted, int userXetDuyet)
+        {
+            objcmsArticleDAL.XetDuyetNhieuBaiViet(articleIDList, isAccepted, userXetDuyet);
+        }
+        public DataTable ArticleXetDuyet_Filter(int categoryID, int isAccepted,int userID)
+        {
+            return objcmsArticleDAL.ArticleXetDuyet_Filter(categoryID, isAccepted,userID);
+        }
     }
 
 }
