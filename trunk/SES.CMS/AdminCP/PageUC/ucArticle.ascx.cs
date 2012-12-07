@@ -80,6 +80,7 @@ namespace SES.CMS.AdminCP.PageUC
 
             objArt.OrderID = int.Parse(txtOrderID.Text);
             objArt.CategoryID = int.Parse(cboCategory.Value.ToString());
+            objArt.IsAccepted = false;
          
             if(!string.IsNullOrEmpty(fuImage.FileName))
                 objArt.ImageUrl = UploadFile(fuImage);
