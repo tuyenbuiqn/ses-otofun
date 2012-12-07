@@ -68,13 +68,13 @@ namespace SES.CMS.AdminCP
 
 
                     //Video
-                        case "Video":
+                    case "Video":
                         hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucVideo.ascx");
+                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
                         break;
                     case "ListVideo":
                         hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucVideo.ascx");
+                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
                         break;
 
                         //Config
