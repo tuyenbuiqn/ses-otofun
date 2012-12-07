@@ -102,12 +102,12 @@ namespace SES.CMS.WEB.AdminCP.PageUC
         {
             objConfig.ConfigName = txtTitle.Text;
             // Không sử dụng CKEditor
-            if (objConfig.ConfigID == 1 || objConfig.ConfigID == 3)
+            if (objConfig.ConfigID == 1 || objConfig.ConfigID == 2)
             {
                 objConfig.ConfigValue = txtDescription.Text;
             }
             // Sử dụng CKEditor
-            else if (objConfig.ConfigID == 2 || objConfig.ConfigID == 6)
+            else if (objConfig.ConfigID == 3 || objConfig.ConfigID == 4)
             {
                 objConfig.ConfigValue = txtCK.Text;
             }
