@@ -10,15 +10,24 @@
 namespace SES.CMS.Module {
     
     
-    public partial class ucFooter {
+    public partial class ucTopContactInfo {
         
         /// <summary>
-        /// rptMainMenu control.
+        /// ltrLienHeGuiBai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptMainMenu;
+        protected global::System.Web.UI.WebControls.Literal ltrLienHeGuiBai;
+        
+        /// <summary>
+        /// ltrLienHeQuangcao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrLienHeQuangcao;
     }
 }

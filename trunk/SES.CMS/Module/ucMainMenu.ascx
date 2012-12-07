@@ -5,6 +5,9 @@
         <a href="/Default.aspx" title="otofun-homepage">
             <img id="home-button" class="home-button" src="/images/Home-button.jpg" alt="Otofun-homepage" /></a>
         <ul class="toplink">
+        <li>
+            <a href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
+        </li>
             <asp:Repeater runat="server" ID="rptMainMenu" OnItemDataBound="rptMainMenu_ItemDataBound">
                 <ItemTemplate>
                     <li>
