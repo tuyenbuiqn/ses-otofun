@@ -436,6 +436,29 @@ namespace SES.CMS.DAL
             return dt;
         }
 
+        public void XetDuyetNhieuBaiViet(string articleIDList,bool isAccepted,int userXetDuyet)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_DuyetBaiViet";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@ArticleIDList", SqlDbType.NVarChar);
+            Sqlparam.Value = articleIDList;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsAccepted", SqlDbType.Bit);
+            Sqlparam.Value = isAccepted;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@UserXetDuyet", SqlDbType.Int);
+            Sqlparam.Value = userXetDuyet;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            base.ExecuteNoneQuery(Sqlcomm);
+        }
+
         public DataTable SelectDanhMucNoiBat(int type)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -654,6 +677,37 @@ namespace SES.CMS.DAL
 
             Sqlparam = new SqlParameter("@Type", SqlDbType.Int);
             Sqlparam.Value = type;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+
+
+        public DataTable ArticleXetDuyet_Filter(int categoryID, int isAccepted,int userID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_XetDuyetFilter";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@categoryID", SqlDbType.Int);
+            Sqlparam.Value = categoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@isAccepted", SqlDbType.Int);
+            Sqlparam.Value = isAccepted;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@userID", SqlDbType.Int);
+            Sqlparam.Value = userID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             DataSet ds = base.GetDataSet(Sqlcomm);
