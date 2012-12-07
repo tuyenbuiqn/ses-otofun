@@ -28,7 +28,7 @@ namespace SES.CMS.Module
             if (objArt.CategoryID > 0)
             {
                 DataTable dtNewArt = new cmsArticleBL().SelectByCategoryID(objArt.CategoryID);
-                rptNewArticle.DataSource = new DataView(dtNewArt, " ArticleID <> " + articleID, "", DataViewRowState.CurrentRows);
+                rptNewArticle.DataSource = new DataView(dtNewArt, "IsNew = 1 AND ArticleID <> " + articleID, "", DataViewRowState.CurrentRows);
                 rptNewArticle.DataBind();
             }
         }
