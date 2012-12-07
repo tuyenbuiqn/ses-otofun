@@ -12,8 +12,8 @@
     PageSize="100" Width="100%" PagerStyle-CssClass="pgr">
     <Columns>
         <asp:BoundField DataField="STT" HeaderText="STT" ReadOnly="True" SortExpression="STT" />
-        <asp:BoundField DataField="Title" HeaderText="Tiêu đề" SortExpression="Title" />
-        <asp:BoundField DataField="CategoryName" HeaderText="Danh mục" SortExpression="CategoryName" />
+        <asp:BoundField DataField="Title" HeaderText="Tiêu đề" SortExpression="Title" ItemStyle-HorizontalAlign="Left" />
+        <asp:BoundField DataField="CategoryName" HeaderText="Danh mục" SortExpression="CategoryName" ItemStyle-HorizontalAlign="Left" />
         <asp:BoundField DataField="Username" HeaderText="Người tạo" SortExpression="Username" />
         <asp:CheckBoxField DataField="IsPublish" HeaderText="Hiển thị" />
         <asp:CheckBoxField DataField="IsHompage" HeaderText="Trang chủ" />

@@ -4,12 +4,10 @@
 <table style="border: 0px;" width="100%">
     <tr>
         <td>
-            <asp:GridView ID="gvUser" runat="server" AutoGenerateColumns="False" BackColor="White"
-                BorderColor="#CC9966" BorderStyle="Solid" BorderWidth="1px" CellPadding="4" Width="100%"
+            <asp:GridView ID="gvUser" runat="server" AutoGenerateColumns="False" Width="100%"
                 DataKeyNames="UserID" OnPageIndexChanging="gvUser_PageIndexChanging" OnRowDeleting="gvUser_RowDeleting"
                 OnSelectedIndexChanged="gvUser_SelectedIndexChanged"
-                AllowPaging="True">
-                <RowStyle BackColor="White" ForeColor="#330099" HorizontalAlign="Center" />
+                AllowPaging="True" PagerStyle-CssClass="pgr" CssClass="tstyle2">
                 <Columns>
                     <asp:BoundField DataField="UserID" HeaderText="UserID" Visible="False">
                         <HeaderStyle HorizontalAlign="Center" />
@@ -25,10 +23,6 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
-                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
             </asp:GridView>
         </td>
     </tr>
