@@ -3,6 +3,7 @@
 <%@ Register Src="/Module/ucMainMenu.ascx" TagName="ucMainMenu" TagPrefix="uc1" %>
 <%@ Register Src="/Module/ucCateMenu.ascx" TagName="ucCateMenu" TagPrefix="uc2" %>
 <%@ Register Src="/Module/ucEvent.ascx" TagName="ucEvent" TagPrefix="uc3" %>
+<%@ Register Src="/Module/ucFooter.ascx" TagName="ucFooter" TagPrefix="uc4" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -52,77 +53,7 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
-                <div class="footer">
-                    <div class="inner">
-                        <ul class="big-ul">
-                            <li>
-                                <p>
-                                    TIN TỨC & TƯ VẤN</p>
-                                <ul class="foot-split">
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                </ul>
-                                <ul class="foot-split">
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <p>
-                                    THÔNG TIN THỊ TRƯỜNG & MUA XE</p>
-                                <ul class="foot-split">
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                </ul>
-                                <ul class="foot-split">
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                    <li><a href="#">Tin Tức</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <p>
-                                    LIÊN HỆ & QUẢNG CÁO</p>
-                                <p style="color: #575756; margin-top: 20px; margin-bottom: 7px;">
-                                    CÔNG TY CỔ PHẦN OTV</p>
-                                <p class="foot-lienhe">
-                                    ĐỊA CHỈ: P 2504, TÒA 25T1, TRUNG HÒA NHÂN CHÍNH - CẦU GIẤY - HÀ NỘI
-                                    <br />
-                                    ĐT: 3 555 8066 (GẶP MS LAN)<br />
-                                    Fax: 04 35558327<br />
-                                    Hotline: 091 559 9988
-                                    <br />
-                                </p>
-                            </li>
-                        </ul>
-                        <ul class="link3">
-                            <li><a href="#">DIỄN ĐÀN</a></li>
-                            <li><a href="#">TIN TỨC</a></li>
-                            <li><a href="#">ĐÁNH GIÁ XE</a></li>
-                            <li><a href="#">VĂN HÓA XE</a></li>
-                            <li><a href="#">KỸ THUẬT & TƯ VẤN</a></li>
-                            <li><a href="#">XE MÁY</a></li>
-                            <li><a href="#">ĐUA XE & XE ĐUA</a></li>
-                        </ul>
-                        <p class="banquyen" style="margin-bottom: 3px;">
-                            Bản quyền © 2006 - 2012 OTOFUN®, bảo lưu mọi quyền. Ghi rõ nguồn "otofun.net" khi
-                            sử dụng thông tin từ website này.</p>
-                        <p class="banquyen" style="margin-left: 140px; margin-bottom: 7px;">
-                            Giấy phép số: 95/GXN-TTĐT do Cục QL Phát thanh, Truyền hình và Thông tin điện tử
-                            - Bộ TT&TT cấp. Cơ quan chủ quản: Công ty Cổ phần OTV</p>
-                    </div>
-                </div>
+                <uc4:ucFooter runat="server" ID="uc4ucFooter" />
             </div>
         </div>
     </div>

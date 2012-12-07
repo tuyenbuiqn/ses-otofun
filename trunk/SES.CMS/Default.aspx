@@ -14,6 +14,7 @@
 <%@ Register Src="/Module/ucDanhMucNoiBat.ascx" TagName="ucDanhMucNoiBat" TagPrefix="uc10" %>
 <%@ Register Src="/Module/ucRightHomeAdv.ascx" TagName="ucRightHomeAdv" TagPrefix="uc11" %>
 <%@ Register Src="/Module/ucHomeVideo.ascx" TagName="ucHomeVideo" TagPrefix="uc12" %>
+<%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -65,8 +66,10 @@
                     </ul>
                 </div>
             </div>
-            <%--TOP RIGHT--%>
+            <%--TOP RIGHT--%><div class="body-top-right">
+            <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
             <uc4:ucTopRightAdv runat="server" ID="uc4TopRight" />
+            </div>
         </div>
         <uc5:ucMiddleAdv runat="server" ID="uc5MiddleAdv" />
         <div class="body-down">

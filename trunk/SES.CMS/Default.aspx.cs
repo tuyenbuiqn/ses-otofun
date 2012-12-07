@@ -14,7 +14,7 @@ namespace SES.CMS
         protected void Page_Load(object sender, EventArgs e)
         {
             DateTime dateTime = DateTime.Now;
-            ltrNgay.Text = vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
+            ltrNgay.Text = Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
 
             Page.Title = new sysConfigBL().Select(new sysConfigDO { ConfigID = 1}).ConfigValue;
             BuildEvent();
@@ -28,34 +28,6 @@ namespace SES.CMS
             rptEvent.DataSource = new cmsEventBL().GetTopEvent(5);
             rptEvent.DataBind();
         }
-        public string vietNameseDay(DayOfWeek dow)
-        {
-            string vietNameseDay = "";
-            switch (dow)
-            {
-                case DayOfWeek.Sunday:
-                    vietNameseDay = "Chủ nhật";
-                    break;
-                case DayOfWeek.Monday:
-                    vietNameseDay = "Thứ hai";
-                    break;
-                case DayOfWeek.Tuesday:
-                    vietNameseDay = "Thứ ba";
-                    break;
-                case DayOfWeek.Wednesday:
-                    vietNameseDay = "Thứ tư";
-                    break;
-                case DayOfWeek.Thursday:
-                    vietNameseDay = "Thứ năm";
-                    break;
-                case DayOfWeek.Friday:
-                    vietNameseDay = "Thứ sáu";
-                    break;
-                case DayOfWeek.Saturday:
-                    vietNameseDay = "Thứ bảy";
-                    break;
-            }
-            return vietNameseDay;
-        }
+       
     }
 }
