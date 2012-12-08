@@ -110,6 +110,15 @@
                 ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
         </td>
     </tr>
+       <tr>
+        <td>
+            Từ khóa
+        </td>
+        <td>
+            <asp:TextBox ID="txtTags" runat="server" Width="90%" ValidationGroup="submitGrp"></asp:TextBox><br />
+            <span>Lưu ý: Các từ khóa cách nhau bởi dấu ","</span>
+        </td>
+    </tr>
     <tr>
         <td class="style8">
             &nbsp;
