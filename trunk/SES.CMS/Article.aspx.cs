@@ -19,6 +19,7 @@ namespace SES.CMS
                 int articleID = int.Parse(Request.QueryString["ArticleID"].ToString());
                 rptArticeDataSource(articleID);
                 rptBuildChildMenu(articleID);
+                loadBreadcrumb(articleID);
                 DataTable dtArticle = new cmsArticleBL().SelectByPK(articleID);
                 if (dtArticle.Rows.Count > 0)
                 {
@@ -29,6 +30,30 @@ namespace SES.CMS
                     Page.Title = "Tin tức - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 }
                 BuildEvent(articleID);
+            }
+        }
+        protected void loadBreadcrumb(int articleID)
+        {
+            cmsArticleDO objArt = new cmsArticleDO();
+            objArt.ArticleID = articleID;
+            objArt = new cmsArticleBL().Select(objArt);
+
+            cmsCategoryDO objCate = new cmsCategoryDO();
+            objCate.CategoryID = objArt.CategoryID;
+            objCate = new cmsCategoryBL().Select(objCate);
+
+            string rootUrl = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
+            if (objCate.ParentID == 0)
+            {
+                lblBreadcrumb.Text = rootUrl;
+            }
+            else
+            {
+                lblBreadcrumb.Text = rootUrl;
+                objCate.CategoryID = objCate.ParentID;
+                objCate = new cmsCategoryBL().Select(objCate);
+
+                lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
             }
         }
 

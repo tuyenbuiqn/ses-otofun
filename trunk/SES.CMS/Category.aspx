@@ -17,25 +17,25 @@
                 <div class="category-box">
                     <div class="category-title-box">
                         <h2 class="category-title">
-                            <asp:HyperLink runat="server" ID="hplBreadcrumb"></asp:HyperLink></h2>
-                        <span class="category-title-time"><asp:Literal runat="server" ID="ltrDatetime"></asp:Literal></span>
+                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
+                        <span class="category-title-time">
+                            <asp:Literal runat="server" ID="ltrDatetime"></asp:Literal></span>
                     </div>
-                    <asp:Repeater runat="server" ID="rptCategory">
+                    <asp:Repeater runat="server" ID="rptCategory" OnItemDataBound="rptCategory_ItemDataBound">
                         <ItemTemplate>
-                            <div class="category-wrap">
+                            <asp:Panel runat="server" id="divCategory">
                                 <a title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
-                                    <img class="img130" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
-                                <div class="mr1">
+                                    <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
+                                <div class="cate-desc-box">
                                     <h2>
-                                        <a title='<%#Eval("Title") %>' class="fon6" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'
-                                            alt='<%#Eval("Title") %>'>
+                                        <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
                                             <%#Eval("Title") %></a>
                                     </h2>
-                                    <div class="fon5 fl">
+                                    <div class="cate-desc">
                                         <%#WordCut(Eval("Description").ToString()) %></div>
                                     <a class="readmore" title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
                                         Xem tiếp</a>
-                                </div>
+                                </asp:Panel>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>

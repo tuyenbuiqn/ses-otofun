@@ -13,6 +13,24 @@ namespace SES.CMS {
     public partial class Event {
         
         /// <summary>
+        /// uc1TopAdv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucTopAdvertisment uc1TopAdv;
+        
+        /// <summary>
+        /// ltrDatetime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrDatetime;
+        
+        /// <summary>
         /// divEvent control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,24 @@ namespace SES.CMS {
         protected global::SiteUtils.CollectionPager CollectionPager1;
         
         /// <summary>
+        /// uc13UcTopContactInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucTopContactInfo uc13UcTopContactInfo;
+        
+        /// <summary>
+        /// uc5TieuDiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucTieuDiem uc5TieuDiem;
+        
+        /// <summary>
         /// ucLeftAdv1 control.
         /// </summary>
         /// <remarks>
@@ -74,14 +110,5 @@ namespace SES.CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SES.CMS.Module.ucLeftAdv ucLeftAdv1;
-        
-        /// <summary>
-        /// ucRightAdv1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SES.CMS.Module.ucRightAdv ucRightAdv1;
     }
 }

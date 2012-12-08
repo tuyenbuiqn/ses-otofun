@@ -21,6 +21,7 @@ namespace SES.CMS
                 rptBuildChildMenu(categoryID);
                 Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID}).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 BuildEvent(categoryID);
+                loadBreadcrumb(categoryID);
             }
         }
 
@@ -33,18 +34,19 @@ namespace SES.CMS
         {
             cmsCategoryDO objCate = new cmsCategoryDO();
             objCate.CategoryID = categoryID;
-            string rootUrl = "";
+            objCate = new cmsCategoryBL().Select(objCate);
+            string rootUrl = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
             if (objCate.ParentID == 0)
             {
-                rootUrl = hplBreadcrumb.NavigateUrl = "/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID;
-                hplBreadcrumb.Text = objCate.Title;
-                hplBreadcrumb.ToolTip = objCate.Title;
+                lblBreadcrumb.Text = rootUrl;
             }
             else
             {
-                hplBreadcrumb.NavigateUrl = "/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID;
-                hplBreadcrumb.Text = objCate.Title;
-                hplBreadcrumb.ToolTip = objCate.Title;
+                lblBreadcrumb.Text = rootUrl;
+                objCate.CategoryID = objCate.ParentID;
+                objCate = new cmsCategoryBL().Select(objCate);
+
+                lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
             }
         }
         protected void BuildEvent(int categoryID)
@@ -92,6 +94,22 @@ namespace SES.CMS
             rptCategory.DataSource = CollectionPager1.DataSourcePaged;
 
             rptCategory.DataBind();
+        }
+
+        protected void rptCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
+            {
+                Panel divCategory = (Panel)e.Item.FindControl("divCategory");
+                if (e.Item.ItemIndex == 0)
+                {
+                    divCategory.Attributes.Add("class", "category-wrap");
+                }
+                else
+                {
+                    divCategory.Attributes.Add("class", "category-wrap-first");
+                }
+            }
         }
         public string FriendlyUrl(string s)
         {
