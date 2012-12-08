@@ -20,18 +20,37 @@ namespace SES.CMS.WEB.AdminCP.PageUC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            gvSlide.DataSource = new cmsSlideBL().SelectAll();
-            gvSlide.DataBind();
+            dlListSlideDataSource();
         }
 
-        protected void gvSlide_SelectedIndexChanged(object sender, EventArgs e)
+        private void dlListSlideDataSource()
         {
-            int SlideID = int.Parse(gvSlide.DataKeys[gvSlide.SelectedIndex].Value.ToString());
-            Response.Redirect("Default.aspx?Page=Slide&SlideID=" + SlideID.ToString());
+            CollectionPager1.MaxPages = 10000;
+
+            CollectionPager1.PageSize = 20; 
+            DataTable dt = new cmsSlideBL().SelectAll();
+            CollectionPager1.DataSource = new DataView(dt, "SlideID > 0", "", DataViewRowState.CurrentRows);
+
+            CollectionPager1.BindToControl = dlListSlide;
+            dlListSlide.DataSource = CollectionPager1.DataSourcePaged;
+
+            dlListSlide.DataBind();
         }
 
-       
+
+        protected void dlListSlide_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ImageID = int.Parse(dlListSlide.DataKeys[dlListSlide.SelectedIndex].ToString());
+            Response.Redirect("Default.aspx?Page=Slide&SlideID=" + ImageID.ToString());
+        }
+
+        protected void dlListSlide_DeleteCommand(object source, DataListCommandEventArgs e)
+        {
+            int ImageID = int.Parse(dlListSlide.DataKeys[e.Item.ItemIndex].ToString());
+            new cmsSlideBL().Delete(new cmsSlideDO { SlideID = ImageID });
+
+            Functions.Alert("Xóa thành công", "Default.aspx?Page=ListSlide");
+        }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
@@ -42,10 +61,5 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             Response.Redirect("Default.aspx?Page=AddMultiImg");
         }
 
-        protected void gvSlide_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-       //     new SlideBL().Delete(new SlideDO { SlideID = Convert.ToInt32(gvSlide.DataKeys[e.RowIndex].Value) });
-            Functions.Alert("Xóa thành công", "Default.aspx?Page=ListSlide");
-        }
     }
 }
