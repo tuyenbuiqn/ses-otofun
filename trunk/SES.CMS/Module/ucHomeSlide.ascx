@@ -20,7 +20,7 @@
                 <ul>
                     <asp:Repeater ID="rptSlide" runat="server">
                         <ItemTemplate>
-                            <li><a href='/Media/<%#Eval("SlideUrl") %>' title='<%#Eval("Title") %>' /><a href='<%#Eval("SlideImg") %>'>
+                            <li><a href='/Media/<%#Eval("SlideImg") %>' title='<%#Eval("Title") %>' /><a href='<%#Eval("SlideUrl") %>'>
                             </a>
                                 <div style="height: 40px; width: 555px;">
                                     <span class="cap-title"><a href="<%#Eval("SlideUrl") %>">
