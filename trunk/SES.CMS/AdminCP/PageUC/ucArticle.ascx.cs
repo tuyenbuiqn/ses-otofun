@@ -43,11 +43,14 @@ namespace SES.CMS.AdminCP.PageUC
             chkIsHotEvent.Checked = objArt.IsHotEvent;
             chkIsMostRead.Checked = objArt.IsMostRead;
             chkIsNew.Checked = objArt.IsNew;
-            
+
             txtOrderID.Text = objArt.OrderID.ToString();
             cboCategory.Value = objArt.CategoryID.ToString();
             hplImage.NavigateUrl = "~/Media/" + objArt.ImageUrl;
-         
+            if (!string.IsNullOrEmpty(objArt.Tags))
+                if (objArt.Tags.Length > 2)
+                    txtTags.Text = objArt.Tags.Substring(1,objArt.Tags.Length - 2);
+
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -70,7 +73,7 @@ namespace SES.CMS.AdminCP.PageUC
             objArt.Title = txtTitle.Text;
             objArt.Description = txtDescription.Text;
             objArt.ArticleDetail = txtArticleDetail.Text;
-            
+
             objArt.IsHompage = chkIsHomePage.Checked;
             objArt.IsPublish = chkIsPublish.Checked;
             objArt.IsNew = chkIsNew.Checked;
@@ -81,8 +84,9 @@ namespace SES.CMS.AdminCP.PageUC
             objArt.OrderID = int.Parse(txtOrderID.Text);
             objArt.CategoryID = int.Parse(cboCategory.Value.ToString());
             objArt.IsAccepted = false;
-         
-            if(!string.IsNullOrEmpty(fuImage.FileName))
+            objArt.Tags = "," + txtTags.Text + ",";
+
+            if (!string.IsNullOrEmpty(fuImage.FileName))
                 objArt.ImageUrl = UploadFile(fuImage);
         }
 
