@@ -118,6 +118,10 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.UserXetDuyet;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@IsHot", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsHot;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -217,6 +221,10 @@ namespace SES.CMS.DAL
 
             Sqlparam = new SqlParameter("@UserXetDuyet", SqlDbType.Int);
             Sqlparam.Value = objcmsArticleDO.UserXetDuyet;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsHot", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsHot;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
@@ -323,6 +331,8 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.IsAccepted = Convert.ToBoolean(dr["IsAccepted"]);
                 if (!Convert.IsDBNull(dr["UserXetDuyet"]))
                     objcmsArticleDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
+                if (!Convert.IsDBNull(dr["IsHot"]))
+                    objcmsArticleDO.IsHot = Convert.ToBoolean(dr["IsHot"]);
                 
 
             }
@@ -385,6 +395,8 @@ namespace SES.CMS.DAL
                         objcmsArticleDO.IsAccepted = Convert.ToBoolean(dr["IsAccepted"]);
                     if (!Convert.IsDBNull(dr["UserXetDuyet"]))
                         objcmsArticleDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
+                    if (!Convert.IsDBNull(dr["IsHot"]))
+                        objcmsArticleDO.IsHot = Convert.ToBoolean(dr["IsHot"]);
                     arrcmsArticleDO.Add(objcmsArticleDO);
                 }
             }
@@ -531,6 +543,23 @@ namespace SES.CMS.DAL
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
             Sqlcomm.CommandText = "spcmsArticle_GetLastestNews";
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+
+        public DataTable HotArticle_UnderSlideHomepage()
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByIsHot";
 
             DataSet ds = base.GetDataSet(Sqlcomm);
             DataTable dt = null;
