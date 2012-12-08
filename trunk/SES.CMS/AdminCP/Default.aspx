@@ -112,6 +112,10 @@
                     <li>
                         <asp:HyperLink ID="hplSlide" NavigateUrl="Default.aspx?Page=ListSlide" runat="server">QL slide</asp:HyperLink>
                     </li>
+                     <li>
+                        <asp:HyperLink ID="hplAdvertisement" NavigateUrl="Default.aspx?Page=ListAdvertisement" runat="server">Quảng cáo</asp:HyperLink>
+                    </li>
+
                 </ul>
             </div>
             <!-- end navigation -->
