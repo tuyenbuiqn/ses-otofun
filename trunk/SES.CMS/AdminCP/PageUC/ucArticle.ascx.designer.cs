@@ -148,6 +148,15 @@ namespace SES.CMS.AdminCP.PageUC {
         protected global::System.Web.UI.WebControls.CheckBox chkIsNew;
         
         /// <summary>
+        /// chkIsHot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsHot;
+        
+        /// <summary>
         /// txtOrderID control.
         /// </summary>
         /// <remarks>

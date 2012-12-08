@@ -27,7 +27,7 @@
                 ErrorMessage="*** Nhập tiêu đề" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
         </td>
     </tr>
-    <tr>
+    <tr style="display:none;">
         <td>
             Phân loại
         </td>

@@ -32,7 +32,7 @@
             Đường dẫn:
         </td>
         <td class="style9">
-            <asp:TextBox ID="txtSlideURL" runat="server" Width="179px" ValidationGroup="submitGrp"></asp:TextBox>
+            <asp:TextBox ID="txtSlideURL" runat="server" Width="439px" ValidationGroup="submitGrp"></asp:TextBox>
             &nbsp; &nbsp;
         </td>
     </tr>
