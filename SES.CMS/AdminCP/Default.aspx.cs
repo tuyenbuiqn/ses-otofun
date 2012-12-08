@@ -65,6 +65,10 @@ namespace SES.CMS.AdminCP
                         hplDestination.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
                         break;
+                    case "XetDuyetBaiViet":
+                        hplDestination.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
+                        break;
 
 
                     //Video
