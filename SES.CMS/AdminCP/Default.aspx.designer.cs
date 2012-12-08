@@ -76,6 +76,15 @@ namespace SES.CMS.AdminCP {
         protected global::System.Web.UI.WebControls.HyperLink hplSlide;
         
         /// <summary>
+        /// hplAdvertisement control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplAdvertisement;
+        
+        /// <summary>
         /// phSubNav control.
         /// </summary>
         /// <remarks>
