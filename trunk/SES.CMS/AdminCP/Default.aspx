@@ -105,7 +105,7 @@
                         <asp:HyperLink ID="hplDestination" NavigateUrl="Default.aspx?Page=ListArticleCategory"
                             runat="server">Danh mục</asp:HyperLink></li>
                     <li>
-                        <asp:HyperLink ID="hplImage" NavigateUrl="Default.aspx?Page=ListImages" runat="server">Hình ảnh</asp:HyperLink></li>
+                        <asp:HyperLink ID="hplImage" NavigateUrl="Default.aspx?Page=ListImages" runat="server">Hình ảnh - video</asp:HyperLink></li>
                     <li>
                         <asp:HyperLink ID="hplConfig" NavigateUrl="Default.aspx?Page=ListConfig" runat="server">Hệ thống</asp:HyperLink>
                     </li>
