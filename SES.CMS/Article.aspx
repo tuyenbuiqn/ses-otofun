@@ -8,6 +8,7 @@
 <%@ Register Src="Module/ucTieuDiem.ascx" TagName="ucTieuDiem" TagPrefix="uc5" %>
 <%@ Register Src="Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc6" %>
 <%@ Register Src="Module/ucTags.ascx" TagName="ucTags" TagPrefix="uc7" %>
+<%@ Register Src="Module/ucSameCateArticles.ascx" TagName="ucSameCateArticles" TagPrefix="u8" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -19,8 +20,7 @@
                 <div class="category-box">
                     <div class="category-title-box">
                         <h2 class="category-title">
-                            Thị trường</h2>
-                        <span class="category-title-time">Thứ sáu, ngày 12-12-2012 12:00h</span>
+                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
                     </div>
                     <div class="article-box">
                         <asp:Repeater runat="server" ID="rptArticleDetail">
@@ -42,6 +42,7 @@
                     </div>
                     <uc7:ucTags runat="server" ID="uc7ucTag" />
                     <uc4:ucNewArticles ID="ucNewArticles1" runat="server" />
+                    <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate" />
                     <div class="newarticle-box">
                         <h2>
                             Gửi phản hồi</h2>

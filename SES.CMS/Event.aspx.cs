@@ -13,6 +13,7 @@ namespace SES.CMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            loadTime();
             if (!string.IsNullOrEmpty(Request.QueryString["EventID"]))
             {
                 divEvent.Visible = false;
@@ -30,6 +31,11 @@ namespace SES.CMS
                 Page.Title ="Dòng sự kiện - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 BuildEvent();
             }
+        }
+        protected void loadTime()
+        {
+            DateTime dateTime = DateTime.Now;
+            ltrDatetime.Text = Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
         }
         protected void BuildEvent()
         {
@@ -58,6 +64,21 @@ namespace SES.CMS
             rptCategory.DataBind();
         }
 
+        protected void rptCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
+            {
+                Panel divCategory = (Panel)e.Item.FindControl("divCategory");
+                if (e.Item.ItemIndex == 0)
+                {
+                    divCategory.Attributes.Add("class", "category-wrap");
+                }
+                else
+                {
+                    divCategory.Attributes.Add("class", "category-wrap-first");
+                }
+            }
+        }
         protected void rptEventDataSource()
         {
             CollectionPager1.MaxPages = 10000;

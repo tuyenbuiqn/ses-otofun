@@ -22,6 +22,15 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucTopAdvertisment uc1TopAdv;
         
         /// <summary>
+        /// lblBreadcrumb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBreadcrumb;
+        
+        /// <summary>
         /// rptArticleDetail control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace SES.CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SES.CMS.Module.ucNewArticles ucNewArticles1;
+        
+        /// <summary>
+        /// uc9UcSameCate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucSameCateArticles uc9UcSameCate;
         
         /// <summary>
         /// txtHoTen control.
