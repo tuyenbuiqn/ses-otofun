@@ -21,8 +21,6 @@ namespace SES.CMS.WEB.AdminCP.PageUC
         cmsSlideDO objSlide = new cmsSlideDO();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Functions.ddlDatabinder(ddlSlideCate, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new cmsCategoryBL().SelectAll());
-            Functions.ddlDatabinder(ddlSlideArt, cmsArticleDO.ARTICLEID_FIELD, cmsArticleDO.TITLE_FIELD, new cmsArticleBL().SelectAll());
             if (Request.QueryString["SlideID"] != null)
             {
                 objSlide.SlideID = int.Parse(Request.QueryString["SlideID"].ToString());
@@ -35,12 +33,12 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             objSlide = new cmsSlideBL().Select(objSlide);
             txtTitle.Text = objSlide.Title;
             txtDescription.Text = objSlide.Description;
+            txtSlideURL.Text = objSlide.SlideUrl;
             if (!string.IsNullOrEmpty(objSlide.SlideImg))
             {
                 hplImage.Visible = true;
                 hplImage.NavigateUrl = "~/Media/" + objSlide.SlideImg;
             }
-            ddlSlideCate.SelectedValue = objSlide.CategoryID.ToString();
             txtOrder.Text = objSlide.OrderID.ToString();
         }
 
@@ -64,8 +62,8 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             objSlide.Description = txtDescription.Text;
             if (!string.IsNullOrEmpty(fuImage.FileName))
                 objSlide.SlideImg = UploadFile(fuImage);
+            objSlide.SlideUrl = txtSlideURL.Text;
             objSlide.OrderID = int.Parse(txtOrder.Text);
-            objSlide.CategoryID = int.Parse(ddlSlideCate.SelectedValue);
 
         }
         private string UploadFile(FileUpload fulImages)

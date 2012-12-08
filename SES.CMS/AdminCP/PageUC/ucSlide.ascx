@@ -27,7 +27,7 @@
             ảnh]</asp:HyperLink>
         </td>
     </tr>
-    <tr>
+<%--    <tr>
         <td class="style8">
             Thuộc danh mục:
         </td>
@@ -46,7 +46,7 @@
                 <asp:ListItem Text=" .: Không chọn :. " Value="0"></asp:ListItem>
             </asp:DropDownList>
         </td>
-    </tr>
+    </tr>--%>
     <tr>
         <td class="style8">
             Đường dẫn:
