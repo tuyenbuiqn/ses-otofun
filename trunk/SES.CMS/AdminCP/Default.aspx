@@ -15,6 +15,7 @@
     <!-- LOAD TIPSY TOOLTIPS-->
 
     <script type="text/javascript" src="js/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="js/JScript.js"></script>
 
     <!-- LOAD CUSTOM JQUERY SCRIPTS-->
 
