@@ -659,6 +659,29 @@ namespace SES.CMS.DAL
             return dt;
         }
 
+        public DataTable SelectByTag(string tag)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByTag";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@tag", SqlDbType.NVarChar);
+            Sqlparam.Value = tag;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+
         public DataTable SelectToMainHomepageCate(int top,int categoryID,bool type)
         {
             SqlCommand Sqlcomm = new SqlCommand();
