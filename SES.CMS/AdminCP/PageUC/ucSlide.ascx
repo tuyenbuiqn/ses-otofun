@@ -27,26 +27,6 @@
             ảnh]</asp:HyperLink>
         </td>
     </tr>
-<%--    <tr>
-        <td class="style8">
-            Thuộc danh mục:
-        </td>
-        <td>
-            <asp:DropDownList runat="server" ID="ddlSlideCate" AppendDataBoundItems="true">
-                <asp:ListItem Text=" .: Không chọn :. " Value="0"></asp:ListItem>
-            </asp:DropDownList>
-        </td>
-    </tr>
-    <tr>
-        <td class="style8">
-            Thuộc bài viết:
-        </td>
-        <td>
-            <asp:DropDownList runat="server" ID="ddlSlideArt" AppendDataBoundItems="true">
-                <asp:ListItem Text=" .: Không chọn :. " Value="0"></asp:ListItem>
-            </asp:DropDownList>
-        </td>
-    </tr>--%>
     <tr>
         <td class="style8">
             Đường dẫn:
