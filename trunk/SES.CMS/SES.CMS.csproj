@@ -12,7 +12,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SES.CMS</RootNamespace>
     <AssemblyName>SES.CMS</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,27 +66,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\DevExpress.Web.v9.2.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="MSCaptcha, Version=2.0.3733.36001, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\MSCaptcha.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\UrlRewritingNet.UrlRewriter.dll</HintPath>
@@ -789,12 +788,14 @@
     <Content Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx" />
     <Content Include="AdminCP\MenuUC\ucMnuSlide.ascx" />
     <Content Include="AdminCP\PageUC\ucAddMultiImg.ascx" />
+    <Content Include="AdminCP\PageUC\ucAdvertisement.ascx" />
     <Content Include="AdminCP\PageUC\ucAlbum.ascx" />
     <Content Include="AdminCP\PageUC\ucArticle.ascx" />
     <Content Include="AdminCP\PageUC\ucArticleCategory.ascx" />
     <Content Include="AdminCP\PageUC\ucConfig.ascx" />
     <Content Include="AdminCP\PageUC\ucEvent.ascx" />
     <Content Include="AdminCP\PageUC\ucImage.ascx" />
+    <Content Include="AdminCP\PageUC\ucListAdvertisement.ascx" />
     <Content Include="AdminCP\PageUC\ucListAlbum.ascx" />
     <Content Include="AdminCP\PageUC\ucListArticle.ascx" />
     <Content Include="AdminCP\PageUC\ucListArticleCategory.ascx" />
@@ -805,6 +806,8 @@
     <Content Include="AdminCP\PageUC\ucListUser.ascx" />
     <Content Include="AdminCP\PageUC\ucSlide.ascx" />
     <Content Include="AdminCP\PageUC\ucUser.ascx" />
+    <Content Include="AdminCP\PageUC\ucVideo.ascx" />
+    <Content Include="AdminCP\PageUC\ucXetDuyetBaiViet.ascx" />
     <Content Include="Article.aspx" />
     <Content Include="assets\loader.gif" />
     <Content Include="assets\next.png" />
@@ -1143,16 +1146,20 @@
     <Content Include="Module\ucNewArticles.ascx" />
     <Content Include="Module\ucRightAdv.ascx" />
     <Content Include="Module\ucRightHomeAdv.ascx" />
+    <Content Include="Module\ucSameCateArticles.ascx" />
+    <Content Include="Module\ucTags.ascx" />
     <Content Include="Module\ucThamKhaoGiaXe.ascx" />
     <Content Include="Module\ucTieuDiem.ascx" />
     <Content Include="Module\ucTieuDiemCate.ascx" />
     <Content Include="Module\ucTopAdvertisment.ascx" />
+    <Content Include="Module\ucTopContactInfo.ascx" />
     <Content Include="Module\ucTopRightAdv.ascx" />
     <Content Include="Module\ucTuVanAndKyThuat.ascx" />
     <Content Include="obj\Debug\SES.CMS.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SES.CMS.dll" />
     <Content Include="obj\Debug\SES.CMS.pdb" />
     <Content Include="preview.css" />
+    <Content Include="tag.aspx" />
     <Content Include="Video.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1228,6 +1235,13 @@
     <Compile Include="AdminCP\PageUC\ucAddMultiImg.ascx.designer.cs">
       <DependentUpon>ucAddMultiImg.ascx</DependentUpon>
     </Compile>
+    <Compile Include="AdminCP\PageUC\ucAdvertisement.ascx.cs">
+      <DependentUpon>ucAdvertisement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucAdvertisement.ascx.designer.cs">
+      <DependentUpon>ucAdvertisement.ascx</DependentUpon>
+    </Compile>
     <Compile Include="AdminCP\PageUC\ucAlbum.ascx.cs">
       <DependentUpon>ucAlbum.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1269,6 +1283,13 @@
     </Compile>
     <Compile Include="AdminCP\PageUC\ucImage.ascx.designer.cs">
       <DependentUpon>ucImage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListAdvertisement.ascx.cs">
+      <DependentUpon>ucListAdvertisement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucListAdvertisement.ascx.designer.cs">
+      <DependentUpon>ucListAdvertisement.ascx</DependentUpon>
     </Compile>
     <Compile Include="AdminCP\PageUC\ucListAlbum.ascx.cs">
       <DependentUpon>ucListAlbum.ascx</DependentUpon>
@@ -1339,6 +1360,20 @@
     </Compile>
     <Compile Include="AdminCP\PageUC\ucUser.ascx.designer.cs">
       <DependentUpon>ucUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucVideo.ascx.cs">
+      <DependentUpon>ucVideo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucVideo.ascx.designer.cs">
+      <DependentUpon>ucVideo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucXetDuyetBaiViet.ascx.cs">
+      <DependentUpon>ucXetDuyetBaiViet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucXetDuyetBaiViet.ascx.designer.cs">
+      <DependentUpon>ucXetDuyetBaiViet.ascx</DependentUpon>
     </Compile>
     <Compile Include="Article.aspx.cs">
       <DependentUpon>Article.aspx</DependentUpon>
@@ -1489,6 +1524,20 @@
     <Compile Include="Module\ucRightHomeAdv.ascx.designer.cs">
       <DependentUpon>ucRightHomeAdv.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Module\ucSameCateArticles.ascx.cs">
+      <DependentUpon>ucSameCateArticles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucSameCateArticles.ascx.designer.cs">
+      <DependentUpon>ucSameCateArticles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucTags.ascx.cs">
+      <DependentUpon>ucTags.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTags.ascx.designer.cs">
+      <DependentUpon>ucTags.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Module\ucThamKhaoGiaXe.ascx.cs">
       <DependentUpon>ucThamKhaoGiaXe.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1517,6 +1566,13 @@
     <Compile Include="Module\ucTopAdvertisment.ascx.designer.cs">
       <DependentUpon>ucTopAdvertisment.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Module\ucTopContactInfo.ascx.cs">
+      <DependentUpon>ucTopContactInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTopContactInfo.ascx.designer.cs">
+      <DependentUpon>ucTopContactInfo.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Module\ucTopRightAdv.ascx.cs">
       <DependentUpon>ucTopRightAdv.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1539,6 +1595,13 @@
       <DependentUpon>Otofun.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tag.aspx.cs">
+      <DependentUpon>tag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tag.aspx.designer.cs">
+      <DependentUpon>tag.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Video.aspx.cs">
       <DependentUpon>Video.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1546,20 +1609,6 @@
     <Compile Include="Video.aspx.designer.cs">
       <DependentUpon>Video.aspx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CMS.BL\SES.CMS.BL.csproj">
-      <Project>{70740F13-317A-453E-A1DB-97B116FF0204}</Project>
-      <Name>SES.CMS.BL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CMS.DAL\SES.CMS.DAL.csproj">
-      <Project>{DC4F2885-BF1D-4715-B227-4A95813CE7EA}</Project>
-      <Name>SES.CMS.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SES.CMS.DO\SES.CMS.DO.csproj">
-      <Project>{F6901282-99E9-4373-857A-022D9D991394}</Project>
-      <Name>SES.CMS.DO</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="AdminCP\images\icondock\Thumbs.db" />
@@ -1611,6 +1660,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.BL\SES.CMS.BL.csproj">
+      <Project>{70740F13-317A-453E-A1DB-97B116FF0204}</Project>
+      <Name>SES.CMS.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SES.CMS.DO\SES.CMS.DO.csproj">
+      <Project>{F6901282-99E9-4373-857A-022D9D991394}</Project>
+      <Name>SES.CMS.DO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

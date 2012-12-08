@@ -6,8 +6,8 @@
 a
 {
 	text-decoration: none;
-	font-family: Arial;
-	color: #9C6034;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	color: #912809;
 }
 h1, h2, h3, h4, h5
 {
@@ -20,7 +20,7 @@ li
 }
 p
 {
-	font-family: Arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	color: #9C6034;
 	font-size: 12px;
 }
@@ -33,19 +33,25 @@ img
 WRAPPER AREA
 ==============================================
 */
+body
+{
+    margin:0;
+    background: url(http://www.otofun.net/styles/otofun/bg.png) #141517 repeat-x left top;
+}
 #background
 {
 	width: 100%;
 	height: auto;
-	background-color: Black;
+	
+	margin:0;
+
 }
 
 #outer_wrapper
 {
 	width: 100%;
 	height: auto;
-	background: url(../images/background.jpg) repeat-x top #141517;
-	float: left;
+	margin:auto;
 }
 
 #wrapper
@@ -70,15 +76,15 @@ WRAPPER AREA
 }
 .header
 {
-	width: 998px;
+	width: 1000px;
 	height: 129px;
-	border: solid 1px #ecd9b7;
+	
 	border-top: none;
-	float: left;
+	
 }
 .header-img
 {
-	width: 998px;
+	width: 1000px;
 	height: 129px;
 }
 .menu
@@ -90,11 +96,10 @@ WRAPPER AREA
 }
 .menu-text
 {
-	width: 998px;
-	height: 34px;
-	background-color: #272729;
-	border: solid 1px #ecd9b7;
-	border-bottom: none;
+width: 1000px;
+height: 34px;
+background-color: #272729;
+border-top: solid 1px #ECD9B7;
 }
 .home-button
 {
@@ -126,7 +131,7 @@ WRAPPER AREA
 {
 	color: #ecd9b7;
 	font-size: 12px;
-	font-family: Tahoma;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;;
 	font-weight: bold;
 }
 .toplink a:hover
@@ -136,7 +141,7 @@ WRAPPER AREA
 .search-box
 {
 	width: 260px;
-	position: absolute;
+	float:right;
 	right: 220px;
 }
 .rss-button
@@ -177,13 +182,13 @@ WRAPPER AREA
 	width: 990px;
 	float: left;
 	padding: 2px;
-	border-bottom: 1px solid #C06C14;
+	
 }
 .mid-link a
 {
 	color: Black;
-	font-size: 10px;
-	font-family: Tahoma;
+	font-size: 12px;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	padding: 3px 7px;
 	border-style: solid;
 	border-width: 1px;
@@ -255,7 +260,7 @@ WRAPPER AREA
 }
 .lh-text
 {
-	font-family: Arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	color: #a15b2d;
 	font-size: 11px;
 	width: 250px;
@@ -285,9 +290,9 @@ WRAPPER AREA
 {
 	width: 455px;
 	height: 263px;
-	border: solid 2px #c98131;
+	border: solid 1px #c98131;
 	float: left;
-	margin: 6px;
+	margin: 5px;
 }
 .AnhNho
 {
@@ -323,8 +328,8 @@ WRAPPER AREA
 	height: 135px;
 	float: left;
 	background-color: #dfc698;
-	border: solid 2px #c67926;
-	margin: 8px 10px;
+	border: solid 1px #c67926;
+	margin: 8px 17px 8px 7px;
 }
 .box-under-car p
 {
@@ -336,7 +341,7 @@ WRAPPER AREA
 	height: 18px;
 	color: #942201;
 	padding: 5px 0px 0px 5px;
-	font-family: Arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 }
@@ -384,7 +389,7 @@ WRAPPER AREA
 }
 .hoidap a
 {
-	font-family: arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	font-size: 11px;
 	color: Black;
 	display: block;
@@ -414,7 +419,7 @@ WRAPPER AREA
 {
 	width: 217px;
 	height: 29px;
-	background: url(../images/label-back.jpg);
+	background: url(../images/label-backtop.png);
 	float: left;
 }
 .tintuc-cap p
@@ -429,7 +434,7 @@ WRAPPER AREA
 {
 	width: 206px;
 	height: 373px;
-	border: solid 2px #C67926;
+	border: solid 1px #C67926;
 	background: #DFC698;
 	float: left;
 	margin-top: -1px;
@@ -457,9 +462,11 @@ WRAPPER AREA
 }
 .middle-adv
 {
-	width: 983px;
-	height: 61px;
-	float: left;
+width: 986px;
+height: 61px;
+float: left;
+margin-left: 5px;
+
 }
 .middle-adv img
 {
@@ -489,15 +496,15 @@ WRAPPER AREA
 	width: 675px;
 	height: 225px;
 	margin-left: 5px;
-	margin-top: 20px;
+	margin-top: 10px;
 	float: left;
 }
 .Cap-TinTuc
 {
 	width: 217px;
-	height: 28px;
+	height: 25px;
 	float: left;
-	background: url(../images/label-back.jpg) no-repeat;
+	background: url(../images/label-back.png) no-repeat;
 }
 .Cap-TinTuc p
 {
@@ -533,23 +540,13 @@ WRAPPER AREA
 }
 .left-noidung img
 {
-	-webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-	-moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-	box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-	-webkit-transition: all 0.5s ease-out;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
 	border: solid 1px #ecd9b7;
-}
-.left-noidung img:hover
-{
-	border: solid 1px black;
 }
 .Anh-noidung
 {
-	width: 188px;
-	height: 167px;
-	margin: 4px;
+	width: 192px;
+	height: 171px;
+	margin: 2px;
 }
 
 .link2
@@ -573,7 +570,7 @@ WRAPPER AREA
 {
 	color: #754a2f;
 	font-size: 12px;
-	font-family: Tahoma;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	font-weight: bold;
 	height: 5px;
 	padding: 2px 4px;
@@ -607,7 +604,7 @@ WRAPPER AREA
 	font-size: 13px;
 	display: block;
 	width: 215px;
-	height: 51px;
+	
 	line-height: 17px;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease;
@@ -631,7 +628,7 @@ WRAPPER AREA
 	color: Black;
 	line-height: 15px;
 	float: left;
-	font-family: arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	line-height: 16px;
 }
 .right-noidung
@@ -669,6 +666,7 @@ WRAPPER AREA
 	height: 14px;
 	font-size: 14px;
 	font-weight: bold;
+	font-family:Arial;
 	color: #000;
 	background: url(../images/patem.jpg) no-repeat;
 	background-position: right;
@@ -680,7 +678,7 @@ WRAPPER AREA
 	width: 300px;
 	height: 480px;
 	margin-top: 10px;
-	background: #dcbd86;
+	background: #F3E1C0;
 	float: left;
 }
 .docnhieu-noidung li
@@ -1158,7 +1156,7 @@ WRAPPER AREA
 p.pBreadrumb
 {
 	color: #004175;
-	font-family: tahoma, Helvetica, Geneva, Swiss, SunSans-Regular;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif, Helvetica, Geneva, Swiss, SunSans-Regular;
 	font-size: 10pt;
 	font-weight: bold;
 	padding: 2px 5px 2px 2px;
@@ -1169,7 +1167,7 @@ p.pBreadrumb
 .article-title
 {
 	font: 700 16px /23px "Arial";
-	color: #004175;
+	color: #000;
 	margin-top: 10px;
 	float: left;
 	width: 550px;
@@ -1190,19 +1188,20 @@ p.pBreadrumb
 }
 .newarticle-box
 {
-	width: 670px;
-	margin-top: 20px;
-	float: left;
-	background-color: #DFC698;
+width: 670px;
+float: left;
+margin-bottom:5px;
+margin-left: 3px;
+border:1px solid #dfc698;
 }
 .newarticle-box h2
 {
 	height: 18px;
 	color: #942201;
 	padding: 5px 0px 3px 5px;
-	font-family: Arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 15px;
 }
 .ul-new-article li
 {
@@ -1217,8 +1216,8 @@ p.pBreadrumb
 }
 .ul-new-article li a
 {
-	font-family: arial;
-	font-size: 11px;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	font-size: 12px;
 	color: black;
 }
 .line-article
@@ -1233,9 +1232,10 @@ p.pBreadrumb
 }
 .article-desciption
 {
-	font-size: 15px;
+	font-size: 12px;
 	margin: 20px 0 10px 0;
 	float: left;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif, Helvetica, Geneva, Swiss, SunSans-Regular;
 }
 .img-car
 {
@@ -1256,12 +1256,12 @@ p.pBreadrumb
 }
 .comment-name
 {
-	width: 340px;
+	width: 200px;
 	outline: 1px solid #ccc;
 }
 .comment-email
 {
-	width: 282px;
+	width: 200px;
 	outline: 1px solid #ccc;
 }
 .comment-span
@@ -1337,14 +1337,14 @@ p.pBreadrumb
 	font-size: 11px;
 	text-align: justify;
 	color: #000;
-	font-family: arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 }
 .hotevent-h2-title
 {
 	height: 18px;
 	color: #942201;
 	padding: 0px 0px 3px 5px;
-	font-family: Arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	font-weight: bold;
 	font-size: 18px;
 	border-bottom: 2px solid #C06C14;
@@ -1438,7 +1438,7 @@ p.pBreadrumb
 	width: 677px;
 	float: left;
 	border: 1px solid #C06C14;
-	margin: 10px 0 0 3px;
+	margin: 10px 0 5px 3px;
 }
 .category-title-box
 {
@@ -1455,7 +1455,7 @@ p.pBreadrumb
 	width: 430px;
 	padding: 4px 0 2px 5px;
 	color: #942201;
-	font-family: Arial;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	font-size: 15px;
 }
 .category-title a
@@ -1467,8 +1467,10 @@ p.pBreadrumb
 {
 	display: block;
 	float: right;
-	padding: 2px 5px 2px 0;
+	padding: 4px 5px 2px 0;
 	color: #942201;
+	font-family:Arial;
+	font-size:12px;
 }
 .article-box
 {
@@ -1531,19 +1533,19 @@ p.pBreadrumb
 	display: block;
 	width: 665px;
 	margin: 15px 0 0 5px;
-	border-bottom: 1px dashed #B23803;
-	padding-bottom: 5px;
+	border-bottom: 1px dashed #E4BAA7;
+	padding-bottom: 10px;
 	overflow: hidden;
 	float: left;
 }	
 .category-wrap .img-box
 {
-	border: #ccc 1px solid;
-	width: 290px;
-	height: 146px;
-	padding: 2px;
-	float: left;
-	margin-right: 5px;
+	border: #DFB99F 1px solid;
+width: 280px;
+height: 166px;
+padding: 2px;
+float: left;
+margin-right: 10px;
 }
 .category-wrap .cate-desc-box
 {
@@ -1551,12 +1553,15 @@ p.pBreadrumb
 }
 .category-wrap .cate-desc-box .cate-title
 {
-	font: 700 14px /20px "Arial" , Times, serif;
-	color: #9C6034;
+	font: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	color: #912809;
+	font-size:14px;
 }
 .category-wrap .cate-desc-box .cate-desc
 {
 	color: #000;
+	font-size:13px;
+	font-family:Arial;
 }
 .category-wrap .cate-desc-box .cate-desc .readmore
 {
@@ -1577,20 +1582,20 @@ p.pBreadrumb
 {
 	display: block;
 	width: 665px;
-	margin: 15px 0 0 5px;
-	border-bottom: 1px dashed #B23803;
+	margin: 10px 0 0 5px;
+	border-bottom: 1px dashed #E4BAA7;
 	padding-bottom: 5px;
 	overflow: hidden;
 	float: left;
 }	
 .category-wrap-first .img-box
 {
-	border: #ccc 1px solid;
+	border: #DFB99F 1px solid;
 	width: 160px;
 	height: 106px;
 	padding: 2px;
 	float: left;
-	margin-right: 5px;
+	margin-right: 10px;
 }
 .category-wrap-first .cate-desc-box
 {
@@ -1598,12 +1603,17 @@ p.pBreadrumb
 }
 .category-wrap-first .cate-desc-box .cate-title
 {
-	font: 700 14px /20px "Arial" , Times, serif;
-	color: #9C6034;
+	font: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	font-size:13px;
+	color: #912809;
 }
 .category-wrap-first .cate-desc-box .cate-desc
 {
+	margin-top:5px;
 	color: #000;
+	font-family:Arial;
+	font-size:12px;
+	height:70px;
 }
 .category-wrap-first .cate-desc-box .cate-desc .readmore
 {

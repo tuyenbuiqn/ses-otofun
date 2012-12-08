@@ -29,6 +29,7 @@ namespace SES.CMS
                 {
                     Page.Title = "Tin tức - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 }
+                Page.Header.Controls.Add(Ultility.AddDescription(dtArticle.Rows[0]["Description"].ToString()));
                 BuildEvent(articleID);
             }
         }
@@ -42,7 +43,7 @@ namespace SES.CMS
             objCate.CategoryID = objArt.CategoryID;
             objCate = new cmsCategoryBL().Select(objCate);
 
-            string rootUrl = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
+            string rootUrl = "<a href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
             if (objCate.ParentID == 0)
             {
                 lblBreadcrumb.Text = rootUrl;
@@ -53,7 +54,7 @@ namespace SES.CMS
                 objCate.CategoryID = objCate.ParentID;
                 objCate = new cmsCategoryBL().Select(objCate);
 
-                lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
+                lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
             }
         }
 

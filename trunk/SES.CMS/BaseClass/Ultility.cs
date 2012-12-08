@@ -276,5 +276,13 @@ namespace SES.CMS
             {
             }
         }
+
+        public static HtmlMeta AddDescription(string textDes)
+        {
+            HtmlMeta meta = new HtmlMeta();
+            meta.Name = "Description";
+            meta.Content = textDes;
+            return meta;
+        }
     }
 }
