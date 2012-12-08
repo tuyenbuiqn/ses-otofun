@@ -64,7 +64,7 @@ namespace SES.CMS.DO
 		private Int32 _UserXetDuyet;
 
 		#endregion
-
+        public bool IsHot { get; set; }
 		#region Public Properties
 					public Int32 ArticleID
 		{
