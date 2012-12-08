@@ -10,15 +10,15 @@
 namespace SES.CMS.Module {
     
     
-    public partial class ucTags {
+    public partial class ucSameCateArticles {
         
         /// <summary>
-        /// rptTag control.
+        /// rptNewArticle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTag;
+        protected global::System.Web.UI.WebControls.Repeater rptNewArticle;
     }
 }
