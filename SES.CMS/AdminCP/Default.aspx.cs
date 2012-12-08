@@ -72,15 +72,7 @@ namespace SES.CMS.AdminCP
 
 
                     //Video
-                    case "Video":
-                        hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
-                        break;
-                    case "ListVideo":
-                        hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
-                        break;
-
+                 
                         //Config
                     case "ListConfig":
                         hplConfig.CssClass = "active";
@@ -131,6 +123,16 @@ namespace SES.CMS.AdminCP
                         hplImage.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
                         break;
+
+                    case "Video":
+                        hplImage.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                        break;
+                    case "ListVideo":
+                        hplImage.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                        break;
+
 
                     //Video
                     case "ListAdvertisement":
