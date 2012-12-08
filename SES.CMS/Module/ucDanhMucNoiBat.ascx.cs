@@ -18,7 +18,7 @@ namespace SES.CMS.Module
         protected void rptCategoryParentDataSource()
         {
 
-            DataTable dtCateParent = new cmsArticleBL().SelectDanhMucNoiBat(1);
+            DataTable dtCateParent = new cmsArticleBL().HotArticle_UnderSlideHomepage();
             rptDanhMucNoiBat.DataSource = dtCateParent;
             rptDanhMucNoiBat.DataBind();
         }
