@@ -15,11 +15,11 @@
                 <div class="category-box">
                     <div class="category-title-box">
                         <h2 class="category-title">
-                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
+                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label>Tag</h2>
                         <span class="category-title-time">
                             <asp:Literal runat="server" ID="ltrDatetime"></asp:Literal></span>
                     </div>
-                    <asp:Repeater runat="server" ID="rptCategory" OnItemDataBound="rptCategory_ItemDataBound">
+                    <asp:Repeater runat="server" ID="rptTag" OnItemDataBound="rptTag_ItemDataBound">
                         <ItemTemplate>
                             <asp:Panel runat="server" id="divCategory">
                                 <a title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>

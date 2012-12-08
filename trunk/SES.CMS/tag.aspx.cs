@@ -15,15 +15,14 @@ namespace SES.CMS
         protected void Page_Load(object sender, EventArgs e)
         {
             loadTime();
-            //if (!string.IsNullOrEmpty(Request.QueryString["tag"]))
-            //{
-            //    int categoryID = int.Parse(Request.QueryString["CategoryID"]);
-            //    rptCategoryDataSoucre(categoryID);
-            //    rptBuildChildMenu(categoryID);
-            //    Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
-            //    BuildEvent(categoryID);
-            //    loadBreadcrumb(categoryID);
-            //}
+            if (!string.IsNullOrEmpty(Request.QueryString["tag"]))
+            {
+                string tag = Request.QueryString["tag"];
+              
+                Page.Title = "Tag - " + tag + " - " +  new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue;
+
+                rptTagDataSoucre(tag);
+            }
         }
 
         protected void loadTime()
@@ -59,45 +58,25 @@ namespace SES.CMS
             rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(categoryID, 5);
             rptEvent.DataBind();
         }
-        protected void rptBuildChildMenu(int categoryID)
-        {
-            MasterPage master = this.Master as MasterPage;
-            Control ucCateMenu = master.FindControl("ucCateMenu2") as Control;
-            Repeater rptCateMenu = ucCateMenu.FindControl("rptChildMenu") as Repeater;
-
-            cmsCategoryDO objCate = new cmsCategoryDO();
-            objCate.CategoryID = categoryID;
-            objCate = new cmsCategoryBL().Select(objCate);
-
-            if (objCate.ParentID == 0)
-            {
-                rptCateMenu.DataSource = new cmsCategoryBL().SelectByParent(categoryID);
-                rptCateMenu.DataBind();
-            }
-            else if (objCate.ParentID > 0)
-            {
-                rptCateMenu.DataSource = new cmsCategoryBL().SelectByParent(objCate.ParentID);
-                rptCateMenu.DataBind();
-            }
-        }
-        protected void rptCategoryDataSoucre(int categoryID)
+       
+        protected void rptTagDataSoucre(string tag)
         {
             CollectionPager1.MaxPages = 10000;
 
             CollectionPager1.PageSize = 30;
 
-            DataTable dtCategory = new cmsArticleBL().SelectByCategoryID1(categoryID);
+            DataTable dtTag = new cmsArticleBL().SelectByTag(tag);
 
-            CollectionPager1.DataSource = new DataView(dtCategory, "", "", DataViewRowState.CurrentRows);
+            CollectionPager1.DataSource = new DataView(dtTag, "", "", DataViewRowState.CurrentRows);
 
-            CollectionPager1.BindToControl = rptCategory;
+            CollectionPager1.BindToControl = rptTag;
 
-            rptCategory.DataSource = CollectionPager1.DataSourcePaged;
+            rptTag.DataSource = CollectionPager1.DataSourcePaged;
 
-            rptCategory.DataBind();
+            rptTag.DataBind();
         }
 
-        protected void rptCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void rptTag_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
             {
