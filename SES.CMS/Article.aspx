@@ -20,7 +20,7 @@
                 <div class="category-box">
                     <div class="category-title-box">
                         <h2 class="category-title">
-                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
+                            <a href="/Default.aspx" title="Trang chủ">Trang chủ </a>  » <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
                     </div>
                     <div class="article-box">
                         <asp:Repeater runat="server" ID="rptArticleDetail">
@@ -41,9 +41,8 @@
                         </asp:Repeater>
                     </div>
                     <uc7:ucTags runat="server" ID="uc7ucTag" />
-                    <uc4:ucNewArticles ID="ucNewArticles1" runat="server" />
-                    <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate" />
-                    <div class="newarticle-box">
+                    <uc4:ucNewArticles Visible="false" ID="ucNewArticles1" runat="server" />
+                      <div class="newarticle-box">
                         <h2>
                             Gửi phản hồi</h2>
                         <div class="line-article">
@@ -55,14 +54,7 @@
                                     <asp:TextBox runat="server" ID="txtEmail" CssClass="comment-email" placeholder="Email"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*"
                                         ForeColor="Red" ControlToValidate="txtEmail" ValidationGroup="comment"></asp:RegularExpressionValidator>
-                                </div>
-                                <div class="comment-row">
-                                    <span class="comment-span">(Bấm vào đây để nhận mã)</span>
-                                    <asp:ImageButton runat="server" ID="imgbtnCode" CssClass="comment-img-code" ImageUrl="/images/comment-code.png" />
-                                    <asp:TextBox runat="server" ID="txtCode" CssClass="comment-code" ReadOnly="true"></asp:TextBox>
-                                    <asp:TextBox runat="server" ID="txtPressCode" CssClass="comment-presscode"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*"
-                                        ForeColor="Red" ControlToValidate="txtPressCode" ValidationGroup="comment"></asp:RequiredFieldValidator>
+                                        <asp:TextBox runat="server" ID="txtSecCode" Width="70px" CssClass="comment-email" placeholder="Mã bảo mật"></asp:TextBox>
                                 </div>
                                 <div class="comment-row">
                                     <asp:TextBox TextMode="MultiLine" CssClass="comment-content" runat="server" ID="txtContent"></asp:TextBox>
@@ -77,6 +69,8 @@
                             </div>
                         </div>
                     </div>
+                    <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate" />
+                  
                 </div>
             </div>
             <div class="body-top-right">

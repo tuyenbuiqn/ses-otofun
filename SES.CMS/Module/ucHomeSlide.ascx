@@ -22,7 +22,7 @@
                         <ItemTemplate>
                             <li><a href='/Media/<%#Eval("SlideImg") %>' title='<%#Eval("Title") %>' /><a href='<%#Eval("SlideUrl") %>'>
                             </a>
-                                <div style="height: 40px; width: 555px;">
+                                <div style="height: 40px; width: 455px;">
                                     <span class="cap-title"><a href="<%#Eval("SlideUrl") %>">
                                         <%#Eval("Title") %>
                                     </a></span>

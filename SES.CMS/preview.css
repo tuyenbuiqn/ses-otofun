@@ -4,14 +4,8 @@ a,a:visited{
 text-decoration:none;*/
 }
 .cap-title a{
-font-size:14px; 
-color: black;
-text-transform: uppercase;
-text-shadow: 1px 1px 1px #CCC;
-font-weight:bold;
-}
-.cap-title a:hover{
-color:#CD0B11;
+font-size:15px; 
+color: #f75f00;
 font-weight:bold;
 }
 
@@ -27,7 +21,7 @@ height:60px;
 	text-align:left;
 }
 .info-section{
-width:625px;
+width:455px;
 height:200px;
 background-color:#EEE;
 border:1px solid #333;
@@ -52,10 +46,10 @@ margin-bottom:15px;
 position:absolute;
 top:0;
 left:0;
-width:725px;
+width:455px;
 height:40px;
 padding:10px;
-margin-left:200px; 
+margin-left:0; 
 background-color:#222;
 color:#FFF;
 font-size:14px;

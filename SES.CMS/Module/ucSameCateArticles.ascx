@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucSameCateArticles.ascx.cs" Inherits="SES.CMS.Module.ucSameCateArticles" %>
 <div class="newarticle-box">
     <h2>
-        Bài viết khác cùng thư mục</h2>
+        Bài viết cùng Danh mục</h2>
         <div class="line-article"></div>
     <ul class="ul-new-article">
         <asp:Repeater runat="server" ID="rptNewArticle">
