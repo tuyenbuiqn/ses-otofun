@@ -130,6 +130,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.ArticleXetDuyet_Filter(categoryID, isAccepted,userID);
         }
+        public DataTable SelectByTag(string tag)
+        {
+            return objcmsArticleDAL.SelectByTag(tag);
+        }
     }
 
 }
