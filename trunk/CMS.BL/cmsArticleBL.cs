@@ -134,6 +134,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectByTag(tag);
         }
+        public DataTable HotArticle_UnderSlideHomepage()
+        {
+            return objcmsArticleDAL.HotArticle_UnderSlideHomepage();
+        }
     }
 
 }
