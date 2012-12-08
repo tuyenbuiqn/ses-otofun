@@ -43,6 +43,7 @@ namespace SES.CMS.AdminCP.PageUC
             chkIsHotEvent.Checked = objArt.IsHotEvent;
             chkIsMostRead.Checked = objArt.IsMostRead;
             chkIsNew.Checked = objArt.IsNew;
+            chkIsHot.Checked = objArt.IsHot;
 
             txtOrderID.Text = objArt.OrderID.ToString();
             cboCategory.Value = objArt.CategoryID.ToString();
@@ -80,10 +81,11 @@ namespace SES.CMS.AdminCP.PageUC
             objArt.IsMostRead = chkIsMostRead.Checked;
             objArt.IsHotEvent = chkIsHotEvent.Checked;
             objArt.IsHighLight = chkIsHighLight.Checked;
-
+            objArt.IsHot = chkIsHot.Checked;
             objArt.OrderID = int.Parse(txtOrderID.Text);
             objArt.CategoryID = int.Parse(cboCategory.Value.ToString());
             objArt.IsAccepted = false;
+            
             objArt.Tags = "," + txtTags.Text + ",";
 
             if (!string.IsNullOrEmpty(fuImage.FileName))
