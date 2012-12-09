@@ -98,7 +98,7 @@
             </span><span class="spanCustome">
                 <asp:CheckBox ID="chkIsNew" runat="server" Text="Bài viết mới"/>
             </span>
-            <span class="spanCustome">
+            <span class="spanCustome" style="width:250px;>
                 <asp:CheckBox ID="chkIsHot" runat="server" Text="Bài viết hot(Dưới slide trang chủ)"/>
             </span>
         </td>
