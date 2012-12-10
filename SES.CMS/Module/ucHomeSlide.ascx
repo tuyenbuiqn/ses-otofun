@@ -8,10 +8,10 @@
         <div class="preloader">
         </div>
         <div class="c-panel">
-            <div style="display:none;" class="buttons">
+            <div class="buttons">
                 <div class="prev-btn">
                 </div>
-                <div class="play-btn">
+                <div class="play-btn" style="display:none;">
                 </div>
                 <div class="next-btn">
                 </div>
