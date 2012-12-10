@@ -419,7 +419,7 @@ border-top: solid 1px #ECD9B7;
 {
 	width: 217px;
 	height: 29px;
-	background: url(../images/label-backtop.png);
+	background: url(../images/label-back.jpg);
 	float: left;
 }
 .tintuc-cap p
@@ -463,7 +463,6 @@ border-top: solid 1px #ECD9B7;
 .middle-adv
 {
 width: 986px;
-height: 61px;
 float: left;
 margin-left: 5px;
 
@@ -504,7 +503,7 @@ margin-left: 5px;
 	width: 217px;
 	height: 25px;
 	float: left;
-	background: url(../images/label-back.png) no-repeat;
+	background: url(../images/label-back.jpg) no-repeat;
 }
 .Cap-TinTuc p
 {
@@ -1634,3 +1633,113 @@ margin-right: 10px;
 	background: url('../images/newnew.gif') no-repeat scroll right top transparent;
 padding-right: 36px;
 	}
+    /*style Thong tin doanh nghiep*/
+    .promo-wrapper
+    {
+        width: 998px;
+        height: 121px;
+        overflow: hidden;
+        margin-bottom: 5px;
+        position: relative;
+    }
+    .promo-topline
+    {
+        width: 998px;
+        height: 1px;
+        background: #D2BF9C;
+        overflow: hidden;
+    }
+    
+    .promo-list
+    {
+        width: 990px;
+        height: 85px;
+        border: 1px solid #D2BF9C;
+        margin-top:2px;
+    
+        padding-top: 15px;
+        padding-bottom: 15px;
+}
+    .promo-post
+    {
+        width: 242px;
+        padding-left: 5px;
+        margin-top: 5px;
+        float: left;
+    }
+    .promo-post-img
+    {
+        width: 126px;
+        height: 72px;
+        margin-right: 10px;
+    }
+    .promo-img-post
+    {
+         width: 116px;
+        height: 72px;
+        float:left;
+        margin-right:5px;
+    }
+    .promo-post-title
+    {
+        font-size: 13px;
+        font-weight: bold;
+           }
+    .promo-post-info
+    {
+        width: 120px;
+        float: left;
+       
+}
+    .promo-post-info a h5{ color:#B23803;}
+    .promo-post-info p{ color:#000;margin:2px 0 0 0;}
+    
+    #slide-prev
+    {
+        width: 14px;
+        height: 16px;
+        background: url(../images/previous.png) top left no-repeat;
+        margin-right: 2px;
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: 39px;
+        z-index: 9999;
+    }
+    .slide-seperate
+    {
+        border-left: 1px dotted #000000;
+        width: 1px;
+        height: 13px;
+        line-height: 13px;
+        position: absolute;
+        top: 6px;
+        right: 33px;
+    }
+    #slide-next
+    {
+        width: 14px;
+        height: 16px;
+        background: url(../images/forward.png) top left no-repeat;
+        margin-left: 1px;
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: 17px;
+        z-index: 9999;
+    }
+    #slide-prev span, #slide-next span
+    {
+        display: none;
+    }
+    .f1
+    {
+        float: left;
+    }	
+    .Cap-bottom-box
+    {
+    	width:990px;
+    	float:left;
+    	}
