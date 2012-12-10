@@ -138,6 +138,11 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.HotArticle_UnderSlideHomepage();
         }
+
+        public DataTable SelectByCatType(int type)
+        {
+            return objcmsArticleDAL.SelectByCatType(type);
+        }
     }
 
 }

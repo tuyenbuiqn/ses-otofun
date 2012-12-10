@@ -21,7 +21,7 @@ namespace SES.CMS.AdminCP.PageUC
         protected void Page_Load(object sender, EventArgs e)
         {
             Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
-            Functions.DevCboDatabinder(cboCategory, new cmsCategoryBL().SelectAll(), cmsCategoryDO.TITLE_FIELD, cmsCategoryDO.CATEGORYID_FIELD);
+            Functions.DevCboDatabinder(cboCategory, new cmsCategoryBL().SelectByType(0), cmsCategoryDO.TITLE_FIELD, cmsCategoryDO.CATEGORYID_FIELD);
             if (Request.QueryString["ArticleID"] != null)
             {
                 objArt.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
