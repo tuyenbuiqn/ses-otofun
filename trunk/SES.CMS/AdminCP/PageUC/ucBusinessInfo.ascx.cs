@@ -64,7 +64,7 @@ namespace SES.CMS.AdminCP.PageUC
             {
                 new cmsArticleBL().Update(objArt);
             }
-            Functions.Alert("Cập nhật thành công!", "Default.aspx?Page=ListArticle");
+            Functions.Alert("Cập nhật thành công!", "Default.aspx?Page=ListBusiness");
         }
         private void initObject()
         {
