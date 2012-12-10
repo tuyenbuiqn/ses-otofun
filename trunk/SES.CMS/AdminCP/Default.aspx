@@ -115,6 +115,9 @@
                      <li>
                         <asp:HyperLink ID="hplAdvertisement" NavigateUrl="Default.aspx?Page=ListAdvertisement" runat="server">Quảng cáo</asp:HyperLink>
                     </li>
+                    <li>
+                        <asp:HyperLink ID="hplBusiness" NavigateUrl="Default.aspx?Page=ListBusiness" runat="server">Thông tin doanh nghiệp</asp:HyperLink>
+                    </li>
 
                 </ul>
             </div>
