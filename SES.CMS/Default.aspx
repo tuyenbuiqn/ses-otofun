@@ -15,7 +15,8 @@
 <%@ Register Src="/Module/ucRightHomeAdv.ascx" TagName="ucRightHomeAdv" TagPrefix="uc11" %>
 <%@ Register Src="/Module/ucHomeVideo.ascx" TagName="ucHomeVideo" TagPrefix="uc12" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
-<%@ Register Src="/Module/ucThongTinDoanhNghiep.ascx" TagName="ucThongTinDoanhNghiep" TagPrefix="uc14" %>
+<%@ Register Src="/Module/ucThongTinDoanhNghiep.ascx" TagName="ucThongTinDoanhNghiep"
+    TagPrefix="uc14" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -68,8 +69,10 @@
                 </div>
             </div>
             <%--TOP RIGHT--%><div class="body-top-right">
-            <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
-            <uc4:ucTopRightAdv runat="server" ID="uc4TopRight" />
+                <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
+                <div class="adv-top-homepage-box">
+                    <uc4:ucTopRightAdv runat="server" ID="uc4TopRight" />
+                </div>
             </div>
         </div>
         <uc5:ucMiddleAdv runat="server" ID="uc5MiddleAdv" />
@@ -81,12 +84,12 @@
                 <div class="video-cap">
                     VIDEO</div>
                 <div class="video-detail">
-                <uc12:ucHomeVideo runat="server" ID="uc12Video" />
+                    <uc12:ucHomeVideo runat="server" ID="uc12Video" />
                 </div>
             </div>
         </div>
         <div class="bottom">
-           <uc14:ucThongTinDoanhNghiep runat="server" ID="uc14ucThongTinDoanhNghiep" />
+            <uc14:ucThongTinDoanhNghiep runat="server" ID="uc14ucThongTinDoanhNghiep" />
         </div>
     </div>
     <%--  mid--%>
