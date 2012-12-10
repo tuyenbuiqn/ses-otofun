@@ -15,6 +15,7 @@
 <%@ Register Src="/Module/ucRightHomeAdv.ascx" TagName="ucRightHomeAdv" TagPrefix="uc11" %>
 <%@ Register Src="/Module/ucHomeVideo.ascx" TagName="ucHomeVideo" TagPrefix="uc12" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
+<%@ Register Src="/Module/ucThongTinDoanhNghiep.ascx" TagName="ucThongTinDoanhNghiep" TagPrefix="uc14" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -85,28 +86,7 @@
             </div>
         </div>
         <div class="bottom">
-            <div class="Cap-bottom">
-                <p>
-                    THÔNG TIN DOANH NGHIỆP</p>
-            </div>
-            <ul>
-                <li><a href="#">
-                    <img id="Img19" class="bottom-image" src="images/thongtindoanhnghiep.jpg" alt="" /></a>
-                    <a href="#" class="bottom-detail">Tin giật gân : tập đoàn công nghệ SES vừa triển khai
-                        xong dự án website cho nhà trắng</a></li>
-                <li><a href="#">
-                    <img id="Img20" class="bottom-image" src="images/thongtindoanhnghiep.jpg" alt="" /></a>
-                    <a href="#" class="bottom-detail">Tin giật gân : tập đoàn công nghệ SES vừa triển khai
-                        xong dự án website cho nhà trắng</a></li>
-                <li><a href="#">
-                    <img id="Img21" class="bottom-image" src="images/thongtindoanhnghiep.jpg" alt="" /></a>
-                    <a href="#" class="bottom-detail">Tin giật gân : tập đoàn công nghệ SES vừa triển khai
-                        xong dự án website cho nhà trắng</a></li>
-                <li><a href="#">
-                    <img id="Img22" class="bottom-image" src="images/thongtindoanhnghiep.jpg" alt="" /></a>
-                    <a href="#" class="bottom-detail">Tin giật gân : tập đoàn công nghệ SES vừa triển khai
-                        xong dự án website cho nhà trắng</a></li>
-            </ul>
+           <uc14:ucThongTinDoanhNghiep runat="server" ID="uc14ucThongTinDoanhNghiep" />
         </div>
     </div>
     <%--  mid--%>

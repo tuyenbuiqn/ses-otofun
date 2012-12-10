@@ -111,12 +111,17 @@ background: url(assets/pause.png) no-repeat center;
 }
 .prev-btn{
 background:url(assets/prev.png) no-repeat center;
+position: absolute;
+left: -447px;
+top: -90px;
 }
 .next-btn{
 background:url(assets/next.png) no-repeat center;
+position: absolute;
+top: -90px;
+right: 5px;
 }
 .button-over{
-background-color:#DDD;
 }
 #tool-tip{
 font-family:Arial,Helvetica,sans-serif;

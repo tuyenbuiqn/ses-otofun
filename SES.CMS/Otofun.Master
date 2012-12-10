@@ -4,33 +4,45 @@
 <%@ Register Src="/Module/ucCateMenu.ascx" TagName="ucCateMenu" TagPrefix="uc2" %>
 <%@ Register Src="/Module/ucEvent.ascx" TagName="ucEvent" TagPrefix="uc3" %>
 <%@ Register Src="/Module/ucFooter.ascx" TagName="ucFooter" TagPrefix="uc4" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <title></title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
- 
-
+    <!--Slide-->
     <script type="text/javascript" src="/js/jquery.wt-rotator.min.js"></script>
-
     <script type="text/javascript" src="/js/preview.js"></script>
-         <link rel="stylesheet" type="text/css" href="/preview.css" />
+    <link rel="stylesheet" type="text/css" href="/preview.css" />
     <link rel="stylesheet" type="text/css" href="/wt-rotator.css" />
-   <script type="text/javascript">
-       $(document).ready(
+    <script type="text/javascript">
+        $(document).ready(
        function () {
            $(".cpslide").wtRotator({
-              width:455,
-            height:263,
-            display_thumbs:false,
-            display_playbutton: false,           
-            display_numbers:false
+               width: 455,
+               height: 263,
+               display_thumbs: false,
+               display_playbutton: true,
+               display_numbers: false
            });
        });
-    </script>
 
+    </script>
+    <!--End Slide-->
+    <!--Carousel thong tin doanh nghiep-->
+    <script type="text/javascript" src="/carousel/jquery.carouFredSel-6.0.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#foo").carouFredSel({
+                circular: true,
+                items: { visible: 4 },
+                scroll: { duration: 2000, pauseOnHover: true },
+                next: "#slide-next",
+                prev: "#slide-prev"
+            });
+        });
+    </script>
+    <!--End Carousel thong tin doanh nghiep-->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
