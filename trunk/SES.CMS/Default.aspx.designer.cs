@@ -137,5 +137,14 @@ namespace SES.CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SES.CMS.Module.ucHomeVideo uc12Video;
+        
+        /// <summary>
+        /// uc14ucThongTinDoanhNghiep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl uc14ucThongTinDoanhNghiep;
     }
 }
