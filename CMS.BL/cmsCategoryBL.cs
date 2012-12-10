@@ -93,7 +93,11 @@ namespace SES.CMS.BL
             return objcmsCategoryDAL.SelectMenu(BlockNumber);
         }
 
-        
+        public DataTable SelectByType(int type)
+        {
+
+            return objcmsCategoryDAL.SelectByType(type);
+        }
     }
 
 }
