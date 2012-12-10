@@ -92,14 +92,13 @@
         </td>
         <td>
             <span class="spanCustome">
-                <asp:CheckBox ID="chkIsHighLight" runat="server"  Text="Bài viết nổi bật" />
+                <asp:CheckBox ID="chkIsHighLight" runat="server" Text="Bài viết nổi bật" />
             </span><span class="spanCustome">
                 <asp:CheckBox ID="chkIsHotEvent" runat="server" Text="Bài viết tiêu điểm" />
             </span><span class="spanCustome">
-                <asp:CheckBox ID="chkIsNew" runat="server" Text="Bài viết mới"/>
-            </span>
-            <span class="spanCustome" style="width:250px;>
-                <asp:CheckBox ID="chkIsHot" runat="server" Text="Bài viết hot(Dưới slide trang chủ)"/>
+                <asp:CheckBox ID="chkIsNew" runat="server" Text="Bài viết mới" />
+            </span><span class="spanCustome" style="width: 250px;">
+                <asp:CheckBox ID="chkIsHot" runat="server" Text="Bài viết hot(Dưới slide trang chủ)" />
             </span>
         </td>
     </tr>
@@ -113,7 +112,7 @@
                 ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
         </td>
     </tr>
-       <tr>
+    <tr>
         <td>
             Từ khóa
         </td>

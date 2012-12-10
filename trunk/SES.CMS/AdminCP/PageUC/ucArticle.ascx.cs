@@ -59,6 +59,7 @@ namespace SES.CMS.AdminCP.PageUC
             initObject();
             if (objArt.ArticleID <= 0)
             {
+                objArt.IsAccepted = false;
                 objArt.CreateDate = DateTime.Now;
                 objArt.UserCreate = int.Parse(Session["UserID"].ToString());
                 new cmsArticleBL().Insert(objArt);
@@ -84,8 +85,6 @@ namespace SES.CMS.AdminCP.PageUC
             objArt.IsHot = chkIsHot.Checked;
             objArt.OrderID = int.Parse(txtOrderID.Text);
             objArt.CategoryID = int.Parse(cboCategory.Value.ToString());
-            objArt.IsAccepted = false;
-            
             objArt.Tags = "," + txtTags.Text + ",";
 
             if (!string.IsNullOrEmpty(fuImage.FileName))
