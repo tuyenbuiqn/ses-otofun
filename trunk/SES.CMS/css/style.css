@@ -1743,3 +1743,41 @@ padding-right: 36px;
     	width:990px;
     	float:left;
     	}
+.adv-top-homepage-box
+{
+	width:300px;
+	height:auto;
+	float: left;
+	margin: 10px 0 0 10px;
+}    	
+    	.adv-homepage-right
+{
+	width:300px;
+	height: 250px;
+	float: left;
+	margin-bottom: 10px;
+}    
+.adv-homepage-right img
+{
+    width:300px;
+	
+    height: 250px;
+}
+.adv-homepage-right-1
+{
+	width:300px;
+	height:150px;
+	float: left;
+	margin-bottom: 7px;
+}	
+.adv-homepage-right-1 img
+{
+   width:300px;
+	height:150px;
+}	
+.adv-homepage-right-2
+{
+	width:300px;
+	height:150px;
+	float: left;
+}			
