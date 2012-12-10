@@ -146,11 +146,11 @@ namespace SES.CMS.AdminCP
 
                     //Business Info
                     case "ListBusiness":
-                        hplAdvertisement.CssClass = "active";
+                        hplBusiness.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
                         break;
                     case "BusinessInfo":
-                        hplAdvertisement.CssClass = "active";
+                        hplBusiness.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
                         break;
 

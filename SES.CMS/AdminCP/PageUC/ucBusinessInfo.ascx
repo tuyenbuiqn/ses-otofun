@@ -12,7 +12,7 @@
     }
 </script>
 <h2>
-    Cập nhật Tin tức</h2>
+    Cập nhật thông tin doanh nghiệp</h2>
 <table width="100%" class="tablet" style="border: 1px solid black;">
     <tr>
         <td class="style8">

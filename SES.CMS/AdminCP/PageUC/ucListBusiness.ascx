@@ -3,7 +3,7 @@
     Danh sách thông tin doanh nghiệp</h2>
 
 <asp:GridView ID="gvAt" DataKeyNames="ArticleID" runat="server" AutoGenerateColumns="False"
-    OnRowDeleting="gvAt_RowDeleting" CssClass="tstyle2""
+    OnRowDeleting="gvAt_RowDeleting" CssClass="tstyle2" OnSelectedIndexChanged="gvAt_SelectedIndexChanged"
     PageSize="100" Width="100%" PagerStyle-CssClass="pgr">
     <Columns>
         <asp:BoundField DataField="STT" HeaderText="STT" ReadOnly="True" SortExpression="STT" />
