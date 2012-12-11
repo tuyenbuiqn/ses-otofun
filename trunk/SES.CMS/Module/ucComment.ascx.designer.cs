@@ -13,6 +13,15 @@ namespace SES.CMS.Module {
     public partial class ucComment {
         
         /// <summary>
+        /// comment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl comment;
+        
+        /// <summary>
         /// rptComment control.
         /// </summary>
         /// <remarks>
