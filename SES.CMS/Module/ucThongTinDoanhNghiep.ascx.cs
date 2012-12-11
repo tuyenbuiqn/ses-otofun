@@ -26,11 +26,11 @@ namespace SES.CMS.Module
 
         public string FriendlyUrl(string s)
         {
-            return Ultility.Change_AV(s);
+            return Ultility.Change_AVCate(s);
         }
         public string WordCut(string text)
         {
-            return Ultility.WordCut(text, 100, new char[] { ' ', '.', ',', ';' }) + "...";
+            return Ultility.WordCut(text, 50, new char[] { ' ', '.', ',', ';' }) + "...";
         }
     }
 }
