@@ -1222,13 +1222,24 @@ border:1px solid #dfc698;
 .line-article
 {
 	width: 663px;
-	height: 2px;
+	height: 1px;
 	background: #942201;
 	border: solid 1px #C06C14;
 	border-left: none;
 	border-right: none;
 	margin: 0 auto;
 }
+
+.dotted
+{
+	width: 663px;
+	height: 1px;
+	background: #DFC698;
+	border-left: none;
+	border-right: none;
+	margin: 0 auto;
+}
+
 .article-desciption
 {
 	font-size: 12px;
@@ -1837,3 +1848,54 @@ background-position: 4px;
 {
 color: #5f1d00;
 }
+
+   .comment-box1
+{
+	border: 1px solid #DFC698;
+	width: 670px;
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 3px;
+    }
+
+.comment-info1
+{
+    width: 100%;
+    min-height: 100px; 
+    margin-left: 5px;
+    }
+    
+.comment-content1
+{
+    width: 100%;
+    min-height: 30px;
+    float: none;
+    margin-left: 5px;
+    line-height: 30px;
+}
+
+.comment-info2
+{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    float: none;
+    }
+.comment-name1
+{
+    width: 90%;
+    height: 30%;
+    float: left;
+    }
+
+.comment-vote1
+{
+    width: 10%;
+    height: 30%;
+    float: left;
+    }  
+ .namecm
+ {
+     margin-left: 5px;
+     line-height: 30px;
+     }

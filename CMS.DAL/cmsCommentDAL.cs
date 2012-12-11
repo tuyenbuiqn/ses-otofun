@@ -297,7 +297,7 @@ arrcmsCommentDO.Add(objcmsCommentDO);
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
-            Sqlcomm.CommandText = "spcmsArticle_GetByArt";
+            Sqlcomm.CommandText = "spcmsComment_GetByArtID";
             SqlParameter Sqlparam;
 
 

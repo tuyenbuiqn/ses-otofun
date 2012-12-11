@@ -10,6 +10,7 @@
 <%@ Register Src="Module/ucTags.ascx" TagName="ucTags" TagPrefix="uc7" %>
 <%@ Register Src="Module/ucSameCateArticles.ascx" TagName="ucSameCateArticles" TagPrefix="u8" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
+<%@ Register src="Module/ucComment.ascx" tagname="ucComment" tagprefix="uc8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -41,6 +42,8 @@
                         </asp:Repeater>
                     </div>
                     <uc7:ucTags runat="server" ID="uc7ucTag" />
+                    <uc8:ucComment ID="ucComment1" runat="server" />
+
                     <uc4:ucNewArticles Visible="false" ID="ucNewArticles1" runat="server" />
                       <div class="newarticle-box">
                         <h2>
@@ -52,9 +55,9 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
                                         ForeColor="Red" ControlToValidate="txtHoTen" ValidationGroup="comment"></asp:RequiredFieldValidator>
                                     <asp:TextBox runat="server" ID="txtEmail" CssClass="comment-email" placeholder="Email"></asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*"
-                                        ForeColor="Red" ControlToValidate="txtEmail" ValidationGroup="comment"></asp:RegularExpressionValidator>
-                                        <asp:TextBox runat="server" ID="txtSecCode" Width="70px" CssClass="comment-email" placeholder="Mã bảo mật"></asp:TextBox>
+                                    <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*"
+                                        ForeColor="Red" ControlToValidate="txtEmail" ValidationGroup="comment"></asp:RegularExpressionValidator>--%>
+                                        <%--<asp:TextBox runat="server" ID="txtSecCode" Width="70px" CssClass="comment-email" placeholder="Mã bảo mật"></asp:TextBox>--%>
                                 </div>
                                 <div class="comment-row">
                                     <asp:TextBox TextMode="MultiLine" CssClass="comment-content" runat="server" ID="txtContent"></asp:TextBox>
@@ -63,14 +66,14 @@
                                 </div>
                                 <div class="comment-row">
                                     <asp:Button runat="server" Text="Gửi thông tin" ID="btnSend" CssClass="comment-button"
-                                        ValidationGroup="comment" />
-                                    <asp:Button runat="server" Text="Làm lại" ID="btnReset" CssClass="comment-button" />
+                                        ValidationGroup="comment" onclick="btnSend_Click" />
+                                    <asp:Button runat="server" Text="Làm lại" ID="btnReset" 
+                                        CssClass="comment-button" onclick="btnReset_Click" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate" />
-                  
+                    <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate"/>                  
                 </div>
             </div>
             <div class="body-top-right">
