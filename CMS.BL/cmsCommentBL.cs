@@ -77,6 +77,17 @@ namespace SES.CMS.BL
         {
             return objcmsCommentDAL.SelectByArt(ArtID);
         }
+
+        public DataTable CommentXetDuyet_Filter(int articleID, int isAccepted, int userID)
+        {
+            return objcmsCommentDAL.CommentXetDuyet_Filter(articleID, isAccepted, userID);
+        }
+
+        public void XetDuyetNhieuBinhLuan(string commentIDList, bool isAccepted, int userID)
+        {
+            objcmsCommentDAL.XetDuyetNhieuBinhLuan(commentIDList, isAccepted, userID);
+        }
+
     }
 
 }

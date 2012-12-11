@@ -315,6 +315,59 @@ arrcmsCommentDO.Add(objcmsCommentDO);
             }
             return dt;
         }
+
+        public DataTable CommentXetDuyet_Filter(int articleID, int isAccepted, int userID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsComment_XetDuyetFilter";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@articleID", SqlDbType.Int);
+            Sqlparam.Value = articleID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@isAccepted", SqlDbType.Int);
+            Sqlparam.Value = isAccepted;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@userID", SqlDbType.Int);
+            Sqlparam.Value = userID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+
+        public void XetDuyetNhieuBinhLuan(string commentIDList, bool isAccepted, int userID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsComment_DuyetBaiViet";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@CommentIDList", SqlDbType.NVarChar);
+            Sqlparam.Value = commentIDList;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsAccepted", SqlDbType.Bit);
+            Sqlparam.Value = isAccepted;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@userID", SqlDbType.Int);
+            Sqlparam.Value = userID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            base.ExecuteNoneQuery(Sqlcomm);
+        }
     }
 
 }

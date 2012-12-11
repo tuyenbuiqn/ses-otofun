@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucMnuComment.ascx.cs" Inherits="SES.CMS.AdminCP.MenuUC.ucMnuComment" %>
+<li><a href="Default.aspx?Page=DuyetComment">Duyệt comment</a></li>

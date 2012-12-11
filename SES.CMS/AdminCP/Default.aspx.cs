@@ -158,6 +158,13 @@ namespace SES.CMS.AdminCP
                         MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
                         break;
 
+                    //Business Info
+                    case "DuyetComment":
+                        hplBusiness.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuComment.ascx");
+                        break;
+
+
             //        case "ListClientLogin":
             //            hplImage.CssClass = "active";
             //            MnuPage = LoadControl("MenuUC/ucMnuCustomer.ascx");
