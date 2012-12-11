@@ -1670,13 +1670,13 @@ padding-right: 36px;
     .promo-post-img
     {
         width: 126px;
-        height: 72px;
+        height: 82px;
         margin-right: 10px;
     }
     .promo-img-post
     {
          width: 116px;
-        height: 72px;
+        height: 82px;
         float:left;
         margin-right:5px;
     }
@@ -1780,4 +1780,60 @@ padding-right: 36px;
 	width:300px;
 	height:150px;
 	float: left;
-}			
+}		
+.sale-off-box
+{
+    width: 290px;
+    float:left;    
+    margin: 10px 0 0 10px;
+    background: #F3E1C0;
+    padding: 5px;
+}	
+.sale-off-title
+{
+    margin-left:5px;
+    font-size:17px;
+    text-transform:uppercase;
+    font-family:arial;
+    font-weight:bold;
+    color:#942201;
+    margin-bottom:3px;  
+    border-bottom:3px solid #942201;
+}
+.sale-off
+{
+    width:300px;
+    float:left;
+    font-size:13px;
+}
+.sale-off li
+{
+    margin-top: 5px;
+background: url(../images/liststyle.jpg) no-repeat;
+padding-left: 13px;
+background-position: 4px;
+}
+.sale-off li a
+{
+    color:#000;
+}
+.sale-off li a:hover
+{
+    color:#333;
+}
+.sale-off-readmore
+{
+    width:300px;
+    float:left;
+}
+.sale-off-readmore a
+{
+    float:right;
+    margin-right:10px;
+    font-size:12px;
+    font-weight:bold;
+}
+.sale-off-readmore a:hover
+{
+color: #5f1d00;
+}
