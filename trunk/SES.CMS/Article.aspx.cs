@@ -12,6 +12,7 @@ namespace SES.CMS
 {
     public partial class Article : System.Web.UI.Page
     {
+        cmsCommentDO objcomment = new cmsCommentDO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(Request.QueryString["ArticleID"]))
@@ -105,6 +106,31 @@ namespace SES.CMS
                 rptCateMenu.DataSource = new cmsCategoryBL().SelectByParent(objCate.ParentID);
                 rptCateMenu.DataBind();
             }
+        }
+
+        protected void btnSend_Click(object sender, EventArgs e)
+        {
+            initObject();
+            objcomment.IsAccepted = false;
+            new cmsCommentBL().Insert(objcomment);
+
+            Ultility.Alert("Chúng tôi sẽ duyệt bài của bạn!", Request.Url.AbsolutePath);
+        }
+
+        private void initObject()
+        {
+            objcomment.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
+            objcomment.Contents = txtContent.Text;
+            objcomment.CreateDate = DateTime.Now;
+            objcomment.Email = txtEmail.Text;
+            objcomment.Name = txtHoTen.Text;
+        }
+
+        protected void btnReset_Click(object sender, EventArgs e)
+        {
+            txtHoTen.Text = "";
+            txtEmail.Text = "";
+            txtContent.Text = "";
         }
     }
 }
