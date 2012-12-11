@@ -47,6 +47,7 @@
     <Compile Include="cmsAlbumDAL.cs" />
     <Compile Include="cmsArticleDAL.cs" />
     <Compile Include="cmsCategoryDAL.cs" />
+    <Compile Include="cmsCommentDAL.cs" />
     <Compile Include="cmsConfigDAL.cs" />
     <Compile Include="cmsEventDAL.cs" />
     <Compile Include="cmsImagesDAL.cs" />

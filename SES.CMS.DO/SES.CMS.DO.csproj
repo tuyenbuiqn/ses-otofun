@@ -45,6 +45,7 @@
     <Compile Include="cmsAlbumDO.cs" />
     <Compile Include="cmsArticleDO.cs" />
     <Compile Include="cmsCategoryDO.cs" />
+    <Compile Include="cmsCommentDO.cs" />
     <Compile Include="cmsConfigDO.cs" />
     <Compile Include="cmsEventDO.cs" />
     <Compile Include="cmsImagesDO.cs" />
