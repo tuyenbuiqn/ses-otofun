@@ -292,7 +292,29 @@ arrcmsCommentDO.Add(objcmsCommentDO);
 
      
 		#endregion          
-    
+        
+        public DataTable SelectByArt(int ArtID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByArt";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
+            Sqlparam.Value = ArtID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
     }
 
 }
