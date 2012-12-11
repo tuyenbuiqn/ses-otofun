@@ -32,7 +32,7 @@ namespace SES.CMS.AdminCP.PageUC
             //else { Response.Redirect("Default.aspx?Page=Default"); }
             if (!IsPostBack)
             {
-                gvAt.DataSource = new cmsArticleBL().SelectAll();
+                gvAt.DataSource = new cmsArticleBL().SelectByCatType(0);
                 gvAt.DataBind();
                 Functions.ddlDatabinder(cboCategory, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new cmsCategoryBL().SelectAll());
                 Functions.ddlDatabinder(ddlUserCreate, sysUserDO.USERID_FIELD,sysUserDO.USERNAME_FIELD,new sysUserBL().SelectAll());
@@ -46,7 +46,7 @@ namespace SES.CMS.AdminCP.PageUC
         {
             if (cboCategory.SelectedIndex <= 0)
             {
-                gvAt.DataSource = new cmsArticleBL().SelectAll();
+                gvAt.DataSource = new cmsArticleBL().SelectByCatType(0);
                 gvAt.DataBind();
             }
             else
