@@ -73,6 +73,10 @@ namespace SES.CMS.BL
      
 #endregion          
     
+        public DataTable SelectByArt(int ArtID)
+        {
+            return objcmsCommentDAL.SelectByArt(ArtID);
+        }
     }
 
 }
