@@ -58,11 +58,11 @@ Sqlparam = new SqlParameter("@Email", SqlDbType.NVarChar);
 Sqlparam.Value = objcmsCommentDO.Email;
 Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@VoteUp", SqlDbType.NVarChar);
+Sqlparam = new SqlParameter("@VoteUp", SqlDbType.Int);
 Sqlparam.Value = objcmsCommentDO.VoteUp;
 Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@VoteDown", SqlDbType.NVarChar);
+Sqlparam = new SqlParameter("@VoteDown", SqlDbType.Int);
 Sqlparam.Value = objcmsCommentDO.VoteDown;
 Sqlcomm.Parameters.Add(Sqlparam);
 
@@ -72,6 +72,10 @@ Sqlcomm.Parameters.Add(Sqlparam);
 
 Sqlparam = new SqlParameter("@UserXetDuyet", SqlDbType.Int);
 Sqlparam.Value = objcmsCommentDO.UserXetDuyet;
+Sqlcomm.Parameters.Add(Sqlparam);
+
+Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+Sqlparam.Value = objcmsCommentDO.ArticleID;
 Sqlcomm.Parameters.Add(Sqlparam);
 
 Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
@@ -115,11 +119,11 @@ Sqlparam = new SqlParameter("@Email", SqlDbType.NVarChar);
 Sqlparam.Value = objcmsCommentDO.Email;
 Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@VoteUp", SqlDbType.NVarChar);
+Sqlparam = new SqlParameter("@VoteUp", SqlDbType.Int);
 Sqlparam.Value = objcmsCommentDO.VoteUp;
 Sqlcomm.Parameters.Add(Sqlparam);
 
-Sqlparam = new SqlParameter("@VoteDown", SqlDbType.NVarChar);
+Sqlparam = new SqlParameter("@VoteDown", SqlDbType.Int);
 Sqlparam.Value = objcmsCommentDO.VoteDown;
 Sqlcomm.Parameters.Add(Sqlparam);
 
@@ -129,6 +133,10 @@ Sqlcomm.Parameters.Add(Sqlparam);
 
 Sqlparam = new SqlParameter("@UserXetDuyet", SqlDbType.Int);
 Sqlparam.Value = objcmsCommentDO.UserXetDuyet;
+Sqlcomm.Parameters.Add(Sqlparam);
+
+Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+Sqlparam.Value = objcmsCommentDO.ArticleID;
 Sqlcomm.Parameters.Add(Sqlparam);
 
 
@@ -208,13 +216,15 @@ objcmsCommentDO.Name=Convert.ToString(dr["Name"]);
 if(!Convert.IsDBNull(dr["Email"]))
 objcmsCommentDO.Email=Convert.ToString(dr["Email"]);
 if(!Convert.IsDBNull(dr["VoteUp"]))
-objcmsCommentDO.VoteUp=Convert.ToString(dr["VoteUp"]);
+objcmsCommentDO.VoteUp=Convert.ToInt32(dr["VoteUp"]);
 if(!Convert.IsDBNull(dr["VoteDown"]))
-objcmsCommentDO.VoteDown=Convert.ToString(dr["VoteDown"]);
+objcmsCommentDO.VoteDown=Convert.ToInt32(dr["VoteDown"]);
 if(!Convert.IsDBNull(dr["IsAccepted"]))
 objcmsCommentDO.IsAccepted=Convert.ToBoolean(dr["IsAccepted"]);
 if(!Convert.IsDBNull(dr["UserXetDuyet"]))
 objcmsCommentDO.UserXetDuyet=Convert.ToInt32(dr["UserXetDuyet"]);
+if(!Convert.IsDBNull(dr["ArticleID"]))
+objcmsCommentDO.ArticleID=Convert.ToInt32(dr["ArticleID"]);
 
             }
              return objcmsCommentDO;
@@ -247,13 +257,15 @@ objcmsCommentDO.Name=Convert.ToString(dr["Name"]);
 if(!Convert.IsDBNull(dr["Email"]))
 objcmsCommentDO.Email=Convert.ToString(dr["Email"]);
 if(!Convert.IsDBNull(dr["VoteUp"]))
-objcmsCommentDO.VoteUp=Convert.ToString(dr["VoteUp"]);
+objcmsCommentDO.VoteUp=Convert.ToInt32(dr["VoteUp"]);
 if(!Convert.IsDBNull(dr["VoteDown"]))
-objcmsCommentDO.VoteDown=Convert.ToString(dr["VoteDown"]);
+objcmsCommentDO.VoteDown=Convert.ToInt32(dr["VoteDown"]);
 if(!Convert.IsDBNull(dr["IsAccepted"]))
 objcmsCommentDO.IsAccepted=Convert.ToBoolean(dr["IsAccepted"]);
 if(!Convert.IsDBNull(dr["UserXetDuyet"]))
 objcmsCommentDO.UserXetDuyet=Convert.ToInt32(dr["UserXetDuyet"]);
+if(!Convert.IsDBNull(dr["ArticleID"]))
+objcmsCommentDO.ArticleID=Convert.ToInt32(dr["ArticleID"]);
 arrcmsCommentDO.Add(objcmsCommentDO);
 }
             }
