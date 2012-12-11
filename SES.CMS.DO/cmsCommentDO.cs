@@ -27,6 +27,7 @@ namespace SES.CMS.DO
 		public const string VOTEDOWN_FIELD ="VoteDown";
 		public const string ISACCEPTED_FIELD ="IsAccepted";
 		public const string USERXETDUYET_FIELD ="UserXetDuyet";
+		public const string ARTICLEID_FIELD ="ArticleID";
 
 		#endregion
 		
@@ -36,10 +37,11 @@ namespace SES.CMS.DO
 		private DateTime _CreateDate;
 		private String _Name;
 		private String _Email;
-		private String _VoteUp;
-		private String _VoteDown;
+		private Int32 _VoteUp;
+		private Int32 _VoteDown;
 		private Boolean _IsAccepted;
 		private Int32 _UserXetDuyet;
+		private Int32 _ArticleID;
 
 		#endregion
 
@@ -99,7 +101,7 @@ namespace SES.CMS.DO
 				_Email = value;
 			}
 		}
-		public String VoteUp
+		public Int32 VoteUp
 		{
 			get
 			{
@@ -110,7 +112,7 @@ namespace SES.CMS.DO
 				_VoteUp = value;
 			}
 		}
-		public String VoteDown
+		public Int32 VoteDown
 		{
 			get
 			{
@@ -141,6 +143,17 @@ namespace SES.CMS.DO
 			set
 			{
 				_UserXetDuyet = value;
+			}
+		}
+		public Int32 ArticleID
+		{
+			get
+			{
+				return _ArticleID;
+			}
+			set
+			{
+				_ArticleID = value;
 			}
 		}
 
