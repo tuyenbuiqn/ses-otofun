@@ -7,117 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SES.CMS.AdminCP {
+namespace SES.CMS.AdminCP.PageUC {
     
     
-    public partial class Default {
+    public partial class ucDuyetComment {
         
         /// <summary>
-        /// form1 control.
+        /// ddlArticle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlArticle;
         
         /// <summary>
-        /// toolkit control.
+        /// ddlTrangThai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ToolkitScriptManager toolkit;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTrangThai;
         
         /// <summary>
-        /// lblUsername control.
+        /// ddlUserCreate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsername;
+        protected global::System.Web.UI.WebControls.DropDownList ddlUserCreate;
         
         /// <summary>
-        /// hplDestination control.
+        /// btnFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplDestination;
+        protected global::System.Web.UI.WebControls.Button btnFilter;
         
         /// <summary>
-        /// hplImage control.
+        /// btnAccept control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplImage;
+        protected global::System.Web.UI.WebControls.Button btnAccept;
         
         /// <summary>
-        /// hplConfig control.
+        /// btnNotAccept control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplConfig;
+        protected global::System.Web.UI.WebControls.Button btnNotAccept;
         
         /// <summary>
-        /// hplSlide control.
+        /// gvAt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplSlide;
+        protected global::System.Web.UI.WebControls.GridView gvAt;
         
         /// <summary>
-        /// hplAdvertisement control.
+        /// btnAccept1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplAdvertisement;
+        protected global::System.Web.UI.WebControls.Button btnAccept1;
         
         /// <summary>
-        /// hplBusiness control.
+        /// btnNotAccept1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplBusiness;
-        
-        /// <summary>
-        /// hptComment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hptComment;
-        
-        /// <summary>
-        /// phSubNav control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phSubNav;
-        
-        /// <summary>
-        /// phPageControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phPageControl;
+        protected global::System.Web.UI.WebControls.Button btnNotAccept1;
     }
 }
