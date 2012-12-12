@@ -68,7 +68,7 @@ namespace SES.CMS.AdminCP.PageUC
             commentList += "-9999";
             if (commentList.Equals("-9999"))
             {
-                Functions.Alert("Vui lòng chọn bài viết");
+                Functions.Alert("Vui lòng chọn bình luận");
                 return;
             }
             else
@@ -93,7 +93,7 @@ namespace SES.CMS.AdminCP.PageUC
             commentList += "-9999";
             if (commentList.Equals("-9999"))
             {
-                Functions.Alert("Vui lòng chọn bài viết");
+                Functions.Alert("Vui lòng chọn bình luận");
                 return;
             }
             else

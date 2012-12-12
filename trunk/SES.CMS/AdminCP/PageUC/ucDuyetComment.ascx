@@ -8,14 +8,14 @@
                 <asp:ListItem Text=".: Chọn tất cả :." Value="0"></asp:ListItem>
             </asp:DropDownList>
         </span><span class="span-xd-radio">Trạng thái
-            <asp:DropDownList ID="ddlTrangThai" runat="server" Width="203px" CssClass="ddl-input"
+            <asp:DropDownList ID="ddlTrangThai" runat="server" Width="183px" CssClass="ddl-input"
                 AppendDataBoundItems="true">
                 <asp:ListItem Text=".: Chọn tất cả :." Value="-1"></asp:ListItem>
                 <asp:ListItem Text="Chưa duyệt" Value="0"></asp:ListItem>
                 <asp:ListItem Text="Đã duyệt" Value="1"></asp:ListItem>
             </asp:DropDownList>
         </span>
-        Username
+        User xét duyệt
          <asp:DropDownList ID="ddlUserCreate" runat="server" CssClass="ddl-input" AppendDataBoundItems="true">
                 <asp:ListItem Text=".: Chọn tất cả :." Value="0"></asp:ListItem>
             </asp:DropDownList>
@@ -48,13 +48,14 @@
             </ItemTemplate>
         </asp:TemplateField>
 <%--        <asp:BoundField DataField="STT" HeaderText="STT" ReadOnly="True" SortExpression="STT" />--%>
-        <asp:BoundField DataField="Name" HeaderText="Họ tên"/>
-        <asp:BoundField DataField="Email" HeaderText="Email"/>
-        <asp:BoundField DataField="Contents" HeaderText="Nội dung"/>
-        <asp:CheckBoxField DataField="IsAccepted" HeaderText="Duyệt" />
+        <asp:BoundField DataField="Name" HeaderText="Họ tên" ItemStyle-Width="15%"/>
+        <asp:BoundField DataField="Email" HeaderText="Email" ItemStyle-Width="10%"/>
+        <asp:BoundField DataField="Contents" HeaderText="Nội dung" ItemStyle-Width="50%"/>
+        <asp:BoundField DataField="ArticleTitle" HeaderText="Bài viết" ItemStyle-Width="50%"/>
+        <asp:CheckBoxField DataField="IsAccepted" HeaderText="Duyệt" ItemStyle-Width="10%" />
         <asp:TemplateField>
             <ItemTemplate>
-                <asp:ImageButton ID="btEdit" runat="server" CommandName="Select" ImageUrl="~/AdminCP/images/edit_16x16.gif" />
+                <asp:ImageButton ID="btEdit" runat="server" CommandName="Select" ImageUrl="~/AdminCP/images/edit_16x16.gif" Visible="false" />
                 <asp:ImageButton ID="btDelete" runat="server" CommandArgument='<%#Eval("CommentID") %>'
                     CommandName="Delete" ImageUrl="~/AdminCP/images/delete_16x16.gif" OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" />
             </ItemTemplate>
