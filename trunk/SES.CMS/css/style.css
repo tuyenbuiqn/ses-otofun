@@ -1973,4 +1973,28 @@ color: #5f1d00;
 	font-weight: bold;
 	font-size: 15px;
      }
+.div-atgt
+{
+    margin:5px;
+    float: left;
+}  
+.div-atgt img
+{
+    width:80px;
+    height:60px;  
+    float:left;
+    margin:0 4px 02px 0;
+}   
+.atgt-title
+{
+    color:#333;
+    font-size:11px;
+    font-weight:600;
+
+}
+.atgt-desc
+{
+   
+    font-size:12px;
+}
     
