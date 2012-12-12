@@ -3,14 +3,17 @@
  
 </style>
 <div class="comment-box1" runat="server" id="comment">
-<h2>
+<h2 class="h2-com">
     Các phản hồi</h2>
 <div class="line-article"></div>
-    <asp:Repeater ID="rptComment" runat="server">
+    <asp:Repeater ID="rptComment" runat="server" OnItemCommand="rptComment_ItemCommand">
         <ItemTemplate>
             <div class="commment-info1">
                 <div class="comment-content1">
-                    <%#Eval("Contents") %>    
+                    <span class="contentcm">
+                        <%#Eval("Contents") %>       
+                    </span>
+  
                 </div>
                 <div class="comment-info2">
                     <div class="comment-name1">
@@ -20,8 +23,19 @@
                         </span>   
                     </div>
                     <div class="comment-vote1">
-                        <%#Eval("VoteUp") %> 
-                        <%#Eval("VoteDown") %> 
+                        <span class="social-box">
+                            <span class="social-button">
+                                <asp:LinkButton runat="server" ID="lbtnLike" CommandArgument='<%#Eval("CommentID")%>'
+                                    CommandName="Like" Text="Thích"></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="lntnDislike" CommandName="Dislike" 
+                                CommandArgument='<%#Eval("CommentID")%>' Text="| Không Thích"></asp:LinkButton>
+                            </span>
+                                    <span class="like-icon"></span>
+                                    <span class="total-like"><%#Eval("VoteUp") %></span>
+                                    <span class="dislike-icon"></span>
+                                    <span class="total-dislike">
+                                    <%#Eval("VoteDown") %></span>
+                         
                     </div>
                     
                 </div>
