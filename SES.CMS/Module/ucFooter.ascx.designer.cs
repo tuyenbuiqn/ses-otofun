@@ -13,6 +13,24 @@ namespace SES.CMS.Module {
     public partial class ucFooter {
         
         /// <summary>
+        /// rptNews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptNews;
+        
+        /// <summary>
+        /// rptBuy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptBuy;
+        
+        /// <summary>
         /// rptMainMenu control.
         /// </summary>
         /// <remarks>

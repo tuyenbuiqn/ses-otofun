@@ -5,37 +5,30 @@
             <li>
                 <p>
                     TIN TỨC & TƯ VẤN</p>
-                <ul class="foot-split">
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
+             <ul class="foot-split">
+              <asp:Repeater ID="rptNews" runat="server">
+                <ItemTemplate>
+                       <li><a href="#"> <%#Eval("Title") %></a></li>
+                </ItemTemplate>  
+                      <ItemTemplate>
+                       <li><a href="#"> <%#Eval("Title") %></a></li>
+                      </ItemTemplate>  
+                    </asp:Repeater>
                 </ul>
-                <ul class="foot-split">
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                </ul>
+
             </li>
             <li>
                 <p>
                     THÔNG TIN THỊ TRƯỜNG & MUA XE</p>
                 <ul class="foot-split">
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                </ul>
-                <ul class="foot-split">
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Tin Tức</a></li>
+              <asp:Repeater ID="rptBuy" runat="server">
+                <ItemTemplate>
+                       <li><a href="#"> <%#Eval("Title") %></a></li>
+                </ItemTemplate>  
+                      <ItemTemplate>
+                       <li><a href="#"> <%#Eval("Title") %></a></li>
+                      </ItemTemplate>  
+                    </asp:Repeater>
                 </ul>
             </li>
             <li>

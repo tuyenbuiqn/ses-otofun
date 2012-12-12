@@ -977,20 +977,25 @@ margin-left: 5px;
 }
 .foot-split
 {
-	width: 150px;
+	width: 320px;
 	height: 115px;
 	margin-left: 10px;
 	float: left;
+	margin-top: 8px;
 }
 
 .foot-split li
 {
-	width: 130px;
+	width: 145px;
 	margin: 3px 0px 3px 0px;
-	height: 17px;
+	height: 28px;
 	border: none;
 	font-size: 12px;
 	font-weight: bold;
+	float: left;
+	padding-right: 15px;
+	line-height: 14px;
+	text-align: justify;
 }
 .foot-split li a
 {
