@@ -54,9 +54,8 @@
                                     <asp:TextBox runat="server" ID="txtHoTen" CssClass="comment-name" placeholder="Họ tên"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
                                         ForeColor="Red" ControlToValidate="txtHoTen" ValidationGroup="comment"></asp:RequiredFieldValidator>
-                                    <asp:TextBox runat="server" ID="txtEmail" CssClass="comment-email" placeholder="Email"></asp:TextBox>
-                                    <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*"
-                                        ForeColor="Red" ControlToValidate="txtEmail" ValidationGroup="comment"></asp:RegularExpressionValidator>--%>
+                                    <asp:TextBox runat="server" ID="txtEmail" CssClass="comment-email" placeholder="Email" Width="421px"></asp:TextBox>
+                                    
                                         <%--<asp:TextBox runat="server" ID="txtSecCode" Width="70px" CssClass="comment-email" placeholder="Mã bảo mật"></asp:TextBox>--%>
                                 </div>
                                 <div class="comment-row">

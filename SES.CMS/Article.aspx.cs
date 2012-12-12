@@ -114,7 +114,7 @@ namespace SES.CMS
             objcomment.IsAccepted = false;
             new cmsCommentBL().Insert(objcomment);
 
-            Ultility.Alert("Chúng tôi sẽ duyệt bài của bạn!", Request.Url.AbsolutePath);
+            Ultility.Alert("Cám ơn đã đóng góp ý kiến về bài viết. Chúng tôi đã nhận được đóng góp của quý vị", Request.Url.AbsolutePath);
         }
 
         private void initObject()
