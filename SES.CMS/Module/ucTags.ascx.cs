@@ -48,7 +48,7 @@ namespace SES.CMS.Module
                 string[] tagArray = sTag.Split(',');
                 for (int i = 1; i < tagArray.Length-1; i++)
                 {
-                    dtTag.Rows.Add(tagArray[i].Trim());
+                    dtTag.Rows.Add(tagArray[i]);
                 }
             }
             return dtTag;
