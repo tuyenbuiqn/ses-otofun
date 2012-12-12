@@ -25,5 +25,35 @@ namespace SES.CMS.Module
             else
                 comment.Visible = false;
         }
+
+        protected void rptComment_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            int commentID = int.Parse(e.CommandArgument.ToString());
+           
+            if (e.CommandName == "Like")
+            {
+                cmsCommentDO objcomment = new cmsCommentDO();
+                cmsCommentBL CommentBL = new cmsCommentBL();
+                objcomment.CommentID = commentID;
+
+                objcomment = CommentBL.Select(objcomment);
+                    objcomment.VoteUp = objcomment.VoteUp + 1;
+                CommentBL.Update(objcomment);
+
+            }
+
+            if (e.CommandName == "Dislike")
+            {
+                cmsCommentDO objcomment = new cmsCommentDO();
+                cmsCommentBL CommentBL = new cmsCommentBL();
+                objcomment.CommentID = commentID;
+
+                objcomment = CommentBL.Select(objcomment);
+                    objcomment.VoteDown = objcomment.VoteDown + 1;
+                CommentBL.Update(objcomment);
+
+            }
+                Response.Redirect(Request.Url.AbsolutePath);
+            }
+        }
     }
-}
