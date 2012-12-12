@@ -16,6 +16,7 @@
 <%@ Register Src="/Module/ucHomeVideo.ascx" TagName="ucHomeVideo" TagPrefix="uc12" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
 <%@ Register Src="/Module/ucSaleOff.ascx" TagName="ucSaleOff" TagPrefix="uc14" %>
+<%@ Register Src="/Module/ucAnToanGiaoThong.ascx" TagName="ucAnToanGiaoThong" TagPrefix="uc15" %>
 <%@ Register Src="/Module/ucThongTinDoanhNghiep.ascx" TagName="ucThongTinDoanhNghiep"
     TagPrefix="uc14" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -41,32 +42,7 @@
                     <uc2:ucLastestNews runat="server" ID="uc2lastestnews" />
                 </div>
                 <div class="box-under-car" style="margin: 9px 0px 0px 5px;">
-                    <div class="box-under-car-caption">
-                        HỎI ĐÁP & TƯ VẤN KỸ THUẬT</div>
-                    <div class="line2">
-                    </div>
-                    <ul class="hoidap">
-                        <li>
-                            <div>
-                            </div>
-                            <a href="#">Bốc đầu ô tô như thế nào</a></li>
-                        <li>
-                            <div>
-                            </div>
-                            <a href="#">Bốc đầu ô tô như thế nào</a></li>
-                        <li>
-                            <div>
-                            </div>
-                            <a href="#">Bốc đầu ô tô như thế nào</a></li>
-                        <li>
-                            <div>
-                            </div>
-                            <a href="#">Bốc đầu ô tô như thế nào</a></li>
-                        <li>
-                            <div>
-                            </div>
-                            <a href="#">Bốc đầu ô tô như thế nào</a></li>
-                    </ul>
+                <uc15:ucAnToanGiaoThong runat="server" ID="uc15ucAntoanGiaoThong" />
                 </div>
             </div>
             <%--TOP RIGHT--%><div class="body-top-right">

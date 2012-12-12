@@ -76,6 +76,15 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucLastestNews uc2lastestnews;
         
         /// <summary>
+        /// uc15ucAntoanGiaoThong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucAnToanGiaoThong uc15ucAntoanGiaoThong;
+        
+        /// <summary>
         /// uc13UcTopContactInfo control.
         /// </summary>
         /// <remarks>
