@@ -160,7 +160,7 @@ namespace SES.CMS.AdminCP
 
                     //Business Info
                     case "DuyetComment":
-                        hplBusiness.CssClass = "active";
+                        hptComment.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuComment.ascx");
                         break;
 
