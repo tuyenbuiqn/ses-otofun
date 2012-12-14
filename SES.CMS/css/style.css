@@ -117,7 +117,7 @@ border-top: solid 1px #ECD9B7;
 .toplink li
 {
 	float: left;
-	margin: 1px 0px 0 10px;
+	margin: 1px 0px 0 5px;
 	list-style: none;
 	padding-right: 10px;
 }
@@ -125,12 +125,12 @@ border-top: solid 1px #ECD9B7;
 {
 	float: left;
 	margin-top: 7px;
-	width: 695px;
+	width: 775 px;
 }
 .toplink a
 {
 	color: #ecd9b7;
-	font-size: 12px;
+	font-size: 11px;
 	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;;
 	font-weight: bold;
 }
@@ -140,21 +140,21 @@ border-top: solid 1px #ECD9B7;
 }
 .search-box
 {
-	width: 260px;
+	width: 182px;
 	float:right;
-	right: 220px;
+	
 }
 .rss-button
 {
 	float: right;
-	margin: 10px 5px 10px 5px;
+	margin: 10px 1px 10px 1px;
 }
 .search
 {
 	border: none;
 	float: right;
 	margin: 6px;
-	width: 70px;
+	width: 100px;
 	height: 20px;
 	outline: none;
 	color: #f1f1f1;
@@ -162,7 +162,7 @@ border-top: solid 1px #ECD9B7;
 .search-button
 {
 	float: right;
-	margin: 5px 10px;
+	margin: 5px 5px;
 }
 .body-top
 {
