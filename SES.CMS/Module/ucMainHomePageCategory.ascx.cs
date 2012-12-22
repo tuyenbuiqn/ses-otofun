@@ -39,22 +39,25 @@ namespace SES.CMS.Module
                 DataRowView drv = (DataRowView)item.DataItem;
 
                 DataTable dtMenuChild = cateBL.SelectByParent(int.Parse(drv["CategoryID"].ToString()));
-                DataTable dtTopHighLight = artBL.SelectToMainHomepageCate(1,int.Parse(drv["CategoryID"].ToString()),true);
-                DataTable dtTopOtherHighLight = artBL.SelectToMainHomepageCate(5, int.Parse(drv["CategoryID"].ToString()), true);
+                DataTable dtTopHighLight = artBL.SelectHomeNews(int.Parse(drv["CategoryID"].ToString()));
+
+                
 
                 int topArtID = 0;
                 if (dtTopHighLight.Rows.Count > 0)
                     topArtID = int.Parse(dtTopHighLight.Rows[0]["ArticleID"].ToString());
                 Repeater rptChildCate = (Repeater)item.FindControl("rptChildCate");
-                rptChildCate.DataSource = new DataView(dtMenuChild, " IsHomPage = 1", "", DataViewRowState.CurrentRows);
+                rptChildCate.DataSource = dtMenuChild;
                 rptChildCate.DataBind();
 
                 Repeater rptTopHighLight = (Repeater)item.FindControl("rptTopHighLight");
-                rptTopHighLight.DataSource = dtTopHighLight;
+                rptTopHighLight.DataSource = new DataView(dtTopHighLight, "ArticleID=" + topArtID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
                 rptTopHighLight.DataBind();
 
+                DataTable dtTopOtherHighLight = new DataView(dtTopHighLight, "ArticleID <> " + topArtID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
+
                 Repeater rptTopOtherHighLight = (Repeater)item.FindControl("rptTopOtherHighLight");
-                rptTopOtherHighLight.DataSource = new DataView(dtTopOtherHighLight, "ArticleID <>" + topArtID, "", DataViewRowState.CurrentRows);
+                rptTopOtherHighLight.DataSource = dtTopOtherHighLight;
                 rptTopOtherHighLight.DataBind();
             }
         }

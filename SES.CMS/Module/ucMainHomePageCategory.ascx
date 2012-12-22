@@ -25,21 +25,24 @@
                             <div class="left-noidung">
                                 <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                     title='<%#Eval("Title") %>'>
-                                    <img id="imgAnh-noidung" class="Anh-noidung" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' /></a>
+                                    <img id="imgAnh-noidung" class="Anh-noidung" src='/Media/<%#Eval("ImageUrl") %>'
+                                        alt='<%#Eval("Title") %>' /></a>
                             </div>
                             <div class="center-noidung">
-                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'  title='<%#Eval("Title") %>'>
+                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                    title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a>
                                 <p>
                                     Cập nhật:&nbsp;</p>
                                 <p>
-                                    <%#Eval("CreateDate","{0:hh}h") %>&nbsp; <%#Eval("CreateDate","{0:dd-MM-yyyy}") %></p>
+                                    <%#Eval("CreateDate","{0:hh}h") %>&nbsp;
+                                    <%#Eval("CreateDate","{0:dd-MM-yyyy}") %></p>
                                 <p>
-                                    &nbsp;|&nbsp; bởi</p>
+                                    &nbsp;|&nbsp;</p>
                                 <p>
                                     <%#Eval("UserName") %></p>
                                 <div class="chitiet">
-                                   <%#WordCut(Eval("Description").ToString())%>
+                                    <%#WordCut(Eval("Description").ToString())%>
                                 </div>
                             </div>
                         </ItemTemplate>
