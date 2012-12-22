@@ -45,11 +45,13 @@
     <Compile Include="BaseDAL.cs" />
     <Compile Include="cmsAdvertisementDAL.cs" />
     <Compile Include="cmsAlbumDAL.cs" />
+    <Compile Include="cmsArticleCategoryDAL.cs" />
     <Compile Include="cmsArticleDAL.cs" />
     <Compile Include="cmsCategoryDAL.cs" />
     <Compile Include="cmsCommentDAL.cs" />
     <Compile Include="cmsConfigDAL.cs" />
     <Compile Include="cmsEventDAL.cs" />
+    <Compile Include="cmsHistoryDAL.cs" />
     <Compile Include="cmsImagesDAL.cs" />
     <Compile Include="cmsLibFileArticleDAL.cs" />
     <Compile Include="cmsLibsFileDAL.cs" />

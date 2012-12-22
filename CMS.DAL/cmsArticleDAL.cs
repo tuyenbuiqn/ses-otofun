@@ -122,6 +122,50 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.IsHot;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@ThoiGianGui", SqlDbType.DateTime);
+            Sqlparam.Value = objcmsArticleDO.ThoiGianGui;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BienTapVienID", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.BienTapVienID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThoiGianGuiXuatBan", SqlDbType.DateTime);
+            Sqlparam.Value = objcmsArticleDO.ThoiGianGuiXuatBan;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThuKyID", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.ThuKyID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThoiGianXuatBan", SqlDbType.DateTime);
+            Sqlparam.Value = objcmsArticleDO.ThoiGianXuatBan;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BTVEdit", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.BTVEdit;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThuKyEdit", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.ThuKyEdit;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@DangBienTap", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.DangBienTap;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@SlideID", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.SlideID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@TrangThai", SqlDbType.SmallInt);
+            Sqlparam.Value = objcmsArticleDO.TrangThai;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@LuotView", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.LuotView;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -227,6 +271,52 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.IsHot;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@ThoiGianGui", SqlDbType.DateTime);
+            Sqlparam.Value = objcmsArticleDO.ThoiGianGui;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BienTapVienID", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.BienTapVienID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThoiGianGuiXuatBan", SqlDbType.DateTime);
+            Sqlparam.Value = objcmsArticleDO.ThoiGianGuiXuatBan;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThuKyID", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.ThuKyID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThoiGianXuatBan", SqlDbType.DateTime);
+            Sqlparam.Value = objcmsArticleDO.ThoiGianXuatBan;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BTVEdit", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.BTVEdit;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThuKyEdit", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.ThuKyEdit;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@DangBienTap", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.DangBienTap;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@SlideID", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.SlideID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@TrangThai", SqlDbType.SmallInt);
+            Sqlparam.Value = objcmsArticleDO.TrangThai;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@LuotView", SqlDbType.Int);
+            Sqlparam.Value = objcmsArticleDO.LuotView;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+
+
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -240,7 +330,6 @@ namespace SES.CMS.DAL
 
 
         }
-
         public int Delete(cmsArticleDO objcmsArticleDO)
         {
 
