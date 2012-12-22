@@ -67,6 +67,6 @@ namespace SES.CMS.DO
 		}
 
         #endregion
-
+        public int OrderID { get; set; }
 	}
 }
