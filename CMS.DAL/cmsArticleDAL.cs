@@ -530,7 +530,6 @@ namespace SES.CMS.DAL
 
         #endregion
 
-
         public DataTable SelectByCategoryID(int CategoryID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -553,7 +552,6 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-
         public void XetDuyetNhieuBaiViet(string articleIDList, bool isAccepted, int userXetDuyet)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -576,7 +574,6 @@ namespace SES.CMS.DAL
 
             base.ExecuteNoneQuery(Sqlcomm);
         }
-
         public DataTable SelectDanhMucNoiBat(int type)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -643,7 +640,6 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-
         public DataTable LastestNews()
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -660,7 +656,6 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-
         public DataTable HotArticle_UnderSlideHomepage()
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -793,7 +788,6 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-
         public DataTable SelectByTag(string tag)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -816,7 +810,6 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-
         public DataTable SelectToMainHomepageCate(int top, int categoryID, bool type)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -847,8 +840,6 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-
-
         public DataTable ArticleXetDuyet_Filter(int categoryID, int isAccepted, int userID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -878,7 +869,6 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-
         public DataTable SelectOne(cmsArticleDO objArt)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -901,8 +891,6 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-
-
         public DataTable SelectByCatType(int type)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -913,6 +901,27 @@ namespace SES.CMS.DAL
 
             Sqlparam = new SqlParameter("@Type", SqlDbType.Int);
             Sqlparam.Value = type;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+        public DataTable SelectHomeNews(int CategoryID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetHomeNews";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+            Sqlparam.Value = CategoryID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             DataSet ds = base.GetDataSet(Sqlcomm);
