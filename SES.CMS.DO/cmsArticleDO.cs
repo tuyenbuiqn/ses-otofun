@@ -50,6 +50,8 @@ namespace SES.CMS.DO
 		public const string SLIDEID_FIELD ="SlideID";
 		public const string TRANGTHAI_FIELD ="TrangThai";
 		public const string LUOTVIEW_FIELD ="LuotView";
+		public const string TINLIENQUAN1_FIELD ="TinLienQuan1";
+		public const string TINLIENQUAN2_FIELD ="TinLienQuan2";
 
 		#endregion
 		
@@ -86,6 +88,8 @@ namespace SES.CMS.DO
 		private Int32 _SlideID;
 		private Int16 _TrangThai;
 		private Int32 _LuotView;
+		private String _TinLienQuan1;
+		private String _TinLienQuan2;
 
 		#endregion
 
@@ -440,6 +444,28 @@ namespace SES.CMS.DO
 			set
 			{
 				_LuotView = value;
+			}
+		}
+		public String TinLienQuan1
+		{
+			get
+			{
+				return _TinLienQuan1;
+			}
+			set
+			{
+				_TinLienQuan1 = value;
+			}
+		}
+		public String TinLienQuan2
+		{
+			get
+			{
+				return _TinLienQuan2;
+			}
+			set
+			{
+				_TinLienQuan2 = value;
 			}
 		}
 
