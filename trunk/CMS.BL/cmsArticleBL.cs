@@ -111,7 +111,8 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectDanhMucNoiBat(type);
         }
-        public DataTable HotEvents(int categoryID){
+        public DataTable HotEvents(int categoryID)
+        {
             return objcmsArticleDAL.HotEvents(categoryID);
         }
         public DataTable Events()
@@ -126,9 +127,9 @@ namespace SES.CMS.BL
         {
             objcmsArticleDAL.XetDuyetNhieuBaiViet(articleIDList, isAccepted, userXetDuyet);
         }
-        public DataTable ArticleXetDuyet_Filter(int categoryID, int isAccepted,int userID)
+        public DataTable ArticleXetDuyet_Filter(int categoryID, int isAccepted, int userID)
         {
-            return objcmsArticleDAL.ArticleXetDuyet_Filter(categoryID, isAccepted,userID);
+            return objcmsArticleDAL.ArticleXetDuyet_Filter(categoryID, isAccepted, userID);
         }
         public DataTable SelectByTag(string tag)
         {
@@ -142,6 +143,11 @@ namespace SES.CMS.BL
         public DataTable SelectByCatType(int type)
         {
             return objcmsArticleDAL.SelectByCatType(type);
+        }
+
+        public DataTable SelectHomeNews(int CategoryID)
+        {
+            return objcmsArticleDAL.SelectHomeNews(CategoryID);
         }
     }
 
