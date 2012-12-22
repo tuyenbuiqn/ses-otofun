@@ -40,6 +40,7 @@ height:4px;
 background-color:#FFF;
 z-index:4;
 visibility:hidden;
+display:none;
 }
 .desc{
 color:#FFF;
