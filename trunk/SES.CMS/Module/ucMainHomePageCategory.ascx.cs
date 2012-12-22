@@ -64,7 +64,7 @@ namespace SES.CMS.Module
 
         public string WordCut(string text)
         {
-            return Ultility.WordCut(text, 260, new char[] { ' ', '.', ',', ';' }) + "...";
+            return Ultility.WordCut(text, 200, new char[] { ' ', '.', ',', ';' }) + "...";
         }
     }
 }
