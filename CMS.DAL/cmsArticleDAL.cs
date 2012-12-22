@@ -166,6 +166,14 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.LuotView;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@TinLienQuan1", SqlDbType.NVarChar);
+            Sqlparam.Value = objcmsArticleDO.TinLienQuan1;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@TinLienQuan2", SqlDbType.NVarChar);
+            Sqlparam.Value = objcmsArticleDO.TinLienQuan2;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -315,6 +323,14 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.LuotView;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@TinLienQuan1", SqlDbType.NVarChar);
+            Sqlparam.Value = objcmsArticleDO.TinLienQuan1;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@TinLienQuan2", SqlDbType.NVarChar);
+            Sqlparam.Value = objcmsArticleDO.TinLienQuan2;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
 
 
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
@@ -330,6 +346,7 @@ namespace SES.CMS.DAL
 
 
         }
+
         public int Delete(cmsArticleDO objcmsArticleDO)
         {
 
@@ -422,7 +439,7 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
                 if (!Convert.IsDBNull(dr["IsHot"]))
                     objcmsArticleDO.IsHot = Convert.ToBoolean(dr["IsHot"]);
-                
+
 
             }
             return objcmsArticleDO;
@@ -537,7 +554,7 @@ namespace SES.CMS.DAL
             return dt;
         }
 
-        public void XetDuyetNhieuBaiViet(string articleIDList,bool isAccepted,int userXetDuyet)
+        public void XetDuyetNhieuBaiViet(string articleIDList, bool isAccepted, int userXetDuyet)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -800,7 +817,7 @@ namespace SES.CMS.DAL
             return dt;
         }
 
-        public DataTable SelectToMainHomepageCate(int top,int categoryID,bool type)
+        public DataTable SelectToMainHomepageCate(int top, int categoryID, bool type)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -832,7 +849,7 @@ namespace SES.CMS.DAL
         }
 
 
-        public DataTable ArticleXetDuyet_Filter(int categoryID, int isAccepted,int userID)
+        public DataTable ArticleXetDuyet_Filter(int categoryID, int isAccepted, int userID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
