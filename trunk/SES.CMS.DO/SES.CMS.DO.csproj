@@ -43,11 +43,13 @@
   <ItemGroup>
     <Compile Include="cmsAdvertisementDO.cs" />
     <Compile Include="cmsAlbumDO.cs" />
+    <Compile Include="cmsArticleCategoryDO.cs" />
     <Compile Include="cmsArticleDO.cs" />
     <Compile Include="cmsCategoryDO.cs" />
     <Compile Include="cmsCommentDO.cs" />
     <Compile Include="cmsConfigDO.cs" />
     <Compile Include="cmsEventDO.cs" />
+    <Compile Include="cmsHistoryDO.cs" />
     <Compile Include="cmsImagesDO.cs" />
     <Compile Include="cmsLibFileArticleDO.cs" />
     <Compile Include="cmsLibsFileDO.cs" />

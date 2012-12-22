@@ -38,6 +38,18 @@ namespace SES.CMS.DO
 		public const string EVENTID_FIELD ="EventID";
 		public const string ISACCEPTED_FIELD ="IsAccepted";
 		public const string USERXETDUYET_FIELD ="UserXetDuyet";
+		public const string ISHOT_FIELD ="IsHot";
+		public const string THOIGIANGUI_FIELD ="ThoiGianGui";
+		public const string BIENTAPVIENID_FIELD ="BienTapVienID";
+		public const string THOIGIANGUIXUATBAN_FIELD ="ThoiGianGuiXuatBan";
+		public const string THUKYID_FIELD ="ThuKyID";
+		public const string THOIGIANXUATBAN_FIELD ="ThoiGianXuatBan";
+		public const string BTVEDIT_FIELD ="BTVEdit";
+		public const string THUKYEDIT_FIELD ="ThuKyEdit";
+		public const string DANGBIENTAP_FIELD ="DangBienTap";
+		public const string SLIDEID_FIELD ="SlideID";
+		public const string TRANGTHAI_FIELD ="TrangThai";
+		public const string LUOTVIEW_FIELD ="LuotView";
 
 		#endregion
 		
@@ -62,9 +74,21 @@ namespace SES.CMS.DO
 		private Int32 _EventID;
 		private Boolean _IsAccepted;
 		private Int32 _UserXetDuyet;
+		private Boolean _IsHot;
+		private DateTime _ThoiGianGui;
+		private Int32 _BienTapVienID;
+		private DateTime _ThoiGianGuiXuatBan;
+		private Int32 _ThuKyID;
+		private DateTime _ThoiGianXuatBan;
+		private Int32 _BTVEdit;
+		private Int32 _ThuKyEdit;
+		private Boolean _DangBienTap;
+		private Int32 _SlideID;
+		private Int16 _TrangThai;
+		private Int32 _LuotView;
 
 		#endregion
-        public bool IsHot { get; set; }
+
 		#region Public Properties
 					public Int32 ArticleID
 		{
@@ -284,6 +308,138 @@ namespace SES.CMS.DO
 			set
 			{
 				_UserXetDuyet = value;
+			}
+		}
+		public Boolean IsHot
+		{
+			get
+			{
+				return _IsHot;
+			}
+			set
+			{
+				_IsHot = value;
+			}
+		}
+		public DateTime ThoiGianGui
+		{
+			get
+			{
+				return _ThoiGianGui;
+			}
+			set
+			{
+				_ThoiGianGui = value;
+			}
+		}
+		public Int32 BienTapVienID
+		{
+			get
+			{
+				return _BienTapVienID;
+			}
+			set
+			{
+				_BienTapVienID = value;
+			}
+		}
+		public DateTime ThoiGianGuiXuatBan
+		{
+			get
+			{
+				return _ThoiGianGuiXuatBan;
+			}
+			set
+			{
+				_ThoiGianGuiXuatBan = value;
+			}
+		}
+		public Int32 ThuKyID
+		{
+			get
+			{
+				return _ThuKyID;
+			}
+			set
+			{
+				_ThuKyID = value;
+			}
+		}
+		public DateTime ThoiGianXuatBan
+		{
+			get
+			{
+				return _ThoiGianXuatBan;
+			}
+			set
+			{
+				_ThoiGianXuatBan = value;
+			}
+		}
+		public Int32 BTVEdit
+		{
+			get
+			{
+				return _BTVEdit;
+			}
+			set
+			{
+				_BTVEdit = value;
+			}
+		}
+		public Int32 ThuKyEdit
+		{
+			get
+			{
+				return _ThuKyEdit;
+			}
+			set
+			{
+				_ThuKyEdit = value;
+			}
+		}
+		public Boolean DangBienTap
+		{
+			get
+			{
+				return _DangBienTap;
+			}
+			set
+			{
+				_DangBienTap = value;
+			}
+		}
+		public Int32 SlideID
+		{
+			get
+			{
+				return _SlideID;
+			}
+			set
+			{
+				_SlideID = value;
+			}
+		}
+		public Int16 TrangThai
+		{
+			get
+			{
+				return _TrangThai;
+			}
+			set
+			{
+				_TrangThai = value;
+			}
+		}
+		public Int32 LuotView
+		{
+			get
+			{
+				return _LuotView;
+			}
+			set
+			{
+				_LuotView = value;
 			}
 		}
 

@@ -44,10 +44,12 @@
     <Compile Include="cmsAdvertisementBL.cs" />
     <Compile Include="cmsAlbumBL.cs" />
     <Compile Include="cmsArticleBL.cs" />
+    <Compile Include="cmsArticleCategoryBL.cs" />
     <Compile Include="cmsCategoryBL.cs" />
     <Compile Include="cmsCommentBL.cs" />
     <Compile Include="cmsConfigBL.cs" />
     <Compile Include="cmsEventBL.cs" />
+    <Compile Include="cmsHistoryBL.cs" />
     <Compile Include="cmsImagesBL.cs" />
     <Compile Include="cmsLibFileArticleBL.cs" />
     <Compile Include="cmsLibsFileBL.cs" />
