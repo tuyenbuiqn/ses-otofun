@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using SES.CMS.BL;
 using SES.CMS.DO;
 using System.Data;
+using System.Web.Caching;
 namespace SES.CMS
 {
     public partial class Category : System.Web.UI.Page
@@ -79,15 +80,24 @@ namespace SES.CMS
                 rptCateMenu.DataBind();
             }
         }
+
+        private Cache cache = HttpContext.Current.Cache;
         protected void rptCategoryDataSoucre(int categoryID)
         {
             CollectionPager1.MaxPages = 10000;
 
             CollectionPager1.PageSize = 30;
 
-            DataTable dtCategory = new cmsArticleBL().SelectByCategoryID1(categoryID);
-
-            CollectionPager1.DataSource = new DataView(dtCategory, "", "", DataViewRowState.CurrentRows);
+            //DataTable dtCategory = new cmsArticleBL().SelectByCategoryID2(categoryID);
+            string keycat = "CatID=" + categoryID.ToString();
+            if (cache[keycat] == null)
+            {
+                DataTable dtCategory = new cmsArticleBL().SelectByCategoryID2(categoryID);
+                DataView dtCache = new DataView(dtCategory, "", "", DataViewRowState.CurrentRows);
+                cache.Insert(keycat, dtCache, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+            }
+            CollectionPager1.DataSource = (DataView)cache[keycat];
+            //CollectionPager1.DataSource = new DataView(dtCategory, "", "", DataViewRowState.CurrentRows);
 
             CollectionPager1.BindToControl = rptCategory;
 

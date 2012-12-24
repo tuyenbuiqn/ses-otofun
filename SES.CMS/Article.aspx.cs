@@ -7,11 +7,13 @@ using System.Web.UI.WebControls;
 using SES.CMS.BL;
 using SES.CMS.DO;
 using System.Data;
+using System.Web.Caching;
 
 namespace SES.CMS
 {
     public partial class Article : System.Web.UI.Page
     {
+        private Cache cache = HttpContext.Current.Cache;
         cmsCommentDO objcomment = new cmsCommentDO();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -63,6 +65,28 @@ namespace SES.CMS
         {
             rptArticleDetail.DataSource = new cmsArticleBL().SelectByPK(articleID);
             rptArticleDetail.DataBind();
+        }
+        protected void rptArticleDetail_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            cmsArticleBL artBL = new cmsArticleBL();
+            RepeaterItem item = e.Item;
+           
+            Repeater rptTinLienQuan2 = (Repeater)e.Item.FindControl("rptTinLienQuan2");
+            if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
+            {
+                DataRowView drv = (DataRowView)item.DataItem;
+                int articleID = 0;
+                articleID = int.Parse(drv["ArticleID"].ToString());
+
+                string keyTinLienQuan2 = "TinLienQuan2=" + articleID;
+                if (cache[keyTinLienQuan2] == null)
+                {
+                    DataTable dtTinLienQuan2 = artBL.GetTinLienQuan1(articleID);
+                    cache.Insert(keyTinLienQuan2, dtTinLienQuan2, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                }
+                rptTinLienQuan2.DataSource = (DataTable)cache[keyTinLienQuan2];
+                rptTinLienQuan2.DataBind();
+            }
         }
 
         protected void BuildEvent(int articleID)
@@ -131,6 +155,15 @@ namespace SES.CMS
             txtHoTen.Text = "";
             txtEmail.Text = "";
             txtContent.Text = "";
+        }
+        public string WordCutArticle(string text)
+        {
+            return Ultility.WordCut(text, 50, new char[] { ' ', '.', ',', ';' }) + "...";
+
+        }
+        public string FriendlyUrl(string s)
+        {
+            return Ultility.Change_AVCate(s);
         }
     }
 }
