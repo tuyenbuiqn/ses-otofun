@@ -1001,6 +1001,39 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+        public DataTable Article_Search(int CategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Title)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_Search";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+            Sqlparam.Value = CategoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@NgayBatDau", SqlDbType.Int);
+            Sqlparam.Value = ArticleSearchDateStart;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("ArticleSearchDateEnd", SqlDbType.Int);
+            Sqlparam.Value = ArticleSearchDateEnd;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@Title", SqlDbType.Int);
+            Sqlparam.Value = Title;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
     }
 
 }
