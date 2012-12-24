@@ -8,7 +8,7 @@
         <asp:Repeater runat="server" ID="rptTuVanKyThuat">
             <ItemTemplate>
             <img title='<%#Eval("Title") %>' alt='<%#Eval("Title") %>' src='/Media/<%#Eval("ImageUrl") %>' />
-                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                     title='<%#Eval("Title") %>' class="atgt-title">
                     <%#Eval("Title") %>
                 </a>

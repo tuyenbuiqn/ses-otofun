@@ -8,7 +8,7 @@
                 <div class="hotevent-img-box">
                     <img class="hotevent-img" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' />
                 </div>
-                <a  class="hotevent-title" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                <a  class="hotevent-title" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                     title='<%#Eval("Title") %>'>
                     <%#Eval("Title") %></a>
             </div>
