@@ -20,16 +20,16 @@
                     </asp:Repeater>
                 </ul>
                 <div class="noidung">
-                    <asp:Repeater runat="server" ID="rptTopHighLight">
+                    <asp:Repeater runat="server" ID="rptTopHighLight" OnItemDataBound="rptTopHightLight_ItemDataBound">
                         <ItemTemplate>
                             <div class="left-noidung">
-                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                     title='<%#Eval("Title") %>'>
                                     <img id="imgAnh-noidung" class="Anh-noidung" src='/Media/<%#Eval("ImageUrl") %>'
                                         alt='<%#Eval("Title") %>' /></a>
                             </div>
                             <div class="center-noidung">
-                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                     title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a>
                                 <p>
@@ -44,13 +44,21 @@
                                 <div class="chitiet">
                                     <%#WordCut(Eval("Description").ToString())%>
                                 </div>
+                                <div class="tin-lien-quan1">
+                                    <asp:Repeater runat="server" ID="rptTinLienQuan1">
+                                        <ItemTemplate>
+                                            <span class="tin-lien-quan-1a"><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                                title='<%#Eval("Title") %>'>» <%#WordCutArticle(Eval("Title").ToString()) %></a> </span>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
                     <ul class="right-noidung">
                         <asp:Repeater runat="server" ID="rptTopOtherHighLight">
                             <ItemTemplate>
-                                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                     title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a></li>
                             </ItemTemplate>
