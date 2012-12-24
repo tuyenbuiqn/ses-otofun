@@ -82,6 +82,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectByCategoryID1(categoryID);
         }
+        public DataTable SelectByCategoryID2(int categoryID)
+        {
+            return objcmsArticleDAL.SelectByCategoryID2(categoryID);
+        }
         public DataTable SelectByCatNum(int CategoryID, int Recordnumber)
         {
             return objcmsArticleDAL.SelectByCatNum(CategoryID, Recordnumber);
