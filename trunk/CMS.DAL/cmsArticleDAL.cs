@@ -840,7 +840,7 @@ namespace SES.CMS.DAL
             SqlParameter Sqlparam;
 
 
-            Sqlparam = new SqlParameter("@ArticleID", SqlDbType.NVarChar);
+            Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
             Sqlparam.Value = articleID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
