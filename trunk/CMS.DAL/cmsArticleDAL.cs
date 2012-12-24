@@ -854,6 +854,29 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+
+        public DataTable GetTinLienQuan2(int articleID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetTinLienQuan2";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+            Sqlparam.Value = articleID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
         public DataTable SelectToMainHomepageCate(int top, int categoryID, bool type)
         {
             SqlCommand Sqlcomm = new SqlCommand();

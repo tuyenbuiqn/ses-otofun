@@ -2002,4 +2002,41 @@ color: #5f1d00;
    
     font-size:12px;
 }
+.tin-lien-quan1
+{
+    width:215px;
+    float:left;
+    margin-top:5px;
     
+}
+.tin-lien-quan-1a
+{
+    display:block;
+}
+.tin-lien-quan-1a a
+{
+    font-size:10px;
+}
+   .tin-lien-quan-2
+   {
+    width: 650px;
+    float: left;
+    margin: 5px 0;
+    background: #DCBD86;
+    padding: 0 0 5px 5px;
+}
+   .tin-lien-quan2-span
+   {
+    display: block;
+    font-size: 17px;
+    margin-top: 5px;
+}
+   .tin-lien-quan-2a{
+    display: block;
+    width: 100%;
+    font-size: 13px;
+}
+ .tin-lien-quan-2a:hover{
+     color:#955C34;
+     
+ }

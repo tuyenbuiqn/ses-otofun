@@ -99,7 +99,7 @@ namespace SES.CMS.Module
                     int articleID = 0;
                     articleID = int.Parse(drv["ArticleID"].ToString());
 
-                    string keyTinLienQuan1 = "TopHightLight=" + articleID;
+                    string keyTinLienQuan1 = "TinLienQuan1=" + articleID;
                     if (cache[keyTinLienQuan1] == null)
                     {
                         DataTable dtTinLienQuan1 = artBL.GetTinLienQuan1(articleID);

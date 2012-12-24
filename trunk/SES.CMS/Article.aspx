@@ -24,7 +24,7 @@
                             <a href="/Default.aspx" title="Trang chủ">Trang chủ </a>  » <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
                     </div>
                     <div class="article-box">
-                        <asp:Repeater runat="server" ID="rptArticleDetail">
+                        <asp:Repeater runat="server" ID="rptArticleDetail" OnItemDataBound="rptArticleDetail_ItemDataBound">
                             <ItemTemplate>
                                 <div class="breadcrumb-box">
                                     <h1 class="article-title">
@@ -35,6 +35,15 @@
                                 </div>
                                 <h2 class="article-desciption">
                                     <%#Eval("Description") %></h2>
+                                    <div class="tin-lien-quan-2">
+                                        <span class="tin-lien-quan2-span">Tin liên quan</span>
+                                        <asp:Repeater runat="server" ID="rptTinLienQuan2">
+                                            <ItemTemplate>
+                                                <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                                title='<%#Eval("Title") %>'>» <%#Eval("Title")%></a>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </div>
                                 <div class="article-detail">
                                     <%#Eval("ArticleDetail") %>
                                 </div>

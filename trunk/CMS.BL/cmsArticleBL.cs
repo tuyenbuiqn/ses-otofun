@@ -156,6 +156,11 @@ namespace SES.CMS.BL
         public DataTable GetTinLienQuan1(int articleID)
         {
             return objcmsArticleDAL.GetTinLienQuan1(articleID);
+
+        }
+        public DataTable GetTinLienQuan2(int articleID)
+        {
+            return objcmsArticleDAL.GetTinLienQuan2(articleID);
         }
     }
 
