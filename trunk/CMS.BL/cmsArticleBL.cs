@@ -153,6 +153,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectHomeNews(CategoryID);
         }
+        public DataTable GetTinLienQuan1(int articleID)
+        {
+            return objcmsArticleDAL.GetTinLienQuan1(articleID);
+        }
     }
 
 }
