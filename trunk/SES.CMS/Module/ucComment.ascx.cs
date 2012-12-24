@@ -14,18 +14,20 @@ namespace SES.CMS.Module
     {
         cmsCommentDO objcomment = new cmsCommentDO();
         protected void Page_Load(object sender, EventArgs e)
-        { 
-            DataTable dtComment = new cmsCommentBL().SelectByArt(int.Parse(Request.QueryString["ArticleID"]));
-            if (dtComment.Rows.Count > 0)
+        {
+            if (!string.IsNullOrEmpty(Request.QueryString["ArticleID"]))
             {
-                comment.Visible = true;
-                rptComment.DataSource = dtComment;
-                rptComment.DataBind();
+                DataTable dtComment = new cmsCommentBL().SelectByArt(int.Parse(Request.QueryString["ArticleID"]));
+                if (dtComment.Rows.Count > 0)
+                {
+                    comment.Visible = true;
+                    rptComment.DataSource = dtComment;
+                    rptComment.DataBind();
+                }
+                else
+                    comment.Visible = false;
             }
-            else
-                comment.Visible = false;
         }
-
         protected void rptComment_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             int commentID = int.Parse(e.CommandArgument.ToString());
