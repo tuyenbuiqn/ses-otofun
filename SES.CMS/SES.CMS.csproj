@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SES.CMS</RootNamespace>
     <AssemblyName>SES.CMS</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -37,6 +37,10 @@
     <Reference Include="AjaxControlToolkit, Version=3.5.50731.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ASTreeView, Version=1.5.9.0, Culture=neutral, PublicKeyToken=521e0b4262a9001c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ASTreeView.dll</HintPath>
     </Reference>
     <Reference Include="CKEditor.NET, Version=3.6.1.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -72,18 +76,22 @@
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.UI, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\UrlRewritingNet.UrlRewriter.dll</HintPath>
@@ -808,6 +816,7 @@
     <Content Include="AdminCP\PageUC\ucUser.ascx" />
     <Content Include="AdminCP\PageUC\ucVideo.ascx" />
     <Content Include="AdminCP\PageUC\ucXetDuyetBaiViet.ascx" />
+    <Content Include="App_Data\Nwind.mdb" />
     <Content Include="Article.aspx" />
     <Content Include="assets\loader.gif" />
     <Content Include="assets\next.png" />
@@ -834,6 +843,7 @@
     <Content Include="bin\SES.CMS.pdb" />
     <Content Include="bin\UrlRewritingNet.UrlRewriter.dll" />
     <Content Include="Category.aspx" />
+    <Content Include="Child.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\ckeditor.js" />
     <Content Include="ckeditor\ckeditor_basic.js" />
@@ -1111,6 +1121,93 @@
     <Content Include="images\search-button.jpg" />
     <Content Include="images\thongtindoanhnghiep.jpg" />
     <Content Include="images\TimKiem-button.jpg" />
+    <Content Include="Javascript\asdropdowntreeview\dropdowntreeview.css" />
+    <Content Include="Javascript\asdropdowntreeview\images\windropdown-disabled.gif" />
+    <Content Include="Javascript\asdropdowntreeview\images\windropdown.gif" />
+    <Content Include="Javascript\astreeview\astreeview.css" />
+    <Content Include="Javascript\astreeview\astreeview_packed.js" />
+    <Content Include="Javascript\astreeview\images\astreeview-bottom-line.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-folder-open.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-folder.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-li-bg.jpg" />
+    <Content Include="Javascript\astreeview\images\astreeview-middle-line.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-minus.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-node.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-plus.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-root-line.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-top-line.gif" />
+    <Content Include="Javascript\astreeview\images\astreeview-vertical-line.gif" />
+    <Content Include="Javascript\astreeview\themes\default\default.css" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-bottom-line.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-folder-open.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-folder.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-middle-line.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-minus.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-node.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-plus.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-root-line.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-top-line.gif" />
+    <Content Include="Javascript\astreeview\themes\default\images\astreeview-vertical-line.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-bottom-line.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-folder-open.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-folder.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-middle-line.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-minus.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-node.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-plus.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-root-line.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-top-line.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\images\astreeview-vertical-line.gif" />
+    <Content Include="Javascript\astreeview\themes\macOS\macOS.css" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-bottom-line.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-folder-open.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-folder.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-middle-line.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-minus.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-node.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-plus.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-root-line.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-top-line.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\images\astreeview-vertical-line.gif" />
+    <Content Include="Javascript\astreeview\themes\right-left\right-left.css" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-bottom-line.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-folder-open.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-folder.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-middle-line.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-minus.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-node.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-plus.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-root-line.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-top-line.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\images\astreeview-vertical-line.gif" />
+    <Content Include="Javascript\astreeview\themes\vista\vista.css" />
+    <Content Include="Javascript\contextmenu\contextmenu.css" />
+    <Content Include="Javascript\contextmenu\contextmenu_packed.js" />
     <Content Include="js\jquery-1.4.4.min.js" />
     <Content Include="js\jquery-ui-1.8.2.custom.min.js" />
     <Content Include="js\jquery.reveal.js" />
@@ -1130,8 +1227,10 @@
     <Content Include="Media\quangcaophai2.jpg" />
     <Content Include="Media\Suzuki-Epicuro.jpg" />
     <Content Include="Media\Untitled-tsub.jpg" />
+    <Content Include="Module\ucAnToanGiaoThong.ascx" />
     <Content Include="Module\ucArticleAdv.ascx" />
     <Content Include="Module\ucCateMenu.ascx" />
+    <Content Include="Module\ucComment.ascx" />
     <Content Include="Module\ucDanhMucNoiBat.ascx" />
     <Content Include="Module\ucEvent.ascx" />
     <Content Include="Module\ucFooter.ascx" />
@@ -1146,9 +1245,11 @@
     <Content Include="Module\ucNewArticles.ascx" />
     <Content Include="Module\ucRightAdv.ascx" />
     <Content Include="Module\ucRightHomeAdv.ascx" />
+    <Content Include="Module\ucSaleOff.ascx" />
     <Content Include="Module\ucSameCateArticles.ascx" />
     <Content Include="Module\ucTags.ascx" />
     <Content Include="Module\ucThamKhaoGiaXe.ascx" />
+    <Content Include="Module\ucThongTinDoanhNghiep.ascx" />
     <Content Include="Module\ucTieuDiem.ascx" />
     <Content Include="Module\ucTieuDiemCate.ascx" />
     <Content Include="Module\ucTopAdvertisment.ascx" />
@@ -1158,10 +1259,93 @@
     <Content Include="obj\Debug\SES.CMS.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SES.CMS.dll" />
     <Content Include="obj\Debug\SES.CMS.pdb" />
+    <Content Include="ofeditor\AddNews.aspx" />
+    <Content Include="ofeditor\assets\arrow_left.png" />
+    <Content Include="ofeditor\assets\arrow_left_hover.png" />
+    <Content Include="ofeditor\assets\glass.png" />
+    <Content Include="ofeditor\assets\icons\10_48x48.png" />
+    <Content Include="ofeditor\assets\icons\11_48x48.png" />
+    <Content Include="ofeditor\assets\icons\12_48x48.png" />
+    <Content Include="ofeditor\assets\icons\13_48x48.png" />
+    <Content Include="ofeditor\assets\icons\14_48x48.png" />
+    <Content Include="ofeditor\assets\icons\15_48x48.png" />
+    <Content Include="ofeditor\assets\icons\16_48x48.png" />
+    <Content Include="ofeditor\assets\icons\17_48x48.png" />
+    <Content Include="ofeditor\assets\icons\18_48x48.png" />
+    <Content Include="ofeditor\assets\icons\19_48x48.png" />
+    <Content Include="ofeditor\assets\icons\1_48x48.png" />
+    <Content Include="ofeditor\assets\icons\20_48x48.png" />
+    <Content Include="ofeditor\assets\icons\21_48x48.png" />
+    <Content Include="ofeditor\assets\icons\22_48x48.png" />
+    <Content Include="ofeditor\assets\icons\23_48x48.png" />
+    <Content Include="ofeditor\assets\icons\24_48x48.png" />
+    <Content Include="ofeditor\assets\icons\25_48x48.png" />
+    <Content Include="ofeditor\assets\icons\26_48x48.png" />
+    <Content Include="ofeditor\assets\icons\27_48x48.png" />
+    <Content Include="ofeditor\assets\icons\28_48x48.png" />
+    <Content Include="ofeditor\assets\icons\29_48x48.png" />
+    <Content Include="ofeditor\assets\icons\2_48x48.png" />
+    <Content Include="ofeditor\assets\icons\30_48x48.png" />
+    <Content Include="ofeditor\assets\icons\31_48x48.png" />
+    <Content Include="ofeditor\assets\icons\3_48x48.png" />
+    <Content Include="ofeditor\assets\icons\4_48x48.png" />
+    <Content Include="ofeditor\assets\icons\5_48x48.png" />
+    <Content Include="ofeditor\assets\icons\6_48x48.png" />
+    <Content Include="ofeditor\assets\icons\7_48x48.png" />
+    <Content Include="ofeditor\assets\icons\8_48x48.png" />
+    <Content Include="ofeditor\assets\icons\9_48x48.png" />
+    <Content Include="ofeditor\assets\icons\info_48.png" />
+    <Content Include="ofeditor\assets\icons\stop_48.png" />
+    <Content Include="ofeditor\assets\icons\tick_48.png" />
+    <Content Include="ofeditor\assets\icons\warning_48.png" />
+    <Content Include="ofeditor\assets\icons_black.png" />
+    <Content Include="ofeditor\assets\icons_white.png" />
+    <Content Include="ofeditor\assets\input.png" />
+    <Content Include="ofeditor\assets\jquery.wysiwyg.gif" />
+    <Content Include="ofeditor\assets\largebut.png" />
+    <Content Include="ofeditor\assets\largebut_hover.png" />
+    <Content Include="ofeditor\assets\loginbg.png" />
+    <Content Include="ofeditor\assets\logo.png" />
+    <Content Include="ofeditor\assets\mhover.png" />
+    <Content Include="ofeditor\assets\rep1.png" />
+    <Content Include="ofeditor\assets\repgray2.png" />
+    <Content Include="ofeditor\assets\searchbar.png" />
+    <Content Include="ofeditor\assets\siderep.png" />
+    <Content Include="ofeditor\Child.aspx" />
+    <Content Include="ofeditor\css\core.css" />
+    <Content Include="ofeditor\css\css3.css" />
+    <Content Include="ofeditor\css\layout.css" />
+    <Content Include="ofeditor\css\login.css" />
+    <Content Include="ofeditor\css\plugins.css" />
+    <Content Include="ofeditor\css\skin_clean.css" />
+    <Content Include="ofeditor\Default.aspx" />
+    <Content Include="ofeditor\images\1.jpg" />
+    <Content Include="ofeditor\images\2.jpg" />
+    <Content Include="ofeditor\images\3.jpg" />
+    <Content Include="ofeditor\images\4.jpg" />
+    <Content Include="ofeditor\images\5.jpg" />
+    <Content Include="ofeditor\images\6.jpg" />
+    <Content Include="ofeditor\index.html" />
+    <Content Include="ofeditor\js\custom.js" />
+    <Content Include="ofeditor\js\easyTooltip.js" />
+    <Content Include="ofeditor\js\hoverIntent.js" />
+    <Content Include="ofeditor\js\jquery-1.3.2.min.js" />
+    <Content Include="ofeditor\js\jquery-ui-1.7.2.custom.min.js" />
+    <Content Include="ofeditor\js\jquery.wysiwyg.js" />
+    <Content Include="ofeditor\js\superfish.js" />
+    <Content Include="ofeditor\login.html" />
+    <Content Include="ofeditor\RadEditorForm.aspx" />
+    <Content Include="ofeditor\RadEditorForm_ToolsFile.xml" />
+    <Content Include="ofeditor\RelatedNews1.aspx" />
+    <Content Include="ofeditor\RelatedNews2.aspx" />
+    <Content Include="ofeditor\RNServices.asmx" />
     <Content Include="preview.css" />
     <Content Include="tag.aspx" />
+    <Content Include="TestPopupParent.aspx" />
     <Content Include="Video.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1398,6 +1582,13 @@
     <Compile Include="Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Child.aspx.cs">
+      <DependentUpon>Child.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Child.aspx.designer.cs">
+      <DependentUpon>Child.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1412,6 +1603,13 @@
     <Compile Include="Event.aspx.designer.cs">
       <DependentUpon>Event.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Module\ucAnToanGiaoThong.ascx.cs">
+      <DependentUpon>ucAnToanGiaoThong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucAnToanGiaoThong.ascx.designer.cs">
+      <DependentUpon>ucAnToanGiaoThong.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Module\ucArticleAdv.ascx.cs">
       <DependentUpon>ucArticleAdv.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1425,6 +1623,13 @@
     </Compile>
     <Compile Include="Module\ucCateMenu.ascx.designer.cs">
       <DependentUpon>ucCateMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucComment.ascx.cs">
+      <DependentUpon>ucComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucComment.ascx.designer.cs">
+      <DependentUpon>ucComment.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\ucDanhMucNoiBat.ascx.cs">
       <DependentUpon>ucDanhMucNoiBat.ascx</DependentUpon>
@@ -1524,6 +1729,13 @@
     <Compile Include="Module\ucRightHomeAdv.ascx.designer.cs">
       <DependentUpon>ucRightHomeAdv.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Module\ucSaleOff.ascx.cs">
+      <DependentUpon>ucSaleOff.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucSaleOff.ascx.designer.cs">
+      <DependentUpon>ucSaleOff.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Module\ucSameCateArticles.ascx.cs">
       <DependentUpon>ucSameCateArticles.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1544,6 +1756,13 @@
     </Compile>
     <Compile Include="Module\ucThamKhaoGiaXe.ascx.designer.cs">
       <DependentUpon>ucThamKhaoGiaXe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucThongTinDoanhNghiep.ascx.cs">
+      <DependentUpon>ucThongTinDoanhNghiep.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucThongTinDoanhNghiep.ascx.designer.cs">
+      <DependentUpon>ucThongTinDoanhNghiep.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\ucTieuDiem.ascx.cs">
       <DependentUpon>ucTieuDiem.ascx</DependentUpon>
@@ -1587,6 +1806,60 @@
     <Compile Include="Module\ucTuVanAndKyThuat.ascx.designer.cs">
       <DependentUpon>ucTuVanAndKyThuat.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ofeditor\AddNews.aspx.cs">
+      <DependentUpon>AddNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\AddNews.aspx.designer.cs">
+      <DependentUpon>AddNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Child.aspx.cs">
+      <DependentUpon>Child.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Child.aspx.designer.cs">
+      <DependentUpon>Child.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Class1.cs" />
+    <Compile Include="ofeditor\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Editor.Master.cs">
+      <DependentUpon>Editor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Editor.Master.designer.cs">
+      <DependentUpon>Editor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\RadEditorForm.aspx.cs">
+      <DependentUpon>RadEditorForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\RadEditorForm.aspx.designer.cs">
+      <DependentUpon>RadEditorForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\RelatedNews1.aspx.cs">
+      <DependentUpon>RelatedNews1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\RelatedNews1.aspx.designer.cs">
+      <DependentUpon>RelatedNews1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\RelatedNews2.aspx.cs">
+      <DependentUpon>RelatedNews2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\RelatedNews2.aspx.designer.cs">
+      <DependentUpon>RelatedNews2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\RNServices.asmx.cs">
+      <DependentUpon>RNServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Otofun.Master.cs">
       <DependentUpon>Otofun.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1601,6 +1874,13 @@
     </Compile>
     <Compile Include="tag.aspx.designer.cs">
       <DependentUpon>tag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPopupParent.aspx.cs">
+      <DependentUpon>TestPopupParent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPopupParent.aspx.designer.cs">
+      <DependentUpon>TestPopupParent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Video.aspx.cs">
       <DependentUpon>Video.aspx</DependentUpon>
@@ -1618,6 +1898,8 @@
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\ResolveAssemblyReference.cache" />
     <Content Include="Otofun.Master" />
+    <None Include="ofeditor\css\Modata.ttf" />
+    <Content Include="ofeditor\Editor.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminCP\css\.svn\prop-base\" />
@@ -1679,7 +1961,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49998</DevelopmentServerPort>
+          <DevelopmentServerPort>9358</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

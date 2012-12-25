@@ -1001,15 +1001,15 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public DataTable Article_Search(string CategoryID, string ArticleSearchDateStart, string ArticleSearchDateEnd, string Title)
+        public DataTable Article_Search(string lstCategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Keyw)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
             Sqlcomm.CommandText = "spcmsArticle_Search";
             SqlParameter Sqlparam;
 
-            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
-            Sqlparam.Value = CategoryID;
+            Sqlparam = new SqlParameter("@lstCategoryID", SqlDbType.NVarChar);
+            Sqlparam.Value = lstCategoryID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@NgayBatDau", SqlDbType.DateTime);
@@ -1020,9 +1020,33 @@ namespace SES.CMS.DAL
             Sqlparam.Value = ArticleSearchDateEnd;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            Sqlparam = new SqlParameter("@Title", SqlDbType.NVarChar);
-            Sqlparam.Value = Title;
+            Sqlparam = new SqlParameter("@Keyw", SqlDbType.NVarChar);
+            Sqlparam.Value = Keyw;
             Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+
+        public DataTable GetMultiID(string StrArticleID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetMultiID";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@StrArticleID", SqlDbType.NVarChar);
+            Sqlparam.Value = StrArticleID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            
 
             DataSet ds = base.GetDataSet(Sqlcomm);
             DataTable dt = null;
