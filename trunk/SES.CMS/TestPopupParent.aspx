@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Untitled Page</title>
-    <script language="javascript">
+    <script type="text/javascript">
         function ShowDialog()  
       {
           var returnPopup = window.open('Child.aspx', '_blank', 'scrollbars=10, width=820,height=900');

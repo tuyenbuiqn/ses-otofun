@@ -93,7 +93,7 @@ namespace SES.CMS
                     }
                 }
 
-                rptListArticles.DataSource = new cmsArticleBL().Article_Search(CategoryID.ToString(), ArticleSearchDateStart.ToString(), ArticleSearchDateEnd.ToString(), Title);
+                rptListArticles.DataSource = new cmsArticleBL().Article_Search(CategoryID.ToString(), ArticleSearchDateStart, ArticleSearchDateEnd, Title);
                 rptListArticles.DataBind();
         }
 
