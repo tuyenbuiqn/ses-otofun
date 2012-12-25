@@ -1001,7 +1001,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public DataTable Article_Search(int CategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Title)
+        public DataTable Article_Search(string CategoryID, string ArticleSearchDateStart, string ArticleSearchDateEnd, string Title)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1012,15 +1012,15 @@ namespace SES.CMS.DAL
             Sqlparam.Value = CategoryID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            Sqlparam = new SqlParameter("@NgayBatDau", SqlDbType.Int);
+            Sqlparam = new SqlParameter("@NgayBatDau", SqlDbType.DateTime);
             Sqlparam.Value = ArticleSearchDateStart;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            Sqlparam = new SqlParameter("ArticleSearchDateEnd", SqlDbType.Int);
+            Sqlparam = new SqlParameter("@NgayKetThuc", SqlDbType.DateTime);
             Sqlparam.Value = ArticleSearchDateEnd;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            Sqlparam = new SqlParameter("@Title", SqlDbType.Int);
+            Sqlparam = new SqlParameter("@Title", SqlDbType.NVarChar);
             Sqlparam.Value = Title;
             Sqlcomm.Parameters.Add(Sqlparam);
 
