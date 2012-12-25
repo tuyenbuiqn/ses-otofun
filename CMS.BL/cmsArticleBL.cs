@@ -163,7 +163,7 @@ namespace SES.CMS.BL
             return objcmsArticleDAL.GetTinLienQuan2(articleID);
         }
 
-        public DataTable Article_Search(int CategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Title)
+        public DataTable Article_Search(string CategoryID, string ArticleSearchDateStart, string ArticleSearchDateEnd, string Title)
         {
             return objcmsArticleDAL.Article_Search(CategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Title);
         }
