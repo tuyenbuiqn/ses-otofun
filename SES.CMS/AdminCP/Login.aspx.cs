@@ -33,6 +33,7 @@ namespace SES.CMS.AdminCP
             {
                 Session["Username"] = dtUser.Rows[0]["Username"].ToString();
                 Session["UserID"] = dtUser.Rows[0]["UserID"].ToString();
+                Session["UserType"] = dtUser.Rows[0]["UserType"].ToString();
                 Response.Redirect("Default.aspx");
             }
             else
