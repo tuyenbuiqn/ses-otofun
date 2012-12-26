@@ -1034,7 +1034,55 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+        public DataTable Article_SearchAdvanced(string lstCategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Keyw, int ListStatus, int PvCreate, int BtvEdit, int TkApproved)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_SearchAdvanced";
+            SqlParameter Sqlparam;
 
+            Sqlparam = new SqlParameter("@lstCategoryID", SqlDbType.NVarChar);
+            Sqlparam.Value = lstCategoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@NgayBatDau", SqlDbType.DateTime);
+            Sqlparam.Value = ArticleSearchDateStart;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@NgayKetThuc", SqlDbType.DateTime);
+            Sqlparam.Value = ArticleSearchDateEnd;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@Keyw", SqlDbType.NVarChar);
+            Sqlparam.Value = Keyw;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ListStatus", SqlDbType.Int);
+            Sqlparam.Value = ListStatus;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@PvCreate", SqlDbType.Int);
+            Sqlparam.Value = PvCreate;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BtvEdit", SqlDbType.Int);
+            Sqlparam.Value = BtvEdit;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@TkApproved", SqlDbType.Int);
+            Sqlparam.Value = TkApproved;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
         public DataTable GetMultiID(string StrArticleID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
