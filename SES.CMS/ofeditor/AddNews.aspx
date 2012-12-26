@@ -56,14 +56,16 @@
                     //$get("order").innerHTML = "You chose to fly to " + cityName;
                     if (ID == "1") {
                         //alert(arg.cityName);
-                        currentMultiID = arg.cityName;
+                        if (currentMultiID == null) currentMultiID = arg.cityName;
+                        currentMultiID = currentMultiID + ',' + arg.cityName;
                         arg = null;
                         updateChanges(currentMultiID);
 
                     }
                     else {
-                        alert(arg.cityName2);
-                        currentMultiID2 = arg.cityName2;
+                        alert(currentMultiID2);
+                        if (currentMultiID2 == null) currentMultiID2 = arg.cityName2;
+                        currentMultiID2 = currentMultiID2 + ',' + arg.cityName2;
                         arg = null;
                         updateChanges2(currentMultiID2);
                     }
@@ -128,16 +130,16 @@
 
             function deleteCurrent() {
                 var gridItems = $find("<%= RadGrid1.ClientID %>").get_masterTableView().get_dataItems();
-                currentMultiID = currentMultiID.replace(ArticleID, "-1");
+                currentMultiID = currentMultiID.replace("," + ArticleID, "");
                 SES.CMS.ofeditor.RNServices.GetListOfArticle(currentMultiID, updateGrid, OnError);
-                gridItems[gridItems.length - 1].set_selected(true);
+                //gridItems[0].set_selected(true);
             }
 
             function deleteCurrent2() {
                 var gridItems = $find("<%= RadGrid2.ClientID %>").get_masterTableView().get_dataItems();
-                currentMultiID2 = currentMultiID2.replace(ArticleID2, "-1");
+                currentMultiID2 = currentMultiID2.replace("," + ArticleID2, "");
                 SES.CMS.ofeditor.RNServices.GetListOfArticle(currentMultiID2, updateGrid2, OnError);
-                gridItems[gridItems.length - 1].set_selected(true);
+                //gridItems[0].set_selected(true);
             }
 
 
@@ -373,39 +375,7 @@
                     <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent2(); return false;" />
                 </div>
             </div>
-            <div class="fieldsetdiv">
-                <label>
-                    Lựa chọn đăng:</label>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox1" runat="server" />Đăng lên Trang chủ
-                    </p>
-                    <p>
-                        <asp:CheckBox ID="CheckBox2" runat="server" />Bài viết HOT
-                    </p>
-                </div>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox3" runat="server" />Bài viết Tiêu điểm
-                    </p>
-                    <p>
-                        <asp:CheckBox ID="CheckBox4" runat="server" />Bài viết đọc nhiều
-                    </p>
-                </div>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox5" runat="server" />Bài viết Mới
-                    </p>
-                    <p>
-                        <asp:CheckBox ID="CheckBox6" runat="server" />Bài viết nổi bật
-                    </p>
-                </div>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox7" Checked="true" runat="server" />Hiển thị
-                    </p>
-                </div>
-            </div>
+           
             <div class="fieldsetdiv">
                 <label>
                     Duyệt bài:</label>

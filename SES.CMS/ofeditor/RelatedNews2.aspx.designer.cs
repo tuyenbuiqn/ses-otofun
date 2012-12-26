@@ -139,22 +139,22 @@ namespace SES.CMS.ofeditor {
         protected global::Telerik.Web.UI.RadComboBox rcbCat;
         
         /// <summary>
-        /// txtSearchDateStart control.
+        /// rdpStartDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchDateStart;
+        protected global::Telerik.Web.UI.RadDatePicker rdpStartDate;
         
         /// <summary>
-        /// txtSearchDateEnd control.
+        /// rdpEndDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchDateEnd;
+        protected global::Telerik.Web.UI.RadDatePicker rdpEndDate;
         
         /// <summary>
         /// lnkSearch control.

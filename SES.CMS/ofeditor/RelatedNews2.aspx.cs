@@ -28,7 +28,7 @@ namespace SES.CMS.ofeditor
                 hdfSearchDateStart.Value = "";
                 hdfSearchKey.Value = "";
 
-                
+
                 pnlTitle01.Visible = false;
                 pnlTitle02.Visible = false;
             }
@@ -107,7 +107,7 @@ namespace SES.CMS.ofeditor
             rptListArticlesSelect.DataBind();
         }
 
-        
+
 
         protected void rcbCat_Init(object sender, EventArgs e)
         {
@@ -153,29 +153,27 @@ namespace SES.CMS.ofeditor
             {
                 hdfSearchKey.Value = txtSearchKey.Text;
             }
-            
-            if (txtSearchDateStart != null)
+
+
+            if (rdpStartDate.SelectedDate.HasValue)
             {
-                if (txtSearchDateStart.Text != "")
-                {
-                    hdfSearchDateStart.Value = txtSearchDateStart.Text;
-                }
-                else
-                {
-                    hdfSearchDateStart.Value = DateTimeStartDefault.ToString();
-                }
+                hdfSearchDateStart.Value = rdpStartDate.SelectedDate.ToString();
             }
-            if (txtSearchDateEnd != null)
+            else
             {
-                if (txtSearchDateEnd.Text != "")
-                {
-                    hdfSearchDateEnd.Value = txtSearchDateEnd.Text;
-                }
-                else
-                {
-                    hdfSearchDateEnd.Value = DateTimeEndDefault.ToString();
-                }
+                hdfSearchDateStart.Value = String.Format("{0:dd/MM/yyyy}", new DateTime(1900, 1, 1));
             }
+
+
+            if (rdpEndDate.SelectedDate.HasValue)
+            {
+                hdfSearchDateEnd.Value = rdpEndDate.SelectedDate.ToString();
+            }
+            else
+            {
+                hdfSearchDateEnd.Value = String.Format("{0:dd/MM/yyyy}", new DateTime(2100, 12, 30));
+            }
+
 
             RadTreeView rtv = (RadTreeView)rcbCat.Items[0].FindControl("RadTreeView1");
 
@@ -270,30 +268,30 @@ namespace SES.CMS.ofeditor
                 if (ArticleSelectId != 0)
                 {
                     dtArticle = new cmsArticleBL().SelectByPK(ArticleSelectId);
-                    
-                        if (hdfListArticlesId != null)
+
+                    if (hdfListArticlesId != null)
+                    {
+                        if (hdfListArticlesId.Value == "")
                         {
-                            if (hdfListArticlesId.Value == "")
-                            {
-                                hdfListArticlesId.Value += dtArticle.Rows[0]["ArticleID"].ToString();
-                            }
-                            else
-                            {
-                                hdfListArticlesId.Value += "," + dtArticle.Rows[0]["ArticleID"].ToString();
-                            }
+                            hdfListArticlesId.Value += dtArticle.Rows[0]["ArticleID"].ToString();
                         }
-                        if (hdfListArticlesName != null)
+                        else
                         {
-                            if (hdfListArticlesName.Value == "")
-                            {
-                                hdfListArticlesName.Value += dtArticle.Rows[0]["Title"].ToString();
-                            }
-                            else
-                            {
-                                hdfListArticlesName.Value += "," + dtArticle.Rows[0]["Title"].ToString();
-                            }
+                            hdfListArticlesId.Value += "," + dtArticle.Rows[0]["ArticleID"].ToString();
                         }
-                    
+                    }
+                    if (hdfListArticlesName != null)
+                    {
+                        if (hdfListArticlesName.Value == "")
+                        {
+                            hdfListArticlesName.Value += dtArticle.Rows[0]["Title"].ToString();
+                        }
+                        else
+                        {
+                            hdfListArticlesName.Value += "," + dtArticle.Rows[0]["Title"].ToString();
+                        }
+                    }
+
                 }
 
                 this.BinrptListArticlesSelect();
