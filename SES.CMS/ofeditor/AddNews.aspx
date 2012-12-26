@@ -130,8 +130,11 @@
 
             function deleteCurrent() {
                 var gridItems = $find("<%= RadGrid1.ClientID %>").get_masterTableView().get_dataItems();
+                alert(currentMultiID);
                 currentMultiID = currentMultiID.replace("," + ArticleID, "");
+                alert(currentMultiID);
                 SES.CMS.ofeditor.RNServices.GetListOfArticle(currentMultiID, updateGrid, OnError);
+               
                 //gridItems[0].set_selected(true);
             }
 
