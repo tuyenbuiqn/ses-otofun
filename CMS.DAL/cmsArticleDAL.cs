@@ -1058,7 +1058,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public DataTable SelectByTrangThaiAndUserCreate(int trangThai, int userCreate)
+        public DataTable SelectByTrangThaiAndUserCreate(int trangThai, int userCreate, int cate)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1072,6 +1072,10 @@ namespace SES.CMS.DAL
 
             Sqlparam = new SqlParameter("@UserCreate", SqlDbType.Int);
             Sqlparam.Value = userCreate;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@Cate", SqlDbType.Int);
+            Sqlparam.Value = cate;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             DataSet ds = base.GetDataSet(Sqlcomm);

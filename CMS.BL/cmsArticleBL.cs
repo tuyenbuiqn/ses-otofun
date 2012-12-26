@@ -234,9 +234,9 @@ namespace SES.CMS.BL
                 return obj;
             }
         }
-        public DataTable SelectByTrangThaiAndUserCreate(int trangThai, int userCreate)
+        public DataTable SelectByTrangThaiAndUserCreate(int trangThai, int userCreate,int cate)
         {
-            return objcmsArticleDAL.SelectByTrangThaiAndUserCreate(trangThai, userCreate);
+            return objcmsArticleDAL.SelectByTrangThaiAndUserCreate(trangThai, userCreate,cate);
         }
 
     }
