@@ -73,6 +73,7 @@
 	-moz-box-shadow: 0 1px 1px #ccc;
 	box-shadow: 0 1px 1px #CCC;
 	border-spacing: 0;
+	float: left;
 }
 .tstyle2 th
 {
