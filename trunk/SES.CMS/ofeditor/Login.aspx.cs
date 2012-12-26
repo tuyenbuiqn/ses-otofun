@@ -34,7 +34,21 @@ namespace SES.CMS.ofeditor
             {
                 Session["Username"] = dtUser.Rows[0]["Username"].ToString();
                 Session["UserID"] = dtUser.Rows[0]["UserID"].ToString();
-                Response.Redirect("Default.aspx");
+               
+                int UserType;
+                if (dtUser.Rows[0]["UserType"] != null)
+                {
+                   UserType = int.Parse(dtUser.Rows[0]["UserType"].ToString());
+                   Session["UserType"] = UserType;
+                   if (UserType == 1)
+                   {
+                       Response.Redirect("Default.aspx");
+                   }
+                   else
+                   {
+                       Response.Redirect("Default.aspx");
+                   }
+                }
             }
             else
             {
