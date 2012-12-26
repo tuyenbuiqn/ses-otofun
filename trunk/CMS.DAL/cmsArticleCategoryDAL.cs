@@ -124,6 +124,25 @@ namespace SES.CMS.DAL
             return result;
         }
 
+        public int DeleteByArticleID(int articleID)
+        {
+
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticleCategory_DeleteByArticleID";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+            Sqlparam.Value = articleID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+
+
+            int result = base.ExecuteNoneQuery(Sqlcomm);
+            return result;
+        }
+
         public int DeleteAll()
         {
 
