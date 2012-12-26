@@ -1,0 +1,154 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #ebebee; MARGIN: 0px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #ebebee; SCROLLBAR-3DLIGHT-COLOR: #b9bbbe; SCROLLBAR-ARROW-COLOR: #000000; FONT-FAMILY: sans-serif; SCROLLBAR-DARKSHADOW-COLOR: #b9bbbe; SCROLLBAR-BASE-COLOR: #ebebee; BACKGROUND-COLOR: #d3d8dd
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #2c1b08; LINE-HEIGHT: 16px; PADDING-TOP: 0px; FONT-FAMILY: sans-serif
+}
+TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #2c1b08; LINE-HEIGHT: 16px; PADDING-TOP: 0px; FONT-FAMILY: sans-serif
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #2c1b08; LINE-HEIGHT: 16px; PADDING-TOP: 0px; FONT-FAMILY: sans-serif
+}
+H1 {
+	FONT-SIZE: 15px; MARGIN: 0px 0px 10px
+}
+H3 {
+	FONT-SIZE: 20px; MARGIN: 0px 0px 10px
+}
+.listmenu {
+	FONT-SIZE: 11px; COLOR: #0056c2; FONT-FAMILY: sans-serif
+}
+.input {
+	BORDER-RIGHT: #d1d6db 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #686f78 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; BORDER-LEFT: #686f78 1px solid; COLOR: #0056c2; PADDING-TOP: 2px; BORDER-BOTTOM: #d1d6db 1px solid; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.input_multiselectbox {
+	BORDER-RIGHT: #d1d6db 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #686f78 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; BORDER-LEFT: #686f78 1px solid; COLOR: #0056c2; PADDING-TOP: 2px; BORDER-BOTTOM: #d1d6db 1px solid; FONT-FAMILY: sans-serif
+}
+.buttonGreyh 
+{
+	cursor:pointer;
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 5px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 11px; 
+	BACKGROUND: url(../images/b_ongrey2.gif) no-repeat right top; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 7px; MARGIN: 0px 10px 0px 0px; COLOR: #000000; PADDING-TOP: 3px; FONT-FAMILY: ms trebuchet, sans-serif; BORDER-RIGHT-WIDTH: 0px
+}
+.buttonWhite {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 5px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 11px; BACKGROUND: url(b_onwhite.gif) no-repeat right top; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 7px; MARGIN: 0px 10px 0px 0px; COLOR: #000000; PADDING-TOP: 3px; FONT-FAMILY: ms trebuchet, sans-serif; BORDER-RIGHT-WIDTH: 0px
+}
+.alert {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 20px; FONT-WEIGHT: bold; PADDING-BOTTOM: 10px; COLOR: #ffffff; PADDING-TOP: 10px
+}
+.login {
+	MARGIN: 10px 10px 10px 20px; COLOR: #ffffff
+}
+.coolgrey2 {
+	BACKGROUND-COLOR: #d1d6db
+}
+.top {
+	COLOR: #ffffff; BACKGROUND-COLOR: #000000
+}
+.topShadow {
+	BACKGROUND: url(../images/shadow_head.gif) repeat-x
+}
+.col01 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 30px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.window {
+	BORDER-RIGHT: #ffffff 3px solid; BORDER-LEFT: #ffffff 3px solid; BACKGROUND-COLOR: #e9ecee
+}
+.windowMenu {
+	BORDER-RIGHT: #ffffff 3px solid; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; BORDER-LEFT: #ffffff 3px solid; PADDING-TOP: 5px; BACKGROUND-COLOR: #ffffff
+}
+.windowTitle {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 2px; COLOR: #0056c2; PADDING-TOP: 2px
+}
+.windowError {
+	COLOR: #0056c2
+}
+.windowError H1 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 3px; MARGIN: 0px 0px 5px; COLOR: #fff; PADDING-TOP: 3px; BACKGROUND-COLOR: #ca0000
+}
+.windowError UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 10px 5px 30px; PADDING-TOP: 0px
+}
+.windowError P {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px
+}
+LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px
+}
+.windowAlert {
+	COLOR: #0056c2
+}
+.windowAlert H1 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 3px; MARGIN: 0px 0px 5px; COLOR: #fff; PADDING-TOP: 3px; BACKGROUND-COLOR: #ebeb41
+}
+.windowAlert UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 10px 5px 30px; PADDING-TOP: 0px
+}
+.windowAlert P {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px
+}
+LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px
+}
+.windowInfo {
+	COLOR: #0056c2
+}
+.windowInfo H1 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 3px; MARGIN: 0px 0px 5px; COLOR: #fff; PADDING-TOP: 3px; BACKGROUND-COLOR: #00ca00
+}
+.windowInfo UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 10px 5px 30px; PADDING-TOP: 0px
+}
+.windowInfo P {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px
+}
+LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px
+}
+.windowFeedback {
+	COLOR: #0056c2
+}
+.windowFeedback H1 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 3px; MARGIN: 0px 0px 5px; COLOR: #fff; PADDING-TOP: 3px; BACKGROUND-COLOR: #d1d6db
+}
+.windowFeedback UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 10px 5px 30px; PADDING-TOP: 0px
+}
+.windowFeedback P {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px
+}
+LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px
+}
+.windowTab {
+	BORDER-RIGHT: #ffffff 3px solid; BORDER-TOP: #ffffff 3px solid; BORDER-LEFT: #ffffff 3px solid; BORDER-BOTTOM: #ffffff 3px solid; BACKGROUND-COLOR: #ffffff
+}
+.windowHeaderGrey2 {
+	BORDER-RIGHT: #ffffff 3px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ffffff 3px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 3px; BORDER-LEFT: #ffffff 3px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #ffffff 3px solid; BACKGROUND-COLOR: #d1d6db
+}
+.windowFooterWhite {
+	BORDER-RIGHT: #ffffff 3px solid; BORDER-TOP: #ffffff 3px solid; BORDER-LEFT: #ffffff 3px solid; BORDER-BOTTOM: #ffffff 3px solid; BACKGROUND-COLOR: #ffffff
+}
+.windowFooterGrey2 {
+	BORDER-RIGHT: #ffffff 3px solid; BORDER-TOP: #ffffff 3px solid; BORDER-LEFT: #ffffff 3px solid; BORDER-BOTTOM: #ffffff 3px solid; BACKGROUND-COLOR: #d1d6db
+}
+.windowBottomShadow 
+{
+	BACKGROUND: url(../images/win_sh_bo_mi.gif) repeat-x
+}
+.windowRightShadow {
+	BACKGROUND: url(../images/win_sh_ri_mi.gif) repeat-y
+}
+.padding20 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 20px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.blue {
+	COLOR: #0056c2
+}
+.grey3 {
+	COLOR: #a5aeb9
+}
+.grey4 {
+	COLOR: #686f78
+}
