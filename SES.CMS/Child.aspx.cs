@@ -185,6 +185,10 @@ namespace SES.CMS
             this.BindrptListArticles();
             pnlTitle01.Visible = true;
             pnlTitle02.Visible = true;
+            hdfSearchCategoryId.Value = "";
+            hdfSearchDateEnd.Value = "";
+            hdfSearchDateStart.Value = "";
+            hdfSearchKey.Value = "";
         }
 
         protected void rptListArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)
