@@ -78,6 +78,11 @@ namespace SES.CMS.BL
         {
             return objsysUserDAL.SelectLogin(txtUsername, txtPassword);
         }
+
+        public DataTable User_GetByType(int UserType)
+        {
+            return objsysUserDAL.User_GetByType(UserType);
+        }
     }
 
 }

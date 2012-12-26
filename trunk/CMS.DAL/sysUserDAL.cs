@@ -320,6 +320,27 @@ arrsysUserDO.Add(objsysUserDO);
             }
             return dt;
         }
+
+        public DataTable User_GetByType(int UserType)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spsysUser_GetByType";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@UserType", SqlDbType.Int);
+            Sqlparam.Value = UserType;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+            }
+            return dt;
+        }
     }
 
 }
