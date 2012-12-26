@@ -170,6 +170,11 @@ namespace SES.CMS.BL
             return objcmsArticleDAL.Article_Search(lstCategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Keyw);
         }
 
+        public DataTable Article_SearchAdvanced(string lstCategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Keyw, int ListStatus, int PvCreate, int BtvEdit, int TkApproved)
+        {
+            return objcmsArticleDAL.Article_SearchAdvanced(lstCategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Keyw, ListStatus, PvCreate, BtvEdit, TkApproved);
+        }
+
         public DataTable GetMultiID(string StrArticleID)
         {
             return objcmsArticleDAL.GetMultiID(StrArticleID);
