@@ -72,7 +72,7 @@ namespace SES.CMS.BL
 
      
 #endregion          
-        public int DeleteByArticle(int articleID)
+        public int DeleteByArticleID(int articleID)
         {
             return objcmsArticleCategoryDAL.DeleteByArticleID(articleID);
         }
