@@ -243,6 +243,14 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectByTrangThaiAndUserCreate(trangThai, userCreate,cate);
         }
+        public void ChuyenTrangThai_BienTapVien(string articleIDList, int trangThai, int bienTapVienID, DateTime thoiGianGuiXuatBan)
+        {
+            objcmsArticleDAL.ChuyenTrangThai_BienTapVien(articleIDList, trangThai, bienTapVienID, thoiGianGuiXuatBan);
+        }
+        public void MultiDelete(string articleIDList)
+        {
+            objcmsArticleDAL.MultiDelete(articleIDList);
+        }
 
     }
 

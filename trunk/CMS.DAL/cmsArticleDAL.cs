@@ -1136,6 +1136,46 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+        public void ChuyenTrangThai_BienTapVien(string articleIDList, int trangThai, int bienTapVienID,DateTime thoiGianGuiXuatBan)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_ChuyenTrangThai_BTV";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@ArticleIDList", SqlDbType.NVarChar);
+            Sqlparam.Value = articleIDList;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@TrangThai", SqlDbType.Int);
+            Sqlparam.Value = trangThai;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BienTapVienID", SqlDbType.Int);
+            Sqlparam.Value = bienTapVienID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThoiGianGuiXuatBan", SqlDbType.DateTime);
+            Sqlparam.Value = thoiGianGuiXuatBan;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            base.ExecuteNoneQuery(Sqlcomm);
+        }
+        public void MultiDelete(string articleIDList)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_DeleteMulti";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@ArticleIDList", SqlDbType.NVarChar);
+            Sqlparam.Value = articleIDList;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            base.ExecuteNoneQuery(Sqlcomm);
+        }
     }
 
 }
