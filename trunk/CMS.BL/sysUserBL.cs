@@ -83,6 +83,11 @@ namespace SES.CMS.BL
         {
             return objsysUserDAL.User_GetByType(UserType);
         }
+
+        public DataTable User_GetByPK(int UserID)
+        {
+            return objsysUserDAL.User_GetByPK(UserID);
+        }
     }
 
 }
