@@ -103,6 +103,11 @@ namespace SES.CMS.BL
         {
             return objcmsCategoryDAL.Category_GetByPK(CategoryID);
         }
+
+        public DataTable GetByArticleID(int ArticleID)
+        {
+            return objcmsCategoryDAL.GetByArticleID(ArticleID);
+        }
     }
 
 }

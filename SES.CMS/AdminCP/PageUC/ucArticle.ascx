@@ -4,6 +4,7 @@
 <%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
+<%@ Register assembly="DevExpress.Web.v9.2" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dxpc" %>
 <script type="text/javascript">
     function SelectAndClosePopup(value) {
         cbCategory.SetValue(value);

@@ -6,6 +6,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:HiddenField runat="server" id="hdfID1"></asp:HiddenField>  
+       <asp:HiddenField runat="server" id="hdfID2"></asp:HiddenField>  
     <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         <Scripts>
             <%--Needed for JavaScript IntelliSense in VS2010--%>
@@ -32,14 +34,28 @@
         //          txtPopup.value = returnPopup;
               }  
 
-            function openWin() {
+              function SetDataCurrent() {
+                  if (firstRun == 1) {
+                     
+                      currentMultiID = document.getElementById("<%= hdfID1.ClientID %>").value;
+                      currentMultiID2 = document.getElementById("<%= hdfID2.ClientID %>").value;
+                      firstRun = 0;
+                  }
+                 
+              }
+              function openWin() {
+                  
+                  SetDataCurrent();
+                  
                 var oWnd = radopen("RelatedNews1.aspx", "RadWindow1");
             }
 
             function openWin2() {
+                SetDataCurrent();
                 var oWnd2 = radopen("RelatedNews2.aspx", "RadWindow2");
             }
 
+            
 
             function OnClientClose(oWnd, args) {
                 
@@ -63,7 +79,7 @@
 
                     }
                     else {
-                        alert(currentMultiID2);
+                       
                         if (currentMultiID2 == null) currentMultiID2 = arg.cityName2;
                         currentMultiID2 = currentMultiID2 + ',' + arg.cityName2;
                         arg = null;
@@ -97,12 +113,12 @@
 
             function updateChanges(stringID) {
                 SES.CMS.ofeditor.RNServices.GetListOfArticle(stringID, updateGrid, OnError);
-
+                document.getElementById("<%= hdfID1.ClientID %>").value = stringID;
             }
 
             function updateChanges2(stringID) {
                 SES.CMS.ofeditor.RNServices.GetListOfArticle(stringID, updateGrid2, OnError);
-
+                document.getElementById("<%= hdfID2.ClientID %>").value = stringID;
             }
 
             function OnError(result) {
@@ -128,20 +144,34 @@
                 grid.repaint();
             }
 
-            function deleteCurrent() {
-                var gridItems = $find("<%= RadGrid1.ClientID %>").get_masterTableView().get_dataItems();
-                alert(currentMultiID);
-                currentMultiID = currentMultiID.replace("," + ArticleID, "");
-                alert(currentMultiID);
+            var firstRun = 1;
+            function OnReplaceComplete(result) 
+            {
+                currentMultiID = result;
                 SES.CMS.ofeditor.RNServices.GetListOfArticle(currentMultiID, updateGrid, OnError);
+                document.getElementById("<%= hdfID1.ClientID %>").value = result;
+            }
+            function OnReplaceComplete2(result1) {
+                currentMultiID2 = result1;
+                SES.CMS.ofeditor.RNServices.GetListOfArticle(currentMultiID2, updateGrid2, OnError);
+                document.getElementById("<%= hdfID2.ClientID %>").value = result1;
+            }
+            
+            function deleteCurrent() {
+                SetDataCurrent();
+                var gridItems = $find("<%= RadGrid1.ClientID %>").get_masterTableView().get_dataItems();
+
+                SES.CMS.ofeditor.RNServices.rmoveStr(currentMultiID, ArticleID, OnReplaceComplete, OnError);
+                
                
                 //gridItems[0].set_selected(true);
             }
 
             function deleteCurrent2() {
+                SetDataCurrent();
                 var gridItems = $find("<%= RadGrid2.ClientID %>").get_masterTableView().get_dataItems();
-                currentMultiID2 = currentMultiID2.replace("," + ArticleID2, "");
-                SES.CMS.ofeditor.RNServices.GetListOfArticle(currentMultiID2, updateGrid2, OnError);
+                SES.CMS.ofeditor.RNServices.rmoveStr(currentMultiID2, ArticleID2, OnReplaceComplete2, OnError);
+                
                 //gridItems[0].set_selected(true);
             }
 
@@ -207,10 +237,22 @@
         {
             height: auto !important;
         }
-        .mgrd
+      
+        
+        .rcbScroll
         {
+            height: auto !important;
+           
         }
+        .mtrv
+        {
+            
+            height: auto !important;
+           
+     
+            }
     </style>
+    
     <div class="pad20">
         <fieldset>
             <legend>Thêm mới tin tức</legend>
@@ -218,7 +260,7 @@
                 <label for="lf">
                     Tiêu đề
                 </label>
-                <asp:TextBox CssClass="lf" ID="txtTitle" Width="230px" runat="server" ValidationGroup="submitGrp"></asp:TextBox>
+                <asp:TextBox CssClass="lf" ID="txtTitle" Width="450px" runat="server" ValidationGroup="submitGrp"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTitle"
                     ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
             </div>
@@ -236,37 +278,51 @@
                 </label>
                 <asp:FileUpload ID="fuImg" runat="server" />
                 192 x 171 (px)
-            </div>
+                <asp:HyperLink ID="hplImage" Target="_blank" Visible="false" runat="server" style="font-weight: 700">(Xem ảnh)</asp:HyperLink>
+                 
+                </div>
+
+                <div class="fieldsetdiv">
+                <label for="lf">
+                    Chuyên đề
+                </label>
+                 <asp:DropDownList CssClass="dropdown" runat="server" ID="ddlEvent" 
+                        AppendDataBoundItems="true" Height="20px" Width="342px">
+                <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
+            </asp:DropDownList>
+               </div>
+
             <div class="fieldsetdiv">
                 <label for="lf">
                     Danh mục
                 </label>
                 <div style="float: left;">
-                    <telerik:RadComboBox ID="RadComboBox1" runat="server" Width="450px" ShowToggleImage="True"
+                    <telerik:RadComboBox CssClass="rcbScroll" ID="RadComboBox1" runat="server" Width="450px" ShowToggleImage="True"
                         Style="vertical-align: middle;" OnClientDropDownOpened="OnClientDropDownOpenedHandler"
-                        EmptyMessage="Choose a destination" ExpandAnimation-Type="None" CollapseAnimation-Type="None"
+                        EmptyMessage="Chọn Danh mục gửi bài" ExpandAnimation-Type="None" CollapseAnimation-Type="None"
                         OnInit="RadComboBox1_Init">
                         <ItemTemplate>
                             <div id="div1">
-                                <telerik:RadTreeView runat="server" ID="RadTreeView1" OnClientNodeClicking="nodeClicking"
-                                    Width="100%" Height="140px" CheckBoxes="True">
+                                <telerik:RadTreeView CssClass="mtrv" runat="server" ID="RadTreeView1" OnClientNodeClicking="nodeClicking"
+                                    Width="100%" CheckBoxes="True" 
+                                    onnodedatabound="RadTreeView1_NodeDataBound">
                                     <NodeTemplate>
                                         <asp:DropDownList CssClass="dropdown" ID="ddl" runat="server">
                                             <asp:ListItem Text="1" Value="1"></asp:ListItem>
                                             <asp:ListItem Text="2" Value="2"></asp:ListItem>
                                             <asp:ListItem Text="3" Value="3"></asp:ListItem>
                                             <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="5" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="6" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="7" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="8" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="9" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="10" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="11" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="12" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="13" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="14" Value="4"></asp:ListItem>
-                                            <asp:ListItem Text="15" Value="4"></asp:ListItem>
+                                            <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                                            <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                                            <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                                            <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                                            <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                                            <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                                            <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                                            <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                                            <asp:ListItem Text="13" Value="13"></asp:ListItem>
+                                            <asp:ListItem Text="14" Value="14"></asp:ListItem>
+                                            <asp:ListItem Text="15" Value="15"></asp:ListItem>
                                         </asp:DropDownList>
                                         <%# DataBinder.Eval(Container, "Text") %>
                                     </NodeTemplate>
@@ -287,6 +343,8 @@
                 </label>
                 <div style="float: left;">
                     <asp:TextBox ID="txtDescription" TextMode="MultiLine" runat="server" CssClass="txtArea"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDescription"
+                    ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="fieldsetdiv">
@@ -294,7 +352,7 @@
                     Nội dung
                 </label>
                 <div style="float: left;">
-                    <telerik:RadEditor ID="RadEditor1" runat="server" ToolsFile="RadEditorForm_ToolsFile.xml"
+                    <telerik:RadEditor ID="txtDetail" runat="server" ToolsFile="RadEditorForm_ToolsFile.xml"
                         Width="789px">
                         <ImageManager MaxUploadFileSize="1024000000" ViewPaths="~/Media/" UploadPaths="~/Media/"
                             DeletePaths="~/MediaDelete/"></ImageManager>
@@ -307,7 +365,7 @@
                 <div style="float: left; width: 680px">
                     <telerik:RadGrid CssClass="mgrd" ID="RadGrid1" AutoGenerateColumns="False" runat="server"
                         CellSpacing="0" GridLines="None">
-                        <MasterTableView TableLayout="Fixed" ClientDataKeyNames="ArticleID" DataKeyNames="ArticleID">
+                        <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID" DataKeyNames="ArticleID">
                             <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
                             <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
                             </RowIndicatorColumn>
@@ -317,7 +375,7 @@
                                 <telerik:GridBoundColumn DataField="ArticleID" UniqueName="ArticleID" HeaderText="ArticleID">
                                     <HeaderStyle Width="70px" />
                                 </telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Title">
+                                <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề">
                                 </telerik:GridBoundColumn>
                             </Columns>
                             <EditFormSettings>
@@ -345,7 +403,7 @@
                 <div style="float: left; width: 680px">
                     <telerik:RadGrid CssClass="mgrd" ID="RadGrid2" AutoGenerateColumns="False" runat="server"
                         CellSpacing="0" GridLines="None">
-                        <MasterTableView TableLayout="Fixed" ClientDataKeyNames="ArticleID" DataKeyNames="ArticleID">
+                        <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID" DataKeyNames="ArticleID">
                             <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
                             <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
                             </RowIndicatorColumn>
@@ -355,7 +413,7 @@
                                 <telerik:GridBoundColumn DataField="ArticleID" UniqueName="ArticleID" HeaderText="ArticleID">
                                     <HeaderStyle Width="70px" />
                                 </telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Title">
+                                <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề">
                                 </telerik:GridBoundColumn>
                             </Columns>
                             <EditFormSettings>
@@ -364,7 +422,8 @@
                             </EditFormSettings>
                         </MasterTableView>
                         <ClientSettings>
-                            <ClientEvents OnRowSelected="rowSelected2" />
+                            <ClientEvents OnRowSelected="rowSelected2"/>
+                          
                             <Selecting AllowRowSelect="True"></Selecting>
                             <Scrolling AllowScroll="true" UseStaticHeaders="true"></Scrolling>
                         </ClientSettings>
@@ -380,44 +439,12 @@
             </div>
            
             <div class="fieldsetdiv">
-                <label>
-                    Duyệt bài:</label>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox8" runat="server" />Gửi chờ Biên tập
-                    </p>
-                </div>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox10" runat="server" />Gửi chờ Xuất bản
-                    </p>
-                </div>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox9" runat="server" />Chính thức Xuất bản
-                    </p>
-                </div>
-            </div>
-            <div class="fieldsetdiv">
-                <label>
-                    Trả lại bài:</label>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox11" runat="server" />Trả lại PV/CTV
-                    </p>
-                </div>
-                <div class="inpcol">
-                    <p>
-                        <asp:CheckBox ID="CheckBox12" runat="server" />Trả lại BTV
-                    </p>
-                </div>
-            </div>
-            <div class="fieldsetdiv">
                 <label for="lf">
                     Thực hiện
                 </label>
-                <input class="button" type="submit" value="Submit" />
-                <input class="button" type="reset" value="Reset" />
+                <asp:Button class="button" ID="btnSubmit" runat="server" 
+                    ValidationGroup="submitGrp" Text="Submit" onclick="btnSubmit_Click" />
+                 <asp:Button class="button" ID="Button1" runat="server" Text="Reset" />
             </div>
         </fieldset>
     </div>
