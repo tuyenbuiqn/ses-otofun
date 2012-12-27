@@ -251,6 +251,10 @@ namespace SES.CMS.BL
         {
             objcmsArticleDAL.MultiDelete(articleIDList);
         }
+        public void DangKyChiuTrachNhiemBaiViet(int type, string articleIDList, int userID)
+        {
+            objcmsArticleDAL.DangKyChiuTrachNhiemBaiViet(type, articleIDList, userID);
+        }
 
     }
 
