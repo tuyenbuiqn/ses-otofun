@@ -1115,7 +1115,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public DataTable Article_SearchAdvanced(string lstCategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Keyw, int ListStatus, int PvCreate, int BtvEdit, int TkApproved)
+        public DataTable Article_SearchAdvanced(string lstCategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Keyw, string ListStatus, string PvCreate, string BtvEdit, string TkApproved)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1138,19 +1138,19 @@ namespace SES.CMS.DAL
             Sqlparam.Value = Keyw;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            Sqlparam = new SqlParameter("@ListStatus", SqlDbType.Int);
+            Sqlparam = new SqlParameter("@ListStatus", SqlDbType.NVarChar);
             Sqlparam.Value = ListStatus;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            Sqlparam = new SqlParameter("@PvCreate", SqlDbType.Int);
+            Sqlparam = new SqlParameter("@PvCreate", SqlDbType.NVarChar);
             Sqlparam.Value = PvCreate;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            Sqlparam = new SqlParameter("@BtvEdit", SqlDbType.Int);
+            Sqlparam = new SqlParameter("@BtvEdit", SqlDbType.NVarChar);
             Sqlparam.Value = BtvEdit;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            Sqlparam = new SqlParameter("@TkApproved", SqlDbType.Int);
+            Sqlparam = new SqlParameter("@TkApproved", SqlDbType.NVarChar);
             Sqlparam.Value = TkApproved;
             Sqlcomm.Parameters.Add(Sqlparam);
 
