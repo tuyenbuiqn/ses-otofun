@@ -53,13 +53,13 @@
     <div id="Search">
         <table>
             <tr>
-                <td>Từ khóa</td>
+                <td style="padding-left: 5px;">Từ khóa</td>
                 <td colspan="3">
                     <asp:TextBox ID="txtKey" CssClass="ucSearchTextbox" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>Danh mục tin tức</td>
+                <td style="padding-left: 5px;">Danh mục tin tức</td>
                 <td>
                     <telerik:RadComboBox ID="rcbCat" CssClass="SearchrcbCat" runat="server" Width="250px" Height="24px" ShowToggleImage="True"
                         Style="vertical-align: middle;" OnClientDropDownOpened="OnClientDropDownOpenedHandler"
@@ -86,7 +86,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td style="padding-left: 5px;">
                     <asp:Label ID="lblPvCreate" runat="server" Text="PV viết bài"></asp:Label>
                 </td>
                 <td>
@@ -102,7 +102,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td style="padding-left: 5px;">
                     <asp:Label ID="lblTkApproved" runat="server" Text="TK phê duyệt"></asp:Label>
                 </td>
                 <td colspan="3">
@@ -111,12 +111,13 @@
                 </td>
             </tr>
             <tr>
-                <td>Ngày khởi tạo</td>
-                <td colspan="3">
+                <td style="padding-left: 5px;">Ngày khởi tạo</td>
+                <td>
                     Từ: 
                     <telerik:RadDatePicker ID="RadDatePickerStart" DateInput-DateFormat="dd/MM/yyyy" runat="server">
                     </telerik:RadDatePicker>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td colspan="2">
                     Đến: 
                     <telerik:RadDatePicker ID="RadDatePickerEnd"  DateInput-DateFormat="dd/MM/yyyy" runat="server">
                     </telerik:RadDatePicker>
