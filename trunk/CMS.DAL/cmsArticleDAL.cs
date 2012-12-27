@@ -1245,6 +1245,30 @@ namespace SES.CMS.DAL
 
             base.ExecuteNoneQuery(Sqlcomm);
         }
+
+        public void ChuyenTrangThai_PhongVien(string articleIDList, int trangThai, DateTime thoiGianGuiBienTap)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_ChuyenTrangThai_PTV";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@ArticleIDList", SqlDbType.NVarChar);
+            Sqlparam.Value = articleIDList;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@TrangThai", SqlDbType.Int);
+            Sqlparam.Value = trangThai;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@thoiGianGui", SqlDbType.DateTime);
+            Sqlparam.Value = thoiGianGuiBienTap;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            base.ExecuteNoneQuery(Sqlcomm);
+        }
+
         public void DangKyChiuTrachNhiemBaiViet(int type,string articleIDList, int userID)
         {
             SqlCommand Sqlcomm = new SqlCommand();

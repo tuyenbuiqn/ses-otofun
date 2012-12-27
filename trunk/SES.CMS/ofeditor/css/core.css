@@ -204,6 +204,9 @@ INPUT[type="checkbox"], INPUT[type="radio"] {
 	position:relative;
 	padding-right:10px;
 	margin-top:10px;
+    top: 0px;
+    left: 0px;
+    
 }
 
 .meta p {

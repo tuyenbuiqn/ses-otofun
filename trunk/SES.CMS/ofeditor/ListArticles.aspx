@@ -9,23 +9,50 @@
                 </h2>
             <div style="width: 90%; float: left; margin-bottom: 10px;">
                 Lựa chọn theo Danh mục:
-                <asp:DropDownList ID="cboCategoryNhap" AppendDataBoundItems="true" runat="server"
-                    AutoPostBack="True" OnSelectedIndexChanged="cboCategoryNhap_SelectedIndexChanged">
-                    <asp:ListItem Value="0" Text=".: Chọn tất cả :."></asp:ListItem>
-                </asp:DropDownList>
+                </div>
+            <div visible="false" runat="server" id="divPV" class="article-action">
+                <asp:Button runat="server" ID="btnXoaPV" Text="Xóa bài đã chọn" CssClass="button-article"
+                    OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" 
+                    onclick="btnXoaPV_Click" />
+                <asp:Button runat="server" ID="btnGuiBTV" Text="Gửi Biên tập" CssClass="button-article"
+                    
+                    OnClientClick="return confirm('Xác nhận gửi Biên tập? Nhấn OK để đồng ý!')" 
+                    onclick="btnGuiBTV_Click" />
             </div>
-            <div class="article-action">
-                <asp:Button runat="server" ID="btnXoa1" Text="Xóa bài đã chọn" CssClass="button-article"
-                    OnClick="btnXoa_Click" OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" />
-                <asp:Button runat="server" ID="btnGuiXuatBan1" Text="Gửi xuất bản" CssClass="button-article"
+            <div visible="false" runat="server" id="divBTV" class="article-action">
+                <asp:Button runat="server" ID="btnXoaBTV" Text="Xóa bài đã chọn" CssClass="button-article"
+                    OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" 
+                    onclick="btnXoaBTV_Click" />
+                <asp:Button runat="server" ID="btnGuiXuatBan" Text="Gửi xuất bản" CssClass="button-article"
                     OnClick="btnGuiXuatBan_Click" OnClientClick="return confirm('Xác nhận gửi xuất bản? Nhấn OK để đồng ý!')" />
-                    <asp:Button runat="server" ID="btnGuiXuatBanBTV1" Text="Gửi xuất bản" CssClass="button-article"
-                    OnClick="btnGuiXuatBanBTV_Click" OnClientClick="return confirm('Xác nhận gửi xuất bản? Nhấn OK để đồng ý!')"   />
-                    <asp:Button runat="server" ID="btnTraLaiPhongVien1" Text="Trả lại bài cho phóng viên" CssClass="button-article"
-                    OnClick="btnGuiTraLaiBai_Click" OnClientClick="return confirm('Xác nhận trả lại bài viết cho phóng viên? Nhấn OK để đồng ý!')"  />
-                    <asp:Button runat="server" ID="btnChiuTrachNhiem1" Text="Chịu trách nhiệm bài này" CssClass="button-article"
+                    <asp:Button runat="server" ID="btnTraLaiPhongVien" Text="Trả lại bài cho phóng viên" CssClass="button-article"
+                     OnClick="btnTraLaiPhongVien_Click" OnClientClick="return confirm('Xác nhận trả lại bài viết cho phóng viên? Nhấn OK để đồng ý!')"  />
+                    <asp:Button runat="server" ID="btnChiuTrachNhiem" Text="Chịu trách nhiệm bài này" CssClass="button-article"
                     OnClick="btnBTVChiuTrachNhiem_Click" OnClientClick="return confirm('Xác nhận chịu trách nhiệm? Nhấn OK để đồng ý!')"  />
             </div>
+            <div visible="false" runat="server" id="divTK" class="article-action">
+                <asp:Button runat="server" ID="btnXoaTK" Text="Xóa bài đã chọn" CssClass="button-article"
+                    OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" 
+                    onclick="btnXoaTK_Click" />
+                <asp:Button runat="server" ID="btnDuyetXuatBan" Text="Duyệt Xuất bản" CssClass="button-article"
+                     
+                    OnClientClick="return confirm('Xác nhận Duyệt xuất bản? Nhấn OK để đồng ý!')" 
+                    onclick="btnDuyetXuatBan_Click" />
+                     <asp:Button runat="server" ID="btnHuyDuyetXB" Text="Gỡ bài" CssClass="button-article"
+                     OnClientClick="return confirm('Xác nhận Gỡ bài? Nhấn OK để đồng ý!')" 
+                    onclick="btnHuyDuyetXB_Click" />
+                       <asp:Button runat="server" ID="btnTKTraPV" 
+                    Text="Trả lại bài cho phóng viên" CssClass="button-article"
+                    
+                    OnClientClick="return confirm('Xác nhận trả lại bài viết cho phóng viên? Nhấn OK để đồng ý!')" 
+                    onclick="btnTKTraPV_Click"  />
+                    <asp:Button runat="server" ID="btnTraBTV" Text="Trả bài Biên tập lại" CssClass="button-article"
+                    
+                    OnClientClick="return confirm('Xác nhận trả bài viết cho Biên tập lại? Nhấn OK để đồng ý!')" 
+                    onclick="btnTraBTV_Click"  />
+            </div>
+            
+
             <asp:GridView ID="grvListArticle" DataKeyNames="ArticleID" runat="server" AutoGenerateColumns="False"
                 OnRowDeleting="grvListArticle_RowDeleting" CssClass="tstyle2" OnSelectedIndexChanged="grvListArticle_SelectedIndexChanged"
                 PageSize="35" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr" 
@@ -78,18 +105,7 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-            <div class="article-action">
-                <asp:Button runat="server" ID="btnXoa2" Text="Xóa bài đã chọn" CssClass="button-article"
-                    OnClick="btnXoa_Click" OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')"  />
-                <asp:Button runat="server" ID="btnGuiXuatBan2" Text="Gửi xuất bản" CssClass="button-article"
-                    OnClick="btnGuiXuatBan_Click" OnClientClick="return confirm('Xác nhận gửi xuất bản? Nhấn OK để đồng ý!')"  />
-                    <asp:Button runat="server" ID="btnGuiXuatBanBTV2" Text="Gửi xuất bản" CssClass="button-article"
-                    OnClick="btnGuiXuatBanBTV_Click" OnClientClick="return confirm('Xác nhận gửi xuất bản? Nhấn OK để đồng ý!')"  />
-                    <asp:Button runat="server" ID="btnTraLaiPhongVien2" Text="Trả lại bài cho phóng viên" CssClass="button-article"
-                    OnClick="btnGuiTraLaiBai_Click" OnClientClick="return confirm('Xác nhận trả lại bài viết cho phóng viên? Nhấn OK để đồng ý!')" />
-                    <asp:Button runat="server" ID="btnChiuTrachNhiem2" Text="Chịu trách nhiệm bài này" CssClass="button-article"
-                    OnClick="btnBTVChiuTrachNhiem_Click" OnClientClick="return confirm('Xác nhận chịu trách nhiệm? Nhấn OK để đồng ý!')" />
-            </div>
+          
             <div style="width: 100%; float: left;">
                 <a href="/ofeditor/AddNews.aspx" class="button-gg-green" title="Thêm bài viết">Thêm
                     bài viết</a>

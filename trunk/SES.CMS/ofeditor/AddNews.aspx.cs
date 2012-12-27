@@ -25,7 +25,18 @@ namespace SES.CMS.ofeditor
                 if (Request.QueryString["ArticleID"] != null)
                 {
                     objArt.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
-                    initForm();
+                    objArt = new cmsArticleBL().Select(objArt);
+                    
+                    if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
+                    else
+                    {
+                        objArt.DangBienTap = true; // Lock editting
+                        objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
+                        new cmsArticleBL().Update(objArt);
+                        initForm(); 
+                    
+                    }
+                    
                 }
                 else
                 {
@@ -37,6 +48,46 @@ namespace SES.CMS.ofeditor
 
         }
 
+        private bool CheckQuyenSuaBai(cmsArticleDO objA) // Của mình
+        {
+            int TypeID = -1;
+            if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+            else return false;
+
+            if (TypeID == 0)  //Nếu là PV --> Chỉ sửa các bài (Nháp(0) + Trả lại PV(4))
+            {
+                if ((objA.UserCreate == int.Parse(Session["UserID"].ToString()))) //Bài mình viết 
+                {
+                    if (objA.TrangThai == 0 || objA.TrangThai == 4) return true;
+                }
+                else return false;
+            }
+            else if (TypeID == 1)  //Nếu là BTV --> Chỉ sửa các bài (Nháp(0) + Trả lại BTV(4) + Cần b tập)
+            {
+                if ((objA.UserCreate == int.Parse(Session["UserID"].ToString()))) //Bài mình viết 
+                {
+                    if (objA.TrangThai == 0 || objA.TrangThai == 5) return true; // đang nháp hoặc bị trả lại BTV
+                }
+                else //Bài người khác viết
+                {
+                    if (objA.TrangThai == 5 || objA.TrangThai == 2) // Bị trả lại BTV hoặc Chờ BTV
+                    {
+                        //Nếu đang ko editing hoặc Đang editting bởi mình
+                        if((!objA.DangBienTap)||(objA.BTVEdit==int.Parse(Session["UserID"].ToString())))
+                            return true;
+                        else return false; // Ko thì cũng k cho sửa
+                    }  
+                }
+            }
+            else if (TypeID == 2 || TypeID == 3)  //Nếu là Thư ký --> thoải mái
+            {
+               return true;
+            }
+           
+            
+            return false;
+           
+        }
         private void BindRelatedNews(string RelatedNews1, string RelatedNews2)
         {
             RadGrid1.DataSource = new cmsArticleBL().GetListMultiID(RelatedNews1);
@@ -113,9 +164,13 @@ namespace SES.CMS.ofeditor
             RadTreeView rtv = (RadTreeView)RadComboBox1.Items[0].FindControl("RadTreeView1");
             if (objArt.ArticleID <= 0)
             {
-                
+                ////thêm mới
+                ////Nếu là Phóng viên ko cần xét
+                //int UTypeID = int.Parse(Session["UserType"].ToString());
+                //if (UTypeID == 1) objArt.TrangThai = 1; // BTV
+                //if (UTypeID == 1) objArt.TrangThai = 2; // BTV
+
                 objArt.CreateDate = DateTime.Now;
-                if (Session["UserID"] == null) Session["UserID"] = 1;
                 objArt.UserCreate = int.Parse(Session["UserID"].ToString());
                 aid = new cmsArticleBL().Insert(objArt);
 
@@ -131,8 +186,9 @@ namespace SES.CMS.ofeditor
             }
             else
             {
+                // Lưu thì có giữ lock edit ko ????????????????????????????????????????
                 new cmsArticleBL().Update(objArt);
-
+                //Sửa thì trạng thái giữ nguyên.
                 
                      //* Lấy toàn bộ bản ghi cũ (id,aid,cid,oid) Theo Aid
                      DataTable dt = new cmsArticleCategoryBL().SelectByArticleID(aid);
@@ -189,7 +245,7 @@ namespace SES.CMS.ofeditor
                              }
                              
                          }
-                         if(saved) new cmsArticleCategoryBL().Insert(ins);  ////////////////// Sửa
+                         if(saved) new cmsArticleCategoryBL().Insert(ins);  ////////////////// Thêm mới
                      }
 
             }

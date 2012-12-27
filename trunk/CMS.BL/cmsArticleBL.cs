@@ -247,6 +247,12 @@ namespace SES.CMS.BL
         {
             objcmsArticleDAL.ChuyenTrangThai_BienTapVien(articleIDList, trangThai, bienTapVienID, thoiGianGuiXuatBan);
         }
+        
+        public void ChuyenTrangThai_PhongVien(string articleIDList, int trangThai, DateTime thoiGianGuiBienTap)
+        {
+            objcmsArticleDAL.ChuyenTrangThai_PhongVien(articleIDList, trangThai, thoiGianGuiBienTap);
+        }
+
         public void MultiDelete(string articleIDList)
         {
             objcmsArticleDAL.MultiDelete(articleIDList);

@@ -43,5 +43,3 @@ E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.dll.licenses
 E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.dll
 E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.pdb
 E:\SES Project\otofun\SES.CMS\bin\DevExpress.Web.ASPxEditors.v9.2.xml
-E:\SES Project\otofun\SES.CMS\bin\ASTreeView.xml
-E:\SES Project\otofun\SES.CMS\bin\Telerik.Web.UI.xml

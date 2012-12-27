@@ -103,6 +103,7 @@ namespace SES.CMS.Module
                     if (cache[keyTinLienQuan1] == null)
                     {
                         DataTable dtTinLienQuan1 = artBL.GetTinLienQuan1(articleID);
+                        if(dtTinLienQuan1!=null)
                         cache.Insert(keyTinLienQuan1, dtTinLienQuan1, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                     }
                     rptTinLienQuan1.DataSource = (DataTable)cache[keyTinLienQuan1];
