@@ -18,7 +18,7 @@ namespace SES.CMS.DAL
     public class cmsArticleDAL : BaseDAL
     {
         #region Private Variables
-
+        DateTime minDate = new DateTime(1900,1,1);
         #endregion
 
         #region Public Constructors
@@ -83,6 +83,9 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@CreateDate", SqlDbType.DateTime);
+            if (objcmsArticleDO.CreateDate <= minDate)
+                Sqlparam.Value = minDate;
+            else 
             Sqlparam.Value = objcmsArticleDO.CreateDate;
             Sqlcomm.Parameters.Add(Sqlparam);
 
@@ -123,6 +126,9 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ThoiGianGui", SqlDbType.DateTime);
+            if (objcmsArticleDO.ThoiGianGui <= minDate)
+                Sqlparam.Value = minDate;
+            else 
             Sqlparam.Value = objcmsArticleDO.ThoiGianGui;
             Sqlcomm.Parameters.Add(Sqlparam);
 
@@ -131,6 +137,9 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ThoiGianGuiXuatBan", SqlDbType.DateTime);
+            if (objcmsArticleDO.ThoiGianGuiXuatBan <= minDate)
+                Sqlparam.Value = minDate;
+            else 
             Sqlparam.Value = objcmsArticleDO.ThoiGianGuiXuatBan;
             Sqlcomm.Parameters.Add(Sqlparam);
 
@@ -139,6 +148,9 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ThoiGianXuatBan", SqlDbType.DateTime);
+            if (objcmsArticleDO.ThoiGianXuatBan <= minDate)
+                Sqlparam.Value = minDate;
+            else 
             Sqlparam.Value = objcmsArticleDO.ThoiGianXuatBan;
             Sqlcomm.Parameters.Add(Sqlparam);
 
@@ -203,6 +215,7 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.Title;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+
             Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
             Sqlparam.Value = objcmsArticleDO.CategoryID;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -240,7 +253,10 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@CreateDate", SqlDbType.DateTime);
-            Sqlparam.Value = objcmsArticleDO.CreateDate;
+            if (objcmsArticleDO.CreateDate <= minDate)
+                Sqlparam.Value = minDate;
+            else
+                Sqlparam.Value = objcmsArticleDO.CreateDate;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@IsMostRead", SqlDbType.Bit);
@@ -280,7 +296,10 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ThoiGianGui", SqlDbType.DateTime);
-            Sqlparam.Value = objcmsArticleDO.ThoiGianGui;
+            if (objcmsArticleDO.ThoiGianGui <= minDate)
+                Sqlparam.Value = minDate;
+            else
+                Sqlparam.Value = objcmsArticleDO.ThoiGianGui;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@BienTapVienID", SqlDbType.Int);
@@ -288,7 +307,10 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ThoiGianGuiXuatBan", SqlDbType.DateTime);
-            Sqlparam.Value = objcmsArticleDO.ThoiGianGuiXuatBan;
+            if (objcmsArticleDO.ThoiGianGuiXuatBan <= minDate)
+                Sqlparam.Value = minDate;
+            else
+                Sqlparam.Value = objcmsArticleDO.ThoiGianGuiXuatBan;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ThuKyID", SqlDbType.Int);
@@ -296,7 +318,10 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ThoiGianXuatBan", SqlDbType.DateTime);
-            Sqlparam.Value = objcmsArticleDO.ThoiGianXuatBan;
+            if (objcmsArticleDO.ThoiGianXuatBan <= minDate)
+                Sqlparam.Value = minDate;
+            else
+                Sqlparam.Value = objcmsArticleDO.ThoiGianXuatBan;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@BTVEdit", SqlDbType.Int);
@@ -377,6 +402,8 @@ namespace SES.CMS.DAL
             return result;
         }
 
+
+
         public cmsArticleDO Select(cmsArticleDO objcmsArticleDO)
         {
 
@@ -439,7 +466,32 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
                 if (!Convert.IsDBNull(dr["IsHot"]))
                     objcmsArticleDO.IsHot = Convert.ToBoolean(dr["IsHot"]);
-
+                if (!Convert.IsDBNull(dr["ThoiGianGui"]))
+                    objcmsArticleDO.ThoiGianGui = Convert.ToDateTime(dr["ThoiGianGui"]);
+                if (!Convert.IsDBNull(dr["BienTapVienID"]))
+                    objcmsArticleDO.BienTapVienID = Convert.ToInt32(dr["BienTapVienID"]);
+                if (!Convert.IsDBNull(dr["ThoiGianGuiXuatBan"]))
+                    objcmsArticleDO.ThoiGianGuiXuatBan = Convert.ToDateTime(dr["ThoiGianGuiXuatBan"]);
+                if (!Convert.IsDBNull(dr["ThuKyID"]))
+                    objcmsArticleDO.ThuKyID = Convert.ToInt32(dr["ThuKyID"]);
+                if (!Convert.IsDBNull(dr["ThoiGianXuatBan"]))
+                    objcmsArticleDO.ThoiGianXuatBan = Convert.ToDateTime(dr["ThoiGianXuatBan"]);
+                if (!Convert.IsDBNull(dr["BTVEdit"]))
+                    objcmsArticleDO.BTVEdit = Convert.ToInt32(dr["BTVEdit"]);
+                if (!Convert.IsDBNull(dr["ThuKyEdit"]))
+                    objcmsArticleDO.ThuKyEdit = Convert.ToInt32(dr["ThuKyEdit"]);
+                if (!Convert.IsDBNull(dr["DangBienTap"]))
+                    objcmsArticleDO.DangBienTap = Convert.ToBoolean(dr["DangBienTap"]);
+                if (!Convert.IsDBNull(dr["SlideID"]))
+                    objcmsArticleDO.SlideID = Convert.ToInt32(dr["SlideID"]);
+                if (!Convert.IsDBNull(dr["TrangThai"]))
+                    objcmsArticleDO.TrangThai = Convert.ToInt16(dr["TrangThai"]);
+                if (!Convert.IsDBNull(dr["LuotView"]))
+                    objcmsArticleDO.LuotView = Convert.ToInt32(dr["LuotView"]);
+                if (!Convert.IsDBNull(dr["TinLienQuan1"]))
+                    objcmsArticleDO.TinLienQuan1 = Convert.ToString(dr["TinLienQuan1"]);
+                if (!Convert.IsDBNull(dr["TinLienQuan2"]))
+                    objcmsArticleDO.TinLienQuan2 = Convert.ToString(dr["TinLienQuan2"]);
 
             }
             return objcmsArticleDO;
@@ -503,11 +555,38 @@ namespace SES.CMS.DAL
                         objcmsArticleDO.UserXetDuyet = Convert.ToInt32(dr["UserXetDuyet"]);
                     if (!Convert.IsDBNull(dr["IsHot"]))
                         objcmsArticleDO.IsHot = Convert.ToBoolean(dr["IsHot"]);
+                    if (!Convert.IsDBNull(dr["ThoiGianGui"]))
+                        objcmsArticleDO.ThoiGianGui = Convert.ToDateTime(dr["ThoiGianGui"]);
+                    if (!Convert.IsDBNull(dr["BienTapVienID"]))
+                        objcmsArticleDO.BienTapVienID = Convert.ToInt32(dr["BienTapVienID"]);
+                    if (!Convert.IsDBNull(dr["ThoiGianGuiXuatBan"]))
+                        objcmsArticleDO.ThoiGianGuiXuatBan = Convert.ToDateTime(dr["ThoiGianGuiXuatBan"]);
+                    if (!Convert.IsDBNull(dr["ThuKyID"]))
+                        objcmsArticleDO.ThuKyID = Convert.ToInt32(dr["ThuKyID"]);
+                    if (!Convert.IsDBNull(dr["ThoiGianXuatBan"]))
+                        objcmsArticleDO.ThoiGianXuatBan = Convert.ToDateTime(dr["ThoiGianXuatBan"]);
+                    if (!Convert.IsDBNull(dr["BTVEdit"]))
+                        objcmsArticleDO.BTVEdit = Convert.ToInt32(dr["BTVEdit"]);
+                    if (!Convert.IsDBNull(dr["ThuKyEdit"]))
+                        objcmsArticleDO.ThuKyEdit = Convert.ToInt32(dr["ThuKyEdit"]);
+                    if (!Convert.IsDBNull(dr["DangBienTap"]))
+                        objcmsArticleDO.DangBienTap = Convert.ToBoolean(dr["DangBienTap"]);
+                    if (!Convert.IsDBNull(dr["SlideID"]))
+                        objcmsArticleDO.SlideID = Convert.ToInt32(dr["SlideID"]);
+                    if (!Convert.IsDBNull(dr["TrangThai"]))
+                        objcmsArticleDO.TrangThai = Convert.ToInt16(dr["TrangThai"]);
+                    if (!Convert.IsDBNull(dr["LuotView"]))
+                        objcmsArticleDO.LuotView = Convert.ToInt32(dr["LuotView"]);
+                    if (!Convert.IsDBNull(dr["TinLienQuan1"]))
+                        objcmsArticleDO.TinLienQuan1 = Convert.ToString(dr["TinLienQuan1"]);
+                    if (!Convert.IsDBNull(dr["TinLienQuan2"]))
+                        objcmsArticleDO.TinLienQuan2 = Convert.ToString(dr["TinLienQuan2"]);
                     arrcmsArticleDO.Add(objcmsArticleDO);
                 }
             }
             return arrcmsArticleDO;
         }
+
 
         public DataTable SelectAll()
         {
@@ -1021,7 +1100,9 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@Keyw", SqlDbType.NVarChar);
-            Sqlparam.Value = Keyw;
+            if (!string.IsNullOrEmpty(Keyw))
+                Sqlparam.Value = Keyw;
+            else Sqlparam.Value = "******";
             Sqlcomm.Parameters.Add(Sqlparam);
 
             DataSet ds = base.GetDataSet(Sqlcomm);
@@ -1091,10 +1172,12 @@ namespace SES.CMS.DAL
             SqlParameter Sqlparam;
 
             Sqlparam = new SqlParameter("@StrArticleID", SqlDbType.NVarChar);
-            Sqlparam.Value = StrArticleID;
+            if (!string.IsNullOrEmpty(StrArticleID))
+                Sqlparam.Value = StrArticleID;
+            else Sqlparam.Value = "0";
             Sqlcomm.Parameters.Add(Sqlparam);
 
-            
+
 
             DataSet ds = base.GetDataSet(Sqlcomm);
             DataTable dt = null;
@@ -1136,7 +1219,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public void ChuyenTrangThai_BienTapVien(string articleIDList, int trangThai, int bienTapVienID,DateTime thoiGianGuiXuatBan)
+        public void ChuyenTrangThai_BienTapVien(string articleIDList, int trangThai, int bienTapVienID, DateTime thoiGianGuiXuatBan)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;

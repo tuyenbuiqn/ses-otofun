@@ -13,6 +13,24 @@ namespace SES.CMS.ofeditor {
     public partial class AddNews {
         
         /// <summary>
+        /// hdfID1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfID1;
+        
+        /// <summary>
+        /// hdfID2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfID2;
+        
+        /// <summary>
         /// RadScriptManager1 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +121,24 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.FileUpload fuImg;
         
         /// <summary>
+        /// hplImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplImage;
+        
+        /// <summary>
+        /// ddlEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEvent;
+        
+        /// <summary>
         /// RadComboBox1 control.
         /// </summary>
         /// <remarks>
@@ -121,13 +157,22 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.TextBox txtDescription;
         
         /// <summary>
-        /// RadEditor1 control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadEditor RadEditor1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
+        /// txtDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadEditor txtDetail;
         
         /// <summary>
         /// RadGrid1 control.
@@ -148,48 +193,21 @@ namespace SES.CMS.ofeditor {
         protected global::Telerik.Web.UI.RadGrid RadGrid2;
         
         /// <summary>
-        /// CheckBox8 control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox8;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// CheckBox10 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox10;
-        
-        /// <summary>
-        /// CheckBox9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox9;
-        
-        /// <summary>
-        /// CheckBox11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox11;
-        
-        /// <summary>
-        /// CheckBox12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox12;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

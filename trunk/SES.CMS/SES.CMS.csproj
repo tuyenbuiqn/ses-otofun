@@ -841,6 +841,8 @@
     <Content Include="bin\SES.CMS.DO.dll" />
     <Content Include="bin\SES.CMS.DO.pdb" />
     <Content Include="bin\SES.CMS.pdb" />
+    <Content Include="bin\Telerik.Web.UI.dll" />
+    <Content Include="bin\Telerik.Web.UI.xml" />
     <Content Include="bin\UrlRewritingNet.UrlRewriter.dll" />
     <Content Include="Category.aspx" />
     <Content Include="Child.aspx" />
@@ -1311,7 +1313,6 @@
     <Content Include="ofeditor\assets\repgray2.png" />
     <Content Include="ofeditor\assets\searchbar.png" />
     <Content Include="ofeditor\assets\siderep.png" />
-    <Content Include="ofeditor\Child.aspx" />
     <Content Include="ofeditor\css\core.css" />
     <Content Include="ofeditor\css\css3.css" />
     <Content Include="ofeditor\css\layout.css" />
@@ -1334,7 +1335,6 @@
     <Content Include="ofeditor\js\jquery.wysiwyg.js" />
     <Content Include="ofeditor\js\superfish.js" />
     <Content Include="ofeditor\login.html" />
-    <Content Include="ofeditor\RadEditorForm.aspx" />
     <Content Include="ofeditor\RadEditorForm_ToolsFile.xml" />
     <Content Include="ofeditor\RelatedNews1.aspx" />
     <Content Include="ofeditor\RelatedNews2.aspx" />
@@ -1813,13 +1813,6 @@
     <Compile Include="ofeditor\AddNews.aspx.designer.cs">
       <DependentUpon>AddNews.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ofeditor\Child.aspx.cs">
-      <DependentUpon>Child.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ofeditor\Child.aspx.designer.cs">
-      <DependentUpon>Child.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ofeditor\Class1.cs" />
     <Compile Include="ofeditor\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -1834,13 +1827,6 @@
     </Compile>
     <Compile Include="ofeditor\Editor.Master.designer.cs">
       <DependentUpon>Editor.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ofeditor\RadEditorForm.aspx.cs">
-      <DependentUpon>RadEditorForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ofeditor\RadEditorForm.aspx.designer.cs">
-      <DependentUpon>RadEditorForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="ofeditor\RelatedNews1.aspx.cs">
       <DependentUpon>RelatedNews1.aspx</DependentUpon>

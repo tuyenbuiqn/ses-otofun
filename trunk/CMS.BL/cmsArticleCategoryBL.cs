@@ -76,6 +76,16 @@ namespace SES.CMS.BL
         {
             return objcmsArticleCategoryDAL.DeleteByArticleID(articleID);
         }
+
+        public cmsArticleCategoryDO SelectByArtCatOrdID(cmsArticleCategoryDO o)
+        {
+            return objcmsArticleCategoryDAL.DeleteByArticleID(o);
+        }
+
+        public DataTable SelectByArticleID(int articleID)
+        {
+            return objcmsArticleCategoryDAL.SelectByArticleID(articleID);
+        }
     }
 
 }
