@@ -33,7 +33,6 @@ img
 {
 	margin-left: 280px;
     margin-right: 10px;
-    padding-top: 30px;
     color: #212121;
 }
 #ucSearchTitle
@@ -48,23 +47,23 @@ img
 	float: left;
 	width: 100%;
 }
+#Search
+{
+	background:url('/AdminCP/images/BackgroundSearch.png') repeat-x #CCCCCC;
+	border-radius: 6px;
+}
 #Search table, #ListArticle table
 {
 	float: left;
 	width: 100%;
 	border-collapse:collapse;
 }
-#Search table
-{
-	background: #e6e6e6;
-	border-radius: 6px;
-}
 #Search td
 {
 }
 #Search .ucSearchTextbox
 {
-	margin-top: 5px;
+	margin-top: 10px;
 	width: 99%;
 	height: 22px;
 }
@@ -72,6 +71,7 @@ img
 {
 	width: 250px;
 	height: 24px;
+	color: #545454;
 }
 #Search .ucSearchbtnSearch
 {
@@ -84,7 +84,7 @@ img
 	font-weight:bold;
 	background: #0f70dc;
 	border-style:none;
-	margin: 5px 0px 5px 0px;
+	margin: 5px 0px 10px 0px;
 	cursor:pointer;
 	
 }
@@ -104,8 +104,8 @@ img
 }
 #ListArticle th
 {
+	background:url('/AdminCP/images/BackgroundTable.png') repeat-x #a9d0ff;
 	height: 40px;
-	background: #a9d0ff;
 	color: #282828;
 }
 #ListArticle td
