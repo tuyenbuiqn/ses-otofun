@@ -40,14 +40,11 @@ namespace SES.CMS.ofeditor
                 {
                    UserType = int.Parse(dtUser.Rows[0]["UserType"].ToString());
                    Session["UserType"] = UserType;
-                   if (UserType == 1)
+                   if (UserType <=3)
                    {
                        Response.Redirect("Default.aspx");
                    }
-                   else
-                   {
-                       Response.Redirect("Default.aspx");
-                   }
+                   else Functions.Alert("Sai tên đăng nhập", Request.Url.ToString());
                 }
             }
             else

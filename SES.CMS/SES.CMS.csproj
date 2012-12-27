@@ -1334,6 +1334,8 @@
     <Content Include="ofeditor\js\jquery-ui-1.7.2.custom.min.js" />
     <Content Include="ofeditor\js\jquery.wysiwyg.js" />
     <Content Include="ofeditor\js\superfish.js" />
+    <Content Include="ofeditor\ListArticles.aspx" />
+    <Content Include="ofeditor\Login.aspx" />
     <Content Include="ofeditor\login.html" />
     <Content Include="ofeditor\RadEditorForm_ToolsFile.xml" />
     <Content Include="ofeditor\RelatedNews1.aspx" />
@@ -1827,6 +1829,20 @@
     </Compile>
     <Compile Include="ofeditor\Editor.Master.designer.cs">
       <DependentUpon>Editor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\ListArticles.aspx.cs">
+      <DependentUpon>ListArticles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\ListArticles.aspx.designer.cs">
+      <DependentUpon>ListArticles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="ofeditor\RelatedNews1.aspx.cs">
       <DependentUpon>RelatedNews1.aspx</DependentUpon>

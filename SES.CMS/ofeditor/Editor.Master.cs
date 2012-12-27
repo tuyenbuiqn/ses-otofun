@@ -19,7 +19,7 @@ namespace SES.CMS.ofeditor
             {
                 lblUserName.Text = Session["UserName"].ToString();
                 int userType = int.Parse(Session["UserType"].ToString());
-                if (userType == 1)
+                if (userType <= 3)
                 { }
                 else
                 {

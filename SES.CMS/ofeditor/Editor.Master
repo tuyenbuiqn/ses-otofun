@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- End of Meta -->
     <!-- Page title -->
-    <title>SES CMS - Editor Control Panel</title>
+    <title>Otofun.net - Hệ thống Tòa soạn điện tử</title>
     <!-- End of Page title -->
     <!-- Libraries -->
     <link type="text/css" href="css/layout.css" rel="stylesheet" />
@@ -50,6 +50,7 @@
                         </li>
                         <li><a href="#" title="Change current settings" class="tooltip"><span class="ui-icon ui-icon-wrench">
                         </span>Tài khoản</a></li>
+                        <li><a href="http://otofun.net" class="tooltip" target="_blank">Xem Trang chủ</a></li>
                     </ul>
                 </div>
                 <!-- End of Meta information -->
@@ -58,11 +59,16 @@
             <!-- The navigation bar -->
             <div id="navbar">
                 <ul class="nav">
-                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="Default.aspx">Quản lý Chung</a></li>
                     <li><a href="">Bài viết</a></li>
-                    <li><a href="">Bài đã gửi</a></li>
-                    <li><a href="">Thống kê</a></li>
-                    <li style="display: none"><a href="">Multi Level Menu</a>
+                    <li><a href="">Hiển thị Tin</a></li>
+                    <li><a href="">Duyệt Bình luận</a></li>
+                    <li><a href="">Tìm kiếm</a></li>
+                    <li><a href="">Thống kê Nhuận bút</a></li>
+                    <li><a href="">Quản lý Video</a></li>
+                    <li><a href="">Quản lý Gallery</a></li>
+                    
+                   <%-- <li style="display: none"><a href="">Multi Level Menu</a>
                         <ul>
                             <li><a href="">Menu Link 1</a></li>
                             <li><a href="">Menu Link 2</a></li>
@@ -86,12 +92,12 @@
                             <li><a href="">Menu Link 5</a></li>
                             <li><a href="">Menu Link 6</a></li>
                         </ul>
-                    </li>
+                    </li>--%>
                 </ul>
             </div>
             <!-- End of navigation bar" -->
             <!-- Search bar -->
-            <div id="search">
+           <%-- <div id="search">
                 <form action="/search/" method="POST">
                 <p>
                     <input type="submit" value="" class="but" />
@@ -99,7 +105,7 @@
                         onblur="if(this.value=='')this.value=this.defaultValue;" />
                 </p>
                 </form>
-            </div>
+            </div>--%>
             <!-- End of Search bar -->
         </div>
         <!-- End of Header -->
@@ -127,12 +133,30 @@
                 <ul>
                     <li><a href="AddNews.aspx">Bài mới</a></li>
                     <li><a href="ListArticles.aspx?Type=0">Bài Nháp</a></li>
-                    <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
                     <li><a href="ListArticles.aspx?Type=2">Bài chờ xuất bản</a></li>
-                    <li><a href="ListArticles.aspx?Type=5">Bài trả lại Biên tập</a></li>
                     <li><a href="ListArticles.aspx?Type=3">Bài đã xuất bản</a></li>
-                    <li><a href="ListArticles.aspx">Tìm kiếm</a></li>
                 </ul>
+                <h2>
+                    Biên tập viên</h2>
+                <ul>
+                   
+                    <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
+                    <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
+                    <li><a href="ListArticles.aspx?Type=4">Bài trả lại Biên tập</a></li>
+                    <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>
+                    
+                </ul>
+
+                <h2>
+                    Thư ký Tòa soạn</h2>
+                <ul>
+                    <%--<li><a href="ListArticles.aspx?Type=2">Bài chờ xuất bản</a></li>
+                    <li><a href="ListArticles.aspx?Type=3">Bài đã xuất bản</a></li>
+                    <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>--%>
+                    
+                </ul>
+
+
                 <h2>
                     Chức năng cá nhân</h2>
                 <ul>
@@ -161,13 +185,13 @@
     <!-- Footer -->
     <div id="footer">
         <p class="mid">
-            <a href="#" title="Top" class="tooltip">Top</a>&middot;<a href="#" title="Main Page"
-                class="tooltip">Home</a>&middot;<a href="#" title="Change current settings" class="tooltip">Settings</a>&middot;<a
-                    href="#" title="End administrator session" class="tooltip">Logout</a>
+            <a href="#" title="Top" class="tooltip">Top</a>&middot;<a href="Default.aspx" title="Main Page"
+                class="tooltip">Trang chủ</a>&middot;
+                <a href="Login.aspx?Option=Logout" title="Top" class="tooltip">Đăng xuất</a>
         </p>
         <p class="mid">
             <!-- Change this to your own once purchased -->
-            &copy; Wide Admin 2010. All rights reserved.
+            &copy; <a href="http://otofun.net" target="_blank">Otofun.net </a>&nbsp;Xây dựng & phát triển <a href="http://www.purelink.vn" target="_blank" title="Thiết kế Website, Dịch vụ Social Media"> PureLink Corp</a>.
             <!-- -->
         </p>
     </div>

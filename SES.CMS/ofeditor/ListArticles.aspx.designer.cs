@@ -22,58 +22,130 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.Label lblAction;
         
         /// <summary>
-        /// cboCategoryNhap control.
+        /// divPV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cboCategoryNhap;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPV;
         
         /// <summary>
-        /// btnXoa1 control.
+        /// btnXoaPV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnXoa1;
+        protected global::System.Web.UI.WebControls.Button btnXoaPV;
         
         /// <summary>
-        /// btnGuiXuatBan1 control.
+        /// btnGuiBTV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuiXuatBan1;
+        protected global::System.Web.UI.WebControls.Button btnGuiBTV;
         
         /// <summary>
-        /// btnGuiXuatBanBTV1 control.
+        /// divBTV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuiXuatBanBTV1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divBTV;
         
         /// <summary>
-        /// btnTraLaiPhongVien1 control.
+        /// btnXoaBTV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTraLaiPhongVien1;
+        protected global::System.Web.UI.WebControls.Button btnXoaBTV;
         
         /// <summary>
-        /// btnChiuTrachNhiem1 control.
+        /// btnGuiXuatBan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnChiuTrachNhiem1;
+        protected global::System.Web.UI.WebControls.Button btnGuiXuatBan;
+        
+        /// <summary>
+        /// btnTraLaiPhongVien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTraLaiPhongVien;
+        
+        /// <summary>
+        /// btnChiuTrachNhiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnChiuTrachNhiem;
+        
+        /// <summary>
+        /// divTK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTK;
+        
+        /// <summary>
+        /// btnXoaTK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnXoaTK;
+        
+        /// <summary>
+        /// btnDuyetXuatBan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDuyetXuatBan;
+        
+        /// <summary>
+        /// btnHuyDuyetXB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHuyDuyetXB;
+        
+        /// <summary>
+        /// btnTKTraPV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTKTraPV;
+        
+        /// <summary>
+        /// btnTraBTV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTraBTV;
         
         /// <summary>
         /// grvListArticle control.
@@ -83,50 +155,5 @@ namespace SES.CMS.ofeditor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvListArticle;
-        
-        /// <summary>
-        /// btnXoa2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnXoa2;
-        
-        /// <summary>
-        /// btnGuiXuatBan2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuiXuatBan2;
-        
-        /// <summary>
-        /// btnGuiXuatBanBTV2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuiXuatBanBTV2;
-        
-        /// <summary>
-        /// btnTraLaiPhongVien2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTraLaiPhongVien2;
-        
-        /// <summary>
-        /// btnChiuTrachNhiem2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnChiuTrachNhiem2;
     }
 }
