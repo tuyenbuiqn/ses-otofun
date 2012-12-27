@@ -13,6 +13,15 @@ namespace SES.CMS.ofeditor {
     public partial class ListArticles {
         
         /// <summary>
+        /// lblAction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAction;
+        
+        /// <summary>
         /// cboCategoryNhap control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace SES.CMS.ofeditor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuiXuatBan1;
+        
+        /// <summary>
+        /// btnGuiXuatBanBTV1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuiXuatBanBTV1;
         
         /// <summary>
         /// btnTraLaiPhongVien1 control.
@@ -83,6 +101,15 @@ namespace SES.CMS.ofeditor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuiXuatBan2;
+        
+        /// <summary>
+        /// btnGuiXuatBanBTV2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuiXuatBanBTV2;
         
         /// <summary>
         /// btnTraLaiPhongVien2 control.

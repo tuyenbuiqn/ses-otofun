@@ -415,11 +415,15 @@
 .button-article
 {
 	border:none;
-	background:#ffffff;
+	background: #fff;
 	color:#000;
 	cursor:pointer;
 	float:right;
-	}	
+	border-right: 2px solid #555;
+	padding: 2px 5px;
+	margin-bottom: 5px;
+	border-radius: 0;
+}	
 .article-action span
 {
 	float:right;
