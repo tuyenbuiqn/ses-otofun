@@ -13,15 +13,6 @@ namespace SES.CMS.ofeditor {
     public partial class ListArticles {
         
         /// <summary>
-        /// pnelNhap control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnelNhap;
-        
-        /// <summary>
         /// cboCategoryNhap control.
         /// </summary>
         /// <remarks>
@@ -49,30 +40,66 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.Button btnGuiXuatBan1;
         
         /// <summary>
-        /// grvNhap control.
+        /// btnTraLaiPhongVien1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvNhap;
+        protected global::System.Web.UI.WebControls.Button btnTraLaiPhongVien1;
         
         /// <summary>
-        /// Button1 control.
+        /// btnChiuTrachNhiem1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnChiuTrachNhiem1;
         
         /// <summary>
-        /// Button2 control.
+        /// grvListArticle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.GridView grvListArticle;
+        
+        /// <summary>
+        /// btnXoa2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnXoa2;
+        
+        /// <summary>
+        /// btnGuiXuatBan2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuiXuatBan2;
+        
+        /// <summary>
+        /// btnTraLaiPhongVien2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTraLaiPhongVien2;
+        
+        /// <summary>
+        /// btnChiuTrachNhiem2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnChiuTrachNhiem2;
     }
 }
