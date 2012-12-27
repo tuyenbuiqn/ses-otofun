@@ -26,7 +26,8 @@ namespace SES.CMS.ofeditor
                         LoadButton(numberType);
                         if (!IsPostBack)
                         {
-                            LoadContent(numberType, int.Parse(Session["UserID"].ToString()));
+                           // LoadContent(numberType, int.Parse(Session["UserID"].ToString()));
+                            grvListArticleDataSource(3, 0, 0);
                         }
                     }
                     else
@@ -135,7 +136,7 @@ namespace SES.CMS.ofeditor
                 grvListArticleDataSource(0, int.Parse(Session["UserID"].ToString()), 0);
             }
         }
-        protected void btnGuiXuatBan1_Click(object sender, EventArgs e)
+        protected void btnGuiXuatBan_Click(object sender, EventArgs e)
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
@@ -174,7 +175,7 @@ namespace SES.CMS.ofeditor
 
             }
         }
-        protected void btnXoa1_Click(object sender, EventArgs e)
+        protected void btnXoa_Click(object sender, EventArgs e)
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
@@ -311,7 +312,7 @@ namespace SES.CMS.ofeditor
             int userID = int.Parse(Session["UserID"].ToString());
 
             //Nhap BTV
-            if (type == 0)
+            if (type == 0 | type == 5)
             {
                 
             }
@@ -319,20 +320,22 @@ namespace SES.CMS.ofeditor
             {
                 
             }
-            else if (type == 2)
+            else if (type == 2 || type == 3)
             {
- 
+                grvListArticle.Columns[6].Visible = false;
             }
         }
 
         protected void grvListArticle_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            int type = int.Parse(Request.QueryString["Type"]);
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                //if (int.Parse(Request.QueryString["Type"]) == 0)
-                //    grvListArticle.Columns[1].Visible = false;
-                //else if (int.Parse(Request.QueryString["Type"]) == 1)
-                //    e.Row.Cells[1].Visible = false;
+                if (type == 1)
+                {
+                    ImageButton btnDelete = e.Row.FindControl("btnDelete") as ImageButton;
+                    btnDelete.Visible = false;
+                }
             }
         }
 

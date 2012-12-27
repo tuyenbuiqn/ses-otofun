@@ -52,13 +52,13 @@
                     </asp:TemplateField>
                      <asp:TemplateField HeaderText="Ngày gửi biên tập" ItemStyle-Width="10%">
                         <ItemTemplate>
-                            <asp:Label runat="server" ID="lblCreateDate" Text='<%# (bool)(Eval("NgayGuiBienTap")==null)==true?"":Eval("NgayGuiBienTap","{0:dd/MM/yyyy}") %>'></asp:Label>
+                            <asp:Label runat="server" ID="lblCreateDate1" Text='<%# (bool)(Eval("ThoiGianGui")==null)==true?"":Eval("ThoiGianGui","{0:dd/MM/yyyy}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField ItemStyle-Width="10%" HeaderText="Thao tác">
                         <ItemTemplate>
                             <asp:ImageButton ID="btEdit" runat="server" CommandName="Select" ImageUrl="~/ofeditor/images/edit_16x16.gif" />
-                            <asp:ImageButton ID="btDelete" runat="server" CommandArgument='<%#Eval("ArticleID") %>'
+                            <asp:ImageButton ID="btnDelete" runat="server" CommandArgument='<%#Eval("ArticleID") %>'
                                 CommandName="Delete" ImageUrl="~/ofeditor/images/delete_16x16.gif" OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" />
                         </ItemTemplate>
                     </asp:TemplateField>
