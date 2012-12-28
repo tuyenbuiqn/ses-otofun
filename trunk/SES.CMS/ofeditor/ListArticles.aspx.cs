@@ -601,7 +601,7 @@ namespace SES.CMS.ofeditor
             {
                 int thuKyID = int.Parse(Session["UserID"].ToString());
                 int thuKyEdit = thuKyID;
-                new cmsArticleBL().ChuyenTrangThai_ThuKy(1, articleList, 3, thuKyID, thuKyEdit, DateTime.Now, false);
+                new cmsArticleBL().ChuyenTrangThai_ThuKy(1, articleList,2, thuKyID, thuKyEdit, DateTime.Now, false);
                 Ultility.Alert("Hủy duyệt xuất bản thành công", Request.Url.ToString());
             }
         }
