@@ -158,9 +158,9 @@ namespace SES.CMS.ofeditor
             {
                 // Xuất bản: Trạng thái = 3 + IsPublish = True
                 if (UserType == 0) // PV chỉ xem bài mình
-                    grvListArticleDataSource(new DataView(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, userCreate, CatID)," IsPublish = true","",DataViewRowState.CurrentRows).ToTable());
+                    grvListArticleDataSource(new DataView(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, userCreate, CatID), " IsPublish = true", "", DataViewRowState.CurrentRows).ToTable());
                 else if (UserType == 1 || UserType == 2) //BTV,TK đều được xem ko quan tâm user
-                    grvListArticleDataSource(new DataView(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID),"IsPublish = true","",DataViewRowState.CurrentRows).ToTable());
+                    grvListArticleDataSource(new DataView(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID), "IsPublish = true", "", DataViewRowState.CurrentRows).ToTable());
             }
             else if (ArticleType == 4) // Nếu là bài trả lại Biên tập thì chỉ Biên tập được xem, TK xem, PV ko xem
             {
@@ -491,7 +491,7 @@ namespace SES.CMS.ofeditor
             cmsArticleBL artBL = new cmsArticleBL();
             cmsArticleDO objArt = new cmsArticleDO();
 
-          //  bool isNotOK = false;
+            //  bool isNotOK = false;
             string articleList = "";
             for (int i = 0; i < grvListArticle.Rows.Count; i++)
             {
@@ -504,7 +504,7 @@ namespace SES.CMS.ofeditor
                     articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objHistory.Contents = contents + artBL.Select(objArt).Title + " </b> yêu cầu biên tập viên biên tập lại";
                     historyBL.Insert(objHistory);
-                //    isNotOK = false;
+                    //    isNotOK = false;
                 }
             }
             articleList += "-9999";
@@ -517,7 +517,7 @@ namespace SES.CMS.ofeditor
             {
                 int thuKyID = int.Parse(Session["UserID"].ToString());
                 int thuKyEdit = thuKyID;
-                new cmsArticleBL().ChuyenTrangThai_ThuKy(0,articleList, 5, thuKyID,thuKyEdit, DateTime.Now,false);
+                new cmsArticleBL().ChuyenTrangThai_ThuKy(0, articleList, 5, thuKyID, thuKyEdit, DateTime.Now, false);
                 Ultility.Alert("Trả bài viết biên tập viên thành công", Request.Url.ToString());
             }
         }
@@ -559,7 +559,7 @@ namespace SES.CMS.ofeditor
             {
                 int thuKyID = int.Parse(Session["UserID"].ToString());
                 int thuKyEdit = thuKyID;
-                new cmsArticleBL().ChuyenTrangThai_ThuKy(0, articleList, 4, thuKyID, thuKyEdit, DateTime.Now,false);
+                new cmsArticleBL().ChuyenTrangThai_ThuKy(0, articleList, 4, thuKyID, thuKyEdit, DateTime.Now, false);
                 Ultility.Alert("Trả bài viết phóng viên thành công", Request.Url.ToString());
             }
         }
@@ -689,6 +689,7 @@ namespace SES.CMS.ofeditor
         {
             int type = int.Parse(Request.QueryString["Type"]);
             int userID = int.Parse(Session["UserID"].ToString());
+            int UserType = int.Parse(Session["UserType"].ToString());
 
             //Nhap BTV
             if (type == 0 | type == 5)
@@ -706,12 +707,17 @@ namespace SES.CMS.ofeditor
                 grvListArticle.Columns[8].Visible = false;
 
             }
-            else if (type == 2)
+            else if (type == 2) // Bài viết chờ xuất bản
             {
                 grvListArticle.Columns[4].Visible = false;
                 grvListArticle.Columns[7].Visible = false;
                 grvListArticle.Columns[8].Visible = false;
-                grvListArticle.Columns[9].Visible = false;
+                // Quyền Thư ký -> có thể sửa
+                if (UserType == 2)
+                    grvListArticle.Columns[9].Visible = true;
+                // Quyền khác -> ko thể
+                else
+                    grvListArticle.Columns[9].Visible = false;
             }
             else if (type == 3)
             {
@@ -724,6 +730,7 @@ namespace SES.CMS.ofeditor
         protected void grvListArticle_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             int type = int.Parse(Request.QueryString["Type"]);
+            int UserType = int.Parse(Session["UserType"].ToString());
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 if (type == 1)
@@ -753,7 +760,14 @@ namespace SES.CMS.ofeditor
                             btnEdit.Visible = false;
                         }
                     }
-
+                }
+                else if (type == 2)
+                {
+                    if (UserType == 2)
+                    {
+                        ImageButton btnDelete = e.Row.FindControl("btnDelete") as ImageButton;
+                        btnDelete.Visible = false;
+                    }
                 }
             }
         }
