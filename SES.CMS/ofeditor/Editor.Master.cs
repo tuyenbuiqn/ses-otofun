@@ -45,18 +45,26 @@ namespace SES.CMS.ofeditor
                 divPV.Visible = true;
                 divBTV.Visible = false;
                 divTK.Visible = false;
+
+                hplDuyetBinhLuan.Visible = false;
+                hplQuanLyChung.Visible = false;
+                hplThongKeNhuanBut.Visible = false;
             }
             else if (userType == 1) // BTV
             {
                 divBTV.Visible = true;
                 divPV.Visible = false;
                 divTK.Visible = false;
+
+                hplThongKeNhuanBut.Visible = false;
+                hplQuanLyChung.Visible = false;
             }
             else if (userType == 2) //TK
             {
                 divTK.Visible = true;
                 divPV.Visible = false;
                 divBTV.Visible = false;
+
             }
 
         }

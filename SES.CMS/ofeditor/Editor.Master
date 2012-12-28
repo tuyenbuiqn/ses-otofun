@@ -59,14 +59,22 @@
             <!-- The navigation bar -->
             <div id="navbar">
                 <ul class="nav">
-                    <li><a href="Default.aspx">Quản lý Chung</a></li>
-                    <li><a href="AddNews.aspx">Bài viết</a></li>
-                    <li><a href="">Hiển thị Tin</a></li>
-                    <li><a href="">Duyệt Bình luận</a></li>
-                    <li><a href="">Tìm kiếm</a></li>
-                    <li><a href="">Thống kê Nhuận bút</a></li>
-                    <li><a href="">Quản lý Video</a></li>
-                    <li><a href="">Quản lý Gallery</a></li>
+                    <li>
+                        <asp:HyperLink runat="server"  ID="hplQuanLyChung">Quản lý chung</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="hplBaiViet" NavigateUrl="~/ofeditor/AddNews.aspx">Bài viết</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="hplHienThiTin">Hiển thị tin</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/ofeditor/Comments.aspx" ID="hplDuyetBinhLuan">Duyệt bình luận</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="hplTimKiem" NavigateUrl="~/ofeditor/Search.aspx">Tìm kiếm</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="hplThongKeNhuanBut">Thống kê nhuận bút</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="hplQuanLyVideo">Quản lý video</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="hplQuanLyGallery">Quản lý Gallery</asp:HyperLink></li>
                     <%-- <li style="display: none"><a href="">Multi Level Menu</a>
                         <ul>
                             <li><a href="">Menu Link 1</a></li>
