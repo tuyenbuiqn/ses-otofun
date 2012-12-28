@@ -414,20 +414,37 @@ namespace SES.CMS.AdminCP.PageUC
                 }
                 if (lblArticleCategory != null)
                 {
+                    string sArticleCategory = "";
                     try
                     {
                         DataTable dtCategory = new DataTable();
-                        dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
-                        if (dtCategory != null)
+                        DataTable dtListCategory = new DataTable();
+                        
+                        dtListCategory = new cmsArticleCategoryBL().SelectByArticleID(Int32.Parse(itemData["ArticleID"].ToString()));
+                        if (dtListCategory != null)
                         {
-                            lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                            for (int i = 0; i < dtListCategory.Rows.Count; i++)
+                            {
+                                dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(dtListCategory.Rows[i]["CategoryID"].ToString()));
+                                if (dtCategory != null)
+                                {
+                                    if (sArticleCategory == "")
+                                    {
+                                        sArticleCategory += dtCategory.Rows[0]["Title"].ToString();
+                                    }
+                                    else
+                                    {
+                                        sArticleCategory += "<Br />" + dtCategory.Rows[0]["Title"].ToString();
+                                    }
+                                }
+                            }
                         }
                     }
                     catch (Exception)
                     {
                         lblArticleCategory.Text = "";
                     }
-
+                    lblArticleCategory.Text = sArticleCategory;
                 }
                 if (lblArticleUserCreate != null)
                 {
@@ -472,22 +489,17 @@ namespace SES.CMS.AdminCP.PageUC
                 {
                     lnkEdit.CommandName = "Edit";
                     lnkEdit.CommandArgument = itemData["ArticleID"].ToString();
-                    string temp = itemData["IsPublish"].ToString();
-                    if (itemData["IsPublish"].ToString() == "True")
+                    if ((Session["UserType"].ToString() == "2") || (Session["UserType"].ToString() == "3"))
                     {
                         lnkEdit.Visible = true;
                     }
                     else
                     {
-                        if (Session["UserType"].ToString() == "2")
+                        if (Session["UserID"] != null)
                         {
-                            lnkEdit.Visible = true;
-                        }
-                        else
-                        {
-                            if (Session["UserID"] != null)
+                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
                             {
-                                if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                                if (itemData["IsPublish"].ToString() == "False")
                                 {
                                     lnkEdit.Visible = true;
                                 }
@@ -501,27 +513,27 @@ namespace SES.CMS.AdminCP.PageUC
                                 lnkEdit.Visible = false;
                             }
                         }
+                        else
+                        {
+                            lnkEdit.Visible = false;
+                        }
                     }
                 }
                 if (lnkDelete != null)
                 {
                     lnkDelete.CommandName = "Delete";
                     lnkDelete.CommandArgument = itemData["ArticleID"].ToString();
-                    if (itemData["IsPublish"].ToString() == "True")
+                    if ((Session["UserType"].ToString() == "2") || (Session["UserType"].ToString() == "3"))
                     {
                         lnkDelete.Visible = true;
                     }
                     else
                     {
-                        if (Session["UserType"].ToString() == "2")
+                        if (Session["UserID"] != null)
                         {
-                            lnkDelete.Visible = true;
-                        }
-                        else
-                        {
-                            if (Session["UserID"] != null)
+                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
                             {
-                                if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                                if (itemData["IsPublish"].ToString() == "False")
                                 {
                                     lnkDelete.Visible = true;
                                 }
@@ -534,6 +546,10 @@ namespace SES.CMS.AdminCP.PageUC
                             {
                                 lnkDelete.Visible = false;
                             }
+                        }
+                        else
+                        {
+                            lnkDelete.Visible = false;
                         }
                     }
                 }
