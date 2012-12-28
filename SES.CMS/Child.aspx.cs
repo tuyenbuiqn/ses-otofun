@@ -217,7 +217,10 @@ namespace SES.CMS
             {
                 DataTable dtCategory= new DataTable();
                 dtCategory= new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
-                lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                if (dtCategory != null)
+                {
+                    lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                }
             }
             if (lblArticleTime != null)
             {
