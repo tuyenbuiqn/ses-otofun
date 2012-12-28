@@ -13,7 +13,7 @@ namespace SES.CMS.AdminCP.PageUC
 {
     public partial class ucSearch : System.Web.UI.UserControl
     {
-        
+        cmsHistoryDO objHtr = new cmsHistoryDO();
 
         private int _NumberItemPerPage = 20;
 
@@ -549,7 +549,19 @@ namespace SES.CMS.AdminCP.PageUC
             int iArticleId = Int32.Parse(e.CommandArgument.ToString());
             if (e.CommandName == "Delete")
             {
+                DataTable dtArticle = new DataTable();
+                DataTable dtUser = new DataTable();
+                dtArticle = new cmsArticleBL().SelectByPK(iArticleId);
                 new cmsArticleBL().Delete(new cmsArticleDO { ArticleID = iArticleId });
+                objHtr.Action = "Xóa bài viết ";
+                objHtr.Contents = "Bài viết tác động: [" + iArticleId + "]" + dtArticle.Rows[0]["Title"].ToString();
+                if(Session["UserID"] != null){
+                    string iUserId = Session["UserID"].ToString();
+                    dtUser = new sysUserBL().User_GetByPK(int.Parse(iUserId));
+                    objHtr.Comment = "User tác động: [" + dtUser.Rows[0]["UserID"].ToString() + "] " + dtUser.Rows[0]["Username"].ToString();
+                }
+                objHtr.HistoryTime = DateTime.Now;
+                new cmsHistoryBL().Insert(objHtr);
                 Functions.Alert("Xóa bản tin thành công!");
                 this.BindrptListArticle();
             }
