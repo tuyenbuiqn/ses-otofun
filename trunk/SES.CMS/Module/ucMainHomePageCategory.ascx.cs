@@ -25,7 +25,8 @@ namespace SES.CMS.Module
             if (cache["DataTables"] == null)
             {
                 DataTable dtCache = new DataView(new cmsCategoryBL().SelectAll(), " IsHomPage = 1 and IsPublish = 1 and ParentID = 0", " OrderID ASC", DataViewRowState.CurrentRows).ToTable();
-                cache.Insert("DataTables", dtCache, null,DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                if (dtCache != null)
+                    cache.Insert("DataTables", dtCache, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
             }
             rptCategoryParent.DataSource = (DataTable)cache["DataTables"];
             rptCategoryParent.DataBind();
@@ -51,7 +52,8 @@ namespace SES.CMS.Module
                 if (cache[keyCacheChildMenu] == null)
                 {
                     DataTable dtMenuChild = cateBL.SelectByParent(categoryID);
-                    cache.Insert(keyCacheChildMenu, dtMenuChild, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                    if (dtMenuChild != null)
+                        cache.Insert(keyCacheChildMenu, dtMenuChild, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
                 Repeater rptChildCate = (Repeater)item.FindControl("rptChildCate");
                 rptChildCate.DataSource = (DataTable)cache[keyCacheChildMenu];
@@ -62,7 +64,8 @@ namespace SES.CMS.Module
                 if (cache[keyCacheTopHightLight] == null)
                 {
                     DataTable dtTopHighLight = artBL.SelectHomeNews(categoryID);
-                    cache.Insert(keyCacheTopHightLight, dtTopHighLight, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                    if (dtTopHighLight != null)
+                        cache.Insert(keyCacheTopHightLight, dtTopHighLight, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
                 DataTable dtCacheTopHight = (DataTable)cache[keyCacheTopHightLight];
                 int topArtID = 0;
@@ -76,7 +79,8 @@ namespace SES.CMS.Module
                 if (cache[keyCacheOther] == null)
                 {
                     DataTable dtTopOtherHighLight = new DataView(dtCacheTopHight, "ArticleID <> " + topArtID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
-                    cache.Insert(keyCacheOther, dtTopOtherHighLight, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                    if (dtTopOtherHighLight != null)
+                        cache.Insert(keyCacheOther, dtTopOtherHighLight, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
                 Repeater rptTopOtherHighLight = (Repeater)item.FindControl("rptTopOtherHighLight");
                 rptTopOtherHighLight.DataSource = (DataTable)cache[keyCacheOther];
@@ -88,27 +92,28 @@ namespace SES.CMS.Module
             cmsCategoryBL cateBL = new cmsCategoryBL();
             cmsArticleBL artBL = new cmsArticleBL();
             RepeaterItem item = e.Item;
-          //  Repeater rptTopHightLight = (Repeater)rptCategoryParent.FindControl("rptTopHighLight");
-            
+            //  Repeater rptTopHightLight = (Repeater)rptCategoryParent.FindControl("rptTopHighLight");
+
             //if (rptTopHightLight.Items.Count > 0)
             //{
-                Repeater rptTinLienQuan1 = (Repeater)e.Item.FindControl("rptTinLienQuan1");
-                if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
-                {
-                    DataRowView drv = (DataRowView)item.DataItem;
-                    int articleID = 0;
-                    articleID = int.Parse(drv["ArticleID"].ToString());
+            Repeater rptTinLienQuan1 = (Repeater)e.Item.FindControl("rptTinLienQuan1");
+            if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
+            {
+                DataRowView drv = (DataRowView)item.DataItem;
+                int articleID = 0;
+                articleID = int.Parse(drv["ArticleID"].ToString());
 
-                    string keyTinLienQuan1 = "TinLienQuan1=" + articleID;
-                    if (cache[keyTinLienQuan1] == null)
-                    {
-                        DataTable dtTinLienQuan1 = artBL.GetTinLienQuan1(articleID);
+                string keyTinLienQuan1 = "TinLienQuan1=" + articleID;
+                if (cache[keyTinLienQuan1] == null)
+                {
+                    DataTable dtTinLienQuan1 = artBL.GetTinLienQuan1(articleID);
+                    if (dtTinLienQuan1 != null)
                         if(dtTinLienQuan1!=null)
                         cache.Insert(keyTinLienQuan1, dtTinLienQuan1, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
-                    }
-                    rptTinLienQuan1.DataSource = (DataTable)cache[keyTinLienQuan1];
-                    rptTinLienQuan1.DataBind();
                 }
+                rptTinLienQuan1.DataSource = (DataTable)cache[keyTinLienQuan1];
+                rptTinLienQuan1.DataBind();
+            }
             //}
         }
         protected DataTable dtTinLienQuan1(int articleID)
