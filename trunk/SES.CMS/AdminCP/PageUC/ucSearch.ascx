@@ -117,8 +117,10 @@
                     <telerik:RadDatePicker ID="RadDatePickerStart" DateInput-DateFormat="dd/MM/yyyy" runat="server">
                     </telerik:RadDatePicker>
                 </td>
-                <td colspan="2">
+                <td>
                     Đến: 
+                </td>
+                <td>
                     <telerik:RadDatePicker ID="RadDatePickerEnd"  DateInput-DateFormat="dd/MM/yyyy" runat="server">
                     </telerik:RadDatePicker>
                 </td>
