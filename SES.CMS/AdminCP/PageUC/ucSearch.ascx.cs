@@ -465,26 +465,34 @@ namespace SES.CMS.AdminCP.PageUC
             {
                 lnkEdit.CommandName = "Edit";
                 lnkEdit.CommandArgument = itemData["ArticleID"].ToString();
-                if (itemData["TrangThai"].ToString() == "3")
+                string temp = itemData["IsPublish"].ToString();
+                if (itemData["IsPublish"].ToString() == "True")
                 {
                     lnkEdit.Visible = true;
                 }
                 else
                 {
-                    if (Session["UserID"] != null)
+                    if (Session["UserType"].ToString() == "2")
                     {
-                        if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                        lnkEdit.Visible = true;
+                    }
+                    else
+                    {
+                        if (Session["UserID"] != null)
                         {
-                            lnkEdit.Visible = true;
+                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                            {
+                                lnkEdit.Visible = true;
+                            }
+                            else
+                            {
+                                lnkEdit.Visible = false;
+                            }
                         }
                         else
                         {
                             lnkEdit.Visible = false;
                         }
-                    }
-                    else
-                    {
-                        lnkEdit.Visible = false;
                     }
                 }
             }
@@ -492,32 +500,40 @@ namespace SES.CMS.AdminCP.PageUC
             {
                 lnkDelete.CommandName = "Delete";
                 lnkDelete.CommandArgument = itemData["ArticleID"].ToString();
-                if (itemData["TrangThai"].ToString() == "3")
+                if (itemData["IsPublish"].ToString() == "True")
                 {
                     lnkDelete.Visible = true;
                 }
                 else
                 {
-                    if (Session["UserID"] != null)
+                    if (Session["UserType"].ToString() == "2")
                     {
-                        if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                        lnkDelete.Visible = true;
+                    }
+                    else
+                    {
+                        if (Session["UserID"] != null)
                         {
-                            lnkDelete.Visible = true;
+                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                            {
+                                lnkDelete.Visible = true;
+                            }
+                            else
+                            {
+                                lnkDelete.Visible = false;
+                            }
                         }
                         else
                         {
                             lnkDelete.Visible = false;
                         }
                     }
-                    else
-                    {
-                        lnkDelete.Visible = false;
-                    }
                 }
             }
             if (chkView != null)
             {
-                if (itemData["TrangThai"].ToString() == "3")
+                string temp = itemData["IsPublish"].ToString();
+                if (itemData["IsPublish"].ToString() == "True")
                 {
                     chkView.Checked = true;
                 }
