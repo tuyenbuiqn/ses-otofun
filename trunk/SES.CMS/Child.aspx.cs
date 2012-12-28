@@ -219,7 +219,10 @@ namespace SES.CMS
                 dtCategory= new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
                 if (dtCategory != null)
                 {
-                    lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                    if (dtCategory != null)
+                    {
+                        lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                    }
                 }
             }
             if (lblArticleTime != null)
@@ -274,26 +277,29 @@ namespace SES.CMS
                 if (ArticleSelectId != 0)
                 {
                     dtArticle = new cmsArticleBL().SelectByPK(ArticleSelectId);
-                    if (hdfListArticlesId != null)
+                    if (dtArticle != null)
                     {
-                        if (hdfListArticlesId.Value == "")
+                        if (hdfListArticlesId != null)
                         {
-                            hdfListArticlesId.Value += dtArticle.Rows[0]["ArticleID"].ToString();
+                            if (hdfListArticlesId.Value == "")
+                            {
+                                hdfListArticlesId.Value += dtArticle.Rows[0]["ArticleID"].ToString();
+                            }
+                            else
+                            {
+                                hdfListArticlesId.Value += "," + dtArticle.Rows[0]["ArticleID"].ToString();
+                            }
                         }
-                        else
+                        if (hdfListArticlesName != null)
                         {
-                            hdfListArticlesId.Value += "," + dtArticle.Rows[0]["ArticleID"].ToString();
-                        }
-                    }
-                    if (hdfListArticlesName != null)
-                    {
-                        if (hdfListArticlesName.Value == "")
-                        {
-                            hdfListArticlesName.Value += dtArticle.Rows[0]["Title"].ToString();
-                        }
-                        else
-                        {
-                            hdfListArticlesName.Value += "," + dtArticle.Rows[0]["Title"].ToString();
+                            if (hdfListArticlesName.Value == "")
+                            {
+                                hdfListArticlesName.Value += dtArticle.Rows[0]["Title"].ToString();
+                            }
+                            else
+                            {
+                                hdfListArticlesName.Value += "," + dtArticle.Rows[0]["Title"].ToString();
+                            }
                         }
                     }
                 }
@@ -316,12 +322,18 @@ namespace SES.CMS
 
             if (lblArticleSelect != null)
             {
-                lblArticleSelect.Text = dtArticle.Rows[0]["Title"].ToString();
+                if (dtArticle != null)
+                {
+                    lblArticleSelect.Text = dtArticle.Rows[0]["Title"].ToString();
+                }
             }
             if (lnkDelete != null)
             {
                 lnkDelete.CommandName = "Delete";
-                lnkDelete.CommandArgument = dtArticle.Rows[0]["ArticleID"].ToString();
+                if (dtArticle != null)
+                {
+                    lnkDelete.CommandArgument = dtArticle.Rows[0]["ArticleID"].ToString();
+                }
             }
         }
 
