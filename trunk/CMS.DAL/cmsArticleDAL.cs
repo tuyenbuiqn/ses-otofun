@@ -1219,6 +1219,43 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+        public void ChuyenTrangThai_ThuKy(int type,string articleIDList, int trangThai, int thuKyID,int thuKyEdit, DateTime thoiGianXuatBan,bool isPublish)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_ChuyenTrangThai_TK";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@Type", SqlDbType.Int);
+            Sqlparam.Value = type;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ArticleIDList", SqlDbType.NVarChar);
+            Sqlparam.Value = articleIDList;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@TrangThai", SqlDbType.Int);
+            Sqlparam.Value = trangThai;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThuKyID", SqlDbType.Int);
+            Sqlparam.Value = thuKyID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThuKyEdit", SqlDbType.Int);
+            Sqlparam.Value = thuKyEdit;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@ThoiGianXuatBan", SqlDbType.DateTime);
+            Sqlparam.Value = thoiGianXuatBan;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@IsPublish", SqlDbType.Bit);
+            Sqlparam.Value = isPublish;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            base.ExecuteNoneQuery(Sqlcomm);
+        }
         public void ChuyenTrangThai_BienTapVien(string articleIDList, int trangThai, int bienTapVienID, DateTime thoiGianGuiXuatBan)
         {
             SqlCommand Sqlcomm = new SqlCommand();
