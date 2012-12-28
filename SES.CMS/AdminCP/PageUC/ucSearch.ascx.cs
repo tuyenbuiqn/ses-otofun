@@ -555,7 +555,8 @@ namespace SES.CMS.AdminCP.PageUC
             }
             if (e.CommandName == "Edit")
             {
-                Response.Redirect("Default.aspx?Page=Article&ArticleID=" + iArticleId.ToString());
+                //Khi nào dùng thì sửa lại link bên dưới
+                //Response.Redirect("Default.aspx?Page=Article&ArticleID=" + iArticleId.ToString());
             }
         }
 
