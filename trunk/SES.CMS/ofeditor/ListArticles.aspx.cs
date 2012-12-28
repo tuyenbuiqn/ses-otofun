@@ -411,7 +411,7 @@ namespace SES.CMS.ofeditor
             string contents = "Biên tập viên " + Session["UserName"].ToString() + " gửi bài viết:<b> ";
             cmsArticleBL artBL = new cmsArticleBL();
             cmsArticleDO objArt = new cmsArticleDO();
-
+            bool isNotOK = false;
             string articleList = "";
             for (int i = 0; i < grvListArticle.Rows.Count; i++)
             {
@@ -419,13 +419,24 @@ namespace SES.CMS.ofeditor
                 CheckBox chk = (CheckBox)row.FindControl("chkSelect");
                 if (chk.Checked == true)
                 {
-                    articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objArt.ArticleID = int.Parse(grvListArticle.DataKeys[row.RowIndex].Value.ToString());
-                    objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>chờ xuất bản";
-                    historyBL.Insert(objHistory);
+                    objArt = artBL.Select(objArt);
+                    if (objArt.BTVEdit == int.Parse(Session["UserID"].ToString()))
+                    {
+                        articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
+                        objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>chờ xuất bản";
+                        historyBL.Insert(objHistory);
+                        isNotOK = false;
+                    }
+                    else { isNotOK = true; }
                 }
             }
             articleList += "-9999";
+            if (isNotOK == true)
+            {
+                Functions.Alert("Bạn không đủ quyền hạn gửi xuất bản bài viết!");
+                return;
+            }
             if (articleList.Equals("-9999"))
             {
                 Functions.Alert("Vui lòng chọn bài viết");
