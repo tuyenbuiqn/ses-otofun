@@ -201,32 +201,37 @@ namespace SES.CMS.ofeditor
             Label lblArticleCategory = (Label)e.Item.FindControl("lblArticleCategory");
             Label lblArticleTime = (Label)e.Item.FindControl("lblArticleTime");
             LinkButton lnkSelectItem = (LinkButton)e.Item.FindControl("lnkSelectItem");
-
-            if (lblArticleId != null)
+            try
             {
-                lblArticleId.Text = itemData["ArticleID"].ToString();
-            }
-            if (lblArticleName != null)
-            {
-                lblArticleName.Text = itemData["Title"].ToString();
-            }
-            if (lblArticleCategory != null)
-            {
-                DataTable dtCategory = new DataTable();
-                dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
-                if (dtCategory != null)
+                if (lblArticleId != null)
                 {
-                    lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                    lblArticleId.Text = itemData["ArticleID"].ToString();
+                }
+                if (lblArticleName != null)
+                {
+                    lblArticleName.Text = itemData["Title"].ToString();
+                }
+                if (lblArticleCategory != null)
+                {
+                    DataTable dtCategory = new DataTable();
+                    dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
+                    if (dtCategory != null)
+                    {
+                        lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                    }
+                }
+                if (lblArticleTime != null)
+                {
+                    lblArticleTime.Text = itemData["CreateDate"].ToString();
+                }
+                if (lnkSelectItem != null)
+                {
+                    lnkSelectItem.CommandName = "Select";
+                    lnkSelectItem.CommandArgument = itemData["ArticleID"].ToString();
                 }
             }
-            if (lblArticleTime != null)
+            catch (Exception)
             {
-                lblArticleTime.Text = itemData["CreateDate"].ToString();
-            }
-            if (lnkSelectItem != null)
-            {
-                lnkSelectItem.CommandName = "Select";
-                lnkSelectItem.CommandArgument = itemData["ArticleID"].ToString();
             }
         }
 
@@ -313,21 +318,26 @@ namespace SES.CMS.ofeditor
             dtArticle = new cmsArticleBL().SelectByPK(Int32.Parse(itemData["ArticlesSelectId"].ToString()));
             Label lblArticleSelect = (Label)e.Item.FindControl("lblArticleSelect");
             LinkButton lnkDelete = (LinkButton)e.Item.FindControl("lnkDelete");
-
-            if (lblArticleSelect != null)
+            try
             {
-                if (dtArticle != null)
+                if (lblArticleSelect != null)
                 {
-                    lblArticleSelect.Text = dtArticle.Rows[0]["Title"].ToString();
+                    if (dtArticle != null)
+                    {
+                        lblArticleSelect.Text = dtArticle.Rows[0]["Title"].ToString();
+                    }
+                }
+                if (lnkDelete != null)
+                {
+                    lnkDelete.CommandName = "Delete";
+                    if (dtArticle != null)
+                    {
+                        lnkDelete.CommandArgument = dtArticle.Rows[0]["ArticleID"].ToString();
+                    }
                 }
             }
-            if (lnkDelete != null)
+            catch (Exception)
             {
-                lnkDelete.CommandName = "Delete";
-                if (dtArticle != null)
-                {
-                    lnkDelete.CommandArgument = dtArticle.Rows[0]["ArticleID"].ToString();
-                }
             }
         }
 

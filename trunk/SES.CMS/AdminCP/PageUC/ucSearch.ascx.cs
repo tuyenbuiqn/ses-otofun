@@ -402,145 +402,156 @@ namespace SES.CMS.AdminCP.PageUC
             LinkButton lnkEdit = (LinkButton)e.Item.FindControl("lnkEdit");
             LinkButton lnkDelete = (LinkButton)e.Item.FindControl("lnkDelete");
             CheckBox chkView = (CheckBox)e.Item.FindControl("chkView");
+            try
+            {
+                if (lblArticleId != null)
+                {
+                    lblArticleId.Text = itemData["ArticleID"].ToString();
+                }
+                if (lblArticleTitle != null)
+                {
+                    lblArticleTitle.Text = itemData["Title"].ToString();
+                }
+                if (lblArticleCategory != null)
+                {
+                    try
+                    {
+                        DataTable dtCategory = new DataTable();
+                        dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
+                        if (dtCategory != null)
+                        {
+                            lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        lblArticleCategory.Text = "";
+                    }
 
-            if (lblArticleId != null)
-            {
-                lblArticleId.Text = itemData["ArticleID"].ToString();
-            }
-            if (lblArticleTitle != null)
-            {
-                lblArticleTitle.Text = itemData["Title"].ToString();
-            }
-            if (lblArticleCategory != null)
-            {
-                try
-                {
-                    DataTable dtCategory = new DataTable();
-                    dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
-                    lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
                 }
-                catch (Exception)
+                if (lblArticleUserCreate != null)
                 {
-                    lblArticleCategory.Text = "";
+                    try
+                    {
+                        DataTable dtUser = new DataTable();
+                        dtUser = new sysUserBL().User_GetByPK(Int32.Parse(itemData["UserCreate"].ToString()));
+                        if (dtUser != null)
+                        {
+                            lblArticleUserCreate.Text = dtUser.Rows[0]["Username"].ToString();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        lblArticleUserCreate.Text = "";
+                    }
                 }
-                
-            }
-            if (lblArticleUserCreate != null)
-            {
-                try
+                if (lblArticleDateCreate != null)
                 {
-                    DataTable dtUser = new DataTable();
-                    dtUser = new sysUserBL().User_GetByPK(Int32.Parse(itemData["UserCreate"].ToString()));
-                    lblArticleUserCreate.Text = dtUser.Rows[0]["Username"].ToString();
+                    try
+                    {
+                        DateTime sdate = Convert.ToDateTime(itemData["CreateDate"].ToString());
+                        lblArticleDateCreate.Text = string.Format("{0:dd/MM/yyyy}", sdate);
+                    }
+                    catch (Exception)
+                    {
+                        lblArticleDateCreate.Text = "";
+                    }
                 }
-                catch (Exception)
+                if (lblArticleView != null)
                 {
-                    lblArticleUserCreate.Text = "";
+                    if (itemData["LuotView"].ToString() != "")
+                    {
+                        lblArticleView.Text = itemData["LuotView"].ToString();
+                    }
+                    else
+                    {
+                        lblArticleView.Text = "0";
+                    }
                 }
-            }
-            if (lblArticleDateCreate != null)
-            {
-                try
+                if (lnkEdit != null)
                 {
-                    DateTime sdate = Convert.ToDateTime(itemData["CreateDate"].ToString());
-                    lblArticleDateCreate.Text = string.Format("{0:dd/MM/yyyy}", sdate);
-                }
-                catch (Exception)
-                {
-                    lblArticleDateCreate.Text = "";
-                }
-            }
-            if (lblArticleView != null)
-            {
-                if (itemData["LuotView"].ToString() != "")
-                {
-                    lblArticleView.Text = itemData["LuotView"].ToString();
-                }
-                else
-                {
-                    lblArticleView.Text = "0";
-                }
-            }
-            if (lnkEdit != null)
-            {
-                lnkEdit.CommandName = "Edit";
-                lnkEdit.CommandArgument = itemData["ArticleID"].ToString();
-                string temp = itemData["IsPublish"].ToString();
-                if (itemData["IsPublish"].ToString() == "True")
-                {
-                    lnkEdit.Visible = true;
-                }
-                else
-                {
-                    if (Session["UserType"].ToString() == "2")
+                    lnkEdit.CommandName = "Edit";
+                    lnkEdit.CommandArgument = itemData["ArticleID"].ToString();
+                    string temp = itemData["IsPublish"].ToString();
+                    if (itemData["IsPublish"].ToString() == "True")
                     {
                         lnkEdit.Visible = true;
                     }
                     else
                     {
-                        if (Session["UserID"] != null)
+                        if (Session["UserType"].ToString() == "2")
                         {
-                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                            lnkEdit.Visible = true;
+                        }
+                        else
+                        {
+                            if (Session["UserID"] != null)
                             {
-                                lnkEdit.Visible = true;
+                                if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                                {
+                                    lnkEdit.Visible = true;
+                                }
+                                else
+                                {
+                                    lnkEdit.Visible = false;
+                                }
                             }
                             else
                             {
                                 lnkEdit.Visible = false;
                             }
                         }
-                        else
-                        {
-                            lnkEdit.Visible = false;
-                        }
                     }
                 }
-            }
-            if (lnkDelete != null)
-            {
-                lnkDelete.CommandName = "Delete";
-                lnkDelete.CommandArgument = itemData["ArticleID"].ToString();
-                if (itemData["IsPublish"].ToString() == "True")
+                if (lnkDelete != null)
                 {
-                    lnkDelete.Visible = true;
-                }
-                else
-                {
-                    if (Session["UserType"].ToString() == "2")
+                    lnkDelete.CommandName = "Delete";
+                    lnkDelete.CommandArgument = itemData["ArticleID"].ToString();
+                    if (itemData["IsPublish"].ToString() == "True")
                     {
                         lnkDelete.Visible = true;
                     }
                     else
                     {
-                        if (Session["UserID"] != null)
+                        if (Session["UserType"].ToString() == "2")
                         {
-                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                            lnkDelete.Visible = true;
+                        }
+                        else
+                        {
+                            if (Session["UserID"] != null)
                             {
-                                lnkDelete.Visible = true;
+                                if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                                {
+                                    lnkDelete.Visible = true;
+                                }
+                                else
+                                {
+                                    lnkDelete.Visible = false;
+                                }
                             }
                             else
                             {
                                 lnkDelete.Visible = false;
                             }
                         }
-                        else
-                        {
-                            lnkDelete.Visible = false;
-                        }
+                    }
+                }
+                if (chkView != null)
+                {
+                    string temp = itemData["IsPublish"].ToString();
+                    if (itemData["IsPublish"].ToString() == "True")
+                    {
+                        chkView.Checked = true;
+                    }
+                    else
+                    {
+                        chkView.Checked = false;
                     }
                 }
             }
-            if (chkView != null)
+            catch (Exception)
             {
-                string temp = itemData["IsPublish"].ToString();
-                if (itemData["IsPublish"].ToString() == "True")
-                {
-                    chkView.Checked = true;
-                }
-                else
-                {
-                    chkView.Checked = false;
-                }
             }
         }
 
@@ -549,21 +560,34 @@ namespace SES.CMS.AdminCP.PageUC
             int iArticleId = Int32.Parse(e.CommandArgument.ToString());
             if (e.CommandName == "Delete")
             {
-                DataTable dtArticle = new DataTable();
-                DataTable dtUser = new DataTable();
-                dtArticle = new cmsArticleBL().SelectByPK(iArticleId);
-                new cmsArticleBL().Delete(new cmsArticleDO { ArticleID = iArticleId });
-                objHtr.Action = "Xóa bài viết ";
-                objHtr.Contents = "Bài viết tác động: [" + iArticleId + "]" + dtArticle.Rows[0]["Title"].ToString();
-                if(Session["UserID"] != null){
-                    string iUserId = Session["UserID"].ToString();
-                    dtUser = new sysUserBL().User_GetByPK(int.Parse(iUserId));
-                    objHtr.Comment = "User tác động: [" + dtUser.Rows[0]["UserID"].ToString() + "] " + dtUser.Rows[0]["Username"].ToString();
+                try
+                {
+                    DataTable dtArticle = new DataTable();
+                    DataTable dtUser = new DataTable();
+                    dtArticle = new cmsArticleBL().SelectByPK(iArticleId);
+                    new cmsArticleBL().Delete(new cmsArticleDO { ArticleID = iArticleId });
+                    objHtr.Action = "Xóa bài viết ";
+                    if (dtArticle != null)
+                    {
+                        objHtr.Contents = "Bài viết tác động: [" + iArticleId + "]" + dtArticle.Rows[0]["Title"].ToString();
+                    }
+                    if (Session["UserID"] != null)
+                    {
+                        string iUserId = Session["UserID"].ToString();
+                        dtUser = new sysUserBL().User_GetByPK(int.Parse(iUserId));
+                        if (dtUser != null)
+                        {
+                            objHtr.Comment = "User tác động: [" + dtUser.Rows[0]["UserID"].ToString() + "] " + dtUser.Rows[0]["Username"].ToString();
+                        }
+                    }
+                    objHtr.HistoryTime = DateTime.Now;
+                    new cmsHistoryBL().Insert(objHtr);
+                    Functions.Alert("Xóa bản tin thành công!");
+                    this.BindrptListArticle();
                 }
-                objHtr.HistoryTime = DateTime.Now;
-                new cmsHistoryBL().Insert(objHtr);
-                Functions.Alert("Xóa bản tin thành công!");
-                this.BindrptListArticle();
+                catch (Exception)
+                {
+                }
             }
             if (e.CommandName == "Edit")
             {
