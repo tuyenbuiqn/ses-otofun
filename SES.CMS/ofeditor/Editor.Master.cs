@@ -20,7 +20,9 @@ namespace SES.CMS.ofeditor
                 lblUserName.Text = Session["UserName"].ToString();
                 int userType = int.Parse(Session["UserType"].ToString());
                 if (userType <= 3)
-                { }
+                {
+                    LoadMenu(userType);
+                }
                 else
                 {
                     Response.Redirect("/Default.aspx");
@@ -34,6 +36,29 @@ namespace SES.CMS.ofeditor
             Session["UserType"] = null;
             Session.Abandon();
             Response.Redirect("/ofeditor/Login.aspx");
+        }
+
+        protected void LoadMenu(int userType)
+        {
+            if (userType == 0) //PV
+            {
+                divPV.Visible = true;
+                divBTV.Visible = false;
+                divTK.Visible = false;
+            }
+            else if (userType == 1) // BTV
+            {
+                divBTV.Visible = true;
+                divPV.Visible = false;
+                divTK.Visible = false;
+            }
+            else if (userType == 2) //TK
+            {
+                divTK.Visible = true;
+                divPV.Visible = false;
+                divBTV.Visible = false;
+            }
+
         }
     }
 }
