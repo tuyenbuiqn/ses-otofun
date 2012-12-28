@@ -722,7 +722,12 @@ namespace SES.CMS.ofeditor
             else if (type == 3)
             {
                 grvListArticle.Columns[4].Visible = false;
-                grvListArticle.Columns[9].Visible = false;
+                // Quyền Thư ký -> có thể sửa
+                if (UserType == 2)
+                grvListArticle.Columns[9].Visible = true;
+                   // Quyền khác -> ko thể
+                else
+                    grvListArticle.Columns[9].Visible = false;
             }
         }
         cmsArticleDO objArt = new cmsArticleDO();
@@ -762,6 +767,14 @@ namespace SES.CMS.ofeditor
                     }
                 }
                 else if (type == 2)
+                {
+                    if (UserType == 2)
+                    {
+                        ImageButton btnDelete = e.Row.FindControl("btnDelete") as ImageButton;
+                        btnDelete.Visible = false;
+                    }
+                }
+                else if (type == 3)
                 {
                     if (UserType == 2)
                     {
