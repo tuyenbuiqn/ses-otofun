@@ -104,7 +104,7 @@ namespace SES.CMS.ofeditor.Module
                 ddlPvCreate.DataBind();
                 ddlPvCreate.Items.Insert(0, new ListItem("---Chọn PV viết bài---", "0"));
             }
-            
+
         }
 
         public void BindddlBtvEdit()
@@ -169,7 +169,7 @@ namespace SES.CMS.ofeditor.Module
             }
         }
 
-        protected void BindddlPageIndexData( DataTable dtArticle)
+        protected void BindddlPageIndexData(DataTable dtArticle)
         {
             if (ddlPageIndex != null)
             {
@@ -197,10 +197,10 @@ namespace SES.CMS.ofeditor.Module
         public void BindrptListArticle()
         {
             DataTable dtArticle = new DataTable("dtArticle");
-            string lstCategoryID= "-1";
+            string lstCategoryID = "-1";
             DateTime ArticleSearchDateStart = new DateTime(1900, 1, 1);
-            DateTime ArticleSearchDateEnd= new DateTime(2100, 1, 1);
-            string Keyw="";
+            DateTime ArticleSearchDateEnd = new DateTime(2100, 1, 1);
+            string Keyw = "";
             string iListStatus = "";
             string iPvCreate = "";
             string iBtvEdit = "";
@@ -378,10 +378,10 @@ namespace SES.CMS.ofeditor.Module
             string CatID = "-1";
             foreach (RadTreeNode n in rtv.CheckedNodes)
             {
-                
+
                 CatID += "," + n.Value.ToString();
             }
-            
+
             hdfCategory.Value = CatID;
             hdfPageIndex.Value = "0";
             this.BindrptListArticle();
@@ -415,20 +415,37 @@ namespace SES.CMS.ofeditor.Module
                 }
                 if (lblArticleCategory != null)
                 {
+                    string sArticleCategory = "";
                     try
                     {
                         DataTable dtCategory = new DataTable();
-                        dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
-                        if (dtCategory != null)
+                        DataTable dtListCategory = new DataTable();
+
+                        dtListCategory = new cmsArticleCategoryBL().SelectByArticleID(Int32.Parse(itemData["ArticleID"].ToString()));
+                        if (dtListCategory != null)
                         {
-                            lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                            for (int i = 0; i < dtListCategory.Rows.Count; i++)
+                            {
+                                dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(dtListCategory.Rows[i]["CategoryID"].ToString()));
+                                if (dtCategory != null)
+                                {
+                                    if (sArticleCategory == "")
+                                    {
+                                        sArticleCategory += dtCategory.Rows[0]["Title"].ToString();
+                                    }
+                                    else
+                                    {
+                                        sArticleCategory += "<Br />" + dtCategory.Rows[0]["Title"].ToString();
+                                    }
+                                }
+                            }
                         }
                     }
                     catch (Exception)
                     {
                         lblArticleCategory.Text = "";
                     }
-
+                    lblArticleCategory.Text = sArticleCategory;
                 }
                 if (lblArticleUserCreate != null)
                 {
@@ -473,22 +490,17 @@ namespace SES.CMS.ofeditor.Module
                 {
                     lnkEdit.CommandName = "Edit";
                     lnkEdit.CommandArgument = itemData["ArticleID"].ToString();
-                    string temp = itemData["IsPublish"].ToString();
-                    if (itemData["IsPublish"].ToString() == "True")
+                    if ((Session["UserType"].ToString() == "2") || (Session["UserType"].ToString() == "3"))
                     {
                         lnkEdit.Visible = true;
                     }
                     else
                     {
-                        if (Session["UserType"].ToString() == "2")
+                        if (Session["UserID"] != null)
                         {
-                            lnkEdit.Visible = true;
-                        }
-                        else
-                        {
-                            if (Session["UserID"] != null)
+                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
                             {
-                                if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                                if (itemData["IsPublish"].ToString() == "False")
                                 {
                                     lnkEdit.Visible = true;
                                 }
@@ -502,27 +514,27 @@ namespace SES.CMS.ofeditor.Module
                                 lnkEdit.Visible = false;
                             }
                         }
+                        else
+                        {
+                            lnkEdit.Visible = false;
+                        }
                     }
                 }
                 if (lnkDelete != null)
                 {
                     lnkDelete.CommandName = "Delete";
                     lnkDelete.CommandArgument = itemData["ArticleID"].ToString();
-                    if (itemData["IsPublish"].ToString() == "True")
+                    if ((Session["UserType"].ToString() == "2") || (Session["UserType"].ToString() == "3"))
                     {
                         lnkDelete.Visible = true;
                     }
                     else
                     {
-                        if (Session["UserType"].ToString() == "2")
+                        if (Session["UserID"] != null)
                         {
-                            lnkDelete.Visible = true;
-                        }
-                        else
-                        {
-                            if (Session["UserID"] != null)
+                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
                             {
-                                if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                                if (itemData["IsPublish"].ToString() == "False")
                                 {
                                     lnkDelete.Visible = true;
                                 }
@@ -535,6 +547,10 @@ namespace SES.CMS.ofeditor.Module
                             {
                                 lnkDelete.Visible = false;
                             }
+                        }
+                        else
+                        {
+                            lnkDelete.Visible = false;
                         }
                     }
                 }
