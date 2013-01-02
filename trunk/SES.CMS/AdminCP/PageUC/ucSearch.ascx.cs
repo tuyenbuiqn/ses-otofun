@@ -622,6 +622,7 @@ namespace SES.CMS.AdminCP.PageUC
         protected void ddlNumberItemPerPage_SelectedIndexChanged(object sender, EventArgs e)
         {
             NumberItemPerPage = Int32.Parse(ddlNumberItemPerPage.SelectedValue);
+            hdfPageIndex.Value = "0";
             this.BindrptListArticle();
         }
     }
