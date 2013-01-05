@@ -82,6 +82,7 @@ namespace SES.CMS
                 if (cache[keyTinLienQuan2] == null)
                 {
                     DataTable dtTinLienQuan2 = artBL.GetTinLienQuan1(articleID);
+                    if (dtTinLienQuan2 != null)
                     cache.Insert(keyTinLienQuan2, dtTinLienQuan2, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
                 rptTinLienQuan2.DataSource = (DataTable)cache[keyTinLienQuan2];

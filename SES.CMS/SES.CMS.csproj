@@ -1061,6 +1061,7 @@
     <Content Include="ckeditor\skins\v2\skin.js" />
     <Content Include="ckeditor\skins\v2\templates.css" />
     <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="css\imageEdit.css" />
     <Content Include="css\style.css" />
     <Content Include="css\style2.css" />
     <Content Include="Default.aspx" />
@@ -1313,8 +1314,10 @@
     <Content Include="ofeditor\assets\repgray2.png" />
     <Content Include="ofeditor\assets\searchbar.png" />
     <Content Include="ofeditor\assets\siderep.png" />
+    <Content Include="ofeditor\Comments.aspx" />
     <Content Include="ofeditor\css\core.css" />
     <Content Include="ofeditor\css\css3.css" />
+    <Content Include="ofeditor\css\imageEdit.css" />
     <Content Include="ofeditor\css\layout.css" />
     <Content Include="ofeditor\css\login.css" />
     <Content Include="ofeditor\css\plugins.css" />
@@ -1337,10 +1340,13 @@
     <Content Include="ofeditor\ListArticles.aspx" />
     <Content Include="ofeditor\Login.aspx" />
     <Content Include="ofeditor\login.html" />
+    <Content Include="ofeditor\Module\ucDuyetComment.ascx" />
+    <Content Include="ofeditor\Module\ucSearch.ascx" />
     <Content Include="ofeditor\RadEditorForm_ToolsFile.xml" />
     <Content Include="ofeditor\RelatedNews1.aspx" />
     <Content Include="ofeditor\RelatedNews2.aspx" />
     <Content Include="ofeditor\RNServices.asmx" />
+    <Content Include="ofeditor\Search.aspx" />
     <Content Include="preview.css" />
     <Content Include="tag.aspx" />
     <Content Include="TestPopupParent.aspx" />
@@ -1816,6 +1822,13 @@
       <DependentUpon>AddNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="ofeditor\Class1.cs" />
+    <Compile Include="ofeditor\Comments.aspx.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Comments.aspx.designer.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ofeditor\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1844,6 +1857,20 @@
     <Compile Include="ofeditor\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ofeditor\Module\ucDuyetComment.ascx.cs">
+      <DependentUpon>ucDuyetComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Module\ucDuyetComment.ascx.designer.cs">
+      <DependentUpon>ucDuyetComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Module\ucSearch.ascx.cs">
+      <DependentUpon>ucSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Module\ucSearch.ascx.designer.cs">
+      <DependentUpon>ucSearch.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ofeditor\RelatedNews1.aspx.cs">
       <DependentUpon>RelatedNews1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1862,6 +1889,14 @@
       <DependentUpon>RNServices.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ofeditor\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OFUltility.cs" />
     <Compile Include="Otofun.Master.cs">
       <DependentUpon>Otofun.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
