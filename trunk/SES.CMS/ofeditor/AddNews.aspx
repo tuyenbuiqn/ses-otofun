@@ -1,13 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ofeditor/Editor.Master" AutoEventWireup="true"
     CodeBehind="AddNews.aspx.cs" Inherits="SES.CMS.ofeditor.AddNews" %>
 
-
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:HiddenField runat="server" id="hdfID1"></asp:HiddenField>  
-       <asp:HiddenField runat="server" id="hdfID2"></asp:HiddenField>  
+    <asp:HiddenField runat="server" ID="hdfID1"></asp:HiddenField>
+    <asp:HiddenField runat="server" ID="hdfID2"></asp:HiddenField>
     <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         <Scripts>
             <%--Needed for JavaScript IntelliSense in VS2010--%>
@@ -26,27 +25,26 @@
 
             var ArticleID, currentRowIndex, ArticleID2, currentRowIndex2 = null;
             var currentMultiID, currentMultiID2 = null;
-            
-            function ShowDialog()  
-              {
-                  var returnPopup = window.open('Child.aspx', '_blank', 'scrollbars=10, width=820,height=900');
-        //          var txtPopup = document.getElementById(txtPopup).value;
-        //          txtPopup.value = returnPopup;
-              }  
 
-              function SetDataCurrent() {
-                  if (firstRun == 1) {
-                     
-                      currentMultiID = document.getElementById("<%= hdfID1.ClientID %>").value;
-                      currentMultiID2 = document.getElementById("<%= hdfID2.ClientID %>").value;
-                      firstRun = 0;
-                  }
-                 
-              }
-              function openWin() {
-                  
-                  SetDataCurrent();
-                  
+            function ShowDialog() {
+                var returnPopup = window.open('Child.aspx', '_blank', 'scrollbars=10, width=820,height=900');
+                //          var txtPopup = document.getElementById(txtPopup).value;
+                //          txtPopup.value = returnPopup;
+            }
+
+            function SetDataCurrent() {
+                if (firstRun == 1) {
+
+                    currentMultiID = document.getElementById("<%= hdfID1.ClientID %>").value;
+                    currentMultiID2 = document.getElementById("<%= hdfID2.ClientID %>").value;
+                    firstRun = 0;
+                }
+
+            }
+            function openWin() {
+
+                SetDataCurrent();
+
                 var oWnd = radopen("RelatedNews1.aspx", "RadWindow1");
             }
 
@@ -55,11 +53,11 @@
                 var oWnd2 = radopen("RelatedNews2.aspx", "RadWindow2");
             }
 
-            
+
 
             function OnClientClose(oWnd, args) {
-                
-              
+
+
                 var arg = args.get_argument();
 
                 if (arg) {
@@ -79,7 +77,7 @@
 
                     }
                     else {
-                       
+
                         if (currentMultiID2 == null) currentMultiID2 = arg.cityName2;
                         currentMultiID2 = currentMultiID2 + ',' + arg.cityName2;
                         arg = null;
@@ -145,8 +143,7 @@
             }
 
             var firstRun = 1;
-            function OnReplaceComplete(result) 
-            {
+            function OnReplaceComplete(result) {
                 currentMultiID = result;
                 SES.CMS.ofeditor.RNServices.GetListOfArticle(currentMultiID, updateGrid, OnError);
                 document.getElementById("<%= hdfID1.ClientID %>").value = result;
@@ -156,14 +153,14 @@
                 SES.CMS.ofeditor.RNServices.GetListOfArticle(currentMultiID2, updateGrid2, OnError);
                 document.getElementById("<%= hdfID2.ClientID %>").value = result1;
             }
-            
+
             function deleteCurrent() {
                 SetDataCurrent();
                 var gridItems = $find("<%= RadGrid1.ClientID %>").get_masterTableView().get_dataItems();
 
                 SES.CMS.ofeditor.RNServices.rmoveStr(currentMultiID, ArticleID, OnReplaceComplete, OnError);
-                
-               
+
+
                 //gridItems[0].set_selected(true);
             }
 
@@ -171,11 +168,32 @@
                 SetDataCurrent();
                 var gridItems = $find("<%= RadGrid2.ClientID %>").get_masterTableView().get_dataItems();
                 SES.CMS.ofeditor.RNServices.rmoveStr(currentMultiID2, ArticleID2, OnReplaceComplete2, OnError);
-                
+
                 //gridItems[0].set_selected(true);
             }
 
+            function OnClientPasteHtml(sender, args) {
+                var commandName = args.get_commandName();
+                var value = args.get_value();
+                if (commandName == "ImageManager") {
+                    //See if an img has an alt tag set
+                    var div = document.createElement("DIV");
+                    //Do not use div.innerHTML as in IE this would cause the image's src or the link's href to be converted to absolute path.
+                    //This is a severe IE quirk.
+                    Telerik.Web.UI.Editor.Utils.setElementInnerHtml(div, value);
+                    //Now check if there is alt attribute
+                    var img = div.firstChild;
+                    //alert(div.innerHTML);
 
+                    //Set new content to be pasted into the editor
+                    var newInner = "<table border='0' class='tbimage' cellspacing='0' cellpadding='3' width='1' align='center'><tbody><tr><td>";
+                    newInner = newInner + "<img src='" + img.src + "' alt='" + img.alt + "' style='" + img.getAttribute("style") + "'/>" + "</td></tr><tr><td class='image_desc'>";
+                    newInner = newInner + img.alt + "</td></tr></tbody></table>";
+                    alert(newInner);
+                    args.set_value(newInner);
+
+                }
+            }
 
         //]]>
         </script>
@@ -186,7 +204,6 @@
             <telerik:RadWindow ID="RadWindow1" runat="server" Width="650" Height="480" Modal="true"
                 OnClientClose="OnClientClose" NavigateUrl="RelatedNews1.aspx">
             </telerik:RadWindow>
-
             <telerik:RadWindow ID="RadWindow2" runat="server" Width="650" Height="480" Modal="true"
                 OnClientClose="OnClientClose" NavigateUrl="RelatedNews2.aspx">
             </telerik:RadWindow>
@@ -237,22 +254,7 @@
         {
             height: auto !important;
         }
-      
-        
-        .rcbScroll
-        {
-            height: auto !important;
-           
-        }
-        .mtrv
-        {
-            
-            height: auto !important;
-           
-     
-            }
     </style>
-    
     <div class="pad20">
         <fieldset>
             <legend>Thêm mới tin tức</legend>
@@ -278,34 +280,30 @@
                 </label>
                 <asp:FileUpload ID="fuImg" runat="server" />
                 192 x 171 (px)
-                <asp:HyperLink ID="hplImage" Target="_blank" Visible="false" runat="server" style="font-weight: 700">(Xem ảnh)</asp:HyperLink>
-                 
-                </div>
-
-                <div class="fieldsetdiv">
+                <asp:HyperLink ID="hplImage" Target="_blank" Visible="false" runat="server" Style="font-weight: 700">(Xem ảnh)</asp:HyperLink>
+            </div>
+            <div class="fieldsetdiv">
                 <label for="lf">
                     Chuyên đề
                 </label>
-                 <asp:DropDownList CssClass="dropdown" runat="server" ID="ddlEvent" 
-                        AppendDataBoundItems="true" Height="20px" Width="342px">
-                <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
-            </asp:DropDownList>
-               </div>
-
+                <asp:DropDownList CssClass="dropdown" runat="server" ID="ddlEvent" AppendDataBoundItems="true"
+                    Height="20px" Width="342px">
+                    <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
+                </asp:DropDownList>
+            </div>
             <div class="fieldsetdiv">
                 <label for="lf">
                     Danh mục
                 </label>
                 <div style="float: left;">
-                    <telerik:RadComboBox CssClass="rcbScroll" ID="RadComboBox1" runat="server" Width="450px" ShowToggleImage="True"
+                    <telerik:RadComboBox ID="RadComboBox1" runat="server" Width="450px" ShowToggleImage="True"
                         Style="vertical-align: middle;" OnClientDropDownOpened="OnClientDropDownOpenedHandler"
                         EmptyMessage="Chọn Danh mục gửi bài" ExpandAnimation-Type="None" CollapseAnimation-Type="None"
                         OnInit="RadComboBox1_Init">
                         <ItemTemplate>
                             <div id="div1">
                                 <telerik:RadTreeView CssClass="mtrv" runat="server" ID="RadTreeView1" OnClientNodeClicking="nodeClicking"
-                                    Width="100%" CheckBoxes="True" 
-                                    onnodedatabound="RadTreeView1_NodeDataBound">
+                                    Width="100%" CheckBoxes="True" OnNodeDataBound="RadTreeView1_NodeDataBound">
                                     <NodeTemplate>
                                         <asp:DropDownList CssClass="dropdown" ID="ddl" runat="server">
                                             <asp:ListItem Text="1" Value="1"></asp:ListItem>
@@ -344,7 +342,7 @@
                 <div style="float: left;">
                     <asp:TextBox ID="txtDescription" TextMode="MultiLine" runat="server" CssClass="txtArea"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDescription"
-                    ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
+                        ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="fieldsetdiv">
@@ -352,7 +350,7 @@
                     Nội dung
                 </label>
                 <div style="float: left;">
-                    <telerik:RadEditor ID="txtDetail" runat="server" ToolsFile="RadEditorForm_ToolsFile.xml"
+                    <telerik:RadEditor ID="txtDetail" runat="server" OnClientPasteHtml="OnClientPasteHtml"
                         Width="789px">
                         <ImageManager MaxUploadFileSize="1024000000" ViewPaths="~/Media/" UploadPaths="~/Media/"
                             DeletePaths="~/MediaDelete/"></ImageManager>
@@ -365,7 +363,8 @@
                 <div style="float: left; width: 680px">
                     <telerik:RadGrid CssClass="mgrd" ID="RadGrid1" AutoGenerateColumns="False" runat="server"
                         CellSpacing="0" GridLines="None">
-                        <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID" DataKeyNames="ArticleID">
+                        <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID"
+                            DataKeyNames="ArticleID">
                             <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
                             <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
                             </RowIndicatorColumn>
@@ -403,7 +402,8 @@
                 <div style="float: left; width: 680px">
                     <telerik:RadGrid CssClass="mgrd" ID="RadGrid2" AutoGenerateColumns="False" runat="server"
                         CellSpacing="0" GridLines="None">
-                        <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID" DataKeyNames="ArticleID">
+                        <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID"
+                            DataKeyNames="ArticleID">
                             <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
                             <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
                             </RowIndicatorColumn>
@@ -422,8 +422,7 @@
                             </EditFormSettings>
                         </MasterTableView>
                         <ClientSettings>
-                            <ClientEvents OnRowSelected="rowSelected2"/>
-                          
+                            <ClientEvents OnRowSelected="rowSelected2" />
                             <Selecting AllowRowSelect="True"></Selecting>
                             <Scrolling AllowScroll="true" UseStaticHeaders="true"></Scrolling>
                         </ClientSettings>
@@ -432,19 +431,18 @@
                     </telerik:RadGrid>
                 </div>
                 <div style="float: left; width: 86px; margin-left: 10px;">
-                    <input class="button" type="submit" value="Chọn" onclick="openWin2(); return false;" /> 
+                    <input class="button" type="submit" value="Chọn" onclick="openWin2(); return false;" />
                     <%--<input class="button" type="submit" value="Chọn" onclick="ShowDialog(); return false;" />--%>
                     <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent2(); return false;" />
                 </div>
             </div>
-           
             <div class="fieldsetdiv">
                 <label for="lf">
                     Thực hiện
                 </label>
-                <asp:Button class="button" ID="btnSubmit" runat="server" 
-                    ValidationGroup="submitGrp" Text="Submit" onclick="btnSubmit_Click" />
-                 <asp:Button class="button" ID="Button1" runat="server" Text="Reset" />
+                <asp:Button class="button" ID="btnSubmit" runat="server" ValidationGroup="submitGrp"
+                    Text="Lưu bài" OnClick="btnSubmit_Click" />
+                <asp:Button class="button" ID="Button1" runat="server" Text="Hủy" />
             </div>
         </fieldset>
     </div>

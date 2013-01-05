@@ -125,6 +125,13 @@ namespace SES.CMS
         {
             return Ultility.Change_AVCate(s);
         }
+        public string ReturnCateID()
+        {
+            string url = Request.Url.AbsolutePath;
+            string rt = url.Substring(1, url.Length - 6);
+            return rt;
+            
+        }
         public string WordCut(string text)
         {
             return Ultility.WordCut(text, 260, new char[] { ' ', '.', ',', ';' }) + "...";

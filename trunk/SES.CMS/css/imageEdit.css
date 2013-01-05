@@ -1,0 +1,20 @@
+﻿table.tbimage {
+border-collapse: collapse;
+background: #EEE;
+width: 1%;
+border-spacing: 0;
+color: #048;
+}
+table.tbimage{
+vertical-align: middle;
+}
+table.tbimage .image_desc {
+padding: 5px;
+text-align: center;
+color: #0C48BB;
+background-color: #E3E3E3;
+border-collapse: collapse;
+padding: 5px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+}

@@ -35,15 +35,17 @@
                                 </div>
                                 <h2 class="article-desciption">
                                     <%#Eval("Description") %></h2>
-                                    <div class="tin-lien-quan-2">
-                                        <span class="tin-lien-quan2-span">Tin liên quan</span>
+                                   
+                                        
                                         <asp:Repeater runat="server" ID="rptTinLienQuan2">
+                                        <HeaderTemplate> <div class="tin-lien-quan-2"><span class="tin-lien-quan2-span">Tin liên quan</span></HeaderTemplate>
                                             <ItemTemplate>
                                                 <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                                 title='<%#Eval("Title") %>'>» <%#Eval("Title")%></a>
                                             </ItemTemplate>
+                                            <FooterTemplate></div></FooterTemplate>
                                         </asp:Repeater>
-                                    </div>
+                                    
                                 <div class="article-detail">
                                     <%#Eval("ArticleDetail") %>
                                 </div>

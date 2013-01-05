@@ -1,0 +1,26 @@
+﻿body 
+{ 
+    font-family: Times New Roman !important; 
+    font-size: 16px !important;
+}
+
+tbimage {
+border-collapse: collapse;
+background: #EEE;
+width: 1%;
+border-spacing: 0;
+color: #048;
+}
+tbimage{
+vertical-align: middle;
+}
+.image_desc {
+padding: 5px;
+text-align: center;
+color: #0C48BB;
+background-color: #E3E3E3;
+border-collapse: collapse;
+padding: 5px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+}

@@ -16,8 +16,8 @@ namespace SES.CMS.ofeditor
         cmsArticleDO objArt = new cmsArticleDO();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
 
+            txtDetail.CssFiles.Add("~/css/imageEdit.css");
             if (!IsPostBack)
             {
 
@@ -30,10 +30,14 @@ namespace SES.CMS.ofeditor
                     if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
                     else
                     {
-                        objArt.DangBienTap = true; // Lock editting
-                        objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
-                        new cmsArticleBL().Update(objArt);
-                        initForm(); 
+                        int TypeID = -1;
+                        if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+                        if (TypeID == 1)
+                        {
+                            objArt.DangBienTap = true; // Lock editting
+                            objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
+                            new cmsArticleBL().Update(objArt);
+                        } initForm(); 
                     
                     }
                     
@@ -70,7 +74,7 @@ namespace SES.CMS.ofeditor
                 }
                 else //Bài người khác viết
                 {
-                    if (objA.TrangThai == 5 || objA.TrangThai == 2) // Bị trả lại BTV hoặc Chờ BTV
+                    if (objA.TrangThai == 5 || objA.TrangThai == 1) // Bị trả lại BTV hoặc Chờ BTV
                     {
                         //Nếu đang ko editing hoặc Đang editting bởi mình
                         if((!objA.DangBienTap)||(objA.BTVEdit==int.Parse(Session["UserID"].ToString())))
