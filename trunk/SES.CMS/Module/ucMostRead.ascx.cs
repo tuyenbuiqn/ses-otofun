@@ -14,7 +14,8 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            rptMostReadDataSource();
+            if (!IsPostBack)
+                rptMostReadDataSource();
         }
 
         protected void rptMostReadDataSource()
