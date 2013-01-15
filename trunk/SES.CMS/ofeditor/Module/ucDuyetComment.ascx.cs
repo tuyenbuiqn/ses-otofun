@@ -26,8 +26,7 @@ namespace SES.CMS.ofeditor.Module
                 {
                     if (!IsPostBack)
                     {
-                        gvAt.DataSource = new cmsCommentBL().SelectAll();
-                        gvAt.DataBind();
+                        gvAtDataSource();
                         Functions.ddlDatabinder(ddlArticle, cmsArticleDO.ARTICLEID_FIELD, cmsArticleDO.TITLE_FIELD, new cmsArticleBL().SelectAll());
                         Functions.ddlDatabinder(ddlUserCreate, sysUserDO.USERID_FIELD, sysUserDO.USERNAME_FIELD, new sysUserBL().SelectAll());
                     }
@@ -37,6 +36,14 @@ namespace SES.CMS.ofeditor.Module
             {
                 Response.Redirect("/ofeditor/Login.aspx");
             }
+        }
+
+        protected void gvAtDataSource()
+        {
+            int userType = int.Parse(Session["UserType"].ToString());
+            int bienTapVienID = int.Parse(Session["UserID"].ToString());
+            gvAt.DataSource = new cmsCommentBL().SelectByPermission(userType,bienTapVienID);
+            gvAt.DataBind();
         }
 
         protected void gvArticle_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
@@ -62,10 +69,19 @@ namespace SES.CMS.ofeditor.Module
         }
         protected void btnFilter_Click(object sender, EventArgs e)
         {
-            int userID = int.Parse(Session["UserID"].ToString());
+            int userType = int.Parse(Session["UserType"].ToString());
+            int userID = 0;
+            if (userType == 1)
+                userID = 0;
+            else if(userType == 2)
+                userID = int.Parse(ddlUserCreate.SelectedValue);
+
             int articleID = int.Parse(ddlArticle.SelectedValue.ToString());
             int isAccepted = int.Parse(ddlTrangThai.SelectedValue.ToString());
-            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(articleID, isAccepted, userID);
+            
+            int bienTapVienID = int.Parse(Session["UserID"].ToString());
+
+            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(articleID, isAccepted, userID,userType,bienTapVienID);
             gvAt.DataBind();
         }
         protected void btnAccept_Click(object sender, EventArgs e)
@@ -124,8 +140,36 @@ namespace SES.CMS.ofeditor.Module
             int userID = int.Parse(ddlUserCreate.SelectedValue.ToString());
             int commentID = int.Parse(ddlArticle.SelectedValue.ToString());
             int isAccepted = int.Parse(ddlTrangThai.SelectedValue.ToString());
-            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(commentID, isAccepted, userID);
+            int userType = int.Parse(Session["UserType"].ToString());
+            int bienTapVienID = int.Parse(Session["UserID"].ToString());
+            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(commentID, isAccepted, userID,userType,bienTapVienID);
             gvAt.DataBind();
+        }
+
+        protected void gvAt_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvAt.EditIndex = e.NewEditIndex;
+            gvAtDataSource();
+        }
+
+        protected void gvAt_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            cmsCommentDO objComment = new cmsCommentDO();
+
+            objComment.CommentID = Convert.ToInt32(((Label)gvAt.Rows[e.RowIndex].Cells[0].FindControl("lblCommentID")).Text);
+            objComment = new cmsCommentBL().Select(objComment);
+
+            objComment.Contents = ((TextBox)gvAt.Rows[e.RowIndex].Cells[4].FindControl("txtContent")).Text;
+
+            new cmsCommentBL().Update(objComment);
+            gvAt.EditIndex = -1;
+            gvAtDataSource();
+        }
+
+        protected void gvAt_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvAt.EditIndex = -1;
+            gvAtDataSource();
         }
     }
 }
