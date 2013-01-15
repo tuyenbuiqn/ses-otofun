@@ -186,11 +186,14 @@
                     //alert(div.innerHTML);
 
                     //Set new content to be pasted into the editor
-                    var newInner = "<table border='0' class='tbimage' cellspacing='0' cellpadding='3' width='1' align='center'><tbody><tr><td>";
-                    newInner = newInner + "<img src='" + img.src + "' alt='" + img.alt + "' style='" + img.getAttribute("style") + "'/>" + "</td></tr><tr><td class='image_desc'>";
-                    newInner = newInner + img.alt + "</td></tr></tbody></table>";
-                    alert(newInner);
-                    args.set_value(newInner);
+
+                    if (!!img.alt) {
+                        var newInner = "<table border='0' class='tbimage' cellspacing='0' cellpadding='3' width='1' align='center'><tbody><tr><td>";
+                        newInner = newInner + "<img src='" + img.src + "' alt='" + img.alt + "' style='" + img.getAttribute("style") + "'/>" + "</td></tr><tr><td class='image_desc'>";
+                        newInner = newInner + img.alt + "</td></tr></tbody></table>";
+
+                        args.set_value(newInner);
+                    }
 
                 }
             }
@@ -279,7 +282,7 @@
                     Hình ảnh
                 </label>
                 <asp:FileUpload ID="fuImg" runat="server" />
-                192 x 171 (px)
+                190 x 140 (px)
                 <asp:HyperLink ID="hplImage" Target="_blank" Visible="false" runat="server" Style="font-weight: 700">(Xem ảnh)</asp:HyperLink>
             </div>
             <div class="fieldsetdiv">

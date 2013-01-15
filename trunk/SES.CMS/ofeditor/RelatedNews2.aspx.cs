@@ -27,7 +27,7 @@ namespace SES.CMS.ofeditor
                 hdfSearchDateEnd.Value = "";
                 hdfSearchDateStart.Value = "";
                 hdfSearchKey.Value = "";
-
+                rdpStartDate.SelectedDate = DateTime.Now.AddDays(-180);
 
                 pnlTitle01.Visible = false;
                 pnlTitle02.Visible = false;
