@@ -8,12 +8,13 @@ using SES.CMS.BL;
 using SES.CMS.DO;
 using SES.CMS.AdminCP;
 using System.Data;
+using System.Web.Caching;
 
 namespace SES.CMS.ofeditor
 {
     public partial class ListArticles : System.Web.UI.Page
     {
-
+        private Cache cache = HttpContext.Current.Cache;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserID"] != null)
@@ -599,6 +600,17 @@ namespace SES.CMS.ofeditor
                     articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
                     historyBL.Insert(objHistory);
+
+                    ///Xoa cache
+                    DataTable dtCategory = new cmsArticleCategoryBL().SelectByArticleID(objArt.ArticleID);
+                    if (dtCategory != null && dtCategory.Rows.Count > 0)
+                    {
+                        for (int iCate = 0; iCate < dtCategory.Rows.Count; iCate++)
+                        {
+                            string keycat = "CatID=" + dtCategory.Rows[iCate]["CategoryID"];
+                            cache.Remove(keycat);
+                        }
+                    }
                     //    isNotOK = false;
                 }
             }
@@ -641,6 +653,16 @@ namespace SES.CMS.ofeditor
                     articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
                     historyBL.Insert(objHistory);
+                    ///Xoa cache
+                    DataTable dtCategory = new cmsArticleCategoryBL().SelectByArticleID(objArt.ArticleID);
+                    if (dtCategory != null && dtCategory.Rows.Count > 0)
+                    {
+                        for (int iCate = 0; iCate < dtCategory.Rows.Count; iCate++)
+                        {
+                            string keycat = "CatID=" + dtCategory.Rows[iCate]["CategoryID"];
+                            cache.Remove(keycat);
+                        }
+                    }
                     //    isNotOK = false;
                 }
             }

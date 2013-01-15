@@ -20,20 +20,43 @@ namespace SES.CMS
             if (!string.IsNullOrEmpty(Request.QueryString["ArticleID"]))
             {
                 int articleID = int.Parse(Request.QueryString["ArticleID"].ToString());
-                rptArticeDataSource(articleID);
-                rptBuildChildMenu(articleID);
-                loadBreadcrumb(articleID);
-                DataTable dtArticle = new cmsArticleBL().SelectByPK(articleID);
-                if (dtArticle.Rows.Count > 0)
+
+                if (!IsPostBack)
                 {
-                    Page.Title = dtArticle.Rows[0]["Title"].ToString() + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                    if (Session["artIpAddress"] == null)
+                    {
+                        UpdateLuotView(articleID);
+                    }
+                    Session["artIpAddress"] = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                    rptArticeDataSource(articleID);
+                    rptBuildChildMenu(articleID);
+                    loadBreadcrumb(articleID);
+                    DataTable dtArticle = new cmsArticleBL().SelectByPK(articleID);
+                    if (dtArticle.Rows.Count > 0)
+                    {
+                        Page.Title = dtArticle.Rows[0]["Title"].ToString() + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                    }
+                    else
+                    {
+                        Page.Title = "Tin tức - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                    }
+                    Page.Header.Controls.Add(Ultility.AddDescription(dtArticle.Rows[0]["Description"].ToString()));
+                    BuildEvent(articleID);
                 }
-                else
-                {
-                    Page.Title = "Tin tức - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
-                }
-                Page.Header.Controls.Add(Ultility.AddDescription(dtArticle.Rows[0]["Description"].ToString()));
-                BuildEvent(articleID);
+            }
+        }
+
+        protected void UpdateLuotView(int articleID)
+        {
+            cmsArticleDO objArt = new cmsArticleDO();
+            objArt.ArticleID = articleID;
+
+            objArt = new cmsArticleBL().Select(objArt);
+
+            if (objArt != null)
+            {
+                objArt.LuotView = objArt.LuotView + 1;
+                new cmsArticleBL().Update(objArt);
             }
         }
         protected void loadBreadcrumb(int articleID)
@@ -70,7 +93,7 @@ namespace SES.CMS
         {
             cmsArticleBL artBL = new cmsArticleBL();
             RepeaterItem item = e.Item;
-           
+
             Repeater rptTinLienQuan2 = (Repeater)e.Item.FindControl("rptTinLienQuan2");
             if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
             {
@@ -83,7 +106,7 @@ namespace SES.CMS
                 {
                     DataTable dtTinLienQuan2 = artBL.GetTinLienQuan1(articleID);
                     if (dtTinLienQuan2 != null)
-                    cache.Insert(keyTinLienQuan2, dtTinLienQuan2, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                        cache.Insert(keyTinLienQuan2, dtTinLienQuan2, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
                 rptTinLienQuan2.DataSource = (DataTable)cache[keyTinLienQuan2];
                 rptTinLienQuan2.DataBind();
