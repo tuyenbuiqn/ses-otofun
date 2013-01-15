@@ -513,7 +513,7 @@ margin-left: 5px;
 .TinTuc-wrapper
 {
 	width: 675px;
-	height: 225px;
+	height: 195px;
 	margin-left: 5px;
 	margin-top: 10px;
 	float: left;
@@ -543,19 +543,18 @@ margin-left: 5px;
 .noidung
 {
 	width: 675px;
-	height: 196px;
+	height: 166px;
 	border: solid 1px #d2bf9c;
 	border-top: solid 1px #b77430;
 	float: left;
 }
-.left-noidung
-{
-	width: 198px;
-	height: 177px;
-	float: left;
-	border: solid 1px #b59252;
-	margin: 10px 5px;
-	margin-right: 10px;
+.left-noidung {
+width: 196px;
+height: 146px;
+float: left;
+border: solid 1px #B59252;
+margin: 10px 5px;
+margin-right: 10px;
 }
 .left-noidung img
 {
@@ -563,9 +562,9 @@ margin-left: 5px;
 }
 .Anh-noidung
 {
-	width: 192px;
-	height: 171px;
-	margin: 2px;
+	width: 190px;
+height: 140px;
+margin: 2px;
 }
 
 .link2
@@ -612,7 +611,7 @@ margin-left: 5px;
 .center-noidung
 {
 	width: 215px;
-	height: 175px;
+	height: 155px;
 	float: left;
 	margin-top: 10px;
 }
@@ -655,12 +654,12 @@ margin-left: 5px;
 	float: left;
 	width: 230px;
 	margin: 10px 0px 10px 10px;
-	height: 175px;
+	
 }
 
 .right-noidung li
 {
-	margin-bottom: 15px;
+	margin-bottom: 6px;
 	background: url(../images/bigliststyle.jpg) no-repeat;
 	padding-left: 13px;
 	background-position: center left;

@@ -42,4 +42,3 @@ E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.csprojResolveAssemblyReference.c
 E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.dll.licenses
 E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.dll
 E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.pdb
-E:\SES Project\otofun\SES.CMS\bin\DevExpress.Web.ASPxEditors.v9.2.xml

@@ -7,3 +7,21 @@ D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.BL\bin\Debug\CMS.DAL.dll
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.BL\bin\Debug\SES.CMS.DO.dll
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.BL\bin\Debug\CMS.DAL.pdb
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.BL\bin\Debug\SES.CMS.DO.pdb
+I:\SES Project\otofun\CMS.BL\bin\Debug\CMS.BL.dll
+I:\SES Project\otofun\CMS.BL\bin\Debug\CMS.BL.pdb
+I:\SES Project\otofun\CMS.BL\bin\Debug\CMS.DAL.dll
+I:\SES Project\otofun\CMS.BL\bin\Debug\SES.CMS.DO.dll
+I:\SES Project\otofun\CMS.BL\bin\Debug\CMS.DAL.pdb
+I:\SES Project\otofun\CMS.BL\bin\Debug\SES.CMS.DO.pdb
+I:\SES Project\otofun\CMS.BL\obj\Debug\SES.CMS.BL.csprojResolveAssemblyReference.cache
+I:\SES Project\otofun\CMS.BL\obj\Debug\CMS.BL.dll
+I:\SES Project\otofun\CMS.BL\obj\Debug\CMS.BL.pdb
+E:\SES Project\otofun\CMS.BL\bin\Debug\CMS.BL.dll
+E:\SES Project\otofun\CMS.BL\bin\Debug\CMS.BL.pdb
+E:\SES Project\otofun\CMS.BL\bin\Debug\CMS.DAL.dll
+E:\SES Project\otofun\CMS.BL\bin\Debug\SES.CMS.DO.dll
+E:\SES Project\otofun\CMS.BL\bin\Debug\CMS.DAL.pdb
+E:\SES Project\otofun\CMS.BL\bin\Debug\SES.CMS.DO.pdb
+E:\SES Project\otofun\CMS.BL\obj\Debug\SES.CMS.BL.csprojResolveAssemblyReference.cache
+E:\SES Project\otofun\CMS.BL\obj\Debug\CMS.BL.dll
+E:\SES Project\otofun\CMS.BL\obj\Debug\CMS.BL.pdb

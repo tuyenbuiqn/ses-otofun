@@ -5,3 +5,17 @@ D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\obj\Debug\CMS.DAL.dl
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\obj\Debug\CMS.DAL.pdb
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\bin\Debug\SES.CMS.DO.dll
 D:\Works\Ses-vn\Website\Projects\SES-OTOFUN\SES.CMS\CMS.DAL\bin\Debug\SES.CMS.DO.pdb
+I:\SES Project\otofun\CMS.DAL\bin\Debug\CMS.DAL.dll
+I:\SES Project\otofun\CMS.DAL\bin\Debug\CMS.DAL.pdb
+I:\SES Project\otofun\CMS.DAL\bin\Debug\SES.CMS.DO.dll
+I:\SES Project\otofun\CMS.DAL\bin\Debug\SES.CMS.DO.pdb
+I:\SES Project\otofun\CMS.DAL\obj\Debug\SES.CMS.DAL.csprojResolveAssemblyReference.cache
+I:\SES Project\otofun\CMS.DAL\obj\Debug\CMS.DAL.dll
+I:\SES Project\otofun\CMS.DAL\obj\Debug\CMS.DAL.pdb
+E:\SES Project\otofun\CMS.DAL\bin\Debug\CMS.DAL.dll
+E:\SES Project\otofun\CMS.DAL\bin\Debug\CMS.DAL.pdb
+E:\SES Project\otofun\CMS.DAL\bin\Debug\SES.CMS.DO.dll
+E:\SES Project\otofun\CMS.DAL\bin\Debug\SES.CMS.DO.pdb
+E:\SES Project\otofun\CMS.DAL\obj\Debug\SES.CMS.DAL.csprojResolveAssemblyReference.cache
+E:\SES Project\otofun\CMS.DAL\obj\Debug\CMS.DAL.dll
+E:\SES Project\otofun\CMS.DAL\obj\Debug\CMS.DAL.pdb
