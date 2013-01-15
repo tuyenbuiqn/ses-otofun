@@ -315,8 +315,34 @@ arrcmsCommentDO.Add(objcmsCommentDO);
             }
             return dt;
         }
+        public DataTable SelectByPermission(int userType, int bienTapVienID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsComment_GetByPermisson";
+            SqlParameter Sqlparam;
 
-        public DataTable CommentXetDuyet_Filter(int articleID, int isAccepted, int userID)
+
+            Sqlparam = new SqlParameter("@UserType", SqlDbType.Int);
+            Sqlparam.Value = userType;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BienTapVienID", SqlDbType.Int);
+            Sqlparam.Value = bienTapVienID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+
+        public DataTable CommentXetDuyet_Filter(int articleID, int isAccepted, int userID,int userType, int bienTapVienID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -334,6 +360,15 @@ arrcmsCommentDO.Add(objcmsCommentDO);
             Sqlparam = new SqlParameter("@userID", SqlDbType.Int);
             Sqlparam.Value = userID;
             Sqlcomm.Parameters.Add(Sqlparam);
+            
+            Sqlparam = new SqlParameter("@UserType", SqlDbType.Int);
+            Sqlparam.Value = userType;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BienTapVienID", SqlDbType.Int);
+            Sqlparam.Value = bienTapVienID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
 
             DataSet ds = base.GetDataSet(Sqlcomm);
             DataTable dt = null;

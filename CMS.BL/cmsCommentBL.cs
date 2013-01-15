@@ -78,16 +78,19 @@ namespace SES.CMS.BL
             return objcmsCommentDAL.SelectByArt(ArtID);
         }
 
-        public DataTable CommentXetDuyet_Filter(int articleID, int isAccepted, int userID)
+        public DataTable CommentXetDuyet_Filter(int articleID, int isAccepted, int userID, int userType, int bienTapVienID)
         {
-            return objcmsCommentDAL.CommentXetDuyet_Filter(articleID, isAccepted, userID);
+            return objcmsCommentDAL.CommentXetDuyet_Filter(articleID, isAccepted, userID,userType,bienTapVienID);
         }
 
         public void XetDuyetNhieuBinhLuan(string commentIDList, bool isAccepted, int userID)
         {
             objcmsCommentDAL.XetDuyetNhieuBinhLuan(commentIDList, isAccepted, userID);
         }
-
+        public DataTable SelectByPermission(int userType, int bienTapVienID)
+        {
+            return objcmsCommentDAL.SelectByPermission(userType, bienTapVienID);
+        }
     }
 
 }
