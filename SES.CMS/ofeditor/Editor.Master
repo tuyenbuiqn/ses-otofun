@@ -21,6 +21,36 @@
     <script type="text/javascript" src="js/custom.js"></script>
     <script type="text/javascript" src="js/JScript.js"></script>
     <!-- End of Libraries -->
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+    <script type="text/javascript" src="/fancybox/jquery.easing-1.3.pack.js"></script>
+
+    <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox-1.3.4.css"
+        media="screen" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            *   Examples - images
+            */
+
+            $("a.fancyboxx").fancybox({
+                'transitionIn': 'elastic',
+                'transitionOut': 'elastic',
+                'speedIn': 600,
+                'speedOut': 200,
+                'titlePosition': 'inside',
+                'overlayShow': false
+            });
+
+
+        });
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -72,9 +102,9 @@
                     <li>
                         <asp:HyperLink runat="server" ID="hplThongKeNhuanBut">Thống kê nhuận bút</asp:HyperLink></li>
                     <li>
-                        <asp:HyperLink runat="server" ID="hplQuanLyVideo">Quản lý video</asp:HyperLink></li>
+                        <asp:HyperLink runat="server" ID="hplQuanLyVideo"  NavigateUrl="~/ofeditor/Events.aspx">Quản lý dòng sự kiện</asp:HyperLink></li>
                     <li>
-                        <asp:HyperLink runat="server" ID="hplQuanLyGallery">Quản lý Gallery</asp:HyperLink></li>
+                        <asp:HyperLink runat="server" ID="hplQuanLyGallery"  NavigateUrl="~/ofeditor/Slides.aspx">Quản lý Slide</asp:HyperLink></li>
                     <%-- <li style="display: none"><a href="">Multi Level Menu</a>
                         <ul>
                             <li><a href="">Menu Link 1</a></li>
