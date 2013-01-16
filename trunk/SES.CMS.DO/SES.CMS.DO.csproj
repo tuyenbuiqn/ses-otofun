@@ -55,6 +55,7 @@
     <Compile Include="cmsLibsFileDO.cs" />
     <Compile Include="cmsSlideDO.cs" />
     <Compile Include="cmsTinNoiBatDO.cs" />
+    <Compile Include="cmsTopNewsDO.cs" />
     <Compile Include="cmsVideoDO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysConfigDO.cs" />
