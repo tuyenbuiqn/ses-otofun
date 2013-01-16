@@ -13,11 +13,13 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            rptLastestNewsDataSource();
+            if(!IsPostBack)
+                 rptLastestNewsDataSource();
         }
         protected void rptLastestNewsDataSource()
         {
-            rptLastestNews.DataSource = new cmsArticleBL().LastestNews();
+            //rptLastestNews.DataSource = new cmsArticleBL().LastestNews();
+            rptLastestNews.DataSource = new cmsTopNewsBL().SelectAll(10);
             rptLastestNews.DataBind();
         }
 

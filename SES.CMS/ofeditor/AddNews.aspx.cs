@@ -176,8 +176,18 @@ namespace SES.CMS.ofeditor
 
                 objArt.CreateDate = DateTime.Now;
                 objArt.UserCreate = int.Parse(Session["UserID"].ToString());
+                int TypeID = -1;
+                if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+                if (TypeID == 1)
+                {
+                    objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
+                }
+                else if (TypeID == 2)
+                {
+                    objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
+                    objArt.ThuKyEdit = objArt.BTVEdit;
+                }
                 aid = new cmsArticleBL().Insert(objArt);
-
                 
                 foreach (RadTreeNode n in rtv.CheckedNodes)
                 {
