@@ -64,9 +64,7 @@ namespace SES.CMS.ofeditor
                 divTK.Visible = true;
                 divPV.Visible = false;
                 divBTV.Visible = false;
-
             }
-
         }
     }
 }

@@ -13,12 +13,14 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
             rptCategoryParentDataSource();
         }
         protected void rptCategoryParentDataSource()
         {
 
-            DataTable dtCateParent = new cmsArticleBL().HotArticle_UnderSlideHomepage();
+       //     DataTable dtCateParent = new cmsArticleBL().HotArticle_UnderSlideHomepage();
+            DataTable dtCateParent = new cmsTinNoiBatBL().SelectAll(4);
             rptDanhMucNoiBat.DataSource = dtCateParent;
             rptDanhMucNoiBat.DataBind();
         }

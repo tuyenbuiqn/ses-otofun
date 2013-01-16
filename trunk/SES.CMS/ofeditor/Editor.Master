@@ -171,11 +171,13 @@
                     <li><a href="AddNews.aspx">Bài mới</a></li>
                     <li><a href="ListArticles.aspx?Type=0">Bài Nháp</a></li>
                     <li><a href="ListArticles.aspx?Type=3">Bài đã xuất bản</a></li>
+                   
                 </ul>
                 <asp:Panel runat="server" ID="divPV" Visible="false">
                     <h2>
                         Phóng viên</h2>
                     <ul>
+                    <li><a href="ListArticles.aspx?Type=2">Danh sách bài chờ xuất bản</a></li>
                         <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
                       
@@ -185,6 +187,7 @@
                     <h2>
                         Biên tập viên</h2>
                     <ul>
+                    <li><a href="ListArticles.aspx?Type=2">Danh sách bài chờ xuất bản</a></li>
                         <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
                         <li><a href="ListArticles.aspx?Type=4">Bài trả lại Phóng viên</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Biên tập</a></li>
@@ -200,6 +203,8 @@
                         <li><a href="ListArticles.aspx?Type=4">Bài trả lại Phóng viên</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Biên tập</a></li>
                         <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>
+                         <li><a href="TinNoiBat.aspx">Tin nổi bật</a></li>
+                         <li><a href="TopNews.aspx">Tin tức mới</a></li>
                     </ul>
                 </asp:Panel>
                 <h2>
