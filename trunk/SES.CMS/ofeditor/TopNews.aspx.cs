@@ -83,7 +83,7 @@ namespace SES.CMS.ofeditor
 
             cmsTopNewsDO objTinNoiBat = new cmsTopNewsDO();
             objTinNoiBat.TopNews = tinNoiBatID;
-            Session["TinNoiBatID"] = objTinNoiBat.TopNews;
+            Session["TopNews"] = objTinNoiBat.TopNews;
 
             objTinNoiBat = new cmsTopNewsBL().Select(objTinNoiBat);
             cmsArticleDO objArt = new cmsArticleDO();
