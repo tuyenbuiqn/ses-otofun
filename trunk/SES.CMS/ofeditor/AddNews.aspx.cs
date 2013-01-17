@@ -259,15 +259,18 @@ namespace SES.CMS.ofeditor
                      foreach (cmsArticleCategoryDO ins in lstNewACID)
                      {
                          bool saved = false;
-                         foreach (cmsArticleCategoryDO inud in lstUpdate)
-                         {
-                             if ((inud.CategoryID != ins.CategoryID))
+                         if (lstUpdate.Count > 0)
+                             foreach (cmsArticleCategoryDO inud in lstUpdate)
                              {
-                                 saved = true;
+                                 if ((inud.CategoryID != ins.CategoryID))
+                                 {
+                                     saved = true;
+                                 }
+
                              }
-                             
-                         }
-                         if(saved) new cmsArticleCategoryBL().Insert(ins);  ////////////////// Thêm mới
+                         else saved = true;
+                         if (saved) new cmsArticleCategoryBL().Insert(ins);  ////////////////// Thêm mới
+
                      }
 
             }
