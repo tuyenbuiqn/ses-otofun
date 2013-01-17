@@ -186,6 +186,10 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.TinLienQuan2;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@IsWaitingPublish", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsWaitingPublish;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -356,7 +360,9 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.TinLienQuan2;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-
+            Sqlparam = new SqlParameter("@IsWaitingPublish", SqlDbType.Bit);
+            Sqlparam.Value = objcmsArticleDO.IsWaitingPublish;
+            Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
@@ -492,7 +498,8 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.TinLienQuan1 = Convert.ToString(dr["TinLienQuan1"]);
                 if (!Convert.IsDBNull(dr["TinLienQuan2"]))
                     objcmsArticleDO.TinLienQuan2 = Convert.ToString(dr["TinLienQuan2"]);
-
+                if (!Convert.IsDBNull(dr["IsWaitingPublish"]))
+                    objcmsArticleDO.IsWaitingPublish = Convert.ToBoolean(dr["IsWaitingPublish"]);
             }
             return objcmsArticleDO;
         }
@@ -581,6 +588,8 @@ namespace SES.CMS.DAL
                         objcmsArticleDO.TinLienQuan1 = Convert.ToString(dr["TinLienQuan1"]);
                     if (!Convert.IsDBNull(dr["TinLienQuan2"]))
                         objcmsArticleDO.TinLienQuan2 = Convert.ToString(dr["TinLienQuan2"]);
+                    if (!Convert.IsDBNull(dr["IsWaitingPublish"]))
+                        objcmsArticleDO.IsWaitingPublish = Convert.ToBoolean(dr["IsWaitingPublish"]);
                     arrcmsArticleDO.Add(objcmsArticleDO);
                 }
             }
