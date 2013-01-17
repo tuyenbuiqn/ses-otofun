@@ -398,7 +398,7 @@ namespace SES.CMS.ofeditor
             else
             {
                 int bienTapVienID = int.Parse(Session["UserID"].ToString());
-                new cmsArticleBL().ChuyenTrangThai_BienTapVien(articleList, 4, bienTapVienID, DateTime.Now);
+                new cmsArticleBL().ChuyenTrangThai_BienTapVien(articleList, 5, bienTapVienID, DateTime.Now);
                 Ultility.Alert("Trả bài viết thành công", Request.Url.ToString());
             }
         }
@@ -529,7 +529,7 @@ namespace SES.CMS.ofeditor
             {
                 int thuKyID = int.Parse(Session["UserID"].ToString());
                 int thuKyEdit = thuKyID;
-                new cmsArticleBL().ChuyenTrangThai_ThuKy(0, articleList, 5, thuKyID, thuKyEdit, DateTime.Now, false);
+                new cmsArticleBL().ChuyenTrangThai_ThuKy(0, articleList, 4, thuKyID, thuKyEdit, DateTime.Now, false);
                 Ultility.Alert("Trả bài viết biên tập viên thành công", Request.Url.ToString());
             }
         }
@@ -571,7 +571,7 @@ namespace SES.CMS.ofeditor
             {
                 int thuKyID = int.Parse(Session["UserID"].ToString());
                 int thuKyEdit = thuKyID;
-                new cmsArticleBL().ChuyenTrangThai_ThuKy(0, articleList, 4, thuKyID, thuKyEdit, DateTime.Now, false);
+                new cmsArticleBL().ChuyenTrangThai_ThuKy(0, articleList, 5, thuKyID, thuKyEdit, DateTime.Now, false);
                 Ultility.Alert("Trả bài viết phóng viên thành công", Request.Url.ToString());
             }
         }
