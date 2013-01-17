@@ -116,9 +116,17 @@ namespace SES.CMS.ofeditor
             if (!string.IsNullOrEmpty(objArt.Tags))
                 if (objArt.Tags.Length > 2)
                     txtTags.Text = objArt.Tags.Substring(1, objArt.Tags.Length - 2);
+            string sTinLienQuan1 = objArt.TinLienQuan1;
+            if (sTinLienQuan1.Contains(",") && sTinLienQuan1.Length > 2)
+                sTinLienQuan1 = sTinLienQuan1.Substring(1, sTinLienQuan1.Length - 1);
+           
+            string sTinLienQuan2 = objArt.TinLienQuan2;
+            if (sTinLienQuan2.Contains(",") && sTinLienQuan2.Length > 2)
+                sTinLienQuan2 = sTinLienQuan2.Substring(1, sTinLienQuan2.Length - 1);
             hdfID1.Value = objArt.TinLienQuan1;
             hdfID2.Value = objArt.TinLienQuan2;
-            BindRelatedNews(objArt.TinLienQuan1, objArt.TinLienQuan2);
+         //   BindRelatedNews(objArt.TinLienQuan1, objArt.TinLienQuan2);
+            BindRelatedNews(sTinLienQuan1, sTinLienQuan2);
 
         }
 
