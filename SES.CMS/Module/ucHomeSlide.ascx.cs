@@ -16,6 +16,7 @@ namespace SES.CMS.Module
         private static DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
             loadSlide();
         }
 
