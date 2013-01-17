@@ -243,6 +243,15 @@
 
             e.cancelBubble = true;
         }
+        function clientNodeChecked(sender, args) {
+            var node = args.get_node()
+            var parentItem = node.get_parent();
+            if (parentItem) {
+                parentItem.set_checked(true);
+            }
+        }
+
+
 
         function OnClientDropDownOpenedHandler(sender, eventArgs) {
             var tree = sender.get_items().getItem(0).findControl("RadTreeView1");
@@ -306,7 +315,9 @@
                         <ItemTemplate>
                             <div id="div1">
                                 <telerik:RadTreeView CssClass="mtrv" runat="server" ID="RadTreeView1" OnClientNodeClicking="nodeClicking"
-                                    Width="100%" CheckBoxes="True" OnNodeDataBound="RadTreeView1_NodeDataBound">
+                                    Width="100%" CheckBoxes="True" 
+                                    OnNodeDataBound="RadTreeView1_NodeDataBound" 
+                                    OnClientNodeChecked ="clientNodeChecked">
                                     <NodeTemplate>
                                         <asp:DropDownList CssClass="dropdown" ID="ddl" runat="server">
                                             <asp:ListItem Text="1" Value="1"></asp:ListItem>
