@@ -35,8 +35,6 @@
                                 </div>
                                 <h2 class="article-desciption">
                                     <%#Eval("Description") %></h2>
-                                   
-                                        
                                         <asp:Repeater runat="server" ID="rptTinLienQuan2">
                                         <HeaderTemplate> <div class="tin-lien-quan-2"><span class="tin-lien-quan2-span">Tin liên quan</span></HeaderTemplate>
                                             <ItemTemplate>
@@ -45,7 +43,6 @@
                                             </ItemTemplate>
                                             <FooterTemplate></div></FooterTemplate>
                                         </asp:Repeater>
-                                    
                                 <div class="article-detail">
                                     <%#Eval("ArticleDetail") %>
                                 </div>
