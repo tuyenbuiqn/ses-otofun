@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using SES.CMS.DO;
 using SES.CMS.BL;
 using SES.CMS.AdminCP;
+using System.Data;
 
 namespace SES.CMS.WEB.AdminCP.PageUC
 {
@@ -14,7 +15,8 @@ namespace SES.CMS.WEB.AdminCP.PageUC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadUser();
+            if (!IsPostBack)
+                LoadUser();
         }
 
         private void LoadUser()
@@ -29,6 +31,17 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             LoadUser();
         }
 
+        protected void ddlNhomQuyen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int UserType = int.Parse(ddlNhomQuyen.SelectedValue);
+            DataTable dtUser = new sysUserBL().SelectAll();
+            if (UserType == -1)
+                gvUser.DataSource = dtUser;
+            else
+                gvUser.DataSource = new DataView(dtUser, " UserType = " + UserType, "", DataViewRowState.CurrentRows);
+            gvUser.DataBind();
+
+        }
         protected void gvUser_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             try

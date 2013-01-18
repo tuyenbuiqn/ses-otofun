@@ -13,6 +13,15 @@ namespace SES.CMS.WEB.AdminCP.PageUC {
     public partial class ucListUser {
         
         /// <summary>
+        /// ddlNhomQuyen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlNhomQuyen;
+        
+        /// <summary>
         /// gvUser control.
         /// </summary>
         /// <remarks>

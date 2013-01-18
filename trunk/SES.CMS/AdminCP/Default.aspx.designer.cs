@@ -49,6 +49,15 @@ namespace SES.CMS.AdminCP {
         protected global::System.Web.UI.WebControls.HyperLink hplDestination;
         
         /// <summary>
+        /// hplUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplUser;
+        
+        /// <summary>
         /// hplImage control.
         /// </summary>
         /// <remarks>

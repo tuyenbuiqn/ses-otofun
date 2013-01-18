@@ -18,15 +18,18 @@ namespace SES.CMS.AdminCP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserID"] == null)
+            if (Session["UserType"] == null || Session["UserName"] == null)
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("/AdminCP/Login.aspx");
             }
             else
             {
-                lblUsername.Text = Session["Username"].ToString();
+                int userType = int.Parse(Session["UserType"].ToString());
+                if (userType == 2 || userType == 3)
+                {
+                    lblUsername.Text = Session["Username"].ToString();
+                }
             }
-        //    Session["UserID"] = 1;
             if (Request.QueryString.Count == 0)
             {
                 Control MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
@@ -41,14 +44,14 @@ namespace SES.CMS.AdminCP
                 switch(Request.QueryString["Page"].ToString())
                 {
                     //Danh muc
-                    case "Article":
-                        hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
-                        break;
-                    case "ListArticle":
-                        hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
-                        break;
+                    //case "Article":
+                    //    hplDestination.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
+                    //    break;
+                    //case "ListArticle":
+                    //    hplDestination.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
+                    //    break;
                     case "ListArticleCategory":
                         hplDestination.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
@@ -57,22 +60,18 @@ namespace SES.CMS.AdminCP
                         hplDestination.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
                         break;
-                    case "ListEvent":
-                        hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
-                        break;
-                    case "Event":
-                        hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
-                        break;
-                    case "XetDuyetBaiViet":
-                        hplDestination.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
-                        break;
-
-
-                    //Video
-                 
+                    //case "ListEvent":
+                    //    hplDestination.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
+                    //    break;
+                    //case "Event":
+                    //    hplDestination.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
+                    //    break;
+                    //case "XetDuyetBaiViet":
+                    //    hplDestination.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuArticles.ascx");
+                    //    break;
                         //Config
                     case "ListConfig":
                         hplConfig.CssClass = "active";
@@ -82,89 +81,82 @@ namespace SES.CMS.AdminCP
                         hplConfig.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuConfig.ascx");
                         break;
-
+                    //User
                     case "ListUser":
-                        hplConfig.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuConfig.ascx");
+                        hplUser.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuQlNguoiDung.ascx");
                         break;
                     case "User":
-                        hplConfig.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuConfig.ascx");
+                        hplUser.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuQlNguoiDung.ascx");
                         break;
-
-
                     //Slide
-                    case "ListSlide":
-                        hplSlide.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuSlide.ascx");
-                        break;
-                    case "Slide":
-                        hplSlide.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuSlide.ascx");
-                        break;
+                    //case "ListSlide":
+                    //    hplSlide.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuSlide.ascx");
+                    //    break;
+                    //case "Slide":
+                    //    hplSlide.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuSlide.ascx");
+                    //    break;
 
-                    case "ListAlbum":
-                        hplImage.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
-                        break;
-                    case "ListImages":
-                        hplImage.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
-                        break;
-                    case "Image":
-                        hplImage.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
-                        break;
-                    case "Album":
-                        hplImage.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
-                        break;
-                    case "AddMultiImg":
-                        hplImage.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
-                        break;
+                    //case "ListAlbum":
+                    //    hplImage.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                    //    break;
+                    //case "ListImages":
+                    //    hplImage.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                    //    break;
+                    //case "Image":
+                    //    hplImage.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                    //    break;
+                    //case "Album":
+                    //    hplImage.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                    //    break;
+                    //case "AddMultiImg":
+                    //    hplImage.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                    //    break;
 
-                    case "Video":
-                        hplImage.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
-                        break;
-                    case "ListVideo":
-                        hplImage.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
-                        break;
-
-
+                    //case "Video":
+                    //    hplImage.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                    //    break;
+                    //case "ListVideo":
+                    //    hplImage.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuImages.ascx");
+                    //    break;
                     //Video
-                    case "ListAdvertisement":
-                        hplAdvertisement.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuAdvertisement.ascx");
-                        break;
-                    case "Advertisement":
-                        hplAdvertisement.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuAdvertisement.ascx");
-                        break;
+                    //case "ListAdvertisement":
+                    //    hplAdvertisement.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuAdvertisement.ascx");
+                    //    break;
+                    //case "Advertisement":
+                    //    hplAdvertisement.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuAdvertisement.ascx");
+                    //    break;
 
                     //Business Info
-                    case "ListBusiness":
-                        hplBusiness.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
-                        break;
-                    case "BusinessInfo":
-                        hplBusiness.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
-                        break;
-                    case "DuyetBaiVietTTDN":
-                        hplBusiness.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
-                        break;
-
+                    //case "ListBusiness":
+                    //    hplBusiness.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
+                    //    break;
+                    //case "BusinessInfo":
+                    //    hplBusiness.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
+                    //    break;
+                    //case "DuyetBaiVietTTDN":
+                    //    hplBusiness.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuBusinessInfo.ascx");
+                    //    break;
                     //Business Info
-                    case "DuyetComment":
-                        hptComment.CssClass = "active";
-                        MnuPage = LoadControl("MenuUC/ucMnuComment.ascx");
-                        break;
-
-
+                    //case "DuyetComment":
+                    //    hptComment.CssClass = "active";
+                    //    MnuPage = LoadControl("MenuUC/ucMnuComment.ascx");
+                    //    break;
             //        case "ListClientLogin":
             //            hplImage.CssClass = "active";
             //            MnuPage = LoadControl("MenuUC/ucMnuCustomer.ascx");

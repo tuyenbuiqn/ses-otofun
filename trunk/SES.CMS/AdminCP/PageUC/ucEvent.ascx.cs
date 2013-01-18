@@ -14,12 +14,14 @@ namespace SES.CMS.AdminCP.PageUC
         cmsEventDO objEvent = new cmsEventDO();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Functions.DevCboDatabinder(cboParent, new cmsCategoryBL().SelectAll(), cmsCategoryDO.TITLE_FIELD, cmsCategoryDO.CATEGORYID_FIELD);
-            if (Request.QueryString["EventID"] != null)
-            {
-                objEvent.EventID = int.Parse(Request.QueryString["EventID"].ToString());
-                initForm();
-            }
+          
+                    Functions.DevCboDatabinder(cboParent, new cmsCategoryBL().SelectAll(), cmsCategoryDO.TITLE_FIELD, cmsCategoryDO.CATEGORYID_FIELD);
+                    if (Request.QueryString["EventID"] != null)
+                    {
+                        objEvent.EventID = int.Parse(Request.QueryString["EventID"].ToString());
+                        initForm();
+                    }
+               
         }
         private void initForm()
         {
