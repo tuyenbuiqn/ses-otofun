@@ -88,6 +88,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectByCategoryID2(categoryID);
         }
+        public DataTable SelectBySameCategory(int top, int categoryID)
+        {
+            return objcmsArticleDAL.SelectBySameCategory(top, categoryID);
+        }
         public DataTable SelectByCatNum(int CategoryID, int Recordnumber)
         {
             return objcmsArticleDAL.SelectByCatNum(CategoryID, Recordnumber);
