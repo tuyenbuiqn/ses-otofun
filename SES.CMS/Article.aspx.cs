@@ -8,6 +8,7 @@ using SES.CMS.BL;
 using SES.CMS.DO;
 using System.Data;
 using System.Web.Caching;
+using System.Web.UI.HtmlControls;
 
 namespace SES.CMS
 {
@@ -19,7 +20,7 @@ namespace SES.CMS
         {
             if (!string.IsNullOrEmpty(Request.QueryString["ArticleID"]))
             {
-                int articleID = int.Parse(Request.QueryString["ArticleID"].ToString());
+                int articleID = int.Parse(Request.QueryString["ArticleID"]);
 
                 if (!IsPostBack)
                 {
@@ -27,10 +28,28 @@ namespace SES.CMS
                     {
                         UpdateLuotView(articleID);
                     }
+                    else if (Session["artIpAddress"] != null)
+                    {
+                        if (Session["readedArticle"] == null)
+                        {
+                            UpdateLuotView(articleID);
+                        }
+                        else
+                        {
+                            int readedArticle = int.Parse(Session["readedArticle"].ToString());
+                            if (articleID != readedArticle)
+                            {
+                                UpdateLuotView(articleID);
+                            }
+                        }
+                    }
                     Session["artIpAddress"] = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                    Session["readedArticle"] = articleID;
+
                     rptArticeDataSource(articleID);
-                    rptBuildChildMenu(articleID);
-                    loadBreadcrumb(articleID);
+                    //Load Cate, Breadcrumb
+                    loadOtherInfo();
+
                     DataTable dtArticle = new cmsArticleBL().SelectByPK(articleID);
                     if (dtArticle.Rows.Count > 0)
                     {
@@ -41,11 +60,28 @@ namespace SES.CMS
                         Page.Title = "Tin tức - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                     }
                     Page.Header.Controls.Add(Ultility.AddDescription(dtArticle.Rows[0]["Description"].ToString()));
-                    BuildEvent(articleID);
+
                 }
             }
         }
 
+        protected void loadOtherInfo()
+        {
+            int categoryID = -1;
+            string url = Request.Url.AbsolutePath;
+            url = url.Substring(1, url.Length - 1);
+            string url1 = url.Replace(".", "/");
+            string Module = url1.Substring(0, url1.IndexOf("/"));
+            try
+            {
+               // string s = Module.Substring(Module.LastIndexOf('-') + 1, Module.Length - (Module.LastIndexOf('-') + 1));
+                categoryID = int.Parse(Module.Substring(Module.LastIndexOf('-') + 1, Module.Length - (Module.LastIndexOf('-') + 1)));
+            }
+            catch{}
+            loadBreadcrumb(categoryID);
+            rptBuildChildMenu(categoryID);
+            BuildEvent(categoryID);
+        }
         protected void UpdateLuotView(int articleID)
         {
             cmsArticleDO objArt = new cmsArticleDO();
@@ -59,14 +95,10 @@ namespace SES.CMS
                 new cmsArticleBL().Update(objArt);
             }
         }
-        protected void loadBreadcrumb(int articleID)
+        protected void loadBreadcrumb(int categoryID)
         {
-            cmsArticleDO objArt = new cmsArticleDO();
-            objArt.ArticleID = articleID;
-            objArt = new cmsArticleBL().Select(objArt);
-
             cmsCategoryDO objCate = new cmsCategoryDO();
-            objCate.CategoryID = objArt.CategoryID;
+            objCate.CategoryID = categoryID;
             objCate = new cmsCategoryBL().Select(objCate);
 
             string rootUrl = "<a href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
@@ -113,36 +145,28 @@ namespace SES.CMS
             }
         }
 
-        protected void BuildEvent(int articleID)
+        protected void BuildEvent(int categoryID)
         {
             MasterPage master = this.Master as MasterPage;
             Control ucEvent = master.FindControl("ucEvent3") as Control;
             Repeater rptEvent = ucEvent.FindControl("rptEvent") as Repeater;
 
-            cmsArticleDO objArt = new cmsArticleDO();
-            objArt.ArticleID = articleID;
-            objArt = new cmsArticleBL().Select(objArt);
-
-            rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(objArt.CategoryID, 5);
+            rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(categoryID, 5);
             rptEvent.DataBind();
         }
-        protected void rptBuildChildMenu(int articleID)
+        protected void rptBuildChildMenu(int categoryID)
         {
             MasterPage master = this.Master as MasterPage;
             Control ucCateMenu = master.FindControl("ucCateMenu2") as Control;
             Repeater rptCateMenu = ucCateMenu.FindControl("rptChildMenu") as Repeater;
 
-            cmsArticleDO objArt = new cmsArticleDO();
-            objArt.ArticleID = articleID;
-            objArt = new cmsArticleBL().Select(objArt);
-
             cmsCategoryDO objCate = new cmsCategoryDO();
-            objCate.CategoryID = objArt.CategoryID;
+            objCate.CategoryID = categoryID;
             objCate = new cmsCategoryBL().Select(objCate);
 
             if (objCate.ParentID == 0)
             {
-                DataTable dtCate = new cmsCategoryBL().SelectByParent(objArt.CategoryID);
+                DataTable dtCate = new cmsCategoryBL().SelectByParent(objCate.CategoryID);
                 if (dtCate.Rows.Count > 0)
                 {
                     rptCateMenu.DataSource = dtCate;
