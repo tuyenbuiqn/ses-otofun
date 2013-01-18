@@ -50,8 +50,8 @@ namespace SES.CMS.AdminCP.PageUC
             int userID = int.Parse(Session["UserID"].ToString());
             int articleID = int.Parse(ddlArticle.SelectedValue.ToString());
             int isAccepted = int.Parse(ddlTrangThai.SelectedValue.ToString());
-            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(articleID, isAccepted, userID);
-            gvAt.DataBind();
+            //gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(articleID, isAccepted, userID);
+            //gvAt.DataBind();
         }
         protected void btnAccept_Click(object sender, EventArgs e)
         {
@@ -109,8 +109,8 @@ namespace SES.CMS.AdminCP.PageUC
             int userID = int.Parse(ddlUserCreate.SelectedValue.ToString());
             int commentID = int.Parse(ddlArticle.SelectedValue.ToString());
             int isAccepted = int.Parse(ddlTrangThai.SelectedValue.ToString());
-            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(commentID, isAccepted, userID);
-            gvAt.DataBind();
+            //gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(commentID, isAccepted, userID);
+            //gvAt.DataBind();
         }
     }
 }
