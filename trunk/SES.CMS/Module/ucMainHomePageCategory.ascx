@@ -35,8 +35,8 @@
                                 <p>
                                     Cập nhật:&nbsp;</p>
                                 <p>
-                                    <%#Eval("CreateDate","{0:hh}h") %>&nbsp;
-                                    <%#Eval("CreateDate","{0:dd-MM-yyyy}") %></p>
+                                    <%#Eval("ThoiGianXuatBan","{0:hh}h") %>&nbsp;
+                                    <%#Eval("ThoiGianXuatBan", "{0:dd-MM-yyyy}")%></p>
                                 <p>
                                     &nbsp;|&nbsp;</p>
                                 <p>

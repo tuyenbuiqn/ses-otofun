@@ -11,7 +11,8 @@
                         <div class="out-image">
                             <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                 title='<%#Eval("Title") %>'>
-                                <img alt="<%#Eval("Title") %>" class="Anh-noidung-docnhieu" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' /></a></div>
+                                <img alt="<%#Eval("Title") %>" class="Anh-noidung-docnhieu" src='/Media/<%#Eval("ImageUrl") %>'
+                                    alt='<%#Eval("Title") %>' /></a></div>
                         <p>
                             <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                 title='<%#Eval("Title") %>'>
