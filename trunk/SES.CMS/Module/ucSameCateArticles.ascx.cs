@@ -17,17 +17,27 @@ namespace SES.CMS.Module
             if (!String.IsNullOrEmpty(Request.QueryString["ArticleID"]))
             {
                 int articleID = int.Parse(Request.QueryString["ArticleID"]);
-                rptNewArticleDataSource(articleID);
+                if (!IsPostBack)
+                    rptNewArticleDataSource(articleID);
             }
         }
         protected void rptNewArticleDataSource(int articleID)
         {
-            cmsArticleDO objArt = new cmsArticleDO();
-            objArt.ArticleID = articleID;
-            objArt = new cmsArticleBL().Select(objArt);
-            if (objArt.CategoryID > 0)
+            int categoryID = -1;
+            string url = Request.Url.AbsolutePath;
+            url = url.Substring(1, url.Length - 1);
+            string url1 = url.Replace(".", "/");
+            string Module = url1.Substring(0, url1.IndexOf("/"));
+            try
             {
-                DataTable dtNewArt = new cmsArticleBL().SelectByCategoryID(objArt.CategoryID);
+                // string s = Module.Substring(Module.LastIndexOf('-') + 1, Module.Length - (Module.LastIndexOf('-') + 1));
+                categoryID = int.Parse(Module.Substring(Module.LastIndexOf('-') + 1, Module.Length - (Module.LastIndexOf('-') + 1)));
+            }
+            catch { }
+          
+            if (categoryID > 0)
+            {
+                DataTable dtNewArt = new cmsArticleBL().SelectBySameCategory(15,categoryID);
                 rptNewArticle.DataSource = new DataView(dtNewArt, "ArticleID <> " + articleID, "", DataViewRowState.CurrentRows);
                 rptNewArticle.DataBind();
             }
