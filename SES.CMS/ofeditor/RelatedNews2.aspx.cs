@@ -107,8 +107,6 @@ namespace SES.CMS.ofeditor
             rptListArticlesSelect.DataBind();
         }
 
-
-
         protected void rcbCat_Init(object sender, EventArgs e)
         {
             RadComboBox objCombo = ((RadComboBox)sender);
@@ -214,12 +212,24 @@ namespace SES.CMS.ofeditor
                 }
                 if (lblArticleCategory != null)
                 {
-                    DataTable dtCategory = new DataTable();
-                    dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
-                    if (dtCategory != null)
+                    DataTable dtCategory = new DataTable("dtCategory");
+                    DataTable dtArticleCategory = new DataTable("dtArticleCategory");
+                    int intCategoryId = 0;
+                    string sreturn = "";
+                    dtArticleCategory = new cmsArticleCategoryBL().SelectDistinctCategoryByArticleID(Int32.Parse(itemData["ArticleID"].ToString()));
+                    if ((dtArticleCategory != null) && (dtArticleCategory.Rows.Count > 0))
                     {
-                        lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                        for (int i = 0; i < dtArticleCategory.Rows.Count; i++)
+                        {
+                            intCategoryId = Int32.Parse(dtArticleCategory.Rows[i]["CategoryID"].ToString());
+                            dtCategory = new cmsCategoryBL().Category_GetByPK(intCategoryId);
+                            if ((dtCategory != null) && (dtCategory.Rows.Count > 0))
+                            {
+                                sreturn = sreturn + "- " + dtCategory.Rows[0]["Title"].ToString() + "<br/>";
+                            }
+                        }
                     }
+                    lblArticleCategory.Text = sreturn;
                 }
                 if (lblArticleTime != null)
                 {
@@ -277,7 +287,7 @@ namespace SES.CMS.ofeditor
                 if (ArticleSelectId != 0)
                 {
                     dtArticle = new cmsArticleBL().SelectByPK(ArticleSelectId);
-                    if (dtArticle != null)
+                    if ((dtArticle != null) && (dtArticle.Rows.Count > 0))
                     {
                         if (hdfListArticlesId != null)
                         {
@@ -323,7 +333,7 @@ namespace SES.CMS.ofeditor
             {
                 if (lblArticleSelect != null)
                 {
-                    if (dtArticle != null)
+                    if ((dtArticle != null) && (dtArticle.Rows.Count > 0))
                     {
                         lblArticleSelect.Text = dtArticle.Rows[0]["Title"].ToString();
                     }
@@ -331,7 +341,7 @@ namespace SES.CMS.ofeditor
                 if (lnkDelete != null)
                 {
                     lnkDelete.CommandName = "Delete";
-                    if (dtArticle != null)
+                    if ((dtArticle != null) && (dtArticle.Rows.Count > 0))
                     {
                         lnkDelete.CommandArgument = dtArticle.Rows[0]["ArticleID"].ToString();
                     }

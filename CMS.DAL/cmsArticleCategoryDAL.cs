@@ -302,6 +302,29 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+
+        public DataTable SelectDistinctCategoryByArticleID(int articleID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticleCategory_GetDistinctCategoryByArticle";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+            Sqlparam.Value = articleID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
     }
 
 }
