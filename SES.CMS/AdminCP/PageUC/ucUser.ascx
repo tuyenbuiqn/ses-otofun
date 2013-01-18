@@ -18,7 +18,7 @@
                 Username</p>
         </td>
         <td class="style1">
-            <asp:TextBox ID="txtUsername" runat="server" Width="235px"></asp:TextBox>
+            <asp:TextBox ID="txtUsername" autocomplete="off" runat="server" Width="235px"></asp:TextBox>
         </td>
         <td class="style1">
             <p style="width: 120px; margin: 0">

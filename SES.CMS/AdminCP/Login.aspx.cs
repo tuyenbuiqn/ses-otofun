@@ -31,17 +31,24 @@ namespace SES.CMS.AdminCP
             DataTable dtUser = new sysUserBL().SelectLogin(txtUsername.Text, txtPass);
             if (dtUser.Rows.Count > 0)
             {
-                Session["Username"] = dtUser.Rows[0]["Username"].ToString();
-                Session["UserID"] = dtUser.Rows[0]["UserID"].ToString();
-                Session["UserType"] = dtUser.Rows[0]["UserType"].ToString();
-                Response.Redirect("Default.aspx");
+                int UserType;
+                if (dtUser.Rows[0]["UserType"] != null)
+                {
+                    UserType = int.Parse(dtUser.Rows[0]["UserType"].ToString());
+                    if (UserType == 2 || UserType == 3)
+                    {
+                        Session["UserType"] = UserType;
+                        Session["Username"] = dtUser.Rows[0]["Username"].ToString();
+                        Session["UserID"] = dtUser.Rows[0]["UserID"].ToString();
+                        Response.Redirect("Default.aspx");
+                    }
+                    else Functions.Alert("Bạn không có quyền vào trang quản trị!", Request.Url.ToString());
+                }
             }
             else
             {
-                Functions.Alert("Sai tên đăng nhập", Request.Url.ToString());
+                Functions.Alert("Sai tên đăng nhập hoặc mật khẩu", Request.Url.ToString());
             }
-
-
         }
     }
 }

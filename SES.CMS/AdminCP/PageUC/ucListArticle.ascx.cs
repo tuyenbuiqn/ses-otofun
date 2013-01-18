@@ -52,15 +52,11 @@ namespace SES.CMS.AdminCP.PageUC
         {
             Response.Redirect("Default.aspx?Page=Article");
         }
-
-
-
         protected void gvAt_SelectedIndexChanged(object sender, EventArgs e)
         {
             int ArticleID = int.Parse(gvAt.DataKeys[gvAt.SelectedIndex].Value.ToString());
             Response.Redirect("Default.aspx?Page=Article&ArticleID=" + ArticleID.ToString());
         }
-
         protected void gvAt_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             new cmsArticleBL().Delete(new cmsArticleDO { ArticleID = Convert.ToInt32(gvAt.DataKeys[e.RowIndex].Value) });
