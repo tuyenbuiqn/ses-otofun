@@ -31,6 +31,11 @@ namespace SES.CMS.ofeditor
 
                 pnlTitle01.Visible = false;
                 pnlTitle02.Visible = false;
+
+                //Load 20 bai moi nhat
+                DateTime dateToSelect = new DateTime(2012, 12, 12);
+                rptListArticles.DataSource = new cmsArticleBL().SelectTop20NewArticles(dateToSelect);
+                rptListArticles.DataBind();
             }
         }
 

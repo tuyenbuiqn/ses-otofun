@@ -164,7 +164,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.GetTinLienQuan2(articleID);
         }
-
+        public DataTable SelectTop20NewArticles(DateTime today)
+        {
+            return objcmsArticleDAL.SelectTop20NewArticles(today);
+        }
         public DataTable Article_Search(string lstCategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Keyw)
         {
             return objcmsArticleDAL.Article_Search(lstCategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Keyw);
