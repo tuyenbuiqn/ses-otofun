@@ -90,6 +90,7 @@ namespace SES.CMS.DO
 		private Int32 _LuotView;
 		private String _TinLienQuan1;
 		private String _TinLienQuan2;
+        public Boolean IsWaitingPublish { get; set; }
 
 		#endregion
 
