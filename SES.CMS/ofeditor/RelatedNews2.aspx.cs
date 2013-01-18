@@ -235,14 +235,14 @@ namespace SES.CMS.ofeditor
                 {
                     lblArticleTime.Text = itemData["CreateDate"].ToString();
                 }
-                if (lnkSelectItem != null)
-                {
-                    lnkSelectItem.CommandName = "Select";
-                    lnkSelectItem.CommandArgument = itemData["ArticleID"].ToString();
-                }
             }
             catch (Exception)
             {
+            }
+            if (lnkSelectItem != null)
+            {
+                lnkSelectItem.CommandName = "Select";
+                lnkSelectItem.CommandArgument = itemData["ArticleID"].ToString();
             }
         }
 

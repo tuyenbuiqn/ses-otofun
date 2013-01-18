@@ -83,6 +83,7 @@ namespace SES.CMS.ofeditor
                 }
             }
 
+            DataTable test = new cmsArticleBL().Article_Search(lstCategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Title);
             rptListArticles.DataSource = new cmsArticleBL().Article_Search(lstCategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Title);
             rptListArticles.DataBind();
         }
@@ -242,6 +243,11 @@ namespace SES.CMS.ofeditor
             }
             catch (Exception)
             {
+            }
+            if (lnkSelectItem != null)
+            {
+                lnkSelectItem.CommandName = "Select";
+                lnkSelectItem.CommandArgument = itemData["ArticleID"].ToString();
             }
         }
 
