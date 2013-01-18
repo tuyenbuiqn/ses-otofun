@@ -41,6 +41,23 @@
         </td>
     </tr>
     <tr>
+        <td>
+            Chọn quyền</td>
+        <td>
+             <asp:DropDownList runat="server" ID="ddlNhomQuyen" AppendDataBoundItems="true">
+            <asp:ListItem Text="Phóng viên" Value="0"></asp:ListItem>
+            <asp:ListItem Text="Biên tập viên" Value="1"></asp:ListItem>
+            <asp:ListItem Text="Thư ký" Value="2"></asp:ListItem>
+            <asp:ListItem Text="Quản trị" Value="3"></asp:ListItem>
+        </asp:DropDownList>
+        </td>
+        <td>
+            Địa chỉ</td>
+        <td>
+             <asp:TextBox ID="txtAddress" runat="server" Width="235px"></asp:TextBox>
+        </td>
+    </tr>
+    <tr>
         <td colspan="4">
             <div style="float: left; margin-right: 10px; margin-top: 10px;">
                 <dxe:ASPxButton ID="btSave" runat="server" Text="Lưu" CssFilePath="~/App_Themes/SoftOrange/{0}/styles.css"

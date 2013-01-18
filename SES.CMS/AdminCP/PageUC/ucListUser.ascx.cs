@@ -60,5 +60,36 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             int UserID = Convert.ToInt32(gvUser.DataKeys[gvUser.SelectedIndex].Value);
             Functions.RedirectPage("Default.aspx?Page=User&UserID=" + UserID.ToString());
         }
+        protected string Permission(object e)
+        {
+            string sPermission = "";
+            int iPermisson;
+            if (e == null)
+                sPermission = "Chưa có quyền!!!";
+            else
+            {
+                iPermisson = int.Parse(e.ToString());
+                switch (iPermisson)
+                {
+                    case 0:
+                        sPermission = "Phóng viên";
+                        break;
+                    case 1:
+                        sPermission = "Biên tập viên";
+                        break;
+                    case 2:
+                        sPermission = "Thư ký";
+                        break;
+                    case 3:
+                        sPermission = "Quản trị viên";
+                        break;
+                    default:
+                        sPermission = "Không rõ quyền!!!";
+                        break;
+                }
+            }
+            return sPermission;
+
+        }
     }
 }

@@ -26,7 +26,12 @@
                     </asp:BoundField>
                     <asp:BoundField DataField="Username" HeaderText="Tên người dùng" />
                     <asp:BoundField DataField="Email" HeaderText="Email" />
-                    <asp:BoundField DataField="isActive" HeaderText="Active" />
+                   <%-- <asp:BoundField DataField="isActive" HeaderText="Active" />--%>
+                    <asp:TemplateField HeaderText="Quyền">
+                        <ItemTemplate>
+                            <asp:Label runat="server" ID="lblQuyenHan" Text='<%#Permission(Eval("UserType")) %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:ImageButton ID="btEdit" runat="server" CommandName="Select" ImageUrl="~/AdminCP/images/edit_16x16.gif" />

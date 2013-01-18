@@ -49,6 +49,24 @@ namespace SES.CMS.WEB.AdminCP.PageUC {
         protected global::System.Web.UI.WebControls.CheckBox cbActive;
         
         /// <summary>
+        /// ddlNhomQuyen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlNhomQuyen;
+        
+        /// <summary>
+        /// txtAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        
+        /// <summary>
         /// btSave control.
         /// </summary>
         /// <remarks>
