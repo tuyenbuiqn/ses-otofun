@@ -86,6 +86,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleCategoryDAL.SelectByArticleID(articleID);
         }
+        public DataTable SelectDistinctCategoryByArticleID(int articleID)
+        {
+            return objcmsArticleCategoryDAL.SelectDistinctCategoryByArticleID(articleID);
+        }
     }
 
 }
