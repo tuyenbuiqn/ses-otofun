@@ -474,73 +474,8 @@ namespace SES.CMS.ofeditor.Module
                     }
                 }
                 if (lnkEdit != null)
-                {
-                    lnkEdit.CommandName = "Edit";
-                    lnkEdit.CommandArgument = itemData["ArticleID"].ToString();
-                    if ((Session["UserType"].ToString() == "2") || (Session["UserType"].ToString() == "3"))
-                    {
-                        lnkEdit.Visible = true;
-                    }
-                    else
-                    {
-                        if (Session["UserID"] != null)
-                        {
-                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
-                            {
-                                if (itemData["IsPublish"].ToString() == "False")
-                                {
-                                    lnkEdit.Visible = true;
-                                }
-                                else
-                                {
-                                    lnkEdit.Visible = false;
-                                }
-                            }
-                            else
-                            {
-                                lnkEdit.Visible = false;
-                            }
-                        }
-                        else
-                        {
-                            lnkEdit.Visible = false;
-                        }
-                    }
-                }
-                if (lnkDelete != null)
-                {
-                    lnkDelete.CommandName = "Delete";
-                    lnkDelete.CommandArgument = itemData["ArticleID"].ToString();
-                    if ((Session["UserType"].ToString() == "2") || (Session["UserType"].ToString() == "3"))
-                    {
-                        lnkDelete.Visible = true;
-                    }
-                    else
-                    {
-                        if (Session["UserID"] != null)
-                        {
-                            if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
-                            {
-                                if (itemData["IsPublish"].ToString() == "False")
-                                {
-                                    lnkDelete.Visible = true;
-                                }
-                                else
-                                {
-                                    lnkDelete.Visible = false;
-                                }
-                            }
-                            else
-                            {
-                                lnkDelete.Visible = false;
-                            }
-                        }
-                        else
-                        {
-                            lnkDelete.Visible = false;
-                        }
-                    }
-                }
+                
+                
                 if (chkView != null)
                 {
                     string temp = itemData["IsPublish"].ToString();
@@ -556,6 +491,73 @@ namespace SES.CMS.ofeditor.Module
             }
             catch (Exception)
             {
+            }
+            {
+                lnkEdit.CommandName = "Edit";
+                lnkEdit.CommandArgument = itemData["ArticleID"].ToString();
+                if ((Session["UserType"].ToString() == "2") || (Session["UserType"].ToString() == "3"))
+                {
+                    lnkEdit.Visible = true;
+                }
+                else
+                {
+                    if (Session["UserID"] != null)
+                    {
+                        if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                        {
+                            if (itemData["IsPublish"].ToString() == "False")
+                            {
+                                lnkEdit.Visible = true;
+                            }
+                            else
+                            {
+                                lnkEdit.Visible = false;
+                            }
+                        }
+                        else
+                        {
+                            lnkEdit.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        lnkEdit.Visible = false;
+                    }
+                }
+            }
+            if (lnkDelete != null)
+            {
+                lnkDelete.CommandName = "Delete";
+                lnkDelete.CommandArgument = itemData["ArticleID"].ToString();
+                if ((Session["UserType"].ToString() == "2") || (Session["UserType"].ToString() == "3"))
+                {
+                    lnkDelete.Visible = true;
+                }
+                else
+                {
+                    if (Session["UserID"] != null)
+                    {
+                        if (Session["UserID"].ToString() == itemData["UserCreate"].ToString())
+                        {
+                            if (itemData["IsPublish"].ToString() == "False")
+                            {
+                                lnkDelete.Visible = true;
+                            }
+                            else
+                            {
+                                lnkDelete.Visible = false;
+                            }
+                        }
+                        else
+                        {
+                            lnkDelete.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        lnkDelete.Visible = false;
+                    }
+                }
             }
         }
 
@@ -596,7 +598,7 @@ namespace SES.CMS.ofeditor.Module
             if (e.CommandName == "Edit")
             {
                 //Khi nào dùng thì sửa lại link bên dưới
-                //Response.Redirect("Default.aspx?Page=Article&ArticleID=" + iArticleId.ToString());
+                Response.Redirect("/ofeditor/AddNews.aspx?ArticleID=" + iArticleId.ToString());
             }
         }
 
