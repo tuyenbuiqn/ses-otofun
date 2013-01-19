@@ -8,6 +8,7 @@ using SES.CMS.BL;
 using SES.CMS.DO;
 using Telerik.Web.UI;
 using System.Data;
+using System.IO;
 
 namespace SES.CMS.ofeditor
 {
@@ -37,7 +38,9 @@ namespace SES.CMS.ofeditor
                             objArt.DangBienTap = true; // Lock editting
                             objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
                             new cmsArticleBL().Update(objArt);
-                        } initForm(); 
+                        } 
+                        
+                        initForm(); 
                     
                     }
                     
@@ -46,6 +49,12 @@ namespace SES.CMS.ofeditor
                 {
                     BindRelatedNews("0", "0");
                 }
+                if (!Directory.Exists(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/")))
+                    Directory.CreateDirectory(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/"));
+                txtDetail.ImageManager.ViewPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
+                txtDetail.ImageManager.UploadPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
+               
+               
 
             }
 

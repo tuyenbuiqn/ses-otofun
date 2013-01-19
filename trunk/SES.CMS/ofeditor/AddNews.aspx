@@ -194,6 +194,11 @@
 
                         args.set_value(newInner);
                     }
+                    else {
+                        var newInner = "<center><img src='" + img.src + "' alt='Otofun News' style='" + img.getAttribute("style") + "'/></center>";
+                        
+                        args.set_value(newInner);
+                    }
 
                 }
             }
@@ -366,7 +371,7 @@
                 <div style="float: left;">
                     <telerik:RadEditor ID="txtDetail" runat="server" OnClientPasteHtml="OnClientPasteHtml"
                         Width="789px">
-                        <ImageManager MaxUploadFileSize="1024000000" ViewPaths="~/Media/" UploadPaths="~/Media/"
+                        <ImageManager MaxUploadFileSize="1024000000"
                             DeletePaths="~/MediaDelete/"></ImageManager>
                     </telerik:RadEditor>
                 </div>
