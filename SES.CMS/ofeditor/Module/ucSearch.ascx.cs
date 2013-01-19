@@ -415,37 +415,24 @@ namespace SES.CMS.ofeditor.Module
                 }
                 if (lblArticleCategory != null)
                 {
-                    string sArticleCategory = "";
-                    try
+                    DataTable dtCategory = new DataTable("dtCategory");
+                    DataTable dtArticleCategory = new DataTable("dtArticleCategory");
+                    int intCategoryId = 0;
+                    string sreturn = "";
+                    dtArticleCategory = new cmsArticleCategoryBL().SelectDistinctCategoryByArticleID(Int32.Parse(itemData["ArticleID"].ToString()));
+                    if ((dtArticleCategory != null) && (dtArticleCategory.Rows.Count > 0))
                     {
-                        DataTable dtCategory = new DataTable();
-                        DataTable dtListCategory = new DataTable();
-
-                        dtListCategory = new cmsArticleCategoryBL().SelectByArticleID(Int32.Parse(itemData["ArticleID"].ToString()));
-                        if (dtListCategory != null)
+                        for (int i = 0; i < dtArticleCategory.Rows.Count; i++)
                         {
-                            for (int i = 0; i < dtListCategory.Rows.Count; i++)
+                            intCategoryId = Int32.Parse(dtArticleCategory.Rows[i]["CategoryID"].ToString());
+                            dtCategory = new cmsCategoryBL().Category_GetByPK(intCategoryId);
+                            if ((dtCategory != null) && (dtCategory.Rows.Count > 0))
                             {
-                                dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(dtListCategory.Rows[i]["CategoryID"].ToString()));
-                                if (dtCategory != null)
-                                {
-                                    if (sArticleCategory == "")
-                                    {
-                                        sArticleCategory += dtCategory.Rows[0]["Title"].ToString();
-                                    }
-                                    else
-                                    {
-                                        sArticleCategory += "<Br />" + dtCategory.Rows[0]["Title"].ToString();
-                                    }
-                                }
+                                sreturn = sreturn + "- " + dtCategory.Rows[0]["Title"].ToString() + "<br/>";
                             }
                         }
                     }
-                    catch (Exception)
-                    {
-                        lblArticleCategory.Text = "";
-                    }
-                    lblArticleCategory.Text = sArticleCategory;
+                    lblArticleCategory.Text = sreturn;
                 }
                 if (lblArticleUserCreate != null)
                 {
@@ -453,7 +440,7 @@ namespace SES.CMS.ofeditor.Module
                     {
                         DataTable dtUser = new DataTable();
                         dtUser = new sysUserBL().User_GetByPK(Int32.Parse(itemData["UserCreate"].ToString()));
-                        if (dtUser != null)
+                        if ((dtUser != null) && (dtUser.Rows.Count > 0))
                         {
                             lblArticleUserCreate.Text = dtUser.Rows[0]["Username"].ToString();
                         }
@@ -584,7 +571,7 @@ namespace SES.CMS.ofeditor.Module
                     dtArticle = new cmsArticleBL().SelectByPK(iArticleId);
                     new cmsArticleBL().Delete(new cmsArticleDO { ArticleID = iArticleId });
                     objHtr.Action = "Xóa bài viết ";
-                    if (dtArticle != null)
+                    if ((dtArticle != null) && (dtArticle.Rows.Count > 0))
                     {
                         objHtr.Contents = "Bài viết tác động: [" + iArticleId + "]" + dtArticle.Rows[0]["Title"].ToString();
                     }
@@ -592,7 +579,7 @@ namespace SES.CMS.ofeditor.Module
                     {
                         string iUserId = Session["UserID"].ToString();
                         dtUser = new sysUserBL().User_GetByPK(int.Parse(iUserId));
-                        if (dtUser != null)
+                        if ((dtUser != null) && (dtUser.Rows.Count > 0))
                         {
                             objHtr.Comment = "User tác động: [" + dtUser.Rows[0]["UserID"].ToString() + "] " + dtUser.Rows[0]["Username"].ToString();
                         }

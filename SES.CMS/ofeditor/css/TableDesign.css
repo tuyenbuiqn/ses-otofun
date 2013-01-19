@@ -450,8 +450,11 @@
 }
 #Search
 {
-	background:url('/AdminCP/images/BackgroundSearch.png') repeat-x #CCCCCC;
+	background:#FFBB00;
 	border-radius: 6px;
+	font-size: 12px;
+	font-weight:bold;
+	color: #303030;
 }
 #Search table, #ListArticle table
 {
@@ -465,8 +468,9 @@
 #Search .ucSearchTextbox
 {
 	margin-top: 10px;
-	width: 99%;
+	width: 98%;
 	height: 22px;
+	border-radius: 4px;
 }
 #Search .ucSearchDdl
 {
@@ -502,6 +506,7 @@
 #ListArticle
 {
 	margin-top: 10px;
+	font-size: 12px;
 }
 #ListArticle th
 {
