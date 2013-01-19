@@ -218,25 +218,38 @@ namespace SES.CMS.ofeditor
                 }
                 if (lblArticleCategory != null)
                 {
-                    DataTable dtCategory = new DataTable();
-                    dtCategory = new cmsCategoryBL().Category_GetByPK(Int32.Parse(itemData["CategoryID"].ToString()));
-                    if (dtCategory != null)
+                    DataTable dtCategory = new DataTable("dtCategory");
+                    DataTable dtArticleCategory = new DataTable("dtArticleCategory");
+                    int intCategoryId = 0;
+                    string sreturn = "";
+                    dtArticleCategory = new cmsArticleCategoryBL().SelectDistinctCategoryByArticleID(Int32.Parse(itemData["ArticleID"].ToString()));
+                    if ((dtArticleCategory != null) && (dtArticleCategory.Rows.Count > 0))
                     {
-                        lblArticleCategory.Text = dtCategory.Rows[0]["Title"].ToString();
+                        for (int i = 0; i < dtArticleCategory.Rows.Count; i++)
+                        {
+                            intCategoryId = Int32.Parse(dtArticleCategory.Rows[i]["CategoryID"].ToString());
+                            dtCategory = new cmsCategoryBL().Category_GetByPK(intCategoryId);
+                            if ((dtCategory != null) && (dtCategory.Rows.Count > 0))
+                            {
+                                sreturn = sreturn + "- " + dtCategory.Rows[0]["Title"].ToString() + "<br/>";
+                            }
+                        }
                     }
+                    lblArticleCategory.Text = sreturn;
                 }
                 if (lblArticleTime != null)
                 {
                     lblArticleTime.Text = itemData["CreateDate"].ToString();
                 }
-                if (lnkSelectItem != null)
-                {
-                    lnkSelectItem.CommandName = "Select";
-                    lnkSelectItem.CommandArgument = itemData["ArticleID"].ToString();
-                }
+                
             }
             catch (Exception)
             {
+            }
+            if (lnkSelectItem != null)
+            {
+                lnkSelectItem.CommandName = "Select";
+                lnkSelectItem.CommandArgument = itemData["ArticleID"].ToString();
             }
         }
 
