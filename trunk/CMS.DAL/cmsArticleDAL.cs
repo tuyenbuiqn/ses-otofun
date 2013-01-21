@@ -190,6 +190,10 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.IsWaitingPublish;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@Author", SqlDbType.NVarChar);
+            Sqlparam.Value = objcmsArticleDO.Author;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -364,6 +368,10 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.IsWaitingPublish;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@Author", SqlDbType.NVarChar);
+            Sqlparam.Value = objcmsArticleDO.Author;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -500,6 +508,8 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.TinLienQuan2 = Convert.ToString(dr["TinLienQuan2"]);
                 if (!Convert.IsDBNull(dr["IsWaitingPublish"]))
                     objcmsArticleDO.IsWaitingPublish = Convert.ToBoolean(dr["IsWaitingPublish"]);
+                if (!Convert.IsDBNull(dr["Author"]))
+                    objcmsArticleDO.Author = Convert.ToString(dr["Author"]);
             }
             return objcmsArticleDO;
         }
@@ -590,6 +600,8 @@ namespace SES.CMS.DAL
                         objcmsArticleDO.TinLienQuan2 = Convert.ToString(dr["TinLienQuan2"]);
                     if (!Convert.IsDBNull(dr["IsWaitingPublish"]))
                         objcmsArticleDO.IsWaitingPublish = Convert.ToBoolean(dr["IsWaitingPublish"]);
+                    if (!Convert.IsDBNull(dr["Author"]))
+                        objcmsArticleDO.Author = Convert.ToString(dr["Author"]);
                     arrcmsArticleDO.Add(objcmsArticleDO);
                 }
             }
