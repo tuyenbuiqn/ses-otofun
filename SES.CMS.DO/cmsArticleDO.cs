@@ -91,6 +91,7 @@ namespace SES.CMS.DO
 		private String _TinLienQuan1;
 		private String _TinLienQuan2;
         public Boolean IsWaitingPublish { get; set; }
+        public string Author { get; set; }
 
 		#endregion
 
