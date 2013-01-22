@@ -17,45 +17,50 @@ namespace SES.CMS.ofeditor
         cmsArticleDO objArt = new cmsArticleDO();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserID"] != null)
-            {
-                txtDetail.CssFiles.Add("~/css/imageEdit.css");
-                if (!IsPostBack)
-                {
-                    SES.CMS.AdminCP.Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
-                    if (Request.QueryString["ArticleID"] != null)
-                    {
-                        objArt.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
-                        objArt = new cmsArticleBL().Select(objArt);
 
-                        if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
-                        else
-                        {
-                            int TypeID = -1;
-                            if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
-                            if (TypeID == 1)
-                            {
-                                objArt.DangBienTap = true; // Lock editting
-                                objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
-                                new cmsArticleBL().Update(objArt);
-                            }
-                            initForm();
-                        }
-                    }
+            txtDetail.CssFiles.Add("~/css/imageEdit.css");
+            if (Session["UserID"] == null) Functions.Alert("Bạn cần đăng nhập!", "Login.aspx?ReturnURL=" + Request.Url.AbsolutePath);
+            else
+            if (!IsPostBack)
+            {
+
+                SES.CMS.AdminCP.Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
+                if (Request.QueryString["ArticleID"] != null)
+                {
+                    objArt.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
+                    objArt = new cmsArticleBL().Select(objArt);
+                    
+                    if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
                     else
                     {
-                        BindRelatedNews("0", "0");
+                        int TypeID = -1;
+                        if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+                        if (TypeID == 1)
+                        {
+                            objArt.DangBienTap = true; // Lock editting
+                            objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
+                            new cmsArticleBL().Update(objArt);
+                        } 
+                        
+                        initForm(); 
+                    
                     }
-                    if (!Directory.Exists(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/")))
-                        Directory.CreateDirectory(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/"));
-                    txtDetail.ImageManager.ViewPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
-                    txtDetail.ImageManager.UploadPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
+                    
                 }
+                else
+                {
+                    BindRelatedNews("0", "0");
+                }
+                if (!Directory.Exists(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/")))
+                    Directory.CreateDirectory(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/"));
+                txtDetail.ImageManager.ViewPaths = txtDetail.ImageManager.DeletePaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
+                txtDetail.ImageManager.UploadPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
+               
+               
+
             }
-            else
-            {
-                Response.Redirect("/Ofeditor/Login.aspx");
-            }
+
+
         }
 
         private bool CheckQuyenSuaBai(cmsArticleDO objA) // Của mình
@@ -83,17 +88,20 @@ namespace SES.CMS.ofeditor
                     if (objA.TrangThai == 5 || objA.TrangThai == 1) // Bị trả lại BTV hoặc Chờ BTV
                     {
                         //Nếu đang ko editing hoặc Đang editting bởi mình
-                        if ((!objA.DangBienTap) || (objA.BTVEdit == int.Parse(Session["UserID"].ToString())))
+                        if((!objA.DangBienTap)||(objA.BTVEdit==int.Parse(Session["UserID"].ToString())))
                             return true;
                         else return false; // Ko thì cũng k cho sửa
-                    }
+                    }  
                 }
             }
             else if (TypeID == 2 || TypeID == 3)  //Nếu là Thư ký --> thoải mái
             {
-                return true;
+               return true;
             }
+           
+            
             return false;
+           
         }
         private void BindRelatedNews(string RelatedNews1, string RelatedNews2)
         {
@@ -105,9 +113,12 @@ namespace SES.CMS.ofeditor
 
         private void initForm()
         {
+            
             objArt = new cmsArticleBL().Select(objArt);
             txtTitle.Text = objArt.Title;
             txtDescription.Text = objArt.Description;
+            txtDescHome.Text = objArt.DescHome;
+            txtAuthor.Text = objArt.Author;
             txtDetail.Content = objArt.ArticleDetail;
             ddlEvent.SelectedValue = objArt.EventID.ToString();
             if (!string.IsNullOrEmpty(objArt.ImageUrl))
@@ -121,14 +132,15 @@ namespace SES.CMS.ofeditor
             string sTinLienQuan1 = objArt.TinLienQuan1;
             if (sTinLienQuan1.Contains(",") && sTinLienQuan1.Length > 2)
                 sTinLienQuan1 = sTinLienQuan1.Substring(1, sTinLienQuan1.Length - 1);
-
+           
             string sTinLienQuan2 = objArt.TinLienQuan2;
             if (sTinLienQuan2.Contains(",") && sTinLienQuan2.Length > 2)
                 sTinLienQuan2 = sTinLienQuan2.Substring(1, sTinLienQuan2.Length - 1);
             hdfID1.Value = objArt.TinLienQuan1;
             hdfID2.Value = objArt.TinLienQuan2;
-            //   BindRelatedNews(objArt.TinLienQuan1, objArt.TinLienQuan2);
+         //   BindRelatedNews(objArt.TinLienQuan1, objArt.TinLienQuan2);
             BindRelatedNews(sTinLienQuan1, sTinLienQuan2);
+
         }
 
         protected void RadComboBox1_Init(object sender, EventArgs e)
@@ -140,7 +152,7 @@ namespace SES.CMS.ofeditor
                 treeView.DataTextField = "Title";
                 treeView.DataFieldID = "CategoryID";
                 treeView.DataValueField = "CategoryID";
-
+                
                 treeView.DataFieldParentID = "ParentCID";
                 treeView.DataSource = new cmsCategoryBL().SelectAll();
                 treeView.DataBind();
@@ -162,12 +174,12 @@ namespace SES.CMS.ofeditor
                 //            }
                 //            else continue;
                 //        }
-
+                        
                 //    }
 
                 //}
             }
-
+           
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -197,12 +209,13 @@ namespace SES.CMS.ofeditor
                     objArt.ThuKyEdit = objArt.BTVEdit;
                 }
                 aid = new cmsArticleBL().Insert(objArt);
-
+                
                 foreach (RadTreeNode n in rtv.CheckedNodes)
                 {
                     int oid = int.Parse(((DropDownList)n.FindControl("ddl")).SelectedValue);
                     cmsArticleCategoryDO o = new cmsArticleCategoryDO { ArticleID = aid, CategoryID = int.Parse(n.Value), OrderID = oid };
                     new cmsArticleCategoryBL().Insert(o);
+ 
                 }
 
             }
@@ -210,67 +223,16 @@ namespace SES.CMS.ofeditor
             {
                 // Lưu thì có giữ lock edit ko ????????????????????????????????????????
                 new cmsArticleBL().Update(objArt);
-                //Sửa thì trạng thái giữ nguyên.
+                new cmsArticleCategoryBL().DeleteByArticleID(objArt.ArticleID);
 
-                //* Lấy toàn bộ bản ghi cũ (id,aid,cid,oid) Theo Aid
-                DataTable dt = new cmsArticleCategoryBL().SelectByArticleID(aid);
-                List<cmsArticleCategoryDO> lstCur = new cmsArticleBL().ConvertTo<cmsArticleCategoryDO>(dt);
-                //* Lấy bản ghi mới (aid,cid,oid) Theo checked
-                List<cmsArticleCategoryDO> lstNewACID = new List<cmsArticleCategoryDO>();
                 foreach (RadTreeNode n in rtv.CheckedNodes)
                 {
                     int oid = int.Parse(((DropDownList)n.FindControl("ddl")).SelectedValue);
                     cmsArticleCategoryDO o = new cmsArticleCategoryDO { ArticleID = aid, CategoryID = int.Parse(n.Value), OrderID = oid };
-                    lstNewACID.Add(o);
-                }
-                //* Lưu các bản ghi không có trong list mới để xóa
-                List<cmsArticleCategoryDO> lstDel = new List<cmsArticleCategoryDO>();
-                List<cmsArticleCategoryDO> lstUpdate = new List<cmsArticleCategoryDO>();
-                List<cmsArticleCategoryDO> lstInsert = new List<cmsArticleCategoryDO>();
-                foreach (cmsArticleCategoryDO cur in lstCur)
-                {
-                    bool isCurr = false;
-                    foreach (cmsArticleCategoryDO nw in lstNewACID) // lặp 1 lượt nếu trùng lưu, nếu ko lưu ra del
-                    {
-                        if (cur.CategoryID == nw.CategoryID) // Nếu trùng CID, (AID đã trùng rồi) ---> update
-                        {
-                            cmsArticleCategoryDO ud = new cmsArticleCategoryDO { ArticleID = nw.ArticleID, CategoryID = nw.CategoryID, ArticleCategoryID = cur.ArticleCategoryID, OrderID = nw.OrderID };
-                            lstUpdate.Add(ud);
-                            isCurr = true;
-                            continue;
-                        }
-                    }
-                    if (!isCurr) lstDel.Add(cur); //lưu ra del
+                    new cmsArticleCategoryBL().Insert(o);
+
                 }
 
-                // Thực hiện truy vấn
-                foreach (cmsArticleCategoryDO del in lstDel)
-                {
-                    new cmsArticleCategoryBL().Delete(del);  ////////////////// Xóa
-                }
-
-                foreach (cmsArticleCategoryDO upd in lstUpdate)
-                {
-                    new cmsArticleCategoryBL().Update(upd);  ////////////////// Sửa
-                }
-
-                foreach (cmsArticleCategoryDO ins in lstNewACID)
-                {
-                    bool saved = false;
-                    if (lstUpdate.Count > 0)
-                        foreach (cmsArticleCategoryDO inud in lstUpdate)
-                        {
-                            // if ((inud.CategoryID != ins.CategoryID))
-                            if ((inud.CategoryID == ins.CategoryID))
-                            {
-                                saved = true;
-                            }
-                        }
-                    //else saved = true;
-                    else saved = false;
-                    //if (saved) new cmsArticleCategoryBL().Insert(ins);  ////////////////// Thêm mới
-                    if (!saved) new cmsArticleCategoryBL().Insert(ins);  ////////////////// Thêm mới
-                }
             }
             SES.CMS.AdminCP.Functions.Alert("Cập nhật thành công!", "Default.aspx?Page=ListArticle");
         }
@@ -284,11 +246,14 @@ namespace SES.CMS.ofeditor
             objArt = new cmsArticleBL().Select(objArt);
             objArt.Title = txtTitle.Text;
             objArt.Description = txtDescription.Text;
+            objArt.DescHome = txtDescHome.Text;
+            objArt.Author = txtAuthor.Text;
             objArt.ArticleDetail = txtDetail.Content;
             objArt.Tags = "," + txtTags.Text + ",";
             objArt.EventID = int.Parse(ddlEvent.SelectedValue);
             objArt.TinLienQuan1 = hdfID1.Value;
             objArt.TinLienQuan2 = hdfID2.Value;
+            
 
             if (!string.IsNullOrEmpty(fuImg.FileName))
                 objArt.ImageUrl = UploadFile(fuImg);
@@ -313,18 +278,22 @@ namespace SES.CMS.ofeditor
                 int ArtID = int.Parse(Request.QueryString["ArticleID"].ToString());
                 cmsArticleDO objA = new cmsArticleBL().Select(new cmsArticleDO { ArticleID = ArtID });
                 DataTable dtCat = new cmsCategoryBL().GetByArticleID(objA.ArticleID);
+                
 
-
-                foreach (DataRow dr in dtCat.Rows) // lặp các CatID lấy được
-                {
-                    if (e.Node.Value == dr[cmsArticleCategoryDO.CATEGORYID_FIELD].ToString()) // Nếu node = catID thì check
+                    foreach (DataRow dr in dtCat.Rows) // lặp các CatID lấy được
                     {
-                        e.Node.Checked = true;
-                        ((DropDownList)e.Node.FindControl("ddl")).SelectedValue = dr[cmsArticleCategoryDO.ORDERID_FIELD].ToString();
+                        if (e.Node.Value == dr[cmsArticleCategoryDO.CATEGORYID_FIELD].ToString()) // Nếu node = catID thì check
+                        {
+                            e.Node.Checked = true;
+                            ((DropDownList)e.Node.FindControl("ddl")).SelectedValue = dr[cmsArticleCategoryDO.ORDERID_FIELD].ToString();
+                        }
+                        else continue;
                     }
-                    else continue;
-                }
+
+               
+
             }
         }
+       
     }
 }
