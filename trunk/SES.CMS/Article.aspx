@@ -46,6 +46,9 @@
                                 <div class="article-detail">
                                     <%#Eval("ArticleDetail") %>
                                 </div>
+                                <div class="article-detail" style="float:right; text-align:right; color:#000; font-weight:bold;">
+                                    <%#Eval("Author") %>
+                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>

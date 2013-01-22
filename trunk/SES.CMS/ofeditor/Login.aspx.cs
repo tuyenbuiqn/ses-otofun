@@ -42,7 +42,9 @@ namespace SES.CMS.ofeditor
                    Session["UserType"] = UserType;
                    if (UserType <=3)
                    {
-                       Response.Redirect("Default.aspx");
+                       if (Request.QueryString["ReturnURL"] != null)
+                           Response.Redirect(Request.QueryString["ReturnURL"].ToString());
+                       else Response.Redirect("Default.aspx");
                    }
                    else Functions.Alert("Sai tên đăng nhập", Request.Url.ToString());
                 }
