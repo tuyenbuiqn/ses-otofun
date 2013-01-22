@@ -296,7 +296,7 @@
                     Hình ảnh
                 </label>
                 <asp:FileUpload ID="fuImg" runat="server" />
-                190 x 140 (px)
+                <b>200 x 150 (px)</b>
                 <asp:HyperLink ID="hplImage" Target="_blank" Visible="false" runat="server" Style="font-weight: 700">(Xem ảnh)</asp:HyperLink>
             </div>
             <div class="fieldsetdiv">
@@ -354,6 +354,18 @@
                     </telerik:RadComboBox>
                 </div>
             </div>
+              <div class="fieldsetdiv">
+                <label for="lf">
+                    Mô tả Set top
+                </label>
+                <div style="float: left;">
+                    <asp:TextBox ID="txtDescHome" TextMode="MultiLine" runat="server" CssClass="txtArea"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescHome"
+                        ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
+                </div>
+            </div>
+
+
             <div class="fieldsetdiv">
                 <label for="lf">
                     Mô tả ngắn
@@ -364,6 +376,10 @@
                         ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
                 </div>
             </div>
+
+          
+
+
             <div class="fieldsetdiv">
                 <label for="lf">
                     Nội dung
@@ -371,8 +387,7 @@
                 <div style="float: left;">
                     <telerik:RadEditor ID="txtDetail" runat="server" OnClientPasteHtml="OnClientPasteHtml"
                         Width="789px">
-                        <ImageManager MaxUploadFileSize="1024000000"
-                            DeletePaths="~/MediaDelete/"></ImageManager>
+                        <ImageManager MaxUploadFileSize="1024000000" ViewMode="Grid"></ImageManager>
                     </telerik:RadEditor>
                 </div>
             </div>
@@ -454,6 +469,12 @@
                     <%--<input class="button" type="submit" value="Chọn" onclick="ShowDialog(); return false;" />--%>
                     <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent2(); return false;" />
                 </div>
+            </div>
+            <div class="fieldsetdiv">
+                <label for="lf">
+                    Tác giả
+                </label>
+                <asp:TextBox CssClass="lf" ID="txtAuthor" Width="250px" runat="server" ValidationGroup="submitGrp"></asp:TextBox>
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
