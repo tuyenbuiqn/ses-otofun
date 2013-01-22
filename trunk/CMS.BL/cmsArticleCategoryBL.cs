@@ -43,11 +43,7 @@ namespace SES.CMS.BL
 
         }
 
-        public int Delete(cmsArticleCategoryDO objcmsArticleCategoryDO)
-        {
-             return objcmsArticleCategoryDAL.Delete(objcmsArticleCategoryDO);
-
-        }
+      
 
          public int DeleteAll()
         {
@@ -77,10 +73,7 @@ namespace SES.CMS.BL
             return objcmsArticleCategoryDAL.DeleteByArticleID(articleID);
         }
 
-        public cmsArticleCategoryDO SelectByArtCatOrdID(cmsArticleCategoryDO o)
-        {
-            return objcmsArticleCategoryDAL.DeleteByArticleID(o);
-        }
+      
 
         public DataTable SelectByArticleID(int articleID)
         {
