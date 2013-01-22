@@ -32,7 +32,7 @@
                                             <%#Eval("Title") %></a>
                                     </h2>
                                     <div class="cate-desc">
-                                        <%#WordCut(Eval("Description").ToString()) %></div>
+                                        <%#WordCut(Eval("DescHome").ToString())%></div>
                                     <a class="readmore" title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
                                         Xem tiếp</a>
                                 </asp:Panel>

@@ -139,9 +139,14 @@ namespace SES.CMS
                     DataTable dtTinLienQuan2 = artBL.GetTinLienQuan1(articleID);
                     if (dtTinLienQuan2 != null)
                         cache.Insert(keyTinLienQuan2, dtTinLienQuan2, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                    
                 }
-                rptTinLienQuan2.DataSource = (DataTable)cache[keyTinLienQuan2];
-                rptTinLienQuan2.DataBind();
+                if (((DataTable)cache[keyTinLienQuan2]).Rows.Count > 0)
+                {
+                    rptTinLienQuan2.DataSource = (DataTable)cache[keyTinLienQuan2];
+                    rptTinLienQuan2.DataBind();
+                }
+                else rptTinLienQuan2.Visible = false;
             }
         }
 
