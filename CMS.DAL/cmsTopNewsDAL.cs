@@ -217,7 +217,7 @@ arrcmsTopNewsDO.Add(objcmsTopNewsDO);
 
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
-            Sqlcomm.CommandText = "spcmsTopNews_GetAll";
+            Sqlcomm.CommandText = "spcmsLastestNews_GetAll";
 
             SqlParameter Sqlparam;
             Sqlparam = new SqlParameter("@top", SqlDbType.Int);

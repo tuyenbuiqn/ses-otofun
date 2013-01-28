@@ -29,9 +29,6 @@ namespace SES.CMS.ofeditor
 
 
         [WebMethod]
-        //[System.Web.Script.Services.ScriptMethod(ResponseFormat = System.Web.Script.Services.ResponseFormat.Xml)]
-
-
         public List<ArticleOD> GetListOfArticle(string StrArticleID)
         {
             //if ((!string.IsNullOrEmpty(StrArticleID)) && (!string.IsNullOrEmpty(deleteID)))

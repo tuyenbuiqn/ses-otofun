@@ -32,17 +32,9 @@
                                 <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
                                     title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a>
-                                <p>
-                                    Cập nhật:&nbsp;</p>
-                                <p>
-                                    <%#Eval("ThoiGianXuatBan","{0:hh}h") %>&nbsp;
-                                    <%#Eval("ThoiGianXuatBan", "{0:dd-MM-yyyy}")%></p>
-                                <p>
-                                    &nbsp;|&nbsp;</p>
-                                <p>
-                                    <%#Eval("UserName") %></p>
+                            
                                 <div class="chitiet">
-                                    <%#WordCut(Eval("Description").ToString())%>
+                                    <%#WordCut(Eval("DescHome").ToString())%>
                                 </div>
                                 <div class="tin-lien-quan1">
                                     <asp:Repeater runat="server" ID="rptTinLienQuan1">

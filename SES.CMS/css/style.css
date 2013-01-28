@@ -117,21 +117,39 @@ border-top: solid 1px #ECD9B7;
 .toplink li
 {
 	float: left;
-	margin: 1px 3px 0 5px;
+	padding:8px 9px 8px 9px;
 	list-style: none;
-	padding-right: 10px;
+	
+}
+.toplink li.liactive
+{
+	float: left;
+	padding:6px 9px 8px 9px;
+	margin-top:2px;
+	list-style: none;
+	background-color: #CC7F2E;
+	-webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 .toplink
 {
 	float: left;
-	margin-top: 7px;
 	width: 775px;
+	height:34px;
 }
 .toplink a
 {
 	color: #ecd9b7;
 	font-size: 11px;
-	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	font-weight: bold;
+}
+.toplink li.liactive a
+{
+	color: #fff;
+	font-size: 11px;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
 	font-weight: bold;
 }
 .toplink a:hover
@@ -324,7 +342,7 @@ border-top: solid 1px #ECD9B7;
 }
 table.tbimage {
 border-collapse: collapse;
-background: #EEE;
+background: rgb(224, 192, 151);
 width: 1%;
 border-spacing: 0;
 color: #048;
@@ -336,7 +354,7 @@ table.tbimage .image_desc {
 padding: 5px;
 text-align: center;
 color: #0C48BB;
-background-color: #E3E3E3;
+background-color:rgb(224, 192, 151);
 border-collapse: collapse;
 padding: 5px;
 font-family: Arial, Helvetica, sans-serif;
@@ -468,8 +486,9 @@ font-size: 11px;
 	color: #443220;
 	font-size: 11px;
 	font-weight: bold;
-	margin: 10px 0px 10px 5px;
+	margin: 6px 0px 5px 5px;
 	display: block;
+	line-height:18px;
 }
 .tintuc-box a:hover
 {
@@ -1464,8 +1483,13 @@ font-family:Times New Roman !important;
 .collection
 {
 	float: right;
-	width: 95%;
 	margin-left: 5px;
+}
+.collection a
+{
+	font-size:12px;
+	color: #912809;
+	font-weight:bold;
 }
 .Event-boxes
 {
@@ -1593,6 +1617,7 @@ font-family:Times New Roman !important;
 {
 	border: #DFB99F 1px solid;
 width: 200px;
+height:150px;
 padding: 2px;
 float: left;
 margin-right: 10px;

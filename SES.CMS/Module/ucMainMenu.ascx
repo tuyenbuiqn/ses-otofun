@@ -7,10 +7,11 @@
         <ul class="toplink">
             <asp:Repeater runat="server" ID="rptMainMenu" OnItemDataBound="rptMainMenu_ItemDataBound">
                 <ItemTemplate>
-                    <li>
+                   <%#ReturnLiActive(Eval("CategoryID").ToString())%>
                     <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
                         title='<%#Eval("Title") %>'>
-                        <%#Eval("Title") %></a></li>
+                        <%#Eval("Title") %></a>
+                    </li>
                 </ItemTemplate>
             </asp:Repeater>
               <li>

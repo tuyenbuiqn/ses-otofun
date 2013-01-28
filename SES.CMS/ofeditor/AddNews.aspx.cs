@@ -23,7 +23,22 @@ namespace SES.CMS.ofeditor
             else
             if (!IsPostBack)
             {
-
+                int TypeID = -1;
+                if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+                if (TypeID >= 2)
+                {
+                    divTKAutoPost.Visible = true;
+                    ddlHour.Items.Add(new ListItem("Hãy chọn", "-1"));
+                    for (int id = 0; id <= 23; id++)
+                    {
+                        ddlHour.Items.Add(new ListItem(id.ToString() + "h", id.ToString()));
+                    }
+                    ddlMin.Items.Add(new ListItem("Hãy chọn", "-1"));
+                    for (int id = 0; id <= 59; id++)
+                    {
+                        ddlMin.Items.Add(new ListItem(id.ToString() + "p", id.ToString()));
+                    }
+                }
                 SES.CMS.AdminCP.Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
                 if (Request.QueryString["ArticleID"] != null)
                 {
@@ -33,14 +48,14 @@ namespace SES.CMS.ofeditor
                     if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
                     else
                     {
-                        int TypeID = -1;
-                        if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+                     
                         if (TypeID == 1)
                         {
                             objArt.DangBienTap = true; // Lock editting
                             objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
                             new cmsArticleBL().Update(objArt);
-                        } 
+                        }
+
                         
                         initForm(); 
                     
@@ -97,6 +112,7 @@ namespace SES.CMS.ofeditor
             else if (TypeID == 2 || TypeID == 3)  //Nếu là Thư ký --> thoải mái
             {
                return true;
+
             }
            
             
@@ -141,6 +157,24 @@ namespace SES.CMS.ofeditor
          //   BindRelatedNews(objArt.TinLienQuan1, objArt.TinLienQuan2);
             BindRelatedNews(sTinLienQuan1, sTinLienQuan2);
 
+            if ((objArt.ThoiGianXuatBan > new DateTime(1950, 01, 01)))
+            {
+                if (objArt.IsWaitingPublish) chkCho.Checked = true;
+                dtNgayXB.SelectedDate = objArt.ThoiGianXuatBan.Date;
+                ddlHour.SelectedValue = objArt.ThoiGianXuatBan.Hour.ToString();
+                ddlMin.SelectedValue = objArt.ThoiGianXuatBan.Minute.ToString();
+            }
+            else
+            {
+                dtNgayXB.SelectedDate = objArt.CreateDate.Date;
+                ddlHour.SelectedValue = objArt.CreateDate.Hour.ToString();
+                ddlMin.SelectedValue = objArt.CreateDate.Minute.ToString();
+            }
+                
+            
+            if(objArt.TrangThai==3) chkCho.Enabled = false;
+            
+
         }
 
         protected void RadComboBox1_Init(object sender, EventArgs e)
@@ -184,6 +218,22 @@ namespace SES.CMS.ofeditor
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (chkCho.Checked)
+            {
+                if (!dtNgayXB.SelectedDate.HasValue)
+                {
+                    lblError.Visible = true;
+                    lblError.Text = "Chưa chọn ngày giờ xuất bản !";
+                    return;
+                }
+                if (ddlHour.SelectedIndex <= 0)
+                {
+                    lblError.Visible = true;
+                    lblError.Text = "Chưa chọn ngày giờ  xuất bản !";
+                    return;
+
+                }
+            }
             initObject();
             int aid = objArt.ArticleID;
             RadTreeView rtv = (RadTreeView)RadComboBox1.Items[0].FindControl("RadTreeView1");
@@ -202,12 +252,21 @@ namespace SES.CMS.ofeditor
                 if (TypeID == 1)
                 {
                     objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
+                    objArt.ThoiGianGui = DateTime.Now;
+                   
                 }
                 else if (TypeID == 2)
                 {
                     objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
                     objArt.ThuKyEdit = objArt.BTVEdit;
+                    if (chkCho.Checked)
+                    {
+                        objArt.IsWaitingPublish = true;
+                        DateTime dt =Convert.ToDateTime(dtNgayXB.SelectedDate);
+                        objArt.ThoiGianXuatBan = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0);
+                    }
                 }
+                
                 aid = new cmsArticleBL().Insert(objArt);
                 
                 foreach (RadTreeNode n in rtv.CheckedNodes)
@@ -222,6 +281,7 @@ namespace SES.CMS.ofeditor
             else
             {
                 // Lưu thì có giữ lock edit ko ????????????????????????????????????????
+
                 new cmsArticleBL().Update(objArt);
                 new cmsArticleCategoryBL().DeleteByArticleID(objArt.ArticleID);
 
@@ -257,6 +317,19 @@ namespace SES.CMS.ofeditor
 
             if (!string.IsNullOrEmpty(fuImg.FileName))
                 objArt.ImageUrl = UploadFile(fuImg);
+            
+            int TypeID = -1;
+            if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+            if (TypeID == 2)
+            {
+                if (chkCho.Checked)
+                {
+                    objArt.IsWaitingPublish = true;
+                    DateTime dt = Convert.ToDateTime(dtNgayXB.SelectedDate);
+                    objArt.ThoiGianXuatBan = new DateTime(dt.Year, dt.Month, dt.Day, int.Parse(ddlHour.SelectedValue), int.Parse(ddlMin.SelectedValue), 0);
+                }
+            }
+
         }
 
         private string UploadFile(FileUpload fulImage)

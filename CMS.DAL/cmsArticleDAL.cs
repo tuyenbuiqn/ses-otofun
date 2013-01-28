@@ -1420,6 +1420,18 @@ namespace SES.CMS.DAL
 
             base.ExecuteNoneQuery(Sqlcomm);
         }
+
+
+        public void AutoPublish()
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_AutoPublish";
+            base.ExecuteNoneQuery(Sqlcomm);
+        }
+
+        
+
         public void MultiDelete(string articleIDList)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -1433,6 +1445,70 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             base.ExecuteNoneQuery(Sqlcomm);
+        }
+
+        public int SelectSumCat(int categoryID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spArticle_GetCountCat";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+            Sqlparam.Value = categoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+           
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+                
+            }
+            int id = 0;
+            if(dt.Rows.Count>0)
+                try
+                {
+                    id = Convert.ToInt32(dt.Rows[0]["RCount"]);
+
+                }
+                catch { id = 0; }
+            return id;
+        }
+
+        public DataTable SelectPaging(int categoryID, int PageID, int PageSize)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spr_procedure_article_paged";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+            Sqlparam.Value = categoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@startrow", SqlDbType.Int);
+            Sqlparam.Value = PageID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@pagesize", SqlDbType.Int);
+            Sqlparam.Value = PageSize;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
         }
     }
 

@@ -11,7 +11,7 @@ namespace SES.CMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            new SES.CMS.BL.cmsArticleBL().AutoPublish();
         }
     }
 }

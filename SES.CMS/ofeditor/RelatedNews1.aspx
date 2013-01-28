@@ -72,7 +72,7 @@
                     oArg.cityName = document.getElementById("<%=hdfListArticlesId.ClientID%>").value;
                     oArg.cityName2 = "";
                     oArg.ID = "1";
-
+                    //alert(oArg.cityName);
                     var oWnd = GetRadWindow();
                     //Close the RadWindow and send the argument to the parent page
                     if (oArg.cityName) {

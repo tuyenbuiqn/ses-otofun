@@ -11,6 +11,7 @@ namespace SES.CMS.ofeditor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            new SES.CMS.BL.cmsArticleBL().AutoPublish();
             if (Session["UserType"] == null || Session["UserName"] == null)
             {
                 Response.Redirect("/ofeditor/Login.aspx");

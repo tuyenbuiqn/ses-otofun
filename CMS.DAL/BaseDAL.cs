@@ -16,7 +16,7 @@ namespace SES.CMS.DAL
     public class BaseDAL
     {
         #region PrivateVariables
-        private SqlConnection SqlConn;
+        public SqlConnection SqlConn;
         #endregion
 
         #region Constructor

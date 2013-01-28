@@ -273,6 +273,21 @@ namespace SES.CMS.BL
             objcmsArticleDAL.DangKyChiuTrachNhiemBaiViet(type, articleIDList, userID);
         }
 
+
+        public int SelectSumCat(int categoryID)
+        {
+            return objcmsArticleDAL.SelectSumCat(categoryID);
+        }
+
+        public DataTable SelectPaging(int categoryID, int PageID, int PageSize)
+        {
+            return objcmsArticleDAL.SelectPaging(categoryID,PageID,PageSize);
+        }
+
+        public void AutoPublish()
+        {
+            objcmsArticleDAL.AutoPublish();
+        }
     }
 
 }

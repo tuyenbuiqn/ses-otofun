@@ -20,7 +20,7 @@ namespace SES.CMS
                 int categoryID = int.Parse(Request.QueryString["CategoryID"]);
                 rptCategoryDataSoucre(categoryID);
                 rptBuildChildMenu(categoryID);
-                Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID}).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 BuildEvent(categoryID);
                 loadBreadcrumb(categoryID);
             }
@@ -29,7 +29,7 @@ namespace SES.CMS
         protected void loadTime()
         {
             DateTime dateTime = DateTime.Now;
-            ltrDatetime.Text =  Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
+            ltrDatetime.Text = Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
         }
         protected void loadBreadcrumb(int categoryID)
         {
@@ -84,24 +84,63 @@ namespace SES.CMS
         private Cache cache = HttpContext.Current.Cache;
         protected void rptCategoryDataSoucre(int categoryID)
         {
-            CollectionPager1.MaxPages = 10000;
-
-            CollectionPager1.PageSize = 30;
-
-            //DataTable dtCategory = new cmsArticleBL().SelectByCategoryID2(categoryID);
-            string keycat = "CatID=" + categoryID.ToString();
-            if (cache[keycat] == null)
+            int PageID = 0;
+            if (!string.IsNullOrEmpty(Request.QueryString["Page"]))
+                PageID = int.Parse(Request.QueryString["Page"]);
+           
+            int PageSize = 15;
+            
+            hplNextPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID+1).ToString() + ".aspx";
+            if (PageID > 0)
             {
-                DataTable dtCategory = new cmsArticleBL().SelectByCategoryID2(categoryID);
-                DataView dtCache = new DataView(dtCategory, "", "", DataViewRowState.CurrentRows);
-                cache.Insert(keycat, dtCache, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                if (PageID > 1)
+                    hplPrevPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID - 1).ToString() + ".aspx";
+                else
+                    hplPrevPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + ".aspx";
+                
             }
-            CollectionPager1.DataSource = (DataView)cache[keycat];
-            //CollectionPager1.DataSource = new DataView(dtCategory, "", "", DataViewRowState.CurrentRows);
+            else
+                hplPrevPage.Visible = false;
+            int PageID2 = PageID;
+            PageID = PageSize * PageID;
 
-            CollectionPager1.BindToControl = rptCategory;
 
-            rptCategory.DataSource = CollectionPager1.DataSourcePaged;
+             string keycatpage = categoryID.ToString() + "-" + PageID.ToString();
+            int SumcountCat = new cmsArticleBL().SelectSumCat(categoryID);
+            
+            if ((PageID + PageSize) >= SumcountCat) hplNextPage.Visible = false;
+            if (SumcountCat == 0) return;
+            string keycount = categoryID.ToString() + "-" + SumcountCat.ToString();
+            if (cache[keycount] == null) //Nếu null thì thêm
+            {
+             
+             cache.Insert(keycount, keycount, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+             
+            }
+           
+                if(cache[keycount].ToString()!=keycount) //Nếu không null thì kiểm tra xem có trùng tổng không. nếu không trùng thì xóa + ghi bản ghi mới
+                {
+                    cache.Remove(keycount);
+                    cache.Insert(keycount, keycount, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                    
+                    cache.Remove(keycatpage);
+                    DataTable dtPage = new cmsArticleBL().SelectPaging(categoryID,PageID,PageSize);
+                    cache.Insert(keycatpage, dtPage, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                   
+                }
+                else
+                {
+                   
+                   if(cache[keycatpage]==null)
+                   {
+                    DataTable dtPage = new cmsArticleBL().SelectPaging(categoryID,PageID,PageSize);
+                    cache.Insert(keycatpage, dtPage, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                   }
+                }
+                //Nếu trùng tổng kiểm tra xem có cache trang chưa
+            
+            
+            rptCategory.DataSource = (DataTable)cache[keycatpage];
 
             rptCategory.DataBind();
         }
@@ -130,7 +169,7 @@ namespace SES.CMS
             string url = Request.Url.AbsolutePath;
             string rt = url.Substring(1, url.Length - 6);
             return rt;
-            
+
         }
         public string WordCut(string text)
         {
