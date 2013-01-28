@@ -71,9 +71,11 @@
                     </asp:TemplateField>
                     <asp:BoundField DataField="ArticleID" HeaderText="ID" ItemStyle-HorizontalAlign="Left"
                         ItemStyle-Width="5%" Visible="false" />
+                     
+
                     <asp:BoundField DataField="Title" HeaderText="Tiêu đề" ItemStyle-HorizontalAlign="Left"
                         ItemStyle-Width="35%" />
-                    <asp:BoundField DataField="Username" HeaderText="Tác giả" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" />
+                    <asp:BoundField DataField="Username" HeaderText="Tác giả" ItemStyle-Width="5%" ItemStyle-HorizontalAlign="Center" />
                     <asp:TemplateField HeaderText="Ngày viết" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
                         <ItemTemplate>
                             <asp:Label runat="server" ID="lblCreateDate" Text='<%# (bool)(Eval("CreateDate")==null)==true?"":Eval("CreateDate","{0:dd/MM/yyyy}") %>'></asp:Label>
@@ -103,6 +105,12 @@
                                 CommandName="Delete" ImageUrl="~/ofeditor/images/delete_16x16.gif" OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" />
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:TemplateField ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="Hẹn giờ xuất"
+                        ItemStyle-Width="8%">
+                        <ItemTemplate>
+                        <%#returnPub(Eval("ArticleID").ToString()) %>
+                        </ItemTemplate>
+                        </asp:TemplateField>
                 </Columns>
             </asp:GridView>
           

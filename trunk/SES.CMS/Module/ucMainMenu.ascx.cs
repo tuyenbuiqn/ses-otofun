@@ -12,14 +12,17 @@ namespace SES.CMS.Module
 {
     public partial class ucMainMenu : System.Web.UI.UserControl
     {
+        string CategoryIDS = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["CategoryID"] != null) CategoryIDS = Request.QueryString["CategoryID"];
             rptMainMenuDataSource(); //rptChildDataSource();
+
         }
 
         private void rptMainMenuDataSource()
         {
-            rptMainMenu.DataSource = new cmsCategoryBL().SelectMenu(7);
+            rptMainMenu.DataSource = new cmsCategoryBL().SelectMenu(9);
             rptMainMenu.DataBind();
         }
 /*
@@ -48,6 +51,18 @@ namespace SES.CMS.Module
                 }
             }
         }*/
+        public string ReturnLiActive(string id)
+        {
+            if (string.IsNullOrEmpty(CategoryIDS)) return "<li>";
+            int ids = int.Parse(id);
+            if (ids.ToString().Equals(CategoryIDS)) return "<li class='liactive'>";
+            else 
+            {
+                cmsCategoryDO o = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = int.Parse(CategoryIDS) });
+                if (o.ParentID == ids) return "<li class='liactive'>";
+            }
+            return "<li>";
+        }
         public string FriendlyUrl(string s)
         {
             return Ultility.Change_AVCate(s);

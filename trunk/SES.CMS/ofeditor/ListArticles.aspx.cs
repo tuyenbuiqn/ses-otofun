@@ -718,6 +718,15 @@ namespace SES.CMS.ofeditor
             return articleList;
 
         }
+        public string returnPub(string ids)
+        {
+            cmsArticleDO obk = new cmsArticleDO();
+            obk.ArticleID = int.Parse(ids);
+            obk = new cmsArticleBL().Select(obk);
+            if (obk.IsWaitingPublish) return "<span style='color:red; font-weight:bold;'>Đang chờ</span>";
+            return "-";
+
+        }
         protected void grvListArticle_DataBound(object sender, EventArgs e)
         {
             int type = int.Parse(Request.QueryString["Type"]);
@@ -747,7 +756,11 @@ namespace SES.CMS.ofeditor
                 grvListArticle.Columns[8].Visible = false;
                 // Quyền Thư ký -> có thể sửa
                 if (UserType == 2)
+                {
                     grvListArticle.Columns[9].Visible = true;
+                    grvListArticle.Columns[10].Visible = true;
+                    
+                }
                 // Quyền khác -> ko thể
                 else
                     grvListArticle.Columns[9].Visible = false;

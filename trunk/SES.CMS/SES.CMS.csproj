@@ -792,30 +792,13 @@
     <Content Include="AdminCP\Login.aspx" />
     <Content Include="AdminCP\MenuUC\ucMnuArticles.ascx" />
     <Content Include="AdminCP\MenuUC\ucMnuConfig.ascx" />
-    <Content Include="AdminCP\MenuUC\ucMnuImages.ascx" />
     <Content Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx" />
-    <Content Include="AdminCP\MenuUC\ucMnuSlide.ascx" />
-    <Content Include="AdminCP\PageUC\ucAddMultiImg.ascx" />
-    <Content Include="AdminCP\PageUC\ucAdvertisement.ascx" />
-    <Content Include="AdminCP\PageUC\ucAlbum.ascx" />
-    <Content Include="AdminCP\PageUC\ucArticle.ascx" />
     <Content Include="AdminCP\PageUC\ucArticleCategory.ascx" />
     <Content Include="AdminCP\PageUC\ucConfig.ascx" />
-    <Content Include="AdminCP\PageUC\ucEvent.ascx" />
-    <Content Include="AdminCP\PageUC\ucImage.ascx" />
-    <Content Include="AdminCP\PageUC\ucListAdvertisement.ascx" />
-    <Content Include="AdminCP\PageUC\ucListAlbum.ascx" />
-    <Content Include="AdminCP\PageUC\ucListArticle.ascx" />
     <Content Include="AdminCP\PageUC\ucListArticleCategory.ascx" />
     <Content Include="AdminCP\PageUC\ucListConfig.ascx" />
-    <Content Include="AdminCP\PageUC\ucListEvent.ascx" />
-    <Content Include="AdminCP\PageUC\ucListImages.ascx" />
-    <Content Include="AdminCP\PageUC\ucListSlide.ascx" />
     <Content Include="AdminCP\PageUC\ucListUser.ascx" />
-    <Content Include="AdminCP\PageUC\ucSlide.ascx" />
     <Content Include="AdminCP\PageUC\ucUser.ascx" />
-    <Content Include="AdminCP\PageUC\ucVideo.ascx" />
-    <Content Include="AdminCP\PageUC\ucXetDuyetBaiViet.ascx" />
     <Content Include="App_Data\Nwind.mdb" />
     <Content Include="Article.aspx" />
     <Content Include="assets\loader.gif" />
@@ -1323,6 +1306,8 @@
     <Content Include="ofeditor\css\plugins.css" />
     <Content Include="ofeditor\css\skin_clean.css" />
     <Content Include="ofeditor\Default.aspx" />
+    <Content Include="ofeditor\Event.aspx" />
+    <Content Include="ofeditor\Events.aspx" />
     <Content Include="ofeditor\images\1.jpg" />
     <Content Include="ofeditor\images\2.jpg" />
     <Content Include="ofeditor\images\3.jpg" />
@@ -1347,6 +1332,11 @@
     <Content Include="ofeditor\RelatedNews2.aspx" />
     <Content Include="ofeditor\RNServices.asmx" />
     <Content Include="ofeditor\Search.aspx" />
+    <Content Include="ofeditor\Slide.aspx" />
+    <Content Include="ofeditor\Slides.aspx" />
+    <Content Include="ofeditor\TinNoiBat.aspx" />
+    <Content Include="ofeditor\TinNoiBatForm.aspx" />
+    <Content Include="ofeditor\TopNews.aspx" />
     <Content Include="preview.css" />
     <Content Include="tag.aspx" />
     <Content Include="TestPopupParent.aspx" />
@@ -1399,54 +1389,12 @@
     <Compile Include="AdminCP\MenuUC\ucMnuConfig.ascx.designer.cs">
       <DependentUpon>ucMnuConfig.ascx</DependentUpon>
     </Compile>
-    <Compile Include="AdminCP\MenuUC\ucMnuImages.ascx.cs">
-      <DependentUpon>ucMnuImages.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\MenuUC\ucMnuImages.ascx.designer.cs">
-      <DependentUpon>ucMnuImages.ascx</DependentUpon>
-    </Compile>
     <Compile Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx.cs">
       <DependentUpon>ucMnuQlNguoiDung.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx.designer.cs">
       <DependentUpon>ucMnuQlNguoiDung.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\MenuUC\ucMnuSlide.ascx.cs">
-      <DependentUpon>ucMnuSlide.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\MenuUC\ucMnuSlide.ascx.designer.cs">
-      <DependentUpon>ucMnuSlide.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucAddMultiImg.ascx.cs">
-      <DependentUpon>ucAddMultiImg.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucAddMultiImg.ascx.designer.cs">
-      <DependentUpon>ucAddMultiImg.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucAdvertisement.ascx.cs">
-      <DependentUpon>ucAdvertisement.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucAdvertisement.ascx.designer.cs">
-      <DependentUpon>ucAdvertisement.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucAlbum.ascx.cs">
-      <DependentUpon>ucAlbum.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucAlbum.ascx.designer.cs">
-      <DependentUpon>ucAlbum.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucArticle.ascx.cs">
-      <DependentUpon>ucArticle.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucArticle.ascx.designer.cs">
-      <DependentUpon>ucArticle.ascx</DependentUpon>
     </Compile>
     <Compile Include="AdminCP\PageUC\ucArticleCategory.ascx.cs">
       <DependentUpon>ucArticleCategory.ascx</DependentUpon>
@@ -1462,41 +1410,6 @@
     <Compile Include="AdminCP\PageUC\ucConfig.ascx.designer.cs">
       <DependentUpon>ucConfig.ascx</DependentUpon>
     </Compile>
-    <Compile Include="AdminCP\PageUC\ucEvent.ascx.cs">
-      <DependentUpon>ucEvent.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucEvent.ascx.designer.cs">
-      <DependentUpon>ucEvent.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucImage.ascx.cs">
-      <DependentUpon>ucImage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucImage.ascx.designer.cs">
-      <DependentUpon>ucImage.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListAdvertisement.ascx.cs">
-      <DependentUpon>ucListAdvertisement.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListAdvertisement.ascx.designer.cs">
-      <DependentUpon>ucListAdvertisement.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListAlbum.ascx.cs">
-      <DependentUpon>ucListAlbum.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListAlbum.ascx.designer.cs">
-      <DependentUpon>ucListAlbum.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListArticle.ascx.cs">
-      <DependentUpon>ucListArticle.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListArticle.ascx.designer.cs">
-      <DependentUpon>ucListArticle.ascx</DependentUpon>
-    </Compile>
     <Compile Include="AdminCP\PageUC\ucListArticleCategory.ascx.cs">
       <DependentUpon>ucListArticleCategory.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1511,27 +1424,6 @@
     <Compile Include="AdminCP\PageUC\ucListConfig.ascx.designer.cs">
       <DependentUpon>ucListConfig.ascx</DependentUpon>
     </Compile>
-    <Compile Include="AdminCP\PageUC\ucListEvent.ascx.cs">
-      <DependentUpon>ucListEvent.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListEvent.ascx.designer.cs">
-      <DependentUpon>ucListEvent.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListImages.ascx.cs">
-      <DependentUpon>ucListImages.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListImages.ascx.designer.cs">
-      <DependentUpon>ucListImages.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListSlide.ascx.cs">
-      <DependentUpon>ucListSlide.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucListSlide.ascx.designer.cs">
-      <DependentUpon>ucListSlide.ascx</DependentUpon>
-    </Compile>
     <Compile Include="AdminCP\PageUC\ucListUser.ascx.cs">
       <DependentUpon>ucListUser.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1539,33 +1431,12 @@
     <Compile Include="AdminCP\PageUC\ucListUser.ascx.designer.cs">
       <DependentUpon>ucListUser.ascx</DependentUpon>
     </Compile>
-    <Compile Include="AdminCP\PageUC\ucSlide.ascx.cs">
-      <DependentUpon>ucSlide.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucSlide.ascx.designer.cs">
-      <DependentUpon>ucSlide.ascx</DependentUpon>
-    </Compile>
     <Compile Include="AdminCP\PageUC\ucUser.ascx.cs">
       <DependentUpon>ucUser.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminCP\PageUC\ucUser.ascx.designer.cs">
       <DependentUpon>ucUser.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucVideo.ascx.cs">
-      <DependentUpon>ucVideo.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucVideo.ascx.designer.cs">
-      <DependentUpon>ucVideo.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucXetDuyetBaiViet.ascx.cs">
-      <DependentUpon>ucXetDuyetBaiViet.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminCP\PageUC\ucXetDuyetBaiViet.ascx.designer.cs">
-      <DependentUpon>ucXetDuyetBaiViet.ascx</DependentUpon>
     </Compile>
     <Compile Include="Article.aspx.cs">
       <DependentUpon>Article.aspx</DependentUpon>
@@ -1843,6 +1714,21 @@
     <Compile Include="ofeditor\Editor.Master.designer.cs">
       <DependentUpon>Editor.Master</DependentUpon>
     </Compile>
+    <Compile Include="ofeditor\Event.aspx.cs">
+      <DependentUpon>Event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Event.aspx.designer.cs">
+      <DependentUpon>Event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Functions.cs" />
     <Compile Include="ofeditor\ListArticles.aspx.cs">
       <DependentUpon>ListArticles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1895,6 +1781,41 @@
     </Compile>
     <Compile Include="ofeditor\Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Slide.aspx.cs">
+      <DependentUpon>Slide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Slide.aspx.designer.cs">
+      <DependentUpon>Slide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\Slides.aspx.cs">
+      <DependentUpon>Slides.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\Slides.aspx.designer.cs">
+      <DependentUpon>Slides.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\TinNoiBat.aspx.cs">
+      <DependentUpon>TinNoiBat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\TinNoiBat.aspx.designer.cs">
+      <DependentUpon>TinNoiBat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\TinNoiBatForm.aspx.cs">
+      <DependentUpon>TinNoiBatForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\TinNoiBatForm.aspx.designer.cs">
+      <DependentUpon>TinNoiBatForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\TopNews.aspx.cs">
+      <DependentUpon>TopNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\TopNews.aspx.designer.cs">
+      <DependentUpon>TopNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="OFUltility.cs" />
     <Compile Include="Otofun.Master.cs">

@@ -204,7 +204,7 @@
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
                         <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>
                          <li><a href="TinNoiBat.aspx">Tin nổi bật</a></li>
-                         <li><a href="TopNews.aspx">Tin tức mới</a></li>
+                         
                     </ul>
                 </asp:Panel>
                 <h2>

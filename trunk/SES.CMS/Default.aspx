@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Otofun.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" EnableViewState="False" Language="C#" MasterPageFile="~/Otofun.Master" AutoEventWireup="true"
     CodeBehind="Default.aspx.cs" Inherits="SES.CMS.Default" %>
 
 <%@ Register Src="/Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc1" %>

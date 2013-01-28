@@ -15,7 +15,7 @@
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
         </Scripts>
-        <Services>
+		<Services>
             <asp:ServiceReference Path="RNServices.asmx" />
         </Services>
     </telerik:RadScriptManager>
@@ -30,6 +30,16 @@
                 var returnPopup = window.open('Child.aspx', '_blank', 'scrollbars=10, width=820,height=900');
                 //          var txtPopup = document.getElementById(txtPopup).value;
                 //          txtPopup.value = returnPopup;
+            }
+            function checkMaxLen(txt, maxLen) {
+                try {
+                    if (txt.value.length > (maxLen - 1)) {
+                        var cont = txt.value;
+                        txt.value = cont.substring(0, (maxLen - 1));
+                        return false;
+                    };
+                } catch (e) {
+                }
             }
 
             function SetDataCurrent() {
@@ -66,18 +76,18 @@
                     var ID = arg.ID;
                     args = null;
                     oWnd = null;
-
+                   
                     //$get("order").innerHTML = "You chose to fly to " + cityName;
                     if (ID == "1") {
-                        //alert(arg.cityName);
+                        
                         if (currentMultiID == null) currentMultiID = arg.cityName;
                         currentMultiID = currentMultiID + ',' + arg.cityName;
                         arg = null;
+                        
                         updateChanges(currentMultiID);
 
                     }
                     else {
-
                         if (currentMultiID2 == null) currentMultiID2 = arg.cityName2;
                         currentMultiID2 = currentMultiID2 + ',' + arg.cityName2;
                         arg = null;
@@ -123,7 +133,7 @@
                 alert("Error: " + result.get_message());
             }
             function updateGrid(result) {
-                // alert(result.toString());
+                //alert(result.toString());
                 var tableView = $find("<%= RadGrid1.ClientID %>").get_masterTableView();
                 tableView.set_dataSource(result);
                 tableView.dataBind();
@@ -195,8 +205,8 @@
                         args.set_value(newInner);
                     }
                     else {
-                        var newInner = "<center><img src='" + img.src + "' alt='Otofun News' style='" + img.getAttribute("style") + "'/></center>";
-                        
+                        var newInner = "<center><img src='" + img.src + "' alt='Otofun News' style='" + img.getAttribute("style") + "'/></center><br/><br/>";
+
                         args.set_value(newInner);
                     }
 
@@ -271,10 +281,47 @@
         {
             height: auto !important;
         }
+        .style1
+        {
+            width: 44px;
+            font-weight: bold;
+        }
+        .style2
+        {
+            width: 30px;
+            font-weight: bold;
+        }
+        .style3
+        {
+            width: 68px;
+            font-weight: bold;
+        }
+        .style4
+        {
+            width: 187px;
+            font-weight: bold;
+        }
+        .style5
+        {
+            width: 51px;
+            font-weight: bold;
+        }
+        .style6
+        {
+            width: 81px;
+        }
+        .style7
+        {
+            width: 53px;
+            font-weight: bold;
+        }
     </style>
     <div class="pad20">
         <fieldset>
             <legend>Thêm mới tin tức</legend>
+            <div class="fieldsetdiv">
+                <span style="color:Red; font-weight:bold; font-size:13px;"> <asp:Label ID="lblError" Visible="false" runat="server" Text="Label"></asp:Label> </span>
+            </div>
             <div class="fieldsetdiv">
                 <label for="lf">
                     Tiêu đề
@@ -320,9 +367,7 @@
                         <ItemTemplate>
                             <div id="div1">
                                 <telerik:RadTreeView CssClass="mtrv" runat="server" ID="RadTreeView1" OnClientNodeClicking="nodeClicking"
-                                    Width="100%" CheckBoxes="True" 
-                                    OnNodeDataBound="RadTreeView1_NodeDataBound" 
-                                    OnClientNodeChecked ="clientNodeChecked">
+                                    Width="100%" CheckBoxes="True" OnNodeDataBound="RadTreeView1_NodeDataBound" OnClientNodeChecked="clientNodeChecked">
                                     <NodeTemplate>
                                         <asp:DropDownList CssClass="dropdown" ID="ddl" runat="server">
                                             <asp:ListItem Text="1" Value="1"></asp:ListItem>
@@ -354,32 +399,28 @@
                     </telerik:RadComboBox>
                 </div>
             </div>
-              <div class="fieldsetdiv">
+            <div class="fieldsetdiv">
                 <label for="lf">
                     Mô tả Set top
                 </label>
                 <div style="float: left;">
-                    <asp:TextBox ID="txtDescHome" TextMode="MultiLine" runat="server" CssClass="txtArea"></asp:TextBox>
+                    <asp:TextBox onkeyup="return checkMaxLen(this,160)" ID="txtDescHome" TextMode="MultiLine"
+                        runat="server" CssClass="txtArea"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescHome"
                         ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
                 </div>
             </div>
-
-
             <div class="fieldsetdiv">
                 <label for="lf">
                     Mô tả ngắn
                 </label>
                 <div style="float: left;">
-                    <asp:TextBox ID="txtDescription" TextMode="MultiLine" runat="server" CssClass="txtArea"></asp:TextBox>
+                    <asp:TextBox ID="txtDescription" onkeyup="return checkMaxLen(this,160)" TextMode="MultiLine"
+                        runat="server" CssClass="txtArea"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDescription"
                         ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
                 </div>
             </div>
-
-          
-
-
             <div class="fieldsetdiv">
                 <label for="lf">
                     Nội dung
@@ -426,7 +467,7 @@
                     </telerik:RadGrid>
                 </div>
                 <div style="float: left; width: 86px; margin-left: 10px;">
-                    <input class="button" type="submit" value="Chọn" onclick="openWin(); return false;" />
+                    <input type="submit" value="Chọn" onclick="openWin(); return false;" />
                     <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent(); return false;" />
                 </div>
             </div>
@@ -465,7 +506,7 @@
                     </telerik:RadGrid>
                 </div>
                 <div style="float: left; width: 86px; margin-left: 10px;">
-                    <input class="button" type="submit" value="Chọn" onclick="openWin2(); return false;" />
+                    <input type="submit" value="Chọn" onclick="openWin2(); return false;" />
                     <%--<input class="button" type="submit" value="Chọn" onclick="ShowDialog(); return false;" />--%>
                     <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent2(); return false;" />
                 </div>
@@ -475,6 +516,48 @@
                     Tác giả
                 </label>
                 <asp:TextBox CssClass="lf" ID="txtAuthor" Width="250px" runat="server" ValidationGroup="submitGrp"></asp:TextBox>
+            </div>
+            <div class="fieldsetdiv" runat="server" id="divTKAutoPost" visible="false">
+                <label for="lf">
+                    Chờ xuất bản
+                </label>
+                <div style="float: left; width: 714px">
+                    <table width="100%">
+                        <tr>
+                            <td class="style1">
+                                Đặt hẹn
+                            </td>
+                            <td class="style2">
+                                <asp:CheckBox CssClass="abc" ID="chkCho" runat="server" />
+                            </td>
+                            <td class="style3">
+                                Chọn Ngày:
+                            </td>
+                            <td class="style4">
+                                <telerik:RadDatePicker ID="dtNgayXB" Culture="English (United States)" runat="server">
+                                 <DateInput DateFormat="dd/MM/yyyy"> 
+            </DateInput> 
+                                </telerik:RadDatePicker>
+                            </td>
+                            <td class="style5">
+                                Chọn giờ:&nbsp;
+                            </td>
+                            <td class="style6">
+                                <asp:DropDownList CssClass="dropdown" ID="ddlHour" runat="server" Style="font-weight: bold">
+                                </asp:DropDownList>
+                            </td>
+                            <td class="style7">
+                                &nbsp;Chọn phút
+                            </td>
+                            <td>
+                                <asp:DropDownList CssClass="dropdown" ID="ddlMin" runat="server" Style="font-weight: bold">
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                    </table>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">

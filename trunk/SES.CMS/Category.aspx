@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Otofun.Master" AutoEventWireup="true"
+﻿<%@ Page EnableViewState="False" Title="" Language="C#" MasterPageFile="~/Otofun.Master" AutoEventWireup="true"
     CodeBehind="Category.aspx.cs" Inherits="SES.CMS.Category" %>
 
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
@@ -40,19 +40,12 @@
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
-                <div style="width: 100%; margin: 20px 0; float: right;">
+                <div style="width: 100%; margin: 0 0 5px 0; float: right;">
                     <div class="collection">
-                        <cp:CollectionPager LabelText="Page:&amp;nbsp;&amp;nbsp;" FirstText="&amp;nbsp;&amp;nbsp;<<"
-                            BackText="< &amp;nbsp;" LastText=">>" NextText=">" ShowFirstLast="True" ControlCssClass="collectionpager"
-                            PagingMode="PostBack" runat="server" BackNextLinkSeparator="" BackNextLocation="Right"
-                            PageNumbersDisplay="Numbers" ResultsLocation="None" BackNextDisplay="HyperLinks"
-                            ID="CollectionPager1" BackNextButtonStyle="" BackNextStyle="margin-left:5px;"
-                            ControlStyle="" PageNumbersSeparator="&amp;nbsp;" ShowLabel="True">
-                        </cp:CollectionPager>
-                        <div class="collectPage">
-                        </div>
+                        <asp:HyperLink ID="hplPrevPage" runat="server">[Trang trước]</asp:HyperLink> &nbsp; <asp:HyperLink ID="hplNextPage" runat="server">[Trang sau]</asp:HyperLink>
                     </div>
                 </div>
+                
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />

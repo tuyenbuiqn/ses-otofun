@@ -97,10 +97,12 @@ namespace SES.CMS.AdminCP
         }
         public static string Change_AV(string ip_str_change)
         {
-            ip_str_change = ip_str_change.Replace('"', '-');
+            if (string.IsNullOrEmpty(ip_str_change)) return "index.aspx";
             Regex v_reg_regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string v_str_FormD = ip_str_change.Normalize(NormalizationForm.FormD);
-            return v_reg_regex.Replace(v_str_FormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "-").Replace(".", "").Replace(":", "-").Replace("%", "phan-tram").Replace("?", "-");
+            string rt = v_reg_regex.Replace(v_str_FormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "-").Replace("/", "-");
+            rt = rt.Replace("\\", "-").Replace("'", "-").Replace(":", "-").Replace("&", "-").Replace(".", "").Replace(":", "-").Replace("%", "phan-tram").Replace("?", "-").Replace("\"", "-");
+            return rt;
         }
         public static void GvDatabinder(GridView gv, object obDataSource)
         {

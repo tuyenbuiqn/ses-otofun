@@ -136,7 +136,7 @@ namespace SES.CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        //protected global::SES.CMS.Module.ucSaleOff uc14ucSaleOff;
+        protected global::SES.CMS.Module.ucSaleOff uc14ucSaleOff;
         
         /// <summary>
         /// uc11ucRightHomeAdv control.
@@ -163,6 +163,6 @@ namespace SES.CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        //protected global::SES.CMS.Module.ucThongTinDoanhNghiep uc14ucThongTinDoanhNghiep;
+        protected global::SES.CMS.Module.ucThongTinDoanhNghiep uc14ucThongTinDoanhNghiep;
     }
 }
