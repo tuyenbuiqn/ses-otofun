@@ -83,7 +83,6 @@ namespace SES.CMS.ofeditor
                 }
             }
 
-            DataTable test = new cmsArticleBL().Article_Search(lstCategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Title);
             rptListArticles.DataSource = new cmsArticleBL().Article_Search(lstCategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Title);
             rptListArticles.DataBind();
         }
