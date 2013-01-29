@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" EnableViewState="false" MasterPageFile="~/Otofun.Master" AutoEventWireup="true" CodeBehind="tag.aspx.cs" Inherits="SES.CMS.tag" %>
+﻿<%@ Page Title="" Language="C#" EnableViewState="false" MasterPageFile="~/Otofun.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="SES.CMS.Search" %>
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <%@ Register Src="Module/ucLeftAdv.ascx" TagName="ucLeftAdv" TagPrefix="uc1" %>
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
@@ -8,14 +8,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="body-top">
+<div class="body-top">
         <div class="body-out">
             <div class="body-top-left">
                 <uc6:ucTopAdvertisment runat="server" ID="uc1TopAdv" />
                 <div class="category-box">
                     <div class="category-title-box">
                         <h2 class="category-title">
-                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label>Tag</h2>
+                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label>Search</h2>
                         <span class="category-title-time">
                             <asp:Literal runat="server" ID="ltrDatetime"></asp:Literal></span>
                     </div>
@@ -37,11 +37,6 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                     <div style="width: 100%;  margin: 0 0 5px 0; float: right;">
-                    <div class="collection">
-                        <asp:HyperLink ID="hplPrevPage" runat="server">[Trang trước]</asp:HyperLink> &nbsp; <asp:HyperLink ID="hplNextPage" runat="server">[Trang sau]</asp:HyperLink>
-                    </div>
-                </div>
                 </div>
                 <div style="width: 100%; margin: 20px 0; float: right;">
                     <div class="collection">

@@ -51,6 +51,13 @@ namespace SES.CMS.Module
                 }
             }
         }*/
+        protected void imgbtnSearch_Click(object sender, EventArgs e)
+        {
+            if (!txtSearch.Text.Equals(""))
+            {
+                Response.Redirect("/search/otofun-" + txtSearch.Text.Trim() + ".aspx");
+            }
+        }
         public string ReturnLiActive(string id)
         {
             if (string.IsNullOrEmpty(CategoryIDS)) return "<li>";

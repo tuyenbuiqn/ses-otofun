@@ -7,24 +7,10 @@ using System.Web.UI.WebControls;
 using SES.CMS.DO;
 using SES.CMS.BL;
 using System.Data;
-
 namespace SES.CMS
 {
-    public partial class tag : System.Web.UI.Page
+    public partial class Search : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            loadTime();
-            if (!string.IsNullOrEmpty(Request.QueryString["tag"]))
-            {
-                string tag = Request.QueryString["tag"];
-              
-                Page.Title = "Tag - " + tag + " - " +  new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue;
-
-                rptTagDataSoucre(tag);
-            }
-        }
-
         protected void loadTime()
         {
             DateTime dateTime = DateTime.Now;
@@ -58,7 +44,7 @@ namespace SES.CMS
             rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(categoryID, 5);
             rptEvent.DataBind();
         }
-       
+
         protected void rptTagDataSoucre(string tag)
         {
             //int PageID = 0;
@@ -79,7 +65,7 @@ namespace SES.CMS
             //int PageID2 = PageID;
             //PageID = PageSize * PageID;
 
-            
+
             CollectionPager1.MaxPages = 10000;
 
             CollectionPager1.PageSize = 30;
