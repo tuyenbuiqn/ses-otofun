@@ -19,9 +19,8 @@
         </li>
         </ul>
         <div class="search-box">
-            <a href="#">
-                <img id="search-button" class="search-button" src="/images/search-button.jpg" alt="" /></a>
-            <asp:TextBox ID="TextBox1" class="search" runat="server" BackColor="#454545"></asp:TextBox>
+            <asp:ImageButton runat="server" ImageUrl="/images/search-button.jpg" CssClass="search-button" ID="imgbtnSearch" OnClick="imgbtnSearch_Click" />
+            <asp:TextBox ID="txtSearch" class="search" runat="server" BackColor="#454545"></asp:TextBox>
             <a href="#">
                 <img id="rss-button" class="rss-button" src="/images/RSS-button.jpg" alt="" /></a>
         </div>
