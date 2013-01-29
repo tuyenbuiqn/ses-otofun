@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Otofun.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" EnableViewState="false" Language="C#" MasterPageFile="~/Otofun.Master" AutoEventWireup="true"
     CodeBehind="Event.aspx.cs" Inherits="SES.CMS.Event" %>
 
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
