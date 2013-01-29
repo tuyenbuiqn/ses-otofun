@@ -11,6 +11,18 @@ namespace SES.CMS
 {
     public partial class Search : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            loadTime();
+            if (!string.IsNullOrEmpty(Request.QueryString["tag"]))
+            {
+                string tag = Request.QueryString["tag"];
+
+                Page.Title = "Search - " + tag + " - " + new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue;
+
+                rptTagDataSoucre(tag);
+            }
+        }
         protected void loadTime()
         {
             DateTime dateTime = DateTime.Now;
