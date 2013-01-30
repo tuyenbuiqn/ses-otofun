@@ -13,24 +13,19 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Request.QueryString["ArticleID"]))
-            {
-                int articleID = int.Parse(Request.QueryString["ArticleID"].ToString());
-                rptTieuDiemArtDataSoucre(articleID);
-            }
+            if (!IsPostBack)
+                rptMostReadDataSource();
         }
+
+        protected void rptMostReadDataSource()
+        {
+            rptMostRead.DataSource = new cmsArticleBL().MostRead();
+            rptMostRead.DataBind();
+        }
+
         public string FriendlyUrl(string s)
         {
             return Ultility.Change_AVCate(s);
-        }
-        protected void rptTieuDiemArtDataSoucre(int articleID)
-        {
-            cmsArticleDO objArt = new cmsArticleDO();
-            objArt.ArticleID = articleID;
-            objArt = new cmsArticleBL().Select(objArt);
-
-            rptTieuDiemArt.DataSource = new cmsArticleBL().HotEvents(objArt.CategoryID);
-            rptTieuDiemArt.DataBind();
         }
     }
 }
