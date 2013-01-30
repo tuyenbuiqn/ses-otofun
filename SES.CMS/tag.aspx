@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" EnableViewState="false" MasterPageFile="~/Otofun.Master" AutoEventWireup="true" CodeBehind="tag.aspx.cs" Inherits="SES.CMS.tag" %>
+﻿<%@ Page Title="" Language="C#" EnableViewState="false" MasterPageFile="~/Otofun.Master"
+    AutoEventWireup="true" CodeBehind="tag.aspx.cs" Inherits="SES.CMS.tag" %>
+
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <%@ Register Src="Module/ucLeftAdv.ascx" TagName="ucLeftAdv" TagPrefix="uc1" %>
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
@@ -21,7 +23,7 @@
                     </div>
                     <asp:Repeater runat="server" ID="rptTag" OnItemDataBound="rptTag_ItemDataBound">
                         <ItemTemplate>
-                            <asp:Panel runat="server" id="divCategory">
+                            <asp:Panel runat="server" ID="divCategory">
                                 <a title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
                                     <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
@@ -33,15 +35,17 @@
                                         <%#WordCut(Eval("Description").ToString()) %></div>
                                     <a class="readmore" title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
                                         Xem tiếp</a>
-                                </asp:Panel>
+                            </asp:Panel>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                     <div style="width: 100%;  margin: 0 0 5px 0; float: right;">
-                    <div class="collection">
-                        <asp:HyperLink ID="hplPrevPage" runat="server">[Trang trước]</asp:HyperLink> &nbsp; <asp:HyperLink ID="hplNextPage" runat="server">[Trang sau]</asp:HyperLink>
+                    <div style="width: 100%; margin: 0 0 5px 0; float: right;">
+                        <div class="collection">
+                            <asp:HyperLink ID="hplPrevPage" runat="server">[Trang trước]</asp:HyperLink>
+                            &nbsp;
+                            <asp:HyperLink ID="hplNextPage" runat="server">[Trang sau]</asp:HyperLink>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div style="width: 100%; margin: 20px 0; float: right;">
                     <div class="collection">
