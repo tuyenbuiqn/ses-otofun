@@ -13,12 +13,12 @@ namespace SES.CMS.Module {
     public partial class ucTieuDiem {
         
         /// <summary>
-        /// rptTieuDiemArt control.
+        /// rptMostRead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTieuDiemArt;
+        protected global::System.Web.UI.WebControls.Repeater rptMostRead;
     }
 }
