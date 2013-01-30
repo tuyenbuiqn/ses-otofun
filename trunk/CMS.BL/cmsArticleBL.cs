@@ -283,10 +283,17 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectPaging(categoryID,PageID,PageSize);
         }
-
+        public DataTable SelectPagingTagOrSearch(string tagOrSearchKey, int PageID, int PageSize)
+        {
+            return objcmsArticleDAL.SelectPagingTagOrSearch(tagOrSearchKey, PageID, PageSize);
+        }
         public void AutoPublish()
         {
             objcmsArticleDAL.AutoPublish();
+        }
+        public int SelectSumTag(string tag)
+        {
+            return objcmsArticleDAL.SelectSumTag(tag);
         }
     }
 

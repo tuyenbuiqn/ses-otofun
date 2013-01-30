@@ -20,6 +20,7 @@
         </ul>
         <div class="search-box">
             <asp:ImageButton runat="server" ImageUrl="/images/search-button.jpg" CssClass="search-button" ID="imgbtnSearch" OnClick="imgbtnSearch_Click" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="" ControlToValidate="txtSearch"></asp:RequiredFieldValidator>
             <asp:TextBox ID="txtSearch" class="search" runat="server" BackColor="#454545"></asp:TextBox>
             <a href="#">
                 <img id="rss-button" class="rss-button" src="/images/RSS-button.jpg" alt="" /></a>

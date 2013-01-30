@@ -59,37 +59,29 @@ namespace SES.CMS
 
         protected void rptTagDataSoucre(string tag)
         {
-            //int PageID = 0;
-            //if (!string.IsNullOrEmpty(Request.QueryString["Page"]))
-            //    PageID = int.Parse(Request.QueryString["Page"]);
+            int PageID = 0;
+            if (!string.IsNullOrEmpty(Request.QueryString["Page"]))
+                PageID = int.Parse(Request.QueryString["Page"]);
 
-            //int PageSize = 15;
-            //hplNextPage.NavigateUrl = "/tag/otofun-" + tag + "-Trang-" + (PageID + 1).ToString() + ".aspx";
-            //if (PageID > 0)
-            //{
-            //    if (PageID > 1)
-            //        hplPrevPage.NavigateUrl =  "/tag/otofun-" + tag + "-Trang-" + (PageID - 1).ToString() + ".aspx";
-            //    else
-            //        hplPrevPage.NavigateUrl = "/tag/otofun-" + tag + "-Trang-" + PageID.ToString() + ".aspx";
-            //}
-            //else
-            //    hplPrevPage.Visible = false;
-            //int PageID2 = PageID;
-            //PageID = PageSize * PageID;
+            int PageSize = 15;
+            hplNextPage.NavigateUrl = "/search/otofun-" + tag + "-Trang-" + (PageID + 1).ToString() + ".aspx";
+            if (PageID > 0)
+            {
+                if (PageID > 1)
+                    hplPrevPage.NavigateUrl = "/search/otofun-" + tag + "-Trang-" + (PageID - 1).ToString() + ".aspx";
+                else
+                    hplPrevPage.NavigateUrl = "/search/otofun-" + tag + ".aspx";
+            }
+            else
+                hplPrevPage.Visible = false;
+            int PageID2 = PageID;
+            PageID = PageSize * PageID;
+            int SumcountTag = new cmsArticleBL().SelectSumTag(tag);
 
-
-            CollectionPager1.MaxPages = 10000;
-
-            CollectionPager1.PageSize = 30;
-
-            DataTable dtTag = new cmsArticleBL().SelectByTag(tag);
-
-            CollectionPager1.DataSource = new DataView(dtTag, "", "", DataViewRowState.CurrentRows);
-
-            CollectionPager1.BindToControl = rptTag;
-
-            rptTag.DataSource = CollectionPager1.DataSourcePaged;
-
+            if ((PageID + PageSize) >= SumcountTag) hplNextPage.Visible = false;
+            if (SumcountTag == 0) return;
+            DataTable dtPage = new cmsArticleBL().SelectPagingTagOrSearch(tag, PageID, PageSize);
+            rptTag.DataSource = dtPage;
             rptTag.DataBind();
         }
 

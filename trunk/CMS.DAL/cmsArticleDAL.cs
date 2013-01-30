@@ -1478,7 +1478,37 @@ namespace SES.CMS.DAL
                 catch { id = 0; }
             return id;
         }
+        public int SelectSumTag(string tag)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByTag";
+            SqlParameter Sqlparam;
 
+
+            Sqlparam = new SqlParameter("@tag", SqlDbType.NVarChar);
+            Sqlparam.Value = tag;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            int id = 0;
+            if (dt.Rows.Count > 0)
+                try
+                {
+                    id = dt.Rows.Count;
+
+                }
+                catch { id = 0; }
+            return id;
+        }
         public DataTable SelectPaging(int categoryID, int PageID, int PageSize)
         {
             SqlCommand Sqlcomm = new SqlCommand();
@@ -1499,6 +1529,35 @@ namespace SES.CMS.DAL
             Sqlparam.Value = PageSize;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
+        public DataTable SelectPagingTagOrSearch(string tagOrSearchKey, int PageID, int PageSize)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spr_procedure_article_tag_paged";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@startrow", SqlDbType.Int);
+            Sqlparam.Value = PageID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@pagesize", SqlDbType.Int);
+            Sqlparam.Value = PageSize;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@tag", SqlDbType.NVarChar);
+            Sqlparam.Value = tagOrSearchKey;
+            Sqlcomm.Parameters.Add(Sqlparam);
 
             DataSet ds = base.GetDataSet(Sqlcomm);
             DataTable dt = null;

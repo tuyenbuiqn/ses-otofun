@@ -37,6 +37,13 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
+                     <div style="width: 100%; margin: 0 0 5px 0; float: right;">
+                        <div class="collection">
+                            <asp:HyperLink ID="hplPrevPage" runat="server">[Trang trước]</asp:HyperLink>
+                            &nbsp;
+                            <asp:HyperLink ID="hplNextPage" runat="server">[Trang sau]</asp:HyperLink>
+                        </div>
+                    </div>
                 </div>
                 <div style="width: 100%; margin: 20px 0; float: right;">
                     <div class="collection">
