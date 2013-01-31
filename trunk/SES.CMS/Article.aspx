@@ -21,7 +21,7 @@
                 <div class="category-box">
                     <div class="category-title-box">
                         <h2 class="category-title">
-                            <a href="/Default.aspx" title="Trang chủ">Trang chủ </a>  » <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
+                            <a href="/Default.otofun" title="Trang chủ">Trang chủ </a>  » <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
                     </div>
                     <div class="article-box">
                         <asp:Repeater runat="server" ID="rptArticleDetail" OnItemDataBound="rptArticleDetail_ItemDataBound">
@@ -38,7 +38,7 @@
                                         <asp:Repeater runat="server" ID="rptTinLienQuan2">
                                         <HeaderTemplate> <div class="tin-lien-quan-2"><span class="tin-lien-quan2-span">Tin liên quan</span></HeaderTemplate>
                                             <ItemTemplate>
-                                                <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                                                <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
                                                 title='<%#Eval("Title") %>'>» <%#Eval("Title")%></a>
                                             </ItemTemplate>
                                             <FooterTemplate></div></FooterTemplate>
