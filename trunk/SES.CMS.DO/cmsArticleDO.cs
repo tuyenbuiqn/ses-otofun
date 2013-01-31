@@ -478,6 +478,7 @@ namespace SES.CMS.DO
 		}
 
         #endregion
+        public string Note { get; set; }
 
 	}
 }

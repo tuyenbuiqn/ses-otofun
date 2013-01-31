@@ -136,6 +136,7 @@ namespace SES.CMS.ofeditor
             txtDescHome.Text = objArt.DescHome;
             txtAuthor.Text = objArt.Author;
             txtDetail.Content = objArt.ArticleDetail;
+            txtNote.Text = objArt.Note;
             ddlEvent.SelectedValue = objArt.EventID.ToString();
             if (!string.IsNullOrEmpty(objArt.ImageUrl))
             {
@@ -313,7 +314,7 @@ namespace SES.CMS.ofeditor
             objArt.EventID = int.Parse(ddlEvent.SelectedValue);
             objArt.TinLienQuan1 = hdfID1.Value;
             objArt.TinLienQuan2 = hdfID2.Value;
-            
+            objArt.Note = txtNote.Text;
 
             if (!string.IsNullOrEmpty(fuImg.FileName))
                 objArt.ImageUrl = UploadFile(fuImg);

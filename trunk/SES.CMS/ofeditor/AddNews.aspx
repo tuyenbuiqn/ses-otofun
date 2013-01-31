@@ -15,7 +15,7 @@
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
         </Scripts>
-		<Services>
+        <Services>
             <asp:ServiceReference Path="RNServices.asmx" />
         </Services>
     </telerik:RadScriptManager>
@@ -76,14 +76,14 @@
                     var ID = arg.ID;
                     args = null;
                     oWnd = null;
-                   
+
                     //$get("order").innerHTML = "You chose to fly to " + cityName;
                     if (ID == "1") {
-                        
+
                         if (currentMultiID == null) currentMultiID = arg.cityName;
                         currentMultiID = currentMultiID + ',' + arg.cityName;
                         arg = null;
-                        
+
                         updateChanges(currentMultiID);
 
                     }
@@ -320,7 +320,9 @@
         <fieldset>
             <legend>Thêm mới tin tức</legend>
             <div class="fieldsetdiv">
-                <span style="color:Red; font-weight:bold; font-size:13px;"> <asp:Label ID="lblError" Visible="false" runat="server" Text="Label"></asp:Label> </span>
+                <span style="color: Red; font-weight: bold; font-size: 13px;">
+                    <asp:Label ID="lblError" Visible="false" runat="server" Text="Label"></asp:Label>
+                </span>
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
@@ -401,7 +403,8 @@
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
-                    <%--Mô tả Set top--%> Mô tả ngắn
+                    <%--Mô tả Set top--%>
+                    Mô tả ngắn
                 </label>
                 <div style="float: left;">
                     <asp:TextBox onkeyup="return checkMaxLen(this,160)" ID="txtDescHome" TextMode="MultiLine"
@@ -412,7 +415,8 @@
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
-                   <%-- Mô tả ngắn--%> Sa pô
+                    <%-- Mô tả ngắn--%>
+                    Sa pô
                 </label>
                 <div style="float: left;">
                     <asp:TextBox ID="txtDescription" onkeyup="return checkMaxLen(this,160)" TextMode="MultiLine"
@@ -513,6 +517,13 @@
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
+                    Ghi chú
+                </label>
+                <asp:TextBox CssClass="lf" ID="txtNote" TextMode="MultiLine" Width="500px" Height="100px"
+                    runat="server"></asp:TextBox>
+            </div>
+            <div class="fieldsetdiv">
+                <label for="lf">
                     Tác giả
                 </label>
                 <asp:TextBox CssClass="lf" ID="txtAuthor" Width="250px" runat="server" ValidationGroup="submitGrp"></asp:TextBox>
@@ -535,8 +546,8 @@
                             </td>
                             <td class="style4">
                                 <telerik:RadDatePicker ID="dtNgayXB" Culture="English (United States)" runat="server">
-                                 <DateInput DateFormat="dd/MM/yyyy"> 
-            </DateInput> 
+                                    <DateInput DateFormat="dd/MM/yyyy">
+                                    </DateInput>
                                 </telerik:RadDatePicker>
                             </td>
                             <td class="style5">
