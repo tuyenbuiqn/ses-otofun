@@ -1,5 +1,5 @@
-﻿<%@ Page EnableViewState="False" Title="" Language="C#" MasterPageFile="~/Otofun.Master" AutoEventWireup="true"
-    CodeBehind="Category.aspx.cs" Inherits="SES.CMS.Category" %>
+﻿<%@ Page EnableViewState="False" Title="" Language="C#" MasterPageFile="~/Otofun.Master"
+    AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="SES.CMS.Category" %>
 
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <%@ Register Src="Module/ucLeftAdv.ascx" TagName="ucLeftAdv" TagPrefix="uc1" %>
@@ -23,7 +23,7 @@
                     </div>
                     <asp:Repeater runat="server" ID="rptCategory" OnItemDataBound="rptCategory_ItemDataBound">
                         <ItemTemplate>
-                            <asp:Panel runat="server" id="divCategory">
+                            <asp:Panel runat="server" ID="divCategory">
                                 <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                     <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
@@ -33,19 +33,29 @@
                                     </h2>
                                     <div class="cate-desc">
                                         <%#Eval("Description") + "..."%></div>
+                                    <div class="tin-lien-quan1" style="width:auto; float:none;">
+                                        <asp:Repeater runat="server" ID="rptTinLienQuan1">
+                                            <ItemTemplate>
+                                                <span class="tin-lien-quan-1a"><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                                    title='<%#Eval("Title") %>'>»
+                                                    <%#Eval("Title")%></a> </span>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </div>
                                     <a class="readmore" title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                         Xem tiếp</a>
-                                </asp:Panel>
+                            </asp:Panel>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
                 <div style="width: 100%; margin: 0 0 5px 0; float: right;">
                     <div class="collection">
-                        <asp:HyperLink ID="hplPrevPage" runat="server">[Trang trước]</asp:HyperLink> &nbsp; <asp:HyperLink ID="hplNextPage" runat="server">[Trang sau]</asp:HyperLink>
+                        <asp:HyperLink ID="hplPrevPage" runat="server">[Trang trước]</asp:HyperLink>
+                        &nbsp;
+                        <asp:HyperLink ID="hplNextPage" runat="server">[Trang sau]</asp:HyperLink>
                     </div>
                 </div>
-                
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />

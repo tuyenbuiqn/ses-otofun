@@ -147,6 +147,10 @@ namespace SES.CMS
 
         protected void rptCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
+            cmsCategoryBL cateBL = new cmsCategoryBL();
+            cmsArticleBL artBL = new cmsArticleBL();
+            RepeaterItem item = e.Item;
+            Repeater rptTinLienQuan1 = (Repeater)e.Item.FindControl("rptTinLienQuan1");
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
             {
                 Panel divCategory = (Panel)e.Item.FindControl("divCategory");
@@ -158,6 +162,23 @@ namespace SES.CMS
                 {
                     divCategory.Attributes.Add("class", "category-wrap-first");
                 }
+
+                DataRowView drv = (DataRowView)item.DataItem;
+                int articleID = 0;
+                articleID = int.Parse(drv["ArticleID"].ToString());
+
+                string keyTinLienQuan1 = "TinLienQuanCache1=" + articleID;
+                if (cache[keyTinLienQuan1] == null)
+                {
+                    DataTable dtTinLienQuan1 = artBL.GetTinLienQuan1(articleID);
+                    if (dtTinLienQuan1 != null)
+                        if (dtTinLienQuan1 != null)
+                            cache.Insert(keyTinLienQuan1, dtTinLienQuan1, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                }
+                rptTinLienQuan1.DataSource = (DataTable)cache[keyTinLienQuan1];
+                rptTinLienQuan1.DataBind();
+
+
             }
         }
         public string FriendlyUrl(string s)
