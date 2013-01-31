@@ -1,14 +1,72 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ofeditor/Editor.Master" AutoEventWireup="true"
     CodeBehind="ListArticles.aspx.cs" Inherits="SES.CMS.ofeditor.ListArticles" %>
-
+    <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script type="text/javascript">
+    function OnClientDropDownOpenedHandler(sender, eventArgs) {
+        var tree = sender.get_items().getItem(0).findControl("RadTreeView1");
+        var selectedNode = tree.get_selectedNode();
+        if (selectedNode) {
+            selectedNode.scrollIntoView();
+        }
+    }
+    function nodeClicking(sender, args) {
+        var comboBox = $find("<%= rcbCat.ClientID %>");
+
+        var node = args.get_node()
+
+        comboBox.set_text(node.get_text());
+
+        comboBox.trackChanges();
+        comboBox.get_items().getItem(0).set_text(node.get_text());
+        comboBox.commitChanges();
+
+        comboBox.hideDropDown();
+
+        // Call comboBox.attachDropDown if:
+        //  1) The RadComboBox is inside an AJAX panel.
+        //  2) The RadTreeView has a server-side event handler for the NodeClick event, i.e. it initiates a postback when clicking on a Node.
+        // Otherwise the AJAX postback becomes a normal postback regardless of the outer AJAX panel.
+
+        //comboBox.attachDropDown();
+    }
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+        </Scripts>
+    </telerik:RadScriptManager>
     <div class="pad20">
             <h2><asp:Label runat="server" ID="lblAction" Text=""></asp:Label>
                 </h2>
             <div style="width: 90%; float: left; margin-bottom: 10px;">
-                Lựa chọn theo Danh mục:
+                <span style="float:left; font-size:16px; font-weight:bold;" >Chọn theo Danh mục:</span>
+                <div style="float:left; width:260px;">
+                 <telerik:RadComboBox ID="rcbCat" CssClass="SearchrcbCat" runat="server" Width="250px" Height="24px" ShowToggleImage="True"
+                        Style="vertical-align: middle;" OnClientDropDownOpened="OnClientDropDownOpenedHandler"
+                        EmptyMessage="Chọn danh mục" ExpandAnimation-Type="None" CollapseAnimation-Type="None"
+                        OnInit="rcbCat_Init">
+                        <ItemTemplate>
+                            <div id="div1">
+                                <telerik:RadTreeView runat="server" ID="RadTreeView1" OnClientNodeClicking="nodeClicking"
+                                    Width="100%" Height="140px" CheckBoxes="True">
+                                </telerik:RadTreeView>
+                            </div>
+                        </ItemTemplate>
+                        <Items>
+                            <telerik:RadComboBoxItem Text="" />
+                        </Items>
+                        <ExpandAnimation Type="None"></ExpandAnimation>
+                        <CollapseAnimation Type="None"></CollapseAnimation>
+                    </telerik:RadComboBox>
+                </div>
+                <span style="float:left;">
+                    <asp:Button runat="server" ID="btnFilter" CssClass="button" Text="Tìm kiếm" />
+                </span>
                 </div>
             <div visible="false" runat="server" id="divPV" class="article-action">
                 <asp:Button runat="server" ID="btnXoaPV" Text="Xóa bài đã chọn" CssClass="button-article"
