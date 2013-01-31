@@ -34,7 +34,7 @@
                                     <%#Eval("Title") %></a>
                             
                                 <div class="chitiet">
-                                    <%#WordCut(Eval("DescHome").ToString())%>
+                                    <%#Eval("DescHome")%>
                                 </div>
                                 <div class="tin-lien-quan1">
                                     <asp:Repeater runat="server" ID="rptTinLienQuan1">

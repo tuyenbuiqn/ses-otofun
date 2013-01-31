@@ -137,12 +137,12 @@ namespace SES.CMS.Module
         }
         public string WordCut(string text)
         {
-            return Ultility.WordCut(text, 100, new char[] { ' ', '.', ',', ';' }) + "...";
+            return Ultility.WordCut(text, 100, new char[] { ' ', '.', ',', ';' }) + ".";
 
         }
         public string WordCutArticle(string text)
         {
-            return Ultility.WordCut(text, 35, new char[] { ' ', '.', ',', ';' }) + "...";
+            return Ultility.WordCut(text, 35, new char[] { ' ', '.', ',', ';' }) + ".";
 
         }
     }

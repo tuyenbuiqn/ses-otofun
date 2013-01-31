@@ -205,7 +205,7 @@
                         args.set_value(newInner);
                     }
                     else {
-                        var newInner = "<center><img src='" + img.src + "' alt='Otofun News' style='" + img.getAttribute("style") + "'/></center><br/><br/>";
+                        var newInner = "<center><img src='" + img.src + "' alt='Otofun News' style='" + img.getAttribute("style") + "'/></center><br/>";
 
                         args.set_value(newInner);
                     }
@@ -401,7 +401,7 @@
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
-                    Mô tả Set top
+                    <%--Mô tả Set top--%> Mô tả ngắn
                 </label>
                 <div style="float: left;">
                     <asp:TextBox onkeyup="return checkMaxLen(this,160)" ID="txtDescHome" TextMode="MultiLine"
@@ -412,7 +412,7 @@
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
-                    Mô tả ngắn
+                   <%-- Mô tả ngắn--%> Sa pô
                 </label>
                 <div style="float: left;">
                     <asp:TextBox ID="txtDescription" onkeyup="return checkMaxLen(this,160)" TextMode="MultiLine"

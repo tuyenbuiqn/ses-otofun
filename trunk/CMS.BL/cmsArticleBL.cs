@@ -109,6 +109,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.MostRead();
         }
+        public DataTable MostReadOfCategory(int categoryID)
+        {
+            return objcmsArticleDAL.MostReadOfCategory(categoryID);
+        }
         public DataTable SelectToMainHomepageCate(int top, int categoryID, bool type)
         {
             return objcmsArticleDAL.SelectToMainHomepageCate(top, categoryID, type);

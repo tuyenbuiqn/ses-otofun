@@ -19,7 +19,17 @@ namespace SES.CMS.Module
 
         protected void rptMostReadDataSource()
         {
-            rptMostRead.DataSource = new cmsArticleBL().MostRead();
+            int categoryID = -1;
+            try
+            {
+                string url = Request.Url.AbsolutePath;
+                url = url.Substring(1, url.Length - 1);
+                string url1 = url.Replace(".", "/");
+                string Module = url1.Substring(0, url1.IndexOf("/"));
+                categoryID = int.Parse(Module.Substring(Module.LastIndexOf('-') + 1, Module.Length - (Module.LastIndexOf('-') + 1)));
+            }
+            catch { }
+            rptMostRead.DataSource = new cmsArticleBL().MostReadOfCategory(categoryID);
             rptMostRead.DataBind();
         }
 
