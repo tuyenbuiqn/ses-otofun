@@ -309,8 +309,7 @@ body
 {
     width: 465px;
     float: left;
-    min-height: 159px;
-    height: 159px;
+    height: 119px;
     margin-left: 6px;
 }
 .AnhNho li
@@ -471,7 +470,7 @@ table.tbimage .image_desc
 .tintuc-box
 {
     width: 206px;
-    height: 373px;
+    height: 350px;
     border: solid 1px #C67926;
     background: #DFC698;
     float: left;
@@ -1843,14 +1842,14 @@ p.pBreadrumb
 .adv-homepage-right-1
 {
     width: 300px;
-    height: 150px;
+    height: 135px;
     float: left;
     margin-bottom: 7px;
 }
 .adv-homepage-right-1 img
 {
     width: 300px;
-    height: 161px;
+    height: 140px;
 }
 .adv-homepage-right-2
 {
