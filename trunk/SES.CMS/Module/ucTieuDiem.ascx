@@ -2,7 +2,7 @@
     Inherits="SES.CMS.Module.ucTieuDiem" %>
 <div class="hotevent-box">
     <h2 class="hotevent-h2-title">
-        Tiêu điểm</h2>
+        Đọc nhiều</h2>
     <ul class="docnhieu-noidung" style="background:none">
         <asp:Repeater runat="server" ID="rptMostRead">
             <ItemTemplate>
