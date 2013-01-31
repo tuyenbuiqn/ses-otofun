@@ -40,7 +40,7 @@
                                     <asp:Repeater runat="server" ID="rptTinLienQuan1">
                                         <ItemTemplate>
                                             <span class="tin-lien-quan-1a"><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
-                                                title='<%#Eval("Title") %>'>» <%#WordCutArticle(Eval("Title").ToString()) %></a> </span>
+                                                title='<%#Eval("Title") %>'>» <%#Eval("Title")%></a> </span>
                                         </ItemTemplate>
                                     </asp:Repeater>
                                 </div>
