@@ -118,7 +118,14 @@ namespace SES.CMS
 
         protected void rptArticeDataSource(int articleID)
         {
-            rptArticleDetail.DataSource = new cmsArticleBL().SelectByPK(articleID);
+            string cateArticleDetail = "ArticleDetailCache=" + articleID;
+            if (cache[cateArticleDetail] == null)
+            {
+                DataTable dtArticleCache = new cmsArticleBL().SelectByPK(articleID);
+                if (dtArticleCache != null)
+                    cache.Insert(cateArticleDetail, dtArticleCache, null, DateTime.Now.AddSeconds(650), TimeSpan.Zero);
+            }
+            rptArticleDetail.DataSource = (DataTable)cache[cateArticleDetail];
             rptArticleDetail.DataBind();
         }
         protected void rptArticleDetail_ItemDataBound(object sender, RepeaterItemEventArgs e)
