@@ -716,7 +716,6 @@ table.tbimage .image_desc
 .docnhieu-noidung
 {
     width: 300px;
-    height: 480px;
     margin-top: 10px;
     background: #F3E1C0;
     float: left;
@@ -726,6 +725,7 @@ table.tbimage .image_desc
     float: left;
     border-bottom: dotted 1px #d1d0ce;
     margin-left: 10px;
+    width:280px;
 }
 .docnhieu-noidung li p
 {
