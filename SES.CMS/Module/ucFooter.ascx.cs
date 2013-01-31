@@ -11,22 +11,23 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            rptMainMenuDataSource(); //rptChildDataSource();
-            rptNewsDataSource();
-            rptBuyDataSource();
+            if (!IsPostBack)
+                rptMainMenuDataSource(); //rptChildDataSource();
+            //rptNewsDataSource();
+            //rptBuyDataSource();
         }
 
-        private void rptNewsDataSource()
-        {
-            rptNews.DataSource = new cmsArticleBL().SelectByCatNum(5,8);
-            rptNews.DataBind();
-        }
+        //private void rptNewsDataSource()
+        //{
+        //    rptNews.DataSource = new cmsArticleBL().SelectByCatNum(5,8);
+        //    rptNews.DataBind();
+        //}
 
-        private void rptBuyDataSource()
-        {
-            rptBuy.DataSource = new cmsArticleBL().SelectByCatNum(13,8);
-            rptBuy.DataBind();
-        }
+        //private void rptBuyDataSource()
+        //{
+        //    rptBuy.DataSource = new cmsArticleBL().SelectByCatNum(13,8);
+        //    rptBuy.DataBind();
+        //}
 
         private void rptMainMenuDataSource()
         {

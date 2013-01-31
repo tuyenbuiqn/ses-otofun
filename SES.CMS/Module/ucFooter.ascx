@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucFooter.ascx.cs" Inherits="SES.CMS.Module.ucFooter" %>
 <div class="footer">
     <div class="inner">
-        <ul class="big-ul">
+       <%-- <ul class="big-ul">
             <li>
                 <p>
                     TIN TỨC & TƯ VẤN</p>
@@ -45,7 +45,7 @@
                     <br />
                 </p>
             </li>
-        </ul>
+        </ul>--%>
         <ul class="link3">
             <li><a href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
             </li>
