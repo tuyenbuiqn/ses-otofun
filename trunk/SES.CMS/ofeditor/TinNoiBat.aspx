@@ -203,7 +203,7 @@
                         <asp:Label runat="server" ID="lblTinNoiBatID" Text='<%#Eval("TinNoiBatID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="ArticleID" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
+                <asp:TemplateField HeaderText="ArticleID" Visible="false" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblArticleID" Text='<%#Eval("ArticleID") %>'></asp:Label>
                     </ItemTemplate>
@@ -254,14 +254,14 @@
                     <table class="tstyle2">
                         <thead>
                             <tr>
-                                <th>ArticleID</th>
+                                <th style="display:none;">ArticleID</th>
                                 <th>Tiêu đề</th>
                                 <th>Số thứ tự</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><asp:Label runat="server" ID="lblOldArticleID" CssClass="tin-noi-bat-left"></asp:Label></td>
+                                <td style="display:none;"><asp:Label runat="server" Visible="false" ID="lblOldArticleID" CssClass="tin-noi-bat-left"></asp:Label></td>
                                 <td><asp:Label runat="server" ID="lblOldTitle" CssClass="tin-noi-bat-right"></asp:Label></td>
                                 <td><asp:Label runat="server" ID="lblOrderID" CssClass="tin-noi-bat-right"></asp:Label></td>
                             </tr>
