@@ -202,6 +202,9 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.ForumUserID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@Note", SqlDbType.NText);
+            Sqlparam.Value = objcmsArticleDO.Note;
+            Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
@@ -389,6 +392,10 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.ForumUserID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@Note", SqlDbType.NText);
+            Sqlparam.Value = objcmsArticleDO.Note;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -531,6 +538,8 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.DescHome = Convert.ToString(dr["DescHome"]);
                 if (!Convert.IsDBNull(dr["ForumUserID"]))
                     objcmsArticleDO.ForumUserID = Convert.ToInt32(dr["ForumUserID"]);
+                if (!Convert.IsDBNull(dr["Note"]))
+                    objcmsArticleDO.Note = Convert.ToString(dr["Note"]);
             }
             return objcmsArticleDO;
         }
@@ -627,6 +636,8 @@ namespace SES.CMS.DAL
                         objcmsArticleDO.DescHome = Convert.ToString(dr["DescHome"]);
                     if (!Convert.IsDBNull(dr["ForumUserID"]))
                         objcmsArticleDO.ForumUserID = Convert.ToInt32(dr["ForumUserID"]);
+                    if (!Convert.IsDBNull(dr["Note"]))
+                        objcmsArticleDO.Note = Convert.ToString(dr["Note"]);
                     arrcmsArticleDO.Add(objcmsArticleDO);
                 }
             }
