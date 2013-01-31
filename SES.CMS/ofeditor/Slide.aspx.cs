@@ -26,7 +26,8 @@ namespace SES.CMS.ofeditor
             if (Request.QueryString["SlideID"] != null)
             {
                 objSlide.SlideID = int.Parse(Request.QueryString["SlideID"].ToString());
-                initForm();
+                if (!IsPostBack)
+                    initForm();
             }
         }
 
@@ -60,10 +61,18 @@ namespace SES.CMS.ofeditor
 
         private void initObject()
         {
+            //if (objSlide.SlideID > 0)
+            //{
+            //    initForm();
+            //}
             objSlide.Title = txtTitle.Text;
             objSlide.Description = txtDescription.Text;
-            if (!string.IsNullOrEmpty(fuImage.FileName))
+            if (!string.IsNullOrEmpty(Request.QueryString["SlideID"]))
+                objSlide.SlideImg = new cmsSlideBL().Select(new cmsSlideDO { SlideID = int.Parse(Request.QueryString["SlideID"]) }).SlideImg;
+            if (fuImage.HasFile)
+            {
                 objSlide.SlideImg = UploadFile(fuImage);
+            }
             objSlide.SlideUrl = txtSlideURL.Text;
             objSlide.OrderID = int.Parse(txtOrder.Text);
 

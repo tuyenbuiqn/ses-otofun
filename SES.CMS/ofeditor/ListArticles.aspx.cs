@@ -9,7 +9,7 @@ using SES.CMS.DO;
 using SES.CMS.AdminCP;
 using System.Data;
 using System.Web.Caching;
-
+using Telerik.Web.UI;
 namespace SES.CMS.ofeditor
 {
     public partial class ListArticles : System.Web.UI.Page
@@ -828,6 +828,21 @@ namespace SES.CMS.ofeditor
                         btnDelete.Visible = false;
                     }
                 }
+            }
+        }
+        //search
+        protected void rcbCat_Init(object sender, EventArgs e)
+        {
+            RadComboBox objCombo = ((RadComboBox)sender);
+            RadTreeView treeView = (RadTreeView)objCombo.Items[0].FindControl("RadTreeView1");
+            if (null != treeView)
+            {
+                treeView.DataTextField = "Title";
+                treeView.DataFieldID = "CategoryID";
+                treeView.DataValueField = "CategoryID";
+                treeView.DataFieldParentID = "ParentCID";
+                treeView.DataSource = new cmsCategoryBL().SelectAll();
+                treeView.DataBind();
             }
         }
 
