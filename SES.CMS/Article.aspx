@@ -33,8 +33,8 @@
                                     <span class="createdate-article">
                                         <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
                                 </div>
-                                <h2 class="article-desciption">
-                                    <%#Eval("Description") %></h2>
+                                <%--<h2 class="article-desciption">
+                                    <%#Eval("Description") %></h2>--%>
                                         <asp:Repeater runat="server" ID="rptTinLienQuan2">
                                         <HeaderTemplate> <div class="tin-lien-quan-2"><span class="tin-lien-quan2-span">Tin liên quan</span></HeaderTemplate>
                                             <ItemTemplate>
