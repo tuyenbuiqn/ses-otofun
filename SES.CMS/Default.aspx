@@ -33,17 +33,17 @@
                     </div>
                     <uc10:ucDanhMucNoiBat runat="server" ID="uc10ucDanhMucNoiBat" />
                     <%-- box-under-car--%>
-                    <uc3:ucThamKhaoGiaXe runat="server" ID="uc3ThamKhaoGiaXa" />
-                    <uc9:ucTuVanAndKyThuat runat="server" ID="uc9TuVanAndKyThuat" />
+                   <%-- <uc3:ucThamKhaoGiaXe runat="server" ID="uc3ThamKhaoGiaXa" />
+                    <uc9:ucTuVanAndKyThuat runat="server" ID="uc9TuVanAndKyThuat" />--%>
                 </div>
                 <div class="TinTuc">
                     <p>
                         <asp:Literal runat="server" ID="ltrNgay"></asp:Literal></p>
                     <uc2:ucLastestNews runat="server" ID="uc2lastestnews" />
                 </div>
-                <div class="box-under-car" style="margin: 9px 0px 0px 5px;">
-                <uc15:ucAnToanGiaoThong runat="server" ID="uc15ucAntoanGiaoThong" />
-                </div>
+               <%-- <div class="box-under-car" style="margin: 9px 0px 0px 5px;">
+               <uc15:ucAnToanGiaoThong runat="server" ID="uc15ucAntoanGiaoThong" />
+                </div>--%>
             </div>
             <%--TOP RIGHT--%><div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
