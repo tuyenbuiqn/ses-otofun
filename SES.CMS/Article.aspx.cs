@@ -101,7 +101,7 @@ namespace SES.CMS
             objCate.CategoryID = categoryID;
             objCate = new cmsCategoryBL().Select(objCate);
 
-            string rootUrl = "<a href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
+            string rootUrl = "<a href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
             if (objCate.ParentID == 0)
             {
                 lblBreadcrumb.Text = rootUrl;
@@ -112,7 +112,7 @@ namespace SES.CMS
                 objCate.CategoryID = objCate.ParentID;
                 objCate = new cmsCategoryBL().Select(objCate);
 
-                lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".aspx' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
+                lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
             }
         }
 

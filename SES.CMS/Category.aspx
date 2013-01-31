@@ -24,16 +24,16 @@
                     <asp:Repeater runat="server" ID="rptCategory" OnItemDataBound="rptCategory_ItemDataBound">
                         <ItemTemplate>
                             <asp:Panel runat="server" id="divCategory">
-                                <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
+                                <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                     <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
                                     <h2>
-                                        <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
+                                        <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                             <%#Eval("Title") %></a>
                                     </h2>
                                     <div class="cate-desc">
                                         <%#Eval("Description") + "..."%></div>
-                                    <a class="readmore" title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.aspx'>
+                                    <a class="readmore" title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                         Xem tiếp</a>
                                 </asp:Panel>
                             </div>
