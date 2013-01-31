@@ -401,9 +401,9 @@
                     </telerik:RadComboBox>
                 </div>
             </div>
-            <div class="fieldsetdiv">
+           <%-- <div class="fieldsetdiv">
                 <label for="lf">
-                    <%--Mô tả Set top--%>
+                    Mô tả Set top
                     Mô tả ngắn
                 </label>
                 <div style="float: left;">
@@ -412,11 +412,10 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescHome"
                         ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
                 </div>
-            </div>
+            </div>--%>
             <div class="fieldsetdiv">
                 <label for="lf">
-                    <%-- Mô tả ngắn--%>
-                    Sa pô
+                     Mô tả ngắn
                 </label>
                 <div style="float: left;">
                     <asp:TextBox ID="txtDescription" onkeyup="return checkMaxLen(this,160)" TextMode="MultiLine"

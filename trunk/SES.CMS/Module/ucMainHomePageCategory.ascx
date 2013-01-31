@@ -34,7 +34,7 @@
                                     <%#Eval("Title") %></a>
                             
                                 <div class="chitiet">
-                                    <%#Eval("DescHome")%>
+                                    <%#Eval("Description")%>
                                 </div>
                                 <div class="tin-lien-quan1">
                                     <asp:Repeater runat="server" ID="rptTinLienQuan1">
