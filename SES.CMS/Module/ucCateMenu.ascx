@@ -2,7 +2,7 @@
 <ul class="mid-link">
     <asp:Repeater runat="server" ID="rptChildMenu">
         <ItemTemplate>
-           <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
+           <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a></li>
         </ItemTemplate>

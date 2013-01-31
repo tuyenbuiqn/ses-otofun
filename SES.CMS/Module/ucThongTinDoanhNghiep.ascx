@@ -15,12 +15,12 @@
             <asp:Repeater runat="server" ID="rptThongTinDoanhNghiep">
                 <ItemTemplate>
                     <div class="promo-post fl clearfix">
-                        <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-40/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'
+                        <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-40/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
                             title='<%#Eval("Title") %>' class="promo-post-img fl" >
                             <img src='/Media/<%#Eval("ImageUrl") %>'class="promo-img-post" alt='<%#Eval("Title") %>' />
                         </a>
                         <div class="promo-post-info fl">
-                           <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-40/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.aspx'  title='<%#Eval("Title") %>' class="promo-post-title">
+                           <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-40/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'  title='<%#Eval("Title") %>' class="promo-post-title">
                                 <h5>
                                     <%#Eval("Title") %></h5>
                             </a>
