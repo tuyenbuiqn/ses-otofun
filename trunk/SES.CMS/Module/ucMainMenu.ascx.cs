@@ -55,7 +55,7 @@ namespace SES.CMS.Module
         {
             if (!txtSearch.Text.Equals(""))
             {
-                Response.Redirect("/search/otofun-" + txtSearch.Text.Trim() + ".aspx");
+                Response.Redirect("/search/otofun-" + txtSearch.Text.Trim() + ".otofun");
             }
         }
         public string ReturnLiActive(string id)

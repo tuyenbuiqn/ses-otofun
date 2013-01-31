@@ -20,7 +20,7 @@ namespace SES.CMS.Module
         {
             string cateTitle =new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = 42 }).Title; 
             ltrTitle.Text = cateTitle;
-            hplReadmore.NavigateUrl = "/" + FriendlyUrl(cateTitle) + "-" + 42 + ".aspx";
+            hplReadmore.NavigateUrl = "/" + FriendlyUrl(cateTitle) + "-" + 42 + ".otofun";
             DataTable dtCateParent = new cmsArticleBL().SelectByCatNum(42, 10);
             rptTuVanKyThuat.DataSource = dtCateParent;
             rptTuVanKyThuat.DataBind();

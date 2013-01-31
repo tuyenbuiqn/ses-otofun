@@ -4,7 +4,7 @@
         <asp:Repeater runat="server" ID="rptTag">
             <ItemTemplate>
                 <li>
-                    <a href='/tag/otofun-<%#Eval("Tag") %>.aspx' title='<%#Eval("Tag") %>'><%#Eval("Tag") %></a>,
+                    <a href='/tag/otofun-<%#Eval("Tag") %>.otofun' title='<%#Eval("Tag") %>'><%#Eval("Tag") %></a>,
                 </li>
             </ItemTemplate>
         </asp:Repeater>

@@ -2,13 +2,13 @@
     Inherits="SES.CMS.Module.ucMainMenu" %>
 <div class="menu">
     <div class="menu-text">
-        <a href="/Default.aspx" title="otofun-homepage">
+        <a href="/Default.otofun" title="otofun-homepage">
             <img id="home-button" class="home-button" src="/images/Home-button.jpg" alt="Otofun-homepage" /></a>
         <ul class="toplink">
             <asp:Repeater runat="server" ID="rptMainMenu" OnItemDataBound="rptMainMenu_ItemDataBound">
                 <ItemTemplate>
                    <%#ReturnLiActive(Eval("CategoryID").ToString())%>
-                    <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.aspx'
+                    <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a>
                     </li>

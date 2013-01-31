@@ -4,7 +4,7 @@
     <ul class="event-ul">
         <asp:Repeater runat="server" ID="rptEvent">
             <ItemTemplate>
-                <li><a href='/Event/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("EventID")%>.aspx'>
+                <li><a href='/Event/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("EventID")%>.otofun'>
                     <%#Eval("Title") %></a> </li>
             </ItemTemplate>
         </asp:Repeater>
