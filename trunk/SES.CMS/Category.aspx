@@ -36,13 +36,13 @@
                                     <div class="tin-lien-quan1" style="width:auto; float:none;">
                                         <asp:Repeater runat="server" ID="rptTinLienQuan1">
                                             <ItemTemplate>
-                                                <span class="tin-lien-quan-1a"><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                                <span class="tin-lien-quan-1a tin-lien-quan-1-category"><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
                                                     title='<%#Eval("Title") %>'>»
                                                     <%#Eval("Title")%></a> </span>
                                             </ItemTemplate>
                                         </asp:Repeater>
                                     </div>
-                                    <a class="readmore" title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
+                                    <a class="readmore fix-postion" title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                         Xem tiếp</a>
                             </asp:Panel>
                             </div>
