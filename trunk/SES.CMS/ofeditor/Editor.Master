@@ -211,7 +211,7 @@
                     Chức năng cá nhân</h2>
                 <ul>
                     <li><a href="Default.aspx">Thông tin cá nhân</a></li>
-                    <li><a href="Default.aspx">Hướng dẫn trợ giúp</a></li>
+                    <li><a href="ChangePassword.aspx">Đổi mật khẩu</a></li>
                     <li>
                         <asp:LinkButton runat="server" ID="lbtnLogout" OnClick="lbtnLogout_Click">Đăng xuất</asp:LinkButton></li>
                 </ul>
