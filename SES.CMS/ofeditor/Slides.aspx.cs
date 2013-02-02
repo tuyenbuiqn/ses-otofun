@@ -26,7 +26,7 @@ namespace SES.CMS.ofeditor
                 {
                     if (!IsPostBack)
                     {
-                        dlListSlideDataSource();
+                        grvSlideDataSource();
                     }
                 }
                 else
@@ -36,8 +36,18 @@ namespace SES.CMS.ofeditor
             }
            
         }
+        protected void grvSlide_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            new cmsSlideBL().Delete(new cmsSlideDO { SlideID = Convert.ToInt32(grvSlide.DataKeys[e.RowIndex].Value) });
+            Functions.Alert("Xóa bản tin thành công!", Request.Url.ToString());
+        }
+        protected void grvSlide_SelectedIndexChanged(object sender, EventArgs e)
+         {
+             int slideID = int.Parse(grvSlide.DataKeys[grvSlide.SelectedIndex].Value.ToString());
+             Response.Redirect("Slide.aspx?SlideID=" + slideID.ToString());
+         }
 
-        private void dlListSlideDataSource()
+        private void grvSlideDataSource()
         {
             CollectionPager1.MaxPages = 10000;
 
@@ -45,26 +55,26 @@ namespace SES.CMS.ofeditor
             DataTable dt = new cmsSlideBL().SelectAll();
             CollectionPager1.DataSource = new DataView(dt, "SlideID > 0", "", DataViewRowState.CurrentRows);
 
-            CollectionPager1.BindToControl = dlListSlide;
-            dlListSlide.DataSource = CollectionPager1.DataSourcePaged;
+            CollectionPager1.BindToControl = grvSlide;
+            grvSlide.DataSource = CollectionPager1.DataSourcePaged;
 
-            dlListSlide.DataBind();
+            grvSlide.DataBind();
         }
 
 
-        protected void dlListSlide_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int ImageID = int.Parse(dlListSlide.DataKeys[dlListSlide.SelectedIndex].ToString());
-            Response.Redirect("Slide.aspx?SlideID=" + ImageID.ToString());
-        }
+        //protected void dlListSlide_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    int ImageID = int.Parse(dlListSlide.DataKeys[dlListSlide.SelectedIndex].ToString());
+        //    Response.Redirect("Slide.aspx?SlideID=" + ImageID.ToString());
+        //}
 
-        protected void dlListSlide_DeleteCommand(object source, DataListCommandEventArgs e)
-        {
-            int ImageID = int.Parse(dlListSlide.DataKeys[e.Item.ItemIndex].ToString());
-            new cmsSlideBL().Delete(new cmsSlideDO { SlideID = ImageID });
+        //protected void dlListSlide_DeleteCommand(object source, DataListCommandEventArgs e)
+        //{
+        //    int ImageID = int.Parse(dlListSlide.DataKeys[e.Item.ItemIndex].ToString());
+        //    new cmsSlideBL().Delete(new cmsSlideDO { SlideID = ImageID });
 
-            Functions.Alert("Xóa thành công", "Slides.aspx");
-        }
+        //    Functions.Alert("Xóa thành công", "Slides.aspx");
+        //}
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {

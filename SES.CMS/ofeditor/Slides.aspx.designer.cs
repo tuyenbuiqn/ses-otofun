@@ -13,13 +13,13 @@ namespace SES.CMS.ofeditor {
     public partial class Slides {
         
         /// <summary>
-        /// dlListSlide control.
+        /// grvSlide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dlListSlide;
+        protected global::System.Web.UI.WebControls.GridView grvSlide;
         
         /// <summary>
         /// CollectionPager1 control.
