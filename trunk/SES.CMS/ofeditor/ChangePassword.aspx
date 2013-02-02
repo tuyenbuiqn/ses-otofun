@@ -108,21 +108,21 @@
         <div class="change-password-right">
             <div class="change-password">
                 <p>
-                    Mật khẩu hiện tại(*)</p>
+                    Mật khẩu hiện tại *</p>
                 <div class="password-row">
                     <asp:TextBox runat="server" ID="txtOldPassword" CssClass="password-input" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
                         ValidationGroup="group1" ControlToValidate="txtOldPassword"></asp:RequiredFieldValidator>
                 </div>
                 <p>
-                    Mật khẩu mới(*)</p>
+                    Mật khẩu mới *</p>
                 <div class="password-row">
                     <asp:TextBox runat="server" ID="txtNewPassword" CssClass="password-input" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"
                         ValidationGroup="group1" ControlToValidate="txtNewPassword"></asp:RequiredFieldValidator>
                 </div>
                 <p>
-                    Nhập lại mật khẩu mới(*)</p>
+                    Nhập lại mật khẩu mới *</p>
                 <div class="password-row">
                     <asp:TextBox runat="server" ID="txtReNewPassword" CssClass="password-input" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*"
