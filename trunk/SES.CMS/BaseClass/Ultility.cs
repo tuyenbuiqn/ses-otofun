@@ -120,7 +120,7 @@ namespace SES.CMS
             string v_str_FormD = ip_str_change.Normalize(NormalizationForm.FormD);
             string rt = v_reg_regex.Replace(v_str_FormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "-").Replace("/", "-");
             rt = rt.Replace("\\", "-").Replace("'", "-").Replace(":", "-").Replace("&", "-").Replace(".", "").Replace(":", "-").Replace("%", "phan-tram").Replace("?", "-").Replace("\"", "-");
-            return rt;
+            return rt.Replace("’", "-").Replace("‘", "-");
 
         }
 
@@ -130,7 +130,7 @@ namespace SES.CMS
             Regex v_reg_regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string v_str_FormD = ip_str_change.Normalize(NormalizationForm.FormD);
             string rt = v_reg_regex.Replace(v_str_FormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "-").Replace("/", "-");
-            rt = rt.Replace("\\", "-").Replace("'", "-").Replace(":", "-");
+            rt = rt.Replace("\\", "-").Replace("'", "-").Replace(":", "-").Replace("’", "-").Replace("‘", "-");
             return rt;
 
         }

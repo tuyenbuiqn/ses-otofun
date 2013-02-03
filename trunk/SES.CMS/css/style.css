@@ -86,20 +86,21 @@ body
 .menu
 {
     width: 1000px;
-    height: 40px;
     background-color: #ecd9b7;
     float: left;
+    height: 34px;
+    border-top: solid 1px #ECD9B7;
+    border-bottom: solid 4px rgb(213, 130, 47);
 }
 .menu-text
 {
     width: 1000px;
-    height: 34px;
+    float:left;
     background-color: #272729;
-    border-top: solid 1px #ECD9B7;
+    height: 34px;
 }
 .home-button
 {
-    margin: 1px 0px 0px 5px;
     float: left;
 }
 .menu-line
@@ -109,12 +110,18 @@ body
     background-color: #CC7F2E;
     float: left;
 }
-
+ ul.toplink
+{
+    float: left;
+    width: 775px;
+    height:34px;
+}
 .toplink li
 {
     float: left;
-    padding: 8px 9px 8px 9px;
+    padding: 9px 9px 9px 9px;
     list-style: none;
+    height:18px;
 }
 .toplink li.liactive
 {
@@ -122,23 +129,53 @@ body
     padding: 6px 9px 8px 9px;
     margin-top: 2px;
     list-style: none;
-    background-color: #CC7F2E;
+    background-color: rgb(213, 130, 47);
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
+    border-bottom-right-radius:0px;
+    -moz-border-radius-bottomright:0px;
+    -webkit-border-bottom-right-radius:0px;
+    border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    -webkit-border-bottom-left-radius:0px;
 }
-.toplink
+
+.home-active
 {
     float: left;
-    width: 775px;
-    height: 34px;
+   margin-top: 2px;
+    margin-left:3px;
+    background-color: rgb(213, 130, 47);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border-bottom-right-radius:0px;
+    -moz-border-radius-bottomright:0px;
+    -webkit-border-bottom-right-radius:0px;
+    border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    -webkit-border-bottom-left-radius:0px;
+    text-align:center;
+    width:35px;
 }
+
+.home-inactive
+{
+    float: left;
+    margin-top: 2px;
+    margin-left:3px;
+    text-align:center;
+    width:35px;
+}
+
 .toplink a
 {
     color: #ecd9b7;
     font-size: 11px;
     font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
     font-weight: bold;
+    
 }
 .toplink li.liactive a
 {
@@ -189,31 +226,34 @@ body
     list-style: none;
     padding-right: 0px;
 }
-.mid-link
+.dmid-link
 {
-    width: 990px;
+    width: 100%;
+    background-color:rgb(53, 53, 53);
     float: left;
-    padding: 2px;
+    height: 20px;
+    padding:3px 0 3px 0;
+    margin-bottom:3px;
+}
+ul.mid-link
+{
+    width: 100%;
+    float: left;
+}
+ul.mid-link li
+{
+    margin:0 0 0 20px;
 }
 .mid-link a
 {
-    color: Black;
-    font-size: 12px;
+    font-weight:bold;
+    font-size: 11px;
     font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
-    padding: 3px 7px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    border-color: #ecd9b7;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
+    color:#ecd9b7;
 }
 .mid-link a:hover
 {
-    background-color: #f5f5f5;
-    border-color: #cccccc;
-    color: Red;
+    color: #fff;
 }
 .body-out
 {
@@ -300,23 +340,23 @@ body
 .AnhTo
 {
     width: 455px;
-    height: 263px;
+    height: 303px;
     border: solid 1px #c98131;
     float: left;
-    margin: 5px;
+    margin: 6px;
 }
 .AnhNho
 {
     width: 465px;
     float: left;
-    height: 119px;
     margin-left: 6px;
 }
 .AnhNho li
 {
-    float: left;
-    margin: 3px 7px 0px 0px;
+   float: left;
+    margin: 3px 4px 0px 1px;
     width: 111px;
+    line-height: 15px;
 }
 .AnhNho li:last-child
 {
@@ -324,9 +364,8 @@ body
 }
 .AnhNho li a
 {
-    color: Black;
+    color: #000;
     font-size: 12px;
-    font-weight: bold;
 }
 .AnhNho li a:hover
 {
@@ -335,25 +374,25 @@ body
 table.tbimage
 {
     border-collapse: collapse;
-    background: rgb(224, 192, 151);
     width: 1%;
     border-spacing: 0;
-    color: #048;
+    color: #000;
 }
 table.tbimage
 {
     vertical-align: middle;
 }
-table.tbimage
+
+table.tbimage img
 {
-    vertical-align: middle;
+    width:550px !important;
+    height:367px !important;
 }
+
 table.tbimage .image_desc
 {
-    padding: 5px;
     text-align: center;
     color: #000;
-    background-color: rgb(224, 192, 151);
     border-collapse: collapse;
     padding: 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -470,7 +509,7 @@ table.tbimage .image_desc
 .tintuc-box
 {
     width: 206px;
-    height: 350px;
+    height: 380px;
     border: solid 1px #C67926;
     background: #DFC698;
     float: left;
@@ -481,14 +520,15 @@ table.tbimage .image_desc
     width: 200px;
     float: left;
     margin-left: 5px;
+    margin-top:3px;
 }
 .tintuc-box a
 {
-    color: #443220;
-    font-size: 11px;
-    margin: 2px 0px 0px 0px;
+    color: #000;
+    font-size: 12px;
+    margin: 1px 0px 1px 0px;
     display: block;
-    line-height: 18px;
+    line-height: 16px;
     background: url('/images/bullet.gif') 0px -971px no-repeat;
     padding-left: 10px;
 }
@@ -533,7 +573,7 @@ table.tbimage .image_desc
 .TinTuc-wrapper
 {
     width: 675px;
-    height: 195px;
+    height: 185px;
     margin-left: 5px;
     margin-top: 10px;
     float: left;
@@ -563,15 +603,15 @@ table.tbimage .image_desc
 .noidung
 {
     width: 675px;
-    height: 166px;
+    height: 153px;
     border: solid 1px #d2bf9c;
     border-top: solid 1px #b77430;
     float: left;
 }
 .left-noidung
 {
-    width: 196px;
-    height: 146px;
+    width: 195px;
+    height: 130px;
     float: left;
     border: solid 1px #B59252;
     margin: 10px 5px;
@@ -584,8 +624,8 @@ table.tbimage .image_desc
 .Anh-noidung
 {
     width: 190px;
-    height: 140px;
-    margin: 2px;
+    height: 126px;
+    margin: 1px;
 }
 
 .link2
@@ -632,7 +672,7 @@ table.tbimage .image_desc
 .center-noidung
 {
     width: 215px;
-    height: 155px;
+    height: 145px;
     float: left;
     margin-top: 10px;
 }
@@ -643,7 +683,7 @@ table.tbimage .image_desc
     font-size: 13px;
     display: block;
     width: 215px;
-    line-height: 17px;
+    line-height: 15px;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -662,13 +702,12 @@ table.tbimage .image_desc
 }
 .chitiet
 {
-    font-size: 12px;
+   font-size: 12px;
     color: Black;
-    line-height: 15px;
     float: left;
     font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
-    line-height: 16px;
-    margin-top: 5px;
+    line-height: 15px;
+    margin-top: 3px;
     text-align: justify;
 }
 .right-noidung
@@ -691,6 +730,10 @@ table.tbimage .image_desc
     color: #000;
     line-height: 16px;
     display: block;
+}
+.right-noidung li a:hover
+{
+    color:rgb(73, 65, 62);
 }
 .docnhieu
 {
@@ -1209,9 +1252,10 @@ p.pBreadrumb
 }
 .article-title
 {
-    font: 700 19px /23px "Times New Roman";
+    font: 700 18px /23px "Arial";
     color: #912809;
     margin-top: 10px;
+    margin-bottom:3px;
     float: left;
     width: 550px;
 }
@@ -1285,31 +1329,40 @@ p.pBreadrumb
 }
 .article-detail
 {
-    line-height: 20px !important;
-    font-size: 12pt;
+    line-height: 18px !important;
+    font-size: 11pt;
     margin-top: 5px;
     margin-bottom: 5px;
     float: left;
     color: #000;
-    font-family: Times New Roman !important;
+    font-family: Arial !important;
+    text-align: justify !important;
+}
+.article-detail
+{
+    width: 550px !important;
+height: 367px !important;
 }
 .article-detail p
 {
     color: #000;
-    font-family: Times New Roman !important;
+    font-family: Arial !important;
     font-size: 16px !important;
+    text-align: justify !important;
 }
 .article-detail span
 {
     color: #000;
-    font-family: Times New Roman !important;
+    font-family: Arial !important;
     font-size: 16px !important;
+    text-align: justify !important;
 }
 
 .img-car
 {
-    width: 104px;
-    height: 70px;
+   width: 108px;
+    height: 72px;
+
 }
 .comment-box
 {

@@ -13,6 +13,24 @@ namespace SES.CMS.Module {
     public partial class ucMainMenu {
         
         /// <summary>
+        /// divhome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divhome;
+        
+        /// <summary>
+        /// homebutton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image homebutton;
+        
+        /// <summary>
         /// rptMainMenu control.
         /// </summary>
         /// <remarks>

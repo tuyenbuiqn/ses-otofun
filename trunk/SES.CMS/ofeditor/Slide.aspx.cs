@@ -33,16 +33,17 @@ namespace SES.CMS.ofeditor
 
         private void initForm()
         {
+
             objSlide = new cmsSlideBL().Select(objSlide);
             txtTitle.Text = objSlide.Title;
-            txtDescription.Text = objSlide.Description;
+            //txtDescription.Text = objSlide.Description;
             txtSlideURL.Text = objSlide.SlideUrl;
             if (!string.IsNullOrEmpty(objSlide.SlideImg))
             {
-                hplImage.Visible = true;
-                hplImage.NavigateUrl = "~/Media/" + objSlide.SlideImg;
+                imgSlide.Visible = true;
+                imgSlide.ImageUrl = objSlide.SlideImg;
             }
-            txtOrder.Text = objSlide.OrderID.ToString();
+            //txtOrder.Text = objSlide.OrderID.ToString();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -65,28 +66,18 @@ namespace SES.CMS.ofeditor
             //{
             //    initForm();
             //}
-            objSlide.Title = txtTitle.Text;
-            objSlide.Description = txtDescription.Text;
-            if (!string.IsNullOrEmpty(Request.QueryString["SlideID"]))
-                objSlide.SlideImg = new cmsSlideBL().Select(new cmsSlideDO { SlideID = int.Parse(Request.QueryString["SlideID"]) }).SlideImg;
-            if (fuImage.HasFile)
-            {
-                objSlide.SlideImg = UploadFile(fuImage);
-            }
-            objSlide.SlideUrl = txtSlideURL.Text;
-            objSlide.OrderID = int.Parse(txtOrder.Text);
+            objSlide.Title = hdfTitle.Value;
+            //objSlide.Description = txtDescription.Text;
+            objSlide.SlideImg = hdfIMG.Value;
+           
+            objSlide.SlideUrl = hdfURL.Value;
+            //objSlide.OrderID = int.Parse(txtOrder.Text);
 
         }
-        private string UploadFile(FileUpload fulImages)
-        {
-            if (!string.IsNullOrEmpty(fulImages.FileName))
-            {
-                string FileName = string.Format("{0}{1}", Functions.Change_AV(txtTitle.Text) + "-" + DateTime.Now.ToString("ddMMyyyyhhmmss"), fulImages.FileName.Substring(fulImages.FileName.LastIndexOf(".")));
-                string SaveLocation = string.Format("{0}\\{1}", Server.MapPath("~/Media/"), FileName);
-                fulImages.SaveAs(SaveLocation);
-                return FileName;
-            }
-            return string.Empty;
-        }
+       
+
+        
+
+       
     }
 }

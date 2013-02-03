@@ -27,7 +27,7 @@ namespace SES.CMS.ofeditor
 
         protected void btnChange_Click(object sender, EventArgs e)
         {
-            if (Ultility.EncryptMd5(txtOldPassword.Text.Trim()).Equals(objUser.Password))
+            if (Ultility.EncryptMd5(txtOldPassword.Text.Trim()).ToUpper().Equals(objUser.Password.ToUpper()))
             {
                 objUser.Password = Ultility.EncryptMd5(txtReNewPassword.Text);
                 new sysUserBL().Update(objUser);

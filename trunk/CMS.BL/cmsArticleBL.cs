@@ -299,6 +299,11 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectSumTag(tag);
         }
+
+        public DataTable selectURLArt(int p)
+        {
+            return objcmsArticleDAL.selectURLArt(p);
+        }
     }
 
 }

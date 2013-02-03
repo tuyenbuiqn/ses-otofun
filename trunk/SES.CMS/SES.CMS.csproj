@@ -38,10 +38,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="ASTreeView, Version=1.5.9.0, Culture=neutral, PublicKeyToken=521e0b4262a9001c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\ASTreeView.dll</HintPath>
-    </Reference>
     <Reference Include="CKEditor.NET, Version=3.6.1.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\CKEditor.NET.dll</HintPath>
@@ -50,26 +46,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\CollectionPager.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\DevExpress.Data.v9.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\DevExpress.Web.ASPxEditors.v9.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Web.ASPxGridView.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\DevExpress.Web.ASPxGridView.v9.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Web.ASPxTreeList.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\DevExpress.Web.ASPxTreeList.v9.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Web.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\DevExpress.Web.v9.2.dll</HintPath>
-    </Reference>
+    <Reference Include="DevExpress.Data.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxGridView.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="MSCaptcha, Version=2.0.3733.36001, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\MSCaptcha.dll</HintPath>
@@ -1297,6 +1278,7 @@
     <Content Include="ofeditor\assets\repgray2.png" />
     <Content Include="ofeditor\assets\searchbar.png" />
     <Content Include="ofeditor\assets\siderep.png" />
+    <Content Include="ofeditor\ChangePassword.aspx" />
     <Content Include="ofeditor\Comments.aspx" />
     <Content Include="ofeditor\css\core.css" />
     <Content Include="ofeditor\css\css3.css" />
@@ -1332,6 +1314,7 @@
     <Content Include="ofeditor\RelatedNews2.aspx" />
     <Content Include="ofeditor\RNServices.asmx" />
     <Content Include="ofeditor\Search.aspx" />
+    <Content Include="ofeditor\SelectIMG.aspx" />
     <Content Include="ofeditor\Slide.aspx" />
     <Content Include="ofeditor\Slides.aspx" />
     <Content Include="ofeditor\TinNoiBat.aspx" />
@@ -1692,6 +1675,13 @@
     <Compile Include="ofeditor\AddNews.aspx.designer.cs">
       <DependentUpon>AddNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ofeditor\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ofeditor\Class1.cs" />
     <Compile Include="ofeditor\Comments.aspx.cs">
       <DependentUpon>Comments.aspx</DependentUpon>
@@ -1781,6 +1771,13 @@
     </Compile>
     <Compile Include="ofeditor\Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\SelectIMG.aspx.cs">
+      <DependentUpon>SelectIMG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\SelectIMG.aspx.designer.cs">
+      <DependentUpon>SelectIMG.aspx</DependentUpon>
     </Compile>
     <Compile Include="ofeditor\Slide.aspx.cs">
       <DependentUpon>Slide.aspx</DependentUpon>
@@ -1897,9 +1894,6 @@
     <Folder Include="AdminCP\js\.svn\tmp\props\" />
     <Folder Include="AdminCP\js\.svn\tmp\text-base\" />
     <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CMS.BL\SES.CMS.BL.csproj">

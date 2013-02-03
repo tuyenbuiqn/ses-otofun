@@ -9,20 +9,28 @@ using SES.CMS.DO;
 using Telerik.Web.UI;
 using System.Data;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace SES.CMS.ofeditor
 {
     public partial class AddNews : System.Web.UI.Page
     {
         cmsArticleDO objArt = new cmsArticleDO();
+        string sRef = "Default.aspx";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+           
             txtDetail.CssFiles.Add("~/css/imageEdit.css");
             if (Session["UserID"] == null) Functions.Alert("Bạn cần đăng nhập!", "Login.aspx?ReturnURL=" + Request.Url.AbsolutePath);
             else
             if (!IsPostBack)
             {
+                if (Request.UrlReferrer != null)
+                {
+                    sRef = Request.UrlReferrer.AbsoluteUri;
+                    hdfRFR.Value = sRef;
+                }
                 int TypeID = -1;
                 if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
                 if (TypeID >= 2)
@@ -44,7 +52,7 @@ namespace SES.CMS.ofeditor
                 {
                     objArt.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
                     objArt = new cmsArticleBL().Select(objArt);
-                    
+                 
                     if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
                     else
                     {
@@ -84,11 +92,11 @@ namespace SES.CMS.ofeditor
             if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
             else return false;
 
-            if (TypeID == 0)  //Nếu là PV --> Chỉ sửa các bài (Nháp(0) + Trả lại PV(4))
+            if (TypeID == 0)  //Nếu là PV --> Chỉ sửa các bài (Nháp(0) + Trả lại PV(5))
             {
                 if ((objA.UserCreate == int.Parse(Session["UserID"].ToString()))) //Bài mình viết 
                 {
-                    if (objA.TrangThai == 0 || objA.TrangThai == 4) return true;
+                    if (objA.TrangThai == 0 || objA.TrangThai == 5) return true;
                 }
                 else return false;
             }
@@ -96,14 +104,14 @@ namespace SES.CMS.ofeditor
             {
                 if ((objA.UserCreate == int.Parse(Session["UserID"].ToString()))) //Bài mình viết 
                 {
-                    if (objA.TrangThai == 0 || objA.TrangThai == 5) return true; // đang nháp hoặc bị trả lại BTV
+                    if (objA.TrangThai == 0 || objA.TrangThai == 4) return true; // đang nháp hoặc bị trả lại BTV
                 }
                 else //Bài người khác viết
                 {
-                    if (objA.TrangThai == 5 || objA.TrangThai == 1) // Bị trả lại BTV hoặc Chờ BTV
+                    if (objA.TrangThai == 4 || objA.TrangThai == 1) // Bị trả lại BTV hoặc Chờ BTV
                     {
-                        //Nếu đang ko editing hoặc Đang editting bởi mình
-                        if((!objA.DangBienTap)||(objA.BTVEdit==int.Parse(Session["UserID"].ToString())))
+                        //Nếu đang editting bởi mình
+                        if(objA.BTVEdit==int.Parse(Session["UserID"].ToString()))
                             return true;
                         else return false; // Ko thì cũng k cho sửa
                     }  
@@ -133,7 +141,7 @@ namespace SES.CMS.ofeditor
             objArt = new cmsArticleBL().Select(objArt);
             txtTitle.Text = objArt.Title;
             txtDescription.Text = objArt.Description;
-           // txtDescHome.Text = objArt.DescHome;
+            
             txtAuthor.Text = objArt.Author;
             txtDetail.Content = objArt.ArticleDetail;
             txtNote.Text = objArt.Note;
@@ -295,7 +303,22 @@ namespace SES.CMS.ofeditor
                 }
 
             }
-            SES.CMS.AdminCP.Functions.Alert("Cập nhật thành công!", "Default.aspx?Page=ListArticle");
+            SES.CMS.AdminCP.Functions.Alert("Cập nhật thành công!", hdfRFR.Value);
+        }
+        public string FetchLinksFromSource(string htmlSource)
+        {
+            string s = "";
+            List<Uri> links = new List<Uri>();
+            string regexImgSrc = @"<img[^>]*?src\s*=\s*[""']?([^'"" >]+?)[ '""][^>]*?>";
+            MatchCollection matchesImgSrc = Regex.Matches(htmlSource, regexImgSrc, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            foreach (Match m in matchesImgSrc)
+            {
+                string href = m.Groups[1].Value;
+                s = s + "*" + href;
+            }
+            string ms = "";
+            if (!string.IsNullOrEmpty(s)) ms = s.Substring(1);
+            return ms;
         }
 
         private void initObject()
@@ -307,7 +330,7 @@ namespace SES.CMS.ofeditor
             objArt = new cmsArticleBL().Select(objArt);
             objArt.Title = txtTitle.Text;
             objArt.Description = txtDescription.Text;
-            objArt.DescHome = txtDescription.Text;
+            objArt.DescHome = FetchLinksFromSource(txtDetail.Content);
             objArt.Author = txtAuthor.Text;
             objArt.ArticleDetail = txtDetail.Content;
             objArt.Tags = "," + txtTags.Text + ",";

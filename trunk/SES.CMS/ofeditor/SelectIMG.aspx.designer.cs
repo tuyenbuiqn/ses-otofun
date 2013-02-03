@@ -10,43 +10,25 @@
 namespace SES.CMS.ofeditor {
     
     
-    public partial class Slide {
+    public partial class SelectIMG {
         
         /// <summary>
-        /// hdfID1 control.
+        /// Head1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfID1;
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-        /// hdfIMG control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfIMG;
-        
-        /// <summary>
-        /// hdfURL control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfURL;
-        
-        /// <summary>
-        /// hdfTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// RadScriptManager1 control.
@@ -67,33 +49,6 @@ namespace SES.CMS.ofeditor {
         protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
         
         /// <summary>
-        /// RadWindowManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadWindowManager RadWindowManager1;
-        
-        /// <summary>
-        /// RadWindow1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadWindow RadWindow1;
-        
-        /// <summary>
-        /// RadWindow2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadWindow RadWindow2;
-        
-        /// <summary>
         /// RadAjaxManager1 control.
         /// </summary>
         /// <remarks>
@@ -103,48 +58,39 @@ namespace SES.CMS.ofeditor {
         protected global::Telerik.Web.UI.RadAjaxManager RadAjaxManager1;
         
         /// <summary>
-        /// txtTitle control.
+        /// lblMessenger control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.Label lblMessenger;
         
         /// <summary>
-        /// txtSlideURL control.
+        /// pnlTitle01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSlideURL;
+        protected global::System.Web.UI.WebControls.Panel pnlTitle01;
         
         /// <summary>
-        /// imgSlide control.
+        /// lblTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgSlide;
+        protected global::System.Web.UI.WebControls.Label lblTitle;
         
         /// <summary>
-        /// btnSave control.
+        /// rptIMG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
-        
-        /// <summary>
-        /// btnReset control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReset;
+        protected global::System.Web.UI.WebControls.Repeater rptIMG;
     }
 }
