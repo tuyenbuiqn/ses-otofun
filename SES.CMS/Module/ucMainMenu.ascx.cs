@@ -17,6 +17,8 @@ namespace SES.CMS.Module
         {
             if (Request.QueryString["CategoryID"] != null) CategoryIDS = Request.QueryString["CategoryID"];
             rptMainMenuDataSource(); //rptChildDataSource();
+            if (string.IsNullOrEmpty(CategoryIDS)) divhome.Attributes.Add("class", "home-active");
+            else divhome.Attributes.Add("class", "home-inactive");
 
         }
 

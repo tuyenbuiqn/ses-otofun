@@ -92,6 +92,8 @@
                 <asp:Button runat="server" ID="btnXoaTK" Text="Xóa bài đã chọn" CssClass="button-article"
                     OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" 
                     onclick="btnXoaTK_Click" />
+                                        <asp:Button runat="server" ID="btnTKChiuTrachNhiem" Text="Chọn Biên tập bài này" CssClass="button-article"
+                    OnClick="btnTKChiuTrachNhiem_Click" OnClientClick="return confirm('Xác nhận chịu trách nhiệm? Nhấn OK để đồng ý!')"  />
                 <asp:Button runat="server" ID="btnDuyetXuatBan" Text="Duyệt Xuất bản" CssClass="button-article"
                      
                     OnClientClick="return confirm('Xác nhận Duyệt xuất bản? Nhấn OK để đồng ý!')" 
@@ -113,7 +115,7 @@
 
             <asp:GridView ID="grvListArticle" DataKeyNames="ArticleID" runat="server" AutoGenerateColumns="False"
                 OnRowDeleting="grvListArticle_RowDeleting" CssClass="tstyle2" OnSelectedIndexChanged="grvListArticle_SelectedIndexChanged"
-                PageSize="35" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr" 
+                PageSize="15" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr" 
                 OnPageIndexChanging="grvListArticle_PageIndexChanging" 
                 OnDataBound="grvListArticle_DataBound" 
                 onrowdatabound="grvListArticle_RowDataBound">
@@ -139,7 +141,7 @@
                             <asp:Label runat="server" ID="lblCreateDate" Text='<%# (bool)(Eval("CreateDate")==null)==true?"":Eval("CreateDate","{0:dd/MM/yyyy}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                     <asp:TemplateField HeaderText="Ngày gửi biên tập" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
+                     <asp:TemplateField HeaderText="Ngày gửi biên tập" Visible="false" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
                         <ItemTemplate>
                             <asp:Label runat="server" ID="lblCreateDate2" Text='<%# (bool)(Eval("ThoiGianGui")==null)==true?"":Eval("ThoiGianGui","{0:dd/MM/yyyy}") %>'></asp:Label>
                         </ItemTemplate>
@@ -167,6 +169,18 @@
                         ItemStyle-Width="8%">
                         <ItemTemplate>
                         <%#returnPub(Eval("ArticleID").ToString()) %>
+                        </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField ItemStyle-HorizontalAlign="Center" Visible="false" HeaderText="Biên tập"
+                        ItemStyle-Width="8%">
+                        <ItemTemplate>
+                        <%#Eval("NguoiBienTap").ToString() %>
+                        </ItemTemplate>
+                        </asp:TemplateField>
+                         <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="Danh mục"
+                        ItemStyle-Width="8%">
+                        <ItemTemplate>
+                        <%#Eval("TenDanhMuc").ToString() %>
                         </ItemTemplate>
                         </asp:TemplateField>
                 </Columns>

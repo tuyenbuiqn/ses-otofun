@@ -20,7 +20,7 @@
        function () {
            $(".cpslide").wtRotator({
                width: 455,
-               height: 263,
+               height: 303,
                display_thumbs: false,
                display_playbutton: true,
                display_numbers: false

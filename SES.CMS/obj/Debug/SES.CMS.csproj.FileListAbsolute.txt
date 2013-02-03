@@ -42,3 +42,14 @@ E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.csprojResolveAssemblyReference.c
 E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.dll.licenses
 E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.dll
 E:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.pdb
+F:\SES Project\otofun\SES.CMS\bin\SES.CMS.dll
+F:\SES Project\otofun\SES.CMS\bin\SES.CMS.pdb
+F:\SES Project\otofun\SES.CMS\bin\CMS.BL.dll
+F:\SES Project\otofun\SES.CMS\bin\SES.CMS.DO.dll
+F:\SES Project\otofun\SES.CMS\bin\CMS.DAL.dll
+F:\SES Project\otofun\SES.CMS\bin\CMS.BL.pdb
+F:\SES Project\otofun\SES.CMS\bin\SES.CMS.DO.pdb
+F:\SES Project\otofun\SES.CMS\bin\CMS.DAL.pdb
+F:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.csprojResolveAssemblyReference.cache
+F:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.dll
+F:\SES Project\otofun\SES.CMS\obj\Debug\SES.CMS.pdb

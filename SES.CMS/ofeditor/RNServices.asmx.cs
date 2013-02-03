@@ -82,5 +82,20 @@ namespace SES.CMS.ofeditor
             
         }
 
+        [WebMethod]
+        public string GetNewsURL(string StrArticleID)
+        {
+
+            DataTable dt = new cmsArticleBL().selectURLArt(int.Parse(StrArticleID));
+            string s = "/" + Ultility.Change_AVCate(dt.Rows[0]["CategoryTitle"].ToString()) + "-" + dt.Rows[0]["CatID"].ToString() + "/";
+            s = s + Ultility.Change_AVCate(dt.Rows[0]["Title"].ToString()) + "-" + StrArticleID + ".otofun";
+            return s;
+        }
+        [WebMethod]
+        public string GetNewsTitle(string StrArticleID)
+        {
+            return new cmsArticleBL().Select(new cmsArticleDO { ArticleID = int.Parse(StrArticleID) }).Title;
+        }
+
     }
 }

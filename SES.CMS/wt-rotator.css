@@ -4,7 +4,7 @@ font-size:12px;
 background-color:#fff;
 position:relative;
 width:455px;
-height:263px;
+height:303px;
 margin:0px 0 0 0px;
 overflow:hidden;
 }
@@ -19,7 +19,7 @@ left:0;
 z-index:0;
 border:0px;
 width:455px;
-height:263px;
+height:303px;
 }
 .preloader{
 background:url(assets/loader.gif) no-repeat center;
@@ -113,14 +113,14 @@ background: url(assets/pause.png) no-repeat center;
 .prev-btn{
 background:url(assets/prev.png) no-repeat center;
 position: absolute;
-left: -447px;
-top: -90px;
+left: -457px;
+top: -150px;
 }
 .next-btn{
 background:url(assets/next.png) no-repeat center;
 position: absolute;
-top: -90px;
-right: 5px;
+top: -150px;
+right: -6px;
 }
 .button-over{
 }

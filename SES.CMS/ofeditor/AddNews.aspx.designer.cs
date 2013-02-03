@@ -31,6 +31,15 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.HiddenField hdfID2;
         
         /// <summary>
+        /// hdfRFR control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfRFR;
+        
+        /// <summary>
         /// RadScriptManager1 control.
         /// </summary>
         /// <remarks>

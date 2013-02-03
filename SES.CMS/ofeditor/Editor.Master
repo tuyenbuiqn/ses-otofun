@@ -2,7 +2,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- End of Meta -->
@@ -94,8 +94,6 @@
                     <li>
                         <asp:HyperLink runat="server" ID="hplBaiViet" NavigateUrl="~/ofeditor/AddNews.aspx">Bài viết</asp:HyperLink></li>
                     <li>
-                        <asp:HyperLink runat="server" ID="hplHienThiTin">Hiển thị tin</asp:HyperLink></li>
-                    <li>
                         <asp:HyperLink runat="server" NavigateUrl="~/ofeditor/Comments.aspx" ID="hplDuyetBinhLuan">Duyệt bình luận</asp:HyperLink></li>
                     <li>
                         <asp:HyperLink runat="server" ID="hplTimKiem" NavigateUrl="~/ofeditor/Search.aspx">Tìm kiếm</asp:HyperLink></li>
@@ -103,8 +101,7 @@
                         <asp:HyperLink runat="server" ID="hplThongKeNhuanBut">Thống kê nhuận bút</asp:HyperLink></li>
                     <li>
                         <asp:HyperLink runat="server" ID="hplQuanLyVideo"  NavigateUrl="~/ofeditor/Events.aspx">Quản lý dòng sự kiện</asp:HyperLink></li>
-                    <li>
-                        <asp:HyperLink runat="server" ID="hplQuanLyGallery"  NavigateUrl="~/ofeditor/Slides.aspx">Quản lý Slide</asp:HyperLink></li>
+                  
                     <%-- <li style="display: none"><a href="">Multi Level Menu</a>
                         <ul>
                             <li><a href="">Menu Link 1</a></li>
@@ -187,8 +184,9 @@
                     <h2>
                         Biên tập viên</h2>
                     <ul>
+                    <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
                     <li><a href="ListArticles.aspx?Type=2">Danh sách bài chờ xuất bản</a></li>
-                        <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
+                        
                         <li><a href="ListArticles.aspx?Type=4">Bài trả lại Biên tập</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
                         <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>
@@ -198,19 +196,20 @@
                     <h2>
                         Thư ký Tòa soạn</h2>
                     <ul>
-                        <li><a href="ListArticles.aspx?Type=2">Danh sách bài chờ xuất bản</a></li>
-                        <li><a href="ListArticles.aspx?Type=3">Danh sách bài đã xuất bản</a></li>
+                        <li><a href="ListArticles.aspx?Type=1">Bài chờ Biên tập</a></li>
+                        <li><a href="ListArticles.aspx?Type=2">Bài chờ Xuất bản</a></li>
+                        <li><a href="ListArticles.aspx?Type=3">Bài đã Xuất bản</a></li>
                         <li><a href="ListArticles.aspx?Type=4">Bài trả lại Biên tập</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
                         <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>
                          <li><a href="TinNoiBat.aspx">Tin nổi bật</a></li>
+                           <li><a href="Slides.aspx">Quản lý Slide</a></li>
                          
                     </ul>
                 </asp:Panel>
                 <h2>
                     Chức năng cá nhân</h2>
                 <ul>
-                    <li><a href="Default.aspx">Thông tin cá nhân</a></li>
                     <li><a href="ChangePassword.aspx">Đổi mật khẩu</a></li>
                     <li>
                         <asp:LinkButton runat="server" ID="lbtnLogout" OnClick="lbtnLogout_Click">Đăng xuất</asp:LinkButton></li>

@@ -100,8 +100,12 @@ namespace SES.CMS.ofeditor
                 if (ArticleType == 0) //Nháp thì ko hiện trả lại BTV
                     btnTKTraPV.Visible = btnTraBTV.Visible = btnHuyDuyetXB.Visible = false;
                 // bài chờ biên tập TK ko xem
-                if (ArticleType == 1) // bài chờ biên tập ko thể trả lại biên tập, ko gỡ duyệt
+                if (ArticleType == 1)
+                {
+                    // bài chờ biên tập ko thể trả lại biên tập, ko gỡ duyệt
                     btnTraBTV.Visible = btnHuyDuyetXB.Visible = false;
+                    btnTKChiuTrachNhiem.Visible = true;
+                }
                 if (ArticleType == 2) // bài chờ xuất bản, ko trả lại PV, ko gỡ duyệt
                     btnTKTraPV.Visible = btnHuyDuyetXB.Visible = false;
                 if (ArticleType == 3) // bài đã xuất bản, ko xuất bản lại, chỉ gỡ duyệt hoặc trả lại BTV,PV
@@ -285,6 +289,65 @@ namespace SES.CMS.ofeditor
             }
 
         }
+
+
+        protected void btnTKChiuTrachNhiem_Click(object sender, EventArgs e)
+        {
+            cmsHistoryBL historyBL = new cmsHistoryBL();
+            cmsHistoryDO objHistory = new cmsHistoryDO();
+            objHistory.Action = "Đăng ký chịu trách nhiệm bài viết";
+            objHistory.HistoryTime = DateTime.Now;
+            objHistory.Comment = "";
+            string contents = "Thư ký " + Session["UserName"].ToString() + " đăng ký chịu trách nhiệm bài viết: <b>";
+            cmsArticleBL artBL = new cmsArticleBL();
+            cmsArticleDO objArt = new cmsArticleDO();
+
+            bool isNotOK = false;
+            string articleList = "";
+            for (int i = 0; i < grvListArticle.Rows.Count; i++)
+            {
+                GridViewRow row = grvListArticle.Rows[i];
+                CheckBox chk = (CheckBox)row.FindControl("chkSelect");
+                if (chk.Checked == true)
+                {
+                    objArt.ArticleID = int.Parse(grvListArticle.DataKeys[row.RowIndex].Value.ToString());
+                    objArt = artBL.Select(objArt);
+                    //Nếu như BTV nào đó đã nhận trách nhiệm
+                    if (objArt.BTVEdit != 0)
+                    {
+                        isNotOK = true;
+                    }
+                    else if (objArt.BTVEdit == 0)
+                    {
+
+                        articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
+                        objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                        historyBL.Insert(objHistory);
+                        isNotOK = false;
+                    }
+                    // Nếu ko thì chả làm gì cả, next bản ghi tiếp
+                }
+            }
+            articleList += "-9999";
+            if (isNotOK == true)
+            {
+                Functions.Alert("Đăng ký không thành công, bài viết đã có người biên tập. Vui lòng chọn lại");
+                return;
+            }
+            if (articleList.Equals("-9999"))
+            {
+                Functions.Alert("Vui lòng chọn bài viết");
+                return;
+            }
+            else
+            {
+                int bienTapVienID = int.Parse(Session["UserID"].ToString());
+                new cmsArticleBL().DangKyChiuTrachNhiemBaiViet(1, articleList, bienTapVienID);
+                Ultility.Alert("Đăng ký thành công", Request.Url.ToString());
+            }
+
+        }
+
         protected void btnGuiXuatBanBTV_Click(object sender, EventArgs e)
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
@@ -748,6 +811,19 @@ namespace SES.CMS.ofeditor
                 grvListArticle.Columns[7].Visible = false;
                 grvListArticle.Columns[8].Visible = false;
 
+                if (UserType >= 1)
+                {
+                    grvListArticle.Columns[10].Visible = true;
+                    grvListArticle.Columns[11].Visible = true;
+                    grvListArticle.Columns[9].Visible = true;
+                }
+                else
+                {
+                    grvListArticle.Columns[9].Visible = false;
+                }
+                
+                
+
             }
             else if (type == 2) // Bài viết chờ xuất bản
             {
@@ -759,6 +835,7 @@ namespace SES.CMS.ofeditor
                 {
                     grvListArticle.Columns[9].Visible = true;
                     grvListArticle.Columns[10].Visible = true;
+                    grvListArticle.Columns[11].Visible = true;
                     
                 }
                 // Quyền khác -> ko thể
@@ -770,8 +847,11 @@ namespace SES.CMS.ofeditor
                 grvListArticle.Columns[4].Visible = false;
                 // Quyền Thư ký -> có thể sửa
                 if (UserType == 2)
-                grvListArticle.Columns[9].Visible = true;
-                   // Quyền khác -> ko thể
+                {
+                    grvListArticle.Columns[9].Visible = true;
+                    grvListArticle.Columns[11].Visible = true;
+                }
+                // Quyền khác -> ko thể
                 else
                     grvListArticle.Columns[9].Visible = false;
             }
@@ -796,7 +876,7 @@ namespace SES.CMS.ofeditor
                     if (objArt.BTVEdit == 0)
                     {
                         ImageButton btnEdit = e.Row.FindControl("btnEdit") as ImageButton;
-                        btnEdit.Visible = false;
+                        btnEdit.Visible = true;
                     }
                     else
                     {

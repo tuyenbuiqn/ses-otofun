@@ -7,6 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HiddenField runat="server" ID="hdfID1"></asp:HiddenField>
     <asp:HiddenField runat="server" ID="hdfID2"></asp:HiddenField>
+    <asp:HiddenField runat="server" ID="hdfRFR"></asp:HiddenField>
+    
     <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         <Scripts>
             <%--Needed for JavaScript IntelliSense in VS2010--%>
@@ -199,7 +201,7 @@
 
                     if (!!img.alt) {
                         var newInner = "<table border='0' class='tbimage' cellspacing='0' cellpadding='3' width='1' align='center'><tbody><tr><td>";
-                        newInner = newInner + "<img src='" + img.src + "' alt='" + img.alt + "' style='" + img.getAttribute("style") + "'/>" + "</td></tr><tr><td class='image_desc'>";
+                        newInner = newInner + "<img src='" + img.src + "' alt='" + img.alt + "' style='width:550px; height:367px;'/>" + "</td></tr><tr><td class='image_desc'>";
                         newInner = newInner + img.alt + "</td></tr></tbody></table>";
 
                         args.set_value(newInner);
@@ -345,7 +347,7 @@
                     Hình ảnh
                 </label>
                 <asp:FileUpload ID="fuImg" runat="server" />
-                <b>200 x 150 (px)</b>
+                <b>200 x 133 (px)</b>
                 <asp:HyperLink ID="hplImage" Target="_blank" Visible="false" runat="server" Style="font-weight: 700">(Xem ảnh)</asp:HyperLink>
             </div>
             <div class="fieldsetdiv">
@@ -449,7 +451,7 @@
                             <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
                             </ExpandCollapseColumn>
                             <Columns>
-                                <telerik:GridBoundColumn DataField="ArticleID" UniqueName="ArticleID" HeaderText="ArticleID">
+                                <telerik:GridBoundColumn DataField="ArticleID" UniqueName="ArticleID" HeaderText="*">
                                     <HeaderStyle Width="70px" />
                                 </telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề">
@@ -488,7 +490,7 @@
                             <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
                             </ExpandCollapseColumn>
                             <Columns>
-                                <telerik:GridBoundColumn DataField="ArticleID" UniqueName="ArticleID" HeaderText="ArticleID">
+                                <telerik:GridBoundColumn DataField="ArticleID" UniqueName="ArticleID" HeaderText="*">
                                     <HeaderStyle Width="70px" />
                                 </telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề">

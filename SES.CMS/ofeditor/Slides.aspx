@@ -25,13 +25,13 @@
                 </asp:TemplateField>
                   <asp:TemplateField HeaderText="Đường dẫn" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="50%">
                     <ItemTemplate>
-                        <asp:Label runat="server" ID="lblTitle" Text='<%#Eval("SlideUrl") %>'></asp:Label>
+                        <asp:Label runat="server" ID="lblURL" Text='<%#Eval("SlideUrl") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Hình ảnh" ItemStyle-Width="10%">
                     <ItemTemplate>
-                            <a class="fancyboxx" rel="group1" title="<%#Eval("Title")%>" href="<%#"/Media/" + (Eval("SlideImg")).ToString() %>">
-                                <img width="100px" height="70px" src="<%#"/Media/" + (Eval("SlideImg")).ToString() %>" /></a>
+                            <a class="fancyboxx" rel="group1" target="_blank" title="<%#Eval("Title")%>" href="<%#Eval("SlideImg")%>">
+                                <img width="100px" height="70px" src="<%#Eval("SlideImg")%>" /></a>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Thao tác" ItemStyle-HorizontalAlign="Center">

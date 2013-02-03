@@ -13,6 +13,15 @@ namespace SES.CMS.ofeditor {
     public partial class Editor {
         
         /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        
+        /// <summary>
         /// head control.
         /// </summary>
         /// <remarks>
@@ -67,15 +76,6 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.HyperLink hplBaiViet;
         
         /// <summary>
-        /// hplHienThiTin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplHienThiTin;
-        
-        /// <summary>
         /// hplDuyetBinhLuan control.
         /// </summary>
         /// <remarks>
@@ -110,15 +110,6 @@ namespace SES.CMS.ofeditor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplQuanLyVideo;
-        
-        /// <summary>
-        /// hplQuanLyGallery control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplQuanLyGallery;
         
         /// <summary>
         /// ContentPlaceHolder1 control.
