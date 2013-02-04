@@ -187,7 +187,9 @@ namespace SES.CMS.ofeditor
             {
                 if (UserType == 0) // PV chỉ xem bài mình
                     grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, userCreate, CatID));
-                else if (UserType == 1 || UserType == 2) //BTV đều được xem ko quan tâm user
+                else if (UserType == 1) //BTV đều được xem ko quan tâm user
+                    grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreateBTV(ArticleType, 0, CatID,userCreate));
+                else if (UserType == 2) //BTV đều được xem ko quan tâm user
                     grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID));
             }
         }
