@@ -90,6 +90,10 @@ namespace SES.CMS.AdminCP
                         hplUser.CssClass = "active";
                         MnuPage = LoadControl("MenuUC/ucMnuQlNguoiDung.ascx");
                         break;
+                    case "BTVPermission":
+                        hplUser.CssClass = "active";
+                        MnuPage = LoadControl("MenuUC/ucMnuQlNguoiDung.ascx");
+                        break;
                     //Slide
                     //case "ListSlide":
                     //    hplSlide.CssClass = "active";
