@@ -5,8 +5,9 @@
 <%@ Register assembly="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dxe" %>
 <div style="float: left; width: 100%; margin: 10px 0 10px 10px;">
     Chọn biên tập viên
-    <asp:DropDownList runat="server" ID="ddlBTV" AutoPostBack="true" Width="250px" 
+    <asp:DropDownList runat="server" ID="ddlBTV" AutoPostBack="true" Width="250px" AppendDataBoundItems="true" 
         onselectedindexchanged="ddlBTV_SelectedIndexChanged">
+        <asp:ListItem Text=".: Chọn biên tập viên :." Value="0"></asp:ListItem>
     </asp:DropDownList>
 </div>
 <div style="float: left; width: 100%; margin: 0px 0 10px 10px;">
