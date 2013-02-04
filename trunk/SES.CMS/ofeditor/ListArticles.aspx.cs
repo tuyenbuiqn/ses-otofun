@@ -151,25 +151,36 @@ namespace SES.CMS.ofeditor
             {
                 //Nếu là Phóng tinh viên chỉ xem bài gửi BT của mình
                 if (UserType == 0) grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(1, userCreate, CatID));
-                //Nếu là BTV/TK lấy toàn bộ bài chờ biên tập, ko cần quan tâm đến UType
-                else if (UserType == 1 || UserType == 2) grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, 0));
+                //BTV xem các bài của chuyên mục mềnh quản lý
+                else if (UserType == 1) grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreateBTV(ArticleType, 0, CatID, userCreate));
+                //TK thì xõa đê
+                else if (UserType == 2) grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, 0));
             }
             else if (ArticleType == 2) // Nếu là bài chờ xuất bản, BTV đều được xem, TK đều được xem
             {
                 //Chờ Xuất bản: Trạng thái = 3 + IsPublish = false || ArticleType == 2
-                grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID));
+                if (UserType == 1)
+                    grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreateBTV(ArticleType, 0, CatID, userCreate));
+                else if (UserType == 2)
+                    grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID));
             }
             else if (ArticleType == 3) // Nếu là bài đã xuất bản, BTV đều được xem, TK đều được xem, PV chỉ xem bài của mình
             {
                 // Xuất bản: Trạng thái = 3 + IsPublish = True
                 if (UserType == 0) // PV chỉ xem bài mình
                     grvListArticleDataSource(new DataView(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, userCreate, CatID), " IsPublish = true", "", DataViewRowState.CurrentRows).ToTable());
-                else if (UserType == 1 || UserType == 2) //BTV,TK đều được xem ko quan tâm user
+                else if (UserType == 1)  //BTV xem các bài thuộc chuyên mục của mềnh
+                {
+                    grvListArticleDataSource(new DataView(new cmsArticleBL().SelectByTrangThaiAndUserCreateBTV(ArticleType, 0, CatID, userCreate), "IsPublish = true", "", DataViewRowState.CurrentRows).ToTable());
+                }
+                else if (UserType == 2) //TK đều được xem ko quan tâm user
                     grvListArticleDataSource(new DataView(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID), "IsPublish = true", "", DataViewRowState.CurrentRows).ToTable());
             }
             else if (ArticleType == 4) // Nếu là bài trả lại Biên tập thì chỉ Biên tập được xem, TK xem, PV ko xem
             {
-                if (UserType == 1 || UserType == 2) //BTV đều được xem ko quan tâm user
+                if(UserType == 1)
+                    grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreateBTV(ArticleType, 0, CatID, userCreate));
+                else if (UserType == 2) //BTV đều được xem ko quan tâm user
                     grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID));
             }
             else if (ArticleType == 5) // Nếu là bài trả lại PV thì chỉ PV được xem bài của mình, BTV được xem hết, TK ko xem
@@ -687,7 +698,7 @@ namespace SES.CMS.ofeditor
             {
                 int thuKyID = int.Parse(Session["UserID"].ToString());
                 int thuKyEdit = thuKyID;
-                new cmsArticleBL().ChuyenTrangThai_ThuKy(1, articleList,2, thuKyID, thuKyEdit, DateTime.Now, false);
+                new cmsArticleBL().ChuyenTrangThai_ThuKy(1, articleList, 2, thuKyID, thuKyEdit, DateTime.Now, false);
                 Ultility.Alert("Hủy duyệt xuất bản thành công", Request.Url.ToString());
             }
         }
@@ -821,8 +832,8 @@ namespace SES.CMS.ofeditor
                 {
                     grvListArticle.Columns[9].Visible = false;
                 }
-                
-                
+
+
 
             }
             else if (type == 2) // Bài viết chờ xuất bản
@@ -836,7 +847,7 @@ namespace SES.CMS.ofeditor
                     grvListArticle.Columns[9].Visible = true;
                     grvListArticle.Columns[10].Visible = true;
                     grvListArticle.Columns[11].Visible = true;
-                    
+
                 }
                 // Quyền khác -> ko thể
                 else

@@ -1343,6 +1343,40 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+        public DataTable SelectByTrangThaiAndUserCreateBTV(int trangThai, int userCreate, int cate,int btvID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetByUserAndTrangThai_BTV";
+            SqlParameter Sqlparam;
+
+
+            Sqlparam = new SqlParameter("@TrangThai", SqlDbType.Int);
+            Sqlparam.Value = trangThai;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@UserCreate", SqlDbType.Int);
+            Sqlparam.Value = userCreate;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@Cate", SqlDbType.Int);
+            Sqlparam.Value = cate;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@BTVID", SqlDbType.Int);
+            Sqlparam.Value = btvID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
         public void ChuyenTrangThai_ThuKy(int type,string articleIDList, int trangThai, int thuKyID,int thuKyEdit, DateTime thoiGianXuatBan,bool isPublish)
         {
             SqlCommand Sqlcomm = new SqlCommand();
