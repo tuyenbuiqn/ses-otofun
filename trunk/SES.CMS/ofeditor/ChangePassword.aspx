@@ -128,7 +128,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*"
                         ValidationGroup="group1" ControlToValidate="txtReNewPassword"></asp:RequiredFieldValidator><br />
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Mật khẩu nhập lại chưa đúng"
-                        ControlToValidate="txtNewPassword" ControlToCompare="txtReNewPassword"></asp:CompareValidator>
+                        ControlToValidate="txtReNewPassword" ControlToCompare="txtNewPassword"></asp:CompareValidator>
                 </div>
                 <div class="changepassword-button">
                     <asp:Button runat="server" ID="btnChange" ValidationGroup="group1" Text="Đổi mật khẩu"
