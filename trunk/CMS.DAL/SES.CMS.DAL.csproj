@@ -58,6 +58,7 @@
     <Compile Include="cmsSlideDAL.cs" />
     <Compile Include="cmsTinNoiBatDAL.cs" />
     <Compile Include="cmsTopNewsDAL.cs" />
+    <Compile Include="cmsUserCategoryDAL.cs" />
     <Compile Include="cmsVideoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysConfigDAL.cs" />

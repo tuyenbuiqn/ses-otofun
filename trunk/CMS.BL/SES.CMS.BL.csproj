@@ -56,6 +56,7 @@
     <Compile Include="cmsSlideBL.cs" />
     <Compile Include="cmsTinNoiBatBL.cs" />
     <Compile Include="cmsTopNewsBL.cs" />
+    <Compile Include="cmsUserCategoryBL.cs" />
     <Compile Include="cmsVideoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysConfigBL.cs" />
