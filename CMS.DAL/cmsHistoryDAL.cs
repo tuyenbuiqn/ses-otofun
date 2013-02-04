@@ -58,6 +58,18 @@ Sqlparam = new SqlParameter("@Comment", SqlDbType.NText);
 Sqlparam.Value = objcmsHistoryDO.Comment;
 Sqlcomm.Parameters.Add(Sqlparam);
 
+Sqlparam = new SqlParameter("@IP", SqlDbType.NVarChar);
+Sqlparam.Value = objcmsHistoryDO.IP;
+Sqlcomm.Parameters.Add(Sqlparam);
+
+Sqlparam = new SqlParameter("@UserID", SqlDbType.Int);
+Sqlparam.Value = objcmsHistoryDO.UserID;
+Sqlcomm.Parameters.Add(Sqlparam);
+
+Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+Sqlparam.Value = objcmsHistoryDO.ArticleID;
+Sqlcomm.Parameters.Add(Sqlparam);
+
 Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
 Sqlparam.Direction = ParameterDirection.ReturnValue;
 Sqlcomm.Parameters.Add(Sqlparam);
@@ -97,6 +109,18 @@ Sqlcomm.Parameters.Add(Sqlparam);
 
 Sqlparam = new SqlParameter("@Comment", SqlDbType.NText);
 Sqlparam.Value = objcmsHistoryDO.Comment;
+Sqlcomm.Parameters.Add(Sqlparam);
+
+Sqlparam = new SqlParameter("@IP", SqlDbType.NVarChar);
+Sqlparam.Value = objcmsHistoryDO.IP;
+Sqlcomm.Parameters.Add(Sqlparam);
+
+Sqlparam = new SqlParameter("@UserID", SqlDbType.Int);
+Sqlparam.Value = objcmsHistoryDO.UserID;
+Sqlcomm.Parameters.Add(Sqlparam);
+
+Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+Sqlparam.Value = objcmsHistoryDO.ArticleID;
 Sqlcomm.Parameters.Add(Sqlparam);
 
 
@@ -175,6 +199,12 @@ if(!Convert.IsDBNull(dr["HistoryTime"]))
 objcmsHistoryDO.HistoryTime=Convert.ToDateTime(dr["HistoryTime"]);
 if(!Convert.IsDBNull(dr["Comment"]))
 objcmsHistoryDO.Comment=Convert.ToString(dr["Comment"]);
+if(!Convert.IsDBNull(dr["IP"]))
+objcmsHistoryDO.IP=Convert.ToString(dr["IP"]);
+if(!Convert.IsDBNull(dr["UserID"]))
+objcmsHistoryDO.UserID=Convert.ToInt32(dr["UserID"]);
+if(!Convert.IsDBNull(dr["ArticleID"]))
+objcmsHistoryDO.ArticleID=Convert.ToInt32(dr["ArticleID"]);
 
             }
              return objcmsHistoryDO;
@@ -206,6 +236,12 @@ if(!Convert.IsDBNull(dr["HistoryTime"]))
 objcmsHistoryDO.HistoryTime=Convert.ToDateTime(dr["HistoryTime"]);
 if(!Convert.IsDBNull(dr["Comment"]))
 objcmsHistoryDO.Comment=Convert.ToString(dr["Comment"]);
+if(!Convert.IsDBNull(dr["IP"]))
+objcmsHistoryDO.IP=Convert.ToString(dr["IP"]);
+if(!Convert.IsDBNull(dr["UserID"]))
+objcmsHistoryDO.UserID=Convert.ToInt32(dr["UserID"]);
+if(!Convert.IsDBNull(dr["ArticleID"]))
+objcmsHistoryDO.ArticleID=Convert.ToInt32(dr["ArticleID"]);
 arrcmsHistoryDO.Add(objcmsHistoryDO);
 }
             }
