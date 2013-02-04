@@ -10,7 +10,16 @@
 namespace SES.CMS.AdminCP.PageUC {
     
     
-    public partial class ucListArticleCategory {
+    public partial class ucBTVPermission {
+        
+        /// <summary>
+        /// ddlBTV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBTV;
         
         /// <summary>
         /// tlCategory control.
@@ -20,5 +29,14 @@ namespace SES.CMS.AdminCP.PageUC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTreeList.ASPxTreeList tlCategory;
+        
+        /// <summary>
+        /// btnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }
