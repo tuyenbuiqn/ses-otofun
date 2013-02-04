@@ -254,6 +254,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectByTrangThaiAndUserCreate(trangThai, userCreate,cate);
         }
+        public DataTable SelectByTrangThaiAndUserCreateBTV(int trangThai, int userCreate, int cate, int btvID)
+        {
+            return objcmsArticleDAL.SelectByTrangThaiAndUserCreateBTV(trangThai, userCreate, cate, btvID);
+        }
         public void ChuyenTrangThai_ThuKy(int type, string articleIDList, int trangThai, int thuKyID, int thuKyEdit, DateTime thoiGianXuatBan,bool isPublish)
         {
             objcmsArticleDAL.ChuyenTrangThai_ThuKy(type, articleIDList, trangThai, thuKyID, thuKyEdit, thoiGianXuatBan,isPublish);
