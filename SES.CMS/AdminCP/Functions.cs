@@ -116,5 +116,56 @@ namespace SES.CMS.AdminCP
             dlImages.DataSource = dataTable;
             dlImages.DataBind();
         }
+        public static string ReturnAction(object e)
+        {
+            string action = "";
+            if (e != null)
+            {
+                try
+                {
+                    int actionID = int.Parse(e.ToString());
+                    switch (actionID)
+                    {
+                        case 1:
+                            action = "Tạo bài viết";
+                            break;
+                        case 2:
+                            action = "Sửa bài viết";
+                            break;
+                        case 3:
+                            action = "Gửi biên tập";
+                            break;
+                        case 4:
+                            action = "Chịu trách nhiệm bài viết";
+                            break;
+                        case 5:
+                            action = "Gửi xuất bản";
+                            break;
+                        case 6:
+                            action = "Duyệt xuất bản";
+                            break;
+                        case 7:
+                            action = "Gỡ xuất bản";
+                            break;
+                        case 8:
+                            action = "Trả bài biên tập";
+                            break;
+                        case 9:
+                            action = "Trả bài phóng viên";
+                            break;
+                        case 10:
+                            action = "Xóa bài viết";
+                            break;
+                        default:
+                            action = "";
+                            break;
+                    }
+                }
+                catch { }
+            }
+            else
+                action = "";
+            return action;
+        }
     }
 }
