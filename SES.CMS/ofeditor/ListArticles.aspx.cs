@@ -250,8 +250,10 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Đăng ký chịu trách nhiệm bài viết";
+            objHistory.Action = 4;// "Đăng ký chịu trách nhiệm bài viết";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
             string contents = "Biên tập viên " + Session["UserName"].ToString() + " đăng ký chịu trách nhiệm bài viết: <b>";
             cmsArticleBL artBL = new cmsArticleBL();
@@ -277,6 +279,7 @@ namespace SES.CMS.ofeditor
 
                         articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                         objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                        objHistory.ArticleID = objArt.ArticleID;
                         historyBL.Insert(objHistory);
                         isNotOK = false;
                     }
@@ -308,8 +311,10 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Đăng ký chịu trách nhiệm bài viết";
+            objHistory.Action = 4;// "Đăng ký chịu trách nhiệm bài viết";
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
             string contents = "Thư ký " + Session["UserName"].ToString() + " đăng ký chịu trách nhiệm bài viết: <b>";
             cmsArticleBL artBL = new cmsArticleBL();
@@ -335,6 +340,7 @@ namespace SES.CMS.ofeditor
 
                         articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                         objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                        objHistory.ArticleID = objArt.ArticleID;
                         historyBL.Insert(objHistory);
                         isNotOK = false;
                     }
@@ -365,10 +371,12 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Gửi chờ xuất bản";
+            objHistory.Action = 5;// "Gửi chờ xuất bản";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
-            string contents = "Biên tập viên " + Session["UserName"].ToString() + " gửi bài viết: <b>";
+            string contents = "Biên tập viên " + Session["UserName"].ToString() + " gửi xuất bản bài viết: <b>";
             cmsArticleBL artBL = new cmsArticleBL();
             cmsArticleDO objArt = new cmsArticleDO();
             bool isNotOK = false;
@@ -388,7 +396,8 @@ namespace SES.CMS.ofeditor
                         if (objArt.BTVEdit == int.Parse(Session["UserID"].ToString()))
                         {
                             articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
-                            objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>chờ xuất bản";
+                            objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                            objHistory.ArticleID = objArt.ArticleID;
                             historyBL.Insert(objHistory);
                             isNotOK = false;
                         }
@@ -423,8 +432,10 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Biên tập viên trả bài phóng viên";
+            objHistory.Action = 9;// "Biên tập viên trả bài phóng viên";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
             string contents = "Biên tập viên " + Session["UserName"].ToString() + " trả bài viết: ";
             cmsArticleBL artBL = new cmsArticleBL();
@@ -448,6 +459,7 @@ namespace SES.CMS.ofeditor
                         {
                             articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                             objHistory.Contents = contents + artBL.Select(objArt).Title + " </b> yêu cầu phóng viên viết lại";
+                            objHistory.ArticleID = objArt.ArticleID;
                             historyBL.Insert(objHistory);
                             isNotOK = false;
                         }
@@ -482,10 +494,12 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Gửi chờ xuất bản";
+            objHistory.Action = 5;// "Gửi chờ xuất bản";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
-            string contents = "Biên tập viên " + Session["UserName"].ToString() + " gửi bài viết:<b> ";
+            string contents = "Biên tập viên " + Session["UserName"].ToString() + " gửi xuất bản bài viết: <b>";
             cmsArticleBL artBL = new cmsArticleBL();
             cmsArticleDO objArt = new cmsArticleDO();
             bool isNotOK = false;
@@ -501,7 +515,8 @@ namespace SES.CMS.ofeditor
                     if (objArt.BTVEdit == int.Parse(Session["UserID"].ToString()))
                     {
                         articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
-                        objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>chờ xuất bản";
+                        objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                        objHistory.ArticleID = objArt.ArticleID;
                         historyBL.Insert(objHistory);
                         isNotOK = false;
                     }
@@ -532,8 +547,10 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Xóa bài viết";
+            objHistory.Action = 10;// "Xóa bài viết";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
             string contents = "Biên tập viên " + Session["UserName"].ToString() + " xóa bài viết: <b>";
             cmsArticleBL artBL = new cmsArticleBL();
@@ -549,6 +566,7 @@ namespace SES.CMS.ofeditor
                     articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objArt.ArticleID = int.Parse(grvListArticle.DataKeys[row.RowIndex].Value.ToString());
                     objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                    objHistory.ArticleID = objArt.ArticleID;
                     historyBL.Insert(objHistory);
                 }
             }
@@ -572,8 +590,10 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Thư ký trả bài biên tập viên";
+            objHistory.Action = 8;// "Thư ký trả bài biên tập viên";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
             string contents = "Thư ký " + Session["UserName"].ToString() + " trả bài viết: ";
             cmsArticleBL artBL = new cmsArticleBL();
@@ -591,6 +611,7 @@ namespace SES.CMS.ofeditor
                     objArt = artBL.Select(objArt);
                     articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objHistory.Contents = contents + artBL.Select(objArt).Title + " </b> yêu cầu biên tập viên biên tập lại";
+                    objHistory.ArticleID = objArt.ArticleID;
                     historyBL.Insert(objHistory);
                     //    isNotOK = false;
                 }
@@ -614,8 +635,10 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Thư ký trả bài phóng viên";
+            objHistory.Action = 9;// "Thư ký trả bài phóng viên";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
             string contents = "Thư ký " + Session["UserName"].ToString() + " trả bài viết: ";
             cmsArticleBL artBL = new cmsArticleBL();
@@ -633,6 +656,7 @@ namespace SES.CMS.ofeditor
                     objArt = artBL.Select(objArt);
                     articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objHistory.Contents = contents + artBL.Select(objArt).Title + " </b> yêu cầu phóng viên viết lại";
+                    objHistory.ArticleID = objArt.ArticleID;
                     historyBL.Insert(objHistory);
                     //    isNotOK = false;
                 }
@@ -656,8 +680,10 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Thư ký hủy duyệt xuất bản";
+            objHistory.Action = 7;// "Thư ký hủy duyệt xuất bản";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
             string contents = "Thư ký " + Session["UserName"].ToString() + " hủy duyệt xuất bản bài viết: ";
             cmsArticleBL artBL = new cmsArticleBL();
@@ -675,6 +701,7 @@ namespace SES.CMS.ofeditor
                     objArt = artBL.Select(objArt);
                     articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                    objHistory.ArticleID = objArt.ArticleID;
                     historyBL.Insert(objHistory);
 
                     ///Xoa cache
@@ -709,8 +736,10 @@ namespace SES.CMS.ofeditor
         {
             cmsHistoryBL historyBL = new cmsHistoryBL();
             cmsHistoryDO objHistory = new cmsHistoryDO();
-            objHistory.Action = "Thư ký duyệt xuất bản";
+            objHistory.Action = 6;// "Thư ký duyệt xuất bản";
             objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             objHistory.Comment = "";
             string contents = "Thư ký " + Session["UserName"].ToString() + " duyệt xuất bản bài viết: ";
             cmsArticleBL artBL = new cmsArticleBL();
@@ -728,6 +757,7 @@ namespace SES.CMS.ofeditor
                     objArt = artBL.Select(objArt);
                     articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
                     objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                    objHistory.ArticleID = objArt.ArticleID;
                     historyBL.Insert(objHistory);
                     ///Xoa cache
                     DataTable dtCategory = new cmsArticleCategoryBL().SelectByArticleID(objArt.ArticleID);

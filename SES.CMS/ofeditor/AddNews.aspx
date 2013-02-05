@@ -8,7 +8,6 @@
     <asp:HiddenField runat="server" ID="hdfID1"></asp:HiddenField>
     <asp:HiddenField runat="server" ID="hdfID2"></asp:HiddenField>
     <asp:HiddenField runat="server" ID="hdfRFR"></asp:HiddenField>
-    
     <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         <Scripts>
             <%--Needed for JavaScript IntelliSense in VS2010--%>
@@ -403,7 +402,7 @@
                     </telerik:RadComboBox>
                 </div>
             </div>
-           <%-- <div class="fieldsetdiv">
+            <%-- <div class="fieldsetdiv">
                 <label for="lf">
                     Mô tả Set top
                     Mô tả ngắn
@@ -417,7 +416,7 @@
             </div>--%>
             <div class="fieldsetdiv">
                 <label for="lf">
-                     Mô tả ngắn
+                    Mô tả ngắn
                 </label>
                 <div style="float: left;">
                     <asp:TextBox ID="txtDescription" onkeyup="return checkMaxLen(this,160)" TextMode="MultiLine"
@@ -578,6 +577,29 @@
                 <asp:Button class="button" ID="btnSubmit" runat="server" ValidationGroup="submitGrp"
                     Text="Lưu bài" OnClick="btnSubmit_Click" />
                 <asp:Button class="button" ID="Button1" runat="server" Text="Hủy" />
+            </div>
+            <hr />
+            <div class="fieldsetdiv" id="divHistory" runat="server" visible="false">
+                <p style="width:100%; color:Red; font-size:13px;"> Lịch sử thao tác bài viết</p>
+                <asp:GridView ID="grvHistory" DataKeyNames="HistoryID" runat="server" AutoGenerateColumns="False"
+                    CssClass="tstyle2" PageSize="15" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr">
+                    <Columns>
+                        <asp:BoundField DataField="HistoryID" HeaderText="ID" ItemStyle-HorizontalAlign="Left"
+                            ItemStyle-Width="5%" Visible="false" />
+                        <asp:BoundField DataField="Action" HeaderText="Thao tác" ItemStyle-HorizontalAlign="Left"
+                            ItemStyle-Width="15%" />
+                        <asp:BoundField DataField="Username" HeaderText="User tác động" ItemStyle-Width="15%"
+                            ItemStyle-HorizontalAlign="Center" />
+                        <asp:TemplateField HeaderText="Thời gian" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
+                            <ItemTemplate>
+                                <asp:Label runat="server" ID="lblHistoryTime" Text='<%# (bool)(Eval("HistoryTime")==null)==true?"":Eval("HistoryTime","{0:dd/MM/yyyy hh:mm}") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="IP" HeaderText="IP" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="15%" />
+                        <asp:BoundField DataField="Contents" HeaderText="Nội dung" ItemStyle-HorizontalAlign="Left"
+                            ItemStyle-Width="45%" />
+                    </Columns>
+                </asp:GridView>
             </div>
         </fieldset>
     </div>

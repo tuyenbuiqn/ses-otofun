@@ -19,73 +19,80 @@ namespace SES.CMS.ofeditor
         string sRef = "Default.aspx";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-           
+
+
             txtDetail.CssFiles.Add("~/css/imageEdit.css");
             if (Session["UserID"] == null) Functions.Alert("Bạn cần đăng nhập!", "Login.aspx?ReturnURL=" + Request.Url.AbsolutePath);
             else
-            if (!IsPostBack)
-            {
-                if (Request.UrlReferrer != null)
+                if (!IsPostBack)
                 {
-                    sRef = Request.UrlReferrer.AbsoluteUri;
-                    hdfRFR.Value = sRef;
-                }
-                int TypeID = -1;
-                if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
-                if (TypeID >= 2)
-                {
-                    divTKAutoPost.Visible = true;
-                    ddlHour.Items.Add(new ListItem("Hãy chọn", "-1"));
-                    for (int id = 0; id <= 23; id++)
+                    if (Request.UrlReferrer != null)
                     {
-                        ddlHour.Items.Add(new ListItem(id.ToString() + "h", id.ToString()));
+                        sRef = Request.UrlReferrer.AbsoluteUri;
+                        hdfRFR.Value = sRef;
                     }
-                    ddlMin.Items.Add(new ListItem("Hãy chọn", "-1"));
-                    for (int id = 0; id <= 59; id++)
+                    int TypeID = -1;
+                    if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+                    if (TypeID >= 2)
                     {
-                        ddlMin.Items.Add(new ListItem(id.ToString() + "p", id.ToString()));
-                    }
-                }
-                SES.CMS.AdminCP.Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
-                if (Request.QueryString["ArticleID"] != null)
-                {
-                    objArt.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
-                    objArt = new cmsArticleBL().Select(objArt);
-                 
-                    if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
-                    else
-                    {
-                     
-                        if (TypeID == 1)
+                        divTKAutoPost.Visible = true;
+                        ddlHour.Items.Add(new ListItem("Hãy chọn", "-1"));
+                        for (int id = 0; id <= 23; id++)
                         {
-                            objArt.DangBienTap = true; // Lock editting
-                            objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
-                            new cmsArticleBL().Update(objArt);
+                            ddlHour.Items.Add(new ListItem(id.ToString() + "h", id.ToString()));
+                        }
+                        ddlMin.Items.Add(new ListItem("Hãy chọn", "-1"));
+                        for (int id = 0; id <= 59; id++)
+                        {
+                            ddlMin.Items.Add(new ListItem(id.ToString() + "p", id.ToString()));
+                        }
+                    }
+                    SES.CMS.AdminCP.Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
+                    if (Request.QueryString["ArticleID"] != null)
+                    {
+
+                        objArt.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
+                        objArt = new cmsArticleBL().Select(objArt);
+                        divHistory.Visible = true;
+                        grvHistoryDataSource(objArt.ArticleID);
+                        if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
+                        else
+                        {
+
+                            if (TypeID == 1)
+                            {
+                                objArt.DangBienTap = true; // Lock editting
+                                objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
+                                new cmsArticleBL().Update(objArt);
+                            }
+
+
+                            initForm();
+
                         }
 
-                        
-                        initForm(); 
-                    
                     }
-                    
-                }
-                else
-                {
-                    BindRelatedNews("0", "0");
-                }
-                if (!Directory.Exists(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/")))
-                    Directory.CreateDirectory(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/"));
-                txtDetail.ImageManager.ViewPaths = txtDetail.ImageManager.DeletePaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
-                txtDetail.ImageManager.UploadPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
-               
-               
+                    else
+                    {
+                        divHistory.Visible = false;
+                        BindRelatedNews("0", "0");
+                    }
+                    if (!Directory.Exists(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/")))
+                        Directory.CreateDirectory(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/"));
+                    txtDetail.ImageManager.ViewPaths = txtDetail.ImageManager.DeletePaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
+                    txtDetail.ImageManager.UploadPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
 
-            }
+
+
+                }
 
 
         }
-
+        protected void grvHistoryDataSource(int articleID)
+        {
+            grvHistory.DataSource = new cmsHistoryBL().SelectByArticeID(articleID);
+            grvHistory.DataBind();
+        }
         private bool CheckQuyenSuaBai(cmsArticleDO objA) // Của mình
         {
             int TypeID = -1;
@@ -111,21 +118,21 @@ namespace SES.CMS.ofeditor
                     if (objA.TrangThai == 4 || objA.TrangThai == 1) // Bị trả lại BTV hoặc Chờ BTV
                     {
                         //Nếu đang editting bởi mình
-                        if(objA.BTVEdit==int.Parse(Session["UserID"].ToString()))
+                        if (objA.BTVEdit == int.Parse(Session["UserID"].ToString()))
                             return true;
                         else return false; // Ko thì cũng k cho sửa
-                    }  
+                    }
                 }
             }
             else if (TypeID == 2 || TypeID == 3)  //Nếu là Thư ký --> thoải mái
             {
-               return true;
+                return true;
 
             }
-           
-            
+
+
             return false;
-           
+
         }
         private void BindRelatedNews(string RelatedNews1, string RelatedNews2)
         {
@@ -137,11 +144,11 @@ namespace SES.CMS.ofeditor
 
         private void initForm()
         {
-            
+
             objArt = new cmsArticleBL().Select(objArt);
             txtTitle.Text = objArt.Title;
             txtDescription.Text = objArt.Description;
-            
+
             txtAuthor.Text = objArt.Author;
             txtDetail.Content = objArt.ArticleDetail;
             txtNote.Text = objArt.Note;
@@ -157,13 +164,13 @@ namespace SES.CMS.ofeditor
             string sTinLienQuan1 = objArt.TinLienQuan1;
             if (sTinLienQuan1.Contains(",") && sTinLienQuan1.Length > 2)
                 sTinLienQuan1 = sTinLienQuan1.Substring(1, sTinLienQuan1.Length - 1);
-           
+
             string sTinLienQuan2 = objArt.TinLienQuan2;
             if (sTinLienQuan2.Contains(",") && sTinLienQuan2.Length > 2)
                 sTinLienQuan2 = sTinLienQuan2.Substring(1, sTinLienQuan2.Length - 1);
             hdfID1.Value = objArt.TinLienQuan1;
             hdfID2.Value = objArt.TinLienQuan2;
-         //   BindRelatedNews(objArt.TinLienQuan1, objArt.TinLienQuan2);
+            //   BindRelatedNews(objArt.TinLienQuan1, objArt.TinLienQuan2);
             BindRelatedNews(sTinLienQuan1, sTinLienQuan2);
 
             if ((objArt.ThoiGianXuatBan > new DateTime(1950, 01, 01)))
@@ -179,10 +186,10 @@ namespace SES.CMS.ofeditor
                 ddlHour.SelectedValue = objArt.CreateDate.Hour.ToString();
                 ddlMin.SelectedValue = objArt.CreateDate.Minute.ToString();
             }
-                
-            
-            if(objArt.TrangThai==3) chkCho.Enabled = false;
-            
+
+
+            if (objArt.TrangThai == 3) chkCho.Enabled = false;
+
 
         }
 
@@ -195,7 +202,7 @@ namespace SES.CMS.ofeditor
                 treeView.DataTextField = "Title";
                 treeView.DataFieldID = "CategoryID";
                 treeView.DataValueField = "CategoryID";
-                
+
                 treeView.DataFieldParentID = "ParentCID";
                 treeView.DataSource = new cmsCategoryBL().SelectAll();
                 treeView.DataBind();
@@ -217,16 +224,20 @@ namespace SES.CMS.ofeditor
                 //            }
                 //            else continue;
                 //        }
-                        
+
                 //    }
 
                 //}
             }
-           
+
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            cmsHistoryDO objHistory = new cmsHistoryDO();
+            objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
             if (chkCho.Checked)
             {
                 if (!dtNgayXB.SelectedDate.HasValue)
@@ -262,7 +273,7 @@ namespace SES.CMS.ofeditor
                 {
                     objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
                     objArt.ThoiGianGui = DateTime.Now;
-                   
+
                 }
                 else if (TypeID == 2)
                 {
@@ -271,19 +282,22 @@ namespace SES.CMS.ofeditor
                     if (chkCho.Checked)
                     {
                         objArt.IsWaitingPublish = true;
-                        DateTime dt =Convert.ToDateTime(dtNgayXB.SelectedDate);
+                        DateTime dt = Convert.ToDateTime(dtNgayXB.SelectedDate);
                         objArt.ThoiGianXuatBan = new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0);
                     }
                 }
-                
+
                 aid = new cmsArticleBL().Insert(objArt);
-                
+                objHistory.ArticleID = aid;
+                objHistory.Action = 1;//Tạo bai viet
+                objHistory.Contents = "User: " + Session["Username"] + "Tạo bài viết: <b>" + txtTitle.Text + "</b>";
+                new cmsHistoryBL().Insert(objHistory);
                 foreach (RadTreeNode n in rtv.CheckedNodes)
                 {
                     int oid = int.Parse(((DropDownList)n.FindControl("ddl")).SelectedValue);
                     cmsArticleCategoryDO o = new cmsArticleCategoryDO { ArticleID = aid, CategoryID = int.Parse(n.Value), OrderID = oid };
                     new cmsArticleCategoryBL().Insert(o);
- 
+
                 }
 
             }
@@ -292,6 +306,10 @@ namespace SES.CMS.ofeditor
                 // Lưu thì có giữ lock edit ko ????????????????????????????????????????
 
                 new cmsArticleBL().Update(objArt);
+                objHistory.ArticleID = objArt.ArticleID;
+                objHistory.Action = 2;//Sửa bài viết
+                objHistory.Contents = "User: " + Session["Username"] + "Tạo bài viết: <b>" + objArt.Title + "</b>";
+                new cmsHistoryBL().Insert(objHistory);
                 new cmsArticleCategoryBL().DeleteByArticleID(objArt.ArticleID);
 
                 foreach (RadTreeNode n in rtv.CheckedNodes)
@@ -341,7 +359,7 @@ namespace SES.CMS.ofeditor
 
             if (!string.IsNullOrEmpty(fuImg.FileName))
                 objArt.ImageUrl = UploadFile(fuImg);
-            
+
             int TypeID = -1;
             if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
             if (TypeID == 2)
@@ -375,22 +393,22 @@ namespace SES.CMS.ofeditor
                 int ArtID = int.Parse(Request.QueryString["ArticleID"].ToString());
                 cmsArticleDO objA = new cmsArticleBL().Select(new cmsArticleDO { ArticleID = ArtID });
                 DataTable dtCat = new cmsCategoryBL().GetByArticleID(objA.ArticleID);
-                
 
-                    foreach (DataRow dr in dtCat.Rows) // lặp các CatID lấy được
+
+                foreach (DataRow dr in dtCat.Rows) // lặp các CatID lấy được
+                {
+                    if (e.Node.Value == dr[cmsArticleCategoryDO.CATEGORYID_FIELD].ToString()) // Nếu node = catID thì check
                     {
-                        if (e.Node.Value == dr[cmsArticleCategoryDO.CATEGORYID_FIELD].ToString()) // Nếu node = catID thì check
-                        {
-                            e.Node.Checked = true;
-                            ((DropDownList)e.Node.FindControl("ddl")).SelectedValue = dr[cmsArticleCategoryDO.ORDERID_FIELD].ToString();
-                        }
-                        else continue;
+                        e.Node.Checked = true;
+                        ((DropDownList)e.Node.FindControl("ddl")).SelectedValue = dr[cmsArticleCategoryDO.ORDERID_FIELD].ToString();
                     }
+                    else continue;
+                }
 
-               
+
 
             }
         }
-       
+
     }
 }

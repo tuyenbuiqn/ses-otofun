@@ -72,7 +72,10 @@ namespace SES.CMS.BL
 
      
 #endregion          
-    
+        public DataTable SelectByArticeID(int articleID)
+        {
+            return objcmsHistoryDAL.SelectByArticeID(articleID);
+        }
     }
 
 }
