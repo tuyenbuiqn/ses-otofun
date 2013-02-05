@@ -580,14 +580,20 @@
             </div>
             <hr />
             <div class="fieldsetdiv" id="divHistory" runat="server" visible="false">
-                <p style="width:100%; color:Red; font-size:13px;"> Lịch sử thao tác bài viết</p>
+                <p style="width: 100%; color: Red; font-size: 13px;">
+                    Lịch sử thao tác bài viết</p>
                 <asp:GridView ID="grvHistory" DataKeyNames="HistoryID" runat="server" AutoGenerateColumns="False"
                     CssClass="tstyle2" PageSize="15" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr">
                     <Columns>
                         <asp:BoundField DataField="HistoryID" HeaderText="ID" ItemStyle-HorizontalAlign="Left"
                             ItemStyle-Width="5%" Visible="false" />
-                        <asp:BoundField DataField="Action" HeaderText="Thao tác" ItemStyle-HorizontalAlign="Left"
-                            ItemStyle-Width="15%" />
+                        <%--  <asp:BoundField DataField="Action" HeaderText="Thao tác" ItemStyle-HorizontalAlign="Left"
+                            ItemStyle-Width="15%" />--%>
+                        <asp:TemplateField HeaderText="Thao tác" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="15%">
+                            <ItemTemplate>
+                                <asp:Literal runat="server" ID="ltrAction" Text='<%#SES.CMS.AdminCP.Functions.ReturnAction(Eval("Action")) %>'></asp:Literal>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:BoundField DataField="Username" HeaderText="User tác động" ItemStyle-Width="15%"
                             ItemStyle-HorizontalAlign="Center" />
                         <asp:TemplateField HeaderText="Thời gian" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
