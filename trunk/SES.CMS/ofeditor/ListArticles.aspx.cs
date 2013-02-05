@@ -178,7 +178,7 @@ namespace SES.CMS.ofeditor
             }
             else if (ArticleType == 4) // Nếu là bài trả lại Biên tập thì chỉ Biên tập được xem, TK xem, PV ko xem
             {
-                if(UserType == 1)
+                if (UserType == 1)
                     grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreateBTV(ArticleType, 0, CatID, userCreate));
                 else if (UserType == 2) //BTV đều được xem ko quan tâm user
                     grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID));
@@ -188,7 +188,7 @@ namespace SES.CMS.ofeditor
                 if (UserType == 0) // PV chỉ xem bài mình
                     grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, userCreate, CatID));
                 else if (UserType == 1) //BTV đều được xem ko quan tâm user
-                    grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreateBTV(ArticleType, 0, CatID,userCreate));
+                    grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreateBTV(ArticleType, 0, CatID, userCreate));
                 else if (UserType == 2) //BTV đều được xem ko quan tâm user
                     grvListArticleDataSource(new cmsArticleBL().SelectByTrangThaiAndUserCreate(ArticleType, 0, CatID));
             }
@@ -220,26 +220,102 @@ namespace SES.CMS.ofeditor
         #region Phóng viên
         protected void btnGuiBTV_Click(object sender, EventArgs e)
         {
-            string articleList = GetSelectedArticle();
-            if (string.IsNullOrEmpty(articleList))
+            cmsHistoryBL historyBL = new cmsHistoryBL();
+            cmsHistoryDO objHistory = new cmsHistoryDO();
+            objHistory.Action = 3;// "Gửi chờ xuất bản";
+            objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
+            objHistory.Comment = "";
+            string contents = "Phóng viên " + Session["UserName"].ToString() + " gửi biên tập bài viết: <b>";
+            cmsArticleBL artBL = new cmsArticleBL();
+            cmsArticleDO objArt = new cmsArticleDO();
+
+            string articleList = "";
+            for (int i = 0; i < grvListArticle.Rows.Count; i++)
+            {
+                GridViewRow row = grvListArticle.Rows[i];
+                CheckBox chk = (CheckBox)row.FindControl("chkSelect");
+                if (chk.Checked == true)
+                {
+                    objArt.ArticleID = int.Parse(grvListArticle.DataKeys[row.RowIndex].Value.ToString());
+                    objArt = artBL.Select(objArt);
+
+                    articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
+                    objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                    objHistory.ArticleID = objArt.ArticleID;
+                    historyBL.Insert(objHistory);
+                }
+            }
+            articleList += "-9999";
+            if (articleList.Equals("-9999"))
             {
                 Functions.Alert("Vui lòng chọn bài viết");
                 return;
             }
-            new cmsArticleBL().ChuyenTrangThai_PhongVien(articleList, 1, DateTime.Now);
-            Ultility.Alert("Gửi biên tập thành công", Request.Url.ToString());
+            else
+            {
+                new cmsArticleBL().ChuyenTrangThai_PhongVien(articleList, 1, DateTime.Now);
+                Ultility.Alert("Gửi biên tập thành công", Request.Url.ToString());
+            }
+            //string articleList = GetSelectedArticle();
+            //if (string.IsNullOrEmpty(articleList))
+            //{
+            //    Functions.Alert("Vui lòng chọn bài viết");
+            //    return;
+            //}
+            //new cmsArticleBL().ChuyenTrangThai_PhongVien(articleList, 1, DateTime.Now);
+            //Ultility.Alert("Gửi biên tập thành công", Request.Url.ToString());
         }
 
         protected void btnXoaPV_Click(object sender, EventArgs e)
         {
-            string articleList = GetSelectedArticle();
-            if (string.IsNullOrEmpty(articleList))
+            cmsHistoryBL historyBL = new cmsHistoryBL();
+            cmsHistoryDO objHistory = new cmsHistoryDO();
+            objHistory.Action = 10;// "Gửi chờ xuất bản";
+            objHistory.HistoryTime = DateTime.Now;
+            objHistory.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+            objHistory.UserID = int.Parse(Session["UserID"].ToString());
+            objHistory.Comment = "";
+            string contents = "Phóng viên " + Session["UserName"].ToString() + " xóa bài viết bài viết: <b>";
+            cmsArticleBL artBL = new cmsArticleBL();
+            cmsArticleDO objArt = new cmsArticleDO();
+
+            string articleList = "";
+            for (int i = 0; i < grvListArticle.Rows.Count; i++)
+            {
+                GridViewRow row = grvListArticle.Rows[i];
+                CheckBox chk = (CheckBox)row.FindControl("chkSelect");
+                if (chk.Checked == true)
+                {
+                    objArt.ArticleID = int.Parse(grvListArticle.DataKeys[row.RowIndex].Value.ToString());
+                    objArt = artBL.Select(objArt);
+
+                    articleList += grvListArticle.DataKeys[row.RowIndex].Value.ToString() + ",";
+                    objHistory.Contents = contents + artBL.Select(objArt).Title + " </b>";
+                    objHistory.ArticleID = objArt.ArticleID;
+                    historyBL.Insert(objHistory);
+                }
+            }
+            articleList += "-9999";
+            if (articleList.Equals("-9999"))
             {
                 Functions.Alert("Vui lòng chọn bài viết");
                 return;
             }
-            new cmsArticleBL().MultiDelete(articleList);
-            Ultility.Alert("Xóa bài viết thành công", Request.Url.ToString());
+            else
+            {
+                new cmsArticleBL().MultiDelete(articleList);
+                Ultility.Alert("Xóa bài viết thành công", Request.Url.ToString());
+            }
+            //string articleList = GetSelectedArticle();
+            //if (string.IsNullOrEmpty(articleList))
+            //{
+            //    Functions.Alert("Vui lòng chọn bài viết");
+            //    return;
+            //}
+            //new cmsArticleBL().MultiDelete(articleList);
+            //Ultility.Alert("Xóa bài viết thành công", Request.Url.ToString());
         }
         #endregion
 
