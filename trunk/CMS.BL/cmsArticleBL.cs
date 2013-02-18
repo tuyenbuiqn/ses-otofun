@@ -163,6 +163,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectHomeNews(CategoryID);
         }
+        public DataTable SelectTopHomeNews(int CategoryID, int top)
+        {
+            return objcmsArticleDAL.SelectTopHomeNews(CategoryID, top);
+        }
         public DataTable GetTinLienQuan1(int articleID)
         {
             return objcmsArticleDAL.GetTinLienQuan1(articleID);
