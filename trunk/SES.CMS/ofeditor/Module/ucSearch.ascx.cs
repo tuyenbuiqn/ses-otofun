@@ -572,10 +572,11 @@ namespace SES.CMS.ofeditor.Module
                     DataTable dtUser = new DataTable();
                     dtArticle = new cmsArticleBL().SelectByPK(iArticleId);
                     new cmsArticleBL().Delete(new cmsArticleDO { ArticleID = iArticleId });
-                    objHtr.Action = "Xóa bài viết ";
+                    objHtr.Action = 10;// "Xóa bài viết ";
                     if ((dtArticle != null) && (dtArticle.Rows.Count > 0))
                     {
                         objHtr.Contents = "Bài viết tác động: [" + iArticleId + "]" + dtArticle.Rows[0]["Title"].ToString();
+                        objHtr.ArticleID = iArticleId;
                     }
                     if (Session["UserID"] != null)
                     {
@@ -584,6 +585,9 @@ namespace SES.CMS.ofeditor.Module
                         if ((dtUser != null) && (dtUser.Rows.Count > 0))
                         {
                             objHtr.Comment = "User tác động: [" + dtUser.Rows[0]["UserID"].ToString() + "] " + dtUser.Rows[0]["Username"].ToString();
+                            objHtr.UserID = int.Parse(dtUser.Rows[0]["UserID"].ToString());
+                            objHtr.IP = Request.ServerVariables["REMOTE_ADDR"].Trim();
+                            objHtr.HistoryTime = DateTime.Now;
                         }
                     }
                     objHtr.HistoryTime = DateTime.Now;
