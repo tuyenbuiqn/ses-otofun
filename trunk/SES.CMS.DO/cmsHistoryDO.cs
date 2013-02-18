@@ -23,15 +23,21 @@ namespace SES.CMS.DO
 		public const string CONTENTS_FIELD ="Contents";
 		public const string HISTORYTIME_FIELD ="HistoryTime";
 		public const string COMMENT_FIELD ="Comment";
+		public const string IP_FIELD ="IP";
+		public const string USERID_FIELD ="UserID";
+		public const string ARTICLEID_FIELD ="ArticleID";
 
 		#endregion
 		
 		#region Private Variables
 					private Int32 _HistoryID;
-		private String _Action;
+		private Int32 _Action;
 		private String _Contents;
 		private DateTime _HistoryTime;
 		private String _Comment;
+		private String _IP;
+		private Int32 _UserID;
+		private Int32 _ArticleID;
 
 		#endregion
 
@@ -47,7 +53,7 @@ namespace SES.CMS.DO
 				_HistoryID = value;
 			}
 		}
-		public String Action
+		public Int32 Action
 		{
 			get
 			{
@@ -89,6 +95,39 @@ namespace SES.CMS.DO
 			set
 			{
 				_Comment = value;
+			}
+		}
+		public String IP
+		{
+			get
+			{
+				return _IP;
+			}
+			set
+			{
+				_IP = value;
+			}
+		}
+		public Int32 UserID
+		{
+			get
+			{
+				return _UserID;
+			}
+			set
+			{
+				_UserID = value;
+			}
+		}
+		public Int32 ArticleID
+		{
+			get
+			{
+				return _ArticleID;
+			}
+			set
+			{
+				_ArticleID = value;
 			}
 		}
 
