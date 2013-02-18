@@ -1183,6 +1183,31 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+        public DataTable SelectTopHomeNews(int CategoryID,int top)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_GetHomeNews_Top";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+            Sqlparam.Value = CategoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@Top", SqlDbType.Int);
+            Sqlparam.Value = top;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
         public DataTable SelectTop20NewArticles(DateTime today)
         {
             SqlCommand Sqlcomm = new SqlCommand();
