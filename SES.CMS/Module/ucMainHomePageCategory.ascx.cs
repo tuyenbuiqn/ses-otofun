@@ -16,8 +16,10 @@ namespace SES.CMS.Module
         private Cache cache = HttpContext.Current.Cache;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
             rptCategoryParentDataSource();
         }
+
         protected void rptCategoryParentDataSource()
         {
             //  DataTable dtCateParent = new cmsCategoryBL().SelectAll();
@@ -36,6 +38,25 @@ namespace SES.CMS.Module
         {
             return Ultility.Change_AVCate(s);
         }
+
+        protected void rptTopArticle_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            RepeaterItem item = e.Item;
+            if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
+            {
+                 Panel posTop = (Panel)e.Item.FindControl("posTop");
+                if (e.Item.ItemIndex == 0)
+                {
+                    posTop.Attributes.Add("class", "hmp-cate-topart-left");
+                }
+                else if (e.Item.ItemIndex == 1)
+                {
+                    posTop.Attributes.Add("class", "hmp-cate-topart-right");
+                }
+            }
+
+        }
+      
         protected void rptCategoryParent_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             cmsCategoryBL cateBL = new cmsCategoryBL();
@@ -46,20 +67,27 @@ namespace SES.CMS.Module
                 DataRowView drv = (DataRowView)item.DataItem;
 
                 int categoryID = int.Parse(drv["CategoryID"].ToString());
-
-                //Cache childmenu
-                string keyCacheChildMenu = "ChildMenu=" + categoryID;
-                if (cache[keyCacheChildMenu] == null)
+                string keyCacheTopArticle = "TopArticle=" + categoryID;
+                if (cache[keyCacheTopArticle] == null)
                 {
-                    DataTable dtMenuChild = cateBL.SelectByParent(categoryID);
-                    if (dtMenuChild != null)
-                        cache.Insert(keyCacheChildMenu, dtMenuChild, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                    DataTable dtTopHomepageArticle = artBL.SelectTopHomeNews(categoryID,8);
+                    if (dtTopHomepageArticle != null)
+                        cache.Insert(keyCacheTopArticle, dtTopHomepageArticle, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
-                Repeater rptChildCate = (Repeater)item.FindControl("rptChildCate");
-                rptChildCate.DataSource = (DataTable)cache[keyCacheChildMenu];
-                rptChildCate.DataBind();
+                DataTable dtCateTopHomepageArticle = (DataTable)cache[keyCacheTopArticle];
+                Repeater rptTopArticle = (Repeater)item.FindControl("rptTopArticle");
+                rptTopArticle.DataSource = new DataView(dtCateTopHomepageArticle," STT>=1 and STT<=2", "", DataViewRowState.CurrentRows).ToTable();
+                rptTopArticle.DataBind();
 
-                //cache top hightlight
+                Repeater rptOtherTopArticleLeft = (Repeater)item.FindControl("rptOtherTopArticleLeft");
+                rptOtherTopArticleLeft.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=3 and STT<=5", "", DataViewRowState.CurrentRows).ToTable();
+                rptOtherTopArticleLeft.DataBind();
+
+                Repeater rptOtherTopArticleRight = (Repeater)item.FindControl("rptOtherTopArticleRight");
+                rptOtherTopArticleRight.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=6 and STT<=8", "", DataViewRowState.CurrentRows).ToTable();
+                rptOtherTopArticleRight.DataBind();
+                               
+                /*
                 string keyCacheTopHightLight = "TopHightLight=" + categoryID;
                 if (cache[keyCacheTopHightLight] == null)
                 {
@@ -68,82 +96,91 @@ namespace SES.CMS.Module
                         cache.Insert(keyCacheTopHightLight, dtTopHighLight, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
                 DataTable dtCacheTopHight = (DataTable)cache[keyCacheTopHightLight];
-                int topArtID = 0;
+                int topArtID1 = 0;
+                int topArtID2 = 0;
                 if (dtCacheTopHight.Rows.Count > 0)
-                    topArtID = int.Parse(dtCacheTopHight.Rows[0]["ArticleID"].ToString());
-                Repeater rptTopHighLight = (Repeater)item.FindControl("rptTopHighLight");
-                rptTopHighLight.DataSource = new DataView(dtCacheTopHight, "ArticleID=" + topArtID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
-                rptTopHighLight.DataBind();
+                    topArtID1 = int.Parse(dtCacheTopHight.Rows[0]["ArticleID"].ToString());
+                if (dtCacheTopHight.Rows.Count > 1)
+                    topArtID2 = int.Parse(dtCacheTopHight.Rows[1]["ArticleID"].ToString());
+                Repeater rptTopArticle = (Repeater)item.FindControl("rptTopArticle");
+                rptTopArticle.DataSource = new DataView(dtCacheTopHight, "ArticleID=" + topArtID1.ToString() + " AND  ", "", DataViewRowState.CurrentRows).ToTable();
+                rptTopArticle.DataBind();
+                 */
 
-                string keyCacheOther = "Other=" + categoryID;
-                if (cache[keyCacheOther] == null)
-                {
-                    DataTable dtTopOtherHighLight = new DataView(dtCacheTopHight, "ArticleID <> " + topArtID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
-                    if (dtTopOtherHighLight != null)
-                        cache.Insert(keyCacheOther, dtTopOtherHighLight, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
-                }
-                Repeater rptTopOtherHighLight = (Repeater)item.FindControl("rptTopOtherHighLight");
-                rptTopOtherHighLight.DataSource = (DataTable)cache[keyCacheOther];
-                rptTopOtherHighLight.DataBind();
+                /*       //Cache childmenu
+                       string keyCacheChildMenu = "ChildMenu=" + categoryID;
+                       if (cache[keyCacheChildMenu] == null)
+                       {
+                           DataTable dtMenuChild = cateBL.SelectByParent(categoryID);
+                           if (dtMenuChild != null)
+                               cache.Insert(keyCacheChildMenu, dtMenuChild, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                       }
+                       Repeater rptChildCate = (Repeater)item.FindControl("rptChildCate");
+                       rptChildCate.DataSource = (DataTable)cache[keyCacheChildMenu];
+                       rptChildCate.DataBind();
+
+                       //cache top hightlight
+                       string keyCacheTopHightLight = "TopHightLight=" + categoryID;
+                       if (cache[keyCacheTopHightLight] == null)
+                       {
+                           DataTable dtTopHighLight = artBL.SelectHomeNews(categoryID);
+                           if (dtTopHighLight != null)
+                               cache.Insert(keyCacheTopHightLight, dtTopHighLight, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                       }
+                       DataTable dtCacheTopHight = (DataTable)cache[keyCacheTopHightLight];
+                       int topArtID = 0;
+                       if (dtCacheTopHight.Rows.Count > 0)
+                           topArtID = int.Parse(dtCacheTopHight.Rows[0]["ArticleID"].ToString());
+                       Repeater rptTopHighLight = (Repeater)item.FindControl("rptTopHighLight");
+                       rptTopHighLight.DataSource = new DataView(dtCacheTopHight, "ArticleID=" + topArtID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
+                       rptTopHighLight.DataBind();
+
+                       string keyCacheOther = "Other=" + categoryID;
+                       if (cache[keyCacheOther] == null)
+                       {
+                           DataTable dtTopOtherHighLight = new DataView(dtCacheTopHight, "ArticleID <> " + topArtID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
+                           if (dtTopOtherHighLight != null)
+                               cache.Insert(keyCacheOther, dtTopOtherHighLight, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                       }
+                       Repeater rptTopOtherHighLight = (Repeater)item.FindControl("rptTopOtherHighLight");
+                       rptTopOtherHighLight.DataSource = (DataTable)cache[keyCacheOther];
+                       rptTopOtherHighLight.DataBind();
+                   }
+                 */
             }
         }
-        protected void rptTopHightLight_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            cmsCategoryBL cateBL = new cmsCategoryBL();
-            cmsArticleBL artBL = new cmsArticleBL();
-            RepeaterItem item = e.Item;
-            //  Repeater rptTopHightLight = (Repeater)rptCategoryParent.FindControl("rptTopHighLight");
 
-            //if (rptTopHightLight.Items.Count > 0)
-            //{
-            Repeater rptTinLienQuan1 = (Repeater)e.Item.FindControl("rptTinLienQuan1");
-            if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
-            {
-                DataRowView drv = (DataRowView)item.DataItem;
-                int articleID = 0;
-                articleID = int.Parse(drv["ArticleID"].ToString());
+        /*
+      
+       protected DataTable dtTinLienQuan1(int articleID)
+       {
+           DataTable dtTinLienQuan1 = new DataTable();
+           dtTinLienQuan1.Columns.Add("Tag", typeof(string));
+           string sTinLienQuan1 = new cmsArticleBL().Select(new cmsArticleDO { ArticleID = articleID }).TinLienQuan1;
+           if (string.IsNullOrEmpty(sTinLienQuan1))
+           {
+               dtTinLienQuan1 = null;
+           }
+           else
+           {
+               string[] tagArray = sTinLienQuan1.Split(',');
+               for (int i = 1; i < tagArray.Length - 1; i++)
+               {
+                   dtTinLienQuan1.Rows.Add(tagArray[i]);
+               }
+           }
+           return dtTinLienQuan1;
+       }
+       public string WordCut(string text)
+       {
+           return Ultility.WordCut(text, 100, new char[] { ' ', '.', ',', ';' }) + ".";
 
-                string keyTinLienQuan1 = "TinLienQuan1=" + articleID;
-                if (cache[keyTinLienQuan1] == null)
-                {
-                    DataTable dtTinLienQuan1 = artBL.GetTinLienQuan1(articleID);
-                    if (dtTinLienQuan1 != null)
-                        if(dtTinLienQuan1!=null)
-                        cache.Insert(keyTinLienQuan1, dtTinLienQuan1, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
-                }
-                rptTinLienQuan1.DataSource = (DataTable)cache[keyTinLienQuan1];
-                rptTinLienQuan1.DataBind();
-            }
-            //}
-        }
-        protected DataTable dtTinLienQuan1(int articleID)
-        {
-            DataTable dtTinLienQuan1 = new DataTable();
-            dtTinLienQuan1.Columns.Add("Tag", typeof(string));
-            string sTinLienQuan1 = new cmsArticleBL().Select(new cmsArticleDO { ArticleID = articleID }).TinLienQuan1;
-            if (string.IsNullOrEmpty(sTinLienQuan1))
-            {
-                dtTinLienQuan1 = null;
-            }
-            else
-            {
-                string[] tagArray = sTinLienQuan1.Split(',');
-                for (int i = 1; i < tagArray.Length - 1; i++)
-                {
-                    dtTinLienQuan1.Rows.Add(tagArray[i]);
-                }
-            }
-            return dtTinLienQuan1;
-        }
-        public string WordCut(string text)
-        {
-            return Ultility.WordCut(text, 100, new char[] { ' ', '.', ',', ';' }) + ".";
+       }
+       public string WordCutArticle(string text)
+       {
+           return Ultility.WordCut(text, 35, new char[] { ' ', '.', ',', ';' }) + ".";
 
-        }
-        public string WordCutArticle(string text)
-        {
-            return Ultility.WordCut(text, 35, new char[] { ' ', '.', ',', ';' }) + ".";
-
-        }
+       }
+        */
     }
 }
