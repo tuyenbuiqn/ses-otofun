@@ -88,7 +88,7 @@ namespace SES.CMS
             if (!string.IsNullOrEmpty(Request.QueryString["Page"]))
                 PageID = int.Parse(Request.QueryString["Page"]);
            
-            int PageSize = 15;
+            int PageSize = 10;
             
             hplNextPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID+1).ToString() + ".otofun";
             if (PageID > 0)
@@ -153,32 +153,43 @@ namespace SES.CMS
             Repeater rptTinLienQuan1 = (Repeater)e.Item.FindControl("rptTinLienQuan1");
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
             {
-                Panel divCategory = (Panel)e.Item.FindControl("divCategory");
-                if (e.Item.ItemIndex == 0)
-                {
-                    divCategory.Attributes.Add("class", "category-wrap");
-                }
-                else
-                {
-                    divCategory.Attributes.Add("class", "category-wrap-first");
-                }
-
                 DataRowView drv = (DataRowView)item.DataItem;
                 int articleID = 0;
                 articleID = int.Parse(drv["ArticleID"].ToString());
-
+                int tinLienQuanID = 0;
                 string keyTinLienQuan1 = "TinLienQuanCache1=" + articleID;
                 if (cache[keyTinLienQuan1] == null)
                 {
                     DataTable dtTinLienQuan1 = artBL.GetTinLienQuan1(articleID);
+                    if (dtTinLienQuan1.Rows.Count > 0)
+                        tinLienQuanID = int.Parse(dtTinLienQuan1.Rows[0]["ArticleID"].ToString());
                     if (dtTinLienQuan1 != null)
                         if (dtTinLienQuan1 != null)
                             cache.Insert(keyTinLienQuan1, dtTinLienQuan1, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
-                rptTinLienQuan1.DataSource = (DataTable)cache[keyTinLienQuan1];
+                DataTable dtCateTinLienQuan = (DataTable)cache[keyTinLienQuan1];
+                Panel divCategory = (Panel)e.Item.FindControl("divCategory");
+                if (e.Item.ItemIndex == 0)
+                {
+                    rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan,"ArticleID=" + tinLienQuanID.ToString(),"",DataViewRowState.CurrentRows).ToTable();
+                    divCategory.Attributes.Add("class", "category-wrap-1");
+                }
+                else if (e.Item.ItemIndex == 1)
+                {
+                    rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan, "ArticleID=" + tinLienQuanID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
+                    divCategory.Attributes.Add("class", "category-wrap-2");
+                }
+                else if (e.Item.ItemIndex == 2)
+                {
+                    rptTinLienQuan1.DataSource = dtCateTinLienQuan;
+                    divCategory.Attributes.Add("class", "category-wrap-first category-wrap-3");
+                }
+                else
+                {
+                    rptTinLienQuan1.DataSource = dtCateTinLienQuan;
+                    divCategory.Attributes.Add("class", "category-wrap-first");
+                }
                 rptTinLienQuan1.DataBind();
-
-
             }
         }
         public string FriendlyUrl(string s)
