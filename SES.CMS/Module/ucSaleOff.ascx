@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucSaleOff.ascx.cs" Inherits="SES.CMS.Module.ucSaleOff" %>
 <div class="sale-off-box">
-    <div class="sale-off-title">
-       <asp:Literal runat="server" ID="ltrTitle"></asp:Literal></div>
+     <h3 class="hmp-cate-maintitle"> <span>
+       <asp:Literal runat="server" ID="ltrTitle"></asp:Literal></span></h3>
     <ul class="sale-off">
         <asp:Repeater runat="server" ID="rptTuVanKyThuat">
             <ItemTemplate>

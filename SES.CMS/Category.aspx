@@ -16,12 +16,17 @@
             <div class="body-top-left">
                 <uc6:ucTopAdvertisment runat="server" ID="uc1TopAdv" />
                 <div class="category-box">
-                    <div class="category-title-box">
-                        <h2 class="category-title">
-                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
-                        <span class="category-title-time">
-                            <asp:Literal runat="server" ID="ltrDatetime"></asp:Literal></span>
-                    </div>
+                   
+                      <h3 class="hmp-cate-maintitle">
+                    <span>
+                        
+
+                        
+                            <asp:Literal runat="server" ID="lblBreadcrumb"></asp:Literal></span>
+                
+                </h3>
+                        
+                   
                     <asp:Repeater runat="server" ID="rptCategory" OnItemDataBound="rptCategory_ItemDataBound">
                         <ItemTemplate>
                             <asp:Panel runat="server" ID="divCategory">
@@ -33,7 +38,7 @@
                                             <%#Eval("Title") %></a>
                                     </h2>
                                     <div class="cate-desc">
-                                        <%#Eval("Description") + "..."%></div>
+                                        <%#Eval("Description")%></div>
                                     <div class="tin-lien-quan1" style="width:auto; float:none;">
                                         <asp:Repeater runat="server" ID="rptTinLienQuan1">
                                             <ItemTemplate>
@@ -43,8 +48,7 @@
                                             </ItemTemplate>
                                         </asp:Repeater>
                                     </div>
-                                    <a class="readmore fix-postion" title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
-                                        Xem tiếp</a>
+                                    
                             </asp:Panel>
                             </div>
                         </ItemTemplate>

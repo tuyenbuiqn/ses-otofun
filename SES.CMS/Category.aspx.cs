@@ -29,7 +29,7 @@ namespace SES.CMS
         protected void loadTime()
         {
             DateTime dateTime = DateTime.Now;
-            ltrDatetime.Text = Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
+            //ltrDatetime.Text = Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
         }
         protected void loadBreadcrumb(int categoryID)
         {
@@ -171,13 +171,15 @@ namespace SES.CMS
                 Panel divCategory = (Panel)e.Item.FindControl("divCategory");
                 if (e.Item.ItemIndex == 0)
                 {
-                    rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan,"ArticleID=" + tinLienQuanID.ToString(),"",DataViewRowState.CurrentRows).ToTable();
+                    //rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan,"ArticleID=" + tinLienQuanID.ToString(),"",DataViewRowState.CurrentRows).ToTable();
                     divCategory.Attributes.Add("class", "category-wrap-1");
+                    rptTinLienQuan1.Visible = false;
                 }
                 else if (e.Item.ItemIndex == 1)
                 {
-                    rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan, "ArticleID=" + tinLienQuanID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
+                    //rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan, "ArticleID=" + tinLienQuanID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
                     divCategory.Attributes.Add("class", "category-wrap-2");
+                    rptTinLienQuan1.Visible = false;
                 }
                 else if (e.Item.ItemIndex == 2)
                 {

@@ -2,9 +2,11 @@
     Inherits="SES.CMS.Module.ucMostRead" %>
 <div class="body-down-right">
     <div class="docnhieu">
-        <div class="docnhieu-cap">
-            ĐỌC NHIỀU NHẤT
-        </div>
+        <h3 class="hmp-cate-maintitle">
+                    <span>
+                        ĐỌC NHIỀU NHẤT</span>
+                
+                </h3>
         <ul class="docnhieu-noidung">
             <asp:Repeater runat="server" ID="rptMostRead">
                 <ItemTemplate>

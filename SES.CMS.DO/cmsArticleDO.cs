@@ -56,6 +56,8 @@ namespace SES.CMS.DO
         public const string AUTHOR_FIELD = "Author";
         public const string DESCHOME_FIELD = "DescHome";
         public const string FORUMUSERID_FIELD = "ForumUserID";
+        public const string NOTE = "Note";
+        public const string ARTICLESP = "ArticleSP";
 
 		#endregion
 		
@@ -98,6 +100,7 @@ namespace SES.CMS.DO
         public string Author { get; set; }
         public string DescHome { get; set; }
         public Int32 ForumUserID { get; set; }
+       
 
 		#endregion
 
@@ -479,6 +482,7 @@ namespace SES.CMS.DO
 
         #endregion
         public string Note { get; set; }
+        public string ArticleSP { get; set; }
 
 	}
 }

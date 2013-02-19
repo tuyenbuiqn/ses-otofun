@@ -73,8 +73,9 @@
                     </div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
+                    <uc4:ucFooter runat="server" ID="uc4ucFooter" />
                 </div>
-                <uc4:ucFooter runat="server" ID="uc4ucFooter" />
+                
             </div>
         </div>
     </div>

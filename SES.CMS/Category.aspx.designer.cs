@@ -28,16 +28,7 @@ namespace SES.CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBreadcrumb;
-        
-        /// <summary>
-        /// ltrDatetime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrDatetime;
+        protected global::System.Web.UI.WebControls.Literal lblBreadcrumb;
         
         /// <summary>
         /// rptCategory control.
