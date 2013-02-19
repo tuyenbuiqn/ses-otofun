@@ -20,7 +20,7 @@ namespace SES.CMS.Module
         {
 
        //     DataTable dtCateParent = new cmsArticleBL().HotArticle_UnderSlideHomepage();
-            DataTable dtCateParent = new cmsTinNoiBatBL().SelectAll(4);
+            DataTable dtCateParent = new cmsTinNoiBatBL().SelectAll(3);
             rptDanhMucNoiBat.DataSource = dtCateParent;
             rptDanhMucNoiBat.DataBind();
         }
