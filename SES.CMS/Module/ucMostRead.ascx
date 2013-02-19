@@ -3,7 +3,8 @@
 <div class="body-down-right">
     <div class="docnhieu">
         <div class="docnhieu-cap">
-            ĐỌC NHIỀU</div>
+            ĐỌC NHIỀU NHẤT
+        </div>
         <ul class="docnhieu-noidung">
             <asp:Repeater runat="server" ID="rptMostRead">
                 <ItemTemplate>
@@ -11,12 +12,13 @@
                         <div class="out-image">
                             <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
                                 title='<%#Eval("Title") %>'>
-                                <img alt="<%#Eval("Title") %>" class="Anh-noidung-docnhieu" src='/Media/<%#Eval("ImageUrl") %>'
-                                    alt='<%#Eval("Title") %>' /></a></div>
-                        <p>
-                            <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
-                                title='<%#Eval("Title") %>'>
-                                <%#Eval("Title") %></a></p>
+                                <img class="Anh-noidung-docnhieu" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' />
+                           
+                            <h5>
+                            <%#Eval("Title") %></h5>
+                             </a>
+                        </div>
+                      
                     </li>
                 </ItemTemplate>
             </asp:Repeater>
