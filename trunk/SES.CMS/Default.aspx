@@ -37,8 +37,7 @@
                     <uc9:ucTuVanAndKyThuat runat="server" ID="uc9TuVanAndKyThuat" />--%>
                 </div>
                 <div class="TinTuc">
-                    <p>
-                        <asp:Literal runat="server" ID="ltrNgay"></asp:Literal></p>
+                  
                     <uc2:ucLastestNews runat="server" ID="uc2lastestnews" />
                 </div>
                <%-- <div class="box-under-car" style="margin: 9px 0px 0px 5px;">

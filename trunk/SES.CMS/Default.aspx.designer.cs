@@ -40,15 +40,6 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucDanhMucNoiBat uc10ucDanhMucNoiBat;
         
         /// <summary>
-        /// ltrNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrNgay;
-        
-        /// <summary>
         /// uc2lastestnews control.
         /// </summary>
         /// <remarks>
