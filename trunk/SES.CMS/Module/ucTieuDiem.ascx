@@ -1,8 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTieuDiem.ascx.cs"
     Inherits="SES.CMS.Module.ucTieuDiem" %>
 <div class="docnhieu" style="margin-top:15px;">
-    <div class="docnhieu-cap">
-        Đọc nhiều</div>
+   <h3 class="hmp-cate-maintitle">
+                    <span>
+                        ĐỌC NHIỀU NHẤT</span>
+                
+                </h3>
     <ul class="docnhieu-noidung" style="background: none">
         <asp:Repeater runat="server" ID="rptMostRead">
             <ItemTemplate>

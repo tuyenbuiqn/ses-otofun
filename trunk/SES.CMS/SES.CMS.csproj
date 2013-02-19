@@ -775,6 +775,7 @@
     <Content Include="AdminCP\MenuUC\ucMnuConfig.ascx" />
     <Content Include="AdminCP\MenuUC\ucMnuQlNguoiDung.ascx" />
     <Content Include="AdminCP\PageUC\ucArticleCategory.ascx" />
+    <Content Include="AdminCP\PageUC\ucBTVPermission.ascx" />
     <Content Include="AdminCP\PageUC\ucConfig.ascx" />
     <Content Include="AdminCP\PageUC\ucListArticleCategory.ascx" />
     <Content Include="AdminCP\PageUC\ucListConfig.ascx" />
@@ -1028,6 +1029,7 @@
     <Content Include="css\imageEdit.css" />
     <Content Include="css\style.css" />
     <Content Include="css\style2.css" />
+    <Content Include="css\styleCate.css" />
     <Content Include="Default.aspx" />
     <Content Include="Event.aspx" />
     <Content Include="fancybox\blank.gif" />
@@ -1321,6 +1323,7 @@
     <Content Include="ofeditor\TinNoiBatForm.aspx" />
     <Content Include="ofeditor\TopNews.aspx" />
     <Content Include="preview.css" />
+    <Content Include="Search.aspx" />
     <Content Include="tag.aspx" />
     <Content Include="TestPopupParent.aspx" />
     <Content Include="Video.aspx" />
@@ -1385,6 +1388,13 @@
     </Compile>
     <Compile Include="AdminCP\PageUC\ucArticleCategory.ascx.designer.cs">
       <DependentUpon>ucArticleCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucBTVPermission.ascx.cs">
+      <DependentUpon>ucBTVPermission.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCP\PageUC\ucBTVPermission.ascx.designer.cs">
+      <DependentUpon>ucBTVPermission.ascx</DependentUpon>
     </Compile>
     <Compile Include="AdminCP\PageUC\ucConfig.ascx.cs">
       <DependentUpon>ucConfig.ascx</DependentUpon>
@@ -1823,6 +1833,13 @@
       <DependentUpon>Otofun.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="tag.aspx.cs">
       <DependentUpon>tag.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

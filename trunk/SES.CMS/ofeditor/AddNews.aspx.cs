@@ -148,7 +148,7 @@ namespace SES.CMS.ofeditor
             objArt = new cmsArticleBL().Select(objArt);
             txtTitle.Text = objArt.Title;
             txtDescription.Text = objArt.Description;
-
+            txtArticleSP.Text = objArt.ArticleSP;
             txtAuthor.Text = objArt.Author;
             txtDetail.Content = objArt.ArticleDetail;
             txtNote.Text = objArt.Note;
@@ -348,6 +348,7 @@ namespace SES.CMS.ofeditor
             objArt = new cmsArticleBL().Select(objArt);
             objArt.Title = txtTitle.Text;
             objArt.Description = txtDescription.Text;
+            objArt.ArticleSP = txtArticleSP.Text;
             objArt.DescHome = FetchLinksFromSource(txtDetail.Content);
             objArt.Author = txtAuthor.Text;
             objArt.ArticleDetail = txtDetail.Content;

@@ -402,18 +402,17 @@
                     </telerik:RadComboBox>
                 </div>
             </div>
-            <%-- <div class="fieldsetdiv">
+            <div class="fieldsetdiv">
                 <label for="lf">
-                    Mô tả Set top
-                    Mô tả ngắn
+                   Sha-po
                 </label>
                 <div style="float: left;">
-                    <asp:TextBox onkeyup="return checkMaxLen(this,160)" ID="txtDescHome" TextMode="MultiLine"
+                    <asp:TextBox onkeyup="return checkMaxLen(this,160)" ID="txtArticleSP" TextMode="MultiLine"
                         runat="server" CssClass="txtArea"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescHome"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtArticleSP"
                         ErrorMessage="***" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
                 </div>
-            </div>--%>
+            </div>
             <div class="fieldsetdiv">
                 <label for="lf">
                     Mô tả ngắn

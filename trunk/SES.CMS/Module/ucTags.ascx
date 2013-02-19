@@ -2,9 +2,10 @@
 <div class="tag-box">
     <ul class="tag-ul">
         <asp:Repeater runat="server" ID="rptTag">
+        <HeaderTemplate> <li> Tags: </li> </HeaderTemplate>
             <ItemTemplate>
-                <li>
-                    <a href='/tag/otofun-<%#Eval("Tag") %>.otofun' title='<%#Eval("Tag") %>'><%#Eval("Tag") %></a>,
+                <li class="litag">
+                    <a href='/tag/otofun-<%#Eval("Tag") %>.otofun' title='<%#Eval("Tag") %>'><%#Eval("Tag") %></a>
                 </li>
             </ItemTemplate>
         </asp:Repeater>

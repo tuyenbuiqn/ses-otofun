@@ -19,10 +19,9 @@
             <div class="body-top-left">
                 <uc6:ucTopAdvertisment runat="server" ID="uc1TopAdv" />
                 <div class="category-box">
-                    <div class="category-title-box">
-                        <h2 class="category-title">
-                            <a href="/Default.otofun" title="Trang chủ">Trang chủ </a>  » <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label></h2>
-                    </div>
+                    <h3 class="hmp-cate-maintitle">
+                    <span><asp:Literal runat="server" ID="lblBreadcrumb"></asp:Literal>
+                            </span></h3>
                     <div class="article-box">
                         <asp:Repeater runat="server" ID="rptArticleDetail" OnItemDataBound="rptArticleDetail_ItemDataBound">
                             <ItemTemplate>
@@ -33,10 +32,10 @@
                                     <span class="createdate-article">
                                         <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
                                 </div>
-                                <%--<h2 class="article-desciption">
-                                    <%#Eval("Description") %></h2>--%>
+                                <span class="article-desciption">
+                                    <%#Eval("ArticleSP") %></span>
                                         <asp:Repeater runat="server" ID="rptTinLienQuan2">
-                                        <HeaderTemplate> <div class="tin-lien-quan-2"><span class="tin-lien-quan2-span">Tin liên quan</span></HeaderTemplate>
+                                        <HeaderTemplate> <div class="tin-lien-quan-2"></HeaderTemplate>
                                             <ItemTemplate>
                                                 <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
                                                 title='<%#Eval("Title") %>'>» <%#Eval("Title")%></a>

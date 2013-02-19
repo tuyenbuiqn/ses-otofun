@@ -206,6 +206,10 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.Note;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@ArticleSP", SqlDbType.NText);
+            Sqlparam.Value = objcmsArticleDO.ArticleSP;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ID", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -396,6 +400,10 @@ namespace SES.CMS.DAL
             Sqlparam.Value = objcmsArticleDO.Note;
             Sqlcomm.Parameters.Add(Sqlparam);
 
+            Sqlparam = new SqlParameter("@ArticleSP", SqlDbType.NText);
+            Sqlparam.Value = objcmsArticleDO.ArticleSP;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
             Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
             Sqlparam.Direction = ParameterDirection.ReturnValue;
             Sqlcomm.Parameters.Add(Sqlparam);
@@ -540,6 +548,9 @@ namespace SES.CMS.DAL
                     objcmsArticleDO.ForumUserID = Convert.ToInt32(dr["ForumUserID"]);
                 if (!Convert.IsDBNull(dr["Note"]))
                     objcmsArticleDO.Note = Convert.ToString(dr["Note"]);
+
+                if (!Convert.IsDBNull(dr["ArticleSP"]))
+                    objcmsArticleDO.ArticleSP = Convert.ToString(dr["ArticleSP"]);
             }
             return objcmsArticleDO;
         }
@@ -638,6 +649,8 @@ namespace SES.CMS.DAL
                         objcmsArticleDO.ForumUserID = Convert.ToInt32(dr["ForumUserID"]);
                     if (!Convert.IsDBNull(dr["Note"]))
                         objcmsArticleDO.Note = Convert.ToString(dr["Note"]);
+                    if (!Convert.IsDBNull(dr["ArticleSP"]))
+                        objcmsArticleDO.ArticleSP = Convert.ToString(dr["ArticleSP"]);
                     arrcmsArticleDO.Add(objcmsArticleDO);
                 }
             }
