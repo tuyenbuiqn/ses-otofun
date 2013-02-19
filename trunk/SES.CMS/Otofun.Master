@@ -30,7 +30,7 @@
     </script>
     <!--End Slide-->
     <!--Carousel thong tin doanh nghiep-->
-    <script type="text/javascript" src="/carousel/jquery.carouFredSel-6.0.4.js"></script>
+    <script type="text/javascript" src="/carousel/jquery.carouFredSel-6.2.0.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#foo").carouFredSel({
@@ -39,6 +39,15 @@
                 scroll: { duration: 2000, pauseOnHover: true },
                 next: "#slide-next",
                 prev: "#slide-prev"
+            });
+        });
+        $(document).ready(function () {
+            $("#foox").carouFredSel({
+                circular: true,
+                items: { visible: 4 },
+                scroll: { duration: 2000, pauseOnHover: true },
+                next: "#slidex-next",
+                prev: "#slidex-prev"
             });
         });
     </script>

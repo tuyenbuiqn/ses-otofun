@@ -46,5 +46,9 @@ namespace SES.CMS.Module
         {
             return Ultility.Change_AVCate(s);
         }
+        public string WordCut(string text)
+        {
+            return Ultility.WordCut(text, 50, new char[] { ' ', '.', ',', ';' }) + "...";
+        }
     }
 }
