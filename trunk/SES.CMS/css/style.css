@@ -7,7 +7,7 @@ a
 {
     text-decoration: none;
     font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
-    color: #912809;
+    color: #000;
 }
 h1, h2, h3, h4, h5
 {
@@ -243,6 +243,7 @@ ul.mid-link li
 {
     margin: 0 0 0 20px;
 }
+
 .mid-link a
 {
     font-weight: bold;
@@ -326,9 +327,10 @@ ul.mid-link li
 }
 .QuangCao
 {
-    width: 679px;
+    width: 676px;
     height: 80px;
-    margin-left: 3px;
+    margin-left: 6px;
+    margin-bottom:5px;
 }
 .image-box
 {
@@ -340,7 +342,7 @@ ul.mid-link li
 {
     width: 455px;
     height: 303px;
-    border: solid 1px #c98131;
+    
     float: left;
     margin: 6px;
 }
@@ -352,10 +354,10 @@ ul.mid-link li
 }
 .AnhNho li
 {
-    float: left;
-    margin: 3px 4px 0px 1px;
-    width: 111px;
-    line-height: 15px;
+float: left;
+margin: 3px 19px 0px 1px;
+width: 138px;
+line-height: 15px;
 }
 .AnhNho li:last-child
 {
@@ -481,6 +483,8 @@ table.tbimage .image_desc
 {
     width: 210px;
     float: right;
+    height:462px;
+    border-right:1px solid #d2bf9c;
 }
 .TinTuc p
 {
@@ -494,7 +498,7 @@ table.tbimage .image_desc
 {
     width: 217px;
     height: 29px;
-    background: url(../images/label-back.jpg);
+    /*background: url(../images/label-back.jpg);*/
     float: left;
 }
 .tintuc-cap p
@@ -508,32 +512,33 @@ table.tbimage .image_desc
 .tintuc-box
 {
     width: 206px;
-    height: 380px;
-    border: solid 1px #C67926;
-    background: #DFC698;
-    float: left;
-    margin-top: -1px;
+height: 462px;
+float: left;
+margin-top: -1px;
+padding-top: 4px;
 }
 .tintuc-box li
 {
     width: 200px;
+    height:auto;
     float: left;
     margin-left: 5px;
-    margin-top: 3px;
+    margin-top:0px;
+    margin-bottom:10px;
+
 }
 .tintuc-box a
 {
     color: #000;
     font-size: 12px;
-    margin: 1px 0px 1px 0px;
-    display: block;
-    line-height: 16px;
-    background: url('/images/bullet.gif') 0px -971px no-repeat;
-    padding-left: 10px;
+    font-weight:bolder;
+    line-height: 17px;
+   
+    
 }
 .tintuc-box a:hover
 {
-    text-decoration: underline;
+    text-decoration: none;
 }
 .mid-quangcao
 {
@@ -743,30 +748,31 @@ table.tbimage .image_desc
 }
 .docnhieu-cap
 {
-    width: 300px;
-    height: 14px;
+    width: 304px;
+    height: 22px;
     font-size: 14px;
     font-weight: bold;
     font-family: Arial;
-    color: #000;
-    background: url(../images/patem.jpg) no-repeat;
+    color: #363636;
+    border-top:2px solid black;
+    border-bottom:1px solid black;
     background-position: right;
     float: left;
-    padding-bottom: 2px;
+    padding-top: 7px;
 }
 .docnhieu-noidung
 {
-    width: 300px;
+    width: 304px;
     margin-top: 10px;
-    background: #F3E1C0;
+   
     float: left;
 }
 .docnhieu-noidung li
 {
     float: left;
     border-bottom: dotted 1px #d1d0ce;
-    margin-left: 10px;
-    width: 280px;
+    margin-right: 4px;
+    width:148px;
 }
 .docnhieu-noidung li p
 {
@@ -774,10 +780,9 @@ table.tbimage .image_desc
 }
 .out-image
 {
-    width: 63px;
-    height: 48px;
-    border: solid 1px #d1d0ce;
-    margin: 8px 8px 8px 0px;
+    width: 148px;
+    height: auto;
+    background-color:rgb(224, 200, 151);
     float: left;
 }
 .out-image p
@@ -786,9 +791,10 @@ table.tbimage .image_desc
 }
 .Anh-noidung-docnhieu
 {
-    width: 59px;
-    height: 44px;
-    margin: 2px;
+    width: 140px;
+    height: 75px;
+    margin: 4px;
+    margin-bottom:0px;
     float: left;
 }
 .docnhieu-chitiet
@@ -799,6 +805,21 @@ table.tbimage .image_desc
     color: #b54918;
     margin-bottom: 6px;
     margin-top: 6px;
+}
+.out-image h5
+{
+    width:132px;
+    height:40px;
+    margin-left:4px;
+    background-color:#1a1a1a;
+    color:White;
+    float:left;
+    font-size:11px;
+    font-weight:bold;
+    padding-left:4px;
+    margin-bottom:4px;
+    padding-top:4px;
+    padding-right:4px;
 }
 .docnhieu-chitiet:hover
 {
@@ -1337,11 +1358,6 @@ p.pBreadrumb
     font-family: Arial !important;
     text-align: justify !important;
 }
-.article-detail img
-{
-    width: 550px !important;
-    height: 367px !important;
-}
 .article-detail p
 {
     color: #000;
@@ -1359,8 +1375,8 @@ p.pBreadrumb
 
 .img-car
 {
-    width: 108px;
-    height: 72px;
+   width: 138px;
+    height: 92px;
 }
 .comment-box
 {
@@ -2192,7 +2208,7 @@ p.pBreadrumb
 }
 .hmp-cate-maintitle span
 {
-    background: rgb(155, 66, 7);
+    background: rgb(213, 130, 47);
     display: inline-block;
     padding: 4px 10px;
     font-weight: bold;
@@ -2228,7 +2244,7 @@ p.pBreadrumb
 }
 .hmp-cate-topart-left .hmp-top-article a img
 {
-    border: 5px #F1F1F1 solid;
+    border: 5px rgb(228, 206, 179) solid;
     margin-bottom: 10px;
     width: 315px;
     height: 168px;
@@ -2260,7 +2276,7 @@ p.pBreadrumb
 }
 .hmp-cate-topart-right .hmp-top-article a img
 {
-    border: 5px #F1F1F1 solid;
+    border: 5px rgb(228, 206, 179) solid;
     margin-bottom: 10px;
     width: 315px;
     height: 168px;
