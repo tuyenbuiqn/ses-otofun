@@ -153,6 +153,8 @@ namespace SES.CMS.ofeditor
             txtDetail.Content = objArt.ArticleDetail;
             txtNote.Text = objArt.Note;
             ddlEvent.SelectedValue = objArt.EventID.ToString();
+            cbkIsMostRead.Checked = objArt.IsMostRead;
+            cbkIsNew.Checked = objArt.IsNew;
             if (!string.IsNullOrEmpty(objArt.ImageUrl))
             {
                 hplImage.NavigateUrl = "~/Media/" + objArt.ImageUrl;
@@ -357,6 +359,8 @@ namespace SES.CMS.ofeditor
             objArt.TinLienQuan1 = hdfID1.Value;
             objArt.TinLienQuan2 = hdfID2.Value;
             objArt.Note = txtNote.Text;
+            objArt.IsNew = cbkIsNew.Checked;
+            objArt.IsMostRead = cbkIsMostRead.Checked;
 
             if (!string.IsNullOrEmpty(fuImg.FileName))
                 objArt.ImageUrl = UploadFile(fuImg);
