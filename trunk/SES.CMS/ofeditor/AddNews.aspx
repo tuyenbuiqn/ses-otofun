@@ -404,7 +404,7 @@
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
-                   Sha-po
+                    Sha-po
                 </label>
                 <div style="float: left;">
                     <asp:TextBox onkeyup="return checkMaxLen(this,160)" ID="txtArticleSP" TextMode="MultiLine"
@@ -526,6 +526,18 @@
                     Tác giả
                 </label>
                 <asp:TextBox CssClass="lf" ID="txtAuthor" Width="250px" runat="server" ValidationGroup="submitGrp"></asp:TextBox>
+            </div>
+            <div class="fieldsetdiv">
+                <label for="lf">
+                    Tùy chọn
+                </label>
+                <div class="tuychon-baiviet">
+                    <span class="tuychon">Bài mới
+                        <asp:CheckBox runat="server" ID="cbkIsNew" />
+                    </span><span class="tuychon">Bài đọc nhiều
+                        <asp:CheckBox runat="server" ID="cbkIsMostRead" />
+                    </span>
+                </div>
             </div>
             <div class="fieldsetdiv" runat="server" id="divTKAutoPost" visible="false">
                 <label for="lf">

@@ -247,6 +247,24 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.TextBox txtAuthor;
         
         /// <summary>
+        /// cbkIsNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbkIsNew;
+        
+        /// <summary>
+        /// cbkIsMostRead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbkIsMostRead;
+        
+        /// <summary>
         /// divTKAutoPost control.
         /// </summary>
         /// <remarks>
