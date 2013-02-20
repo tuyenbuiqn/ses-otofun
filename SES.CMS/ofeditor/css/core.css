@@ -854,3 +854,15 @@ margin: 5px 0;
 {
     
 	}
+.tuychon-baiviet
+{
+    float:left;
+    width:800px;
+    }
+.tuychon-baiviet span.tuychon
+{
+    display:block;
+    width:150px;
+    float:left;
+    font-weight:bold;
+    }
