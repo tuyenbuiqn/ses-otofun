@@ -94,15 +94,6 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucMostRead uc7ucMostRead;
         
         /// <summary>
-        /// uc14ucSaleOff control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SES.CMS.Module.ucSaleOff uc14ucSaleOff;
-        
-        /// <summary>
         /// uc11ucRightHomeAdv control.
         /// </summary>
         /// <remarks>
