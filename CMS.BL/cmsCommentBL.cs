@@ -77,7 +77,10 @@ namespace SES.CMS.BL
         {
             return objcmsCommentDAL.SelectByArt(ArtID);
         }
-
+        public DataTable SelectByArticle(int articleID, int replyCommentID)
+        {
+            return objcmsCommentDAL.SelectByArticle(articleID, replyCommentID);
+        }
         public DataTable CommentXetDuyet_Filter(int articleID, int isAccepted, int userID, int userType, int bienTapVienID)
         {
             return objcmsCommentDAL.CommentXetDuyet_Filter(articleID, isAccepted, userID,userType,bienTapVienID);
