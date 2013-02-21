@@ -192,30 +192,7 @@ namespace SES.CMS
             }
         }
 
-        protected void btnSend_Click(object sender, EventArgs e)
-        {
-            initObject();
-            objcomment.IsAccepted = false;
-            new cmsCommentBL().Insert(objcomment);
-
-            Ultility.Alert("Cám ơn đã đóng góp ý kiến về bài viết. Chúng tôi đã nhận được đóng góp của quý vị", Request.Url.AbsolutePath);
-        }
-
-        private void initObject()
-        {
-            objcomment.ArticleID = int.Parse(Request.QueryString["ArticleID"].ToString());
-            objcomment.Contents = txtContent.Text;
-            objcomment.CreateDate = DateTime.Now;
-            objcomment.Email = txtEmail.Text;
-            objcomment.Name = txtHoTen.Text;
-        }
-
-        protected void btnReset_Click(object sender, EventArgs e)
-        {
-            txtHoTen.Text = "";
-            txtEmail.Text = "";
-            txtContent.Text = "";
-        }
+       
         public string WordCutArticle(string text)
         {
             return Ultility.WordCut(text, 50, new char[] { ' ', '.', ',', ';' }) + "...";
