@@ -37,24 +37,24 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             txtTitle.Text = objConfig.ConfigName;
 
             // Không sử dụng CKEditor
-            if (objConfig.ConfigID == 1 || objConfig.ConfigID == 3 )
+            if (objConfig.ConfigID == 1 || objConfig.ConfigID == 2 )
             {
                 trDes.Visible = true;
                 trSupport.Visible = false;
                 txtDescription.Text = objConfig.ConfigValue;
             }
-            else if (objConfig.ConfigID == 4)
-            {
-                trDes.Visible = false;
-                trSupport.Visible = false;
-                trPopup.Visible = true;
-                txtTitle.Text = objConfig.ConfigName;
-                if (!File.Exists("~/Media/contact.jpg"))
-                {
-                    hplImage.Visible = true;
-                    hplImage.NavigateUrl = "~/Media/contact.jpg";
-                }
-            }
+            //else if (objConfig.ConfigID == 4)
+            //{
+            //    trDes.Visible = false;
+            //    trSupport.Visible = false;
+            //    trPopup.Visible = true;
+            //    txtTitle.Text = objConfig.ConfigName;
+            //    if (!File.Exists("~/Media/contact.jpg"))
+            //    {
+            //        hplImage.Visible = true;
+            //        hplImage.NavigateUrl = "~/Media/contact.jpg";
+            //    }
+            //}
             else if (objConfig.ConfigID == 5)
             {
                 trDes.Visible = false;
@@ -68,7 +68,7 @@ namespace SES.CMS.WEB.AdminCP.PageUC
                 }
             }
             // Sử dụng CKEditor
-            else if (objConfig.ConfigID == 2 || objConfig.ConfigID == 6)
+            else if (objConfig.ConfigID == 3 || objConfig.ConfigID == 4)
             {
                 trDes.Visible = false;
                 trSupport.Visible = true;
@@ -111,7 +111,7 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             {
                 objConfig.ConfigValue = txtCK.Text;
             }
-            else if (objConfig.ConfigID == 4 | objConfig.ConfigID == 5)
+            else if (objConfig.ConfigID == 5)
             {
                 UploadFile(fuImage);
             }
@@ -127,9 +127,9 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             if (fulImages.HasFile)
             {
                 string FileName = "contact.jpg";
-                if (objConfig.ConfigID == 4)
+                if (objConfig.ConfigID == 5)
                     FileName = "contact.jpg";
-                else if (objConfig.ConfigID == 5)
+                else if (objConfig.ConfigID == 6)
                     FileName = "logo.jpg";
 
                 string SaveLocation = string.Format("{0}\\{1}", Server.MapPath("~/Media/"), FileName);
