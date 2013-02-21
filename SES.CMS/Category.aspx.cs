@@ -47,7 +47,7 @@ namespace SES.CMS
                 objCate.CategoryID = objCate.ParentID;
                 objCate = new cmsCategoryBL().Select(objCate);
 
-                lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
+                lblBreadcrumb.Text = "<a class='rootcat' href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
             }
         }
         protected void BuildEvent(int categoryID)
@@ -88,7 +88,7 @@ namespace SES.CMS
             if (!string.IsNullOrEmpty(Request.QueryString["Page"]))
                 PageID = int.Parse(Request.QueryString["Page"]);
            
-            int PageSize = 10;
+            int PageSize = 12;
             
             hplNextPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID+1).ToString() + ".otofun";
             if (PageID > 0)
@@ -197,6 +197,11 @@ namespace SES.CMS
         public string FriendlyUrl(string s)
         {
             return Ultility.Change_AVCate(s);
+        }
+        public string CheckAuth(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return "Otofun";
+            else return s;
         }
         public string ReturnCateID()
         {
