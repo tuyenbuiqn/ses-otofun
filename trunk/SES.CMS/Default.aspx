@@ -15,7 +15,6 @@
 <%@ Register Src="/Module/ucRightHomeAdv.ascx" TagName="ucRightHomeAdv" TagPrefix="uc11" %>
 <%@ Register Src="/Module/ucHomeVideo.ascx" TagName="ucHomeVideo" TagPrefix="uc12" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
-<%@ Register Src="/Module/ucSaleOff.ascx" TagName="ucSaleOff" TagPrefix="uc14" %>
 <%@ Register Src="/Module/ucAnToanGiaoThong.ascx" TagName="ucAnToanGiaoThong" TagPrefix="uc15" %>
 <%@ Register Src="/Module/ucThongTinDoanhNghiep.ascx" TagName="ucThongTinDoanhNghiep"
     TagPrefix="uc14" %>
@@ -55,7 +54,6 @@
         <div class="body-down">
             <uc6:ucMainHomePageCategory runat="server" ID="uc6Main" />
             <uc7:ucMostRead runat="server" ID="uc7ucMostRead" />
-            <uc14:ucSaleOff runat="server" ID="uc14ucSaleOff" />
             <uc11:ucRightHomeAdv runat="server" ID="uc11ucRightHomeAdv" />
             <div class="video">
                 <div class="video-cap">
