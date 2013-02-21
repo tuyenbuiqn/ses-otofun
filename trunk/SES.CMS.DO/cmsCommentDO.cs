@@ -158,6 +158,9 @@ namespace SES.CMS.DO
 		}
 
         #endregion
+        public string IP { get; set; }
+        public string Title { get; set; }
+        public int ReplyCommentID { get; set; }
 
 	}
 }
