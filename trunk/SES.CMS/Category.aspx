@@ -37,13 +37,17 @@
                                         <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                             <%#Eval("Title") %></a>
                                     </h2>
+                                    <div class="art-auth"> <img src="/images/news-icon-d.png" style="margin-right:3px;" />
+                                        <%#CheckAuth(Eval("Author").ToString())%></div>
                                     <div class="cate-desc">
                                         <%#Eval("Description")%></div>
                                     <div class="tin-lien-quan1" style="width:auto; float:none;">
                                         <asp:Repeater runat="server" ID="rptTinLienQuan1">
                                             <ItemTemplate>
-                                                <span class="tin-lien-quan-1a tin-lien-quan-1-category"><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
-                                                    title='<%#Eval("Title") %>'>»
+                                                <span class="tin-lien-quan-1a tin-lien-quan-1-category">
+                                                <img src="/images/news-icon-d.png" />
+                                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                                    title='<%#Eval("Title") %>'>
                                                     <%#Eval("Title")%></a> </span>
                                             </ItemTemplate>
                                         </asp:Repeater>
@@ -64,8 +68,10 @@
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
-                <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
                 <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
+                <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
+                <uc1:ucLeftAdv ID="ucLeftAdv2" runat="server" />
+                
             </div>
         </div>
     </div>
