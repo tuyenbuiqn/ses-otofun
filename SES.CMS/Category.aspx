@@ -16,20 +16,14 @@
             <div class="body-top-left">
                 <uc6:ucTopAdvertisment runat="server" ID="uc1TopAdv" />
                 <div class="category-box">
-                   
-                      <h3 class="hmp-cate-maintitle">
-                    <span>
-                        
-
-                        
+                    <h3 class="hmp-cate-maintitle">
+                        <span>
                             <asp:Literal runat="server" ID="lblBreadcrumb"></asp:Literal></span>
-                
-                </h3>
-                        
-                   
-                    <asp:Repeater runat="server" ID="rptCategory" OnItemDataBound="rptCategory_ItemDataBound">
+                    </h3>
+                    <div class="settop-wrap">
+                    <asp:Repeater runat="server" ID="rptSetTop">
                         <ItemTemplate>
-                            <asp:Panel runat="server" ID="divCategory">
+                            <div class="category-wrap-1">
                                 <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                     <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
@@ -37,24 +31,46 @@
                                         <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                             <%#Eval("Title") %></a>
                                     </h2>
-                                    <div class="art-auth"> <img src="/images/news-icon-d.png" style="margin-right:3px;" />
+                                    <div class="art-auth">
+                                        <img src="/images/news-icon-d.png" style="margin-right: 3px;" />
                                         <%#CheckAuth(Eval("Author").ToString())%></div>
                                     <div class="cate-desc">
                                         <%#Eval("Description")%></div>
-                                    <div class="tin-lien-quan1" style="width:auto; float:none;">
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    </div>
+                    <asp:Repeater runat="server" ID="rptCategory" OnItemDataBound="rptCategory_ItemDataBound">
+                        <ItemTemplate>
+                            <div class="category-wrap-first">
+                                <%--<asp:Panel runat="server" ID="divCategory">--%>
+                                <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
+                                    <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
+                                <div class="cate-desc-box">
+                                    <h2>
+                                        <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
+                                            <%#Eval("Title") %></a>
+                                    </h2>
+                                    <div class="art-auth">
+                                        <img src="/images/news-icon-d.png" style="margin-right: 3px;" />
+                                        <%#CheckAuth(Eval("Author").ToString())%></div>
+                                    <div class="cate-desc">
+                                        <%#Eval("Description")%></div>
+                                    <div class="tin-lien-quan1" style="width: auto; float: none;">
                                         <asp:Repeater runat="server" ID="rptTinLienQuan1">
                                             <ItemTemplate>
                                                 <span class="tin-lien-quan-1a tin-lien-quan-1-category">
-                                                <img src="/images/news-icon-d.png" />
-                                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
-                                                    title='<%#Eval("Title") %>'>
-                                                    <%#Eval("Title")%></a> </span>
+                                                    <img src="/images/news-icon-d.png" />
+                                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                                        title='<%#Eval("Title") %>'>
+                                                        <%#Eval("Title")%></a> </span>
                                             </ItemTemplate>
                                         </asp:Repeater>
                                     </div>
-                                    
-                            </asp:Panel>
-                            </div>
+                                    <%--</asp:Panel>--%>
+                                </div>
+                                </div>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
@@ -70,8 +86,6 @@
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
                 <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
                 <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
-                
-                
             </div>
         </div>
     </div>

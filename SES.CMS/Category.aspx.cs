@@ -18,6 +18,7 @@ namespace SES.CMS
             if (!string.IsNullOrEmpty(Request.QueryString["CategoryID"]))
             {
                 int categoryID = int.Parse(Request.QueryString["CategoryID"]);
+                rptSetTopDataSource(categoryID);
                 rptCategoryDataSoucre(categoryID);
                 rptBuildChildMenu(categoryID);
                 Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
@@ -25,7 +26,11 @@ namespace SES.CMS
                 loadBreadcrumb(categoryID);
             }
         }
-
+        protected void rptSetTopDataSource(int categoryID)
+        {
+            rptSetTop.DataSource = new cmsSetTopBL().SelectByCategoryID(0,categoryID);
+            rptSetTop.DataBind();
+        }
         protected void loadTime()
         {
             DateTime dateTime = DateTime.Now;
@@ -168,29 +173,31 @@ namespace SES.CMS
                             cache.Insert(keyTinLienQuan1, dtTinLienQuan1, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
                 DataTable dtCateTinLienQuan = (DataTable)cache[keyTinLienQuan1];
-                Panel divCategory = (Panel)e.Item.FindControl("divCategory");
-                if (e.Item.ItemIndex == 0)
-                {
-                    //rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan,"ArticleID=" + tinLienQuanID.ToString(),"",DataViewRowState.CurrentRows).ToTable();
-                    divCategory.Attributes.Add("class", "category-wrap-1");
-                    rptTinLienQuan1.Visible = false;
-                }
-                else if (e.Item.ItemIndex == 1)
-                {
-                    //rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan, "ArticleID=" + tinLienQuanID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
-                    divCategory.Attributes.Add("class", "category-wrap-2");
-                    rptTinLienQuan1.Visible = false;
-                }
-                else if (e.Item.ItemIndex == 2)
-                {
-                    rptTinLienQuan1.DataSource = dtCateTinLienQuan;
-                    divCategory.Attributes.Add("class", "category-wrap-first category-wrap-3");
-                }
-                else
-                {
-                    rptTinLienQuan1.DataSource = dtCateTinLienQuan;
-                    divCategory.Attributes.Add("class", "category-wrap-first");
-                }
+
+                //Panel divCategory = (Panel)e.Item.FindControl("divCategory");
+                //if (e.Item.ItemIndex == 0)
+                //{
+                //    //rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan,"ArticleID=" + tinLienQuanID.ToString(),"",DataViewRowState.CurrentRows).ToTable();
+                //    divCategory.Attributes.Add("class", "category-wrap-1");
+                //    rptTinLienQuan1.Visible = false;
+                //}
+                //else if (e.Item.ItemIndex == 1)
+                //{
+                //    //rptTinLienQuan1.DataSource = new DataView(dtCateTinLienQuan, "ArticleID=" + tinLienQuanID.ToString(), "", DataViewRowState.CurrentRows).ToTable();
+                //    divCategory.Attributes.Add("class", "category-wrap-2");
+                //    rptTinLienQuan1.Visible = false;
+                //}
+                //else if (e.Item.ItemIndex == 2)
+                //{
+                //    rptTinLienQuan1.DataSource = dtCateTinLienQuan;
+                //    divCategory.Attributes.Add("class", "category-wrap-first category-wrap-3");
+                //}
+                //else
+                //{
+                //    rptTinLienQuan1.DataSource = dtCateTinLienQuan;
+                //    divCategory.Attributes.Add("class", "category-wrap-first");
+                //}
+                rptTinLienQuan1.DataSource = dtCateTinLienQuan;
                 rptTinLienQuan1.DataBind();
             }
         }
