@@ -70,7 +70,7 @@
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
                 <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
                 <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
-                <uc1:ucLeftAdv ID="ucLeftAdv2" runat="server" />
+                
                 
             </div>
         </div>
