@@ -31,6 +31,15 @@ namespace SES.CMS {
         protected global::System.Web.UI.WebControls.Literal lblBreadcrumb;
         
         /// <summary>
+        /// rptSetTop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptSetTop;
+        
+        /// <summary>
         /// rptCategory control.
         /// </summary>
         /// <remarks>
