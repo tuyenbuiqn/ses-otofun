@@ -197,7 +197,7 @@
             OnRowCancelingEdit="grvListTopNews_RowCancelingEdit" OnRowEditing="grvListTopNews_RowEditing"
             OnRowUpdating="grvListTopNews_RowUpdating" OnRowDeleting="grvListTopNews_RowDeleting"
             OnSelectedIndexChanged="grvListTopNews_SelectedIndexChanged" 
-            onselectedindexchanging="grvListTopNews_SelectedIndexChanging">
+            onpageindexchanging="grvListTopNews_PageIndexChanging">
             <Columns>
                 <asp:TemplateField HeaderText="Tiêu đề" Visible="false" ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
