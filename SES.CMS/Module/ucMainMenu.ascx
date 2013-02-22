@@ -16,7 +16,7 @@
                         <%#Eval("Title") %></a> </li>
                 </ItemTemplate>
             </asp:Repeater>
-            <li><a href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
+            <li><a target="_blank" href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
             </li>
         </ul>
         <div class="search-box">
