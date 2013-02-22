@@ -112,7 +112,7 @@ namespace SES.CMS
                 objCate.CategoryID = objCate.ParentID;
                 objCate = new cmsCategoryBL().Select(objCate);
 
-                lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
+                lblBreadcrumb.Text = "<a class='rootcat' href='/" + Ultility.Change_AVCate(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
             }
         }
 
@@ -192,7 +192,6 @@ namespace SES.CMS
             }
         }
 
-       
         public string WordCutArticle(string text)
         {
             return Ultility.WordCut(text, 50, new char[] { ' ', '.', ',', ';' }) + "...";
