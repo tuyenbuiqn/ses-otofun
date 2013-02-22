@@ -1242,6 +1242,31 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
+        public DataTable SelectTop20NewArticlesAndCate(DateTime today,int categoryID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_Top20NewArticles_Cate";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@ThoiGianXuatBan", SqlDbType.DateTime);
+            Sqlparam.Value = today;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+            Sqlparam.Value = categoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
         public DataTable Article_Search(string lstCategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Keyw)
         {
             SqlCommand Sqlcomm = new SqlCommand();

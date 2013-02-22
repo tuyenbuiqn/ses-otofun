@@ -53,6 +53,7 @@
     <Compile Include="cmsImagesBL.cs" />
     <Compile Include="cmsLibFileArticleBL.cs" />
     <Compile Include="cmsLibsFileBL.cs" />
+    <Compile Include="cmsSetTopBL.cs" />
     <Compile Include="cmsSlideBL.cs" />
     <Compile Include="cmsTinNoiBatBL.cs" />
     <Compile Include="cmsTopNewsBL.cs" />

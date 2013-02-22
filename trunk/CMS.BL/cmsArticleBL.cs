@@ -180,6 +180,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.SelectTop20NewArticles(today);
         }
+        public DataTable SelectTop20NewArticlesAndCate(DateTime today, int categoryID)
+        {
+            return objcmsArticleDAL.SelectTop20NewArticlesAndCate(today, categoryID);
+        }
         public DataTable Article_Search(string lstCategoryID, DateTime ArticleSearchDateStart, DateTime ArticleSearchDateEnd, string Keyw)
         {
             return objcmsArticleDAL.Article_Search(lstCategoryID, ArticleSearchDateStart, ArticleSearchDateEnd, Keyw);
