@@ -4,11 +4,14 @@ a,a:visited{
 text-decoration:none;*/
 }
 .cap-title a{
-font-size:15px; 
+font-size:17px; 
 color: #f75f00;
 font-weight:bold;
 }
-
+.cap-title a:hover
+{
+    text-decoration:none;
+}
 .title{
 height:60px;
 }
