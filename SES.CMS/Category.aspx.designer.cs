@@ -83,14 +83,5 @@ namespace SES.CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SES.CMS.Module.ucTieuDiem uc5TieuDiem;
-        
-        /// <summary>
-        /// ucLeftAdv2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SES.CMS.Module.ucLeftAdv ucLeftAdv2;
     }
 }
