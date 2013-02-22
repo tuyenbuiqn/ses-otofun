@@ -139,5 +139,11 @@ namespace SES.CMS.ofeditor
             lblOldArticleID.Text = "";
             Response.Redirect(Request.Url.ToString());
         }
+
+        protected void grvListTopNews_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            grvListTopNews.PageIndex = e.NewSelectedIndex;
+            rptCategoryParentDataSource();
+        }
     }
 }
