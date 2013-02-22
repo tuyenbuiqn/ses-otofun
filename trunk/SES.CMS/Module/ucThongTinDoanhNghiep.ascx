@@ -4,9 +4,9 @@
     
 </style>
 <div class="Cap-bottom-box">
+
     <div class="Cap-bottom">
-        <p>
-            <asp:Label runat="server" ID="lblTitle"></asp:Label></p>
+        <asp:Label runat="server" ID="lblTitle"></asp:Label>
     </div>
 </div>
 <div class="promo-wrapper">

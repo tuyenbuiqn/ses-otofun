@@ -11,7 +11,15 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((Request.QueryString["CategoryID"] != null))
+            {
+                if(Request.QueryString["CategoryID"]=="11")
+                    catbanner.Visible = true;
+                else  catImg.Visible = true;
 
+            }
+           
+               
         }
     }
 }
