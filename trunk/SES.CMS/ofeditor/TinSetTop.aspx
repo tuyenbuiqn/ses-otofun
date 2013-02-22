@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ofeditor/Editor.Master" AutoEventWireup="true" CodeBehind="TopNews.aspx.cs" Inherits="SES.CMS.ofeditor.TopNews" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ofeditor/Editor.Master" AutoEventWireup="true"
+    CodeBehind="TinSetTop.aspx.cs" Inherits="SES.CMS.ofeditor.TinSetTop" %>
+
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -47,7 +49,7 @@
 
                 SetDataCurrent();
 
-                var oWnd = radopen("TinNoiBatForm.aspx", "RadWindow1");
+                var oWnd = radopen("TinSetTopForm.aspx", "RadWindow1");
             }
 
             function OnClientClose(oWnd, args) {
@@ -189,8 +191,8 @@
     </script>
     <div style="float: left; width: 98%; margin: 10px 0 10px 10px;">
         <h1 class="h1-style1">
-            Danh sách tin mới nhất</h1>
-        <asp:GridView ID="grvListTopNews" DataKeyNames="TopNews" runat="server" AutoGenerateColumns="False"
+            Danh sách tin set top </h1>
+        <asp:GridView ID="grvListTopNews" DataKeyNames="SetTopID" runat="server" AutoGenerateColumns="False"
             CssClass="tstyle2" PageSize="35" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr"
             OnRowCancelingEdit="grvListTopNews_RowCancelingEdit" OnRowEditing="grvListTopNews_RowEditing"
             OnRowUpdating="grvListTopNews_RowUpdating" OnRowDeleting="grvListTopNews_RowDeleting"
@@ -198,7 +200,12 @@
             <Columns>
                 <asp:TemplateField HeaderText="Tiêu đề" Visible="false" ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
-                        <asp:Label runat="server" ID="lblTopNews" Text='<%#Eval("TopNews") %>'></asp:Label>
+                        <asp:Label runat="server" ID="lblTopNews" Text='<%#Eval("SetTopID") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                 <asp:TemplateField HeaderText="Tiêu đề" Visible="false" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="lblCategoryID" Text='<%#Eval("CategoryID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="ArticleID" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
@@ -233,7 +240,7 @@
                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Thao tác" ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
                         <asp:ImageButton ID="btnEdit" runat="server" CommandName="Select" ImageUrl="~/ofeditor/images/edit_16x16.gif" />
-                        <asp:ImageButton Visible="false" ID="btnDelete" runat="server" CommandArgument='<%#Eval("TopNews") %>'
+                        <asp:ImageButton Visible="false" ID="btnDelete" runat="server" CommandArgument='<%#Eval("SetTopID") %>'
                             CommandName="Delete" ImageUrl="~/ofeditor/images/delete_16x16.gif" OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" />
                     </ItemTemplate>
                 </asp:TemplateField>
@@ -243,41 +250,53 @@
     <div runat="server" visible="false" id="divEdit" style="float: left; width: 98%;
         margin: 10px 0 10px 10px;">
         <h1 class="h1-style1">
-            Sửa tin tức mới</h1>
+            Sửa tin set top</h1>
         <div class="tin-noi-bat-box">
             <div class="tin-noi-bat-content">
                 <h3>
                     Tin cần sửa</h3>
-                    <div class="tin-noi-bat-table">
+                <div class="tin-noi-bat-table">
                     <table class="tstyle2">
                         <thead>
                             <tr>
-                                <th>ArticleID</th>
-                                <th>Tiêu đề</th>
-                                <th>Số thứ tự</th>
+                                <th>
+                                    ArticleID
+                                </th>
+                                <th>
+                                    Tiêu đề
+                                </th>
+                                <th>
+                                    Số thứ tự
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><asp:Label runat="server" ID="lblOldArticleID" CssClass="tin-noi-bat-left"></asp:Label></td>
-                                <td><asp:Label runat="server" ID="lblOldTitle" CssClass="tin-noi-bat-right"></asp:Label></td>
-                                <td><asp:Label runat="server" ID="lblOrderID" CssClass="tin-noi-bat-right"></asp:Label></td>
+                                <td>
+                                    <asp:Label runat="server" ID="lblOldArticleID" CssClass="tin-noi-bat-left"></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Label runat="server" ID="lblOldTitle" CssClass="tin-noi-bat-right"></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Label runat="server" ID="lblOrderID" CssClass="tin-noi-bat-right"></asp:Label>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    </div>
+                </div>
             </div>
             <div class="tin-noi-bat-content">
                 <div class="tin-noi-bat-new">
                     <h3>
                         Chọn tin thay thế</h3>
                     <div class="button-tinnoibat-box" style="">
-                    <span>
-                        <input class="button" type="submit" value="Thay đổi" onclick="openWin(); return false;" />
-                        <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent(); return false;" />
-                    </span>
+                        <span>
+                            <input class="button" type="submit" value="Thay đổi" onclick="openWin(); return false;" />
+                            <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent(); return false;" />
+                        </span>
                     </div>
-                    <div style="float:left; width:100%;">
+                    <div style="float: left; width: 100%;">
                         <telerik:RadGrid CssClass="mgrd" ID="RadGrid1" AutoGenerateColumns="False" runat="server"
                             ItemStyle-Height="150px" CellSpacing="0" GridLines="None">
                             <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID"
