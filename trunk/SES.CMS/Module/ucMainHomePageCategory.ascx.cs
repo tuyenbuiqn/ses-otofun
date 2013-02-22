@@ -74,17 +74,25 @@ namespace SES.CMS.Module
                     if (dtTopHomepageArticle != null)
                         cache.Insert(keyCacheTopArticle, dtTopHomepageArticle, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
-                DataTable dtCateTopHomepageArticle = (DataTable)cache[keyCacheTopArticle];
+                string keyCacheTopArticle_New = "TopArticle_new=" + categoryID;
+                if (cache[keyCacheTopArticle_New] == null)
+                {
+                    DataTable dtTopHomepageArticle_New = new cmsSetTopBL().SelectByCategoryID(2, categoryID);
+                    if (dtTopHomepageArticle_New != null)
+                        cache.Insert(keyCacheTopArticle_New, dtTopHomepageArticle_New, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+                }
                 Repeater rptTopArticle = (Repeater)item.FindControl("rptTopArticle");
-                rptTopArticle.DataSource = new DataView(dtCateTopHomepageArticle," STT>=1 and STT<=2", "", DataViewRowState.CurrentRows).ToTable();
+                rptTopArticle.DataSource = (DataTable)cache[keyCacheTopArticle_New];// new DataView(dtCateTopHomepageArticle, " STT>=1 and STT<=2", "", DataViewRowState.CurrentRows).ToTable();
                 rptTopArticle.DataBind();
 
+                DataTable dtCateTopHomepageArticle = (DataTable)cache[keyCacheTopArticle];
+
                 Repeater rptOtherTopArticleLeft = (Repeater)item.FindControl("rptOtherTopArticleLeft");
-                rptOtherTopArticleLeft.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=3 and STT<=5", "", DataViewRowState.CurrentRows).ToTable();
+                rptOtherTopArticleLeft.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=1 and STT<=2", "", DataViewRowState.CurrentRows).ToTable();
                 rptOtherTopArticleLeft.DataBind();
 
                 Repeater rptOtherTopArticleRight = (Repeater)item.FindControl("rptOtherTopArticleRight");
-                rptOtherTopArticleRight.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=6 and STT<=8", "", DataViewRowState.CurrentRows).ToTable();
+                rptOtherTopArticleRight.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=3 and STT<=5", "", DataViewRowState.CurrentRows).ToTable();
                 rptOtherTopArticleRight.DataBind();
                                
                 /*

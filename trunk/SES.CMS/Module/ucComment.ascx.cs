@@ -53,6 +53,8 @@ namespace SES.CMS.Module
             {
                 Session["ReplyCommentID"] = commentID;
                 txtHoTen.Focus();
+                HyperLink hplX = (HyperLink)e.Item.FindControl("hplX");
+                hplX.Attributes.Add("href","#xxx");
             }
             // not reply
             else
