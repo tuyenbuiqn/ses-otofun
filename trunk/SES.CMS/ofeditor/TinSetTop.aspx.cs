@@ -140,9 +140,9 @@ namespace SES.CMS.ofeditor
             Response.Redirect(Request.Url.ToString());
         }
 
-        protected void grvListTopNews_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        protected void grvListTopNews_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            grvListTopNews.PageIndex = e.NewSelectedIndex;
+            grvListTopNews.PageIndex = e.NewPageIndex;
             rptCategoryParentDataSource();
         }
     }
