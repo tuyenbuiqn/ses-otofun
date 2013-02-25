@@ -38,7 +38,6 @@
                                         <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
                                 <span class="article-desciption">
                                     <%#Eval("ArticleSP") %></span>
-<<<<<<< .mine
                                         <asp:Repeater runat="server" ID="rptTinLienQuan2">
                                         <HeaderTemplate> <div class="tin-lien-quan-2"></HeaderTemplate>
                                             <ItemTemplate>
@@ -47,20 +46,7 @@
                                             </ItemTemplate>
                                             <FooterTemplate></div></FooterTemplate>
                                         </asp:Repeater>
-=======
-                                <asp:Repeater runat="server" ID="rptTinLienQuan2">
-                                    <HeaderTemplate>
-                                        <div class="tin-lien-quan-2">
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
-                                            title='<%#Eval("Title") %>'>»
-                                            <%#Eval("Title")%></a>
-                                    </ItemTemplate>
-                                    <FooterTemplate>
-                                        </div></FooterTemplate>
-                                </asp:Repeater>
->>>>>>> .r279
+
                                 <div class="article-detail">
                                     <%#Eval("ArticleDetail") %>
                                 </div>
@@ -74,13 +60,9 @@
                     <uc7:ucTags runat="server" ID="uc7ucTag" />
                     <uc8:ucComment ID="ucComment1" runat="server" />
                     <uc4:ucNewArticles Visible="false" ID="ucNewArticles1" runat="server" />
-<<<<<<< .mine
+
                    
                     <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate"/>                  
-=======
-                    
-                    <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate" />
->>>>>>> .r279
                 </div>
             </div>
             <div class="body-top-right">
