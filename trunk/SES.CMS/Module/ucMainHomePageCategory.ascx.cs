@@ -70,7 +70,7 @@ namespace SES.CMS.Module
                 string keyCacheTopArticle = "TopArticle=" + categoryID;
                 if (cache[keyCacheTopArticle] == null)
                 {
-                    DataTable dtTopHomepageArticle = artBL.SelectTopHomeNews(categoryID,9);
+                    DataTable dtTopHomepageArticle = artBL.SelectTopHomeNews(categoryID,8);
                     if (dtTopHomepageArticle != null)
                         cache.Insert(keyCacheTopArticle, dtTopHomepageArticle, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }
@@ -88,11 +88,11 @@ namespace SES.CMS.Module
                 DataTable dtCateTopHomepageArticle = (DataTable)cache[keyCacheTopArticle];
 
                 Repeater rptOtherTopArticleLeft = (Repeater)item.FindControl("rptOtherTopArticleLeft");
-                rptOtherTopArticleLeft.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=1 and STT<=2", "", DataViewRowState.CurrentRows).ToTable();
+                rptOtherTopArticleLeft.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=1 and STT<=3", "", DataViewRowState.CurrentRows).ToTable();
                 rptOtherTopArticleLeft.DataBind();
 
                 Repeater rptOtherTopArticleRight = (Repeater)item.FindControl("rptOtherTopArticleRight");
-                rptOtherTopArticleRight.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=3 and STT<=5", "", DataViewRowState.CurrentRows).ToTable();
+                rptOtherTopArticleRight.DataSource = new DataView(dtCateTopHomepageArticle, " STT>=4 and STT<=6", "", DataViewRowState.CurrentRows).ToTable();
                 rptOtherTopArticleRight.DataBind();
                                
                 /*
