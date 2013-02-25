@@ -35,7 +35,7 @@
                    <%-- <uc3:ucThamKhaoGiaXe runat="server" ID="uc3ThamKhaoGiaXa" />
                     <uc9:ucTuVanAndKyThuat runat="server" ID="uc9TuVanAndKyThuat" />--%>
                 </div>
-                <div class="TinTuc">
+                <div class="TinTuc" style="margin-top:6px; height:456px;">
                   
                     <uc2:ucLastestNews runat="server" ID="uc2lastestnews" />
                 </div>

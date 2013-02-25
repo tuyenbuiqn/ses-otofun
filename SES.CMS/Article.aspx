@@ -36,6 +36,10 @@
                                 </div>
                                  <span class="createdate-article">
                                         <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
+                                        <div class="article-detail" style="float: left; width:100%; text-align: right; color: #000;
+                                    font-weight: bold;">
+                                   Tác giả: <%#Eval("Author") %>
+                                </div>
                                 <span class="article-desciption">
                                     <%#Eval("ArticleSP") %></span>
                                         <asp:Repeater runat="server" ID="rptTinLienQuan2">
@@ -50,10 +54,7 @@
                                 <div class="article-detail">
                                     <%#Eval("ArticleDetail") %>
                                 </div>
-                                <div class="article-detail" style="float: right; text-align: right; color: #000;
-                                    font-weight: bold;">
-                                    <%#Eval("Author") %>
-                                </div>
+                                
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
