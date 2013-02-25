@@ -4,7 +4,7 @@
     <div class="docnhieu">
         <h3 class="hmp-cate-maintitle">
                     <span>
-                        ĐỌC NHIỀU NHẤT</span>
+                        ĐỌC NHIỀU</span>
                 
                 </h3>
         <ul class="docnhieu-noidung">
