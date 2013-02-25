@@ -19,7 +19,7 @@ namespace SES.CMS.Module
         protected void rptLastestNewsDataSource()
         {
           //  rptLastestNews.DataSource = new cmsArticleBL().LastestNews();
-            rptLastestNews.DataSource = new cmsTopNewsBL().SelectAll(10);
+            rptLastestNews.DataSource = new cmsTopNewsBL().SelectAll(9);
             rptLastestNews.DataBind();
         }
 
