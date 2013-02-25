@@ -70,7 +70,7 @@ namespace SES.CMS.Module
                 string keyCacheTopArticle = "TopArticle=" + categoryID;
                 if (cache[keyCacheTopArticle] == null)
                 {
-                    DataTable dtTopHomepageArticle = artBL.SelectTopHomeNews(categoryID,8);
+                    DataTable dtTopHomepageArticle = artBL.SelectTopHomeNews(categoryID,9);
                     if (dtTopHomepageArticle != null)
                         cache.Insert(keyCacheTopArticle, dtTopHomepageArticle, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                 }

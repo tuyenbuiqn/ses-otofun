@@ -18,7 +18,7 @@ namespace SES.CMS.Module
         }
         protected void rptThongTinDoanhNghiepDataSource()
         {
-            DataTable dtThongTinDoanhNghiep = new cmsArticleBL().SelectByCategoryID1(40);
+            DataTable dtThongTinDoanhNghiep = new cmsArticleBL().SelectPaging(40,0,20);
             lblTitle.Text = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = 40 }).Title;
             rptThongTinDoanhNghiep.DataSource = dtThongTinDoanhNghiep;
             rptThongTinDoanhNghiep.DataBind();
