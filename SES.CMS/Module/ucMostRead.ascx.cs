@@ -20,7 +20,8 @@ namespace SES.CMS.Module
 
         protected void rptMostReadDataSource()
         {
-            rptMostRead.DataSource = new cmsArticleBL().MostRead();
+       //     rptMostRead.DataSource = new cmsArticleBL().MostRead();
+            rptMostRead.DataSource = new cmsMostReadBL().SelectHomepageMostRead(6);
             rptMostRead.DataBind();
         }
 
