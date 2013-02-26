@@ -247,6 +247,29 @@ arrcmsMostReadDO.Add(objcmsMostReadDO);
             }
             return dt;
         }
+        public DataTable SelectHomepageMostRead(int top)
+        {
+
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            //Sqlcomm.CommandText = "spcmsLastestNews_GetAll";
+            Sqlcomm.CommandText = "spcmsMostRead_GetByCategoryHome";
+
+            SqlParameter Sqlparam;
+            Sqlparam = new SqlParameter("@top", SqlDbType.Int);
+            Sqlparam.Value = top;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            return dt;
+        }
     }
 
 }
