@@ -76,6 +76,10 @@ namespace SES.CMS.BL
         {
             return objcmsMostReadDAL.SelectByCategoryID(top, categoryID);
         }
+        public DataTable SelectHomepageMostRead(int top)
+        {
+            return objcmsMostReadDAL.SelectHomepageMostRead(top);
+        }
     }
 
 }
