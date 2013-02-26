@@ -29,7 +29,8 @@ namespace SES.CMS.Module
                 categoryID = int.Parse(Module.Substring(Module.LastIndexOf('-') + 1, Module.Length - (Module.LastIndexOf('-') + 1)));
             }
             catch { }
-            rptMostRead.DataSource = new cmsArticleBL().MostReadOfCategory(categoryID);
+           // rptMostRead.DataSource = new cmsArticleBL().MostReadOfCategory(categoryID);
+            rptMostRead.DataSource = new cmsMostReadBL().SelectByCategoryID(6, categoryID);
             rptMostRead.DataBind();
         }
 
