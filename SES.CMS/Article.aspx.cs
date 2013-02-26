@@ -201,5 +201,10 @@ namespace SES.CMS
         {
             return Ultility.Change_AVCate(s);
         }
+        public string CheckAuth(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return "Otofun";
+            else return s;
+        }
     }
 }

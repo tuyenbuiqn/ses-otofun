@@ -11,7 +11,6 @@
 <%@ Register Src="Module/ucSameCateArticles.ascx" TagName="ucSameCateArticles" TagPrefix="u8" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
 <%@ Register Src="Module/ucComment.ascx" TagName="ucComment" TagPrefix="uc8" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -32,38 +31,36 @@
                                     <h1 class="article-title">
                                         <%#Eval("Title") %>
                                     </h1>
-                                   
                                 </div>
-                                 <span class="createdate-article">
-                                        <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
-                                        <div class="article-detail" style="float: left; width:100%; text-align: right; color: #000;
-                                    font-weight: bold;">
-                                   Tác giả: <%#Eval("Author") %>
-                                </div>
+                                <div class="art-authx">
+                                    <span class="authx">
+                                        <img src="/images/news-icon-d.png" style="margin-right: 3px;" alt="">
+                                        <%#CheckAuth(Eval("Author").ToString())%></span> - <span class="createdate-articlex">
+                                            <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span></div>
                                 <span class="article-desciption">
                                     <%#Eval("ArticleSP") %></span>
-                                        <asp:Repeater runat="server" ID="rptTinLienQuan2">
-                                        <HeaderTemplate> <div class="tin-lien-quan-2"></HeaderTemplate>
-                                            <ItemTemplate>
-                                                <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
-                                                title='<%#Eval("Title") %>'><img src="/images/news-icon-d.png" style="margin-right:5px;" /><%#Eval("Title")%></a>
-                                            </ItemTemplate>
-                                            <FooterTemplate></div></FooterTemplate>
-                                        </asp:Repeater>
-
+                                <asp:Repeater runat="server" ID="rptTinLienQuan2">
+                                    <HeaderTemplate>
+                                        <div class="tin-lien-quan-2">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                            title='<%#Eval("Title") %>'>
+                                            <img src="/images/news-icon-d.png" style="margin-right: 5px;" /><%#Eval("Title")%></a>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </div></FooterTemplate>
+                                </asp:Repeater>
                                 <div class="article-detail">
                                     <%#Eval("ArticleDetail") %>
                                 </div>
-                                
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
                     <uc7:ucTags runat="server" ID="uc7ucTag" />
                     <uc8:ucComment ID="ucComment1" runat="server" />
                     <uc4:ucNewArticles Visible="false" ID="ucNewArticles1" runat="server" />
-
-                   
-                    <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate"/>                  
+                    <u8:ucSameCateArticles runat="server" ID="uc9UcSameCate" />
                 </div>
             </div>
             <div class="body-top-right">

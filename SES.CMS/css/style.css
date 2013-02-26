@@ -233,7 +233,10 @@ ul.toplink
     margin: 1px 0px 0 3px;
     list-style: none;
     padding-right:10px;
-}
+    border-right:1px solid #ecd9b7;
+}.mid-link li:last-child
+{
+    border-right:none;}
 .dmid-link
 {
     width: 100%;
@@ -1267,6 +1270,12 @@ padding-top: 4px;
     float: left;
     margin: 0px 10px 0 0;
 }
+.createdate-articlex
+{
+    font: 500 11px /18px Arial, Helvetica, sans-serif;
+    color: #999;
+    margin: 0px 10px 0 0;
+}
 p.pBreadrumb
 {
     color: #004175;
@@ -1798,6 +1807,16 @@ background-color: rgb(224, 200, 151);
     font-size:13px;
 }
 .art-auth
+{
+    color: #000;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight:bold;
+    text-transform:uppercase;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+.art-authx
 {
     color: #000;
     font-family: Arial;
@@ -2551,7 +2570,7 @@ color:#912809;
 .category-wrap-1
 {
     display: block;
-    width: 330px;
+    width: 335px;
  
     
     padding-bottom: 10px;
@@ -2564,7 +2583,7 @@ color:#912809;
    border: 3px rgb(224, 200, 151) solid;
     margin-bottom: 10px;
     width: 315px;
-    height: 168px;
+    height: 178px;
     float:left;
 }
 .category-wrap-1 .cate-desc-box
@@ -2586,6 +2605,55 @@ color:#912809;
     margin-top:7px;
 }
 .category-wrap-1 .cate-desc-box  .readmore
+{
+    color: #B23803;
+    font-weight: bold;
+    font-size: 12px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    float: right;
+    display:none !important;
+}
+.category-wrap-1-r
+{
+    display: block;
+    width: 335px;
+ 
+    
+    padding-bottom: 10px;
+    overflow: hidden;
+    float: right;
+    position: relative;
+}
+.category-wrap-1-r .img-box
+{
+   border: 3px rgb(224, 200, 151) solid;
+    margin-bottom: 10px;
+    width: 315px;
+    height: 178px;
+    
+   float:right;
+}
+.category-wrap-1-r .cate-desc-box
+{
+    margin-right: 5px;
+}
+.category-wrap-1-r .cate-desc-box .cate-title
+{
+    font: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+    color: #912809;
+    font-size: 16px;
+    line-height:18px;
+}
+.category-wrap-1-r .cate-desc-box .cate-desc
+{
+    color: #000;
+    font-size: 13px;
+    font-family: Arial;
+    margin-top:7px;
+}
+.category-wrap-1-r .cate-desc-box  .readmore
 {
     color: #B23803;
     font-weight: bold;
@@ -2619,7 +2687,7 @@ color:#912809;
    border: 3px rgb(224, 200, 151) solid;
     margin-bottom: 10px;
     width: 315px;
-    height: 168px;
+    height: 178px;
     float:left;
 }
 .category-wrap-2 .cate-desc-box

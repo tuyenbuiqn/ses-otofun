@@ -201,6 +201,25 @@ namespace SES.CMS
                 rptTinLienQuan1.DataBind();
             }
         }
+        protected void rptSetTop_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+           
+            RepeaterItem item = e.Item;
+         
+            if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
+            {
+
+                Panel divCategory = (Panel)e.Item.FindControl("divCategory");
+                if (e.Item.ItemIndex == 0)
+                {
+                    divCategory.Attributes.Add("class", "category-wrap-1");
+                }
+                else if (e.Item.ItemIndex == 1)
+                {
+                    divCategory.Attributes.Add("class", "category-wrap-1-r");
+                }
+            }
+        }
         public string FriendlyUrl(string s)
         {
             return Ultility.Change_AVCate(s);
