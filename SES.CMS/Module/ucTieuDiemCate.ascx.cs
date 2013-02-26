@@ -25,7 +25,8 @@ namespace SES.CMS.Module
         protected void rptTieuDiemArtDataSoucre(int categoryID)
         {
 
-            rptTieuDiemArt.DataSource = new cmsArticleBL().HotEvents(categoryID);
+        //    rptTieuDiemArt.DataSource = new cmsArticleBL().HotEvents(categoryID);
+            rptTieuDiemArt.DataSource = new cmsMostReadBL().SelectByCategoryID(6, categoryID);
             rptTieuDiemArt.DataBind();
         }
     }
