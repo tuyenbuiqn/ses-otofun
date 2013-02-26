@@ -205,6 +205,7 @@
                          <li><a href="TinNoiBat.aspx">Tin nổi bật</a></li>
                          <li><a href="TopNews.aspx">Tin mới nhất</a></li>
                          <li><a href="TinSetTop.aspx">Tin set top chuyên mục</a></li>
+                         <li><a href="TinMostReadCate.aspx">Tin đọc nhiều chuyên mục</a></li>
                            <li><a href="Slides.aspx">Quản lý Slide</a></li>
                          
                     </ul>
