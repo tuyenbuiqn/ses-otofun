@@ -21,9 +21,10 @@
                             <asp:Literal runat="server" ID="lblBreadcrumb"></asp:Literal></span>
                     </h3>
                     <div class="settop-wrap">
-                    <asp:Repeater runat="server" ID="rptSetTop">
+                    <asp:Repeater runat="server" ID="rptSetTop" OnItemDataBound="rptSetTop_ItemDataBound">
                         <ItemTemplate>
-                            <div class="category-wrap-1">
+                     <asp:Panel runat="server" ID="divCategory">
+                            
                                 <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                     <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
@@ -37,7 +38,7 @@
                                     <div class="cate-desc">
                                         <%#Eval("Description")%></div>
                                 </div>
-                            </div>
+                            </asp:Panel>
                         </ItemTemplate>
                     </asp:Repeater>
                     </div>
