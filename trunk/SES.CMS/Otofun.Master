@@ -37,6 +37,7 @@
             $("#foo").carouFredSel({
                 circular: true,
                 items: { visible: 4 },
+                width: 985,
                 scroll: { duration: 2000, pauseOnHover: true },
                 next: "#slide-next",
                 prev: "#slide-prev"
@@ -46,6 +47,7 @@
             $("#foox").carouFredSel({
                 circular: true,
                 items: { visible: 4 },
+                width:645,
                 scroll: { duration: 2000, pauseOnHover: true },
                 next: "#slidex-next",
                 prev: "#slidex-prev"
