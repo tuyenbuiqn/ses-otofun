@@ -14,6 +14,7 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
             rptThongTinDoanhNghiepDataSource();
         }
         protected void rptThongTinDoanhNghiepDataSource()
@@ -30,7 +31,7 @@ namespace SES.CMS.Module
         }
         public string WordCut(string text)
         {
-            return Ultility.WordCut(text, 50, new char[] { ' ', '.', ',', ';' }) + "...";
+            return Ultility.WordCut(text,40, new char[] { ' ', '.', ',', ';' }) + "...";
         }
     }
 }
