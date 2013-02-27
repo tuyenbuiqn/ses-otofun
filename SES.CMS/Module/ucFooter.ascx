@@ -47,7 +47,7 @@
             </li>
         </ul>--%>
         <ul class="link3">
-            <li><a href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
+            <li><a href="http://www.otofun.net/forum.php" target="_blank" title="Diễn đàn otofun.net">Diễn đàn</a>
             </li>
              <asp:Repeater runat="server" ID="rptMainMenu">
                 <ItemTemplate>
@@ -59,7 +59,7 @@
             </asp:Repeater>
         </ul>
         <p class="banquyen" style="margin-bottom: 3px;">
-            Bản quyền © 2006 - 2012 OTOFUN®, bảo lưu mọi quyền. Ghi rõ nguồn "otofun.net" khi
+            Bản quyền © 2006 - 2012 OTOFUN®, bảo lưu mọi quyền. Ghi rõ nguồn "Otofun News" khi
             sử dụng thông tin từ website này.</p>
         <p class="banquyen" style="margin-left: 140px; margin-bottom: 7px;">
             Giấy phép số: 95/GXN-TTĐT do Cục QL Phát thanh, Truyền hình và Thông tin điện tử
