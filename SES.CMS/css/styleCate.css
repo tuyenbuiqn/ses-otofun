@@ -111,7 +111,7 @@ img
 .span-secure
 {
     float: left;
-    width: 80px;
+    width: 90px;
     display: block;
 }
 
@@ -121,7 +121,7 @@ img
     background: none;
     font-size: 13px;
     text-transform: none;
-    margin-left: 10px;
+    margin: 5px 5px 0 10px;
 }
 #aSendComment
 {
@@ -129,6 +129,7 @@ img
     background: none;
     font-size: 13px;
     text-transform: none;
+    margin: 5px 0 0 0;
 }
 #divListComment
 {

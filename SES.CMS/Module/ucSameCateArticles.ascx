@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucSameCateArticles.ascx.cs" Inherits="SES.CMS.Module.ucSameCateArticles" %>
-<div class="newarticle-box">
+<div class="newarticle-box"  style="margin-top:0;">
     <%--<h2>
         Bài viết cùng Danh mục</h2>
         <div class="line-article"></div>
@@ -27,13 +27,13 @@
                 <ItemTemplate>
                     <div class="promox-post fl clearfix">
                     <div class="promox-img-wrap">
-                        <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-40/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                        <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
                             title='<%#Eval("Title") %>' class="promox-post-img fl" >
                             <img src='/Media/<%#Eval("ImageUrl") %>'class="promox-img-post" alt='<%#Eval("Title") %>' />
                         </a>
                         </div>
                         <div class="promox-post-info fl">
-                           <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-40/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'  title='<%#Eval("Title") %>' class="promox-post-title">
+                           <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'  title='<%#Eval("Title") %>' class="promox-post-title">
                                 <h5>
                                     <%#Eval("Title") %></h5>
                             </a>

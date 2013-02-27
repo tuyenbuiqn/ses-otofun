@@ -1134,7 +1134,7 @@ padding-top: 4px;
 .link3
 {
     float: left;
-    margin: 20px 0px 10px 185px;
+    margin: 20px 0px 10px 160px;
 }
 .link3 li
 {
@@ -1165,7 +1165,7 @@ padding-top: 4px;
 }
 .banquyen
 {
-    width: 700px;
+    width: 800px;
     font-size: 11px;
     color: #131416;
     float: left;
@@ -1407,7 +1407,7 @@ p.pBreadrumb
 .comment-box
 {
     width: 665px;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 0px 0;
     float: left;
 }
 .comment-row
@@ -1415,6 +1415,7 @@ p.pBreadrumb
     width: 665px;
     float: left;
     line-height: 20px;
+    margin-bottom:4px;
 }
 .comment-name
 {
@@ -1462,11 +1463,12 @@ p.pBreadrumb
     border: 0px;
     width: 87px;
     overflow: hidden;
-    height: 18px;
-    background: #C50B0E;
+    background: #912809;
     border: 0px;
     cursor: pointer;
     color: #fff;
+    font-weight: BOLD;
+    padding: 3px 0;
 }
 .hotevent-box
 {
@@ -1829,7 +1831,7 @@ background-color: rgb(224, 200, 151);
     font-size: 11px;
     font-weight:bold;
     text-transform:uppercase;
-    margin-top:10px;
+    margin:5px 0 10px 0;
     float:left;
     width:100%;
 }
@@ -2742,3 +2744,23 @@ text-align: justify;
     border-top: 1px solid #E4BAA7;
     padding-top:10px;
     }
+    .div-comment
+    {
+        float:left;
+       
+        }
+           .div-comment h3
+    {
+     width: 125px;
+float: left;
+background-color: #912809;
+color: #fff;
+padding: 5px 0 3px 10px;
+font-size: 16px;
+text-transform: uppercase;
+        }
+        .comment-box-out
+        {border:1px solid #D2BF9C;
+         float:left;
+         padding-left:5px;
+            }

@@ -31,7 +31,7 @@ namespace SES.CMS.Module
 
         private void rptMainMenuDataSource()
         {
-            rptMainMenu.DataSource = new cmsCategoryBL().SelectMenu(10);
+            rptMainMenu.DataSource = new cmsCategoryBL().SelectMenu(9);
             rptMainMenu.DataBind();
         }
         public string FriendlyUrl(string s)
