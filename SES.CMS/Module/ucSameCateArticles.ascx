@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucSameCateArticles.ascx.cs" Inherits="SES.CMS.Module.ucSameCateArticles" %>
-<div class="newarticle-box"  style="margin-top:0;">
+<div class="newarticle-box"  style="margin-top:20px;">
     <%--<h2>
         Bài viết cùng Danh mục</h2>
         <div class="line-article"></div>
@@ -17,8 +17,9 @@
         <p>
             <asp:Label runat="server" ID="lblTitle"></asp:Label></p>
     </div>--%>
-    <h2>
-        Bài viết cùng Danh mục</h2>
+    <div class="Cap-bottom" style="width:235px;">
+    <span style="margin-left:10px; margin-right:0;">
+        Bài viết cùng Danh mục</span></div>
 </div>
 <div class="promox-wrapper">
     <div class="promox-list">
