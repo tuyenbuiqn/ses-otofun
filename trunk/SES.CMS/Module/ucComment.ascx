@@ -16,8 +16,10 @@
     <ContentTemplate>
         <div class="comment-box1" runat="server" id="comment">
             <h3 class="hmp-cate-maintitle">
-                <span>BÌNH LUẬN </span><a href="#aViewComment" id="aViewComment">Xem bình luận</a>
-                <a href="#divxs" id="aSendComment">Gửi bình luận</a>
+                <span>BÌNH LUẬN </span>
+                <a href="#aViewComment" id="aViewComment">Xem</a>
+                <span class="border-comment"></span>
+                <a href="#divxs" id="aSendComment">Gửi</a>
             </h3>
             <div id="divListComment">
                 <asp:Repeater ID="rptComment" runat="server" OnItemCommand="rptComment_ItemCommand"

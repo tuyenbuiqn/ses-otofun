@@ -131,6 +131,18 @@ img
     text-transform: none;
     margin: 5px 0 0 0;
 }
+.border-comment
+{
+    display: block;
+float: right;
+border-right: 1px solid #333;
+height: 14px;
+background: none !important;
+padding: 0 !important;
+width: 5px;
+margin-top: 7px;
+margin-left: 6px;
+    }
 #divListComment
 {
     display: block;
