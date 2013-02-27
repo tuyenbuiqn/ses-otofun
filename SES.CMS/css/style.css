@@ -1269,6 +1269,17 @@ padding-top: 4px;
     float: left;
     width: 250px;
 }
+.social-wrap
+{
+    width:100%;
+    float:left;
+    }
+.social-content
+{
+   position: absolute;
+right: 0;
+top: 75px;
+    }
 .createdate-article
 {
     font: 500 11px /18px Arial, Helvetica, sans-serif;
@@ -1616,7 +1627,7 @@ p.pBreadrumb
 {
     width: 670px;
     float: left;
-    
+    position:relative;
     margin: 10px 0 5px 10px;
 }
 .category-title-box

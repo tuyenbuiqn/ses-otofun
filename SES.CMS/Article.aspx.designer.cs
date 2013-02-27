@@ -31,6 +31,42 @@ namespace SES.CMS {
         protected global::System.Web.UI.WebControls.Literal lblBreadcrumb;
         
         /// <summary>
+        /// abc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl abc;
+        
+        /// <summary>
+        /// hplFacebook control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplFacebook;
+        
+        /// <summary>
+        /// hplGoogle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplGoogle;
+        
+        /// <summary>
+        /// hplTwitter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplTwitter;
+        
+        /// <summary>
         /// rptArticleDetail control.
         /// </summary>
         /// <remarks>
