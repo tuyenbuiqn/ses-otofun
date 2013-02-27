@@ -233,7 +233,7 @@ ul.toplink
     margin: 1px 0px 0 3px;
     list-style: none;
     padding-right:10px;
-    border-right:1px solid #ecd9b7;
+    
 }.mid-link li:last-child
 {
     border-right:none;}
@@ -249,11 +249,11 @@ ul.toplink
 ul.mid-link
 {
     float: left;
-    margin-left:5px;
+    margin-left:15px;
 }
 ul.mid-link li
 {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 0px;
 }
 
 .mid-link a
@@ -262,6 +262,12 @@ ul.mid-link li
     font-size: 11px;
     font-family: Arial, Helvetica, sans-serif;
     color: #ecd9b7;
+    border-right:1px solid #ecd9b7;
+     padding-right:10px;
+}
+ul.mid-link li:last-child a
+{
+    border-right:none;
 }
 .mid-link a:hover
 {
@@ -1823,8 +1829,9 @@ background-color: rgb(224, 200, 151);
     font-size: 11px;
     font-weight:bold;
     text-transform:uppercase;
-    margin-top:5px;
-    margin-bottom:10px;
+    margin-top:10px;
+    float:left;
+    width:100%;
 }
 .category-wrap-first .cate-desc-box .art-auth
 {
@@ -1870,6 +1877,7 @@ background-color: rgb(224, 200, 151);
     bottom: 5px;
 }
 /*style Thong tin doanh nghiep*/
+/*style Thong tin doanh nghiep*/
 .promo-wrapper
 {
     width: 998px;
@@ -1893,11 +1901,11 @@ background-color: rgb(224, 200, 151);
     border: 1px solid #D2BF9C;
     margin-top: 2px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 .promo-post
 {
-    width: 242px;
+    width: 245px;
     padding-left: 5px;
     margin-top: 5px;
     float: left;
@@ -1911,9 +1919,9 @@ background-color: rgb(224, 200, 151);
 .promo-img-post
 {
     width: 116px;
-    height: 72px;
+    height: 66px;
     float: left;
-    margin-right: 5px;
+    margin-right: 6px;
 }
 .promo-post-title
 {
@@ -1922,18 +1930,23 @@ background-color: rgb(224, 200, 151);
 }
 .promo-post-info
 {
-    width: 120px;
+    width: 110px;
     float: left;
+    text-align: justify;
+    margin-top: -3px;
 }
 .promo-post-info a h5
 {
     color: #B23803;
+    font-size: 11px;
 }
 .promo-post-info p
 {
     color: #000;
     margin: 2px 0 0 0;
+    font-size: 10px;
 }
+
 
 #slide-prev
 {
@@ -2588,7 +2601,9 @@ color:#912809;
 }
 .category-wrap-1 .cate-desc-box
 {
-    margin-right: 5px;
+    float:left;
+    width:320px;
+    text-align:justify;
 }
 .category-wrap-1 .cate-desc-box .cate-title
 {
@@ -2618,9 +2633,9 @@ color:#912809;
 .category-wrap-1-r
 {
     display: block;
-    width: 335px;
+    width: 334px;
  
-    
+    padding-right:1px;
     padding-bottom: 10px;
     overflow: hidden;
     float: right;
@@ -2637,7 +2652,9 @@ color:#912809;
 }
 .category-wrap-1-r .cate-desc-box
 {
-    margin-right: 5px;
+    margin-left: 15px;
+float: left;
+text-align: justify;
 }
 .category-wrap-1-r .cate-desc-box .cate-title
 {
