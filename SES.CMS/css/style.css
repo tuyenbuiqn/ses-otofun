@@ -1234,7 +1234,7 @@ padding-top: 4px;
     width: 300px;
     float: left;
     margin-left: 10px;
-    margin-top:10px;
+    margin-top:15px;
 }
 .rightAdv-box
 {
@@ -1899,16 +1899,16 @@ background-color: rgb(224, 200, 151);
     width: 990px;
     height: 85px;
     border: 1px solid #D2BF9C;
-    margin-top: 2px;
     padding-top: 15px;
     padding-bottom: 5px;
 }
 .promo-post
 {
-    width: 245px;
+    width: 240px;
     padding-left: 5px;
     margin-top: 5px;
     float: left;
+    margin-left:5px;
 }
 .promo-post-img
 {
@@ -1932,7 +1932,6 @@ background-color: rgb(224, 200, 151);
 {
     width: 110px;
     float: left;
-    text-align: justify;
     margin-top: -3px;
 }
 .promo-post-info a h5
@@ -2009,6 +2008,7 @@ background-color: rgb(224, 200, 151);
     height: 250px;
     float: left;
     margin-bottom: 1px;
+    margin-top:3px;
 }
 .adv-homepage-right img
 {
@@ -2492,7 +2492,7 @@ color:#912809;
 }
 .promox-post
 {
-    width: 163px;
+    width: 165px;
    padding:0 1px;
     margin-top: 5px;
     float: left;
@@ -2542,18 +2542,18 @@ color:#912809;
     display: block;
     position: absolute;
     bottom: 87px;
-    left: -2px;
+    left: 0px;
     z-index: 9999;
 }
 .slide-seperate
 {
     border-left: 1px dotted #000000;
-    width: 1px;
-    height: 13px;
-    line-height: 13px;
-    position: absolute;
-    top: 6px;
-    right: 33px;
+width: 1px;
+height: 13px;
+line-height: 13px;
+position: absolute;
+top: 3px;
+right: 35px;
 }
 #slidex-next
 {
@@ -2565,7 +2565,7 @@ color:#912809;
     display: block;
     position: absolute;
     bottom: 87px;
-    right: 0;
+    right: -1px;
     z-index: 9999;
 }
 #slidex-prev span, #slidex-next span

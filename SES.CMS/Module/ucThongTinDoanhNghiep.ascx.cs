@@ -31,7 +31,7 @@ namespace SES.CMS.Module
         }
         public string WordCut(string text)
         {
-            return Ultility.WordCut(text,40, new char[] { ' ', '.', ',', ';' }) + "...";
+            return Ultility.WordCut(text,40, new char[] { ' ', '.', ',', ';' }) + "";
         }
     }
 }
