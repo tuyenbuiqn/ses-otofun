@@ -19,6 +19,13 @@ namespace SES.CMS.Module
                 int articleID = int.Parse(Request.QueryString["ArticleID"]);
                 if (!IsPostBack)
                 {
+                    string CurrentUrl = "http://" + Request.Url.Host + Request.RawUrl;
+                    hplFacebook.NavigateUrl = hplFacebook.NavigateUrl + CurrentUrl;
+                    hplGoogle.NavigateUrl = hplGoogle.NavigateUrl + CurrentUrl;
+                    hplTwitter.NavigateUrl = hplTwitter.NavigateUrl + CurrentUrl;
+
+                    //abc.Attributes.Add("src", "//www.facebook.com/plugins/like.php?href=" + CurrentUrl + "&send=false&layout=button_count&width=450&show_faces=false&action=like&colorscheme=light&font&height=21&appId=379138395463852");
+                    abc.Attributes.Add("src", "//www.facebook.com/plugins/like.php?href=" + CurrentUrl + "&send=false&layout=button_count&width=450&show_faces=false&action=like&colorscheme=light&font&height=21&appId=379138395463852");
                     if (dtTag(articleID).Rows.Count > 0)
                     {
                         rptTag.DataSource = dtTag(articleID);
