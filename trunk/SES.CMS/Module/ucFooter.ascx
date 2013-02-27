@@ -57,6 +57,8 @@
                         <%#Eval("Title") %></a></li>
                 </ItemTemplate>
             </asp:Repeater>
+            <li><a target="_blank" href="http://www.otofun.net/forums/12-thong-tin-thi-truong-rao-vat" title="Rao vặt">Rao vặt</a>
+            </li>
         </ul>
         <p class="banquyen" style="margin-bottom: 3px;">
             Bản quyền © 2006 - 2012 OTOFUN®, bảo lưu mọi quyền. Ghi rõ nguồn "Otofun News" khi

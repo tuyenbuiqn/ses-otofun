@@ -31,13 +31,13 @@
                                     <h1 class="article-title">
                                         <%#Eval("Title") %>
                                     </h1>
-                                </div>
-                                <span class="createdate-article">
-                                    <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
-                                <div class="art-authx">
+                                </div> <div class="art-authx">
                                    
                                         <img src="/images/news-icon-d.png" style="margin-right: 3px;" alt="">
                                         <%#CheckAuth(Eval("Author").ToString())%></div>
+                                <span class="createdate-article">
+                                    <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
+                               
                                 <span class="article-desciption">
                                     <%#Eval("ArticleSP") %></span>
                                 <asp:Repeater runat="server" ID="rptTinLienQuan2">

@@ -17,7 +17,7 @@
         <div class="comment-box1" runat="server" id="comment">
             <h3 class="hmp-cate-maintitle">
                 <span>BÌNH LUẬN </span><a href="#aViewComment" id="aViewComment">Xem bình luận</a>
-                 <a href="#divxs" id="aSendComment">Gửi bình luận</a>
+                <a href="#divxs" id="aSendComment">Gửi bình luận</a>
             </h3>
             <div id="divListComment">
                 <asp:Repeater ID="rptComment" runat="server" OnItemCommand="rptComment_ItemCommand"
@@ -91,10 +91,11 @@
                 </asp:Repeater>
             </div>
         </div>
-        <div class="newarticle-box" >
-            <h2>
-                Gửi phản hồi</h2>
-            <div class="line-article">
+        <div class="div-comment">
+            <h3>
+                Gửi phản hồi</h3>
+
+            <div class="comment-box-out">
                 <div class="comment-box">
                     <div runat="server" id="divx">
                     </div>
@@ -118,28 +119,40 @@
                             ForeColor="Red" ControlToValidate="txtContent" ValidationGroup="comment"></asp:RequiredFieldValidator>
                     </div>
                     <div class="comment-row">
-                        <span class="span-secure">
-                            <asp:TextBox runat="server" ID="txtSecCode" Width="70px" CssClass="comment-email"
-                                placeholder="Mã bảo mật"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"
-                                ForeColor="Red" ControlToValidate="txtSecCode" ValidationGroup="comment"></asp:RequiredFieldValidator></span>
-                        </span>
-                        <div style="width: 130px; float: left; margin: 0 0 0 5px;">
-                            <Captcha:CaptchaControl class="CapCha" ID="ccJoin" runat="server" validateIntegratedModeConfiguration="false"
-                                CaptchaHeight="31" CaptchaWidth="130" CaptchaBackgroundNoise="None" CaptchaLineNoise="None"
-                                BackColor="#ecd9b8" CaptchaLength="5" Width="130px" />
+                        <div style="float: left; width: 200px;">
+                            <span class="span-secure">
+                                <asp:TextBox runat="server" ID="txtSecCode" Width="80px" CssClass="comment-email"
+                                    placeholder="Mã bảo mật"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"
+                                    ForeColor="Red" ControlToValidate="txtSecCode" ValidationGroup="comment"></asp:RequiredFieldValidator></span>
+                            </span>
+                            <div style="width: 100px; float: left; margin: -5px 0 0 0;">
+                                <Captcha:CaptchaControl class="CapCha" ID="ccJoin" runat="server" validateIntegratedModeConfiguration="false"
+                                    CaptchaHeight="31" CaptchaWidth="100" CaptchaBackgroundNoise="None" CaptchaLineNoise="None"
+                                    BackColor="#ecd9b8" CaptchaLength="5" Width="100px" ForeColor="Red" Font-Size="Medium" />
+                            </div>
+                        </div>
+                        <div style="float: right; width: 198px;">
+                            <asp:Button runat="server" Text="Gửi đi" ID="btnSend" CssClass="comment-button" ValidationGroup="comment"
+                                OnClick="btnSend_Click" />
+                            <asp:Button runat="server" Text="Nhập lại" ID="btnReset" CausesValidation="false"
+                                CssClass="comment-button" OnClick="btnReset_Click" />
                         </div>
                     </div>
-                    <div class="comment-row">
-                        <asp:Button runat="server" Text="Gửi thông tin" ID="btnSend" CssClass="comment-button"
-                            ValidationGroup="comment" OnClick="btnSend_Click" />
-                        <asp:Button runat="server" Text="Làm lại" ID="btnReset" CssClass="comment-button"
-                            OnClick="btnReset_Click" />
+                    <%--  <div class="comment-row">
+                       
                     </div>
                     <div id="xxx">
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
+        <%--  <div class="newarticle-box">
+            <h2>
+                Gửi phản hồi</h2>
+            <div class="line-article">
+              
+            </div>
+        </div>--%>
     </ContentTemplate>
 </asp:UpdatePanel>
