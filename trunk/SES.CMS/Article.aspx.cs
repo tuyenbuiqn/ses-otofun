@@ -30,7 +30,7 @@ namespace SES.CMS
                     hplTwitter.NavigateUrl = hplTwitter.NavigateUrl + CurrentUrl;
 
                     //abc.Attributes.Add("src", "//www.facebook.com/plugins/like.php?href=" + CurrentUrl + "&send=false&layout=button_count&width=450&show_faces=false&action=like&colorscheme=light&font&height=21&appId=379138395463852");
-                    abc.Attributes.Add("src", "//www.facebook.com/plugins/like.php?href=" + "http://www.facebook.com/kma.vn" + "&send=false&layout=button_count&width=450&show_faces=false&action=like&colorscheme=light&font&height=21&appId=379138395463852");
+                    abc.Attributes.Add("src", "//www.facebook.com/plugins/like.php?href=" + CurrentUrl + "&send=false&layout=button_count&width=450&show_faces=false&action=like&colorscheme=light&font&height=21&appId=379138395463852");
                     if (Session["artIpAddress"] == null)
                     {
                         UpdateLuotView(articleID);

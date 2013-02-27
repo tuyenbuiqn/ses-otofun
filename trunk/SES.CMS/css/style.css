@@ -1277,8 +1277,14 @@ padding-top: 4px;
 .social-content
 {
    position: absolute;
-right: 0;
+right: 2px;
 top: 75px;
+    }
+    .social-content-tag
+{
+  position: absolute;
+right: 0;
+top: 1px
     }
 .createdate-article
 {
@@ -1673,6 +1679,7 @@ margin: 10px 0;
 padding:10px 0 5px 0;
 border-bottom: 1px solid rgb(216, 187, 171);
 border-top: 1px solid rgb(216, 187, 171);
+position:relative;
 }
 .tag-ul
 {
