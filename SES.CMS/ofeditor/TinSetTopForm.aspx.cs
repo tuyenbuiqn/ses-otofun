@@ -36,7 +36,16 @@ namespace SES.CMS.ofeditor
                 DateTime dateToSelect = new DateTime(2012, 12, 12);
                 if (Session["CateSetTop"] != null)
                 {
-                    rptListArticles.DataSource = new cmsArticleBL().SelectTop20NewArticlesAndCate(dateToSelect,int.Parse(Session["CateSetTop"].ToString()));
+                    if (int.Parse(Session["CateSetTop"].ToString()) != 40)
+                    {
+                        trDN.Visible = false;
+                        rptListArticles.DataSource = new cmsArticleBL().SelectTop20NewArticlesAndCate(dateToSelect, int.Parse(Session["CateSetTop"].ToString()));
+                    }
+                    else
+                    {
+                        trDN.Visible = true;
+                        rptListArticles.DataSource = new cmsArticleBL().SelectTop20NewArticles(dateToSelect);
+                    }
                     rptListArticles.DataBind();
                 }
             }
