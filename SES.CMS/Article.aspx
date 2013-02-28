@@ -12,6 +12,15 @@
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
 <%@ Register Src="Module/ucComment.ascx" TagName="ucComment" TagPrefix="uc8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+		<script type="text/javascript" src="/js/ui.core-1.7.2.js"></script>
+		<script type="text/javascript" src="/js/ui.draggable-1.7.2.js"></script>
+		<script type="text/javascript" src="/js/jquery.mousewheel.min.js"></script>
+		<script type="text/javascript" src="/js/plugin.scrollbar.js"></script>
+		<script type="text/javascript">
+		    $(document).ready(function () {
+		        $("#divListComment").scrollbar();
+		    });
+		</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="body-top">

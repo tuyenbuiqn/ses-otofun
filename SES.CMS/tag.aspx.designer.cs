@@ -22,22 +22,13 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucTopAdvertisment uc1TopAdv;
         
         /// <summary>
-        /// lblBreadcrumb control.
+        /// ltrKey control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBreadcrumb;
-        
-        /// <summary>
-        /// ltrDatetime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrDatetime;
+        protected global::System.Web.UI.WebControls.Literal ltrKey;
         
         /// <summary>
         /// rptTag control.
@@ -85,13 +76,22 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucTopContactInfo uc13UcTopContactInfo;
         
         /// <summary>
-        /// uc5TieuDiem control.
+        /// uc7ucMostRead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SES.CMS.Module.ucTieuDiem uc5TieuDiem;
+        protected global::SES.CMS.Module.ucMostRead uc7ucMostRead;
+        
+        /// <summary>
+        /// uc11ucRightCatAdv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SES.CMS.Module.ucRightCatAdv uc11ucRightCatAdv;
         
         /// <summary>
         /// ucLeftAdv1 control.

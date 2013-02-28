@@ -5,8 +5,8 @@
 </style>
 <div class="Cap-bottom-box">
 
-    <div class="Cap-bottom">
-        <asp:Label runat="server" ID="lblTitle"></asp:Label>
+    <div class="Cap-bottom"><a href="/Thong-tin-doanh-nghiep-40.otofun">
+        <asp:Label runat="server" ID="lblTitle"></asp:Label></a>
     </div>
 </div>
 <div class="promo-wrapper">

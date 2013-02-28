@@ -7,8 +7,10 @@
 <%@ Register Src="Module/ucTieuDiem.ascx" TagName="ucTieuDiem" TagPrefix="uc5" %>
 <%@ Register Src="Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc6" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
+<%@ Register Src="/Module/ucRightCatAdv.ascx" TagName="ucRightHomeCat" TagPrefix="uc11" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/styleCate.css" rel="stylesheet" type="text/css" />
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="body-top">
@@ -87,6 +89,7 @@
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
                 <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
                 <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
+                <uc11:ucRightHomeCat runat="server" ID="uc11ucRightHomeCat" />
             </div>
         </div>
     </div>

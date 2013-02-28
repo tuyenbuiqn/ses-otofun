@@ -145,10 +145,9 @@ margin-left: 6px;
     }
 #divListComment
 {
-    display: block;
-float: left;
-height: 400px;
-overflow-y: scroll;
+width:650px;
+margin:0 auto;
+height:350px;
     }
 .settop-wrap
 {
