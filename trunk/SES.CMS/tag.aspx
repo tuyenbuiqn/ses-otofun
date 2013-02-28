@@ -6,7 +6,9 @@
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
 <%@ Register Src="Module/ucTieuDiem.ascx" TagName="ucTieuDiem" TagPrefix="uc5" %>
 <%@ Register Src="Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc6" %>
+<%@ Register Src="/Module/ucMostRead.ascx" TagName="ucMostRead" TagPrefix="uc7" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
+<%@ Register Src="/Module/ucRightCatAdv.ascx" TagName="ucRightCatAdv" TagPrefix="uc11" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -16,10 +18,11 @@
                 <uc6:ucTopAdvertisment runat="server" ID="uc1TopAdv" />
                 <div class="category-box">
                     <div class="category-title-box">
-                        <h2 class="category-title">
-                            <asp:Label runat="server" ID="lblBreadcrumb"></asp:Label>Tag</h2>
-                        <span class="category-title-time">
-                            <asp:Literal runat="server" ID="ltrDatetime"></asp:Literal></span>
+                         <h3 class="hmp-cate-maintitle">
+                        <span><a class="rootcat">Từ khóa</a> » <asp:Literal ID="ltrKey" runat="server"></asp:Literal></span>
+                            
+                    </h3>
+                        
                     </div>
                     <asp:Repeater runat="server" ID="rptTag" OnItemDataBound="rptTag_ItemDataBound">
                         <ItemTemplate>
@@ -31,10 +34,22 @@
                                         <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                             <%#Eval("Title") %></a>
                                     </h2>
+                                    <div class="art-auth">
+                                        <img src="/images/news-icon-d.png" style="margin-right: 3px;" />
+                                        <%#CheckAuth(Eval("Author").ToString())%></div>
                                     <div class="cate-desc">
-                                        <%#WordCut(Eval("Description").ToString()) %></div>
-                                    <a class="readmore" title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
-                                        Xem tiếp</a>
+                                        <%#Eval("Description").ToString() %></div>
+                                     <div class="tin-lien-quan1" style="width: auto; float: none;">
+                                        <asp:Repeater runat="server" ID="rptTinLienQuan1">
+                                            <ItemTemplate>
+                                                <span class="tin-lien-quan-1a tin-lien-quan-1-category">
+                                                    <img src="/images/news-icon-d.png" />
+                                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                                        title='<%#Eval("Title") %>'>
+                                                        <%#Eval("Title")%></a> </span>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </div>
                             </asp:Panel>
                             </div>
                         </ItemTemplate>
@@ -63,9 +78,17 @@
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
-                <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
+                <div class="adv-top-homepage-box" style="margin-top:12px;">
+                    <div class="adv-homepage-right">
+                        <img src="/Ads/audi-rs6-06300x250.jpg" height="250" width="300">
+                    </div>
+                 
+                </div>
+                <uc7:ucmostread runat="server" ID="uc7ucMostRead" />
+                <uc11:ucRightCatAdv runat="server" ID="uc11ucRightCatAdv" />
                 <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
             </div>
         </div>
     </div>
+                        
 </asp:Content>

@@ -6,7 +6,9 @@
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
 <%@ Register Src="Module/ucTieuDiem.ascx" TagName="ucTieuDiem" TagPrefix="uc5" %>
 <%@ Register Src="Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc6" %>
+<%@ Register Src="/Module/ucRightCatAdv.ascx" TagName="ucRightCatAdv" TagPrefix="uc11" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
+<%@ Register Src="/Module/ucMostRead.ascx" TagName="ucMostRead" TagPrefix="uc7" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -16,11 +18,11 @@
                 <uc6:ucTopAdvertisment runat="server" ID="uc1TopAdv" />
                 <div class="category-box">
                     <div class="category-title-box">
-                        <h2 class="category-title">
-                            <a href="/Event.aspx" title="event">Event</a>
-                        </h2>
-                        <span class="category-title-time">
-                            <asp:Literal runat="server" ID="ltrDatetime"></asp:Literal></span>
+                        <h3 class="hmp-cate-maintitle">
+                        <span>DÒNG SỰ KIỆN <asp:Literal ID="ltrKey" runat="server"></asp:Literal></span>
+                            
+                    </h3>
+                       
                     </div>
                     <div runat="server" id="divEvent">
                         <div class="list-event">
@@ -86,7 +88,14 @@
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
-                <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
+                 <div class="adv-top-homepage-box" style="margin-top:12px;">
+                    <div class="adv-homepage-right">
+                        <img src="/Ads/audi-rs6-06300x250.jpg" height="250" width="300">
+                    </div>
+                 
+                </div>
+                 <uc7:ucmostread runat="server" ID="uc7ucMostRead" />
+                 <uc11:ucRightCatAdv runat="server" ID="uc11ucRightCatAdv" />
                 <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
             </div>
         </div>

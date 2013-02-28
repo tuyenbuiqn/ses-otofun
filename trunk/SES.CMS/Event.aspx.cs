@@ -35,7 +35,7 @@ namespace SES.CMS
         protected void loadTime()
         {
             DateTime dateTime = DateTime.Now;
-            ltrDatetime.Text = Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
+           // ltrDatetime.Text = Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + " tháng " + dateTime.Month + " năm " + dateTime.Year;
         }
         protected void BuildEvent()
         {
@@ -71,7 +71,7 @@ namespace SES.CMS
                 Panel divCategory = (Panel)e.Item.FindControl("divCategory");
                 if (e.Item.ItemIndex == 0)
                 {
-                    divCategory.Attributes.Add("class", "category-wrap");
+                    divCategory.Attributes.Add("class", "category-wrap-first");
                 }
                 else
                 {
