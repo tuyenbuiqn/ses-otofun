@@ -62,7 +62,7 @@
                                         <div class="tin-lien-quan-2">
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                        <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                        <a class="tin-lien-quan-2a" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                             title='<%#Eval("Title") %>'>
                                             <img src="/images/news-icon-d.png" style="margin-right: 5px;" /><%#Eval("Title")%></a>
                                     </ItemTemplate>
