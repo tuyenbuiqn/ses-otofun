@@ -968,7 +968,13 @@ namespace SES.CMS.ofeditor
                 grvListArticle.Columns[7].Visible = false;
                 grvListArticle.Columns[8].Visible = false;
 
-                if (UserType >= 1)
+                if (UserType == 1)
+                {
+                    grvListArticle.Columns[10].Visible = false;
+                    grvListArticle.Columns[11].Visible = true;
+                    grvListArticle.Columns[9].Visible = true;
+                }
+                else  if (UserType == 2)
                 {
                     grvListArticle.Columns[10].Visible = true;
                     grvListArticle.Columns[11].Visible = true;
@@ -1005,6 +1011,7 @@ namespace SES.CMS.ofeditor
                 // Quyền Thư ký -> có thể sửa
                 if (UserType == 2)
                 {
+                    grvListArticle.Columns[5].Visible = false;
                     grvListArticle.Columns[6].Visible = false;
                     grvListArticle.Columns[9].Visible = true;
                     grvListArticle.Columns[11].Visible = true;
@@ -1021,7 +1028,10 @@ namespace SES.CMS.ofeditor
                     grvListArticle.Columns[9].Visible = false;
                 }
                 else
+                {
+                    grvListArticle.Columns[5].Visible = false;
                     grvListArticle.Columns[9].Visible = false;
+                }
             }
         }
         cmsArticleDO objArt = new cmsArticleDO();
