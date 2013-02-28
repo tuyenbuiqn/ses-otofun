@@ -166,24 +166,6 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.LinkButton lnkSearch;
         
         /// <summary>
-        /// pnlTitle01 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlTitle01;
-        
-        /// <summary>
-        /// rptListArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptListArticles;
-        
-        /// <summary>
         /// pnlTitle02 control.
         /// </summary>
         /// <remarks>
@@ -200,5 +182,23 @@ namespace SES.CMS.ofeditor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptListArticlesSelect;
+        
+        /// <summary>
+        /// pnlTitle01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlTitle01;
+        
+        /// <summary>
+        /// rptListArticles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptListArticles;
     }
 }

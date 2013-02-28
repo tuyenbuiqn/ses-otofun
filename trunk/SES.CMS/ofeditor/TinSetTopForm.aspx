@@ -195,6 +195,45 @@
                         </tr>
                     </table>
                 </div>
+                    <div id="ArticlesSelect">
+                <div id="ListArticlesSelect">
+                    <asp:Panel ID="pnlTitle02" runat="server">
+                        <p class="Title">
+                            Danh sách tin đã chọn</p>
+                    </asp:Panel>
+                    <asp:Repeater ID="rptListArticlesSelect" runat="server" OnItemDataBound="rptListArticlesSelect_ItemDataBound"
+                        OnItemCommand="rptListArticlesSelect_ItemCommand">
+                        <HeaderTemplate>
+                            <table>
+                                <tr>
+                                    <th>
+                                        Tên bài viết
+                                    </th>
+                                    <th style="width: 45px;">
+                                        Action
+                                    </th>
+                                </tr>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblArticleSelect" runat="server" Text=""></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:LinkButton ID="lnkDelete" ToolTip="Xóa" runat="server">
+                                    <img alt="Delete" src="/images/action_delete.png"border="0" style="width: 16px; height: 16px;" />
+                                    </asp:LinkButton>
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </table>
+                        </FooterTemplate>
+                    </asp:Repeater>
+                </div>
+                <input type='button' class="inputButtom" style="margin-bottom: 10px;" name='button'
+                    value='HOÀN THÀNH' onclick="returnToParent2(); return false;" />
+            </div>
                 <div id="ListArticles">
                     <asp:Panel ID="pnlTitle01" runat="server">
                         <p class="Title">
@@ -249,45 +288,8 @@
                     </asp:Repeater>
                 </div>
             </div>
-            <div id="ArticlesSelect">
-                <div id="ListArticlesSelect">
-                    <asp:Panel ID="pnlTitle02" runat="server">
-                        <p class="Title">
-                            Danh sách tin đã chọn</p>
-                    </asp:Panel>
-                    <asp:Repeater ID="rptListArticlesSelect" runat="server" OnItemDataBound="rptListArticlesSelect_ItemDataBound"
-                        OnItemCommand="rptListArticlesSelect_ItemCommand">
-                        <HeaderTemplate>
-                            <table>
-                                <tr>
-                                    <th>
-                                        Tên bài viết
-                                    </th>
-                                    <th style="width: 45px;">
-                                        Action
-                                    </th>
-                                </tr>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <tr>
-                                <td>
-                                    <asp:Label ID="lblArticleSelect" runat="server" Text=""></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:LinkButton ID="lnkDelete" ToolTip="Xóa" runat="server">
-                                    <img alt="Delete" src="/images/action_delete.png"border="0" style="width: 16px; height: 16px;" />
-                                    </asp:LinkButton>
-                                </td>
-                            </tr>
-                        </ItemTemplate>
-                        <FooterTemplate>
-                            </table>
-                        </FooterTemplate>
-                    </asp:Repeater>
-                </div>
-                <input type='button' class="inputButtom" style="margin-bottom: 10px;" name='button'
-                    value='HOÀN THÀNH' onclick="returnToParent2(); return false;" />
-            </div>
+
+        
         </div>
     </fieldset>
     </form>
