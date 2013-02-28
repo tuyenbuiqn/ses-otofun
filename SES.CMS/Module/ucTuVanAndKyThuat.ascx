@@ -8,7 +8,7 @@
     <ul class="hoidap">
         <asp:Repeater runat="server" ID="rptTuVanKyThuat">
             <ItemTemplate>
-                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-19/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-19/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                     title='<%#Eval("Title") %>'>
                     <%#Eval("Title") %>
                 </a></li>

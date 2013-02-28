@@ -52,7 +52,7 @@
              <asp:Repeater runat="server" ID="rptMainMenu">
                 <ItemTemplate>
                     <li>
-                    <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
+                    <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.ofn'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a></li>
                 </ItemTemplate>

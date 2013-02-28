@@ -5,7 +5,7 @@
 <ul class="mid-link">
     </HeaderTemplate>
         <ItemTemplate>
-           <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
+           <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.ofn'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a></li>
         </ItemTemplate>

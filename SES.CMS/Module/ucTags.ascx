@@ -6,7 +6,7 @@
                 <li>Tags: </li>
             </HeaderTemplate>
             <ItemTemplate>
-                <li class="litag"><a href='/tag/otofun-<%#Eval("Tag") %>.otofun' title='<%#Eval("Tag") %>'>
+                <li class="litag"><a href='/tag/otofun-<%#Eval("Tag") %>.ofn' title='<%#Eval("Tag") %>'>
                     <%#Eval("Tag") %></a> </li>
             </ItemTemplate>
         </asp:Repeater>
