@@ -351,7 +351,7 @@
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
-                    Chuyên đề
+                    Dòng sự kiện
                 </label>
                 <asp:DropDownList CssClass="dropdown" runat="server" ID="ddlEvent" AppendDataBoundItems="true"
                     Height="20px" Width="342px">
@@ -404,7 +404,7 @@
             </div>
             <div class="fieldsetdiv">
                 <label for="lf">
-                    Sha-po
+                    Sa-pô
                 </label>
                 <div style="float: left;">
                     <asp:TextBox onkeyup="return checkMaxLen(this,160)" ID="txtArticleSP" TextMode="MultiLine"
@@ -607,13 +607,13 @@
                         </asp:TemplateField>
                         <asp:BoundField DataField="Username" HeaderText="User tác động" ItemStyle-Width="15%"
                             ItemStyle-HorizontalAlign="Center" />
-                        <asp:TemplateField HeaderText="Thời gian" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
+                        <asp:TemplateField HeaderText="Thời gian" ItemStyle-Width="20%" ItemStyle-HorizontalAlign="Center">
                             <ItemTemplate>
                                 <asp:Label runat="server" ID="lblHistoryTime" Text='<%# (bool)(Eval("HistoryTime")==null)==true?"":Eval("HistoryTime","{0:dd/MM/yyyy hh:mm}") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="IP" HeaderText="IP" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="15%" />
-                        <asp:BoundField DataField="Contents" HeaderText="Nội dung" ItemStyle-HorizontalAlign="Left"
+                        <asp:BoundField Visible="false" DataField="Contents" HeaderText="Nội dung" ItemStyle-HorizontalAlign="Left"
                             ItemStyle-Width="45%" />
                     </Columns>
                 </asp:GridView>

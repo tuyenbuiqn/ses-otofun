@@ -12,6 +12,7 @@
                 <asp:DropDownList runat="server" ID="ddlDongSuKien" AppendDataBoundItems="true" 
                     AutoPostBack="true" onselectedindexchanged="ddlDongSuKien_SelectedIndexChanged">
                     <asp:ListItem Text=".: Chọn tất cả :." Value="0"></asp:ListItem>
+                    <asp:ListItem Text="Trang chủ" Value="8"></asp:ListItem>
                 </asp:DropDownList>
             </p>
         <asp:GridView ID="grvEvent" DataKeyNames="EventID" runat="server" AutoGenerateColumns="False"
@@ -19,11 +20,11 @@
             PageSize="100" Width="100%" PagerStyle-CssClass="pgr" OnPageIndexChanged="grvEvent_PageIndexChanged"
             OnPageIndexChanging="grvEvent_PageIndexChanging">
             <Columns>
-                <asp:BoundField DataField="EventID" HeaderText="EventID" ReadOnly="True" />
+                <asp:BoundField DataField="EventID" HeaderText="EventID" ReadOnly="True" Visible="false" />
                 <asp:BoundField DataField="Title" HeaderText="Tiêu đề" />
                 <asp:BoundField DataField="CategoryTitle" HeaderText="Danh mục" />
                 <asp:CheckBoxField DataField="IsPublish" HeaderText="Hiển thị" />
-                <asp:TemplateField>
+                <asp:TemplateField HeaderText="Thao tác">
                     <ItemTemplate>
                         <asp:ImageButton ID="btEdit" runat="server" CommandName="Select" ImageUrl="~/AdminCP/images/edit_16x16.gif" />
                         <asp:ImageButton ID="btDelete" runat="server" CommandArgument='<%#Eval("EventID") %>'

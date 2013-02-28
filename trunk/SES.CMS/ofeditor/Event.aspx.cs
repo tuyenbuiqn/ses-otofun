@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SES.CMS.BL;
 using SES.CMS.DO;
+using System.Data;
 
 namespace SES.CMS.ofeditor
 {
@@ -23,11 +24,14 @@ namespace SES.CMS.ofeditor
                 int userType = int.Parse(Session["UserType"].ToString());
                 if (userType == 2)
                 {
-                    Functions.DevCboDatabinder(cboParent, new cmsCategoryBL().SelectAll(), cmsCategoryDO.TITLE_FIELD, cmsCategoryDO.CATEGORYID_FIELD);
+                    //  Functions.DevCboDatabinder(cboParent, new cmsCategoryBL().SelectAll(), cmsCategoryDO.TITLE_FIELD, cmsCategoryDO.CATEGORYID_FIELD);
+                    if (!IsPostBack)
+                        Ultility.ddlDatabinder(ddlMostRead, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new DataView(new cmsCategoryBL().SelectAll(), " ParentID = 0 AND CategoryID <> 8", "", DataViewRowState.CurrentRows));
                     if (Request.QueryString["EventID"] != null)
                     {
                         objEvent.EventID = int.Parse(Request.QueryString["EventID"].ToString());
-                        initForm();
+                        if (!IsPostBack)
+                            initForm();
                     }
                 }
             }
@@ -40,7 +44,8 @@ namespace SES.CMS.ofeditor
             chkIsPublish.Checked = objEvent.IsPublish;
             try
             {
-                cboParent.Value = objEvent.CategoryID.ToString();
+                //  cboParent.Value = objEvent.CategoryID.ToString();
+                ddlMostRead.SelectedValue = objEvent.CategoryID.ToString();
 
                 txtOrderID.Text = objEvent.OrderID.ToString();
             }
@@ -50,7 +55,7 @@ namespace SES.CMS.ofeditor
         protected void btnSave_Click(object sender, EventArgs e)
         {
             initObject();
-            if (objEvent.CategoryID <= 0)
+            if (objEvent.EventID <= 0)
             {
                 objEvent.CreateDate = DateTime.Now;
                 objEvent.UserCreate = int.Parse(Session["UserID"].ToString());
@@ -73,7 +78,8 @@ namespace SES.CMS.ofeditor
 
             objEvent.OrderID = int.Parse(txtOrderID.Text);
 
-            objEvent.CategoryID = int.Parse(cboParent.Value.ToString());
+            //   objEvent.CategoryID = int.Parse(cboParent.Value.ToString());
+            objEvent.CategoryID = int.Parse(ddlMostRead.SelectedValue);
         }
     }
 }

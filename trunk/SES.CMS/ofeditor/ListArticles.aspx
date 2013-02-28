@@ -151,9 +151,9 @@
                             <asp:Label runat="server" ID="lblCreateDate3" Text='<%# (bool)(Eval("ThoiGianGuiXuatBan")==null)==true?"":Eval("ThoiGianGuiXuatBan","{0:dd/MM/yyyy}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                     <asp:TemplateField HeaderText="Ngày xuất bản" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
+                     <asp:TemplateField HeaderText="Ngày giờ" ItemStyle-Width="15%"  ItemStyle-HorizontalAlign="Center" >
                         <ItemTemplate>
-                            <asp:Label runat="server" ID="lblCreateDate4" Text='<%# (bool)(Eval("ThoiGianXuatBan")==null)==true?"":Eval("ThoiGianXuatBan","{0:dd/MM/yyyy}") %>'></asp:Label>
+                            <asp:Label runat="server" ID="lblCreateDate4" Text='<%# (bool)(Eval("ThoiGianXuatBan")==null)==true?"":Eval("ThoiGianXuatBan","{0:dd/MM/yyyy hh:mm}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                      <asp:BoundField DataField="LuotView" HeaderText="Lượt view" ItemStyle-HorizontalAlign="Left"

@@ -307,7 +307,8 @@ namespace SES.CMS.ofeditor
             else
             {
                 // Lưu thì có giữ lock edit ko ????????????????????????????????????????
-
+                if (objArt.TrangThai == 3)
+                    objArt.ThoiGianXuatBan = DateTime.Now;
                 new cmsArticleBL().Update(objArt);
                 objHistory.ArticleID = objArt.ArticleID;
                 objHistory.Action = 2;//Sửa bài viết
