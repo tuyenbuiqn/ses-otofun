@@ -24,7 +24,7 @@ namespace SES.CMS.ofeditor
                 int userType = int.Parse(Session["UserType"].ToString());
                 if (userType == 2)
                 {
-                    Ultility.ddlDatabinder(ddlMostRead, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new cmsCategoryBL().SelectAll());
+                    Ultility.ddlDatabinder(ddlMostRead, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD,new DataView( new cmsCategoryBL().SelectAll()," ParentID = 0","",DataViewRowState.CurrentRows));
                     if (!string.IsNullOrEmpty(Request.QueryString["CategoryID"]))
                     {
                         int categoryID = int.Parse(Request.QueryString["CategoryID"]);
