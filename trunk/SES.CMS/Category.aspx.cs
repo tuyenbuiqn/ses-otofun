@@ -51,7 +51,7 @@ namespace SES.CMS
             cmsCategoryDO objCate = new cmsCategoryDO();
             objCate.CategoryID = categoryID;
             objCate = new cmsCategoryBL().Select(objCate);
-            string rootUrl = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
+            string rootUrl = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".ofn' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
             if (objCate.ParentID == 0)
             {
                 lblBreadcrumb.Text = rootUrl;
@@ -62,7 +62,7 @@ namespace SES.CMS
                 objCate.CategoryID = objCate.ParentID;
                 objCate = new cmsCategoryBL().Select(objCate);
 
-                lblBreadcrumb.Text = "<a class='rootcat' href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
+                lblBreadcrumb.Text = "<a class='rootcat' href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".ofn' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
             }
         }
         protected void BuildEvent(int categoryID)
@@ -112,13 +112,13 @@ namespace SES.CMS
 
             int PageSize = 12;
 
-            hplNextPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID + 1).ToString() + ".otofun";
+            hplNextPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID + 1).ToString() + ".ofn";
             if (PageID > 0)
             {
                 if (PageID > 1)
-                    hplPrevPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID - 1).ToString() + ".otofun";
+                    hplPrevPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID - 1).ToString() + ".ofn";
                 else
-                    hplPrevPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + ".otofun";
+                    hplPrevPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + ".ofn";
 
             }
             else
@@ -249,7 +249,7 @@ namespace SES.CMS
         public string ReturnCateID()
         {
             string url = Request.Url.AbsolutePath;
-            string rt = url.Substring(1, url.Length - 8);
+            string rt = url.Substring(1, url.Length - 5);
             return rt;
 
         }

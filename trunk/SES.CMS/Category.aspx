@@ -27,11 +27,11 @@
                         <ItemTemplate>
                      <asp:Panel runat="server" ID="divCategory">
                             
-                                <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
+                                <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.ofn'>
                                     <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
                                     <h2>
-                                        <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
+                                        <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.ofn'>
                                             <%#Eval("Title") %></a>
                                     </h2>
                                     <div class="art-auth">
@@ -48,11 +48,11 @@
                         <ItemTemplate>
                             <div class="category-wrap-first">
                                 <%--<asp:Panel runat="server" ID="divCategory">--%>
-                                <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
+                                <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.ofn'>
                                     <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
                                     <h2>
-                                        <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
+                                        <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.ofn'>
                                             <%#Eval("Title") %></a>
                                     </h2>
                                     <div class="art-auth">
@@ -65,7 +65,7 @@
                                             <ItemTemplate>
                                                 <span class="tin-lien-quan-1a tin-lien-quan-1-category">
                                                     <img src="/images/news-icon-d.png" />
-                                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                                         title='<%#Eval("Title") %>'>
                                                         <%#Eval("Title")%></a> </span>
                                             </ItemTemplate>

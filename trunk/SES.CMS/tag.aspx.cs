@@ -36,7 +36,7 @@ namespace SES.CMS
         //    cmsCategoryDO objCate = new cmsCategoryDO();
         //    objCate.CategoryID = categoryID;
         //    objCate = new cmsCategoryBL().Select(objCate);
-        //    string rootUrl = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
+        //    string rootUrl = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".ofn' title='" + objCate.Title + "'>" + objCate.Title + "</a>";
         //    if (objCate.ParentID == 0)
         //    {
         //        lblBreadcrumb.Text = rootUrl;
@@ -47,7 +47,7 @@ namespace SES.CMS
         //        objCate.CategoryID = objCate.ParentID;
         //        objCate = new cmsCategoryBL().Select(objCate);
 
-        //        lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".otofun' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
+        //        lblBreadcrumb.Text = "<a href='/" + Ultility.Change_AV(objCate.Title) + "-" + objCate.CategoryID + ".ofn' title='" + objCate.Title + "'>" + objCate.Title + "</a>" + " » " + rootUrl;
         //    }
         //}
         protected void BuildEvent(int categoryID)
@@ -67,13 +67,13 @@ namespace SES.CMS
                 PageID = int.Parse(Request.QueryString["Page"]);
 
             int PageSize = 15;
-            hplNextPage.NavigateUrl = "/tag/otofun-" + tag + "-Trang-" + (PageID + 1).ToString() + ".otofun";
+            hplNextPage.NavigateUrl = "/tag/otofun-" + tag + "-Trang-" + (PageID + 1).ToString() + ".ofn";
             if (PageID > 0)
             {
                 if (PageID > 1)
-                    hplPrevPage.NavigateUrl = "/tag/otofun-" + tag + "-Trang-" + (PageID - 1).ToString() + ".otofun";
+                    hplPrevPage.NavigateUrl = "/tag/otofun-" + tag + "-Trang-" + (PageID - 1).ToString() + ".ofn";
                 else
-                    hplPrevPage.NavigateUrl = "/tag/otofun-" + tag + ".otofun";
+                    hplPrevPage.NavigateUrl = "/tag/otofun-" + tag + ".ofn";
             }
             else
                 hplPrevPage.Visible = false;
