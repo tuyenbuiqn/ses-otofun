@@ -2525,7 +2525,7 @@ color:#912809;
 }
 .promox-post
 {
-    width: 165px;
+    width: 160px;
    padding:0 1px;
     margin-top: 5px;
     float: left;
@@ -2539,8 +2539,9 @@ color:#912809;
 }
 .promox-img-post
 {
-    width: 150px;
-    height: 86px;
+    width: 155px;
+    margin-left:2px;
+    height: 88px;
     float: left;
     margin-bottom:2px;
 
@@ -2608,6 +2609,7 @@ right: 35px;
 .promox-img-wrap
 {
     float:left;
+    
     }
     
     
