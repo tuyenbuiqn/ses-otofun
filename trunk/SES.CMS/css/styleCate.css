@@ -122,6 +122,8 @@ img
     font-size: 13px;
     text-transform: none;
     margin: 5px 5px 0 10px;
+    font-weight:bold;
+    color: #B23803;
 }
 #aSendComment
 {
@@ -130,6 +132,8 @@ img
     font-size: 13px;
     text-transform: none;
     margin: 5px 0 0 0;
+    font-weight:bold;
+    color: #B23803;
 }
 .border-comment
 {
@@ -148,6 +152,8 @@ margin-left: 6px;
 width:650px;
 margin:0 auto;
 height:350px;
+border:1px solid #D2BF9C;
+padding:5px;
     }
 .settop-wrap
 {
