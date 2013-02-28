@@ -138,12 +138,12 @@
                     <asp:BoundField DataField="Username" HeaderText="Tác giả" ItemStyle-Width="5%" ItemStyle-HorizontalAlign="Center" />
                     <asp:TemplateField HeaderText="Ngày viết" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
                         <ItemTemplate>
-                            <asp:Label runat="server" ID="lblCreateDate" Text='<%# (bool)(Eval("CreateDate")==null)==true?"":Eval("CreateDate","{0:dd/MM/yyyy}") %>'></asp:Label>
+                            <asp:Label runat="server" ID="lblCreateDate" Text='<%# (bool)(Eval("CreateDate")==null)==true?"":Eval("CreateDate","{0:dd/MM/yyyy hh:mm}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                     <asp:TemplateField HeaderText="Ngày gửi biên tập" Visible="false" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
+                     <asp:TemplateField HeaderText="Ngày gửi biên tập" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
                         <ItemTemplate>
-                            <asp:Label runat="server" ID="lblCreateDate2" Text='<%# (bool)(Eval("ThoiGianGui")==null)==true?"":Eval("ThoiGianGui","{0:dd/MM/yyyy}") %>'></asp:Label>
+                            <asp:Label runat="server" ID="lblCreateDate2" Text='<%# (bool)(Eval("ThoiGianGui")==null)==true?"":Eval("ThoiGianGui","{0:dd/MM/yyyy hh:mm}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Ngày gửi xuất bản" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
@@ -151,7 +151,7 @@
                             <asp:Label runat="server" ID="lblCreateDate3" Text='<%# (bool)(Eval("ThoiGianGuiXuatBan")==null)==true?"":Eval("ThoiGianGuiXuatBan","{0:dd/MM/yyyy}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                     <asp:TemplateField HeaderText="Ngày giờ" ItemStyle-Width="15%"  ItemStyle-HorizontalAlign="Center" >
+                     <asp:TemplateField HeaderText="Ngày xuất bản" ItemStyle-Width="15%"  ItemStyle-HorizontalAlign="Center" >
                         <ItemTemplate>
                             <asp:Label runat="server" ID="lblCreateDate4" Text='<%# (bool)(Eval("ThoiGianXuatBan")==null)==true?"":Eval("ThoiGianXuatBan","{0:dd/MM/yyyy hh:mm}") %>'></asp:Label>
                         </ItemTemplate>
