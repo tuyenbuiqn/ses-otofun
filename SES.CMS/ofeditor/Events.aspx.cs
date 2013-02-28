@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SES.CMS.DO;
 using SES.CMS.BL;
+using System.Data;
 
 namespace SES.CMS.ofeditor
 {
@@ -24,7 +25,7 @@ namespace SES.CMS.ofeditor
                 {
                     if (!IsPostBack)
                     {
-                        Ultility.ddlDatabinder(ddlDongSuKien, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new cmsCategoryBL().SelectAll());
+                        Ultility.ddlDatabinder(ddlDongSuKien, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new DataView( new cmsCategoryBL().SelectAll(),"ParentID = 0 AND CategoryID <> 8","", DataViewRowState.CurrentRows));
                         rptEventDataSource();
                     }
                 }

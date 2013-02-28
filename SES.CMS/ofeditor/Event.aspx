@@ -19,7 +19,7 @@
     <div style="width: 98%; float: left; margin-left: 5px;">
         <h2>
             Cập nhật Danh mục Tin tức</h2>
-        <table width="100%" class="tablet" style="border: 1px solid black;">
+        <table width="100%" class="tstyle2">
             <tr>
                 <td class="style8">
                     Tiêu đề:
@@ -35,7 +35,10 @@
                     Thuộc danh mục:
                 </td>
                 <td class="style9">
-                    <div style="float: left; vertical-align: middle;">
+               <asp:DropDownList runat="server" Width="200px" ID="ddlMostRead" AppendDataBoundItems="true">
+               <asp:ListItem Text="Trang chủ" Value="8"></asp:ListItem>
+            </asp:DropDownList>
+                    <%--<div style="float: left; vertical-align: middle;">
                         <dxe:ASPxComboBox ID="cboParent" ClientEnabled="false" ClientInstanceName="cbParent"
                             runat="server" Height="16px" Width="143px">
                         </dxe:ASPxComboBox>
@@ -44,10 +47,10 @@
                         <dxe:ASPxButton ID="btnSelectParent" runat="server" Text="Chọn">
                             <ClientSideEvents Click="function(s, e) { pcParent.Show();}" />
                         </dxe:ASPxButton>
-                    </div>
+                    </div>--%>
                 </td>
             </tr>
-            <tr>
+            <tr style="display:none;">
                 <td class="style8">
                     Mô tả
                 </td>

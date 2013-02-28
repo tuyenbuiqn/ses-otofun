@@ -1005,6 +1005,7 @@ namespace SES.CMS.ofeditor
                 // Quyền Thư ký -> có thể sửa
                 if (UserType == 2)
                 {
+                    grvListArticle.Columns[6].Visible = false;
                     grvListArticle.Columns[9].Visible = true;
                     grvListArticle.Columns[11].Visible = true;
                 }
