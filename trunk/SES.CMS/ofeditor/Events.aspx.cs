@@ -27,6 +27,7 @@ namespace SES.CMS.ofeditor
                     {
                         Ultility.ddlDatabinder(ddlDongSuKien, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new DataView( new cmsCategoryBL().SelectAll(),"ParentID = 0 AND CategoryID <> 8","", DataViewRowState.CurrentRows));
                         rptEventDataSource();
+                       
                     }
                 }
                 else
@@ -80,5 +81,6 @@ namespace SES.CMS.ofeditor
             }
             grvEvent.DataBind();
         }
+     
     }
 }
