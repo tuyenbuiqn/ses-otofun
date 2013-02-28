@@ -1622,13 +1622,15 @@ p.pBreadrumb
 {
     width: 660px;
     padding: 3px;
-    border-bottom: 1px solid #C06C14;
     margin-left: 5px;
+    margin-bottom:5px;
 }
 .event-boxes-rows a
 {
-    color: #333;
-    font-size: 14px;
+    color: #912809;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight:bold;
 }
 .category-box
 {
