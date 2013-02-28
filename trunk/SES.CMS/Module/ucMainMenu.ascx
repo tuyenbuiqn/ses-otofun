@@ -3,7 +3,7 @@
 <div class="menu">
     <div class="menu-text">
         <div id="divhome" runat="server">
-            <a href="/Default.ofn" title="otofun-homepage">
+            <a href="http://news.otofun.net" title="Trang chủ">
                 <asp:Image ID="homebutton" runat="server" CssClass="home-button" ImageUrl="/images/Home-button.png"
                     AlternateText="Otofun-homepage" /></a>
         </div>
