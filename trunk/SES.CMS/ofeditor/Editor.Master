@@ -191,12 +191,12 @@
                         <li><a href="ListArticles.aspx?Type=4">Bài trả lại Biên tập</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
                         <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>
-                        <li><a href="TinNoiBat.aspx">Tin nổi bật</a></li>
-                        <li><a href="TopNews.aspx">Tin mới nhất</a></li>
-                        <li><a href="TinSetTop.aspx">Tin set top chuyên mục</a></li>
-                        <li><a href="TinMostReadCate.aspx">Tin đọc nhiều chuyên mục</a></li>
-                       <%-- <li><a href="TinMostReadHome.aspx">Tin đọc nhiều Trang chủ</a></li>--%>
                         <li><a href="Slides.aspx">Quản lý Slide</a></li>
+                        <li><a href="TinNoiBat.aspx">3 Nổi bật trang chủ</a></li>
+                        <li><a href="TopNews.aspx">9 Nổi bật trang chủ</a></li>
+                        <li><a href="TinSetTop.aspx">2 Nổi bật chuyên mục</a></li>
+                        <li><a href="TinMostReadCate.aspx">6 Đọc nhiều chuyên mục</a></li>
+                        <%-- <li><a href="TinMostReadHome.aspx">Tin đọc nhiều Trang chủ</a></li>--%>
                     </ul>
                 </asp:Panel>
                 <h2>
