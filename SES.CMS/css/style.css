@@ -2115,15 +2115,28 @@ margin: 10px 0 0 10px;
     font-size: 12px;
 }
 
+.comment-box1 h3
+{
+    width: 125px;
+    font-family:Times New Roman;
+float: left;
+background-color: #912809;
+color: #fff;
+padding: 5px 0 3px 10px;
+font-size: 16px;
+text-transform: uppercase;
+}
 .comment-info1
 {
     width: 100%;
     margin-left:0px;
     padding-left:5px;
     height:auto;
+  
     border-left:2px solid rgb(219, 188, 160);
     float: left;
     margin-bottom:10px;
+    
    
 }
 .comment-content1

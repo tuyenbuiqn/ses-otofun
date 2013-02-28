@@ -15,12 +15,12 @@
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
         <div class="comment-box1" runat="server" id="comment">
-            <h3 class="hmp-cate-maintitle">
-                <span>BÌNH LUẬN </span>
+
+            <h3>BÌNH LUẬN</h3>
                 <a href="#aViewComment" id="aViewComment">Xem</a>
                 <span class="border-comment"></span>
                 <a href="#divxs" id="aSendComment">Gửi</a>
-            </h3>
+            
             <div id="divListComment">
                 <asp:Repeater ID="rptComment" runat="server" OnItemCommand="rptComment_ItemCommand"
                     OnItemDataBound="rptComment_ItemDataBound">
