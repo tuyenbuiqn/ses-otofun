@@ -22,17 +22,23 @@ namespace SES.CMS
                 rptCategoryDataSoucre(categoryID);
                 rptBuildChildMenu(categoryID);
                 cmsCategoryDO ob = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID });
-                if(ob.ParentID ==0)
-                Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                if (ob.ParentID == 0)
+                    Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 else
-                Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = ob.ParentID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                    Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = ob.ParentID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 BuildEvent(categoryID);
                 loadBreadcrumb(categoryID);
             }
         }
         protected void rptSetTopDataSource(int categoryID)
         {
-            rptSetTop.DataSource = new cmsSetTopBL().SelectByCategoryID(0,categoryID);
+            //cmsCategoryDO objCategory = new cmsCategoryDO();
+            //objCategory.CategoryID = categoryID;
+            //objCategory = new cmsCategoryBL().Select(objCategory);
+            //if (objCategory.ParentID == 0)
+                rptSetTop.DataSource = new cmsSetTopBL().SelectByCategoryID(0, categoryID);
+       //     else
+        //        rptSetTop.DataSource = new cmsArticleBL().SelectByCategoryID(objCategory.CategoryID);
             rptSetTop.DataBind();
         }
         protected void loadTime()
@@ -70,9 +76,9 @@ namespace SES.CMS
             objCategory = new cmsCategoryBL().Select(objCategory);
 
             if (objCategory.ParentID == 0)
-                rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(objCategory.CategoryID,5);
+                rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(objCategory.CategoryID, 5);
             else
-                rptEvent.DataSource = new   cmsEventBL().GetEventByCategoryID(objCategory.ParentID,5);
+                rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(objCategory.ParentID, 5);
             rptEvent.DataBind();
         }
         protected void rptBuildChildMenu(int categoryID)
@@ -103,17 +109,17 @@ namespace SES.CMS
             int PageID = 0;
             if (!string.IsNullOrEmpty(Request.QueryString["Page"]))
                 PageID = int.Parse(Request.QueryString["Page"]);
-           
+
             int PageSize = 12;
-            
-            hplNextPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID+1).ToString() + ".otofun";
+
+            hplNextPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID + 1).ToString() + ".otofun";
             if (PageID > 0)
             {
                 if (PageID > 1)
                     hplPrevPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID - 1).ToString() + ".otofun";
                 else
                     hplPrevPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + ".otofun";
-                
+
             }
             else
                 hplPrevPage.Visible = false;
@@ -121,41 +127,41 @@ namespace SES.CMS
             PageID = PageSize * PageID;
 
 
-             string keycatpage = categoryID.ToString() + "-" + PageID.ToString();
+            string keycatpage = categoryID.ToString() + "-" + PageID.ToString();
             int SumcountCat = new cmsArticleBL().SelectSumCat(categoryID);
-            
+
             if ((PageID + PageSize) >= SumcountCat) hplNextPage.Visible = false;
             if (SumcountCat == 0) return;
             string keycount = categoryID.ToString() + "-" + SumcountCat.ToString();
             if (cache[keycount] == null) //Nếu null thì thêm
             {
-             
-             cache.Insert(keycount, keycount, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
-             
+
+                cache.Insert(keycount, keycount, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+
             }
-           
-                if(cache[keycount].ToString()!=keycount) //Nếu không null thì kiểm tra xem có trùng tổng không. nếu không trùng thì xóa + ghi bản ghi mới
+
+            if (cache[keycount].ToString() != keycount) //Nếu không null thì kiểm tra xem có trùng tổng không. nếu không trùng thì xóa + ghi bản ghi mới
+            {
+                cache.Remove(keycount);
+                cache.Insert(keycount, keycount, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+
+                cache.Remove(keycatpage);
+                DataTable dtPage = new cmsArticleBL().SelectPaging(categoryID, PageID, PageSize);
+                cache.Insert(keycatpage, dtPage, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
+
+            }
+            else
+            {
+
+                if (cache[keycatpage] == null)
                 {
-                    cache.Remove(keycount);
-                    cache.Insert(keycount, keycount, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
-                    
-                    cache.Remove(keycatpage);
-                    DataTable dtPage = new cmsArticleBL().SelectPaging(categoryID,PageID,PageSize);
+                    DataTable dtPage = new cmsArticleBL().SelectPaging(categoryID, PageID, PageSize);
                     cache.Insert(keycatpage, dtPage, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
-                   
                 }
-                else
-                {
-                   
-                   if(cache[keycatpage]==null)
-                   {
-                    DataTable dtPage = new cmsArticleBL().SelectPaging(categoryID,PageID,PageSize);
-                    cache.Insert(keycatpage, dtPage, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
-                   }
-                }
-                //Nếu trùng tổng kiểm tra xem có cache trang chưa
-            
-            
+            }
+            //Nếu trùng tổng kiểm tra xem có cache trang chưa
+
+
             rptCategory.DataSource = (DataTable)cache[keycatpage];
 
             rptCategory.DataBind();
@@ -214,9 +220,9 @@ namespace SES.CMS
         }
         protected void rptSetTop_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-           
+
             RepeaterItem item = e.Item;
-         
+
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
             {
 
