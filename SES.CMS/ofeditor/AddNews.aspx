@@ -430,7 +430,7 @@
                 </label>
                 <div style="float: left;">
                     <telerik:RadEditor ID="txtDetail" runat="server" OnClientPasteHtml="OnClientPasteHtml"
-                        Width="789px">
+                        Width="789px" Height="700px">
                         <ImageManager MaxUploadFileSize="1024000000" ViewMode="Grid"></ImageManager>
                     </telerik:RadEditor>
                 </div>
