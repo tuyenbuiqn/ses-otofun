@@ -10,6 +10,7 @@ using Telerik.Web.UI;
 using System.Data;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Web.Caching;
 
 namespace SES.CMS.ofeditor
 {
@@ -313,6 +314,13 @@ namespace SES.CMS.ofeditor
                 objHistory.Contents = "User: " + Session["Username"] + "Tạo bài viết: <b>" + objArt.Title + "</b>";
                 new cmsHistoryBL().Insert(objHistory);
                 new cmsArticleCategoryBL().DeleteByArticleID(objArt.ArticleID);
+                string cateArticleDetail = "ArticleDetailCache=" + objArt.ArticleID;
+                Cache cache = HttpContext.Current.Cache;
+                
+                    DataTable dtArticleCache = new cmsArticleBL().SelectByPK(objArt.ArticleID);
+                    if (dtArticleCache != null)
+                        cache.Insert(cateArticleDetail, dtArticleCache, null, DateTime.Now.AddSeconds(650), TimeSpan.Zero);
+                
 
                 foreach (RadTreeNode n in rtv.CheckedNodes)
                 {
