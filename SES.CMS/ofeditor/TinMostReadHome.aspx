@@ -192,57 +192,7 @@
     <div style="float: left; width: 98%; margin: 10px 0 10px 10px;">
         <h1 class="h1-style1">
             Danh sách tin nổi bật</h1>
-        <asp:GridView ID="grvListTinNoiBat" DataKeyNames="MostReadID" runat="server" AutoGenerateColumns="False"
-            CssClass="tstyle2" PageSize="35" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr"
-            OnRowCancelingEdit="grvListTinNoiBat_RowCancelingEdit" OnRowEditing="grvListTinNoiBat_RowEditing"
-            OnRowUpdating="grvListTinNoiBat_RowUpdating" OnRowDeleting="grvListTinNoiBat_RowDeleting"
-            OnSelectedIndexChanged="grvListTinNoiBat_SelectedIndexChanged">
-            <Columns>
-                <asp:TemplateField HeaderText="Tiêu đề" Visible="false" ItemStyle-HorizontalAlign="Center">
-                    <ItemTemplate>
-                        <asp:Label runat="server" ID="lblTopNews" Text='<%#Eval("MostReadID") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="ArticleID" Visible="false" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
-                    <ItemTemplate>
-                        <asp:Label runat="server" ID="lblArticleID" Text='<%#Eval("ArticleID") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Tiêu đề" ItemStyle-Width="30%" ItemStyle-HorizontalAlign="left">
-                    <ItemTemplate>
-                        <asp:Label runat="server" ID="lblTitle" Text='<%#Eval("Title") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Danh mục" ItemStyle-Width="20%" ItemStyle-HorizontalAlign="Center">
-                    <ItemTemplate>
-                        <asp:Label runat="server" ID="lblDanhMuc" Text='<%#Eval("CategoryTitle") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Số thứ tự" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
-                    <ItemTemplate>
-                        <asp:Label runat="server" ID="lblOrderID" Text='<%#Eval("OrderID") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox runat="server" Width="50px" ID="txtOrderID" Text='<%#Eval("OrderID") %>'></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
-                            ForeColor="Red" ControlToValidate="txtOrderID"></asp:RequiredFieldValidator>
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtOrderID"
-                            Type="Integer" MinimumValue="0" MaximumValue="100"></asp:RangeValidator>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-                <asp:CommandField ShowEditButton="true" HeaderText="Sửa số thứ tự" CausesValidation="true"
-                    ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" />
-                <asp:TemplateField ItemStyle-Width="10%" HeaderText="Thao tác" ItemStyle-HorizontalAlign="Center">
-                    <ItemTemplate>
-                        <asp:ImageButton ID="btnEdit" runat="server" CommandName="Select" ImageUrl="~/ofeditor/images/edit_16x16.gif" />
-                        <asp:ImageButton Visible="false" ID="btnDelete" runat="server" CommandArgument='<%#Eval("MostReadID") %>'
-                            CommandName="Delete" ImageUrl="~/ofeditor/images/delete_16x16.gif" OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" />
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
-    </div>
-    <div runat="server" visible="false" id="divEdit" style="float: left; width: 98%;
+            <div runat="server" visible="false" id="divEdit" style="float: left; width: 98%;
         margin: 10px 0 10px 10px;">
         <h1 class="h1-style1">
             Sửa tin nổi bật</h1>
@@ -320,4 +270,55 @@
         <p style="color: Red; font-size: 14px; font-weight: bold; font-style: inherit;">
             <asp:Label runat="server" ID="lblError"></asp:Label></p>
     </div>
+        <asp:GridView ID="grvListTinNoiBat" DataKeyNames="MostReadID" runat="server" AutoGenerateColumns="False"
+            CssClass="tstyle2" PageSize="35" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr"
+            OnRowCancelingEdit="grvListTinNoiBat_RowCancelingEdit" OnRowEditing="grvListTinNoiBat_RowEditing"
+            OnRowUpdating="grvListTinNoiBat_RowUpdating" OnRowDeleting="grvListTinNoiBat_RowDeleting"
+            OnSelectedIndexChanged="grvListTinNoiBat_SelectedIndexChanged">
+            <Columns>
+                <asp:TemplateField HeaderText="Tiêu đề" Visible="false" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="lblTopNews" Text='<%#Eval("MostReadID") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="ArticleID" Visible="false" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="lblArticleID" Text='<%#Eval("ArticleID") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Tiêu đề" ItemStyle-Width="30%" ItemStyle-HorizontalAlign="left">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="lblTitle" Text='<%#Eval("Title") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Danh mục" ItemStyle-Width="20%" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="lblDanhMuc" Text='<%#Eval("CategoryTitle") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Số thứ tự" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="lblOrderID" Text='<%#Eval("OrderID") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox runat="server" Width="50px" ID="txtOrderID" Text='<%#Eval("OrderID") %>'></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
+                            ForeColor="Red" ControlToValidate="txtOrderID"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtOrderID"
+                            Type="Integer" MinimumValue="0" MaximumValue="100"></asp:RangeValidator>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:CommandField ShowEditButton="true" HeaderText="Sửa số thứ tự" CausesValidation="true"
+                    ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" />
+                <asp:TemplateField ItemStyle-Width="10%" HeaderText="Thao tác" ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:ImageButton ID="btnEdit" runat="server" CommandName="Select" ImageUrl="~/ofeditor/images/edit_16x16.gif" />
+                        <asp:ImageButton Visible="false" ID="btnDelete" runat="server" CommandArgument='<%#Eval("MostReadID") %>'
+                            CommandName="Delete" ImageUrl="~/ofeditor/images/delete_16x16.gif" OnClientClick="return confirm('Có muốn xóa bản ghi này? Nhấn OK để xóa!')" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+    </div>
+    
 </asp:Content>

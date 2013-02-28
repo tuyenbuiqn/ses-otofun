@@ -346,7 +346,7 @@
                     Hình ảnh
                 </label>
                 <asp:FileUpload ID="fuImg" runat="server" />
-                <b>200 x 133 (px)</b>
+                <b>320 x 185 (px)</b>
                 <asp:HyperLink ID="hplImage" Target="_blank" Visible="false" runat="server" Style="font-weight: 700">(Xem ảnh)</asp:HyperLink>
             </div>
             <div class="fieldsetdiv">

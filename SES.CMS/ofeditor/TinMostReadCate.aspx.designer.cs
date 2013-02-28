@@ -85,15 +85,6 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.DropDownList ddlMostRead;
         
         /// <summary>
-        /// grvListTopNews control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvListTopNews;
-        
-        /// <summary>
         /// divEdit control.
         /// </summary>
         /// <remarks>
@@ -164,5 +155,14 @@ namespace SES.CMS.ofeditor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
+        /// grvListTopNews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvListTopNews;
     }
 }
