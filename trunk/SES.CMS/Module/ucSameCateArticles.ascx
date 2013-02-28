@@ -6,7 +6,7 @@
     <ul class="ul-new-article">
         <asp:Repeater runat="server" ID="rptNewArticle">
             <ItemTemplate>
-                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                     title='<%#Eval("Title") %>'>
                     <%#Eval("Title") %></a></li>
             </ItemTemplate>
@@ -28,13 +28,13 @@
                 <ItemTemplate>
                     <div class="promox-post fl clearfix">
                     <div class="promox-img-wrap">
-                        <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                        <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                             title='<%#Eval("Title") %>' class="promox-post-img fl" >
                             <img src='/Media/<%#Eval("ImageUrl") %>'class="promox-img-post" alt='<%#Eval("Title") %>' />
                         </a>
                         </div>
                         <div class="promox-post-info fl">
-                           <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'  title='<%#Eval("Title") %>' class="promox-post-title">
+                           <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'  title='<%#Eval("Title") %>' class="promox-post-title">
                                 <h5>
                                     <%#Eval("Title") %></h5>
                             </a>

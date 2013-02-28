@@ -6,7 +6,7 @@
 <ul class="tintuc-box">
     <asp:Repeater runat="server" ID="rptLastestNews">
         <ItemTemplate>
-            <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+            <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                 title='<%#Eval("Title") %>'>
                 <%#Eval("Title") %></a></li>
         </ItemTemplate>

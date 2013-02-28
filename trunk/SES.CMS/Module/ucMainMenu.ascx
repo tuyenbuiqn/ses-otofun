@@ -3,7 +3,7 @@
 <div class="menu">
     <div class="menu-text">
         <div id="divhome" runat="server">
-            <a href="/Default.otofun" title="otofun-homepage">
+            <a href="/Default.ofn" title="otofun-homepage">
                 <asp:Image ID="homebutton" runat="server" CssClass="home-button" ImageUrl="/images/Home-button.png"
                     AlternateText="Otofun-homepage" /></a>
         </div>
@@ -11,14 +11,11 @@
             <asp:Repeater runat="server" ID="rptMainMenu" OnItemDataBound="rptMainMenu_ItemDataBound">
                 <ItemTemplate>
                     <%#ReturnLiActive(Eval("CategoryID").ToString())%>
-                    <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
+                    <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.ofn'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a> </li>
                 </ItemTemplate>
             </asp:Repeater>
-             <li><a target="_blank" href="http://www.otofun.net/forums/12-thong-tin-thi-truong-rao-vat" title="Rao vặt">Rao vặt</a>
-            </li>
-
             <li><a target="_blank" href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
             </li>
         </ul>

@@ -7,7 +7,7 @@
     <ul class="ul-new-article">
         <asp:Repeater runat="server" ID="rptNewArticle">
             <ItemTemplate>
-                <li><a href='/<%#FriendlyUrl(Eval("CategoryName").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                <li><a href='/<%#FriendlyUrl(Eval("CategoryName").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                     title='<%#Eval("Title") %>' class="new-article">
                     <%#Eval("Title") %></a></li>
             </ItemTemplate>

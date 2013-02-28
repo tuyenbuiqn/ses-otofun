@@ -5,7 +5,7 @@
     <ul class="sale-off">
         <asp:Repeater runat="server" ID="rptTuVanKyThuat">
             <ItemTemplate>
-                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-42/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-42/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                     title='<%#Eval("Title") %>'>
                     <%#Eval("Title") %>
                 </a></li>

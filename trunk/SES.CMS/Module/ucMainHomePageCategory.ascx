@@ -6,14 +6,14 @@
     <%--   <div class="TinTuc-wrapper">
                 <div class="Cap-TinTuc">
                     <p>
-                        <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
+                        <a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.ofn'
                             title='<%#Eval("Title") %>'>
                             <%#Eval("Title") %></a></p>
                 </div>
                 <ul class="link2">
                     <asp:Repeater runat="server" ID="rptChildCate">
                         <ItemTemplate>
-                            <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
+                            <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.ofn'
                                 title='<%#Eval("Title") %>'>
                                 <%#Eval("Title") %></a></li>
                         </ItemTemplate>
@@ -23,13 +23,13 @@
                     <asp:Repeater runat="server" ID="rptTopHighLight" OnItemDataBound="rptTopHightLight_ItemDataBound">
                         <ItemTemplate>
                             <div class="left-noidung">
-                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                     title='<%#Eval("Title") %>'>
                                     <img id="imgAnh-noidung" class="Anh-noidung" src='/Media/<%#Eval("ImageUrl") %>'
                                         alt='<%#Eval("Title") %>' /></a>
                             </div>
                             <div class="center-noidung">
-                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                     title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a>
                             
@@ -39,7 +39,7 @@
                                 <div class="tin-lien-quan1">
                                     <asp:Repeater runat="server" ID="rptTinLienQuan1">
                                         <ItemTemplate>
-                                            <span class="tin-lien-quan-1a"><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                            <span class="tin-lien-quan-1a"><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                                 title='<%#Eval("Title") %>'>» <%#Eval("Title")%></a> </span>
                                         </ItemTemplate>
                                     </asp:Repeater>
@@ -50,7 +50,7 @@
                     <ul class="right-noidung">
                         <asp:Repeater runat="server" ID="rptTopOtherHighLight">
                             <ItemTemplate>
-                                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                     title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a></li>
                             </ItemTemplate>
@@ -63,13 +63,13 @@
         <ItemTemplate>
             <div class="hmp-cate-wrap">
                 <h3 class="hmp-cate-maintitle">
-                    <span><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
+                    <span><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.ofn'
                         title='<%#Eval("Title") %>'>
                         <%#Eval("Title") %></a> </span>
                     <ul class="link2" style="display: none;">
                         <asp:Repeater runat="server" ID="rptChildCate">
                             <ItemTemplate>
-                                <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.otofun'
+                                <li><a href='/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("CategoryID")%>.ofn'
                                     title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a></li>
                             </ItemTemplate>
@@ -81,13 +81,13 @@
                         <ItemTemplate>
                             <asp:Panel runat="server" ID="posTop">
                                 <div class="hmp-top-article">
-                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                         title='<%#Eval("Title") %>'>
                                         <img src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' />
                                     </a>
                                 </div>
                                 <h4 class="hmp-top-articletitle">
-                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                         title='<%#Eval("Title") %>'>
                                         <%#Eval("Title") %></a>
                                 </h4>
@@ -102,7 +102,7 @@
                     <ul class="hmp-ul-samecate-left">
                         <asp:Repeater runat="server" ID="rptOtherTopArticleLeft">
                             <ItemTemplate>
-                                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                     title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a></li>
                             </ItemTemplate>
@@ -111,7 +111,7 @@
                     <ul class="hmp-ul-samecate-right">
                         <asp:Repeater runat="server" ID="rptOtherTopArticleRight">
                             <ItemTemplate>
-                                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                <li><a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                     title='<%#Eval("Title") %>'>
                                     <%#Eval("Title") %></a></li>
                             </ItemTemplate>
