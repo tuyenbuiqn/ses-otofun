@@ -15,6 +15,7 @@ namespace SES.CMS.Module
         {
             if (!IsPostBack)
             {
+                /*
                 // check trang default
                 string url = Request.Url.AbsolutePath;
                 url = url.Substring(1, url.Length - 1);
@@ -65,6 +66,7 @@ namespace SES.CMS.Module
 
 
                 // check trang article
+                 */
 
             }
         }

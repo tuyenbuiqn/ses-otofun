@@ -170,7 +170,14 @@ namespace SES.CMS
             Control ucEvent = master.FindControl("ucEvent3") as Control;
             Repeater rptEvent = ucEvent.FindControl("rptEvent") as Repeater;
 
-            rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(categoryID, 5);
+            cmsCategoryDO objCategory = new cmsCategoryDO();
+            objCategory.CategoryID = categoryID;
+            objCategory = new cmsCategoryBL().Select(objCategory);
+
+            if (objCategory.ParentID == 0)
+                rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(objCategory.CategoryID, 5);
+            else
+                rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(objCategory.ParentID, 5);
             rptEvent.DataBind();
         }
         protected void rptBuildChildMenu(int categoryID)
