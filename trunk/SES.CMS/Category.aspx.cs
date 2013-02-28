@@ -21,7 +21,11 @@ namespace SES.CMS
                 rptSetTopDataSource(categoryID);
                 rptCategoryDataSoucre(categoryID);
                 rptBuildChildMenu(categoryID);
+                cmsCategoryDO ob = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID });
+                if(ob.ParentID ==0)
                 Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                else
+                Page.Title = new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = ob.ParentID }).Title + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                 BuildEvent(categoryID);
                 loadBreadcrumb(categoryID);
             }
