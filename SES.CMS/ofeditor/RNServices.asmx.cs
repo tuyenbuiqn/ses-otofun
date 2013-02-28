@@ -88,7 +88,7 @@ namespace SES.CMS.ofeditor
 
             DataTable dt = new cmsArticleBL().selectURLArt(int.Parse(StrArticleID));
             string s = "/" + Ultility.Change_AVCate(dt.Rows[0]["CategoryTitle"].ToString()) + "-" + dt.Rows[0]["CatID"].ToString() + "/";
-            s = s + Ultility.Change_AVCate(dt.Rows[0]["Title"].ToString()) + "-" + StrArticleID + ".otofun";
+            s = s + Ultility.Change_AVCate(dt.Rows[0]["Title"].ToString()) + "-" + StrArticleID + ".ofn";
             return s;
         }
         [WebMethod]
