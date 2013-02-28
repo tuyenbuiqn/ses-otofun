@@ -1010,6 +1010,16 @@ namespace SES.CMS.ofeditor
                     grvListArticle.Columns[11].Visible = true;
                 }
                 // Quyền khác -> ko thể
+                // Quyền phóng viên
+                else if (UserType == 0)
+                {
+                    grvListArticle.Columns[3].Visible = false;
+                    grvListArticle.Columns[5].Visible = true;
+                    grvListArticle.Columns[6].Visible = false;
+                    grvListArticle.Columns[7].Visible = true;
+                    grvListArticle.Columns[8].Visible = false;
+                    grvListArticle.Columns[9].Visible = false;
+                }
                 else
                     grvListArticle.Columns[9].Visible = false;
             }
