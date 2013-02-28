@@ -239,7 +239,7 @@ namespace SES.CMS.ofeditor
                 }
                 if (lblArticleTime != null)
                 {
-                    lblArticleTime.Text = itemData["CreateDate"].ToString();
+                    lblArticleTime.Text = itemData["ThoiGianXuatBan"].ToString();
                 }
                 
             }

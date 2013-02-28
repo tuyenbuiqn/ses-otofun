@@ -244,7 +244,7 @@
                         <HeaderTemplate>
                             <table class="classListArticles">
                                 <tr>
-                                    <th>
+                                    <th style="display:none;">
                                         Mã
                                     </th>
                                     <th>
@@ -254,7 +254,7 @@
                                         Danh mục
                                     </th>
                                     <th>
-                                        Ngày viết
+                                        Ngày xuất bản
                                     </th>
                                     <th>
                                         Action
@@ -263,7 +263,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td>
+                                <td style="display:none;">
                                     <asp:Label ID="lblArticleId" runat="server" Text=""></asp:Label>
                                 </td>
                                 <td>

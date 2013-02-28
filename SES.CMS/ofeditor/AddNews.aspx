@@ -527,7 +527,7 @@
                 </label>
                 <asp:TextBox CssClass="lf" ID="txtAuthor" Width="250px" runat="server" ValidationGroup="submitGrp"></asp:TextBox>
             </div>
-            <div class="fieldsetdiv">
+            <div class="fieldsetdiv" style="display:none !important;">
                 <label for="lf">
                     Tùy chọn
                 </label>
