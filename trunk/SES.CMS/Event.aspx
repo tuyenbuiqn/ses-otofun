@@ -62,6 +62,9 @@
                                             <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString()) %>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
                                                 <%#Eval("Title") %></a>
                                         </h2>
+                                         <div class="art-auth">
+                                        <img src="/images/news-icon-d.png" style="margin-right: 3px;" />
+                                        <%#CheckAuth(Eval("Author").ToString())%></div>
                                         <div class="cate-desc">
                                             <%#Eval("Description").ToString() %></div>
                                         <div class="tin-lien-quan1" style="width: auto; float: none;">

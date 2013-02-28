@@ -35,6 +35,11 @@ namespace SES.CMS
                 BuildEvent();
             }
         }
+        public string CheckAuth(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return "Otofun";
+            else return s;
+        }
         protected void loadTime()
         {
             DateTime dateTime = DateTime.Now;
