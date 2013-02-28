@@ -83,6 +83,9 @@
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
+                <div class="adv-homepage-right" style="margin:14px 10px 0 10px;">
+                 <img src="/Ads/audi-rs6-06300x250.jpg" height="250" width="300"/>
+                </div>
                 <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
                 <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
             </div>
