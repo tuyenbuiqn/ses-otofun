@@ -146,7 +146,7 @@
                                 <asp:TextBox ID="txtSearchKey" CssClass="Textbox" runat="server"></asp:TextBox>
                             </td>
                         </tr>
-                        <tr style="display:none;">
+                        <tr runat="server"  id="trDN" >
                             <td class="style2">
                                 Danh mục:
                             </td>
