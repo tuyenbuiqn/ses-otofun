@@ -51,7 +51,7 @@ namespace SES.CMS
             Control ucEvent = master.FindControl("ucEvent3") as Control;
             Repeater rptEvent = ucEvent.FindControl("rptEvent") as Repeater;
 
-            rptEvent.DataSource = new cmsEventBL().GetTopEvent(5);
+            rptEvent.DataSource = new cmsEventBL().GetEventByCategoryID(8, 5);
             rptEvent.DataBind();
         }
 
