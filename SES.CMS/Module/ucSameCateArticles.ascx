@@ -17,9 +17,9 @@
         <p>
             <asp:Label runat="server" ID="lblTitle"></asp:Label></p>
     </div>--%>
-    <div class="Cap-bottom" style="width:235px;">
+    <div class="Cap-bottom" style="width:130px;">
     <span style="margin-left:10px; margin-right:0;">
-        Bài viết cùng Danh mục</span></div>
+        BÀI ĐÃ ĐĂNG</span></div>
 </div>
 <div class="promox-wrapper">
     <div class="promox-list">
