@@ -148,7 +148,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Ngày gửi xuất bản" ItemStyle-Width="10%"  ItemStyle-HorizontalAlign="Center" >
                         <ItemTemplate>
-                            <asp:Label runat="server" ID="lblCreateDate3" Text='<%# (bool)(Eval("ThoiGianGuiXuatBan")==null)==true?"":Eval("ThoiGianGuiXuatBan","{0:dd/MM/yyyy}") %>'></asp:Label>
+                            <asp:Label runat="server" ID="lblCreateDate3" Text='<%# (bool)(Eval("ThoiGianGuiXuatBan")==null)==true?"":Eval("ThoiGianGuiXuatBan","{0:dd/MM/yyyy hh:mm}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                      <asp:TemplateField HeaderText="Ngày xuất bản" ItemStyle-Width="15%"  ItemStyle-HorizontalAlign="Center" >
