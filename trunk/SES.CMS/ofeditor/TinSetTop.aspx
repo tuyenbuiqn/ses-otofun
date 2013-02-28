@@ -190,7 +190,7 @@
         }
     </script>
     <div style="float: left; width: 98%; margin: 10px 0 10px 10px;">
-        <h1 class="h1-style1">
+        <h1 class="h1-style1" style="width:210px;">
             Danh sách tin set top </h1>
         <asp:GridView ID="grvListTopNews" DataKeyNames="SetTopID" runat="server" AutoGenerateColumns="False"
             CssClass="tstyle2" PageSize="35" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr"
