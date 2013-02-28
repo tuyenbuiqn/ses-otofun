@@ -1671,16 +1671,16 @@ p.pBreadrumb
 }
 .tag-box
 {
-   width: 665px;
-float: left;
-background: url('../images/tag.png') no-repeat;
-background-position: 0 10px;
-height: 30px;
-margin: 10px 0;
-padding:10px 0 5px 0;
-border-bottom: 1px solid rgb(216, 187, 171);
-border-top: 1px solid rgb(216, 187, 171);
-position:relative;
+    width: 673px;
+    float: left;
+    background: url('../images/tag.png') no-repeat;
+    background-position: 0 10px;
+    height: 30px;
+    margin: 10px 0;
+    padding:10px 0 5px 0;
+    border-bottom: 1px solid rgb(216, 187, 171);
+    border-top: 1px solid rgb(216, 187, 171);
+    position:relative;
 }
 .tag-ul
 {

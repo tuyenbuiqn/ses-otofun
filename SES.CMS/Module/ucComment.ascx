@@ -6,7 +6,7 @@
             $("#divListComment").slideToggle("slow");
         });
         $("a#aSendComment").click(function () {
-            $(".comment-box").slideToggle("slow");
+            $(".div-comment").slideToggle("slow");
         });
     });
 </script>
