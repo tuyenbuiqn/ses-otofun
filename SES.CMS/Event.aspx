@@ -19,7 +19,7 @@
                 <div class="category-box">
                     <div class="category-title-box">
                         <h3 class="hmp-cate-maintitle">
-                        <span>DÒNG SỰ KIỆN <asp:Literal ID="ltrKey" runat="server"></asp:Literal></span>
+                        <span><asp:Literal ID="ltrKey" runat="server"></asp:Literal></span>
                             
                     </h3>
                        
@@ -29,7 +29,7 @@
                             <asp:Repeater runat="server" ID="rptEvent">
                                 <ItemTemplate>
                                     <div class="event-boxes-rows">
-                                        <a href='/Event/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("EventID") %>.aspx'
+                                       <img src="/images/news-icon-d.png" style="margin-right: 3px;"> <a href='/Event/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("EventID") %>.aspx'
                                             title='<%#Eval("Title") %>'>
                                             <%#Eval("Title") %>
                                         </a>
@@ -63,9 +63,18 @@
                                                 <%#Eval("Title") %></a>
                                         </h2>
                                         <div class="cate-desc">
-                                            <%#WordCut(Eval("Description").ToString()) %></div>
-                                        <a class="readmore" title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.otofun'>
-                                            Xem tiếp</a>
+                                            <%#Eval("Description").ToString() %></div>
+                                        <div class="tin-lien-quan1" style="width: auto; float: none;">
+                                        <asp:Repeater runat="server" ID="rptTinLienQuan1">
+                                            <ItemTemplate>
+                                                <span class="tin-lien-quan-1a tin-lien-quan-1-category">
+                                                    <img src="/images/news-icon-d.png" />
+                                                    <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.otofun'
+                                                        title='<%#Eval("Title") %>'>
+                                                        <%#Eval("Title")%></a> </span>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </div>
                                 </asp:Panel>
                                 </div>
                             </ItemTemplate>
