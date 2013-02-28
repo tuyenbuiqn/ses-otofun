@@ -2555,8 +2555,9 @@ color:#912809;
 }
 .promox-post-info
 {
-    width: 155px;
+    width: 153px;
     float: left;
+    margin-left:2px;
 }
 .promox-post-info a h5
 {
