@@ -21,18 +21,12 @@
     <script type="text/javascript" src="js/custom.js"></script>
     <script type="text/javascript" src="js/JScript.js"></script>
     <!-- End of Libraries -->
-    
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-
     <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-
     <script type="text/javascript" src="/fancybox/jquery.easing-1.3.pack.js"></script>
-
     <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-
     <link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox-1.3.4.css"
         media="screen" />
-
     <script type="text/javascript">
         $(document).ready(function () {
             /*
@@ -90,7 +84,7 @@
             <div id="navbar">
                 <ul class="nav">
                     <li>
-                        <asp:HyperLink runat="server"  ID="hplQuanLyChung">Quản lý chung</asp:HyperLink></li>
+                        <asp:HyperLink runat="server" ID="hplQuanLyChung">Quản lý chung</asp:HyperLink></li>
                     <li>
                         <asp:HyperLink runat="server" ID="hplBaiViet" NavigateUrl="~/ofeditor/AddNews.aspx">Bài viết</asp:HyperLink></li>
                     <li>
@@ -100,8 +94,7 @@
                     <li>
                         <asp:HyperLink runat="server" ID="hplThongKeNhuanBut">Thống kê nhuận bút</asp:HyperLink></li>
                     <li>
-                        <asp:HyperLink runat="server" ID="hplQuanLyVideo"  NavigateUrl="~/ofeditor/Events.aspx">Quản lý dòng sự kiện</asp:HyperLink></li>
-                  
+                        <asp:HyperLink runat="server" ID="hplQuanLyVideo" NavigateUrl="~/ofeditor/Events.aspx">Quản lý dòng sự kiện</asp:HyperLink></li>
                     <%-- <li style="display: none"><a href="">Multi Level Menu</a>
                         <ul>
                             <li><a href="">Menu Link 1</a></li>
@@ -168,25 +161,21 @@
                     <li><a href="AddNews.aspx">Bài mới</a></li>
                     <li><a href="ListArticles.aspx?Type=0">Bài Nháp</a></li>
                     <li><a href="ListArticles.aspx?Type=3">Bài đã xuất bản</a></li>
-                   
                 </ul>
                 <asp:Panel runat="server" ID="divPV" Visible="false">
                     <h2>
                         Phóng viên</h2>
                     <ul>
-                    
                         <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
-                      
                     </ul>
                 </asp:Panel>
                 <asp:Panel runat="server" ID="divBTV" Visible="false">
                     <h2>
                         Biên tập viên</h2>
                     <ul>
-                    <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
-                    <li><a href="ListArticles.aspx?Type=2">Danh sách bài chờ xuất bản</a></li>
-                        
+                        <li><a href="ListArticles.aspx?Type=1">Danh sách bài chờ biên tập</a></li>
+                        <li><a href="ListArticles.aspx?Type=2">Danh sách bài chờ xuất bản</a></li>
                         <li><a href="ListArticles.aspx?Type=4">Bài trả lại Biên tập</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
                         <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>
@@ -202,12 +191,12 @@
                         <li><a href="ListArticles.aspx?Type=4">Bài trả lại Biên tập</a></li>
                         <li><a href="ListArticles.aspx?Type=5">Bài trả lại Phóng viên</a></li>
                         <li><a href="ListArticles.aspx">Quản lý Dòng sự kiện</a></li>
-                         <li><a href="TinNoiBat.aspx">Tin nổi bật</a></li>
-                         <li><a href="TopNews.aspx">Tin mới nhất</a></li>
-                         <li><a href="TinSetTop.aspx">Tin set top chuyên mục</a></li>
-                         <li><a href="TinMostReadCate.aspx">Tin đọc nhiều chuyên mục</a></li>
-                           <li><a href="Slides.aspx">Quản lý Slide</a></li>
-                         
+                        <li><a href="TinNoiBat.aspx">Tin nổi bật</a></li>
+                        <li><a href="TopNews.aspx">Tin mới nhất</a></li>
+                        <li><a href="TinSetTop.aspx">Tin set top chuyên mục</a></li>
+                        <li><a href="TinMostReadCate.aspx">Tin đọc nhiều chuyên mục</a></li>
+                       <%-- <li><a href="TinMostReadHome.aspx">Tin đọc nhiều Trang chủ</a></li>--%>
+                        <li><a href="Slides.aspx">Quản lý Slide</a></li>
                     </ul>
                 </asp:Panel>
                 <h2>

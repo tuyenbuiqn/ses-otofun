@@ -15,26 +15,27 @@ namespace SES.CMS.ofeditor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserType"] == null || Session["UserName"] == null)
-            {
-                Response.Redirect("/ofeditor/Login.aspx");
-            }
-            else
-            {
-                int userType = int.Parse(Session["UserType"].ToString());
-                if (userType == 2)
-                {
-                    if (!IsPostBack){
-                        rptCategoryParentDataSource();
-                        BindRelatedNews("0");
+            Response.Redirect("Default.aspx");
+            //if (Session["UserType"] == null || Session["UserName"] == null)
+            //{
+            //    Response.Redirect("/ofeditor/Login.aspx");
+            //}
+            //else
+            //{
+            //    int userType = int.Parse(Session["UserType"].ToString());
+            //    if (userType == 2)
+            //    {
+            //        if (!IsPostBack){
+            //            rptCategoryParentDataSource();
+            //            BindRelatedNews("0");
 
-                    }
-                }
-                else
-                {
-                    Response.Redirect("/Default.aspx");
-                }
-            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Response.Redirect("/Default.aspx");
+            //    }
+            //}
         }
         private void BindRelatedNews(string RelatedNews1)
         {
