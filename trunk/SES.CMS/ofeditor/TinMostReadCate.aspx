@@ -196,7 +196,7 @@
         <p style="">
             Chọn chuyên mục:<asp:DropDownList runat="server" Width="200px" ID="ddlMostRead" AppendDataBoundItems="true"
                 AutoPostBack="true" OnSelectedIndexChanged="ddlMostRead_SelectedIndexChanged">
-               
+               <asp:ListItem Text=".: Chọn chuyên mục :." Value="0"></asp:ListItem>
             </asp:DropDownList>
         </p>
         <asp:GridView ID="grvListTopNews" DataKeyNames="MostReadID" runat="server" AutoGenerateColumns="False"
