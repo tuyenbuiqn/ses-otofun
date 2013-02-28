@@ -24,14 +24,14 @@ namespace SES.CMS.ofeditor
                 int userType = int.Parse(Session["UserType"].ToString());
                 if (userType == 2)
                 {
-                    Ultility.ddlDatabinder(ddlMostRead, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD,new DataView( new cmsCategoryBL().SelectAll()," ParentID = 0","",DataViewRowState.CurrentRows));
+                    Ultility.ddlDatabinder(ddlMostRead, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new DataView(new cmsCategoryBL().SelectAll(), " ParentID = 0", "", DataViewRowState.CurrentRows));
                     if (!string.IsNullOrEmpty(Request.QueryString["CategoryID"]))
                     {
                         int categoryID = int.Parse(Request.QueryString["CategoryID"]);
-                      
+
                         if (!IsPostBack)
                         {
-                           
+
                             try
                             {
                                 ddlMostRead.SelectedValue = Request.QueryString["CategoryID"];
@@ -52,7 +52,8 @@ namespace SES.CMS.ofeditor
         }
         protected void ddlMostRead_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Response.Redirect("TinMostReadCate.aspx?CategoryID=" + ddlMostRead.SelectedValue);
+           // if (int.Parse(ddlMostRead.SelectedValue) > 0)
+                Response.Redirect("TinMostReadCate.aspx?CategoryID=" + ddlMostRead.SelectedValue);
         }
         private void BindRelatedNews(string RelatedNews1)
         {
