@@ -26,7 +26,14 @@ namespace SES.CMS.Module
         {
 
         //    rptTieuDiemArt.DataSource = new cmsArticleBL().HotEvents(categoryID);
-            rptTieuDiemArt.DataSource = new cmsMostReadBL().SelectByCategoryID(6, categoryID);
+            cmsCategoryDO objCategory = new cmsCategoryDO();
+            objCategory.CategoryID = categoryID;
+            objCategory = new cmsCategoryBL().Select(objCategory);
+
+            if (objCategory.ParentID == 0)
+                rptTieuDiemArt.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.CategoryID);
+            else
+                rptTieuDiemArt.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.ParentID);
             rptTieuDiemArt.DataBind();
         }
     }

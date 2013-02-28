@@ -30,7 +30,14 @@ namespace SES.CMS.Module
             }
             catch { }
            // rptMostRead.DataSource = new cmsArticleBL().MostReadOfCategory(categoryID);
-            rptMostRead.DataSource = new cmsMostReadBL().SelectByCategoryID(6, categoryID);
+            cmsCategoryDO objCategory = new cmsCategoryDO();
+            objCategory.CategoryID = categoryID;
+            objCategory = new cmsCategoryBL().Select(objCategory);
+
+            if (objCategory.ParentID == 0)
+                rptMostRead.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.CategoryID);
+            else
+                rptMostRead.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.ParentID);
             rptMostRead.DataBind();
         }
 
