@@ -16,6 +16,8 @@
                         <%#Eval("Title") %></a> </li>
                 </ItemTemplate>
             </asp:Repeater>
+            <li><a target="_blank" href="http://www.otofun.net/forums/12-thong-tin-thi-truong-rao-vat" title="Rao vặt">Rao vặt</a>
+            </li>
             <li><a target="_blank" href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
             </li>
         </ul>
