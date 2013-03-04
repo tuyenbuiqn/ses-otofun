@@ -1,7 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTopRightAdv.ascx.cs"
     Inherits="SES.CMS.Module.ucTopRightAdv" %>
 <div class="adv-homepage-right">
-     <img src="/Ads/audi-rs6-06300x250.jpg" height="250" width="300"/>
+    <img src="/Ads/Banner-trang-tin-300x385.gif" height="250" width="300"/>
+   
 </div>
 <div class="adv-homepage-right-1">
  <img src="/Media/adv-1.jpg" height="210" width="300"/>
