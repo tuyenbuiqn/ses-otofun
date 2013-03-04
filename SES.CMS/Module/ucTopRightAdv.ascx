@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTopRightAdv.ascx.cs"
     Inherits="SES.CMS.Module.ucTopRightAdv" %>
 <div class="adv-homepage-right">
-    <img src="/Ads/Banner-trang-tin-300x385.gif" style="width:300px; height:385px;"/>
+    <img src="/Ads/Banner-trang-tin-300x385.gif" style="width:300px; height:450px;"/>
    
 </div>
 <div class="adv-homepage-right-1" style="display:none;">
