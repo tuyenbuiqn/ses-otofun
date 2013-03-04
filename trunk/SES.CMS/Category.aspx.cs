@@ -112,7 +112,7 @@ namespace SES.CMS
             if (!string.IsNullOrEmpty(Request.QueryString["Page"]))
                 PageID = int.Parse(Request.QueryString["Page"]);
 
-            int PageSize = 12;
+            int PageSize = 10;
 
             hplNextPage.NavigateUrl = "/" + Ultility.Change_AVCate(new cmsCategoryBL().Select(new cmsCategoryDO { CategoryID = categoryID }).Title) + "-" + categoryID.ToString() + "-Trang-" + (PageID + 1).ToString() + ".ofn";
             if (PageID > 0)

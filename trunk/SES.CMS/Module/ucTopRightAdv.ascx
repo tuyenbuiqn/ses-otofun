@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTopRightAdv.ascx.cs"
     Inherits="SES.CMS.Module.ucTopRightAdv" %>
 <div class="adv-homepage-right">
-    <img src="/Ads/Banner-trang-tin-300x385.gif" height="250" width="300"/>
+    <img src="/Ads/Banner-trang-tin-300x385.gif" style="width:300px; height:385px;"/>
    
 </div>
-<div class="adv-homepage-right-1">
+<div class="adv-homepage-right-1" style="display:none;">
  <img src="/Media/adv-1.jpg" height="210" width="300"/>
 </div>
 <%--<div class="adv-homepage-right-2">

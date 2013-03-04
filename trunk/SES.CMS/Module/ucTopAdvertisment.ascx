@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTopAdvertisment.ascx.cs"
     Inherits="SES.CMS.Module.ucTopAdvertisment" %>
 <div runat="server" visible="false" id="homeBanner" class="QuangCao">
-   <%-- <embed src="/Ads/MercedesBenz670x80.swf" height="80" alt="" align="middle" width="670"
+    <embed src="/Ads/MercedesBenz670x80.swf" height="80" alt="" align="middle" width="670"
         pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
-        allowscriptaccess="always" wmode="transparent" quality="high">--%>
-        <img alt="news.otofun.net" title="news.otofun.net" src="/Ads/header-otofun.jpg" />
+        allowscriptaccess="always" wmode="transparent" quality="high">
+      
 </div>
 <div runat="server" visible="false" id="catBanner" class="QuangCao">
     <embed src="/Ads/toyotathanhxuan670x80.swf" height="80" alt="" align="middle" width="670"
