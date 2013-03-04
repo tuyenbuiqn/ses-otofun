@@ -14,6 +14,8 @@ namespace SES.CMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string url = Request.Url.AbsolutePath;
+            string rt = url.Substring(1, url.Length - 5);
             loadTime();
             if (!string.IsNullOrEmpty(Request.QueryString["CategoryID"]))
             {
