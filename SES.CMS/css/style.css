@@ -501,8 +501,10 @@ table.tbimage .image_desc
 {
     width: 210px;
     float: right;
-    height:462px;
     border-right:1px solid #d2bf9c;
+    margin-top: 6px;
+    height: 450px;
+    margin-bottom: 10px;
 }
 .TinTuc p
 {
@@ -529,8 +531,8 @@ table.tbimage .image_desc
 }
 .tintuc-box
 {
-    width: 206px;
-height: 462px;
+width: 206px;
+height: 400px;
 float: left;
 margin-top: -1px;
 padding-top: 4px;
@@ -971,6 +973,7 @@ padding-top: 4px;
     width: 300px;
     margin-top: 20px;
     float: left;
+    margin-left:10px;
 }
 .video-cap
 {
@@ -987,12 +990,10 @@ padding-top: 4px;
 }
 .video-detail
 {
-    margin-left: 10px;
     width: 300px;
     height: 230px;
-    border: dotted 1px black;
     float: left;
-    margin-top: 5px;
+    margin-top: 1px;
 }
 
 
