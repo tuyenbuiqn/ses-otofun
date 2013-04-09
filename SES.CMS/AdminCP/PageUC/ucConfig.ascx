@@ -9,7 +9,7 @@
             Tiêu đề:
         </td>
         <td class="style9">
-            <asp:TextBox ID="txtTitle" runat="server" ValidationGroup="submitGrp" Width="179px"></asp:TextBox>
+            <asp:TextBox ID="txtTitle" runat="server" ValidationGroup="submitGrp" Width="379px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTitle"
                 ErrorMessage="*** Cần nhập tiêu đề" ValidationGroup="submitGrp"></asp:RequiredFieldValidator>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,6 +43,17 @@
             <asp:FileUpload ID="fuImage" runat="server" />
             &nbsp;
             <asp:HyperLink ID="hplImage" runat="server" Visible="false" Target="_blank">[Xem ảnh]</asp:HyperLink>
+        </td>
+    </tr>
+    <tr runat="server" id="trRadio">
+        <td>
+            Chọn chế độ lấy tin Đọc nhiều chuyên mục
+        </td>
+        <td>
+              <asp:RadioButton runat="server" ID="rdAuto" GroupName="rdCheck"  />
+            Hệ thống lấy tự động&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:RadioButton runat="server" ID="rdManual" GroupName="rdCheck"  />
+            Điều chỉnh thủ công
         </td>
     </tr>
     <tr>

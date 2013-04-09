@@ -29,18 +29,32 @@ namespace SES.CMS.Module
                 categoryID = int.Parse(Module.Substring(Module.LastIndexOf('-') + 1, Module.Length - (Module.LastIndexOf('-') + 1)));
             }
             catch { }
-           // rptMostRead.DataSource = new cmsArticleBL().MostReadOfCategory(categoryID);
-            cmsCategoryDO objCategory = new cmsCategoryDO();
-            objCategory.CategoryID = categoryID;
-            objCategory = new cmsCategoryBL().Select(objCategory);
+            Boolean isAuto = false;
+            try
+            {
 
-            if (objCategory.ParentID == 0)
-                rptMostRead.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.CategoryID);
-            else
-                rptMostRead.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.ParentID);
+                isAuto = Boolean.Parse(new sysConfigBL().Select(new sysConfigDO { ConfigID = 5 }).ConfigValue);
+            }
+            catch { }
+            // Value = true -> Lay tu dong
+            if (isAuto == true)
+            {
+                rptMostRead.DataSource = new cmsArticleBL().MostReadOfCategory(categoryID);
+            }
+            // Value = fasle: Lay = tay
+            else if (isAuto == false)
+            {
+                cmsCategoryDO objCategory = new cmsCategoryDO();
+                objCategory.CategoryID = categoryID;
+                objCategory = new cmsCategoryBL().Select(objCategory);
+
+                if (objCategory.ParentID == 0)
+                    rptMostRead.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.CategoryID);
+                else
+                    rptMostRead.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.ParentID);
+            }
             rptMostRead.DataBind();
         }
-
         public string FriendlyUrl(string s)
         {
             return Ultility.Change_AVCate(s);

@@ -24,16 +24,29 @@ namespace SES.CMS.Module
         }
         protected void rptTieuDiemArtDataSoucre(int categoryID)
         {
+            Boolean isAuto = false;
+            try
+            {
 
-        //    rptTieuDiemArt.DataSource = new cmsArticleBL().HotEvents(categoryID);
-            cmsCategoryDO objCategory = new cmsCategoryDO();
-            objCategory.CategoryID = categoryID;
-            objCategory = new cmsCategoryBL().Select(objCategory);
+                isAuto = Boolean.Parse(new sysConfigBL().Select(new sysConfigDO { ConfigID = 5 }).ConfigValue);
+            }
+            catch { }
+            // Value = true -> Lay tu dong
+            if (isAuto == true)
+            {
+                rptTieuDiemArt.DataSource = new cmsArticleBL().MostReadOfCategory(categoryID);
+            }
+            else if (isAuto == false)
+            {
+                cmsCategoryDO objCategory = new cmsCategoryDO();
+                objCategory.CategoryID = categoryID;
+                objCategory = new cmsCategoryBL().Select(objCategory);
 
-            if (objCategory.ParentID == 0)
-                rptTieuDiemArt.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.CategoryID);
-            else
-                rptTieuDiemArt.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.ParentID);
+                if (objCategory.ParentID == 0)
+                    rptTieuDiemArt.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.CategoryID);
+                else
+                    rptTieuDiemArt.DataSource = new cmsMostReadBL().SelectByCategoryID(6, objCategory.ParentID);
+            }
             rptTieuDiemArt.DataBind();
         }
     }
