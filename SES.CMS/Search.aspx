@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" EnableViewState="false" MasterPageFile="~/Otofun.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="SES.CMS.Search" %>
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
-<%@ Register Src="Module/ucLeftAdv.ascx" TagName="ucLeftAdv" TagPrefix="uc1" %>
+<%@ Register Src="Module/ucTopRightCatAdv.ascx" TagName="ucTopRightCatAdv" TagPrefix="uc1" %>
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
 <%@ Register Src="Module/ucTieuDiem.ascx" TagName="ucTieuDiem" TagPrefix="uc5" %>
 <%@ Register Src="Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc6" %>
@@ -62,7 +62,7 @@
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
                 <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
-                <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
+                <uc1:ucTopRightCatAdv ID="ucTopRightCatAdv1" runat="server" />
             </div>
         </div>
     </div>

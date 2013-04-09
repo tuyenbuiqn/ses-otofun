@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" EnableViewState="False" Language="C#" MasterPageFile="~/Otofun.Master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="SES.CMS.Default" %>
+﻿<%@ Page Title="" EnableViewState="False" Language="C#" MasterPageFile="~/Otofun.Master"
+    AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SES.CMS.Default" %>
 
 <%@ Register Src="/Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc1" %>
 <%@ Register Src="/Module/ucLastestNews.ascx" TagName="ucLastestNews" TagPrefix="uc2" %>
@@ -32,21 +32,23 @@
                     </div>
                     <uc10:ucDanhMucNoiBat runat="server" ID="uc10ucDanhMucNoiBat" />
                     <%-- box-under-car--%>
-                   <%-- <uc3:ucThamKhaoGiaXe runat="server" ID="uc3ThamKhaoGiaXa" />
+                    <%-- <uc3:ucThamKhaoGiaXe runat="server" ID="uc3ThamKhaoGiaXa" />
                     <uc9:ucTuVanAndKyThuat runat="server" ID="uc9TuVanAndKyThuat" />--%>
                 </div>
-                <div class="TinTuc" style="margin-top:6px; height:456px;">
-                  
+                <div class="TinTuc">
                     <uc2:ucLastestNews runat="server" ID="uc2lastestnews" />
                 </div>
-               <%-- <div class="box-under-car" style="margin: 9px 0px 0px 5px;">
+                <%-- <div class="box-under-car" style="margin: 9px 0px 0px 5px;">
                <uc15:ucAnToanGiaoThong runat="server" ID="uc15ucAntoanGiaoThong" />
                 </div>--%>
             </div>
             <%--TOP RIGHT--%><div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
                 <div class="adv-top-homepage-box">
-                    <uc4:ucTopRightAdv runat="server" ID="uc4TopRight" />
+                
+                    <div class="adv-homepage-right">
+                        <img src="/Ads/heaven.jpg" style="width: 300px; height: 450px;" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -56,11 +58,28 @@
             <uc7:ucMostRead runat="server" ID="uc7ucMostRead" />
             <uc11:ucRightHomeAdv runat="server" ID="uc11ucRightHomeAdv" />
             <div class="video">
-                <div class="video-cap">
-                    VIDEO</div>
+                <h3 class="hmp-cate-maintitle">
+                    <span>VIDEO</span>
+                </h3>
                 <div class="video-detail">
                     <uc12:ucHomeVideo runat="server" ID="uc12Video" />
                 </div>
+            </div>
+            <div class="quangcao-right">
+                <embed src="/Ads/Nissan300x600.swf" height="600" alt="" align="middle" width="300"
+                    pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
+                    allowscriptaccess="always" quality="high">
+        <p></p>
+
+         <embed src="/Ads/topcare300x250.swf" height="250" alt="" align="middle" width="300"
+                    pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
+                    allowscriptaccess="always" quality="high">
+        <p></p>
+
+         <embed src="/Ads/MAZDA300x600.swf" height="600" alt="" align="middle" width="300"
+                    pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
+                    allowscriptaccess="always" quality="high">
+        <p></p>
             </div>
         </div>
         <div class="bottom">

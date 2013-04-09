@@ -83,23 +83,5 @@ namespace SES.CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SES.CMS.Module.ucMostRead uc7ucMostRead;
-        
-        /// <summary>
-        /// uc11ucRightCatAdv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SES.CMS.Module.ucRightCatAdv uc11ucRightCatAdv;
-        
-        /// <summary>
-        /// ucLeftAdv1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SES.CMS.Module.ucLeftAdv ucLeftAdv1;
     }
 }
