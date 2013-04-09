@@ -270,6 +270,41 @@ arrcmsSetTopDO.Add(objcmsSetTopDO);
             }
             return dt;
         }
+          public int UpdateByOrderIDAndCategoryID(int articleID, int orderID,int categoryID)
+        {
+
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "cmsSetTop_UpdateByOrderIDAndCategoryID";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+            Sqlparam.Value = articleID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+
+            Sqlparam = new SqlParameter("@OrderID", SqlDbType.Int);
+            Sqlparam.Value = orderID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            Sqlparam = new SqlParameter("@CategoryID", SqlDbType.Int);
+            Sqlparam.Value = categoryID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+
+            Sqlparam = new SqlParameter("@ErrorCode", SqlDbType.Int);
+            Sqlparam.Direction = ParameterDirection.ReturnValue;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            int result = base.ExecuteNoneQuery(Sqlcomm);
+
+            if (!Convert.IsDBNull(Sqlcomm.Parameters["@ErrorCode"]))
+                result = Convert.ToInt32(Sqlcomm.Parameters["@ErrorCode"].Value);
+
+            return result;
+
+
+        }
     }
 
 }
