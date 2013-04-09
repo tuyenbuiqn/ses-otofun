@@ -199,14 +199,14 @@
                     //Set new content to be pasted into the editor
 
                     if (!!img.alt) {
-                        var newInner = "<table border='0' class='tbimage' cellspacing='0' cellpadding='3' width='1' align='center'><tbody><tr><td>";
-                        newInner = newInner + "<img src='" + img.src + "' alt='" + img.alt + "' style='width:550px; height:367px;'/>" + "</td></tr><tr><td class='image_desc'>";
-                        newInner = newInner + img.alt + "</td></tr></tbody></table>";
+                        var newInner = "<center>";
+                        newInner = newInner + "<img src='" + img.src + "' alt='" + img.alt + "'/></center><center>";
+                        newInner = newInner + img.alt + "</center>";
 
                         args.set_value(newInner);
                     }
                     else {
-                        var newInner = "<center><img src='" + img.src + "' alt='Otofun News' style='" + img.getAttribute("style") + "'/></center><br/>";
+                        var newInner = "<center><img src='" + img.src + "' alt='Otofun News'/></center><br/>";
 
                         args.set_value(newInner);
                     }
