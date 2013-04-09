@@ -310,6 +310,42 @@ namespace SES.CMS.ofeditor {
         protected global::System.Web.UI.WebControls.DropDownList ddlMin;
         
         /// <summary>
+        /// divDongXuatBan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDongXuatBan;
+        
+        /// <summary>
+        /// ddlViTri2NoiBat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlViTri2NoiBat;
+        
+        /// <summary>
+        /// ddlCategory2NoiBat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategory2NoiBat;
+        
+        /// <summary>
+        /// ddlViTri9TrangChu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlViTri9TrangChu;
+        
+        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>

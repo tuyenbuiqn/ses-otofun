@@ -20,8 +20,6 @@ namespace SES.CMS.ofeditor
         string sRef = "Default.aspx";
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             txtDetail.CssFiles.Add("~/css/imageEdit.css");
             if (Session["UserID"] == null) Functions.Alert("Bạn cần đăng nhập!", "Login.aspx?ReturnURL=" + Request.Url.AbsolutePath);
             else
@@ -47,6 +45,7 @@ namespace SES.CMS.ofeditor
                         {
                             ddlMin.Items.Add(new ListItem(id.ToString() + "p", id.ToString()));
                         }
+                       
                     }
                     SES.CMS.AdminCP.Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
                     if (Request.QueryString["ArticleID"] != null)
@@ -59,19 +58,24 @@ namespace SES.CMS.ofeditor
                         if (!CheckQuyenSuaBai(objArt)) SES.CMS.AdminCP.Functions.Alert("Bạn không có quyền sửa bài này", "Default.aspx");
                         else
                         {
-
                             if (TypeID == 1)
                             {
                                 objArt.DangBienTap = true; // Lock editting
                                 objArt.BTVEdit = int.Parse(Session["UserID"].ToString());
                                 new cmsArticleBL().Update(objArt);
                             }
-
-
                             initForm();
-
                         }
-
+                        // Tài khoản là Thư ký + Trạng thái = 2: là Chờ xuất bản
+                        // -> Bật phần Đồng xuất bản ra + Bind dữ liệu vào ddlCategory2NoiBat
+                        if (TypeID >= 2)
+                        {
+                            if (objArt.TrangThai == 2)
+                            {
+                                divDongXuatBan.Visible = true;
+                                ddlCategory2NoiBatDataSource(objArt.ArticleID);
+                            }
+                        }
                     }
                     else
                     {
@@ -82,12 +86,14 @@ namespace SES.CMS.ofeditor
                         Directory.CreateDirectory(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/"));
                     txtDetail.ImageManager.ViewPaths = txtDetail.ImageManager.DeletePaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
                     txtDetail.ImageManager.UploadPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
-
-
-
                 }
-
-
+        }
+        // Lấy dữ liệu từ bảng cmsArticleCategory theo ArticleID(Danh mục cha)
+        // Đưa vào ddlCategory2NoiBat
+        protected void ddlCategory2NoiBatDataSource(int articleID)
+        {
+            ddlCategory2NoiBat.DataSource = new cmsArticleCategoryBL().SelectCategory_ByArticleID_Filter(articleID);
+            ddlCategory2NoiBat.DataBind();
         }
         protected void grvHistoryDataSource(int articleID)
         {
@@ -309,6 +315,44 @@ namespace SES.CMS.ofeditor
                 // Lưu thì có giữ lock edit ko ????????????????????????????????????????
                 if (objArt.TrangThai == 3)
                     objArt.ThoiGianXuatBan = DateTime.Now;
+                // Đồng xuất  bản
+                // Check quyền
+                int TypeID = -1;
+                if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
+                if (TypeID == 2)
+                {
+                    if (objArt.TrangThai == 2)
+                    {
+                        // Update 9 đọc nhiều trang chủ
+                        // Không chọn => Không làm gì hết
+                        int order9TrangChu = int.Parse(ddlViTri9TrangChu.SelectedValue);
+                        if (order9TrangChu == 0)
+                        { }
+                        else
+                        {
+                            new cmsTopNewsBL().UpdateByOrderID(objArt.ArticleID, order9TrangChu);
+                            objArt.TrangThai = 3;
+                        }
+                        //Update 2 nổi bật danh mục
+                        // 2 điều kiện(danh mục + Order > 0
+                        int order2NoiBat = int.Parse(ddlViTri2NoiBat.SelectedValue);
+                        int cate2NoiBat = int.Parse(ddlCategory2NoiBat.SelectedValue);
+
+                        if (order2NoiBat > 0)
+                        {
+                            if (cate2NoiBat > 0)
+                            {
+                                new cmsSetTopBL().UpdateByOrderIDAndCategoryID(objArt.ArticleID, order2NoiBat, cate2NoiBat);
+                                objArt.TrangThai = 3;
+                            }
+                            else
+                            {
+                                Functions.Alert("Vui lòng kiểm tra lại phần Danh mục trong Đồng xuất bản");
+                                ddlCategory2NoiBat.Focus();
+                            }
+                        }
+                    }
+                }
                 new cmsArticleBL().Update(objArt);
                 objHistory.ArticleID = objArt.ArticleID;
                 objHistory.Action = 2;//Sửa bài viết
@@ -330,6 +374,7 @@ namespace SES.CMS.ofeditor
                     new cmsArticleCategoryBL().Insert(o);
 
                 }
+
 
             }
             SES.CMS.AdminCP.Functions.Alert("Cập nhật thành công!", hdfRFR.Value);

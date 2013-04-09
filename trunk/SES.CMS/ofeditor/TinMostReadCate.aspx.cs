@@ -24,7 +24,13 @@ namespace SES.CMS.ofeditor
                 int userType = int.Parse(Session["UserType"].ToString());
                 if (userType == 2)
                 {
-                    Ultility.ddlDatabinder(ddlMostRead, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new DataView(new cmsCategoryBL().SelectAll(), " ParentID = 0", "", DataViewRowState.CurrentRows));
+                    divQuanLyTin.Visible = true;
+                    radioCheck();
+                    if (!IsPostBack)
+                    {
+
+                        Ultility.ddlDatabinder(ddlMostRead, cmsCategoryDO.CATEGORYID_FIELD, cmsCategoryDO.TITLE_FIELD, new DataView(new cmsCategoryBL().SelectAll(), " ParentID = 0", "", DataViewRowState.CurrentRows));
+                    } 
                     if (!string.IsNullOrEmpty(Request.QueryString["CategoryID"]))
                     {
                         int categoryID = int.Parse(Request.QueryString["CategoryID"]);
@@ -50,10 +56,37 @@ namespace SES.CMS.ofeditor
                 }
             }
         }
+
+        protected void radioCheck()
+        {
+            try
+            {
+                Boolean isAuto = false;
+                isAuto = Boolean.Parse(new sysConfigBL().Select(new sysConfigDO { ConfigID = 5}).ConfigValue);
+                //Value = true
+                //True -> Lay tu dong
+                //False -> Lay bang tay
+                if (isAuto == true)
+                {
+                    rdAuto.Checked = true;
+                    rdManual.Checked = false;
+                    divManual.Visible = false;
+                }
+                else if (isAuto == false)
+                {
+                    rdManual.Checked = true;
+                    divManual.Visible = true;
+                    rdAuto.Checked = false;
+                }
+            }
+            catch 
+            {
+            }
+        }
         protected void ddlMostRead_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // if (int.Parse(ddlMostRead.SelectedValue) > 0)
-                Response.Redirect("TinMostReadCate.aspx?CategoryID=" + ddlMostRead.SelectedValue);
+            // if (int.Parse(ddlMostRead.SelectedValue) > 0)
+            Response.Redirect("TinMostReadCate.aspx?CategoryID=" + ddlMostRead.SelectedValue);
         }
         private void BindRelatedNews(string RelatedNews1)
         {
@@ -164,5 +197,21 @@ namespace SES.CMS.ofeditor
             grvListTopNews.PageIndex = e.NewPageIndex;
             rptCategoryParentDataSource(int.Parse(Request.QueryString["CategoryID"]));
         }
+
+        protected void rdAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            divManual.Visible = false;
+            sysConfigDO objSys = new sysConfigDO(){ConfigID = 5, ConfigName="Quản lý lấy tin 6 Đọc nhiều chuyên mục", ConfigValue = "True"};
+            new sysConfigBL().Update(objSys);
+            radioCheck();
+        }
+        protected void rdManual_CheckedChanged(object sender, EventArgs e)
+        {
+            divManual.Visible = true;
+            sysConfigDO objSys = new sysConfigDO() { ConfigID = 5, ConfigName = "Quản lý lấy tin 6 Đọc nhiều chuyên mục", ConfigValue = "False" };
+            new sysConfigBL().Update(objSys);
+            radioCheck();
+        }
+
     }
 }

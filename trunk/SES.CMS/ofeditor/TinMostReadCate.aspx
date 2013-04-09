@@ -189,106 +189,116 @@
             }
         }
     </script>
-    <div style="float: left; width: 98%; margin: 10px 0 10px 10px;">
-        <h1 class="h1-style1" style="width:320px;">
+    <div runat="server" id="divQuanLyTin" visible="false" style="float: left; width: 98%; margin: 10px 0 10px 10px;">
+        <h1 class="h1-style1" style="width: 410px;">
+            Chọn chế độ lấy tin Đọc nhiều chuyên mục
+        </h1>
+        <p style="font-size: 14px; color: #000; font-weight: bold;">
+            <asp:RadioButton runat="server" ID="rdAuto" GroupName="rdCheck" OnCheckedChanged="rdAuto_CheckedChanged" AutoPostBack="true" />
+            Hệ thống lấy tự động&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:RadioButton runat="server" ID="rdManual" GroupName="rdCheck" OnCheckedChanged="rdManual_CheckedChanged" AutoPostBack="true" />
+            Điều chỉnh thủ công</p>
+    </div>
+    <div style="float: left; width: 98%; margin: 10px 0 10px 10px;" runat="server" id="divManual" visible="false">
+        <h1 class="h1-style1" style="width: 320px;">
             Danh sách tin nổi bật chuyên mục
         </h1>
         <p style="">
             Chọn chuyên mục:<asp:DropDownList runat="server" Width="200px" ID="ddlMostRead" AppendDataBoundItems="true"
                 AutoPostBack="true" OnSelectedIndexChanged="ddlMostRead_SelectedIndexChanged">
-               <asp:ListItem Text=".: Chọn chuyên mục :." Value="0"></asp:ListItem>
+                <asp:ListItem Text=".: Chọn chuyên mục :." Value="0"></asp:ListItem>
             </asp:DropDownList>
         </p>
-          <div runat="server" visible="false" id="divEdit" style="float: left; width: 98%;
-        margin: 10px 0 10px 0px;">
-      <%--  <h1 class="h1-style1">
+        <div runat="server" visible="false" id="divEdit" style="float: left; width: 98%;
+            margin: 10px 0 10px 0px;">
+            <%--  <h1 class="h1-style1">
             Sửa tin set top</h1>--%>
-        <div class="tin-noi-bat-box">
-            <div class="tin-noi-bat-content">
-                <h3>
-                    Tin cần sửa</h3>
-                <div class="tin-noi-bat-table">
-                    <table class="tstyle2">
-                        <thead>
-                            <tr>
-                                <th style="display:none;">
-                                    ArticleID
-                                </th>
-                                <th>
-                                    Tiêu đề
-                                </th>
-                                <th>
-                                    Số thứ tự
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="display:none;">
-                                    <asp:Label runat="server" ID="lblOldArticleID" CssClass="tin-noi-bat-left"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" ID="lblOldTitle" CssClass="tin-noi-bat-right"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" ID="lblOrderID" CssClass="tin-noi-bat-right"></asp:Label>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="tin-noi-bat-content">
-                <div class="tin-noi-bat-new">
+            <div class="tin-noi-bat-box">
+                <div class="tin-noi-bat-content">
                     <h3>
-                        Chọn tin thay thế</h3>
-                    <div class="button-tinnoibat-box" style="">
-                        <span>
-                            <input class="button" type="submit" value="Thay đổi" onclick="openWin(); return false;" />
-                            <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent(); return false;" />
-                        </span>
-                    </div>
-                    <div style="float: left; width: 100%;">
-                        <telerik:RadGrid CssClass="mgrd" ID="RadGrid1" AutoGenerateColumns="False" runat="server"
-                            ItemStyle-Height="150px" CellSpacing="0" GridLines="None">
-                            <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID"
-                                DataKeyNames="ArticleID">
-                                <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
-                                <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
-                                </RowIndicatorColumn>
-                                <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
-                                </ExpandCollapseColumn>
-                                <Columns>
-                                    <telerik:GridBoundColumn DataField="ArticleID" UniqueName="ArticleID" HeaderText="ArticleID">
-                                        <HeaderStyle Width="70px" />
-                                    </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề">
-                                    </telerik:GridBoundColumn>
-                                </Columns>
-                                <EditFormSettings>
-                                    <EditColumn FilterControlAltText="Filter EditCommandColumn column">
-                                    </EditColumn>
-                                </EditFormSettings>
-                            </MasterTableView>
-                            <ClientSettings>
-                                <ClientEvents OnRowSelected="rowSelected" />
-                                <Selecting AllowRowSelect="True"></Selecting>
-                                <Scrolling AllowScroll="true" UseStaticHeaders="true"></Scrolling>
-                            </ClientSettings>
-                            <FilterMenu EnableImageSprites="False">
-                            </FilterMenu>
-                        </telerik:RadGrid>
+                        Tin cần sửa</h3>
+                    <div class="tin-noi-bat-table">
+                        <table class="tstyle2">
+                            <thead>
+                                <tr>
+                                    <th style="display: none;">
+                                        ArticleID
+                                    </th>
+                                    <th>
+                                        Tiêu đề
+                                    </th>
+                                    <th>
+                                        Số thứ tự
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="display: none;">
+                                        <asp:Label runat="server" ID="lblOldArticleID" CssClass="tin-noi-bat-left"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" ID="lblOldTitle" CssClass="tin-noi-bat-right"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" ID="lblOrderID" CssClass="tin-noi-bat-right"></asp:Label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div style="width: 100%; float: left; margin-top: 10px;">
-                    <asp:Button ID="btnLuu" class="button" runat="server" Text="Lưu lại thay đổi" OnClick="btnLuu_Click" />
-                    <asp:Button ID="btnCancel" class="button" runat="server" Text="Hủy thao tác" OnClick="btnCancel_Click" />
+                <div class="tin-noi-bat-content">
+                    <div class="tin-noi-bat-new">
+                        <h3>
+                            Chọn tin thay thế</h3>
+                        <div class="button-tinnoibat-box" style="">
+                            <span>
+                                <input class="button" type="submit" value="Thay đổi" onclick="openWin(); return false;" />
+                                <input class="button" type="submit" value="Xóa" onclick="if(!confirm('Are you sure you want to delete this employee?'))return false; deleteCurrent(); return false;" />
+                            </span>
+                        </div>
+                        <div style="float: left; width: 100%;">
+                            <telerik:RadGrid CssClass="mgrd" ID="RadGrid1" AutoGenerateColumns="False" runat="server"
+                                ItemStyle-Height="150px" CellSpacing="0" GridLines="None">
+                                <MasterTableView NoMasterRecordsText="->Không có dữ liệu" TableLayout="Fixed" ClientDataKeyNames="ArticleID"
+                                    DataKeyNames="ArticleID">
+                                    <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
+                                    <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
+                                    </RowIndicatorColumn>
+                                    <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
+                                    </ExpandCollapseColumn>
+                                    <Columns>
+                                        <telerik:GridBoundColumn DataField="ArticleID" UniqueName="ArticleID" HeaderText="ArticleID">
+                                            <HeaderStyle Width="70px" />
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề">
+                                        </telerik:GridBoundColumn>
+                                    </Columns>
+                                    <EditFormSettings>
+                                        <EditColumn FilterControlAltText="Filter EditCommandColumn column">
+                                        </EditColumn>
+                                    </EditFormSettings>
+                                </MasterTableView>
+                                <ClientSettings>
+                                    <ClientEvents OnRowSelected="rowSelected" />
+                                    <Selecting AllowRowSelect="True"></Selecting>
+                                    <Scrolling AllowScroll="true" UseStaticHeaders="true"></Scrolling>
+                                </ClientSettings>
+                                <FilterMenu EnableImageSprites="False">
+                                </FilterMenu>
+                            </telerik:RadGrid>
+                        </div>
+                    </div>
+                    <div style="width: 100%; float: left; margin-top: 10px;">
+                        <asp:Button ID="btnLuu" class="button" runat="server" Text="Lưu lại thay đổi" OnClick="btnLuu_Click" />
+                        <asp:Button ID="btnCancel" class="button" runat="server" Text="Hủy thao tác" OnClick="btnCancel_Click" />
+                    </div>
                 </div>
             </div>
+            <p style="color: Red; font-size: 14px; font-weight: bold; font-style: inherit;">
+                <asp:Label runat="server" ID="lblError"></asp:Label></p>
         </div>
-        <p style="color: Red; font-size: 14px; font-weight: bold; font-style: inherit;">
-            <asp:Label runat="server" ID="lblError"></asp:Label></p>
-    </div>
         <asp:GridView ID="grvListTopNews" DataKeyNames="MostReadID" runat="server" AutoGenerateColumns="False"
             CssClass="tstyle2" PageSize="35" AllowPaging="true" Width="100%" PagerStyle-CssClass="pgr"
             OnRowCancelingEdit="grvListTopNews_RowCancelingEdit" OnRowEditing="grvListTopNews_RowEditing"
@@ -344,5 +354,4 @@
             </Columns>
         </asp:GridView>
     </div>
-  
 </asp:Content>
