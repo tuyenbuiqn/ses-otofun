@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucFooter.ascx.cs" Inherits="SES.CMS.Module.ucFooter" %>
+
 <div class="footer">
     <div class="inner">
        <%-- <ul class="big-ul">
@@ -59,12 +60,14 @@
             </asp:Repeater>
             <li><a target="_blank" href="http://www.otofun.net/forums/12-thong-tin-thi-truong-rao-vat" title="Rao vặt">Rao vặt</a>
             </li>
+            <li><a target="_blank" href="http://news.otofun.net/?UI=Mobile" title="Phiên bản Mobile">Bản Mobile</a>
+            </li>
         </ul>
         <p class="banquyen" style="margin-bottom: 3px;">
-            Bản quyền © 2006 - 2012 OTOFUN®, bảo lưu mọi quyền. Ghi rõ nguồn "Otofun News" khi
+            Bản quyền © 2006 OTOFUN®, bảo lưu mọi quyền. Ghi rõ nguồn "Otofun News" khi
             sử dụng thông tin từ website này.</p>
-        <p class="banquyen" style="margin-left: 140px; margin-bottom: 7px;">
-            Giấy phép số: 95/GXN-TTĐT do Cục QL Phát thanh, Truyền hình và Thông tin điện tử
+        <p class="banquyen" style="margin-left: 160px; margin-bottom: 7px;">
+            Giấy phép số: 84/GP-TTĐT do Cục QL Phát thanh, Truyền hình và Thông tin điện tử
             - Bộ TT&TT cấp. Cơ quan chủ quản: Công ty Cổ phần OTV</p>
     </div>
 </div>

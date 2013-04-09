@@ -10,7 +10,7 @@
 namespace SES.CMS.Module {
     
     
-    public partial class ucRightCatAdv {
+    public partial class ucRightArtAdv {
         
         /// <summary>
         /// divMazda control.

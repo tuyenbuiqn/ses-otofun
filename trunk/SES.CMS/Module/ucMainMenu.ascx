@@ -8,6 +8,7 @@
                     AlternateText="Otofun-homepage" /></a>
         </div>
         <ul class="toplink">
+       
             <asp:Repeater runat="server" ID="rptMainMenu" OnItemDataBound="rptMainMenu_ItemDataBound">
                 <ItemTemplate>
                     <%#ReturnLiActive(Eval("CategoryID").ToString())%>
@@ -18,8 +19,9 @@
             </asp:Repeater>
             <li><a target="_blank" href="http://www.otofun.net/forums/12-thong-tin-thi-truong-rao-vat" title="Rao vặt">Rao vặt</a>
             </li>
-            <li><a target="_blank" href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
+             <li><a target="_blank" href="http://www.otofun.net/forum.php" title="Diễn đàn otofun.net">Diễn đàn</a>
             </li>
+            
         </ul>
         <div class="search-box">
             <asp:ImageButton runat="server" ImageUrl="/images/search-button.jpg" CssClass="search-button"
