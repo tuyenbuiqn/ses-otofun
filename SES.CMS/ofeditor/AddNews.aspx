@@ -213,6 +213,37 @@
 
                 }
             }
+            function ReturnDongXuatBanValue2NoiBat() {
+                //alert(document.getElementById("ddlViTri2NoiBat").selectedIndex);
+                var ddl2NoiBat = document.getElementById('<%=ddlViTri2NoiBat.ClientID %>');
+                if (ddl2NoiBat.value == 0) {
+
+                }
+                else {
+                    if (confirm("Vị trí chọn thay thế đã có bản tin! Bạn có chắc chắn thay thế bản tin này! Vui lòng xem lại!")) {
+                        alert("Vui lòng chọn danh mục thay thể bản tin!");
+                        document.getElementById('<%=ddlCategory2NoiBat.ClientID %>').focus();
+                    }
+                    else {
+                        ddl2NoiBat.selectedIndex = 0;
+                    }
+                }
+            }
+            function ReturnDongXuatBanValue9TrangChu() {
+                //alert(document.getElementById("ddlViTri2NoiBat").selectedIndex);
+                var ddl9TrangChu = document.getElementById('<%=ddlViTri9TrangChu.ClientID %>');
+                if (ddl9TrangChu.value == 0) {
+
+                }
+                else {
+                    if (confirm("Bạn có chắc chắn thay thế bản tin này! Vui lòng xem lại tại trang chủ!")) {
+                        
+                    }
+                    else {
+                        ddl9TrangChu.selectedIndex = 0;
+                    }
+                }
+            }
 
         //]]>
         </script>
@@ -527,7 +558,7 @@
                 </label>
                 <asp:TextBox CssClass="lf" ID="txtAuthor" Width="250px" runat="server" ValidationGroup="submitGrp"></asp:TextBox>
             </div>
-            <div class="fieldsetdiv" style="display:none !important;">
+            <div class="fieldsetdiv" style="display: none !important;">
                 <label for="lf">
                     Tùy chọn
                 </label>
@@ -579,6 +610,41 @@
                     </table>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+            <div class="fieldsetdiv" runat="server" visible="false" id="divDongXuatBan">
+                <label for="lf">
+                    Đồng xuất bản</label>
+                <span class="dxb-bold">2 Nổi bật chuyên mục</span><span class="dxb-x"> Chọn vị trí
+                    <asp:DropDownList runat="server" ID="ddlViTri2NoiBat" AppendDataBoundItems="true" onchange="JavaScript:ReturnDongXuatBanValue2NoiBat();">
+                        <asp:ListItem Text=".: Không chọn :." Value="0" ></asp:ListItem>
+                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                    </asp:DropDownList>
+                </span><span class="dxb-x">Chọn chuyên mục
+                    <asp:DropDownList runat="server" Width="200px" ID="ddlCategory2NoiBat" AppendDataBoundItems="true" DataTextField="CategoryName" DataValueField="CategoryID">
+                        <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
+                    </asp:DropDownList>
+                </span>
+                <br />
+                <div class="divDongXuatBan"> 
+                    <span class="dxb-bold">9 đọc nhiều trang chủ </span><span class="dxb-x">Chọn vị trí
+                        <asp:DropDownList runat="server" ID="ddlViTri9TrangChu" AppendDataBoundItems="true" onchange="JavaScript:ReturnDongXuatBanValue9TrangChu();">
+                            <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
+                            <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                            <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                            <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                            <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                            <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                            <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                            <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                            <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                            <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                        </asp:DropDownList>
+                    </span>
+                </div>
+                <div class="divDongXuatBan" style="margin-bottom:20px;"> 
+                <a href="/Default.aspx" title="Xem lại trang chủ" target="_blank">[Xem lại tin đã có]</a>
                 </div>
             </div>
             <div class="fieldsetdiv">
