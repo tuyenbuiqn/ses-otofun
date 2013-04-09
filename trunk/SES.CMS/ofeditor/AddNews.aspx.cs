@@ -45,7 +45,6 @@ namespace SES.CMS.ofeditor
                         {
                             ddlMin.Items.Add(new ListItem(id.ToString() + "p", id.ToString()));
                         }
-                       
                     }
                     SES.CMS.AdminCP.Functions.ddlDatabinder(ddlEvent, cmsEventDO.EVENTID_FIELD, cmsEventDO.TITLE_FIELD, new cmsEventBL().SelectAll());
                     if (Request.QueryString["ArticleID"] != null)
@@ -70,7 +69,7 @@ namespace SES.CMS.ofeditor
                         // -> Bật phần Đồng xuất bản ra + Bind dữ liệu vào ddlCategory2NoiBat
                         if (TypeID >= 2)
                         {
-                            if (objArt.TrangThai == 2)
+                            if (objArt.TrangThai == 2 || objArt.TrangThai == 0)
                             {
                                 divDongXuatBan.Visible = true;
                                 ddlCategory2NoiBatDataSource(objArt.ArticleID);
@@ -306,9 +305,7 @@ namespace SES.CMS.ofeditor
                     int oid = int.Parse(((DropDownList)n.FindControl("ddl")).SelectedValue);
                     cmsArticleCategoryDO o = new cmsArticleCategoryDO { ArticleID = aid, CategoryID = int.Parse(n.Value), OrderID = oid };
                     new cmsArticleCategoryBL().Insert(o);
-
                 }
-
             }
             else
             {
@@ -321,7 +318,7 @@ namespace SES.CMS.ofeditor
                 if (Session["UserType"] != null) TypeID = int.Parse(Session["UserType"].ToString());
                 if (TypeID == 2)
                 {
-                    if (objArt.TrangThai == 2)
+                    if (objArt.TrangThai == 2 || objArt.TrangThai == 0)
                     {
                         // Update 9 đọc nhiều trang chủ
                         // Không chọn => Không làm gì hết
@@ -361,11 +358,11 @@ namespace SES.CMS.ofeditor
                 new cmsArticleCategoryBL().DeleteByArticleID(objArt.ArticleID);
                 string cateArticleDetail = "ArticleDetailCache=" + objArt.ArticleID;
                 Cache cache = HttpContext.Current.Cache;
-                
-                    DataTable dtArticleCache = new cmsArticleBL().SelectByPK(objArt.ArticleID);
-                    if (dtArticleCache != null)
-                        cache.Insert(cateArticleDetail, dtArticleCache, null, DateTime.Now.AddSeconds(650), TimeSpan.Zero);
-                
+
+                DataTable dtArticleCache = new cmsArticleBL().SelectByPK(objArt.ArticleID);
+                if (dtArticleCache != null)
+                    cache.Insert(cateArticleDetail, dtArticleCache, null, DateTime.Now.AddSeconds(650), TimeSpan.Zero);
+
 
                 foreach (RadTreeNode n in rtv.CheckedNodes)
                 {

@@ -236,8 +236,8 @@
 
                 }
                 else {
-                    if (confirm("Bạn có chắc chắn thay thế bản tin này! Vui lòng xem lại tại trang chủ!")) {
-                        
+                    if (confirm("Vị trí chọn thay thế đã có bản tin! Bạn có chắc chắn thay thế bản tin này! Vui lòng xem lại!")) {
+
                     }
                     else {
                         ddl9TrangChu.selectedIndex = 0;
@@ -612,24 +612,27 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
-            <div class="fieldsetdiv" runat="server" visible="false" id="divDongXuatBan">
+            <div class="fieldsetdiv" runat="server" id="divDongXuatBan" visible="false">
                 <label for="lf">
                     Đồng xuất bản</label>
-                <span class="dxb-bold">2 Nổi bật chuyên mục</span><span class="dxb-x"> Chọn vị trí
-                    <asp:DropDownList runat="server" ID="ddlViTri2NoiBat" AppendDataBoundItems="true" onchange="JavaScript:ReturnDongXuatBanValue2NoiBat();">
-                        <asp:ListItem Text=".: Không chọn :." Value="0" ></asp:ListItem>
+                <span class="dxb-bold">2 Nổi bật chuyên mục : </span><span class="dxb-x">Chọn vị trí
+                    <asp:DropDownList runat="server" ID="ddlViTri2NoiBat" AppendDataBoundItems="true"
+                        onchange="JavaScript:ReturnDongXuatBanValue2NoiBat();">
+                        <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
                         <asp:ListItem Text="1" Value="1"></asp:ListItem>
                         <asp:ListItem Text="2" Value="2"></asp:ListItem>
                     </asp:DropDownList>
                 </span><span class="dxb-x">Chọn chuyên mục
-                    <asp:DropDownList runat="server" Width="200px" ID="ddlCategory2NoiBat" AppendDataBoundItems="true" DataTextField="CategoryName" DataValueField="CategoryID">
+                    <asp:DropDownList runat="server" Width="200px" ID="ddlCategory2NoiBat" AppendDataBoundItems="true"
+                        DataTextField="CategoryName" DataValueField="CategoryID">
                         <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
                     </asp:DropDownList>
                 </span>
                 <br />
-                <div class="divDongXuatBan"> 
-                    <span class="dxb-bold">9 đọc nhiều trang chủ </span><span class="dxb-x">Chọn vị trí
-                        <asp:DropDownList runat="server" ID="ddlViTri9TrangChu" AppendDataBoundItems="true" onchange="JavaScript:ReturnDongXuatBanValue9TrangChu();">
+                <div class="divDongXuatBan">
+                    <span class="dxb-bold" style="margin-right: 27px;">9 Nổi bật trang chủ : </span><span class="dxb-x">Chọn vị trí
+                        <asp:DropDownList runat="server" ID="ddlViTri9TrangChu" AppendDataBoundItems="true"
+                            onchange="JavaScript:ReturnDongXuatBanValue9TrangChu();">
                             <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
                             <asp:ListItem Text="1" Value="1"></asp:ListItem>
                             <asp:ListItem Text="2" Value="2"></asp:ListItem>
@@ -643,8 +646,8 @@
                         </asp:DropDownList>
                     </span>
                 </div>
-                <div class="divDongXuatBan" style="margin-bottom:20px;"> 
-                <a href="/Default.aspx" title="Xem lại trang chủ" target="_blank">[Xem lại tin đã có]</a>
+                <div class="divDongXuatBan" style="margin-bottom: 20px;">
+                    <a href="/Default.aspx" title="Xem lại trang chủ" target="_blank">[Xem lại tin đã có]</a>
                 </div>
             </div>
             <div class="fieldsetdiv">

@@ -57,14 +57,28 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             //}
             else if (objConfig.ConfigID == 5)
             {
+                //trDes.Visible = false;
+                //trSupport.Visible = false;
+                //trPopup.Visible = true;
+                //txtTitle.Text = objConfig.ConfigName;
+                //if (!File.Exists("~/Media/logo.jpg"))
+                //{
+                //    hplImage.Visible = true;
+                //    hplImage.NavigateUrl = "~/Media/logo.jpg";
+                //}
                 trDes.Visible = false;
                 trSupport.Visible = false;
-                trPopup.Visible = true;
-                txtTitle.Text = objConfig.ConfigName;
-                if (!File.Exists("~/Media/logo.jpg"))
+                trRadio.Visible = true;
+                try
                 {
-                    hplImage.Visible = true;
-                    hplImage.NavigateUrl = "~/Media/logo.jpg";
+                    Boolean isAuto = Boolean.Parse(objConfig.ConfigValue);
+                    if (isAuto == true)
+                        rdAuto.Checked = true;
+                    else if (isAuto == false)
+                        rdManual.Checked = true;
+                }
+                catch
+                {
                 }
             }
             // Sử dụng CKEditor
@@ -74,7 +88,6 @@ namespace SES.CMS.WEB.AdminCP.PageUC
                 trSupport.Visible = true;
                 txtCK.Text = objConfig.ConfigValue;
             }
-
             else
             {
                 trDes.Visible = false;
@@ -113,7 +126,10 @@ namespace SES.CMS.WEB.AdminCP.PageUC
             }
             else if (objConfig.ConfigID == 5)
             {
-                UploadFile(fuImage);
+                if (rdAuto.Checked)
+                    objConfig.ConfigValue = "True";
+                else if (rdManual.Checked)
+                    objConfig.ConfigValue = "False";
             }
             else
             {
