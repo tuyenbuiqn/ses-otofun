@@ -80,6 +80,10 @@ namespace SES.CMS.BL
         {
             return objcmsSetTopDAL.SelectByCategoryID(top, categoryID);
         }
+        public int UpdateByOrderIDAndCategoryID(int articleID, int orderID, int categoryID)
+        {
+            return objcmsSetTopDAL.UpdateByOrderIDAndCategoryID(articleID, orderID, categoryID);
+        }
     }
 
 }

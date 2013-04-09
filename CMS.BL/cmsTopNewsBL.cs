@@ -69,7 +69,10 @@ namespace SES.CMS.BL
          return objcmsTopNewsDAL.SelectAll(top);
         }
 
-
+        public int UpdateByOrderID(int articleID, int orderID)
+        {
+            return objcmsTopNewsDAL.UpdateByOrderID(articleID, orderID);
+        }
      
 #endregion          
     
