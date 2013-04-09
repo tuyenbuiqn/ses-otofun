@@ -10,52 +10,52 @@
 namespace SES.CMS.Module {
     
     
-    public partial class ucRightCatAdv {
+    public partial class ucTopRightArtAdv {
         
         /// <summary>
-        /// divMazda control.
+        /// divBMW control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMazda;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divBMW;
         
         /// <summary>
-        /// divKia control.
+        /// catImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divKia;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl catImg;
         
         /// <summary>
-        /// divNissan control.
+        /// divTopcare control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNissan;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTopcare;
         
         /// <summary>
-        /// divHuongSen control.
+        /// divGW control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHuongSen;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divGW;
         
         /// <summary>
-        /// divIMG control.
+        /// catTTDN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divIMG;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl catTTDN;
         
         /// <summary>
         /// imgBanner control.

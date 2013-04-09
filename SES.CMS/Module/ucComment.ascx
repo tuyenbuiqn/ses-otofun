@@ -1,15 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucComment.ascx.cs" Inherits="SES.CMS.Module.ucComment" %>
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="Captcha" %>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("a#aViewComment").click(function () {
-            $("#divListComment").slideToggle("slow");
-        });
-        $("a#aSendComment").click(function () {
-            $(".div-comment").slideToggle("slow");
-        });
-    });
-</script>
 <asp:ScriptManager ID="ScriptManager1" runat="server">
 </asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
@@ -17,9 +7,9 @@
         <div class="comment-box1" runat="server" id="comment">
 
             <h3>BÌNH LUẬN</h3>
-                <a href="#aViewComment" id="aViewComment">Xem</a>
+              <%--  <a href="#aViewComment" id="aViewComment">Xem</a>
                 <span class="border-comment"></span>
-                <a href="#divxs" id="aSendComment">Gửi</a>
+                <a href="#divxs" id="aSendComment">Gửi</a>--%>
             
             <div id="divListComment">
                 <asp:Repeater ID="rptComment" runat="server" OnItemCommand="rptComment_ItemCommand"
