@@ -2,7 +2,7 @@
     AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="SES.CMS.Category" %>
 
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
-<%@ Register Src="Module/ucLeftAdv.ascx" TagName="ucLeftAdv" TagPrefix="uc1" %>
+<%@ Register Src="Module/ucTopRightCatAdv.ascx" TagName="ucTopRightCatAdv" TagPrefix="uc1" %>
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
 <%@ Register Src="Module/ucTieuDiem.ascx" TagName="ucTieuDiem" TagPrefix="uc5" %>
 <%@ Register Src="Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc6" %>
@@ -87,7 +87,7 @@
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
-                <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
+                <uc1:ucTopRightCatAdv ID="ucTopRightCatAdv1" runat="server" />
                 <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
                 <uc11:ucRightHomeCat runat="server" ID="uc11ucRightHomeCat" />
             </div>

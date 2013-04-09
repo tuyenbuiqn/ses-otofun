@@ -2,7 +2,7 @@
     AutoEventWireup="true" CodeBehind="Event.aspx.cs" Inherits="SES.CMS.Event" %>
 
 <%@ Register TagPrefix="cp" Namespace="SiteUtils" Assembly="CollectionPager" %>
-<%@ Register Src="Module/ucLeftAdv.ascx" TagName="ucLeftAdv" TagPrefix="uc1" %>
+<%@ Register Src="Module/ucTopRightCatAdv.ascx" TagName="ucTopRightCatAdv" TagPrefix="uc1" %>
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
 <%@ Register Src="Module/ucTieuDiem.ascx" TagName="ucTieuDiem" TagPrefix="uc5" %>
 <%@ Register Src="Module/ucTopAdvertisment.ascx" TagName="ucTopAdvertisment" TagPrefix="uc6" %>
@@ -102,13 +102,16 @@
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
                  <div class="adv-top-homepage-box" style="margin-top:12px;">
                     <div class="adv-homepage-right">
-                        <img src="/Ads/audi-rs6-06300x250.jpg" height="250" width="300">
+                        <embed src="/Ads/Hyundai300x250.swf" height="250" alt="" align="middle" width="300"
+        pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
+        allowscriptaccess="always" quality="high">
+    <p></p>
                     </div>
                  
                 </div>
                  <uc7:ucmostread runat="server" ID="uc7ucMostRead" />
-                 <uc11:ucRightCatAdv runat="server" ID="uc11ucRightCatAdv" />
-                <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
+                          <img style="margin:10px;" src="/Ads/Your-ADS300x450.jpg" />
+              
             </div>
         </div>
     </div>

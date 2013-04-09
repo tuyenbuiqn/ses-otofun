@@ -58,15 +58,6 @@ namespace SES.CMS {
         protected global::SES.CMS.Module.ucTopContactInfo uc13UcTopContactInfo;
         
         /// <summary>
-        /// uc4TopRight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SES.CMS.Module.ucTopRightAdv uc4TopRight;
-        
-        /// <summary>
         /// uc5MiddleAdv control.
         /// </summary>
         /// <remarks>

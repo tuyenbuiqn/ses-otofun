@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" EnableViewState="False" Language="C#" MasterPageFile="~/Otofun.Master"
     AutoEventWireup="true" CodeBehind="Article.aspx.cs" Inherits="SES.CMS.Article" %>
 
-<%@ Register Src="Module/ucLeftAdv.ascx" TagName="ucLeftAdv" TagPrefix="uc1" %>
+
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
 <%@ Register Src="Module/ucArticleAdv.ascx" TagName="ucArticleAdv" TagPrefix="uc3" %>
 <%@ Register Src="Module/ucNewArticles.ascx" TagName="ucNewArticles" TagPrefix="uc4" %>
@@ -11,16 +11,17 @@
 <%@ Register Src="Module/ucSameCateArticles.ascx" TagName="ucSameCateArticles" TagPrefix="u8" %>
 <%@ Register Src="/Module/ucTopContactInfo.ascx" TagName="ucTopContactInfo" TagPrefix="uc13" %>
 <%@ Register Src="Module/ucComment.ascx" TagName="ucComment" TagPrefix="uc8" %>
+<%@ Register Src="Module/ucRightArtAdv.ascx" TagName="ucRightArtAdv" TagPrefix="uc9" %>
+<%@ Register Src="Module/ucTopRightArtAdv.ascx" TagName="ucTopRightArtAdv" TagPrefix="uc10" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-		<script type="text/javascript" src="/js/ui.core-1.7.2.js"></script>
-		<script type="text/javascript" src="/js/ui.draggable-1.7.2.js"></script>
-		<script type="text/javascript" src="/js/jquery.mousewheel.min.js"></script>
-		<script type="text/javascript" src="/js/plugin.scrollbar.js"></script>
-		<script type="text/javascript">
-		    $(document).ready(function () {
-		        $("#divListComment").scrollbar();
-		    });
-		</script>
+    
+    
+	<script type="text/javascript" src="/js/jquery.nicescroll.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#divListComment").niceScroll({ touchbehavior: false, cursorcolor: "#900000", cursoropacitymax: 0.7, cursorwidth: 5, cursorborderradius: "1px", autohidemode: "scroll" }).cursor.css(); // MAC like scrollbar
+        });
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="body-top">
@@ -83,11 +84,11 @@
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
-                <div class="adv-homepage-right" style="margin:14px 10px 0 10px;">
-                 <img src="/Ads/audi-rs6-06300x250.jpg" height="250" width="300"/>
+                <div class="adv-homepage-right" style="margin: 14px 10px 0 10px;">
+                    <uc10:ucTopRightArtAdv ID="ucTopRightArtAdv1" runat="server" />
                 </div>
                 <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
-                <uc1:ucLeftAdv ID="ucLeftAdv1" runat="server" />
+                <uc9:ucRightArtAdv ID="ucRightArtAdv1" runat="server" />
             </div>
         </div>
     </div>
