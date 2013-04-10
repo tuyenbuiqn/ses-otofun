@@ -18,7 +18,7 @@ namespace SES.CMS.DAL
     public class cmsArticleDAL : BaseDAL
     {
         #region Private Variables
-        DateTime minDate = new DateTime(1900,1,1);
+        DateTime minDate = new DateTime(1900, 1, 1);
         #endregion
 
         #region Public Constructors
@@ -85,8 +85,8 @@ namespace SES.CMS.DAL
             Sqlparam = new SqlParameter("@CreateDate", SqlDbType.DateTime);
             if (objcmsArticleDO.CreateDate <= minDate)
                 Sqlparam.Value = minDate;
-            else 
-            Sqlparam.Value = objcmsArticleDO.CreateDate;
+            else
+                Sqlparam.Value = objcmsArticleDO.CreateDate;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@IsMostRead", SqlDbType.Bit);
@@ -128,8 +128,8 @@ namespace SES.CMS.DAL
             Sqlparam = new SqlParameter("@ThoiGianGui", SqlDbType.DateTime);
             if (objcmsArticleDO.ThoiGianGui <= minDate)
                 Sqlparam.Value = minDate;
-            else 
-            Sqlparam.Value = objcmsArticleDO.ThoiGianGui;
+            else
+                Sqlparam.Value = objcmsArticleDO.ThoiGianGui;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@BienTapVienID", SqlDbType.Int);
@@ -139,8 +139,8 @@ namespace SES.CMS.DAL
             Sqlparam = new SqlParameter("@ThoiGianGuiXuatBan", SqlDbType.DateTime);
             if (objcmsArticleDO.ThoiGianGuiXuatBan <= minDate)
                 Sqlparam.Value = minDate;
-            else 
-            Sqlparam.Value = objcmsArticleDO.ThoiGianGuiXuatBan;
+            else
+                Sqlparam.Value = objcmsArticleDO.ThoiGianGuiXuatBan;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ThuKyID", SqlDbType.Int);
@@ -150,8 +150,8 @@ namespace SES.CMS.DAL
             Sqlparam = new SqlParameter("@ThoiGianXuatBan", SqlDbType.DateTime);
             if (objcmsArticleDO.ThoiGianXuatBan <= minDate)
                 Sqlparam.Value = minDate;
-            else 
-            Sqlparam.Value = objcmsArticleDO.ThoiGianXuatBan;
+            else
+                Sqlparam.Value = objcmsArticleDO.ThoiGianXuatBan;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@BTVEdit", SqlDbType.Int);
@@ -811,7 +811,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public DataTable SelectBySameCategory(int top,int categoryID)
+        public DataTable SelectBySameCategory(int top, int categoryID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1196,7 +1196,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public DataTable SelectTopHomeNews(int CategoryID,int top)
+        public DataTable SelectTopHomeNews(int CategoryID, int top)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1242,7 +1242,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public DataTable SelectTop20NewArticlesAndCate(DateTime today,int categoryID)
+        public DataTable SelectTop20NewArticlesAndCate(DateTime today, int categoryID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1406,7 +1406,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public DataTable SelectByTrangThaiAndUserCreateBTV(int trangThai, int userCreate, int cate,int btvID)
+        public DataTable SelectByTrangThaiAndUserCreateBTV(int trangThai, int userCreate, int cate, int btvID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1440,7 +1440,7 @@ namespace SES.CMS.DAL
             }
             return dt;
         }
-        public void ChuyenTrangThai_ThuKy(int type,string articleIDList, int trangThai, int thuKyID,int thuKyEdit, DateTime thoiGianXuatBan,bool isPublish)
+        public void ChuyenTrangThai_ThuKy(int type, string articleIDList, int trangThai, int thuKyID, int thuKyEdit, DateTime thoiGianXuatBan, bool isPublish)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1527,7 +1527,7 @@ namespace SES.CMS.DAL
             base.ExecuteNoneQuery(Sqlcomm);
         }
 
-        public void DangKyChiuTrachNhiemBaiViet(int type,string articleIDList, int userID)
+        public void DangKyChiuTrachNhiemBaiViet(int type, string articleIDList, int userID)
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1559,7 +1559,7 @@ namespace SES.CMS.DAL
             base.ExecuteNoneQuery(Sqlcomm);
         }
 
-        
+
 
         public void MultiDelete(string articleIDList)
         {
@@ -1588,17 +1588,17 @@ namespace SES.CMS.DAL
             Sqlparam.Value = categoryID;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-           
+
             DataSet ds = base.GetDataSet(Sqlcomm);
             DataTable dt = null;
 
             if (ds != null && ds.Tables.Count > 0)
             {
                 dt = ds.Tables[0];
-                
+
             }
             int id = 0;
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
                 try
                 {
                     id = Convert.ToInt32(dt.Rows[0]["RCount"]);
@@ -1642,7 +1642,7 @@ namespace SES.CMS.DAL
         {
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
-          //  Sqlcomm.CommandText = "spr_procedure_article_paged";
+            //  Sqlcomm.CommandText = "spr_procedure_article_paged";
             Sqlcomm.CommandText = "spr_procedure_article_paged_x";
             SqlParameter Sqlparam;
 
@@ -1702,7 +1702,7 @@ namespace SES.CMS.DAL
 
         public DataTable selectURLArt(int p)
         {
-            
+
 
             SqlCommand Sqlcomm = new SqlCommand();
             Sqlcomm.CommandType = CommandType.StoredProcedure;
@@ -1713,7 +1713,7 @@ namespace SES.CMS.DAL
             Sqlparam.Value = p;
             Sqlcomm.Parameters.Add(Sqlparam);
 
-           
+
             DataSet ds = base.GetDataSet(Sqlcomm);
             DataTable dt = null;
 
@@ -1723,6 +1723,34 @@ namespace SES.CMS.DAL
 
             }
             return dt;
+        }
+        public string CheckBeforeDelete(int articleID)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsArticle_CheckBeforeDelete";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@ArticleID", SqlDbType.Int);
+            Sqlparam.Value = articleID;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            DataSet ds = base.GetDataSet(Sqlcomm);
+            DataTable dt = null;
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+
+            }
+            string sReturn = "";
+            if (dt.Rows.Count > 0)
+                try
+                {
+                    sReturn = dt.Rows[0]["sResult"].ToString();
+                }
+                catch { }
+            return sReturn;
         }
     }
 

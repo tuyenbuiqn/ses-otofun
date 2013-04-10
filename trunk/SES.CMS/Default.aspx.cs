@@ -13,6 +13,7 @@ namespace SES.CMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+         
             DateTime dateTime = DateTime.Now;
             //ltrNgay.Text = Ultility.vietNameseDay(dateTime.DayOfWeek) + ", ngày " + dateTime.Date.Day + "/" + dateTime.Month + "/" + dateTime.Year;
 

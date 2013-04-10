@@ -316,6 +316,10 @@ namespace SES.CMS.BL
         {
             return objcmsArticleDAL.selectURLArt(p);
         }
+        public string CheckBeforeDelete(int articleID)
+        {
+            return objcmsArticleDAL.CheckBeforeDelete(articleID);
+        }
     }
 
 }
