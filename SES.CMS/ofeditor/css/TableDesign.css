@@ -423,6 +423,23 @@
 	padding: 2px 5px;
 	margin-bottom: 5px;
 	border-radius: 0;
+}
+.divInfoDelete
+{
+	float: left;
+width: 97.9%;
+padding: 10px 10px 0 10px;
+border: 1px dashed #FFAD33;
+margin: 10px 0;
+background: #FFFFAA;
+	}
+.d-confirm-span
+{
+    float:none !important;
+    font-weight:bold;
+    display:inline-block;
+    color:red;
+    font-size:13px !important;
 }	
 .article-action span
 {
@@ -430,6 +447,31 @@
 	padding: 2px 0px;
 	font-size: 15px;
 }	
+.delete-confirm
+{
+	float:left;
+	width:100%;
+	margin:0 0 20px 0;
+	}
+	.delete-confirm li
+{
+	float:left;
+	padding: 5px 0 4px 0;
+	width:95%;
+	margin-left:30px;
+	list-style-type: disc;
+}
+.delete-confirm li a
+{
+	color: #444;
+	font-size: 13px;
+	text-decoration:none;
+	font-weight: bold;
+}
+.delete-confirm li a:hover
+{
+color:#000;
+	}
 #ucSearch
 {
 	margin-left: 10px;
