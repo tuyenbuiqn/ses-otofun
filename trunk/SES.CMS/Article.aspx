@@ -54,7 +54,7 @@
                                     <%#CheckAuth(Eval("Author").ToString())%></div>
                                 <div class="social-wrap">
                                     <span class="createdate-article">
-                                        <%#Eval("CreateDate","{0:dd/MM/yyyy - hh:mm}") %></span>
+                                        <%#Eval("ThoiGianXuatBan","{0:dd/MM/yyyy - hh:mm}") %></span>
                                 </div>
                                 <span class="article-desciption">
                                     <%#Eval("ArticleSP") %></span>
