@@ -21,6 +21,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<!-- Begin Adbrand -->
+
     <div class="body-top">
         <div class="body-out">
             <%--     TOP LEFT--%>
@@ -66,7 +68,7 @@
                 </div>
             </div>
             <div class="quangcao-right">
-                <embed src="/Ads/Nissan300x600.swf" height="600" alt="" align="middle" width="300"
+                <embed src="/Ads/ALIPAS.swf" height="600" alt="" align="middle" width="300"
                     pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
                     allowscriptaccess="always" quality="high">
         <p></p>

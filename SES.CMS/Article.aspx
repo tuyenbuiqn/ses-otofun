@@ -24,6 +24,17 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<div id="divad" visible="false" runat="server">
+<script language="javascript" type="text/javascript">
+    var adbrand_zoneId = 'va_5E10E3FAAB615BF6';
+    var adbrand_width = '250';
+    var adbrand_height = '250';
+    var adbrand_sizeId = '12';
+    var adbrand_typeId = '2';  
+</script> 
+<script type="text/javascript" src="http://embed.adbrand.net/adbrand.js"></script> 
+<!-- End: Adbrand -->
+</div>
     <div class="body-top">
         <div class="body-out">
             <div class="body-top-left">

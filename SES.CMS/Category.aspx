@@ -13,6 +13,17 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<div id="divad" visible="false" runat="server">
+<script language="javascript" type="text/javascript">
+    var adbrand_zoneId = 'va_5E10E3FAAB615BF6';
+    var adbrand_width = '250';
+    var adbrand_height = '250';
+    var adbrand_sizeId = '12';
+    var adbrand_typeId = '2';  
+</script> 
+<script type="text/javascript" src="http://embed.adbrand.net/adbrand.js"></script> 
+<!-- End: Adbrand -->
+</div>
     <div class="body-top">
         <div class="body-out">
             <div class="body-top-left">
@@ -28,7 +39,7 @@
                      <asp:Panel runat="server" ID="divCategory">
                             
                                 <a title='<%#Eval("Title") %>' href='/<%#ReturnCateID()%>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.ofn'>
-                                    <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
+                                    <img class="img-box" src="/images/grey.gif" data-original='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
                                     <h2>
                                         <a title='<%#Eval("Title") %>' class="cate-title" href='/<%#ReturnCateID() %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.ofn'>
@@ -49,7 +60,7 @@
                             <div class="category-wrap-first">
                                 <%--<asp:Panel runat="server" ID="divCategory">--%>
                                 <a title='<%#Eval("Title") %>' href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.ofn'>
-                                    <img class="img-box" src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
+                                    <img class="img-box" src="/images/grey.gif" data-original='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>'></a>
                                 <div class="cate-desc-box">
                                     <h2>
                                         <a title='<%#Eval("Title") %>' class="cate-title" href='<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID")%>.ofn'>

@@ -18,6 +18,12 @@ namespace SES.CMS
         cmsCommentDO objcomment = new cmsCommentDO();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(Request.QueryString["CategoryID"]))
+            {
+                int categoryID = int.Parse(Request.QueryString["CategoryID"]);
+                if (categoryID == 5 || categoryID == 15 || categoryID == 3)
+                    divad.Visible = true;
+            }
             if (!string.IsNullOrEmpty(Request.QueryString["ArticleID"]))
             {
                 int articleID = int.Parse(Request.QueryString["ArticleID"]);
