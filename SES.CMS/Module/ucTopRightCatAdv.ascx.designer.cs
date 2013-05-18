@@ -40,6 +40,24 @@ namespace SES.CMS.Module {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTopcare;
         
         /// <summary>
+        /// divHuongsen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHuongsen;
+        
+        /// <summary>
+        /// divHoangGia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHoangGia;
+        
+        /// <summary>
         /// divGW control.
         /// </summary>
         /// <remarks>

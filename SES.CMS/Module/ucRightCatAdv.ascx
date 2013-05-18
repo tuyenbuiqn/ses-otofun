@@ -27,6 +27,13 @@
     <p></p>
 </div>
 
+<div class="quangcao-right" runat="server" visible="false" id="divNissanx">
+    <embed src="/Ads/nissan600x300.swf" height="600" alt="" align="middle" width="300"
+        pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
+        allowscriptaccess="always" quality="high">
+    <p></p>
+</div>
+
 <div class="quangcao-right" runat="server" visible="false" id="divIMG">
   <asp:Image ImageUrl="/Ads/pico.jpg" runat="server" ID="imgBanner" />
     <p></p>
