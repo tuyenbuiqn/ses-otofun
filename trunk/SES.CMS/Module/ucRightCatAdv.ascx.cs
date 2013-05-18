@@ -20,9 +20,9 @@ namespace SES.CMS.Module
                     divKia.Visible = divNissan.Visible = true;
                 else if (id == 15 || id == 16 || id == 18||id == 19 || id == 3 || id == 6 || id == 7 || id == 33 || id == 34 || id == 35 || id == 36 || id == 37 || id == 38 || id == 39)
                 {
-                    divIMG.Visible = true;
-                    if (id == 33 || id == 34 || id == 35 || id == 36 || id == 37 || id == 38 || id == 39||id == 15 || id == 16 || id == 18)
-                        imgBanner.ImageUrl = "/Ads/Your-ADS300x450.jpg";
+                    divIMG.Visible = false;
+                    if (id == 33 || id == 34 || id == 35 || id == 36 || id == 37 || id == 38 || id == 39 || id == 15 || id == 16 || id == 18)
+                        divNissanx.Visible = true;
                 }
                
 

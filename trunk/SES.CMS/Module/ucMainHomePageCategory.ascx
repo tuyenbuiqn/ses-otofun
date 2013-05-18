@@ -83,7 +83,7 @@
                                 <div class="hmp-top-article">
                                     <a href='/<%#FriendlyUrl(Eval("CategoryTitle").ToString())%>-<%#Eval("CategoryID") %>/<%#FriendlyUrl(Eval("Title").ToString())%>-<%#Eval("ArticleID") %>.ofn'
                                         title='<%#Eval("Title") %>'>
-                                        <img src='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' />
+                                        <img src="/images/grey.gif" data-original='/Media/<%#Eval("ImageUrl") %>' alt='<%#Eval("Title") %>' />
                                     </a>
                                 </div>
                                 <h4 class="hmp-top-articletitle">
