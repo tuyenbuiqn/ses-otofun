@@ -20,6 +20,8 @@ namespace SES.CMS
             if (!string.IsNullOrEmpty(Request.QueryString["CategoryID"]))
             {
                 int categoryID = int.Parse(Request.QueryString["CategoryID"]);
+                if (categoryID == 5 || categoryID == 15 || categoryID == 3)
+                    divad.Visible = true;
                 rptSetTopDataSource(categoryID);
                 rptCategoryDataSoucre(categoryID);
                 rptBuildChildMenu(categoryID);

@@ -13,6 +13,15 @@ namespace SES.CMS {
     public partial class Category {
         
         /// <summary>
+        /// divad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divad;
+        
+        /// <summary>
         /// uc1TopAdv control.
         /// </summary>
         /// <remarks>
