@@ -11,6 +11,9 @@ using System.Data;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Web.Caching;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 namespace SES.CMS.ofeditor
 {
@@ -83,12 +86,41 @@ namespace SES.CMS.ofeditor
                     }
                     if (!Directory.Exists(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/")))
                         Directory.CreateDirectory(Server.MapPath("~/Media/" + Session["UserID"].ToString() + "/"));
+                    if (!Directory.Exists(Server.MapPath("~/VideoFD/" + Session["UserID"].ToString() + "/")))
+                        Directory.CreateDirectory(Server.MapPath("~/VideoFD/" + Session["UserID"].ToString() + "/"));
+
                     txtDetail.ImageManager.ViewPaths = txtDetail.ImageManager.DeletePaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
                     txtDetail.ImageManager.UploadPaths = new string[] { "~/Media/" + Session["UserID"].ToString() + "/" };
+                    txtDetail.MediaManager.ViewPaths = txtDetail.MediaManager.DeletePaths = new string[] { "~/VideoFD/" + Session["UserID"].ToString() + "/" };
+                    txtDetail.MediaManager.UploadPaths = new string[] { "~/VideoFD/" + Session["UserID"].ToString() + "/" };
+                    txtDetail.MediaManager.SearchPatterns = new string[] { "*.mp4", "*.flv", "*.wmv", "*.mpg", "*.avi", "*.png" };
+
+
                 }
+
+            Telerik.Web.UI.RadFileExplorer rfe = (Telerik.Web.UI.RadFileExplorer)this.FindRadControl(this.Page);
+            if (rfe != null)
+            {
+                rfe.AsyncUpload.TargetFolder = "~/Media/" + Session["UserID"].ToString() + "/";
+            }
         }
         // Lấy dữ liệu từ bảng cmsArticleCategory theo ArticleID(Danh mục cha)
         // Đưa vào ddlCategory2NoiBat
+        private Control FindRadControl(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+
+                if (c is Telerik.Web.UI.RadFileExplorer) return c;
+                if (c.Controls.Count > 0)
+                {
+                    Control sub = FindRadControl(c);
+                    if (sub != null) return sub;
+                }
+            }
+            return null;
+        }
+
         protected void ddlCategory2NoiBatDataSource(int articleID)
         {
             ddlCategory2NoiBat.DataSource = new cmsArticleCategoryBL().SelectCategory_ByArticleID_Filter(articleID);
@@ -310,8 +342,8 @@ namespace SES.CMS.ofeditor
             else
             {
                 // Lưu thì có giữ lock edit ko ????????????????????????????????????????
-                if (objArt.TrangThai == 3)
-                    objArt.ThoiGianXuatBan = DateTime.Now;
+                //if (objArt.TrangThai == 3)
+                //    objArt.ThoiGianXuatBan = DateTime.Now;
                 // Đồng xuất  bản
                 // Check quyền
                 int TypeID = -1;
@@ -404,6 +436,8 @@ namespace SES.CMS.ofeditor
             objArt.ArticleSP = txtArticleSP.Text;
             objArt.DescHome = FetchLinksFromSource(txtDetail.Content);
             objArt.Author = txtAuthor.Text;
+            if (txtDetail.Content.Contains(@"""video-js vjs-default-skin"""))
+                txtDetail.Content = txtDetail.Content.Replace(@"""video-js vjs-default-skin""", @"""video-js vjs-default-skin"" controls");
             objArt.ArticleDetail = txtDetail.Content;
             objArt.Tags = "," + txtTags.Text + ",";
             objArt.EventID = int.Parse(ddlEvent.SelectedValue);
@@ -437,10 +471,12 @@ namespace SES.CMS.ofeditor
                 string FileName = string.Format("{0}{1}", SES.CMS.AdminCP.Functions.Change_AV(txtTitle.Text) + "-" + DateTime.Now.ToString("ddMMyyyyhhmmss"), fulImage.FileName.Substring(fulImage.FileName.LastIndexOf(".")));
                 string SaveLocation = string.Format("{0}\\{1}", Server.MapPath("~/Media/"), FileName);
                 fulImage.SaveAs(SaveLocation);
+             
                 return FileName;
             }
             return string.Empty;
         }
+
 
         protected void RadTreeView1_NodeDataBound(object sender, RadTreeNodeEventArgs e)
         {

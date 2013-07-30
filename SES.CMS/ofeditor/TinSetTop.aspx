@@ -49,7 +49,8 @@
 
                 SetDataCurrent();
 
-                var oWnd = radopen("TinSetTopForm.aspx", "RadWindow1");
+                var oWnd = radopen("TinSetTopForm.aspx", "RadWindow1",400,400);
+                oWnd.set_autoSize(false);
             }
 
             function OnClientClose(oWnd, args) {
@@ -170,10 +171,10 @@
     <telerik:RadWindowManager ID="RadWindowManager1" ShowContentDuringLoad="false" VisibleStatusbar="false"
         ReloadOnShow="true" runat="server" EnableShadow="true">
         <Windows>
-            <telerik:RadWindow ID="RadWindow1" runat="server" Width="650" Height="480" Modal="true"
+            <telerik:RadWindow ID="RadWindow1" runat="server" Width="650" Height="480" Modal="false"
                 OnClientClose="OnClientClose" NavigateUrl="RelatedNews1.aspx">
             </telerik:RadWindow>
-            <telerik:RadWindow ID="RadWindow2" runat="server" Width="650" Height="480" Modal="true"
+            <telerik:RadWindow ID="RadWindow2" runat="server" Width="650" Height="480" Modal="false"
                 OnClientClose="OnClientClose" NavigateUrl="RelatedNews2.aspx">
             </telerik:RadWindow>
         </Windows>

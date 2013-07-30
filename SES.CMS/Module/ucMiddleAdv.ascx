@@ -7,5 +7,5 @@
         <embed height="480" width="981" flashvars="div_id=rich_acb" pluginspage="http://www.macromedia.com/go/getflashplayer"
             type="application/x-shockwave-flash" allowscriptaccess="always" wmode="transparent"
             quality="high" src="/Ads/expand.swf"></div>
-            <img src="/Ads/banner-wide.jpg" width="980px" height="50px" alt="Expandable banner" />
-</div>
+
+<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_84.ads"></script>

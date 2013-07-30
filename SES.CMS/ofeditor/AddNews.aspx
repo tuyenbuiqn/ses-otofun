@@ -56,12 +56,14 @@
 
                 SetDataCurrent();
 
-                var oWnd = radopen("RelatedNews1.aspx", "RadWindow1");
+                var oWnd = radopen("RelatedNews1.aspx", "RadWindow1",400,400);
+                oWnd.set_autoSize(false);
             }
 
             function openWin2() {
                 SetDataCurrent();
-                var oWnd2 = radopen("RelatedNews2.aspx", "RadWindow2");
+                var oWnd2 = radopen("RelatedNews2.aspx", "RadWindow2",400,400);
+                oWnd2.set_autoSize(false);
             }
 
 
@@ -186,6 +188,37 @@
             function OnClientPasteHtml(sender, args) {
                 var commandName = args.get_commandName();
                 var value = args.get_value();
+                if (commandName == "MediaManager") {
+                    var div = document.createElement("DIV");
+                    //Do not use div.innerHTML as in IE this would cause the image's src or the link's href to be converted to absolute path.
+                    //This is a severe IE quirk.
+                    Telerik.Web.UI.Editor.Utils.setElementInnerHtml(div, value);
+                    var ObjectLink = div.firstChild;
+                    var MediaLink = div.firstChild.firstChild;
+
+                    if (!!MediaLink.value) {
+                        var newInner = '<br/><center><video id="'+ MediaLink.value.substring(MediaLink.value.lastIndexOf("/")+1) + '" class="video-js vjs-default-skin" controls preload="none" width="550" height="360"';
+                        var poster = MediaLink.value.substring(0, MediaLink.value.lastIndexOf(".")) + ".png";
+                        var mediaType = MediaLink.value.substring(MediaLink.value.lastIndexOf(".") + 1);
+                        if (mediaType == 'png') {
+                            alert('Bạn đã chọn nhầm File, hãy thử lại!');
+                            args.set_value(null);
+                        }
+                        else {
+                            newInner = newInner + 'poster="http://news.otofun.net' + poster + '" data-setup="{}">';
+                            newInner = newInner + '<source src="http://news.otofun.net' + MediaLink.value + '" type=';
+                            newInner = newInner + "'video/" + mediaType + "'/></video></center><br/>";
+                            args.set_value(newInner);
+                        }
+                    }
+                    else {
+                        alert("Có lỗi xảy ra!");
+                        args.set_value(null);
+                    }
+                  
+                    
+                }
+
                 if (commandName == "ImageManager") {
                     //See if an img has an alt tag set
                     var div = document.createElement("DIV");
@@ -195,7 +228,7 @@
                     //Now check if there is alt attribute
                     var img = div.firstChild;
                     //alert(div.innerHTML);
-
+                    
                     //Set new content to be pasted into the editor
 
                     if (!!img.alt) {
@@ -251,15 +284,13 @@
     <telerik:RadWindowManager ID="RadWindowManager1" ShowContentDuringLoad="false" VisibleStatusbar="false"
         ReloadOnShow="true" runat="server" EnableShadow="true">
         <Windows>
-            <telerik:RadWindow ID="RadWindow1" runat="server" Width="650" Height="480" Modal="true"
-                OnClientClose="OnClientClose" NavigateUrl="RelatedNews1.aspx">
+            <telerik:RadWindow ID="RadWindow1" runat="server" MaxWidth="850" MaxHeight="580" Modal="false" OnClientClose="OnClientClose" NavigateUrl="RelatedNews1.aspx">
             </telerik:RadWindow>
-            <telerik:RadWindow ID="RadWindow2" runat="server" Width="650" Height="480" Modal="true"
+            <telerik:RadWindow ID="RadWindow2" runat="server" MaxWidth="850" MaxHeight="580" Modal="false"
                 OnClientClose="OnClientClose" NavigateUrl="RelatedNews2.aspx">
             </telerik:RadWindow>
         </Windows>
-    </telerik:RadWindowManager>
-    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+    </telerik:RadWindowManager>    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
     </telerik:RadAjaxManager>
     <script type="text/javascript">
         function nodeClicking(sender, args) {
@@ -463,6 +494,7 @@
                     <telerik:RadEditor ID="txtDetail" runat="server" OnClientPasteHtml="OnClientPasteHtml"
                         Width="789px" Height="700px">
                         <ImageManager MaxUploadFileSize="1024000000" ViewMode="Grid"></ImageManager>
+                        <MediaManager MaxUploadFileSize="1024000000" />
                     </telerik:RadEditor>
                 </div>
             </div>

@@ -1322,23 +1322,28 @@ namespace SES.CMS.DAL
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@Keyw", SqlDbType.NVarChar);
-            Sqlparam.Value = Keyw;
+            if (string.IsNullOrEmpty(Keyw)) Sqlparam.Value = null;
+            else Sqlparam.Value = Keyw;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@ListStatus", SqlDbType.NVarChar);
-            Sqlparam.Value = ListStatus;
+            if (string.IsNullOrEmpty(ListStatus)) Sqlparam.Value = null;
+            else Sqlparam.Value = ListStatus;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@PvCreate", SqlDbType.NVarChar);
-            Sqlparam.Value = PvCreate;
+            if (string.IsNullOrEmpty(PvCreate)) Sqlparam.Value = null;
+            else Sqlparam.Value = PvCreate;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@BtvEdit", SqlDbType.NVarChar);
-            Sqlparam.Value = BtvEdit;
+            if (string.IsNullOrEmpty(BtvEdit)) Sqlparam.Value = null;
+            else Sqlparam.Value = BtvEdit;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             Sqlparam = new SqlParameter("@TkApproved", SqlDbType.NVarChar);
-            Sqlparam.Value = TkApproved;
+            if (string.IsNullOrEmpty(TkApproved)) Sqlparam.Value = null;
+            else Sqlparam.Value = TkApproved;
             Sqlcomm.Parameters.Add(Sqlparam);
 
             DataSet ds = base.GetDataSet(Sqlcomm);

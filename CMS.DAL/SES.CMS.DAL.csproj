@@ -55,6 +55,7 @@
     <Compile Include="cmsImagesDAL.cs" />
     <Compile Include="cmsLibFileArticleDAL.cs" />
     <Compile Include="cmsLibsFileDAL.cs" />
+    <Compile Include="cmsMostReadDAL.cs" />
     <Compile Include="cmsSetTopDAL.cs" />
     <Compile Include="cmsSlideDAL.cs" />
     <Compile Include="cmsTinNoiBatDAL.cs" />
