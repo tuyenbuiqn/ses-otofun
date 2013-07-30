@@ -14,7 +14,9 @@
 <%@ Register Src="Module/ucRightArtAdv.ascx" TagName="ucRightArtAdv" TagPrefix="uc9" %>
 <%@ Register Src="Module/ucTopRightArtAdv.ascx" TagName="ucTopRightArtAdv" TagPrefix="uc10" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+<meta property="og:locale" content="vi_VN" />
+<meta property="fb:admins" content="1521514097" />
+<meta property="og:type" content="article" />
     
 	<script type="text/javascript" src="/js/jquery.nicescroll.js"></script>
     <script type="text/javascript">

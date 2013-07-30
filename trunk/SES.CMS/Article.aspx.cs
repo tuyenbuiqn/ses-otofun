@@ -34,6 +34,8 @@ namespace SES.CMS
                     hplFacebook.NavigateUrl = hplFacebook.NavigateUrl + CurrentUrl;
                     hplGoogle.NavigateUrl = hplGoogle.NavigateUrl + CurrentUrl;
                     hplTwitter.NavigateUrl = hplTwitter.NavigateUrl + CurrentUrl;
+                    
+
 
                     //abc.Attributes.Add("src", "//www.facebook.com/plugins/like.php?href=" + CurrentUrl + "&send=false&layout=button_count&width=450&show_faces=false&action=like&colorscheme=light&font&height=21&appId=379138395463852");
                     abc.Attributes.Add("src", "//www.facebook.com/plugins/like.php?href=" + CurrentUrl + "&send=false&layout=button_count&width=450&show_faces=false&action=like&colorscheme=light&font&height=21&appId=379138395463852");
@@ -67,12 +69,61 @@ namespace SES.CMS
                     if (dtArticle.Rows.Count > 0)
                     {
                         Page.Title = dtArticle.Rows[0]["Title"].ToString() + " - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
+                        Page.Header.Controls.Add(Ultility.AddDescription(dtArticle.Rows[0]["Description"].ToString()));
                     }
                     else
                     {
                         Page.Title = "Tin tức - " + (new sysConfigBL().Select(new sysConfigDO { ConfigID = 1 }).ConfigValue);
                     }
-                    Page.Header.Controls.Add(Ultility.AddDescription(dtArticle.Rows[0]["Description"].ToString()));
+                    
+
+                    HtmlMeta myLinkIMG = new HtmlMeta();
+                    
+                    myLinkIMG.Attributes.Add("property", "og:site_name");
+                    myLinkIMG.Content = "Otofun News";
+                    Page.Header.Controls.Add(myLinkIMG);
+
+                    myLinkIMG = new HtmlMeta();
+                    myLinkIMG.Attributes.Add("property", "og:title");
+                    myLinkIMG.Content = dtArticle.Rows[0]["Title"].ToString();
+                    Page.Header.Controls.Add(myLinkIMG);
+
+                    myLinkIMG = new HtmlMeta();
+                    myLinkIMG.Attributes.Add("property", "og:image");
+                    myLinkIMG.Content = "http://news.otofun.net/Media/" + dtArticle.Rows[0][cmsArticleDO.IMAGEURL_FIELD].ToString();
+                    //myLinkIMG.Content = "http://news.otofun.net/test.jpg";
+                    Page.Header.Controls.Add(myLinkIMG);
+
+                    myLinkIMG = new HtmlMeta();
+                    myLinkIMG.Attributes.Add("property", "og:image");
+                    myLinkIMG.Content = "http://news.otofun.net/Media/" + dtArticle.Rows[0][cmsArticleDO.IMAGEURL_FIELD].ToString();
+                    //myLinkIMG.Content = "http://news.otofun.net/test.jpg";
+                    Page.Header.Controls.Add(myLinkIMG);
+
+                    myLinkIMG = new HtmlMeta();
+                    myLinkIMG.Attributes.Add("property", "og:image");
+                    myLinkIMG.Content = "http://news.otofun.net/Media/" + dtArticle.Rows[0][cmsArticleDO.IMAGEURL_FIELD].ToString();
+                    //myLinkIMG.Content = "http://news.otofun.net/test.jpg";
+                    Page.Header.Controls.Add(myLinkIMG);
+
+                  
+
+                
+
+                    myLinkIMG = new HtmlMeta();
+                    myLinkIMG.Attributes.Add("property", "og:description");
+                    myLinkIMG.Content = dtArticle.Rows[0]["Description"].ToString();
+                    Page.Header.Controls.Add(myLinkIMG);
+
+                    myLinkIMG = new HtmlMeta();
+                    myLinkIMG.Attributes.Add("property", "og:url");
+                    myLinkIMG.Content = CurrentUrl;
+                    Page.Header.Controls.Add(myLinkIMG);
+
+              
+
+                    
+
 
                 }
             }

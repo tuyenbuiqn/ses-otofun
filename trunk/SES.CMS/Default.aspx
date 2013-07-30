@@ -19,6 +19,7 @@
 <%@ Register Src="/Module/ucThongTinDoanhNghiep.ascx" TagName="ucThongTinDoanhNghiep"
     TagPrefix="uc14" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <!-- Begin Adbrand -->
@@ -48,8 +49,10 @@
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
                 <div class="adv-top-homepage-box">
                 
-                    <div class="adv-homepage-right">
-                        <img src="/Ads/heaven.jpg" style="width: 300px; height: 450px;" />
+                    <div class="adv-homepage-right">                        
+						<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_45.ads"></script>
+						<div style="height:10px;"></div>						
+						<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_74.ads"></script>
                     </div>
                 </div>
             </div>
@@ -67,21 +70,12 @@
                     <uc12:ucHomeVideo runat="server" ID="uc12Video" />
                 </div>
             </div>
-            <div class="quangcao-right">
-                <embed src="/Ads/ALIPAS.swf" height="600" alt="" align="middle" width="300"
-                    pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
-                    allowscriptaccess="always" quality="high">
+            <p></p>
+            <div style="float:right; margin:10px 10px;">
+            <div id="adthread">         
+			<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_68.ads"></script>
         <p></p>
-
-         <embed src="/Ads/topcare300x250.swf" height="250" alt="" align="middle" width="300"
-                    pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
-                    allowscriptaccess="always" quality="high">
-        <p></p>
-
-         <embed src="/Ads/MAZDA300x600.swf" height="600" alt="" align="middle" width="300"
-                    pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"
-                    allowscriptaccess="always" quality="high">
-        <p></p>
+            </div>
             </div>
         </div>
         <div class="bottom">

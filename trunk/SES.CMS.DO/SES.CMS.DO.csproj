@@ -53,6 +53,7 @@
     <Compile Include="cmsImagesDO.cs" />
     <Compile Include="cmsLibFileArticleDO.cs" />
     <Compile Include="cmsLibsFileDO.cs" />
+    <Compile Include="cmsMostReadDO.cs" />
     <Compile Include="cmsSetTopDO.cs" />
     <Compile Include="cmsSlideDO.cs" />
     <Compile Include="cmsTinNoiBatDO.cs" />

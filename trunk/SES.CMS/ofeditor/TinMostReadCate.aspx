@@ -49,7 +49,8 @@
 
                 SetDataCurrent();
 
-                var oWnd = radopen("TinSetTopForm.aspx", "RadWindow1");
+                var oWnd = radopen("TinSetTopForm.aspx", "RadWindow1",400,400);
+                oWnd.set_autoSize(false);
             }
 
             function OnClientClose(oWnd, args) {

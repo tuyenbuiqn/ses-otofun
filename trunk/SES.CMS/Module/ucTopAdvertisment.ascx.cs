@@ -11,37 +11,21 @@ namespace SES.CMS.Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if ((Request.QueryString["CategoryID"] == null) && (Request.QueryString["ArticleID"] == null))
-            //    homeBanner.Visible = true;
-            //else if ((Request.QueryString["CategoryID"] != null) && (Request.QueryString["ArticleID"] == null))
-            //    catBanner.Visible = true;
-            //else if ((Request.QueryString["ArticleID"] != null))
-            //    artBanner.Visible = true;
-            //else 0
-            artBanner.Visible = true;
-            if(Request.QueryString["CategoryID"] != null)
+           
+            if (Request.QueryString["CategoryID"] != null)
             {
-                int id = int.Parse(Request.QueryString["CategoryID"]);
-                if (id == 27 || id == 28 || id == 29)
-                {
-                    Image1.ImageUrl = "/Ads/AudiVN.gif";
+                int CategoryID = int.Parse(Request.QueryString["CategoryID"]);
+                if (CategoryID == 27 || CategoryID == 28 || CategoryID == 29 || CategoryID == 11 || CategoryID == 13 || CategoryID == 14 || CategoryID == 19)
+                { 
+                    topBanner.Text = "<script type=\"text/javascript\" src=\"http://ads.otv.vn:81/ads_box_44.ads\"></script>";
                 }
-                else if (id == 3 || id == 6 || id == 7)
-                {
-                    Image1.ImageUrl = "/Ads/MEC-Andu-678x80.gif";
-                }
-                else if (id == 19 || id == 15 || id == 16 || id == 18)
-                {
-                    Image1.ImageUrl = "/Ads/Toyota-678X80.gif";
-                }
-                if (id == 11 || id == 13 || id == 14 || id == 5)
-                {
-                    artBanner.Visible = false;
-                    catBanner.Visible = true;
-                }
+                else
+                    topBanner.Text = "<a href=\"http://otofun.net/sendmessage.php\" target=\"_blank\"><img src=\"http://news.otofun.net/Ads/YourAds.jpg\" width=\"670\" height=\"80\"/></a>";
             }
-            else
-                Image1.ImageUrl = "/Ads/baner-news.jpg";
+            else //Home
+            {
+                topBanner.Text = "<script type=\"text/javascript\" src=\"http://ads.otv.vn:81/ads_box_37.ads\"></script>";
+            }  
 
         }
     }

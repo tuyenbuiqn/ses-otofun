@@ -790,10 +790,6 @@
     <Content Include="assets\prev.png" />
     <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="bin\CKEditor.NET.dll" />
-    <Content Include="bin\CMS.BL.dll" />
-    <Content Include="bin\CMS.BL.pdb" />
-    <Content Include="bin\CMS.DAL.dll" />
-    <Content Include="bin\CMS.DAL.pdb" />
     <Content Include="bin\CollectionPager.dll" />
     <Content Include="bin\DevExpress.Data.v9.2.dll" />
     <Content Include="bin\DevExpress.Web.ASPxEditors.v9.2.dll" />
@@ -802,10 +798,6 @@
     <Content Include="bin\DevExpress.Web.ASPxTreeList.v9.2.dll" />
     <Content Include="bin\DevExpress.Web.v9.2.dll" />
     <Content Include="bin\MSCaptcha.dll" />
-    <Content Include="bin\SES.CMS.dll" />
-    <Content Include="bin\SES.CMS.DO.dll" />
-    <Content Include="bin\SES.CMS.DO.pdb" />
-    <Content Include="bin\SES.CMS.pdb" />
     <Content Include="bin\Telerik.Web.UI.dll" />
     <Content Include="bin\Telerik.Web.UI.xml" />
     <Content Include="bin\UrlRewritingNet.UrlRewriter.dll" />
@@ -1061,35 +1053,55 @@
     <Content Include="fancybox\jquery.fancybox-1.3.4.js" />
     <Content Include="fancybox\jquery.fancybox-1.3.4.pack.js" />
     <Content Include="fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="images\action_delete.png" />
     <Content Include="images\Anh-Tin.jpg" />
     <Content Include="images\background.jpg" />
+    <Content Include="images\bgAllAssets.gif" />
     <Content Include="images\bigliststyle.jpg" />
     <Content Include="images\bike.jpg" />
+    <Content Include="images\blog-icon.png" />
+    <Content Include="images\blog-icon1.png" />
+    <Content Include="images\bullet.gif" />
+    <Content Include="images\calendar.gif" />
     <Content Include="images\car.jpg" />
     <Content Include="images\comment-code.png" />
     <Content Include="images\docnhieu-image.jpg" />
     <Content Include="images\facebook-icon.png" />
     <Content Include="images\facebook_like_button_big.jpg" />
+    <Content Include="images\forward.png" />
     <Content Include="images\header.jpg" />
     <Content Include="images\Home-button.jpg" />
+    <Content Include="images\Home-button.png" />
     <Content Include="images\label-back.jpg" />
     <Content Include="images\lienhe-icon1.jpg" />
     <Content Include="images\line.jpg" />
     <Content Include="images\liststyle.jpg" />
     <Content Include="images\mid-quangcao.jpg" />
+    <Content Include="images\newnew.gif" />
+    <Content Include="images\news-icon-d.png" />
+    <Content Include="images\news-icon.png" />
     <Content Include="images\P.jpg" />
+    <Content Include="images\panel-title-bg.png" />
     <Content Include="images\patem.jpg" />
     <Content Include="images\patem2.jpg" />
     <Content Include="images\patem3.jpg" />
     <Content Include="images\phone-icon.jpg" />
+    <Content Include="images\previous.png" />
     <Content Include="images\quangcao-banner.jpg" />
     <Content Include="images\quangcao.jpg" />
     <Content Include="images\quangcaophai1.jpg" />
     <Content Include="images\quangcaophai2.jpg" />
     <Content Include="images\RSS-button.jpg" />
+    <Content Include="images\rt.gif" />
     <Content Include="images\search-button.jpg" />
+    <Content Include="images\Search.png" />
+    <Content Include="images\tag.png" />
     <Content Include="images\thongtindoanhnghiep.jpg" />
+    <Content Include="images\thumb_down.png" />
+    <Content Include="images\thumb_up.png" />
     <Content Include="images\TimKiem-button.jpg" />
+    <Content Include="images\ui-icons_222222_256x240.png" />
     <Content Include="Javascript\asdropdowntreeview\dropdowntreeview.css" />
     <Content Include="Javascript\asdropdowntreeview\images\windropdown-disabled.gif" />
     <Content Include="Javascript\asdropdowntreeview\images\windropdown.gif" />
@@ -1185,6 +1197,7 @@
     <Content Include="js\login.js" />
     <Content Include="js\popup.js" />
     <Content Include="js\preview.js" />
+    <Content Include="js\ultility.js" />
     <Content Include="Media\Anh-Tin.jpg" />
     <Content Include="Media\banner-otofun.jpg" />
     <Content Include="Media\bike.jpg" />
@@ -1206,13 +1219,14 @@
     <Content Include="Module\ucHomeSlide.ascx" />
     <Content Include="Module\ucHomeVideo.ascx" />
     <Content Include="Module\ucLastestNews.ascx" />
-    <Content Include="Module\ucLeftAdv.ascx" />
     <Content Include="Module\ucMainHomePageCategory.ascx" />
     <Content Include="Module\ucMainMenu.ascx" />
     <Content Include="Module\ucMiddleAdv.ascx" />
     <Content Include="Module\ucMostRead.ascx" />
     <Content Include="Module\ucNewArticles.ascx" />
     <Content Include="Module\ucRightAdv.ascx" />
+    <Content Include="Module\ucRightArtAdv.ascx" />
+    <Content Include="Module\ucRightCatAdv.ascx" />
     <Content Include="Module\ucRightHomeAdv.ascx" />
     <Content Include="Module\ucSaleOff.ascx" />
     <Content Include="Module\ucSameCateArticles.ascx" />
@@ -1224,6 +1238,8 @@
     <Content Include="Module\ucTopAdvertisment.ascx" />
     <Content Include="Module\ucTopContactInfo.ascx" />
     <Content Include="Module\ucTopRightAdv.ascx" />
+    <Content Include="Module\ucTopRightArtAdv.ascx" />
+    <Content Include="Module\ucTopRightCatAdv.ascx" />
     <Content Include="Module\ucTuVanAndKyThuat.ascx" />
     <Content Include="obj\Debug\SES.CMS.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SES.CMS.dll" />
@@ -1319,8 +1335,12 @@
     <Content Include="ofeditor\SelectIMG.aspx" />
     <Content Include="ofeditor\Slide.aspx" />
     <Content Include="ofeditor\Slides.aspx" />
+    <Content Include="ofeditor\TinMostReadCate.aspx" />
+    <Content Include="ofeditor\TinMostReadHome.aspx" />
     <Content Include="ofeditor\TinNoiBat.aspx" />
     <Content Include="ofeditor\TinNoiBatForm.aspx" />
+    <Content Include="ofeditor\TinSetTop.aspx" />
+    <Content Include="ofeditor\TinSetTopForm.aspx" />
     <Content Include="ofeditor\TopNews.aspx" />
     <Content Include="preview.css" />
     <Content Include="Search.aspx" />
@@ -1337,6 +1357,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="wt-rotator.css" />
+    <Content Include="XMLArticle.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminCP\Default.aspx.cs">
@@ -1545,13 +1566,6 @@
     <Compile Include="Module\ucLastestNews.ascx.designer.cs">
       <DependentUpon>ucLastestNews.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Module\ucLeftAdv.ascx.cs">
-      <DependentUpon>ucLeftAdv.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Module\ucLeftAdv.ascx.designer.cs">
-      <DependentUpon>ucLeftAdv.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Module\ucMainHomePageCategory.ascx.cs">
       <DependentUpon>ucMainHomePageCategory.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1593,6 +1607,20 @@
     </Compile>
     <Compile Include="Module\ucRightAdv.ascx.designer.cs">
       <DependentUpon>ucRightAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucRightArtAdv.ascx.cs">
+      <DependentUpon>ucRightArtAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucRightArtAdv.ascx.designer.cs">
+      <DependentUpon>ucRightArtAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucRightCatAdv.ascx.cs">
+      <DependentUpon>ucRightCatAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucRightCatAdv.ascx.designer.cs">
+      <DependentUpon>ucRightCatAdv.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\ucRightHomeAdv.ascx.cs">
       <DependentUpon>ucRightHomeAdv.ascx</DependentUpon>
@@ -1671,6 +1699,20 @@
     <Compile Include="Module\ucTopRightAdv.ascx.designer.cs">
       <DependentUpon>ucTopRightAdv.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Module\ucTopRightArtAdv.ascx.cs">
+      <DependentUpon>ucTopRightArtAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTopRightArtAdv.ascx.designer.cs">
+      <DependentUpon>ucTopRightArtAdv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ucTopRightCatAdv.ascx.cs">
+      <DependentUpon>ucTopRightCatAdv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\ucTopRightCatAdv.ascx.designer.cs">
+      <DependentUpon>ucTopRightCatAdv.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Module\ucTuVanAndKyThuat.ascx.cs">
       <DependentUpon>ucTuVanAndKyThuat.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1678,6 +1720,7 @@
     <Compile Include="Module\ucTuVanAndKyThuat.ascx.designer.cs">
       <DependentUpon>ucTuVanAndKyThuat.ascx</DependentUpon>
     </Compile>
+    <Compile Include="NewsRSS.cs" />
     <Compile Include="ofeditor\AddNews.aspx.cs">
       <DependentUpon>AddNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1685,6 +1728,7 @@
     <Compile Include="ofeditor\AddNews.aspx.designer.cs">
       <DependentUpon>AddNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ofeditor\AnchorPosition.cs" />
     <Compile Include="ofeditor\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1803,6 +1847,20 @@
     <Compile Include="ofeditor\Slides.aspx.designer.cs">
       <DependentUpon>Slides.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ofeditor\TinMostReadCate.aspx.cs">
+      <DependentUpon>TinMostReadCate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\TinMostReadCate.aspx.designer.cs">
+      <DependentUpon>TinMostReadCate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\TinMostReadHome.aspx.cs">
+      <DependentUpon>TinMostReadHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\TinMostReadHome.aspx.designer.cs">
+      <DependentUpon>TinMostReadHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ofeditor\TinNoiBat.aspx.cs">
       <DependentUpon>TinNoiBat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1816,6 +1874,20 @@
     </Compile>
     <Compile Include="ofeditor\TinNoiBatForm.aspx.designer.cs">
       <DependentUpon>TinNoiBatForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\TinSetTop.aspx.cs">
+      <DependentUpon>TinSetTop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\TinSetTop.aspx.designer.cs">
+      <DependentUpon>TinSetTop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ofeditor\TinSetTopForm.aspx.cs">
+      <DependentUpon>TinSetTopForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofeditor\TinSetTopForm.aspx.designer.cs">
+      <DependentUpon>TinSetTopForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="ofeditor\TopNews.aspx.cs">
       <DependentUpon>TopNews.aspx</DependentUpon>
@@ -1860,6 +1932,13 @@
     </Compile>
     <Compile Include="Video.aspx.designer.cs">
       <DependentUpon>Video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XMLArticle.aspx.cs">
+      <DependentUpon>XMLArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMLArticle.aspx.designer.cs">
+      <DependentUpon>XMLArticle.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1910,7 +1989,9 @@
     <Folder Include="AdminCP\js\.svn\tmp\prop-base\" />
     <Folder Include="AdminCP\js\.svn\tmp\props\" />
     <Folder Include="AdminCP\js\.svn\tmp\text-base\" />
+    <Folder Include="Media\NewFolder1\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="thumb\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CMS.BL\SES.CMS.BL.csproj">

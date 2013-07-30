@@ -149,11 +149,14 @@ margin-left: 6px;
     }
 #divListComment
 {
-width:640px;
-margin:0 auto;
-height:350px;
-border:1px solid #D2BF9C;
-padding:5px;
+padding: 5px;
+height: 360px;
+width: 660px;
+border: 1px solid #D2BF9C;
+overflow: auto;
+margin-bottom: 20px;
+background-color: #fff;
+
     }
 .settop-wrap
 {
