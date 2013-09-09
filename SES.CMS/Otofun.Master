@@ -14,9 +14,9 @@
     <script>
       videojs.options.flash.swf = "/js/video-js.swf";
     </script>
-    <link href="css/styleCate.css" rel="stylesheet" type="text/css" />
+    <link href="/css/styleCate.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://otofun.net/js/jquery-1.8.0.min.js"></script>
-    <script src="js/js-scroll.js" type="text/javascript"></script>
+  
     <title></title>
    
     <script src="/js/jquery.lazyload.js?v=1.8.3" charset="utf-8"></script>
@@ -84,12 +84,6 @@
         });
     </script>
     <!--End Carousel thong tin doanh nghiep-->
-    <script type="text/javascript" src="/js/jquery.sticky.js"></script>
-    <script type="text/javascript">
-        $(window).load(function () {
-            $("#sticker").sticky({ topSpacing: 0 });
-        });
-    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
