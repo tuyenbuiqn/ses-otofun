@@ -19,7 +19,7 @@
 <%@ Register Src="/Module/ucThongTinDoanhNghiep.ascx" TagName="ucThongTinDoanhNghiep"
     TagPrefix="uc14" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+  <script src="/js/js-scroll.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <!-- Begin Adbrand -->
@@ -50,9 +50,9 @@
                 <div class="adv-top-homepage-box">
                 
                     <div class="adv-homepage-right">                        
-						<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_45.ads"></script>
+						<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_35.ads"></script>
 						<div style="height:10px;"></div>						
-						<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_74.ads"></script>
+						<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_36.ads"></script>
                     </div>
                 </div>
             </div>
@@ -61,6 +61,7 @@
         <div class="body-down">
             <uc6:ucMainHomePageCategory runat="server" ID="uc6Main" />
             <uc7:ucMostRead runat="server" ID="uc7ucMostRead" />
+			 <div class="body-down-right">
             <uc11:ucRightHomeAdv runat="server" ID="uc11ucRightHomeAdv" />
             <div class="video">
                 <h3 class="hmp-cate-maintitle">
@@ -71,12 +72,13 @@
                 </div>
             </div>
             <p></p>
-            <div style="float:right; margin:10px 10px;">
+            <div style="float:right; margin-top:10px; margin-right:10px">
             <div id="adthread">         
-			<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_68.ads"></script>
+			<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_40.ads"></script>
         <p></p>
             </div>
             </div>
+			</div>
         </div>
         <div class="bottom">
             <uc14:ucThongTinDoanhNghiep runat="server" ID="uc14ucThongTinDoanhNghiep" />
