@@ -13,15 +13,6 @@ namespace SES.CMS {
     public partial class Category {
         
         /// <summary>
-        /// divad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divad;
-        
-        /// <summary>
         /// uc1TopAdv control.
         /// </summary>
         /// <remarks>
@@ -110,5 +101,14 @@ namespace SES.CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SES.CMS.Module.ucRightCatAdv uc11ucRightHomeCat;
+        
+        /// <summary>
+        /// divad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divad;
     }
 }
