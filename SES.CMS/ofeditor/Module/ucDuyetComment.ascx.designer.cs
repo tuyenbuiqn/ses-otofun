@@ -67,6 +67,15 @@ namespace SES.CMS.ofeditor.Module {
         protected global::System.Web.UI.WebControls.Button btnNotAccept;
         
         /// <summary>
+        /// btnDeleteMulti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteMulti;
+        
+        /// <summary>
         /// gvAt control.
         /// </summary>
         /// <remarks>
@@ -92,5 +101,14 @@ namespace SES.CMS.ofeditor.Module {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNotAccept1;
+        
+        /// <summary>
+        /// btnDeleteMulti1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteMulti1;
     }
 }

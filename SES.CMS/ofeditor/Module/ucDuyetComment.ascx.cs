@@ -26,7 +26,7 @@ namespace SES.CMS.ofeditor.Module
                 {
                     if (!IsPostBack)
                     {
-                        gvAtDataSource();
+                        grCommentDataSource();
                         Functions.ddlDatabinder(ddlArticle, cmsArticleDO.ARTICLEID_FIELD, cmsArticleDO.TITLE_FIELD, new cmsArticleBL().SelectAll());
                         Functions.ddlDatabinder(ddlUserCreate, sysUserDO.USERID_FIELD, sysUserDO.USERNAME_FIELD, new sysUserBL().SelectAll());
                     }
@@ -69,19 +69,24 @@ namespace SES.CMS.ofeditor.Module
         }
         protected void btnFilter_Click(object sender, EventArgs e)
         {
+           grCommentDataSource();
+        }
+
+        protected void grCommentDataSource()
+        {
             int userType = int.Parse(Session["UserType"].ToString());
             int userID = 0;
             if (userType == 1)
                 userID = 0;
-            else if(userType == 2)
+            else if (userType == 2)
                 userID = int.Parse(ddlUserCreate.SelectedValue);
 
             int articleID = int.Parse(ddlArticle.SelectedValue.ToString());
             int isAccepted = int.Parse(ddlTrangThai.SelectedValue.ToString());
-            
+
             int bienTapVienID = int.Parse(Session["UserID"].ToString());
 
-            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(articleID, isAccepted, userID,userType,bienTapVienID);
+            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(articleID, isAccepted, userID, userType, bienTapVienID);
             gvAt.DataBind();
         }
         protected void btnAccept_Click(object sender, EventArgs e)
@@ -134,22 +139,40 @@ namespace SES.CMS.ofeditor.Module
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "otofun.net", "alert('Bỏ duyệt thành công!');window.open('Comments.aspx','_self');", true);
             }
         }
+        protected void btnDeleteMulti_Click(object sender, EventArgs e)
+        {
+            string commentList = "";
+            for (int i = 0; i < gvAt.Rows.Count; i++)
+            {
+                GridViewRow row = gvAt.Rows[i];
+                CheckBox chk = (CheckBox)row.FindControl("chkSelect");
+                if (chk.Checked == true)
+                {
+                    commentList += gvAt.DataKeys[row.RowIndex].Value.ToString() + ",";
+                }
+            }
+            commentList += "-9999";
+            if (commentList.Equals("-9999"))
+            {
+                Functions.Alert("Vui lòng chọn bình luận");
+                return;
+            }
+            else
+            {
+                new cmsCommentBL().DeleteMultiComment(commentList);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "otofun.net", "alert('Xóa bình luận thành công!');window.open('Comments.aspx','_self');", true);
+            }
+        }
         protected void gvAt_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvAt.PageIndex = e.NewPageIndex;
-            int userID = int.Parse(ddlUserCreate.SelectedValue.ToString());
-            int commentID = int.Parse(ddlArticle.SelectedValue.ToString());
-            int isAccepted = int.Parse(ddlTrangThai.SelectedValue.ToString());
-            int userType = int.Parse(Session["UserType"].ToString());
-            int bienTapVienID = int.Parse(Session["UserID"].ToString());
-            gvAt.DataSource = new cmsCommentBL().CommentXetDuyet_Filter(commentID, isAccepted, userID,userType,bienTapVienID);
-            gvAt.DataBind();
+            grCommentDataSource();
         }
 
         protected void gvAt_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvAt.EditIndex = e.NewEditIndex;
-            gvAtDataSource();
+            grCommentDataSource();
         }
 
         protected void gvAt_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -163,13 +186,13 @@ namespace SES.CMS.ofeditor.Module
 
             new cmsCommentBL().Update(objComment);
             gvAt.EditIndex = -1;
-            gvAtDataSource();
+            grCommentDataSource();
         }
 
         protected void gvAt_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvAt.EditIndex = -1;
-            gvAtDataSource();
+            grCommentDataSource();
         }
     }
 }

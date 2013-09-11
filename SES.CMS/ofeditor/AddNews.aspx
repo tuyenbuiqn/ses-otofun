@@ -56,13 +56,13 @@
 
                 SetDataCurrent();
 
-                var oWnd = radopen("RelatedNews1.aspx", "RadWindow1",400,400);
+                var oWnd = radopen("RelatedNews1.aspx", "RadWindow1", 400, 400);
                 oWnd.set_autoSize(false);
             }
 
             function openWin2() {
                 SetDataCurrent();
-                var oWnd2 = radopen("RelatedNews2.aspx", "RadWindow2",400,400);
+                var oWnd2 = radopen("RelatedNews2.aspx", "RadWindow2", 400, 400);
                 oWnd2.set_autoSize(false);
             }
 
@@ -197,7 +197,7 @@
                     var MediaLink = div.firstChild.firstChild;
 
                     if (!!MediaLink.value) {
-                        var newInner = '<br/><center><video id="'+ MediaLink.value.substring(MediaLink.value.lastIndexOf("/")+1) + '" class="video-js vjs-default-skin" controls preload="none" width="550" height="360"';
+                        var newInner = '<br/><center><video id="' + MediaLink.value.substring(MediaLink.value.lastIndexOf("/") + 1) + '" class="video-js vjs-default-skin" controls preload="none" width="550" height="360"';
                         var poster = MediaLink.value.substring(0, MediaLink.value.lastIndexOf(".")) + ".png";
                         var mediaType = MediaLink.value.substring(MediaLink.value.lastIndexOf(".") + 1);
                         if (mediaType == 'png') {
@@ -215,8 +215,8 @@
                         alert("Có lỗi xảy ra!");
                         args.set_value(null);
                     }
-                  
-                    
+
+
                 }
 
                 if (commandName == "ImageManager") {
@@ -228,7 +228,7 @@
                     //Now check if there is alt attribute
                     var img = div.firstChild;
                     //alert(div.innerHTML);
-                    
+
                     //Set new content to be pasted into the editor
 
                     if (!!img.alt) {
@@ -284,13 +284,15 @@
     <telerik:RadWindowManager ID="RadWindowManager1" ShowContentDuringLoad="false" VisibleStatusbar="false"
         ReloadOnShow="true" runat="server" EnableShadow="true">
         <Windows>
-            <telerik:RadWindow ID="RadWindow1" runat="server" MaxWidth="850" MaxHeight="580" Modal="false" OnClientClose="OnClientClose" NavigateUrl="RelatedNews1.aspx">
+            <telerik:RadWindow ID="RadWindow1" runat="server" MaxWidth="850" MaxHeight="580"
+                Modal="false" OnClientClose="OnClientClose" NavigateUrl="RelatedNews1.aspx">
             </telerik:RadWindow>
-            <telerik:RadWindow ID="RadWindow2" runat="server" MaxWidth="850" MaxHeight="580" Modal="false"
-                OnClientClose="OnClientClose" NavigateUrl="RelatedNews2.aspx">
+            <telerik:RadWindow ID="RadWindow2" runat="server" MaxWidth="850" MaxHeight="580"
+                Modal="false" OnClientClose="OnClientClose" NavigateUrl="RelatedNews2.aspx">
             </telerik:RadWindow>
         </Windows>
-    </telerik:RadWindowManager>    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+    </telerik:RadWindowManager>
+    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
     </telerik:RadAjaxManager>
     <script type="text/javascript">
         function nodeClicking(sender, args) {
@@ -303,7 +305,6 @@
             comboBox.trackChanges();
             comboBox.get_items().getItem(0).set_text(node.get_text());
             comboBox.commitChanges();
-
             comboBox.hideDropDown();
 
             // Call comboBox.attachDropDown if:
@@ -313,6 +314,7 @@
 
             //comboBox.attachDropDown();
         }
+
 
         function StopPropagation(e) {
             if (!e) {
@@ -327,6 +329,7 @@
             if (parentItem) {
                 parentItem.set_checked(true);
             }
+
         }
 
 
@@ -662,7 +665,8 @@
                 </span>
                 <br />
                 <div class="divDongXuatBan">
-                    <span class="dxb-bold" style="margin-right: 27px;">9 Nổi bật trang chủ : </span><span class="dxb-x">Chọn vị trí
+                    <span class="dxb-bold" style="margin-right: 27px;">9 Nổi bật trang chủ : </span>
+                    <span class="dxb-x">Chọn vị trí
                         <asp:DropDownList runat="server" ID="ddlViTri9TrangChu" AppendDataBoundItems="true"
                             onchange="JavaScript:ReturnDongXuatBanValue9TrangChu();">
                             <asp:ListItem Text=".: Không chọn :." Value="0"></asp:ListItem>
@@ -687,7 +691,7 @@
                     Thực hiện
                 </label>
                 <asp:Button class="button" ID="btnSubmit" runat="server" ValidationGroup="submitGrp"
-                    Text="Lưu bài" OnClick="btnSubmit_Click" />
+                    Text="Lưu bài" OnClick="btnSubmit_Click"/>
                 <asp:Button class="button" ID="Button1" runat="server" Text="Hủy" />
             </div>
             <hr />
