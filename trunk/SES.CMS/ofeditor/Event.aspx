@@ -18,7 +18,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="width: 98%; float: left; margin-left: 5px;">
         <h2>
-            Cập nhật Danh mục Tin tức</h2>
+            Cập nhật Sự kiện</h2>
         <table width="100%" class="tstyle2">
             <tr>
                 <td class="style8">
