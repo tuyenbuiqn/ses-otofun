@@ -463,6 +463,19 @@ namespace SES.CMS.DAL
 
             base.ExecuteNoneQuery(Sqlcomm);
         }
+        public void DeleteMultiComment(string commentIDList)
+        {
+            SqlCommand Sqlcomm = new SqlCommand();
+            Sqlcomm.CommandType = CommandType.StoredProcedure;
+            Sqlcomm.CommandText = "spcmsComment_DeleteMulti";
+            SqlParameter Sqlparam;
+
+            Sqlparam = new SqlParameter("@CommentIDList", SqlDbType.NVarChar);
+            Sqlparam.Value = commentIDList;
+            Sqlcomm.Parameters.Add(Sqlparam);
+
+            base.ExecuteNoneQuery(Sqlcomm);
+        }
     }
 
 }
