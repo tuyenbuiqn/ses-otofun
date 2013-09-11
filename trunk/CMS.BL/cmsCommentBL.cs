@@ -94,6 +94,9 @@ namespace SES.CMS.BL
         {
             return objcmsCommentDAL.SelectByPermission(userType, bienTapVienID);
         }
+        public void DeleteMultiComment(string commentIDList) {
+            objcmsCommentDAL.DeleteMultiComment(commentIDList);
+        }
     }
 
 }
