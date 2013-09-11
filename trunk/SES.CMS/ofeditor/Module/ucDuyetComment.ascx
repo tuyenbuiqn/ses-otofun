@@ -12,7 +12,7 @@
             <asp:DropDownList ID="ddlTrangThai" runat="server" Width="183px" CssClass="ddl-input"
                 AppendDataBoundItems="true">
                 <asp:ListItem Text=".: Chọn tất cả :." Value="-1"></asp:ListItem>
-                <asp:ListItem Text="Chưa duyệt" Value="0"></asp:ListItem>
+                <asp:ListItem Text="Chưa duyệt" Value="0" Selected="True"></asp:ListItem>
                 <asp:ListItem Text="Đã duyệt" Value="1"></asp:ListItem>
             </asp:DropDownList>
         </span>User xét duyệt
@@ -31,6 +31,8 @@
             OnClick="btnAccept_Click" />
         <asp:Button runat="server" CssClass="button-gg-green1" ID="btnNotAccept" Text="Bỏ duyệt"
             OnClick="btnNotAccept_Click" />
+        <asp:Button runat="server" CssClass="button-gg-green1" ID="btnDeleteMulti" Text="Xóa bình luận"
+            OnClick="btnDeleteMulti_Click" />
     </span>
 </div>
 <asp:GridView ID="gvAt" DataKeyNames="CommentID" runat="server" AutoGenerateColumns="False"
@@ -38,7 +40,7 @@
     PagerStyle-CssClass="pgr" AllowPaging="True" OnPageIndexChanging="gvAt_PageIndexChanging"
     OnRowCancelingEdit="gvAt_RowCancelingEdit" OnRowEditing="gvAt_RowEditing" OnRowUpdating="gvAt_RowUpdating">
     <Columns>
-     <asp:TemplateField Visible="false">
+        <asp:TemplateField Visible="false">
             <ItemTemplate>
                 <asp:Label runat="server" ID="lblCommentID" Text='<%#Eval("CommentID") %>'></asp:Label>
             </ItemTemplate>
@@ -57,7 +59,7 @@
                 <asp:Label runat="server" ID="lblHoTen" Text='<%#Eval("Name") %>'></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-         <asp:TemplateField HeaderText="Email" ItemStyle-Width="10%">
+        <asp:TemplateField HeaderText="Email" ItemStyle-Width="10%">
             <ItemTemplate>
                 <asp:Label runat="server" ID="lblEmail" Text='<%#Eval("Email") %>'></asp:Label>
             </ItemTemplate>
@@ -67,11 +69,11 @@
                 <asp:Label runat="server" ID="lblContent" Text='<%#Eval("Contents") %>'></asp:Label>
             </ItemTemplate>
             <EditItemTemplate>
-                <asp:TextBox runat="server" ID="txtContent" TextMode="MultiLine" Width="500px" Rows="5" Height="50px"
-                    Text='<%#Eval("Contents")%>'></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtContent" TextMode="MultiLine" Width="500px" Rows="5"
+                    Height="50px" Text='<%#Eval("Contents")%>'></asp:TextBox>
             </EditItemTemplate>
         </asp:TemplateField>
-          <asp:TemplateField HeaderText="Bài viết" ItemStyle-Width="15%">
+        <asp:TemplateField HeaderText="Bài viết" ItemStyle-Width="15%">
             <ItemTemplate>
                 <asp:Label runat="server" ID="lblTitle" Text='<%#Eval("ArticleTitle") %>'></asp:Label>
             </ItemTemplate>
@@ -92,5 +94,7 @@
             OnClick="btnAccept_Click" />
         <asp:Button runat="server" CssClass="button-gg-green1" ID="btnNotAccept1" Text="Bỏ duyệt"
             OnClick="btnNotAccept_Click" />
+              <asp:Button runat="server" CssClass="button-gg-green1" ID="btnDeleteMulti1" Text="Xóa bình luận"
+            OnClick="btnDeleteMulti_Click" />
     </span>
 </div>
