@@ -1,8 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucMainHomePageCategory.ascx.cs"
     Inherits="SES.CMS.Module.ucMainHomePageCategory" %>
 <div class="body-down-left">
-    <div class="clear-hmp">
-    </div>
     <%--   <div class="TinTuc-wrapper">
                 <div class="Cap-TinTuc">
                     <p>

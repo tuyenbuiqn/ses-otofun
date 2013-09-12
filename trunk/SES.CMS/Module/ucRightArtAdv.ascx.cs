@@ -13,16 +13,18 @@ namespace SES.CMS.Module
         {
             if ((Request.QueryString["CategoryID"] != null))
             {
-                int id = int.Parse(Request.QueryString["CategoryID"]);
-                if (id == 11 || id == 13 || id == 14||id == 5)
-                    divMazda.Visible = true;
-                else if (id == 27 || id == 28 || id == 29)
-                    divKia.Visible = divNissan.Visible = true;
-                else if (id == 15 || id == 16 || id == 18 || id == 19 || id == 3 || id == 6 || id == 7 || id == 33 || id == 34 || id == 35 || id == 36 || id == 37 || id == 38 || id == 39)
+                int CategoryID = int.Parse(Request.QueryString["CategoryID"]);
+                if (CategoryID == 27 || CategoryID == 28 || CategoryID == 29 || CategoryID == 11 || CategoryID == 13 || CategoryID == 14 || CategoryID == 19)
                 {
-                    divIMG.Visible = true;
-                    if (id == 33 || id == 34 || id == 35 || id == 36 || id == 37 || id == 38 || id == 39 || id == 15 || id == 16 || id == 18)
-                        imgBanner.ImageUrl = "/Ads/Your-ADS300x450.jpg";
+                    right300x600.Text = "<script type=\"text/javascript\" src=\"http://ads.otv.vn:81/ads_box_47.ads\"></script>";
+                }
+                else if (CategoryID == 15 || CategoryID == 16 || CategoryID == 18 || CategoryID == 3 || CategoryID == 6 || CategoryID == 7 || CategoryID == 33 || CategoryID == 34 || CategoryID == 35 || CategoryID == 36)
+                {
+                    right300x600.Text = "<script type=\"text/javascript\" src=\"http://ads.otv.vn:81/ads_box_49.ads\"></script>";
+                }
+                else if (CategoryID == 5 || CategoryID == 37 || CategoryID == 38 || CategoryID == 39)
+                {
+                    right300x600.Text = "<script type=\"text/javascript\" src=\"http://ads.otv.vn:81/ads_box_51.ads\"></script>";
                 }
             }
             
