@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTieuDiem.ascx.cs"
     Inherits="SES.CMS.Module.ucTieuDiem" %>
-<div class="docnhieu" style="margin-top:15px;">
+<div class="docnhieu">
    <h3 class="hmp-cate-maintitle">
                     <span>
                         ĐỌC NHIỀU</span>

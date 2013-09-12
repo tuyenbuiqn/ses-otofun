@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucMostRead.ascx.cs"
     Inherits="SES.CMS.Module.ucMostRead" %>
 <div class="body-down-right">
-    <div class="docnhieu">
+    <div class="docnhieu" style="margin-left:0;">
         <h3 class="hmp-cate-maintitle">
                     <span>
                         ĐỌC NHIỀU</span>
