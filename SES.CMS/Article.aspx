@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" EnableViewState="False" Language="C#" MasterPageFile="~/Otofun.Master"
     AutoEventWireup="true" CodeBehind="Article.aspx.cs" Inherits="SES.CMS.Article" %>
 
-
 <%@ Register Src="Module/ucRightAdv.ascx" TagName="ucRightAdv" TagPrefix="uc2" %>
 <%@ Register Src="Module/ucArticleAdv.ascx" TagName="ucArticleAdv" TagPrefix="uc3" %>
 <%@ Register Src="Module/ucNewArticles.ascx" TagName="ucNewArticles" TagPrefix="uc4" %>
@@ -14,20 +13,18 @@
 <%@ Register Src="Module/ucRightArtAdv.ascx" TagName="ucRightArtAdv" TagPrefix="uc9" %>
 <%@ Register Src="Module/ucTopRightArtAdv.ascx" TagName="ucTopRightArtAdv" TagPrefix="uc10" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script src="/js/js-scroll-cat.js" type="text/javascript"></script>
-<meta property="og:locale" content="vi_VN" />
-<meta property="fb:admins" content="1521514097" />
-<meta property="og:type" content="article" />
-    
-	<script type="text/javascript" src="/js/jquery.nicescroll.js"></script>
+    <script src="/js/js-scroll-cat.js" type="text/javascript"></script>
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="fb:admins" content="1521514097" />
+    <meta property="og:type" content="article" />
+    <script type="text/javascript" src="/js/jquery.nicescroll.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#divListComment").niceScroll({ touchbehavior: false, cursorcolor: "#900000", cursoropacitymax: 0.7, cursorwidth: 5, cursorborderradius: "1px", autohidemode: "scroll" }).cursor.css(); // MAC like scrollbar
         });
-</script>
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="body-top">
         <div class="body-out">
             <div class="body-top-left">
@@ -80,7 +77,9 @@
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
-                    <div style="float:left; margin-left:101px;"><script type="text/javascript" src="http://ads.otv.vn:81/ads_box_53.ads"></script></div>
+                    <div style="float: left; margin-left: 101px;">
+                        <script type="text/javascript" src="http://ads.otv.vn:81/ads_box_53.ads"></script>
+                    </div>
                     <uc7:ucTags runat="server" ID="uc7ucTag" />
                     <uc8:ucComment ID="ucComment1" runat="server" />
                     <uc4:ucNewArticles Visible="false" ID="ucNewArticles1" runat="server" />
@@ -89,23 +88,21 @@
             </div>
             <div class="body-top-right">
                 <uc13:ucTopContactInfo runat="server" ID="uc13UcTopContactInfo" />
-                <div class="adv-homepage-right">
-                    <uc10:ucTopRightArtAdv ID="ucTopRightArtAdv1" runat="server" />
-                </div>
+                <uc10:ucTopRightArtAdv ID="ucTopRightArtAdv1" runat="server" />
                 <uc5:ucTieuDiem runat="server" ID="uc5TieuDiem" />
                 <uc9:ucRightArtAdv ID="ucRightArtAdv1" runat="server" />
             </div>
         </div>
     </div>
     <div id="divad" visible="false" runat="server">
-<script language="javascript" type="text/javascript">
-    var adbrand_zoneId = 'va_5E10E3FAAB615BF6';
-    var adbrand_width = '250';
-    var adbrand_height = '250';
-    var adbrand_sizeId = '12';
-    var adbrand_typeId = '2';  
-</script> 
-<script type="text/javascript" src="http://embed.adbrand.net/adbrand.js"></script> 
-<!-- End: Adbrand -->
-</div>
+        <script language="javascript" type="text/javascript">
+            var adbrand_zoneId = 'va_5E10E3FAAB615BF6';
+            var adbrand_width = '250';
+            var adbrand_height = '250';
+            var adbrand_sizeId = '12';
+            var adbrand_typeId = '2';  
+        </script>
+        <script type="text/javascript" src="http://embed.adbrand.net/adbrand.js"></script>
+        <!-- End: Adbrand -->
+    </div>
 </asp:Content>
