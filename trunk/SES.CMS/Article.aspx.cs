@@ -23,6 +23,14 @@ namespace SES.CMS
                 int categoryID = int.Parse(Request.QueryString["CategoryID"]);
                 if (categoryID == 5 || categoryID == 15 || categoryID == 3)
                     divad.Visible = true;
+
+                //if (categoryID == 27 || categoryID == 28 || categoryID == 29 || categoryID == 11 || categoryID == 13 || categoryID == 14 || categoryID == 19)
+                //    ltAds.Text = "<script type=\"text/javascript\" src=\"http://ads.otv.vn:81/ads_box_63.ads\"></script>";
+                //else if (categoryID == 15 || categoryID == 16 || categoryID == 18 || categoryID == 33 || categoryID == 34 || categoryID == 35 || categoryID == 36 || categoryID == 3 || categoryID == 6 || categoryID == 7)
+                //    ltAds.Text = "<script type=\"text/javascript\" src=\"http://ads.otv.vn:81/ads_box_62.ads\"></script>";
+                //else if (categoryID == 5 || categoryID == 37 || categoryID == 39 || categoryID == 38)
+                //    ltAds.Text = "<script type=\"text/javascript\" src=\"http://ads.otv.vn:81/ads_box_64.ads\"></script>";
+
             }
             if (!string.IsNullOrEmpty(Request.QueryString["ArticleID"]))
             {
