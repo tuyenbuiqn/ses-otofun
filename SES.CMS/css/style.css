@@ -1388,6 +1388,11 @@ p.pBreadrumb
     color: #000;
     line-height: 19px
 }
+.article-detail a
+{
+	color:#912809;
+	font-weight:bold;
+	}
 .article-detail
 {
     line-height: 19px !important;
