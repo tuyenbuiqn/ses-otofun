@@ -287,9 +287,9 @@ ul.mid-link li:last-child a
 }
 .body-top-right
 {
-    width: 320px;
+    width: 310px;
     height: auto;
-    float: right;
+    float: left;
 }
 .lienhe
 {
@@ -585,15 +585,17 @@ padding-top: 4px;
 }
 .body-down-left
 {
-    width: 680px;
+    width: 675px;
     height: auto;
     float: left;
+    margin-left: 10px;
 }
 .body-down-right
 {
-    width: 320px;
+    width: 307px;
     height: auto;
-    float: right;
+    float: left;
+    margin-left: 5px;
 }
 .TinTuc-wrapper
 {
@@ -762,10 +764,7 @@ padding-top: 4px;
 }
 .docnhieu
 {
-    width: 300px;
-    margin-left: 10px;
-    margin-top: 20px;
-    float: left;
+    width: 300px;  margin-left: 10px;  margin-top: 20px;  float: left;
 }
 .docnhieu-cap
 {
@@ -963,7 +962,7 @@ padding-top: 4px;
 {
     width: 1000px;
     height: auto;
-   /* margin-left: 5px; */
+   margin-left: 5px;
     margin-top: 15px;
     float: left;
 }
@@ -2818,6 +2817,4 @@ text-transform: uppercase;
 width: 300px;
 height: 600px;
 margin-right: 10px;
-margin-top: 0px;
-bottom:250px;
-}
+m
