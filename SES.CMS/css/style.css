@@ -764,7 +764,8 @@ padding-top: 4px;
 }
 .docnhieu
 {
-    width: 300px;  margin-left: 10px;  margin-top: 20px;  float: left;
+    width: 300px;  margin-left: 10px;  
+    /* margin-top: 20px; */  float: left;
 }
 .docnhieu-cap
 {
@@ -946,7 +947,6 @@ padding-top: 4px;
 .quangcao-right
 {
     width: 300px;
-    float: right;
     margin-top: 15px;
     margin-right: 20px;
 }
@@ -2812,9 +2812,3 @@ text-transform: uppercase;
             }
             
             
-#sticker
-{
-width: 300px;
-height: 600px;
-margin-right: 10px;
-m
