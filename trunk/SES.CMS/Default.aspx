@@ -72,7 +72,7 @@
                 </div>
             </div>
             <p></p>
-            <div style="float:right; margin-top:10px; margin-right:10px">
+            <div style="float:left; margin-top:10px; margin-right:10px">
             <div id="adthread">         
 			<script type="text/javascript" src="http://ads.otv.vn:81/ads_box_40.ads"></script>
         <p></p>
