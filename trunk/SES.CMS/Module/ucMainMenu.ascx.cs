@@ -74,7 +74,6 @@ namespace SES.CMS.Module
                         Response.Redirect("http://m.otofun.net" + currentURL);
                 }
             }
-
             
 
             if (Request.QueryString["CategoryID"] != null) CategoryIDS = Request.QueryString["CategoryID"];
