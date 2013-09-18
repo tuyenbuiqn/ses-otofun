@@ -60,7 +60,7 @@
                         var heightDelta = height - iframeBounds.height;
                         var widthDelta = width - iframeBounds.width;
 
-                        if (heightDelta > 0) oWindow.set_height(oWindow.get_height() + heightDelta);
+                        if (heightDelta > 0) oWindow.set_height(oWindow.get_height());// + heightDelta);
                         if (widthDelta > 0) oWindow.set_width(oWindow.get_width() + widthDelta);
                         oWindow.center();
 
