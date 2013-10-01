@@ -60,7 +60,7 @@
             </asp:Repeater>
             <li><a target="_blank" href="http://www.otofun.net/forums/12-thong-tin-thi-truong-rao-vat" title="Rao vặt">Rao vặt</a>
             </li>
-            <li><a target="_blank" href="http://news.otofun.net/?UI=Mobile" title="Phiên bản Mobile">Bản Mobile</a>
+            <li><a target="_blank" href="http://m.otofun.net/" title="Phiên bản Mobile">Bản Mobile</a>
             </li>
         </ul>
         <p class="banquyen" style="margin-bottom: 3px;">
