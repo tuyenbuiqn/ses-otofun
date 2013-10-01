@@ -503,7 +503,7 @@
             </div>
             <div class="fieldsetdiv">
                 <label>
-                    Tin liên quan 1:</label>
+                    Tin liên quan Ngoài:</label>
                 <div style="float: left; width: 680px">
                     <telerik:RadGrid CssClass="mgrd" ID="RadGrid1" AutoGenerateColumns="False" runat="server"
                         CellSpacing="0" GridLines="None">
@@ -542,7 +542,7 @@
             </div>
             <div class="fieldsetdiv">
                 <label>
-                    Tin liên quan 2:</label>
+                    Tin liên quan trong:</label>
                 <div style="float: left; width: 680px">
                     <telerik:RadGrid CssClass="mgrd" ID="RadGrid2" AutoGenerateColumns="False" runat="server"
                         CellSpacing="0" GridLines="None">
