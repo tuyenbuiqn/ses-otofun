@@ -215,7 +215,7 @@ namespace SES.CMS
                 string keyTinLienQuan2 = "TinLienQuan2=" + articleID;
                 if (cache[keyTinLienQuan2] == null)
                 {
-                    DataTable dtTinLienQuan2 = artBL.GetTinLienQuan1(articleID);
+                    DataTable dtTinLienQuan2 = artBL.GetTinLienQuan2(articleID);
                     if (dtTinLienQuan2 != null)
                         cache.Insert(keyTinLienQuan2, dtTinLienQuan2, null, DateTime.Now.AddSeconds(150), TimeSpan.Zero);
                     
